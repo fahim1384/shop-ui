@@ -1,0 +1,43 @@
+﻿@model HandiCrafts.Web.Models.Account.LoginContainerModel
+
+@{ ViewBag.Title = "ورود به سیستم"; }
+@section Styles{
+}
+
+@await Html.PartialAsync("_Login.cshtml", Model.LoginModel)
+
+
+@section Scripts{
+    <script>
+        var defaultTab = '@Model.DefaultTab';
+
+
+        // =======================================
+        function onSigninBegin(e, form) {
+            $('#kt_login_signin_submit').addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', true);
+        }
+
+        function onSigninSuccess(result) {
+            alert("10");
+            if (result.Success) {
+                window.location = result.Data;
+            }
+            else {
+                alert(result.Message);
+            }
+        }
+        function onSigninFailed() {
+            alert("خطا");
+        }
+
+        function onSigninComplete(re) {
+            console.log(re);
+        }
+
+        failed = function (xhr) {
+            alert(`Status: ${xhr.status}, Status Text: ${xhr.statusText}`);
+        };
+
+
+    </script>
+}

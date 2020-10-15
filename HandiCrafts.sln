@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandiCrafts.Web", "HandiCrafts.Web\HandiCrafts.Web.csproj", "{D668AE0D-5058-4D00-BFEC-3FC6AEE2F58C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandiCrafts.Core", "HandiCrafts.Core\HandiCrafts.Core.csproj", "{3F91A5C9-5BFB-4F8E-970E-50B7BB69623E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D668AE0D-5058-4D00-BFEC-3FC6AEE2F58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D668AE0D-5058-4D00-BFEC-3FC6AEE2F58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D668AE0D-5058-4D00-BFEC-3FC6AEE2F58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D668AE0D-5058-4D00-BFEC-3FC6AEE2F58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F91A5C9-5BFB-4F8E-970E-50B7BB69623E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F91A5C9-5BFB-4F8E-970E-50B7BB69623E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F91A5C9-5BFB-4F8E-970E-50B7BB69623E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F91A5C9-5BFB-4F8E-970E-50B7BB69623E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED46681A-5FA5-4E70-9378-8B8CD769B4AC}
+	EndGlobalSection
+EndGlobal
