@@ -1,0 +1,267 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+}
+
+@section Styles{
+    <style>
+        .table td, .table th {
+            vertical-align: middle;
+        }
+    </style>
+}
+<h3 class="color-firouzi">سبد خرید</h3>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>محصولات</th>
+                <th>نام محصول</th>
+                <th>قیمت</th>
+                <th>تعداد</th>
+                <th>جمع کل</th>
+                <th>حذف/ذخیره در لیست خریدبعدی</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <img src="~/image/express.jpg" class="img-fluid" /></td>
+                <td>ظرف 5 تیکه <br />شناسه یکتا 00000</td>
+                <td>2500000</td>
+                <td>
+                    <form class="form-inline mt-2" dir="rtl">
+                        <div class="spinner border-radius-5">
+                            <span class="fa fa-plus"></span>
+                            <input type="text" name="quantity" value="1" class="form-control width-50px border-0">
+                            <span class="fa fa-minus"></span>
+                        </div>
+                    </form>
+                </td>
+                <td>2500000</td>
+                <td>
+                    <span class="fa fa-check text-success fa-bold"></span><span>/</span>
+                    <span class="fa fa-times"></span>
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="~/image/express.jpg" class="img-fluid" /></td>
+                <td>ظرف 5 تیکه <br />شناسه یکتا 00000</td>
+                <td>2500000</td>
+                <td>
+                    <form class="form-inline mt-2" dir="rtl">
+                        <div class="spinner border-radius-5">
+                            <span class="fa fa-plus"></span>
+                            <input type="text" name="quantity" value="1" class="form-control width-50px border-0">
+                            <span class="fa fa-minus"></span>
+                        </div>
+                    </form>
+                </td>
+                <td>2500000</td>
+                <td>
+                    <span class="fa fa-check text-success fa-bold"></span><span>/</span>
+                    <span class="fa fa-times"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-12 col-sm-7 mt-3">
+        <div class="col-12 bg-gray border-radius-20 pt-20px pl-25px pr-25px pb-20px">
+            <h3>نحوه پرداخت</h3>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="checked">
+                        <b>پرداخت آنلاین</b>
+                        <br />
+                        <small class="text-muted">آنلاین با تمامی کارت های بانکی</small>
+                    </label>
+                </div>
+                <div class="col">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="1">
+                        <b>پرداخت اقساطی</b>
+                        <br />
+                        <small class="text-muted">اقساطی به صورت</small>
+                    </label>
+                </div>
+            </div>
+
+            <h3 class="mt-4">کارت هدیه و کدتخفیف</h3>
+            <div class="row">
+                <div class="col mr-3">
+                    <div class="input-group input-group-sm p-15 mr-10 ml-10 border-default border-radius-20">
+                        <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="ثبت کد تخفیف">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text background-none border-0">
+                                <button class="btn color-firouzi border-0">ثبت</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col mr-3">
+                    <div class="input-group input-group-sm p-15 mr-10 ml-10 border-default border-radius-20">
+                        <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="افزودن کارت هدیه جدید">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text background-none border-0">
+                                <button class="btn color-firouzi border-0">ثبت</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-5 mb-5">آدرس تحویل سفارش</h3>
+
+            <div class="row">
+                <div class="col mr-3">
+                    <p>
+                        آذربایجان شرقی، تبریز، رشدیه، بلوار بهارستان،برج رشدیه، بلوک ب، طبقه ١١ ،واحد ١١٣ ،
+                        پلاک ١
+                        <br />
+                        <br />
+                        <span class="text-muted"><i class="fa fa-user solid-fa"></i> زهره جمشیدی</span>
+                        <br />
+                        <a href="#" class="color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <h3 class="mt-5 mb-5">زمان ارسال</h3>
+
+            <div class="row">
+                <div class="col mr-3 cart-send-date-tabs">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                پنج شنبه
+                                <small class="form-text text-muted-in-dark ">
+                                    25 مهر
+                                </small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                                جمعه
+                                <small class="form-text text-muted-in-dark ">
+                                    26 مهر
+                                </small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                                شنبه
+                                <small class="form-text text-muted-in-dark ">
+                                    27 مهر
+                                </small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">
+                                یکشنبه
+                                <small class="form-text text-muted-in-dark ">
+                                    28 مهر
+                                </small>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content bg-white mb-4" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="col-12 pt-3 pb-3 pr-2">
+                                <label>
+                                    <input type="radio" value="1" checked="checked">
+                                    <small class="text-muted">ساعت 9 تا 22</small>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                        <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 col-sm-5 mt-3">
+        <div class="col-12 bg-white border-radius-20">
+            <h3 class="bg-gray p-4 border-radius-20">جمع کل</h3>
+
+            <table class="w-100">
+                <tbody>
+                    <tr>
+                        <td class="line-height-60">قیمت کالا(2)</td>
+                        <td class="line-height-60 text-right">500000 تومان</td>
+                    </tr>
+                    <tr>
+                        <td class="line-height-60">تخفیف کالاها</td>
+                        <td class="line-height-60 text-right color-firouzi">(17%) تخیخف کالاها</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <table class="w-100">
+                <tbody>
+                    <tr>
+                        <td class="line-height-60 font-weight-bold">جمع</td>
+                        <td class="line-height-60 text-right font-weight-bold">1000000 تومان</td>
+                    </tr>
+                    <tr>
+                        <td class="line-height-60">هزینه ارسال</td>
+                        <td class="line-height-60 text-right">رایگان</td>
+                    </tr>
+                    <tr>
+                        <td class="line-height-60">هزینه بسته بندی</td>
+                        <td class="line-height-60 text-right color-firouzi">9500 ت</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <table class="w-100">
+                <tbody>
+                    <tr>
+                        <td class="line-height-60 font-weight-bolder">مبلغ قابل پرداخت</td>
+                        <td class="line-height-60 text-right font-weight-bolder">1000000 تومان</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-4 mr-4 ml-4">
+                <button type="button" class="btn btn-info btn-block p-4 font-size-30px font-weight-bold border-radius-20">تایید سفارشات</button>
+            </div>
+
+            <div class="col-10 offset-md-1">
+                <table class="w-100">
+                    <tbody>
+                        <tr>
+                            <td class="line-height-60">امتیاز باشگاه</td>
+                            <td class="line-height-60 text-right">10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

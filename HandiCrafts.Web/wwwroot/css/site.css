@@ -248,8 +248,24 @@ footer .card {
     margin: 0
 }
 
+.line-height-20 {
+    line-height: 20px;
+}
+
 .line-height-30 {
     line-height: 30px;
+}
+
+.line-height-40 {
+    line-height: 40px;
+}
+
+.line-height-50 {
+    line-height: 50px;
+}
+
+.line-height-60 {
+    line-height: 60px;
 }
 
 #searchCategoryCmb:focus {
@@ -257,12 +273,14 @@ footer .card {
 }
 
 #searchCategoryCmb {
-    border-radius: 3px 0 0 3px;
+    /*border-radius: 3px 0 0 3px;*/
+    height: 46px;
 }
 
 #searchInput {
     border-radius: 0;
     border-left: 1px solid #d2d2d2 !important;
+    height:46px;
 }
 
     #searchInput:focus {
@@ -309,18 +327,23 @@ footer .card {
 .border-radius-2 {
     border-radius: 2px;
 }
+
 .border-radius-3 {
     border-radius: 3px;
 }
+
 .border-radius-5 {
     border-radius: 5px;
 }
+
 .border-radius-10 {
     border-radius: 10px;
 }
+
 .border-radius-20 {
     border-radius: 20px;
 }
+
 .border-radius-30 {
     border-radius: 30px;
 }
@@ -334,7 +357,7 @@ footer .card {
 }
 
 .width-50px {
-    width:50px !important;
+    width: 50px !important;
 }
 
 .spinner {
@@ -344,9 +367,9 @@ footer .card {
     padding: 0 4px;
 }
 
-.shared-box{
-    position:absolute;
-    left:0;
+.shared-box {
+    position: absolute;
+    left: 0;
 }
 /********************************/
 .product-detail-tabs ul {
@@ -533,4 +556,197 @@ footer .card {
     left: 0;
     -webkit-animation: quick_cart_pay_hide 200ms ease-in forwards;
     animation: quick_cart_pay_hide 200ms ease-in forwards;
+}
+
+.border-default {
+    border: 1px solid #cecece;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mr-25 {
+    margin-right: 25px;
+}
+
+.mr-30 {
+    margin-right: 30px;
+}
+
+.mr-35 {
+    margin-right: 35px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+.ml-30 {
+    margin-left: 30px;
+}
+
+.ml-40 {
+    margin-left: 40px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-15 {
+    padding: 15px;
+}
+
+.background-none {
+    background:none;
+}
+
+.cart-send-date-tabs ul {
+    background-color: #676767 !important;
+}
+
+    .cart-send-date-tabs ul li a {
+        color: #fff;
+    }
+
+        .cart-send-date-tabs ul li a.active {
+            background-color: #fff !important;
+            color: #676767 !important;
+        }
+
+        .cart-send-date-tabs ul li a.nav-link {
+            border: none;
+            border-left: 1px solid #d0d0d0;
+            border-radius: 0;
+            padding: 0.5rem 1rem;
+        }
+
+.cart-send-date-tabs .tab-content {
+    border-radius: 0 0 30px 30px;
+}
+
+.text-muted-in-dark {
+    color: #dcdcdc !important;
+}
+
+.cart-send-date-tabs ul li a.active .text-muted-in-dark {
+    color: #9c9c9c !important
+}
+
+.font-size-17px {
+    font-size: 17px;
+}
+
+.font-size-20px {
+    font-size: 20px;
+}
+
+.font-size-22px {
+    font-size: 22px;
+}
+
+.font-size-25px {
+    font-size: 25px;
+}
+
+.font-size-30px {
+    font-size: 30px;
+}
+
+.font-size-35px {
+    font-size: 35px;
+}
+
+.font-size-40px {
+    font-size: 40px;
+}
+
+.font-size-50px {
+    font-size: 50px;
+}
+
+.pl-10px{padding-left:10px;}
+.pl-20px {
+    padding-left: 20px;
+}
+.pl-25px {
+    padding-left: 25px;
+}
+.pl-30px {
+    padding-left: 30px;
+}
+.pr-10px {
+    padding-right: 10px;
+}
+
+.pr-20px {
+    padding-right: 20px;
+}
+
+.pr-25px {
+    padding-right: 25px;
+}
+
+.pr-30px {
+    padding-right: 30px;
+}
+.pt-10px {
+    padding-top: 10px;
+}
+
+.pt-20px {
+    padding-top: 20px;
+}
+
+.pt-25px {
+    padding-top: 25px;
+}
+
+.pt-30px {
+    padding-top: 30px;
+}
+
+.pb-10px {
+    padding-bottom: 10px;
+}
+
+.pb-20px {
+    padding-bottom: 20px;
+}
+
+.pb-25px {
+    padding-bottom: 25px;
+}
+
+.pb-30px {
+    padding-bottom: 30px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 46px!important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 46px!important;
+}
+.select2-container--default .select2-selection--single {
+    background-color: transparent!important;
+    border: 0 !important;
+    border-radius: 10px!important;
+    height: 48px!important;
+}
+.select2-container {
+    width: 100% !important;
 }

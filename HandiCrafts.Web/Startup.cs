@@ -65,7 +65,7 @@ namespace HandiCrafts.Web
                 .AddDataAnnotationsLocalization()
                 .AddJsonOptions(option => option.JsonSerializerOptions.PropertyNamingPolicy = null);
 
-            services.AddRazorPages();
+            services.AddRazorPages().AddNewtonsoftJson();
 
             //AddAuthentication(services);
 
@@ -73,7 +73,22 @@ namespace HandiCrafts.Web
 
             new DependencyRegistrar().Register(services);
 
+            services.AddHttpClient();
+            services.AddHttpContextAccessor();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            var httpContextAccessor = new HttpContextAccessor();
+            services.AddHttpClient("myHttpClient", options =>
+            {
+                options.BaseAddress = new Uri(Configuration.GetValue<string>("BaseUrl"));
 
+                //var token = httpContextAccessor.HttpContext.Session.GetString("token");
+                //if (!string.IsNullOrEmpty(token))
+                //{
+                //    options.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", httpContextAccessor.HttpContext.Session.GetString("token"));
+                //}
+
+                //...
+            });
 
 
             services.AddAuthentication(configureOptions =>
@@ -95,7 +110,7 @@ namespace HandiCrafts.Web
                     ///ValidAudience = Configuration["BearerTokens:Audience"],
                     ValidateLifetime = true,
 
-                    ValidIssuer = "http://nikan.com",
+                    ValidIssuer = "http://h.com",
                     ValidateAudience = true,
                     ValidAudience = "api-users",
                 };
