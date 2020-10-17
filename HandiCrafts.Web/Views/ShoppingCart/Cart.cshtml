@@ -13,6 +13,7 @@
 <h3 class="color-firouzi">سبد خرید</h3>
 
 <div class="table-responsive">
+
     <table class="table">
         <thead>
             <tr>
@@ -24,8 +25,8 @@
                 <th>حذف/ذخیره در لیست خریدبعدی</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+        <tbody class="show-cart">
+            @*<tr>
                 <td> <img src="~/image/express.jpg" class="img-fluid" /></td>
                 <td>ظرف 5 تیکه <br />شناسه یکتا 00000</td>
                 <td>2500000</td>
@@ -62,7 +63,7 @@
                     <span class="fa fa-check text-success fa-bold"></span><span>/</span>
                     <span class="fa fa-times"></span>
                 </td>
-            </tr>
+            </tr>*@
         </tbody>
     </table>
 </div>
@@ -131,7 +132,7 @@
                         <br />
                         <span class="text-muted"><i class="fa fa-user solid-fa"></i> زهره جمشیدی</span>
                         <br />
-                        <a href="#" class="color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
+                        <a href="/Shoppingcart/Address" class="color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
                     </p>
                 </div>
 
@@ -213,12 +214,12 @@
             <table class="w-100">
                 <tbody>
                     <tr>
-                        <td class="line-height-60">قیمت کالا(2)</td>
-                        <td class="line-height-60 text-right">500000 تومان</td>
+                        <td class="line-height-60">قیمت کالا(<span class="total-count"></span>)</td>
+                        <td class="line-height-60 text-right"><span class="total-cart"></span> تومان</td>
                     </tr>
                     <tr>
                         <td class="line-height-60">تخفیف کالاها</td>
-                        <td class="line-height-60 text-right color-firouzi">(17%) تخیخف کالاها</td>
+                        <td class="line-height-60 text-right color-firouzi">(17%) تخفیف کالاها</td>
                     </tr>
                 </tbody>
             </table>
@@ -249,7 +250,7 @@
                 </tbody>
             </table>
             <div class="mt-4 mr-4 ml-4">
-                <button type="button" class="btn btn-info btn-block p-4 font-size-30px font-weight-bold border-radius-20">تایید سفارشات</button>
+                <button type="button" class="btn btn-info btn-block p-2 font-size-25px font-weight-bold border-radius-10">تایید سفارشات</button>
             </div>
 
             <div class="col-10 offset-md-1">

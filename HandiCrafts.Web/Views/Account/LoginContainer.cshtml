@@ -4,7 +4,16 @@
 @section Styles{
 }
 
-@await Html.PartialAsync("_Login.cshtml", Model.LoginModel)
+@{
+    if (Model.DefaultTab == "login")
+    {
+        @await Html.PartialAsync("_Login.cshtml", Model.LoginModel);
+    }
+    else if (Model.DefaultTab == "register")
+    {
+        @await Html.PartialAsync("_Register.cshtml", Model.RegisterModel);
+    }
+}
 
 
 @section Scripts{

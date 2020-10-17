@@ -13,11 +13,13 @@ namespace HandiCrafts.Web.Models.Account
     public class LoginModel
     {
         [StringLength(100, MinimumLength = 3, ErrorMessage = "حداکثر طول ایمیل 100 و حداقل 3 کارکتر می باشد")]
-        [Required(ErrorMessage = "ورود ایمیل اجباری می باشد")]
+        [Required(ErrorMessage = "ورود نام کاربری اجباری می باشد")]
+        [Display(Name ="نام کاربری")]
         public string Username { get; set; }
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "رمز عبور اجباری است")]
+        [Display(Name = "رمزعبور")]
         public string Password { get; set; }
         
         public string ReturnUrl { get; set; }

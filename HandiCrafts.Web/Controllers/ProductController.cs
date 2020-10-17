@@ -12,5 +12,10 @@ namespace HandiCrafts.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult ByFilter()
+        {
+            return View();
+        }
     }
 }

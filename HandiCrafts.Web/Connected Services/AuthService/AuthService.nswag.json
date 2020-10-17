@@ -1,0 +1,708 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Hand Carft",
+    "description": "A simple example ASP.NET Core Web API",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "Sahand Farshbaf",
+      "url": "https://twitter.com/spboyer",
+      "email": ""
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Account/Login": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Account/CustomerRegister": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "CustomerRegister",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/InserCatProduct": {
+      "post": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "InserCatProduct",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatProductDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatProductDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatProductDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/UpdateCatProduct": {
+      "put": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "UpdateCatProduct",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatProductDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatProductDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatProductDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/DeleteCatProduct": {
+      "delete": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "DeleteCatProduct",
+        "parameters": [
+          {
+            "name": "catProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductById": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetCatProductById",
+        "parameters": [
+          {
+            "name": "catProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductFullInfoById": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetCatProductFullInfoById",
+        "parameters": [
+          {
+            "name": "catProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductList": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetCatProductList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetTopCatProductList": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetTopCatProductList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductListByParentId": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetCatProductListByParentId",
+        "parameters": [
+          {
+            "name": "catId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Color/GetColorList": {
+      "get": {
+        "tags": [
+          "Color"
+        ],
+        "operationId": "GetColorList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Color/GetColorById": {
+      "get": {
+        "tags": [
+          "Color"
+        ],
+        "operationId": "GetColorById",
+        "parameters": [
+          {
+            "name": "colorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Color/InsertColor": {
+      "post": {
+        "tags": [
+          "Color"
+        ],
+        "operationId": "InsertColor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ColorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ColorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ColorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Color/UpdateColor": {
+      "put": {
+        "tags": [
+          "Color"
+        ],
+        "operationId": "UpdateColor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ColorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ColorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ColorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Color/DeleteColor": {
+      "delete": {
+        "tags": [
+          "Color"
+        ],
+        "operationId": "DeleteColor",
+        "parameters": [
+          {
+            "name": "colorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Color/DeActiveColor": {
+      "put": {
+        "tags": [
+          "Color"
+        ],
+        "operationId": "DeActiveColor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/GetAllProductList": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "GetAllProductList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/InsertProduct": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "InsertProduct",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/EditProduct": {
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "EditProduct",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/DeleteProduct": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "DeleteProduct",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/DeActiveProduct": {
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "DeActiveProduct",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductById": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "GetProductById",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Slider/InsertSlider": {
+      "post": {
+        "tags": [
+          "Slider"
+        ],
+        "operationId": "InsertSlider",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Slider/UpdateSlider": {
+      "put": {
+        "tags": [
+          "Slider"
+        ],
+        "operationId": "UpdateSlider",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Slider/DeleteSlider": {
+      "delete": {
+        "tags": [
+          "Slider"
+        ],
+        "operationId": "DeleteSlider",
+        "parameters": [
+          {
+            "name": "sliderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Slider/GetSliderFullInfoById": {
+      "get": {
+        "tags": [
+          "Slider"
+        ],
+        "operationId": "GetSliderFullInfoById",
+        "parameters": [
+          {
+            "name": "sliderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserLoginModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "password",
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          }
+        }
+      },
+      "CustomerRegisterDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "email",
+          "firstName",
+          "hpassword",
+          "lastName",
+          "mobile"
+        ],
+        "properties": {
+          "hpassword": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        }
+      },
+      "CatProductDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pid": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "coding": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ColorDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "colorCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}

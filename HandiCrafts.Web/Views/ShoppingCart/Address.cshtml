@@ -1,0 +1,7 @@
+﻿@model HandiCrafts.Web.Models.ShoppingCart.AddressContainerModel
+@{
+    ViewData["Title"] = "Address";
+}
+
+@await Html.PartialAsync("_Address.cshtml", Model.AddressList)
+

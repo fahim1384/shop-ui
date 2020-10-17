@@ -1,0 +1,51 @@
+﻿@model List<HandiCrafts.Web.Models.ShoppingCart.AddressModel>
+
+<section>
+    <div class="">
+        <div class="card-deck mb-3 text-center m-0">
+            <div class="col col-sm-12 col-md-12">
+                <div class="card mb-4 m-0 border-0">
+                    <div class="mb-3 text-left">
+                        <div class="row m-0">
+                            <h5>
+                                آدرس تحویل سفارش را انتخاب نمایید:
+                            </h5>
+                        </div>
+                        <div class="row mt-3">
+                            @{
+                                foreach (var item in Model)
+                                {
+
+                                    <div class="col-3 border-firouzi border-2 border-radius-10 text-muted line-height-30 p-2 m-2">
+                                        <div class="col-12 text-left">
+                                            <label>
+                                                <input type="radio" name="optionsSendAddress">
+                                                <b>به این آدرس ارسال شود</b>
+                                            </label>
+                                        </div>
+                                        <hr />
+                                        <div class="col-12">@item.SatatStr، @item.CityStr، @item.DistrictStr، @item.PostalAddress، پلاک @item.Pelak</div>
+                                        <div class="col-12"><span class="fa fa-envelope solid-fa ml-10"></span><small>@item.PostalCode</small></div>
+                                        <div class="col-12"><span class="fa fa-phone-alt solid-fa ml-10"></span><small>@item.MobileNo</small></div>
+                                        <div class="col-12"><span class="fa fa-user-alt solid-fa ml-10"></span><small>@item.FirstName @item.LastName</small></div>
+                                        <div class="col-12 text-right"><span><a href="" class="btn btn-link">حذف</a>|<a href="" class="btn btn-link">ویرایش</a></span></div>
+                                    </div>
+                                }
+
+                                <button type="button" class="col-3 border-1 border-dashed border-radius-10 text-muted line-height-30 p-2 m-2 background-none">
+                                    <span class="">
+                                        <i class="fa fa-plus solid-fa fa-2x"></i>
+                                        <br />
+                                        ایجاد آدرس جدید
+                                    </span>
+                                </button>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

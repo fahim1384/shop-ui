@@ -1,0 +1,502 @@
+﻿
+@{
+    ViewData["Title"] = "ByFilter";
+}
+@section Styles{
+    <style>
+        .page-link {
+            border: 0;
+        }
+    </style>
+}
+<main>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 mt-3 mb-4">
+                <!-- Section: Ads -->
+                <section class="bg-gray p-15 border-radius-5 min-height-200px text-center mb-3 border-default">
+
+                    <span class="line-height-200">تبلیغ</span>
+
+                </section>
+                <!-- Section: Ads -->
+                <!-- Section: Categories -->
+                <section class="bg-gray p-15 border-radius-5 mb-3 border-default">
+
+                    <h5 class="mb-3">دسته بندی های کالا</h5>
+                    <hr />
+                    <div class="text-muted small text-uppercase mb-5">
+
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+                        <p class="mb-3"><a href="#!" class="card-link-secondary">دسته بندی 1</a></p>
+
+
+                    </div>
+
+                </section>
+                <!-- Section: Categories -->
+                <!-- Section: Filters -->
+                <section class="bg-gray p-15 border-radius-5 mb-3 border-default">
+
+                    <h5 class="mb-4">فیلترها</h5>
+                    <hr />
+
+                    <section class="mb-4">
+
+                        <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center bg-white border-1 border-solid border-default border-radius-5">
+                            <input type="text" id="search12" class="form-control mb-0 border-0" placeholder="جستجو ...">
+                            <a href="#!" class="btn btn-flat btn-md px-3 waves-effect"><i class="fa fa-search vertical-align-middle"></i></a>
+                        </div>
+
+                    </section>
+
+                    <!-- Section: Average -->
+                    <section class="mb-4">
+
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label small text-uppercase card-link-secondary">فیلتر ش 1</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label small text-uppercase card-link-secondary">فیلتر ش 2</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label small text-uppercase card-link-secondary">فیلتر ش 3</label>
+                        </div>
+
+                    </section>
+                    <!-- Section: Average -->
+                    <hr />
+                    <!-- Section: Price -->
+                    <section class="mb-4">
+
+                        <h6 class="font-weight-bold mb-3">محدودیت قیمت</h6>
+
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" name="pricelimitfilter">
+                            <label class="form-check-label small text-uppercase card-link-secondary">زیر 1,000,000</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" name="pricelimitfilter">
+                            <label class="form-check-label small text-uppercase card-link-secondary">1,000,000 الی 2,000,000</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" name="pricelimitfilter">
+                            <label class="form-check-label small text-uppercase card-link-secondary">2,000,000 الی 3,000,000</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" name="pricelimitfilter">
+                            <label class="form-check-label small text-uppercase card-link-secondary">بالاتر از 3,000,000</label>
+                        </div>
+                        <form>
+                            <div class="d-flex align-items-center mt-4 pb-1">
+                                <button class="btn btn-info btn-block">اعمال فیلتر</button>
+                            </div>
+                        </form>
+
+                    </section>
+                    <!-- Section: Price -->
+
+                </section>
+                <!-- Section: Filters -->
+
+            </div>
+            <div class="col-md-8">
+
+                <!-- Section: Block Content -->
+                <section>
+
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-12 col-md-12 text-left text-md-left">
+                            <a><span class="fa fa-sort-amount-down-alt"></span> مرتب سازی براساس:</a>
+
+                            <a href="#!" class="text-reset bg-active-in-hover"><small>ارزان ترین</small></a>
+                            <a href="#!" class="text-reset bg-active-in-hover"><small>گران ترین</small></a>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Section: Block Content -->
+                <!--Section: Block Content-->
+                <section>
+
+                    <!-- Grid row -->
+                    <div class="row mb-4">
+
+
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a data-name="مینا کاری 1" data-price="100" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a data-name="مینا کاری 2" data-price="200" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a data-name="مینا کاری 3" data-price="300" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="col-md-6 col-lg-4 mb-3 text-center">
+                            <div class="shopping-thumbnail card mb-3 shadow-sm">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                                <div class="caption">
+                                    <p>
+                                        <b>
+                                            <a data-name="Banana" data-price="1.22" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title pricing-card-title">مینا کاری</h6>
+                                    <p class="card-text">
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star custom-fa"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                        <i class="fa fa-star cyan"></i>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+
+                      
+                        <div class="col-md-12 col-lg-12 text-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">«</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">»</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                    <!-- Grid row -->
+
+                </section>
+                <!--Section: Block Content-->
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+

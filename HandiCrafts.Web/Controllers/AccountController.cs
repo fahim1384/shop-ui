@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Namotion.Reflection;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace HandiCrafts.Web.Controllers
@@ -26,17 +28,19 @@ namespace HandiCrafts.Web.Controllers
 
         #region Fields
 
-
+        IHttpClientFactory _httpClientFactory;
 
         #endregion
 
         #region Constructors
 
         public AccountController(
+            IHttpClientFactory httpClientFactory,
             ILogger<AccountController> logger,
             IStringLocalizer<SharedResource> localizer,
             IMapper mapper) : base(logger, localizer, mapper)
         {
+            _httpClientFactory = httpClientFactory;
         }
 
 
@@ -58,7 +62,7 @@ namespace HandiCrafts.Web.Controllers
                 LoginModel = new LoginModel
                 {
                     ReturnUrl = returnUrl,
-                    //ReCaptchaKey = _configuration["GoogleReCaptcha:key"]
+                    //ReCaptchaKey = _configuration["GoogleReCaptcha:key"]//https://codepen.io/api521/pen/NVqbNY
                 },
                 RegisterModel = new RegisterModel
                 {
@@ -84,7 +88,22 @@ namespace HandiCrafts.Web.Controllers
                 //    return Error<string>(null, Localizer["msg.checkRecaptcha"].Value);
                 //}
 
-                if(model.Username != "user" || model.Password != "pass")
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+
+                HandiCrafts.Web.AuthService.Client client = new AuthService.Client(BaseUrl, httpClient);
+
+                /*client.Login(new AuthService.UserLoginModel()
+                 {
+                     Username = model.Username,
+                     Password = model.Password
+                 });*/
+                                
+
+                if (model.Username != "148272579" || model.Password != "123456")
                 {
                     return Error<string>(null, "مشخصات وارد شده صحیح نمی باشد");
                 }
@@ -122,6 +141,17 @@ namespace HandiCrafts.Web.Controllers
 
         }
 
+        public IActionResult Register()
+        {
+
+            return View("LoginContainer", new LoginContainerModel
+            {
+                RegisterModel = new RegisterModel
+                {
+                },
+                DefaultTab = "register"
+            });
+        }
         #endregion
 
         #region Utilities

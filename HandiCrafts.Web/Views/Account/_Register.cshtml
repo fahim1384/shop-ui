@@ -1,0 +1,69 @@
+﻿@model HandiCrafts.Web.Models.Account.RegisterModel
+
+<aside class="wrapper">
+    <div class="col-sm-8 ">
+        <div class="card">
+            <div class="card-header">
+                <div class="kt-login__head">
+                    <div class="text-center pb-8">
+                        <h4 class="kt-login__title">عضویت در سیستم</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="kt-login__form">
+                    <form id="form_login" class="kt-form" asp-action="Register" asp-controller="Account" data-ajax-method="POST"
+                          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
+                          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label asp-for="FirstName"></label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="kt-font-danger"></span>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label asp-for="LastName"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="kt-font-danger"></span>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label asp-for="MobileNo"></label>
+                                <input asp-for="MobileNo" class="form-control" />
+                                <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label>ایمیل</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="kt-font-danger"></span>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label>رمز عبور</label>
+                                <input asp-for="Password" class="form-control form-control-last" />
+                                <span asp-validation-for="Password" class="kt-font-danger"></span>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label>تکرار رمزعبور</label>
+                                <input asp-for="ConfirmPassword" class="form-control form-control-last" />
+                                <span asp-validation-for="ConfirmPassword" class="kt-font-danger"></span>
+                            </div>
+
+                            <div class="kt-login__actions mt-3 col-sm-12">
+                                <button id="kt_login_signin_submit" type="submit" class="btn btn-info">ثبت اطلاعات</button>
+                            </div>
+
+                            <div class="kt-login__actions mt-3 col-sm-12">
+                                قبلا ثبت نام کرده اید؟ <a href="/Account/Login" class="color-firouzi">ورود</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aside>

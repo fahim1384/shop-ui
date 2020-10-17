@@ -1,8 +1,7 @@
-﻿
-<!-- Navbar -->
+﻿<!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light">
 
-    <a class="navbar-brand mt-auto ml-30 mr-30" href="#!">
+    <a class="navbar-brand mt-auto ml-30 mr-30" href="/Home/Index">
         <img src="~/image/Logo.jpg" height="40" alt="logo">
     </a>
 
@@ -32,24 +31,97 @@
         </form>
 
         <!-- Right -->
-        <ul class="navbar-nav">
-            <li class="nav-item pl-2 mb-2 mb-md-0 d-md-none d-xl-inline-block">
-                <a href="/Account/Login" type="button"
-                   class="btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light">
-                    <i class="fa fa-user"></i>
-                    ورود به حساب کاربری
-                </a>
-            </li>
+        <ul class="navbar-nav topmenuNavBarTools">
+            @{
+                if (User.Identity.IsAuthenticated)
+                {
+                    <li class="dropdown order-1">
+                        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right mt-2">
+                            <li class="">
+                                <form class="form" role="form">
+                                    <ul style="padding:0;list-style-type:none">
+                                        <li>
+                                            <div>
+                                                <div class="c-header__profile-dropdown js-dropdown-menu">
+                                                    <div class="c-header__profile-dropdown-account-container">
+                                                        <div class="c-header__profile-dropdown-user">
+                                                            <div class="c-header__profile-dropdown-user-img">
+                                                                <img src="https://www.digikala.com/static/files/fd4840b2.svg">
+                                                            </div>
+                                                            <div class="c-header__profile-dropdown-user-info">
+                                                                <p class="c-header__profile-dropdown-user-name m-0">اسماعیل واحدی</p>
+                                                                <span class="c-header__profile-dropdown-user-profile-link">مشاهده حساب کاربری</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="c-header__profile-dropdown-account">
+                                                            <div class="c-header__profile-dropdown-account-item u-hidden js-user-dropdown-wallet-has-amount">
+                                                                <span class="c-header__profile-dropdown-account-item-title">کیف پول</span>
+                                                                <div class="c-header__profile-dropdown-account-item-amount">
+                                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-user-drop-down-wallet-amount"></span>
+                                                                    تومان
+                                                                </div>
+                                                            </div>
+                                                            <div class="c-header__profile-dropdown-account-item js-user-dropdown-wallet-has-url">
+                                                                <a class="c-header__profile-dropdown-account-item-title c-header__profile-dropdown-account-item-title--link  js-wallet-activation-url" href="https://web.mydigipay.com/web-pay/activation/e65e4c0aee6f4bf19e71634ab9d1a2f4">فعال سازی کیف پول</a>
+                                                            </div>
 
-            <li class="nav-item">
-                <a href="#!" class="nav-link navbar-link-2 waves-effect">
-                    <span class="badge badge-pill red">1</span>
+                                                            <div class="c-header__profile-dropdown-account-item">
+                                                                <span class="c-header__profile-dropdown-account-item-title">دیجی‌کلاب</span>
+                                                                <span class="c-header__profile-dropdown-account-item-amount">
+                                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-dc-current-points">۴۶</span>
+                                                                    امتیاز
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="/profile/" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;profile&quot;}" data-event="profile_click" data-event-category="header_section" data-event-label="logged_in: True - digiclub_score: 87000" class="c-header__profile-dropdown-user-profile-full-link"></a>
+                                                    </div>
+                                                    <div class="c-header__profile-dropdown-actions">
+                                                        <div class="c-header__profile-dropdown-action-container">
+                                                            <a href="/profile/orders/" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;orders&quot;}" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">سفارش‌های من</a>
+                                                        </div>
+                                                        <div class="c-header__profile-dropdown-action-container">
+                                                            <a href="/digiclub/rewards/" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--digiclub-gifts">
+                                                                جوایز دیجی‌کلاب
+                                                            </a>
+                                                        </div>
+                                                        <div class="c-header__profile-dropdown-action-container">
+                                                            <a href="/users/logout/" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;sign-out&quot;}" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--logout js-logout-button">خروج از حساب کاربری</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+
+                    <li class="nav-item pl-2 mb-2 mb-md-0 d-md-none d-xl-inline-block">
+                        <a href="/Account/Login" type="button"
+                           class="btn btn-md btn-rounded btn-navbar waves-effect waves-light border-default active_in_hover">
+                            <i class="fa fa-user"></i>
+                            ورود به حساب کاربری
+                        </a>
+                    </li>
+
+                }
+            }
+
+
+            <li class="nav-item ml-10 mr-10">
+                <a class="nav-link navbar-link-2 waves-effect active_in_hover" href="/ShoppingCart/Cart">
+                    <span class="badge badge-pill red total-count"></span>
                     <i class="fa fa-shopping-cart solid-fa pl-0"></i>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="#!" class="nav-link waves-effect">
+            <li class="nav-item ml-10 mr-10">
+                <a href="#!" class="nav-link waves-effect active_in_hover">
                     <i class="fa fa-globe"></i>
                 </a>
             </li>

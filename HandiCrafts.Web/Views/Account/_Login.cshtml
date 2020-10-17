@@ -1,36 +1,51 @@
 ﻿@model HandiCrafts.Web.Models.Account.LoginModel
 
-<div class="kt-login__head">
-    <div class="text-center pb-8">
-        <h2 class="kt-login__title">ورود به سیستم</h2>
-        <span class="text-muted font-weight-bold font-size-h4"> <a href="" class="text-primary font-weight-bolder" id="kt_login_signup">عضویت</a></span>
+<aside class="wrapper">
+    <div class="col-sm-4 ">
+        <div class="card">
+            <div class="card-header">
+                <div class="kt-login__head">
+                    <div class="text-center pb-8">
+                        <h4 class="kt-login__title">ورود به سیستم</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="kt-login__form">
+                    <form id="form_login" class="kt-form" asp-action="Login" asp-controller="Account" data-ajax-method="POST"
+                          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
+                          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
+
+                        <div class="form-group">
+                            <label asp-for="Username"></label>
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="kt-font-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control form-control-last" />
+                            <span asp-validation-for="Password" class="kt-font-danger"></span>
+                        </div>
+                        <div class="kt-login__extra">
+                            <label class="kt-checkbox">
+                                <input asp-for="RememberMe" type="checkbox"> مرا بخاطر بسپار
+                                <span></span>
+                            </label>
+                            <a href="javascript:;" class="float-right" id="kt_login_forgot"><small>رمز خود را فراموش کرده اید؟</small></a>
+                        </div>
+
+                        <div class="kt-login__actions mt-3">
+                            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info">ورود</button>
+                        </div>
+
+                        <div class="kt-login__actions mt-3">
+                            در سرای ثبت نام نکرده اید؟ <a href="/Account/Register" class="color-firouzi">ثبت نام</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="kt-login__form">
-    <form id="form_login" class="kt-form" asp-action="Login" asp-controller="Account" data-ajax-method="POST"
-          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
-          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
 
-        <div class="form-group">
-            <input asp-for="Username" class="form-control" placeholder="Email" />
-            <span asp-validation-for="Username" class="kt-font-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <input asp-for="Password" class="form-control form-control-last" placeholder="Password" />
-            <span asp-validation-for="Password" class="kt-font-danger"></span>
-        </div>
-        <div class="kt-login__extra">
-            <label class="kt-checkbox">
-                <input asp-for="RememberMe" type="checkbox"> مرا بخاطر بسپار
-                <span></span>
-            </label>
-            <a href="javascript:;" id="kt_login_forgot">رمز خود را فراموش کرده اید؟</a>
-        </div>
-
-        <div class="kt-login__actions">
-            <button id="kt_login_signin_submit" type="submit" class="btn btn-brand btn-pill btn-elevate">ورود</button>
-        </div>
-    </form>
-</div>
-
+</aside>
