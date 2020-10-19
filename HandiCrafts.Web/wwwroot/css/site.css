@@ -28,12 +28,12 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 @media (min-width: 768px) {
     html {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
 
@@ -355,6 +355,14 @@ footer .card {
 
 .height-75px {
     height: 75px;
+}
+
+.width-30px {
+    width: 30px !important;
+}
+
+.width-40px {
+    width: 40px !important;
 }
 
 .width-50px {
@@ -679,6 +687,10 @@ footer .card {
     font-size: 50px;
 }
 
+.pl-5px {
+    padding-left: 5px;
+}
+
 .pl-10px {
     padding-left: 10px;
 }
@@ -693,6 +705,10 @@ footer .card {
 
 .pl-30px {
     padding-left: 30px;
+}
+
+.pr-5px {
+    padding-right: 5px;
 }
 
 .pr-10px {
@@ -711,6 +727,10 @@ footer .card {
     padding-right: 30px;
 }
 
+.pt-5px {
+    padding-top: 5px;
+}
+
 .pt-10px {
     padding-top: 10px;
 }
@@ -725,6 +745,10 @@ footer .card {
 
 .pt-30px {
     padding-top: 30px;
+}
+
+.pb-5px {
+    padding-bottom: 5px;
 }
 
 .pb-10px {
@@ -1035,4 +1059,14 @@ footer .card {
 .field-validation-error {
     font-size: small;
     color: #ff5959;
+}
+
+ul.firoozi-desc li::before {
+    content: "\2022";
+    color: #2fdbf7;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: -1em;
+    line-height: 28px;
 }

@@ -47,7 +47,7 @@
                         <div class="row m-0 mt-5">
                             <div class="col col-12 m-0">
                                 <span class="card-title pricing-card-title">مشخصات محصول</span>
-                                <ul class="list-unstyled mt-3 mb-4 custome-muted-header">
+                                <ul class="list-unstyled firoozi-desc mt-3 mb-4 custome-muted-header">
                                     <li>نوع کار: ملیله</li>
                                     <li>جنس: نقره 99% خالص، دارای لاک محافظ</li>
                                     <li>طول: 6cm</li>
@@ -81,7 +81,7 @@
                                             <div>
                                                 <i class="fa fa-heart fa-2x solid-fa"></i>
                                                 <i class="fa fa-bell fa-2x solid-fa"></i>
-                                                <i class="fa fa-share-alt fa-2x solid-fa"></i>
+                                                <a data-toggle="modal" data-target="#sharedModal"><i class="fa fa-share-alt fa-2x solid-fa"></i></a>
                                             </div>
                                         </div>
                                     </form>
@@ -187,6 +187,46 @@
         </div>
     </div>
 </section>
+
+<!---- اشتراک گذاری ---->
+<div class="modal fade" id="sharedModal" tabindex="-1" role="dialog" aria-labelledby="اشتراک گذاری" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">اشتراک گذاری</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="font-weight-bold text-muted">
+                    با استفاده از روش های زیر می توانید این کالا را با دوستان خود به اشتراک بگذارید.
+                </p>
+                <p class="mt-5">
+                    <a href=""><img src="~/image/icons/socials/icons8-aparat-480.png" class="width-40px" /></a>
+                    <a href=""><img src="~/image/icons/socials/icons8-pinterest-1000.png" class="width-40px" /></a>
+                    <a href=""><img src="~/image/icons/socials/icons8-facebook-1000.png" class="width-40px" /></a>
+                    <a href=""><img src="~/image/icons/socials/icons8-twitter-1000.png" class="width-40px" /></a>
+                    <a href=""><img src="~/image/icons/socials/icons8-telegram-app-1000.png" class="width-40px" /></a>
+                    <a href=""><img src="~/image/icons/socials/icons8-instagram-1000.png" class="width-40px" /></a>
+                    <a class="btn btn-outline-dark"><i class="fa fa-copy"></i> کپی لینک</a>
+                </p>
+                <hr />
+                <div class="row m-0">
+                    <div class="col-6">
+                        <h4>جایزه شما</h4>
+                        <p class="text-muted">با دعوت دوستانتان، پس از اولین خریدشان،کد تخفیف و امتیاز هدیه بگیرید</p>
+                        <p><a class="btn text-danger btn-outline-info">دریافت کد تخفیف</a></p>
+                    </div>
+                    <div class="col-6">
+                        <img src="~/image/share-popup.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts{
     <script>
