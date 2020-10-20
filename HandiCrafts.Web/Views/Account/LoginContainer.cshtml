@@ -7,7 +7,7 @@
 @{
     if (Model.DefaultTab == "login")
     {
-        @await Html.PartialAsync("_Login.cshtml", Model.LoginModel);
+        @await Html.PartialAsync("_Login.cshtml", Model.ShortLoginModel);
     }
     else if (Model.DefaultTab == "register")
     {
