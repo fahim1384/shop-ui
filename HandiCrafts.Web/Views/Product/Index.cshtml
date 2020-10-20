@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
 }
 @section Styles{
+
 }
 
 
@@ -34,6 +35,7 @@
                             <div class="col col-6 m-0"><h5 class="card-title pricing-card-title">آویز رومانتویی</h5></div>
                             <div class="col col-6 m-0"><h5 class="card-title pricing-card-title">شناسه یکتای محصول: 1234</h5></div>
                         </div>
+                        <hr />
                         <div class="row m-0">
                             <div class="col col-6 m-0">
                                 <span class="card-title pricing-card-title custome-muted-header">تولید کننده:</span>
@@ -46,7 +48,7 @@
                         </div>
                         <div class="row m-0 mt-5">
                             <div class="col col-12 m-0">
-                                <span class="card-title pricing-card-title">مشخصات محصول</span>
+                                <span class="card-title pricing-card-title font-weight-bold">مشخصات محصول</span>
                                 <ul class="list-unstyled firoozi-desc mt-3 mb-4 custome-muted-header">
                                     <li>نوع کار: ملیله</li>
                                     <li>جنس: نقره 99% خالص، دارای لاک محافظ</li>
@@ -70,12 +72,12 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center custome-muted-header">
                                     <form class="form-inline mt-2" dir="rtl">
-                                        <div class="spinner border-radius-5">
-                                            <span class="fa fa-plus"></span>
-                                            <input type="text" name="quantity" value="1" class="form-control width-50px border-0">
-                                            <span class="fa fa-minus"></span>
-                                        </div>
-                                        <button class="btn btn-info mx-1 my-sm-0" type="submit">افزودن به سبد خرید</button>
+                                        @*<div class="spinner border-radius-5">
+                                                <a name="beforeAddtocartPlus"><span class="fa fa-plus"></span></a>
+                                                <input type="text" name="quantity" value="1" class="form-control width-40px border-0" readonly>
+                                                <a name="beforeAddtocartMinus"><span class="fa fa-minus"></span></a>
+                                            </div>*@
+                                        <button data-name="مینا کاری 1" data-price="100" class="add-to-cart btn btn-info mx-1 my-sm-0" type="button">افزودن به سبد خرید</button>
 
                                         <div class="shared-box">
                                             <div>
@@ -91,10 +93,12 @@
 
                         <hr />
 
-                        <div class="row m-0">
-                            <div class="col col-12 m-0">
-                                <img class="w-100" src="~/image/product/product-detail-footer-express.jpg" />
-                            </div>
+                        <div class="row m-0 text-center">
+                            <div class="col"><img src="~/image/icons/truck.png" /></div>
+                            <div class="col"><img src="~/image/icons/ordered.png" /></div>
+                            <div class="col"><img src="~/image/icons/support.png" /></div>
+                            <div class="col"><img src="~/image/icons/monybag.png" /></div>
+                            <div class="col"><img src="~/image/icons/avaiable.png" /></div>
                         </div>
                     </div>
                 </div>
@@ -230,6 +234,16 @@
 
 @section Scripts{
     <script>
-        
+        /*$("a[name=beforeAddtocartPlus]").on("click", function () {
+            var cval = $("input[name='quantity']").val();
+            $("input[name='quantity']").val(parseInt(cval) + 1);
+        });
+        $("a[name=beforeAddtocartMinus]").on("click", function () {
+            var cval = $("input[name='quantity']").val();
+            if (parseInt(cval) - 1 == 0)
+                return;
+            else
+                $("input[name='quantity']").val(parseInt(cval) - 1);
+        });*/
     </script>
 }

@@ -1,0 +1,48 @@
+﻿@model HandiCrafts.Web.Models.Account.AcceptCodeModel
+
+<aside class="wrapper">
+    <div class="col-sm-4 ">
+        <div class="card border-radius-1rem">
+            <div class="card-body">
+                <div class="kt-login__form  ml-3 mr-3">
+                    <div class="text-center pb-8">
+                        <img src="~/image/Logo.jpg" class="mb-4 width-200px" />
+                    </div>
+                    <div>
+                        <h5 class="kt-login__title mb-3">کد تایید را وارد نمایید</h5>
+                    </div>
+                    <div>
+                        <p class="mb-3">
+                            حساب کاربری با شماره موبایل 09140000000 وجو ندارد.
+                            <br />
+                            برای ساخت حساب جدید، کد تاییدبرای این شماره موبایل ارسال گردید.
+                        </p>
+                    </div>
+
+                    <form id="form_login" class="kt-form" asp-action="Login" asp-controller="Account" data-ajax-method="POST"
+                          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
+                          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
+                        <div class="form-group">
+                            <label>کد تایید</label>
+                            <input asp-for="AcceptCode" class="form-control" />
+                            <span asp-validation-for="AcceptCode" class="kt-font-danger"></span>
+                        </div>
+
+                        <div class="kt-login__actions mt-3">
+                           <p class="text-center">
+                               <span class="color-firouzi font-size-17px">دریافت مجدد کد تایید</span>
+                               <br />
+                               ارسال مجدد کد تا <span>02:35</span> دیگر
+                           </p>
+                        </div>
+
+                        <div class="kt-login__actions mt-3">
+                            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main">ادامه</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aside>

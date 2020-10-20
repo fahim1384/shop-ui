@@ -2,49 +2,31 @@
 
 <aside class="wrapper">
     <div class="col-sm-4 ">
-        <div class="card">
-            <div class="card-header">
-                <div class="kt-login__head">
-                    <div class="text-center pb-8">
-                        <h4 class="kt-login__title">ورود به سیستم</h4>
-                    </div>
-                </div>
-            </div>
+        <div class="card border-radius-1rem">
             <div class="card-body">
-                <div class="kt-login__form">
+                <div class="kt-login__form  ml-3 mr-3">
+                    <div class="text-center pb-8">
+                        <img src="~/image/Logo.jpg" class="mb-4 width-200px" />
+                    </div>
+                    <div>
+                        <h5 class="kt-login__title mb-3">ورود / ثبت نام</h5>
+                    </div>
+
                     <form id="form_login" class="kt-form" asp-action="Login" asp-controller="Account" data-ajax-method="POST"
                           data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
                           data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
                         <div class="form-group">
-                            <label asp-for="MobileNo"></label>
+                            <label>شماره موبایل یا پست الکترونیک خود را وارد نمایید</label>
                             <input asp-for="MobileNo" class="form-control" />
                             <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
                         </div>
-                        @*
-                                <div class="form-group">
-                                    <label asp-for="Username"></label>
-                                    <input asp-for="Username" class="form-control" />
-                                    <span asp-validation-for="Username" class="kt-font-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="Password"></label>
-                                    <input asp-for="Password" class="form-control form-control-last" />
-                                    <span asp-validation-for="Password" class="kt-font-danger"></span>
-                                </div>
-                            <div class="kt-login__extra">
-                                <label class="kt-checkbox">
-                                    <input asp-for="RememberMe" type="checkbox"> مرا بخاطر بسپار
-                                    <span></span>
-                                </label>
-                                <a href="javascript:;" class="float-right" id="kt_login_forgot"><small>رمز خود را فراموش کرده اید؟</small></a>
-                            </div>*@
 
                         <div class="kt-login__actions mt-3">
-                            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info">ورود</button>
+                            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ورود به سرای</button>
                         </div>
 
-                        <div class="kt-login__actions mt-3">
-                            در سرای ثبت نام نکرده اید؟ <a href="/Account/Register" class="color-firouzi">ثبت نام</a>
+                        <div class="kt-login__actions mt-3 text-center">
+                            <p>با ورود و ثبت نام در سرای شما شرایط و قوانین استفاده از سرویس های سایت سرای و قوانین حریم خصوصی آن را می پزیرند. </p>
                         </div>
                     </form>
                 </div>

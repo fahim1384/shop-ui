@@ -9,6 +9,10 @@
     {
         @await Html.PartialAsync("_Login.cshtml", Model.ShortLoginModel);
     }
+    else if (Model.DefaultTab == "verifyCode")
+    {
+        @await Html.PartialAsync("_VerifyCode.cshtml", Model.AcceptCodeModel);
+    }
     else if (Model.DefaultTab == "register")
     {
         @await Html.PartialAsync("_Register.cshtml", Model.RegisterModel);
@@ -28,6 +32,10 @@
 
         function onSigninSuccess(result) {
             alert("10");
+
+            window.location = "/Account/verifyCode";
+
+
             if (result.Success) {
                 window.location = result.Data;
             }

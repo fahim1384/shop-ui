@@ -141,6 +141,18 @@ namespace HandiCrafts.Web.Controllers
 
         }
 
+        public IActionResult VerifyCode()
+        {
+
+            return View("LoginContainer", new LoginContainerModel
+            {
+                RegisterModel = new RegisterModel
+                {
+                },
+                DefaultTab = "verifyCode"
+            });
+        }
+
         public IActionResult Register()
         {
 

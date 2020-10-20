@@ -6,6 +6,7 @@ namespace HandiCrafts.Web.Models.Account
     public class LoginContainerModel
     {
         public ShortLoginModel ShortLoginModel { get; set; }
+        public AcceptCodeModel AcceptCodeModel { get; set; }
         public LoginModel LoginModel { get; set; }
         public RegisterModel RegisterModel { get; set; }
         public ForgotPasswordModel ForgotPasswordModel { get; set; }
@@ -36,5 +37,14 @@ namespace HandiCrafts.Web.Models.Account
         [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         [RegularExpression("09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "شماره موبایل معتبر نمی باشد")]
         public string MobileNo { get; set; }
+    }
+
+    public class AcceptCodeModel
+    {
+        [Display(Name = "کد تایید")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(6, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [RegularExpression("[0-9]{6}", ErrorMessage = "کد تایید معتبر نمی باشد")]
+        public string AcceptCode { get; set; }
     }
 }

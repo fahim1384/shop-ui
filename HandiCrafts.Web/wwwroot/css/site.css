@@ -108,7 +108,7 @@ body {
 }
 
 .cyan {
-    color: #2fdbf7 !important;
+    color: /*#2fdbf7*/ #0aa8b9 !important;
 }
 
 .custome-muted-header {
@@ -349,6 +349,14 @@ footer .card {
     border-radius: 30px;
 }
 
+.width-18px {
+    width: 18px !important;
+}
+
+.width-24px {
+    width: 24px !important;
+}
+
 .width-75px {
     width: 75px !important;
 }
@@ -367,6 +375,10 @@ footer .card {
 
 .width-50px {
     width: 50px !important;
+}
+
+.width-200px {
+    width: 200px;
 }
 
 .spinner {
@@ -1334,4 +1346,36 @@ p {
 
 .btn-link {
     color: #0aa8b9;
+}
+
+input[name=quantity].form-control:disabled, input[name=quantity].form-control[readonly] {
+    background-color: #ffffff;
+}
+
+a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
+    cursor: pointer;
+}
+
+/*  btn, form-control   */
+.form-control {
+    height: calc(2.25rem + 10px);
+    padding: .375rem .75rem;
+    border-radius: .85rem;
+}
+
+.btn-main {
+    padding: .675rem .75rem;
+    border-radius: .85rem;
+}
+
+.border-radius-1rem {
+    border-radius: 1rem;
+}
+
+.max-width-50px {
+    max-width: 50px;
+}
+
+.font-weight-600 {
+    font-weight: 600;
 }
