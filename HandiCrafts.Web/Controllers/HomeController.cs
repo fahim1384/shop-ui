@@ -17,13 +17,13 @@ using System.Threading;
 
 namespace HandiCrafts.Web.Controllers
 {
-    public class HomeController :Controller
+    public class HomeController : Controller
     {
         //private readonly ILogger<HomeController> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
 
         public HomeController(/*ILogger<HomeController> logger, IStringLocalizer<SharedResource> localizer, IMapper mapper, */IHttpClientFactory httpClientFactory) //:
-            /*base(logger, localizer, mapper)*/
+        /*base(logger, localizer, mapper)*/
         {
             //_logger = logger;
             _httpClientFactory = httpClientFactory;
@@ -37,8 +37,14 @@ namespace HandiCrafts.Web.Controllers
 
             //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
 
-            HandiCrafts.Web.BpService.Client client = new BpService.Client(BaseUrl, httpClient);
-            
+            /*Client client = new Client(BaseUrl, httpClient);
+
+            client.Login(new UserLoginModel()
+            {
+                Username = "",
+                Password = ""
+            });*/
+
             //using (var httpClient2 = new HttpClient())
             //{
             //    //var contactsClient = new ContactsClient(httpClient2);

@@ -161,8 +161,8 @@ body {
     }
 
 .shopping-thumbnail .caption {
-    display: none;
-    margin-top: -41px;
+    /*display: none;
+    margin-top: -41px;*/
 }
 
     .shopping-thumbnail .caption p {
@@ -289,7 +289,7 @@ footer .card {
     }
 
 .frmSearchKala a {
-    border-radius: 0 3px 3px
+    border-radius: 0 8px 8px
 }
 
     .frmSearchKala a i {
@@ -379,6 +379,10 @@ footer .card {
 
 .width-200px {
     width: 200px;
+}
+
+.width-150px {
+    width: 150px;
 }
 
 .spinner {
@@ -1254,12 +1258,14 @@ ul.firoozi-desc li::before {
     right: 0;
     top: 50%;
 }
+
 .slider-banner-wrapper:hover a::before, .blog-hm-wrapper:hover .blog-img > a::before {
     left: 0;
     opacity: 0;
     right: 0;
     transition: all 900ms ease-in 0s;
 }
+
 .slider-banner-wrapper:hover a::after, .blog-hm-wrapper:hover .blog-img > a::after {
     bottom: 0;
     opacity: 0;
@@ -1277,6 +1283,7 @@ ul.firoozi-desc li::before {
     right: 0;
     top: 50%;
 }
+
 .slider-banner-wrapper > a::before, .blog-img > a::before {
     background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0;
     bottom: 0;
@@ -1304,6 +1311,7 @@ ul.firoozi-desc li::before {
     overflow: hidden;
     z-index: 99;
 }
+
 a.cr-btn b,
 button.cr-btn b {
     background: rgba(25, 25, 25, 1) none repeat scroll 0 0;
@@ -1378,4 +1386,20 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
 
 .font-weight-600 {
     font-weight: 600;
+}
+
+.shopping-thumbnail:hover .caption {
+    bottom: 32%;
+    opacity: 1;
+}
+
+.caption {
+    bottom: 0%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    transition: all 0.6s ease 0s;
+    width: 100%
 }

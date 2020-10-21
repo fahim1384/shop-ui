@@ -3,7 +3,7 @@
   "defaultVariables": null,
   "swaggerGenerator": {
     "fromSwagger": {
-      "url": "http://bp.handcraft.local/swagger/v1/swagger.json",
+      "url": "https://service.tabrizhandicrafts.com/swagger/v1/swagger.json",
       "output": "BpService.nswag.json"
     }
   },

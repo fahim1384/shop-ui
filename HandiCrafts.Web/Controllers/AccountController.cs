@@ -83,25 +83,7 @@ namespace HandiCrafts.Web.Controllers
                     model.ReturnUrl = null;
                 }
 
-                //if (!await IsReCaptchaPassedAsync(Request.Form["g-recaptcha-response"], _configuration["GoogleReCaptcha:secret"], Request))
-                //{
-                //    return Error<string>(null, Localizer["msg.checkRecaptcha"].Value);
-                //}
-
-                HttpClient httpClient = new HttpClient();
-
-                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
-
-                //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
-
-                HandiCrafts.Web.AuthService.Client client = new AuthService.Client(BaseUrl, httpClient);
-
-                /*client.Login(new AuthService.UserLoginModel()
-                 {
-                     Username = model.Username,
-                     Password = model.Password
-                 });*/
-                                
+                                               
 
                 if (model.Username != "148272579" || model.Password != "123456")
                 {
