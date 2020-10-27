@@ -12,21 +12,21 @@ namespace HandiCrafts.Web.Infrastructure.Security
 {
     public class UserManager : UserManager<User>
     {
-        private readonly AppDbContext _context;
+        //private readonly AppDbContext _context;
         private readonly RoleManager<Role> _roleManager;
         private readonly SignInManager _signInManager;
         public UserManager(IUserStore<User> store, IOptions<IdentityOptions> optionsAccessor,
             IPasswordHasher<User> passwordHasher, IEnumerable<IUserValidator<User>> userValidators,
             IEnumerable<IPasswordValidator<User>> passwordValidators, ILookupNormalizer keyNormalizer,
             IdentityErrorDescriber errors, IServiceProvider services, ILogger<UserManager<User>> logger,
-            RoleManager<Role> roleManager, SignInManager signInManager, AppDbContext context
+            RoleManager<Role> roleManager, SignInManager signInManager/*, AppDbContext context*/
             ) :
 
             base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
         {
             _roleManager = roleManager;
             _signInManager = signInManager;
-            _context = context;
+            //_context = context;
         }
 
         public async Task<IdentityResult> Insert(User user, string password, List<string> roleNames)
@@ -142,7 +142,7 @@ namespace HandiCrafts.Web.Infrastructure.Security
 
     }
 
-    public class AppDbContext :
+    /*public class AppDbContext :
     Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<
         User,
         Role,
@@ -157,6 +157,6 @@ namespace HandiCrafts.Web.Infrastructure.Security
             : base(options)
         {
         }
-    }
+    }*/
 
 }

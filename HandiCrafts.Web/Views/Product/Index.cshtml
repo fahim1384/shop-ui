@@ -1,11 +1,14 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = ViewData["BreadcrumbNode"];
 }
 @section Styles{
 
 }
 
+<div class="col">
+    <breadcrumb></breadcrumb>
+</div>
 
 <section>
     <div class="">
@@ -46,6 +49,33 @@
                                 <span class="card-title cyan">حکاکی روی فلز</span>
                             </div>
                         </div>
+                        <div class="row0 mt-20">
+                            <div class="col col-12 d-flex">
+                                <div class="d-inline ml-10 mt-5px color-black">انتخاب رنگ:</div>
+                                <div class="d-inline">
+                                    <ul class="list-unstyled color-product-list d-inline-block m-0">
+                                        <li><a class="color-product-a active"><div><div class="circle-color-product cyan"></div> فیروزه ای</div></a></li>
+                                        <li><a class="color-product-a"><div><div class="circle-color-product red"></div> قرمز</div></a></li>
+                                        <li><a class="color-product-a"><div><div class="circle-color-product bg-warning"></div> قهوه ای</div></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row0 m-0">
+                            <div class="col col-12 d-flex">
+                                <div class="d-inline ml-10 mt-5px color-black">بسته بندی:</div>
+                                <div class="d-inline">
+                                    <div class="form-check form-check-inline package-type-radio-box active">
+                                        <input class="form-check-input" type="radio" name="packageType" value="1" checked>
+                                        <label class="form-check-label" for="inlineRadio1"> عادی</label>
+                                    </div>
+                                    <div class="form-check form-check-inline package-type-radio-box">
+                                        <input class="form-check-input" type="radio" name="packageType" value="2">
+                                        <label class="form-check-label" for="inlineRadio1"> ویژه</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row m-0 mt-5">
                             <div class="col col-12 m-0">
                                 <span class="card-title pricing-card-title font-weight-bold">مشخصات محصول</span>
@@ -73,10 +103,10 @@
                                 <div class="d-flex justify-content-between align-items-center custome-muted-header">
                                     <form class="form-inline mt-2" dir="rtl">
                                         @*<div class="spinner border-radius-5">
-                                                <a name="beforeAddtocartPlus"><span class="fa fa-plus"></span></a>
-                                                <input type="text" name="quantity" value="1" class="form-control width-40px border-0" readonly>
-                                                <a name="beforeAddtocartMinus"><span class="fa fa-minus"></span></a>
-                                            </div>*@
+                            <a name="beforeAddtocartPlus"><span class="fa fa-plus"></span></a>
+                            <input type="text" name="quantity" value="1" class="form-control width-40px border-0" readonly>
+                            <a name="beforeAddtocartMinus"><span class="fa fa-minus"></span></a>
+                        </div>*@
                                         <button data-name="مینا کاری 1" data-price="100" class="add-to-cart btn btn-info mx-1 my-sm-0" type="button">افزودن به سبد خرید</button>
 
                                         <div class="shared-box">
@@ -245,5 +275,15 @@
             else
                 $("input[name='quantity']").val(parseInt(cval) - 1);
         });*/
+
+        $(".color-product-a").on("click", function () {
+            $(".color-product-a").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $("input[name=packageType]").on("click", function () {
+            $(".package-type-radio-box").removeClass("active");
+            $(this).parent("div.package-type-radio-box").addClass("active");
+        });
     </script>
 }

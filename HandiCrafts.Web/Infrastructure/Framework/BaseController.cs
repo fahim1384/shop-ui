@@ -8,6 +8,7 @@ using AutoMapper;
 using HandiCrafts.Core.Exceptions;
 using HandiCrafts.Web.Infrastructure.Security;
 using HandiCrafts.Web.Interfaces;
+using HandiCrafts.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;

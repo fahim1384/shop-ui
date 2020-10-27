@@ -30,6 +30,48 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        //  دسته بندی ها با زیر مجموعه
+        let megaMenuData = () => {
+            $.ajax({
+                type: 'POST',
+                url: "/Home/GetCatProductList_UI",
+
+                success: function (result) {
+                    $(".megacontent").html('');
+                    var megacontent = $(".megacontent");
+                    $.each(result.data.objList, function (e, v) {
+                        var child = "";
+                        if (v.inverseP.length > 0) {
+                            child = `<ul class="list-unstyled">`;
+                            $.each(v.inverseP, function (e2, v2) {
+                                child += `<li><a href="${v2.url}">${v2.name}</a></li>`;
+                            });
+                            child += "</ul>";
+
+                            megacontent.append(`<div class="col-md-3">
+                                <div class="col-megamenu">
+                                    <h6 class="title">${v.name}</h6>${child}
+                                </div>
+                            </div`);
+
+                        }
+                        else {
+                            megacontent.append(`<div class="col-md-3">
+                                <div class="col-megamenu">
+                                    <h6 class="title">${v.name}</h6>
+                                </div>
+                            </div`);
+                        }
+                    });
+                }
+            });
+        };
+
+        //============
+        megaMenuData();
+
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -7,52 +7,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HandiCrafts.Web.Models;
 using System.Net.Http;
-using HandiCrafts.Web.Infrastructure.Security;
-using HandiCrafts.Web.Infrastructure.Framework;
-using Microsoft.AspNetCore.Mvc.Localization;
 using HandiCrafts.Web.Interfaces;
 using AutoMapper;
 using Microsoft.Extensions.Localization;
 using System.Threading;
+using SmartBreadcrumbs.Attributes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace HandiCrafts.Web.Controllers
 {
-    public class HomeController : Controller
+    [DefaultBreadcrumb("سرای")]
+    public class HomeController : BasePublicController
     {
-        //private readonly ILogger<HomeController> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
+        //private readonly GetCatProductListClient _client;
 
-        public HomeController(/*ILogger<HomeController> logger, IStringLocalizer<SharedResource> localizer, IMapper mapper, */IHttpClientFactory httpClientFactory) //:
-        /*base(logger, localizer, mapper)*/
+        public HomeController(ILogger<HomeController> logger, IStringLocalizer<SharedResource> localizer, IMapper mapper, IHttpClientFactory httpClientFactory/*, GetCatProductListClient client*/) :
+        base(logger, localizer, mapper)
         {
-            //_logger = logger;
             _httpClientFactory = httpClientFactory;
+            //_client = client;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            HttpClient httpClient = new HttpClient();
-
-            string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
-
-            //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
-
-            /*Client client = new Client(BaseUrl, httpClient);
-
-            client.Login(new UserLoginModel()
-            {
-                Username = "",
-                Password = ""
-            });*/
-
-            //using (var httpClient2 = new HttpClient())
-            //{
-            //    //var contactsClient = new ContactsClient(httpClient2);
-            //    //var contacts = await contactsClient.GetContactsAsync();
-            //    client.GetProductById(10);
-            //}
-            //return Success(message: "داده ها ارسال شد");
-
             return View();
         }
 
@@ -67,7 +46,8 @@ namespace HandiCrafts.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        /*public Task<DefaultResponseState> GetSliderByPlaceCode(long slideId = 1)
+        [HttpPost]
+        public Task<ResponseState<CatProductListResult>> GetCatProductList_UI()
         {
             return TryCatch(async () =>
             {
@@ -75,17 +55,25 @@ namespace HandiCrafts.Web.Controllers
 
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+                GetCatProductListClient client = new GetCatProductListClient(BaseUrl, httpClient);
 
-                HandiCrafts.Web.Client client = new Client(BaseUrl);
+                var result = await client.UIAsync();
 
-                await client.GetSliderByPlaceCodeAsync(slideId, CancellationToken.None);
+                if (result.ResultCode != 200)
+                    return Error<CatProductListResult>(null, message: result.ResultMessage);
 
-                return Success(message: "داده ها ارسال شد");
+                return Success(data: result, message: result.ResultMessage);
+
             });
         }
 
-        public Task<DefaultResponseState> GetProductById(long productId = 10)
+        /// <summary>
+        /// اسلایدرهای صفحه اصلی
+        /// </summary>
+        /// <param name="sliderPlaceCode"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<SliderDtoListResult>> GetSliderByPlaceCode_UI(long sliderPlaceCode)
         {
             return TryCatch(async () =>
             {
@@ -93,15 +81,264 @@ namespace HandiCrafts.Web.Controllers
 
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+                GetSliderByPlaceCodeClient client = new GetSliderByPlaceCodeClient(BaseUrl, httpClient);
 
-                HandiCrafts.Web.Client client = new Client(BaseUrl);
+                var result = await client.UIAsync(sliderPlaceCode);
 
-                var d = client.GetProductByIdAsync(productId);
-                d.GetAwaiter().GetResult();
+                if (result.ResultCode != 200)
+                    return Error<SliderDtoListResult>(null, message: result.ResultMessage);
 
-                return Success(message: "داده ها ارسال شد");
+                return Success(data: result, message: result.ResultMessage);
+
             });
-        }*/
+        }
+
+        /// <summary>
+        /// 5 دسته برتر
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ICollection<CatProduct>>> GetTopCatProductList_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetTopCatProductListClient client = new GetTopCatProductListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<ICollection<CatProduct>>(null, message: result.ResultMessage);
+
+                return Success(data: result.ObjList, message: result.ResultMessage);
+
+            });
+        }
+
+        /// <summary>
+        /// لیست نظرات فاخر
+        /// </summary>
+        /// <returns></returns>
+        /// [HttpPost]
+        [HttpPost]
+        public Task<ResponseState<FamousCommentsDtoListResult>> GetFamousCommentsList_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetFamousCommentsListClient client = new GetFamousCommentsListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<FamousCommentsDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// لیست کشورها
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<LocationListResult>> GetCountryList_UI()
+        {
+            return TryCatch(async () =>
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetCountryListClient client = new GetCountryListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<LocationListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+
+        }
+
+        /// <summary>
+        /// لیست استان ها
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<LocationListResult>> GetProvinceList_UI(int countryId)
+        {
+            return TryCatch(async () =>
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProvinceListClient client = new GetProvinceListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(countryId);
+
+                if (result.ResultCode != 200)
+                    return Error<LocationListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        /// <summary>
+        /// لیست شهر ها
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<LocationListResult>> GetCityList_UI(int provinceId)
+        {
+            return TryCatch(async () =>
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetCityListClient client = new GetCityListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(provinceId);
+
+                if (result.ResultCode != 200)
+                    return Error<LocationListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        /// <summary>
+        /// لیست انواع بسته بندی محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<DefaultResponseState> GetPackingTypeById_UI(long packingtypeId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetPackingTypeByIdClient client = new GetPackingTypeByIdClient(BaseUrl, httpClient);
+
+                await client.UIAsync(packingtypeId);
+
+                return Success(message: "عملیات با موفقیت انجام شد");
+            });
+        }
+
+        /// <summary>
+        /// لیست انواع بسته بندی
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<PackingTypeDtoListResult>> GetPackingTypeList_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetPackingTypeListClient client = new GetPackingTypeListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<PackingTypeDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// مهر اصالت
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> GetProductList_HaveMelliCode_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                HaveMelliCodeClient client = new HaveMelliCodeClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data:result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// جدیدترین محصولات
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<JsonResult> GetProductList_latest_UI()
+        {
+            //return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                LatestClient client = new LatestClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                //if (result.ResultCode != 200)
+                //    return Error<ProductListResult>(null, message: result.ResultMessage);
+
+                //return Success(data: result, message: result.ResultMessage);
+
+                return Json(result);
+            }//);
+        }
+
+        /// <summary>
+        /// جدیدترین محصولات
+        /// </summary>
+        /// <returns></returns>
+        //[HttpPost]
+        //public Task<ResponseState<ProductListResult>> GetProductList_latest_UI(long packingtypeId)
+        //{
+        //    return TryCatch(async () =>
+        //    {
+        //        HttpClient httpClient = new HttpClient();
+
+        //        string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+        //        ProductListResult client = new LatestClient(BaseUrl, httpClient);
+
+        //        var result = await client.UIAsync();
+
+        //        if (result.ResultCode != 200)
+        //            return Error<ProductListResult>(null, message: result.ResultMessage);
+
+        //        return Success(data: result, message: result.ResultMessage);
+        //    });
+        //}
     }
 }

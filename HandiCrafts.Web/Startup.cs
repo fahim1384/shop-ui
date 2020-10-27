@@ -23,6 +23,8 @@ using HandiCrafts.Web.Infrastructure;
 using HandiCrafts.Core.Domain.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using AutoMapper;
+using SmartBreadcrumbs.Extensions;
+//using HandiCrafts.Web.BpService;
 
 namespace HandiCrafts.Web
 {
@@ -73,6 +75,16 @@ namespace HandiCrafts.Web
 
             new DependencyRegistrar().Register(services);
 
+            services.AddBreadcrumbs(GetType().Assembly, options =>
+            {
+                options.TagName = "nav";
+                options.TagClasses = "";
+                options.OlClasses = "breadcrumb";
+                options.LiClasses = "breadcrumb-item";
+                options.ActiveLiClasses = "breadcrumb-item active";
+                options.SeparatorElement = "<li class=\"separator\">/</li>";
+            });
+
             services.AddHttpClient();
             services.AddHttpContextAccessor();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -89,6 +101,11 @@ namespace HandiCrafts.Web
 
                 //...
             });
+
+            /*services.AddHttpClient<BpService.GetCatProductListClient, GetCatProductListClient>((provider, client) =>
+            {
+                client.BaseAddress = new System.Uri("https://service.tabrizhandicrafts.com/");
+            });*/
 
 
             services.AddAuthentication(configureOptions =>

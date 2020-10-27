@@ -9,15 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using HandiCrafts.Core.Domain.Users;
-using HandiCrafts.Web.Infrastructure.Security;
 using HandiCrafts.Web.Interfaces;
+using HandiCrafts.Web.Models;
 using HandiCrafts.Web.Models.Account;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Namotion.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -83,7 +82,17 @@ namespace HandiCrafts.Web.Controllers
                     model.ReturnUrl = null;
                 }
 
-                                               
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                //Client client = new Client(BaseUrl, httpClient);
+
+                //client.Login(new UserLoginModel()
+                //{
+                //    Username = model.Username,
+                //    Password = model.Password
+                //});
 
                 if (model.Username != "148272579" || model.Password != "123456")
                 {

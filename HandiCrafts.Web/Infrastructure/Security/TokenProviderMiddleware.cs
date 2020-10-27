@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using HandiCrafts.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -142,26 +143,4 @@ namespace HandiCrafts.Web.Infrastructure.Security
     }
 
 
-    public class DefaultResponseState : ResponseState<int>
-    {
-    }
-
-    public class ResponseState<T>
-    {
-        public bool Success { set; get; }
-
-        public string Message { set; get; }
-
-        public ResponseStateMessageTypes MessageType { set; get; }
-
-        public T Data { get; set; }
-    }
-
-    public enum ResponseStateMessageTypes
-    {
-        Info = 0,
-        Error = 1,
-        Warning = 2,
-        Success = 10
-    }
 }
