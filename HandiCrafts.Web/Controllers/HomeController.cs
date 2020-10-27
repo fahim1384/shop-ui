@@ -296,9 +296,9 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<JsonResult> GetProductList_latest_UI()
+        public Task<ResponseState<ProductDtoListResult>> GetProductList_latest_UI()
         {
-            //return TryCatch(async () =>
+            return TryCatch(async () =>
             {
                 HttpClient httpClient = new HttpClient();
 
@@ -308,13 +308,13 @@ namespace HandiCrafts.Web.Controllers
 
                 var result = await client.UIAsync();
 
-                //if (result.ResultCode != 200)
-                //    return Error<ProductListResult>(null, message: result.ResultMessage);
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
 
-                //return Success(data: result, message: result.ResultMessage);
+                return Success(data: result, message: result.ResultMessage);
 
-                return Json(result);
-            }//);
+                //return Json(result);
+            });
         }
 
         /// <summary>

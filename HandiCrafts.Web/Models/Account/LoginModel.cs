@@ -39,6 +39,24 @@ namespace HandiCrafts.Web.Models.Account
         public string MobileNo { get; set; }
     }
 
+    public class ShortRegisterModel
+    {
+        [Required(ErrorMessage = "فیلد اجباری")]
+        [Display(Name = "کد کاربر")]
+        public long UserId { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "رمز عبور اجباری است")]
+        [Display(Name = "رمزعبور")]
+        public string Password { get; set; }
+
+        [Display(Name = "شماره موبایل")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [RegularExpression("09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "شماره موبایل معتبر نمی باشد")]
+        public string MobileNo { get; set; }
+    }
+
     public class AcceptCodeModel
     {
         [Display(Name = "کد تایید")]

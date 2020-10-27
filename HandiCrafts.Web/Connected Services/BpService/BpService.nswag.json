@@ -17,7 +17,6 @@
         "tags": [
           "Account"
         ],
-        "operationId": "Login",
         "requestBody": {
           "content": {
             "application/json": {
@@ -50,7 +49,6 @@
           "Account"
         ],
         "summary": "ورود مشتری به سیستم",
-        "operationId": "CustomerLogin_UI",
         "requestBody": {
           "content": {
             "application/json": {
@@ -76,17 +74,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/LoginResultDto"
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LoginResultDto"
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LoginResultDto"
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
                 }
               }
             }
@@ -94,34 +92,98 @@
         }
       }
     },
-    "/api/Account/CustomerRegister": {
+    "/api/Account/CustomerRegister_UI": {
       "post": {
         "tags": [
           "Account"
         ],
-        "operationId": "CustomerRegister",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerRegisterDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerRegisterDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CustomerRegisterDto"
+        "summary": "دریافت شماره موبایل برای بررسی موجود بودن در سامانه",
+        "parameters": [
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
               }
             }
           }
-        },
+        }
+      }
+    },
+    "/api/Account/CustomerRegister_GetPassword_UI": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "دریافت پسورد جهت آپدیت و تکمیال ثبت نام",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              }
+            }
           }
         }
       }
@@ -131,7 +193,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "InserCatProduct",
         "requestBody": {
           "content": {
             "application/json": {
@@ -163,7 +224,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "UpdateCatProduct",
         "requestBody": {
           "content": {
             "application/json": {
@@ -195,7 +255,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "DeleteCatProduct",
         "parameters": [
           {
             "name": "catProductId",
@@ -218,7 +277,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "GetCatProductById",
         "parameters": [
           {
             "name": "catProductId",
@@ -241,7 +299,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "GetCatProductFullInfoById",
         "parameters": [
           {
             "name": "catProductId",
@@ -264,7 +321,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "GetCatProductList",
         "responses": {
           "200": {
             "description": "Success"
@@ -277,7 +333,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "GetTopCatProductList",
         "responses": {
           "200": {
             "description": "Success"
@@ -290,7 +345,6 @@
         "tags": [
           "CatProduct"
         ],
-        "operationId": "GetCatProductListByParentId",
         "parameters": [
           {
             "name": "catId",
@@ -314,24 +368,23 @@
           "CatProduct"
         ],
         "summary": "لیست دسته بندی محصولات به همراه دسته بندی های زیر مجموعه",
-        "operationId": "GetCatProductList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatProduct"
+                  "$ref": "#/components/schemas/CatProductListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatProduct"
+                  "$ref": "#/components/schemas/CatProductListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatProduct"
+                  "$ref": "#/components/schemas/CatProductListResult"
                 }
               }
             }
@@ -345,24 +398,23 @@
           "CatProduct"
         ],
         "summary": "لیست 5 دسته بندی برتر که بیشترین محصول را دارند",
-        "operationId": "GetTopCatProductList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatProduct"
+                  "$ref": "#/components/schemas/CatProductListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatProduct"
+                  "$ref": "#/components/schemas/CatProductListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatProduct"
+                  "$ref": "#/components/schemas/CatProductListResult"
                 }
               }
             }
@@ -375,7 +427,6 @@
         "tags": [
           "CatProductParameters"
         ],
-        "operationId": "UpdateCatProductParameters",
         "parameters": [
           {
             "name": "catProductId",
@@ -391,31 +442,31 @@
             "application/json": {
               "schema": {
                 "type": "array",
-                "nullable": true,
                 "items": {
                   "type": "integer",
                   "format": "int64"
-                }
+                },
+                "nullable": true
               }
             },
             "text/json": {
               "schema": {
                 "type": "array",
-                "nullable": true,
                 "items": {
                   "type": "integer",
                   "format": "int64"
-                }
+                },
+                "nullable": true
               }
             },
             "application/*+json": {
               "schema": {
                 "type": "array",
-                "nullable": true,
                 "items": {
                   "type": "integer",
                   "format": "int64"
-                }
+                },
+                "nullable": true
               }
             }
           }
@@ -432,7 +483,6 @@
         "tags": [
           "CatProductParameters"
         ],
-        "operationId": "GetCatProductParametersByCatId",
         "parameters": [
           {
             "name": "catProductId",
@@ -455,7 +505,6 @@
         "tags": [
           "CatProductParameters"
         ],
-        "operationId": "GetCatProductParametersTreeByCatId",
         "parameters": [
           {
             "name": "catProductId",
@@ -478,7 +527,6 @@
         "tags": [
           "Color"
         ],
-        "operationId": "GetColorList",
         "responses": {
           "200": {
             "description": "Success"
@@ -491,7 +539,6 @@
         "tags": [
           "Color"
         ],
-        "operationId": "GetColorById",
         "parameters": [
           {
             "name": "colorId",
@@ -514,7 +561,6 @@
         "tags": [
           "Color"
         ],
-        "operationId": "InsertColor",
         "requestBody": {
           "content": {
             "application/json": {
@@ -546,7 +592,6 @@
         "tags": [
           "Color"
         ],
-        "operationId": "UpdateColor",
         "requestBody": {
           "content": {
             "application/json": {
@@ -578,7 +623,6 @@
         "tags": [
           "Color"
         ],
-        "operationId": "DeleteColor",
         "parameters": [
           {
             "name": "colorId",
@@ -601,7 +645,6 @@
         "tags": [
           "Color"
         ],
-        "operationId": "DeActiveColor",
         "parameters": [
           {
             "name": "id",
@@ -625,24 +668,23 @@
           "Color"
         ],
         "summary": "لیست رنگ ها",
-        "operationId": "GetColorList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ColorDto"
+                  "$ref": "#/components/schemas/ColorDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ColorDto"
+                  "$ref": "#/components/schemas/ColorDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ColorDto"
+                  "$ref": "#/components/schemas/ColorDtoListResult"
                 }
               }
             }
@@ -655,7 +697,6 @@
         "tags": [
           "FamousComments"
         ],
-        "operationId": "InsertFamousComments",
         "responses": {
           "200": {
             "description": "Success"
@@ -668,7 +709,6 @@
         "tags": [
           "FamousComments"
         ],
-        "operationId": "DeleteFamousComments",
         "parameters": [
           {
             "name": "famousCommentId",
@@ -691,7 +731,6 @@
         "tags": [
           "FamousComments"
         ],
-        "operationId": "GetFamousCommentsById",
         "parameters": [
           {
             "name": "famousCommentId",
@@ -714,7 +753,6 @@
         "tags": [
           "FamousComments"
         ],
-        "operationId": "GetFamousCommentsList",
         "responses": {
           "200": {
             "description": "Success"
@@ -728,24 +766,23 @@
           "FamousComments"
         ],
         "summary": "لیست نظرات فاخر",
-        "operationId": "GetFamousCommentsList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/FamousCommentsDto"
+                  "$ref": "#/components/schemas/FamousCommentsDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FamousCommentsDto"
+                  "$ref": "#/components/schemas/FamousCommentsDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FamousCommentsDto"
+                  "$ref": "#/components/schemas/FamousCommentsDtoListResult"
                 }
               }
             }
@@ -759,24 +796,23 @@
           "Location"
         ],
         "summary": "لیست کشورها",
-        "operationId": "GetCountryList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               }
             }
@@ -790,7 +826,6 @@
           "Location"
         ],
         "summary": "لیست استان ها براساس آیدی کشور",
-        "operationId": "GetProvinceList_UI",
         "parameters": [
           {
             "name": "countryId",
@@ -808,17 +843,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               }
             }
@@ -832,7 +867,6 @@
           "Location"
         ],
         "summary": "لیست شهرها براساس آیدی استان",
-        "operationId": "GetCityList_UI",
         "parameters": [
           {
             "name": "provinceId",
@@ -849,17 +883,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationListResult"
                 }
               }
             }
@@ -872,7 +906,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "GetPackingTypeList",
         "responses": {
           "200": {
             "description": "Success"
@@ -885,7 +918,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "GetPackingTypeById",
         "parameters": [
           {
             "name": "packingtypeId",
@@ -908,7 +940,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "InsertPackingType",
         "requestBody": {
           "content": {
             "application/json": {
@@ -940,7 +971,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "UpdatePackingType",
         "requestBody": {
           "content": {
             "application/json": {
@@ -972,7 +1002,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "DeletePackingType",
         "parameters": [
           {
             "name": "packingtypeId",
@@ -995,7 +1024,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "GetPackingTypeById_UI",
         "parameters": [
           {
             "name": "packingtypeId",
@@ -1008,7 +1036,24 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackingTypeDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackingTypeDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackingTypeDtoSingleResult"
+                }
+              }
+            }
           }
         }
       }
@@ -1018,7 +1063,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "UploadPackingTypeImage",
         "responses": {
           "200": {
             "description": "Success"
@@ -1031,7 +1075,6 @@
         "tags": [
           "PackingType"
         ],
-        "operationId": "DeletePackingTypeImage",
         "parameters": [
           {
             "name": "packingTypeImageId",
@@ -1055,24 +1098,23 @@
           "PackingType"
         ],
         "summary": "لیست انواع بسته بندی محصول",
-        "operationId": "GetPackingTypeList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PackingTypeDto"
+                  "$ref": "#/components/schemas/PackingTypeDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PackingTypeDto"
+                  "$ref": "#/components/schemas/PackingTypeDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PackingTypeDto"
+                  "$ref": "#/components/schemas/PackingTypeDtoListResult"
                 }
               }
             }
@@ -1085,7 +1127,6 @@
         "tags": [
           "Parameters"
         ],
-        "operationId": "InserParameters",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1117,7 +1158,6 @@
         "tags": [
           "Parameters"
         ],
-        "operationId": "UpdateParameters",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1149,7 +1189,6 @@
         "tags": [
           "Parameters"
         ],
-        "operationId": "DeleteParameters",
         "parameters": [
           {
             "name": "parametersId",
@@ -1172,7 +1211,6 @@
         "tags": [
           "Parameters"
         ],
-        "operationId": "GetParametersById",
         "parameters": [
           {
             "name": "parametersId",
@@ -1195,7 +1233,6 @@
         "tags": [
           "Parameters"
         ],
-        "operationId": "GetParametersList",
         "responses": {
           "200": {
             "description": "Success"
@@ -1208,7 +1245,6 @@
         "tags": [
           "PostType"
         ],
-        "operationId": "GetPostTypeList",
         "responses": {
           "200": {
             "description": "Success"
@@ -1221,7 +1257,6 @@
         "tags": [
           "PostType"
         ],
-        "operationId": "GetPostTypeById",
         "parameters": [
           {
             "name": "postTypeId",
@@ -1244,7 +1279,6 @@
         "tags": [
           "PostType"
         ],
-        "operationId": "InsertPostType",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1276,7 +1310,6 @@
         "tags": [
           "PostType"
         ],
-        "operationId": "UpdatePostType",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1308,7 +1341,6 @@
         "tags": [
           "PostType"
         ],
-        "operationId": "DeletePostType",
         "parameters": [
           {
             "name": "postTypeId",
@@ -1331,7 +1363,6 @@
         "tags": [
           "PostType"
         ],
-        "operationId": "DeActivePostType",
         "parameters": [
           {
             "name": "postTypeId",
@@ -1355,24 +1386,23 @@
           "PostType"
         ],
         "summary": "لیست نوع ارسال محصول",
-        "operationId": "GetPostTypeList_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostTypeDto"
+                  "$ref": "#/components/schemas/PostTypeDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostTypeDto"
+                  "$ref": "#/components/schemas/PostTypeDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostTypeDto"
+                  "$ref": "#/components/schemas/PostTypeDtoListResult"
                 }
               }
             }
@@ -1386,7 +1416,6 @@
           "PostType"
         ],
         "summary": "نوع ارسال محصول براساس آیدی",
-        "operationId": "GetPostTypeById_UI",
         "parameters": [
           {
             "name": "postTypeId",
@@ -1403,17 +1432,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostTypeDto"
+                  "$ref": "#/components/schemas/PostTypeDtoSingleResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostTypeDto"
+                  "$ref": "#/components/schemas/PostTypeDtoSingleResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostTypeDto"
+                  "$ref": "#/components/schemas/PostTypeDtoSingleResult"
                 }
               }
             }
@@ -1426,7 +1455,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "GetProductList",
         "responses": {
           "200": {
             "description": "Success"
@@ -1439,7 +1467,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "GetProductParamList",
         "parameters": [
           {
             "name": "productId",
@@ -1462,34 +1489,33 @@
         "tags": [
           "Product"
         ],
-        "operationId": "UpdateProductParam",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "array",
-                "nullable": true,
                 "items": {
                   "$ref": "#/components/schemas/ProductParamDto"
-                }
+                },
+                "nullable": true
               }
             },
             "text/json": {
               "schema": {
                 "type": "array",
-                "nullable": true,
                 "items": {
                   "$ref": "#/components/schemas/ProductParamDto"
-                }
+                },
+                "nullable": true
               }
             },
             "application/*+json": {
               "schema": {
                 "type": "array",
-                "nullable": true,
                 "items": {
                   "$ref": "#/components/schemas/ProductParamDto"
-                }
+                },
+                "nullable": true
               }
             }
           }
@@ -1506,7 +1532,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "GetProductStatusList",
         "responses": {
           "200": {
             "description": "Success"
@@ -1519,7 +1544,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "InsertProduct",
         "responses": {
           "200": {
             "description": "Success"
@@ -1532,7 +1556,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "EditProduct",
         "parameters": [
           {
             "name": "productId",
@@ -1555,7 +1578,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "DeleteProduct",
         "parameters": [
           {
             "name": "productId",
@@ -1578,7 +1600,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "DeActiveProduct",
         "parameters": [
           {
             "name": "productId",
@@ -1601,7 +1622,6 @@
         "tags": [
           "Product"
         ],
-        "operationId": "GetProductById",
         "parameters": [
           {
             "name": "productId",
@@ -1625,24 +1645,23 @@
           "Product"
         ],
         "summary": "لیست 10 محصول آخر که نشان ملی دارند",
-        "operationId": "GetProductList_HaveMelliCode_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDtoListResult"
                 }
               }
             }
@@ -1656,24 +1675,23 @@
           "Product"
         ],
         "summary": "لیست 10 محصول آخر ثبت شده",
-        "operationId": "GetProductList_latest_UI",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDtoListResult"
                 }
               }
             }
@@ -1687,7 +1705,6 @@
           "Product"
         ],
         "summary": "لیست رنگبندی محصول براساس آیدی محصول",
-        "operationId": "GetProductColorList_UI",
         "parameters": [
           {
             "name": "productId",
@@ -1704,17 +1721,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductColor"
+                  "$ref": "#/components/schemas/ProductColorListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductColor"
+                  "$ref": "#/components/schemas/ProductColorListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductColor"
+                  "$ref": "#/components/schemas/ProductColorListResult"
                 }
               }
             }
@@ -1728,7 +1745,6 @@
           "Product"
         ],
         "summary": "لیست نوع بسته بندی های محصول براساس آیدی محصول",
-        "operationId": "GetProductPackingTypeList_UI",
         "parameters": [
           {
             "name": "productId",
@@ -1745,17 +1761,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductPackingType"
+                  "$ref": "#/components/schemas/ProductPackingTypeListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductPackingType"
+                  "$ref": "#/components/schemas/ProductPackingTypeListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductPackingType"
+                  "$ref": "#/components/schemas/ProductPackingTypeListResult"
                 }
               }
             }
@@ -1769,7 +1785,6 @@
           "Product"
         ],
         "summary": "لیست محصولات مرتبط با محصول براساس آیدی محصول",
-        "operationId": "GetRelatedProductList_UI",
         "parameters": [
           {
             "name": "productId",
@@ -1786,17 +1801,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductListResult"
                 }
               }
             }
@@ -1810,7 +1825,6 @@
           "Product"
         ],
         "summary": "لیست پارامترهای محصول براساس آیدی محصول",
-        "operationId": "GetProductParamList_UI",
         "parameters": [
           {
             "name": "productId",
@@ -1827,17 +1841,167 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductParamDto"
+                  "$ref": "#/components/schemas/ProductParamDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductParamDto"
+                  "$ref": "#/components/schemas/ProductParamDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductParamDto"
+                  "$ref": "#/components/schemas/ProductParamDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductListByCatId_UI": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست محصولات  براساس آیدی دسته بندی",
+        "parameters": [
+          {
+            "name": "catProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductList_LastSeen_UI": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست 10 محصولی که اخیرا بازدید شده اند",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductCommentList_UI": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست نظرات درباره محصول براساس آیدی محصول",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCustomerRateDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCustomerRateDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCustomerRateDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductById_UI": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "مشخصات محصول براساس آیدی محصول",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoSingleResult"
                 }
               }
             }
@@ -1850,7 +2014,6 @@
         "tags": [
           "ProductImage"
         ],
-        "operationId": "GetImageListByProductId",
         "parameters": [
           {
             "name": "productId",
@@ -1873,7 +2036,6 @@
         "tags": [
           "ProductImage"
         ],
-        "operationId": "UploadImage",
         "parameters": [
           {
             "name": "productId",
@@ -1912,7 +2074,6 @@
         "tags": [
           "ProductImage"
         ],
-        "operationId": "DeleteProductImage",
         "parameters": [
           {
             "name": "productImageId",
@@ -1936,7 +2097,6 @@
           "ProductImage"
         ],
         "summary": "لیست فایل های محصول براساس آیدی محصول",
-        "operationId": "GetImageListByProductId_UI",
         "parameters": [
           {
             "name": "productId",
@@ -1953,17 +2113,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductImageDto"
+                  "$ref": "#/components/schemas/ProductImageDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductImageDto"
+                  "$ref": "#/components/schemas/ProductImageDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductImageDto"
+                  "$ref": "#/components/schemas/ProductImageDtoListResult"
                 }
               }
             }
@@ -1976,10 +2136,57 @@
         "tags": [
           "Seller"
         ],
-        "operationId": "GetSellerList",
         "responses": {
           "200": {
             "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Account/SellerRegister_UI": {
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              }
+            }
           }
         }
       }
@@ -1989,7 +2196,6 @@
         "tags": [
           "Slider"
         ],
-        "operationId": "InsertSlider",
         "responses": {
           "200": {
             "description": "Success"
@@ -2002,7 +2208,6 @@
         "tags": [
           "Slider"
         ],
-        "operationId": "UpdateSlider",
         "responses": {
           "200": {
             "description": "Success"
@@ -2015,7 +2220,6 @@
         "tags": [
           "Slider"
         ],
-        "operationId": "DeleteSlider",
         "parameters": [
           {
             "name": "sliderId",
@@ -2038,10 +2242,31 @@
         "tags": [
           "Slider"
         ],
-        "operationId": "GetSliderById",
         "parameters": [
           {
             "name": "sliderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Slider/GetSliderList": {
+      "get": {
+        "tags": [
+          "Slider"
+        ],
+        "parameters": [
+          {
+            "name": "sliderPlaceId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -2062,7 +2287,6 @@
           "Slider"
         ],
         "summary": "لیست اسلایدرها براساس آیدی محل اسلایدر",
-        "operationId": "GetSliderByPlaceCode_UI",
         "parameters": [
           {
             "name": "sliderPlaceCode",
@@ -2079,17 +2303,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/SliderDto"
+                  "$ref": "#/components/schemas/SliderDtoListResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SliderDto"
+                  "$ref": "#/components/schemas/SliderDtoListResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SliderDto"
+                  "$ref": "#/components/schemas/SliderDtoListResult"
                 }
               }
             }
@@ -2102,7 +2326,6 @@
         "tags": [
           "SliderPlace"
         ],
-        "operationId": "GetSliderPlaceList",
         "responses": {
           "200": {
             "description": "Success"
@@ -2115,10 +2338,9 @@
         "tags": [
           "SliderPlace"
         ],
-        "operationId": "GetSliderPlaceById",
         "parameters": [
           {
-            "name": "sliderPlceId",
+            "name": "sliderPlaceId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -2138,7 +2360,6 @@
         "tags": [
           "SliderPlace"
         ],
-        "operationId": "InsertSliderPlace",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2170,7 +2391,6 @@
         "tags": [
           "SliderPlace"
         ],
-        "operationId": "UpdateSliderPlace",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2202,10 +2422,9 @@
         "tags": [
           "SliderPlace"
         ],
-        "operationId": "DeleteSliderPlace",
         "parameters": [
           {
-            "name": "sliderPlceId",
+            "name": "sliderPlaceId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -2225,10 +2444,9 @@
         "tags": [
           "SliderPlace"
         ],
-        "operationId": "DeActiveSliderPlace",
         "parameters": [
           {
-            "name": "sliderPlceId",
+            "name": "sliderPlaceId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -2247,12 +2465,11 @@
   "components": {
     "schemas": {
       "UserLoginModel": {
-        "type": "object",
-        "additionalProperties": false,
         "required": [
           "password",
           "username"
         ],
+        "type": "object",
         "properties": {
           "username": {
             "type": "string"
@@ -2261,11 +2478,11 @@
             "type": "string",
             "format": "password"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "LoginResultDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "token": {
             "type": "string",
@@ -2275,40 +2492,54 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
-      "CustomerRegisterDto": {
+      "LoginResultDtoSingleResult": {
         "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "email",
-          "firstName",
-          "hpassword",
-          "lastName",
-          "mobile"
-        ],
         "properties": {
-          "hpassword": {
-            "type": "string"
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
           },
-          "email": {
-            "type": "string"
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
           },
-          "mobile": {
+          "obj": {
+            "$ref": "#/components/schemas/LoginResultDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LongResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCount": {
             "type": "integer",
             "format": "int64"
           },
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
+          "objList": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatProductDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2341,11 +2572,11 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatFrom": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2423,16 +2654,16 @@
           },
           "forms": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Forms"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatRole": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2497,16 +2728,650 @@
           },
           "role": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Role"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "CustomerAddress": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "titel": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "xgps": {
+            "type": "string",
+            "nullable": true
+          },
+          "ygps": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cityId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "tel": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "issureName": {
+            "type": "string",
+            "nullable": true
+          },
+          "issureFamily": {
+            "type": "string",
+            "nullable": true
+          },
+          "issureMelliCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "issureMobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "customerOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PackingTypeImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "packingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "decription": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingType": {
+            "$ref": "#/components/schemas/PackingType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductPackingTypeImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productPackingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "decription": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productPackingType": {
+            "$ref": "#/components/schemas/ProductPackingType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductPackingType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packinggTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packinggType": {
+            "$ref": "#/components/schemas/PackingType"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          },
+          "productPackingTypeImage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductPackingTypeImage"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PackingType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          },
+          "packingTypeImage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PackingTypeImage"
+            },
+            "nullable": true
+          },
+          "productPackingType": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductPackingType"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "isFree": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "apiUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerOrderPayment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerOrderId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "trackingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "transactionPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "systemTraceNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "resNum": {
+            "type": "string",
+            "nullable": true
+          },
+          "terminalNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "refNum": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardPan": {
+            "type": "string",
+            "nullable": true
+          },
+          "traceNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrder": {
+            "$ref": "#/components/schemas/CustomerOrder"
+          },
+          "finalStatus": {
+            "$ref": "#/components/schemas/Status"
+          }
+        },
+        "additionalProperties": false
       },
       "MobileAppType": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2567,23 +3432,23 @@
           },
           "customer": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Customer"
-            }
+            },
+            "nullable": true
           },
           "seller": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Seller"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "SellerAddress": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2678,11 +3543,11 @@
           "seller": {
             "$ref": "#/components/schemas/Seller"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "SellerStatusLog": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2749,17 +3614,22 @@
           "status": {
             "$ref": "#/components/schemas/Status"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Seller": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
             "format": "int64"
           },
           "userId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "realOrLegal": {
             "type": "integer",
             "format": "int64",
             "nullable": true
@@ -2879,32 +3749,716 @@
           "user": {
             "$ref": "#/components/schemas/Users"
           },
+          "customerOrderProduct": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            },
+            "nullable": true
+          },
           "product": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Product"
-            }
+            },
+            "nullable": true
           },
           "sellerAddress": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/SellerAddress"
-            }
+            },
+            "nullable": true
           },
           "sellerStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/SellerStatusLog"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "CustomerOrderProductStatusLog": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerOrderProductId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "statusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "date": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrderProduct": {
+            "$ref": "#/components/schemas/CustomerOrderProduct"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerOrderProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerOrderId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sellerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productIncreasePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productOfferId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productOfferValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "productOfferCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "productOfferPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "sellerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrder": {
+            "$ref": "#/components/schemas/CustomerOrder"
+          },
+          "finalStatus": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          },
+          "seller": {
+            "$ref": "#/components/schemas/Seller"
+          },
+          "customerOrderProductStatusLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProductStatusLog"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerOrderStatusLog": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "statusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrderId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "date": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrder": {
+            "$ref": "#/components/schemas/CustomerOrder"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerOrder": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerAddressId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderProduceTime": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTypePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTrackingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "postServicePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "taxValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "taxPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerValue": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "offerPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "sellerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "sendDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "deliveryDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "customerAddress": {
+            "$ref": "#/components/schemas/CustomerAddress"
+          },
+          "finalStatus": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "packingType": {
+            "$ref": "#/components/schemas/PackingType"
+          },
+          "paymentType": {
+            "$ref": "#/components/schemas/PaymentType"
+          },
+          "postType": {
+            "$ref": "#/components/schemas/PostType"
+          },
+          "customerOrderPayment": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderPayment"
+            },
+            "nullable": true
+          },
+          "customerOrderProduct": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            },
+            "nullable": true
+          },
+          "customerOrderStatusLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderStatusLog"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          },
+          "paymentTypeLocation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentTypeLocation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentTypeLocation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "paymentTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "paymentType": {
+            "$ref": "#/components/schemas/PaymentType"
+          }
+        },
+        "additionalProperties": false
       },
       "Location": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -2989,44 +4543,51 @@
           },
           "customer": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Customer"
-            }
+            },
+            "nullable": true
           },
           "inverseCountry": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Location"
-            }
+            },
+            "nullable": true
           },
           "inverseP": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Location"
-            }
+            },
+            "nullable": true
           },
           "inverseProvince": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Location"
-            }
+            },
+            "nullable": true
+          },
+          "paymentTypeLocation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentTypeLocation"
+            },
+            "nullable": true
           },
           "seller": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Seller"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Work": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3087,128 +4648,16 @@
           },
           "customer": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Customer"
-            }
+            },
+            "nullable": true
           }
-        }
-      },
-      "CustomerAddress": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "customerId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "titel": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "xgps": {
-            "type": "string",
-            "nullable": true
-          },
-          "ygps": {
-            "type": "string",
-            "nullable": true
-          },
-          "provinceId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cityId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "postalCode": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "tel": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "issureName": {
-            "type": "string",
-            "nullable": true
-          },
-          "issureFamily": {
-            "type": "string",
-            "nullable": true
-          },
-          "issureMelliCode": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "issureMobile": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "customer": {
-            "$ref": "#/components/schemas/Customer"
-          }
-        }
+        },
+        "additionalProperties": false
       },
       "CustomerStatusLog": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3275,11 +4724,187 @@
           "status": {
             "$ref": "#/components/schemas/Status"
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "ProductCustomerRateImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productCustomerRateId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fileType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productCustomerRate": {
+            "$ref": "#/components/schemas/ProductCustomerRate"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCustomerRate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pid": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "rate": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "commentDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "commentDesc": {
+            "type": "string",
+            "nullable": true
+          },
+          "likeCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "disLikeCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          },
+          "inverseP": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRate"
+            },
+            "nullable": true
+          },
+          "productCustomerRateImage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRateImage"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "Customer": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3447,30 +5072,44 @@
           },
           "customerAddress": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CustomerAddress"
-            }
+            },
+            "nullable": true
+          },
+          "customerOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
           },
           "customerStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CustomerStatusLog"
-            }
+            },
+            "nullable": true
           },
           "inversePresenterCustomer": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Customer"
-            }
+            },
+            "nullable": true
+          },
+          "productCustomerRate": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRate"
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Employee": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3484,11 +5123,11 @@
           "user": {
             "$ref": "#/components/schemas/Users"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Users": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3567,37 +5206,37 @@
           },
           "customer": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Customer"
-            }
+            },
+            "nullable": true
           },
           "employee": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Employee"
-            }
+            },
+            "nullable": true
           },
           "seller": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Seller"
-            }
+            },
+            "nullable": true
           },
           "userRole": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/UserRole"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "UserRole": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3674,11 +5313,11 @@
           "user": {
             "$ref": "#/components/schemas/Users"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Role": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3771,30 +5410,30 @@
           },
           "inverseP": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Role"
-            }
+            },
+            "nullable": true
           },
           "roleForms": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/RoleForms"
-            }
+            },
+            "nullable": true
           },
           "userRole": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/UserRole"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "RoleFormsApi": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3871,11 +5510,11 @@
           "roleForms": {
             "$ref": "#/components/schemas/RoleForms"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "RoleForms": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -3949,16 +5588,16 @@
           },
           "roleFormsApi": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/RoleFormsApi"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Forms": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4036,23 +5675,23 @@
           },
           "formsApi": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/FormsApi"
-            }
+            },
+            "nullable": true
           },
           "roleForms": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/RoleForms"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "FormsApi": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4121,16 +5760,16 @@
           },
           "roleFormsApi": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/RoleFormsApi"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Api": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4213,16 +5852,16 @@
           },
           "formsApi": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/FormsApi"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatApi": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4287,16 +5926,16 @@
           },
           "api": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Api"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "TablesServiceDiscovery": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4394,11 +6033,11 @@
           "tables": {
             "$ref": "#/components/schemas/Tables"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Systems": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4482,44 +6121,44 @@
           },
           "catApi": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatApi"
-            }
+            },
+            "nullable": true
           },
           "catFrom": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatFrom"
-            }
+            },
+            "nullable": true
           },
           "catRole": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatRole"
-            }
+            },
+            "nullable": true
           },
           "tables": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Tables"
-            }
+            },
+            "nullable": true
           },
           "tablesServiceDiscovery": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/TablesServiceDiscovery"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Tables": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4591,16 +6230,16 @@
           },
           "tablesServiceDiscovery": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/TablesServiceDiscovery"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatStatus": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4661,23 +6300,23 @@
           },
           "status": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Status"
-            }
+            },
+            "nullable": true
           },
           "tables": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Tables"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "StatusType": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4733,16 +6372,16 @@
           },
           "status": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Status"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Color": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4803,16 +6442,16 @@
           },
           "productColor": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductColor"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ProductColorStatusLog": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -4899,11 +6538,11 @@
           "status": {
             "$ref": "#/components/schemas/Status"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ProductColor": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5000,16 +6639,16 @@
           },
           "productColorStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductColorStatusLog"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ProductStatusLog": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5096,11 +6735,11 @@
           "status": {
             "$ref": "#/components/schemas/Status"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Status": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5184,72 +6823,107 @@
           },
           "customer": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Customer"
-            }
+            },
+            "nullable": true
+          },
+          "customerOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrder"
+            },
+            "nullable": true
+          },
+          "customerOrderPayment": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderPayment"
+            },
+            "nullable": true
+          },
+          "customerOrderProduct": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            },
+            "nullable": true
+          },
+          "customerOrderProductStatusLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProductStatusLog"
+            },
+            "nullable": true
+          },
+          "customerOrderStatusLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderStatusLog"
+            },
+            "nullable": true
           },
           "customerStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CustomerStatusLog"
-            }
+            },
+            "nullable": true
           },
           "inverseNextStatus": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Status"
-            }
+            },
+            "nullable": true
           },
           "product": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Product"
-            }
+            },
+            "nullable": true
           },
           "productColor": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductColor"
-            }
+            },
+            "nullable": true
           },
           "productColorStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductColorStatusLog"
-            }
+            },
+            "nullable": true
           },
           "productStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductStatusLog"
-            }
+            },
+            "nullable": true
           },
           "seller": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Seller"
-            }
+            },
+            "nullable": true
           },
           "sellerStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/SellerStatusLog"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Parameters": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5311,23 +6985,23 @@
           },
           "catProductParameters": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatProductParameters"
-            }
+            },
+            "nullable": true
           },
           "inverseP": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Parameters"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatProductParameters": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5391,16 +7065,16 @@
           },
           "productCatProductParameters": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductCatProductParameters"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ProductCatProductParameters": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5466,11 +7140,11 @@
           "product": {
             "$ref": "#/components/schemas/Product"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ProductImage": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5537,312 +7211,11 @@
           "product": {
             "$ref": "#/components/schemas/Product"
           }
-        }
-      },
-      "PackingTypeImage": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "packingTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "decription": {
-            "type": "string",
-            "nullable": true
-          },
-          "imageFileUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packingType": {
-            "$ref": "#/components/schemas/PackingType"
-          }
-        }
-      },
-      "PackingType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "weight": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packingTypeImage": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/PackingTypeImage"
-            }
-          },
-          "productPackingType": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/ProductPackingType"
-            }
-          }
-        }
-      },
-      "ProductPackingTypeImage": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "productPackingTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "decription": {
-            "type": "string",
-            "nullable": true
-          },
-          "imageFileUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "productPackingType": {
-            "$ref": "#/components/schemas/ProductPackingType"
-          }
-        }
-      },
-      "ProductPackingType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "productId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packinggTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "price": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "weight": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packinggType": {
-            "$ref": "#/components/schemas/PackingType"
-          },
-          "product": {
-            "$ref": "#/components/schemas/Product"
-          },
-          "productPackingTypeImage": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/ProductPackingTypeImage"
-            }
-          }
-        }
+        },
+        "additionalProperties": false
       },
       "RelatedProduct": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -5904,11 +7277,11 @@
           "originProduct": {
             "$ref": "#/components/schemas/Product"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Product": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6086,67 +7459,81 @@
           "seller": {
             "$ref": "#/components/schemas/Seller"
           },
+          "customerOrderProduct": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            },
+            "nullable": true
+          },
           "productCatProductParameters": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductCatProductParameters"
-            }
+            },
+            "nullable": true
           },
           "productColor": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductColor"
-            }
+            },
+            "nullable": true
           },
           "productImage": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductImage"
-            }
+            },
+            "nullable": true
           },
           "productLanguage": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductLanguage"
-            }
+            },
+            "nullable": true
           },
           "productPackingType": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductPackingType"
-            }
+            },
+            "nullable": true
           },
           "productStatusLog": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductStatusLog"
-            }
+            },
+            "nullable": true
           },
           "relatedProductDestinProduct": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/RelatedProduct"
-            }
+            },
+            "nullable": true
           },
           "relatedProductOriginProduct": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/RelatedProduct"
-            }
+            },
+            "nullable": true
+          },
+          "productCustomerRate": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRate"
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ProductLanguage": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6305,11 +7692,11 @@
           "product": {
             "$ref": "#/components/schemas/Product"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Language": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6383,23 +7770,23 @@
           },
           "catProductLanguage": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatProductLanguage"
-            }
+            },
+            "nullable": true
           },
           "productLanguage": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductLanguage"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatProductLanguage": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6488,11 +7875,11 @@
           "language": {
             "$ref": "#/components/schemas/Language"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CatProduct": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6567,37 +7954,58 @@
           },
           "catProductLanguage": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatProductLanguage"
-            }
+            },
+            "nullable": true
           },
           "catProductParameters": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatProductParameters"
-            }
+            },
+            "nullable": true
           },
           "inverseP": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatProduct"
-            }
+            },
+            "nullable": true
           },
           "product": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Product"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "CatProductListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CatProduct"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "ColorDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6616,11 +8024,32 @@
             "format": "int64",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "ColorDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ColorDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "FamousCommentsDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6646,11 +8075,53 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "FamousCommentsDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FamousCommentsDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Location"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "PackingTypeImageDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6673,11 +8144,11 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "PackingTypeDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6699,16 +8170,54 @@
           },
           "packingTypeImage": {
             "type": "array",
-            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/PackingTypeImageDto"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "PackingTypeDtoSingleResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/PackingTypeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PackingTypeDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PackingTypeDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "ParametersDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6728,11 +8237,11 @@
             "format": "int64",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "PostTypeDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6772,11 +8281,49 @@
             "format": "int32",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "PostTypeDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PostTypeDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostTypeDtoSingleResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/PostTypeDto"
+          }
+        },
+        "additionalProperties": false
       },
       "ProductParamDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6800,11 +8347,371 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "ProductDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "catProductId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "catProductName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sellerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sellerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "coding": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "priceAftterOffer": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerPercent": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "offerAmount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "coverImageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "coverImageHurl": {
+            "type": "string",
+            "nullable": true
+          },
+          "seenCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "lastSeenDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "aparatUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "unescoFlag": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "unescoCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "melliFlag": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "melliCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "keyWords": {
+            "type": "string",
+            "nullable": true
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "rating": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductColorListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductColor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductPackingTypeListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductPackingType"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductParamDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductParamDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCustomerRateImageDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productCustomerRateId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fileType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCustomerRateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pid": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "rate": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "commentDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "commentDesc": {
+            "type": "string",
+            "nullable": true
+          },
+          "likeCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "disLikeCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "productCustomerRateImages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRateImageDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductCustomerRateDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRateDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductDtoSingleResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/ProductDto"
+          }
+        },
+        "additionalProperties": false
       },
       "ProductImageDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6828,11 +8735,53 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "ProductImageDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductImageDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SellerRegisterDto": {
+        "required": [
+          "email",
+          "hpassword",
+          "mobile"
+        ],
+        "type": "object",
+        "properties": {
+          "hpassword": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
       },
       "SliderDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6864,11 +8813,32 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "SliderDtoListResult": {
+        "type": "object",
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SliderDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "SliderPlaceDto": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
@@ -6883,7 +8853,8 @@
             "format": "int64",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   }

@@ -31,6 +31,7 @@ namespace HandiCrafts.Core.Domain.Users
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public UserStatus Status { get; set; }
+        public string token { get; set; }
 
         [NotMapped]
         public List<string> UserRoleNames { get; set; }

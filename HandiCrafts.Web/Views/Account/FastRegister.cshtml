@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "تکمیل ثبت نام";
+}
+
+@model HandiCrafts.Web.Models.Account.ShortRegisterModel
+
+<aside class="wrapper">
+    <div class="col-sm-4 ">
+        <div class="card border-radius-1rem">
+            <div class="card-body">
+                <div class="kt-login__form  ml-3 mr-3">
+                    <div class="text-center pb-8">
+                        <img src="~/image/Logo.png" class="mb-4 width-150px" />
+                    </div>
+                    <div>
+                        <h5 class="kt-login__title mb-3">ورود / ثبت نام</h5>
+                    </div>
+
+                    <form id="form_login" class="kt-form" asp-action="FastRegister" asp-controller="Account" data-ajax-method="POST"
+                          data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+                          data-ajax-failure="onFailed" data-ajax-success="onSuccess">
+
+                        <div class="alert alert-danger d-none" id="errorbox"></div>
+
+                        <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+                        <div class="form-group">
+                            <label>شماره موبایل خود را وارد نمایید</label>
+                            <input asp-for="MobileNo" class="form-control" />
+                            <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="kt-font-danger"></span>
+                        </div>
+
+                        <div class="kt-login__actions mt-3">
+                            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ورود به سرای</button>
+                        </div>
+
+                        <div class="kt-login__actions mt-3 text-center">
+                            <p>با ورود و ثبت نام در سرای شما شرایط و قوانین استفاده از سرویس های سایت سرای و قوانین حریم خصوصی آن را می پزیرند. </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+@section Scripts{ 
+<script>
+    var onComplete = () => { };
+    var onSuccess = (result) => {
+        $("#errorbox").html('').addClass("d-none");
+
+        if (result.success == true) {
+            window.location = "/Account/_LoginUP";
+        } else {
+            $("#errorbox").html(result.message).removeClass("d-none");
+        }
+    };
+    var onFailed = () => { };
+    var onBegin = () => { };
+</script>
+}

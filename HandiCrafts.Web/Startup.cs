@@ -24,6 +24,7 @@ using HandiCrafts.Core.Domain.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using AutoMapper;
 using SmartBreadcrumbs.Extensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 //using HandiCrafts.Web.BpService;
 
 namespace HandiCrafts.Web
@@ -71,8 +72,6 @@ namespace HandiCrafts.Web
 
             //AddAuthentication(services);
 
-
-
             new DependencyRegistrar().Register(services);
 
             services.AddBreadcrumbs(GetType().Assembly, options =>
@@ -102,105 +101,33 @@ namespace HandiCrafts.Web
                 //...
             });
 
-            /*services.AddHttpClient<BpService.GetCatProductListClient, GetCatProductListClient>((provider, client) =>
-            {
-                client.BaseAddress = new System.Uri("https://service.tabrizhandicrafts.com/");
-            });*/
-
-
-            services.AddAuthentication(configureOptions =>
-            {
-                configureOptions.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    //IssuerSigningKey = new SymmetricSecurityKey(key),
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["BearerTokens:Key"])),
-                    ValidateIssuer = true,
-                    //ValidIssuer = issuer, 
-                    ///ValidIssuer = Configuration["BearerTokens:Issuer"],
-                    ///ValidateAudience = true,
-                    //ValidAudience = audience,
-                    ///ValidAudience = Configuration["BearerTokens:Audience"],
-                    ValidateLifetime = true,
-
-                    ValidIssuer = "http://h.com",
-                    ValidateAudience = true,
-                    ValidAudience = "api-users",
-                };
-            
-                options.Events = new JwtBearerEvents
-                {
-                    OnMessageReceived = context =>
-                    {
-                        context.Token = context.Request.Cookies["your-cookie"];
-                        return Task.CompletedTask;
-                    }
-                };
-
-
-                services.ConfigureApplicationCookie(options =>
-                {
-                    options.LoginPath = new PathString("/account/login");
-                    options.AccessDeniedPath = new PathString("/account/login");
-                    options.LogoutPath = new PathString("/account/logout");
-                    options.Cookie.Name = "HandiCrafts.WebCookie"; //change this name for every project
-                });
-            });
-
-
-
-            // Auth
-            //services.Configure<BearerTokensOptions>(options => Configuration.GetSection("BearerTokens").Bind(options));
-
-            /*services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => {
+                    options.LoginPath = "/Account/Login/";
+                    options.AccessDeniedPath = "/Account/Login/";
                 })
-                .AddJwtBearer(cfg =>
+                .AddJwtBearer(options =>
                 {
-                    cfg.RequireHttpsMetadata = false;
-                    cfg.SaveToken = true;
-                    cfg.TokenValidationParameters = new TokenValidationParameters
+                    options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidIssuer = Configuration["BearerTokens:Issuer"],
-                        ValidAudience = Configuration["BearerTokens:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["BearerTokens:Key"])),
                         ValidateIssuerSigningKey = true,
-                        ValidateLifetime = true,
+                        //IssuerSigningKey = GetSigningKey(),
+                        ValidateIssuer = true,
+                        //ValidIssuer = "http://test.com",
+                        ValidateAudience = true,
+                        ValidAudience = "api-users",
+                        ValidateLifetime = false,
                         ClockSkew = TimeSpan.Zero
                     };
-                    cfg.Events = new JwtBearerEvents
-                    {
-                        OnAuthenticationFailed = context =>
-                        {
-                            var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
-                            logger.LogError("Authentication failed.", context.Exception);
-                            return Task.CompletedTask;
-                        },
-                        OnTokenValidated = context =>
-                        {
-                            var tokenValidatorService = context.HttpContext.RequestServices.GetRequiredService<ITokenValidatorService>();
-                            return tokenValidatorService.ValidateAsync(context);
-                        },
-                        OnMessageReceived = context =>
-                        {
-                            return Task.CompletedTask;
-                        },
-                        OnChallenge = context =>
-                        {
-                            var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
-                            logger.LogError("OnChallenge error", context.Error, context.ErrorDescription);
-                            return Task.CompletedTask;
-                        }
-                    };
-                });*/
+                });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = new PathString("/account/login");
+                options.AccessDeniedPath = new PathString("/account/login");
+                options.LogoutPath = new PathString("/account/logout");
+                options.Cookie.Name = "HandiCrafts.WebCookie";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -311,7 +238,7 @@ namespace HandiCrafts.Web
         //    {
         //        Path = "/api/token",
         //        Audience = "api-users",
-        //        Issuer = "http://nikan.com",
+        //        Issuer = "http://fhfghfh.gdfg",
         //        Expiration = TimeSpan.FromDays(365),
         //        SigningCredentials = new SigningCredentials(GetSigningKey(), SecurityAlgorithms.HmacSha256),
         //        IdentityResolver = GetIdentity,

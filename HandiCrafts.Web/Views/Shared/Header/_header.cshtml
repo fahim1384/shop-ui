@@ -36,7 +36,7 @@
                 if (User.Identity.IsAuthenticated)
                 {
                     <li class="dropdown order-1">
-                        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+                        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">@User.Identity.Name <span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right mt-2">
                             <li class="">
                                 <form class="form" role="form">
@@ -63,13 +63,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="c-header__profile-dropdown-account-item js-user-dropdown-wallet-has-url">
-                                                                <a class="c-header__profile-dropdown-account-item-title c-header__profile-dropdown-account-item-title--link  js-wallet-activation-url" href="https://web.mydigipay.com/web-pay/activation/e65e4c0aee6f4bf19e71634ab9d1a2f4">فعال سازی کیف پول</a>
+                                                                <a class="c-header__profile-dropdown-account-item-title c-header__profile-dropdown-account-item-title--link  js-wallet-activation-url" href="#">فعال سازی کیف پول</a>
                                                             </div>
 
                                                             <div class="c-header__profile-dropdown-account-item">
-                                                                <span class="c-header__profile-dropdown-account-item-title">دیجی‌کلاب</span>
+                                                                <span class="c-header__profile-dropdown-account-item-title">‌کلاب</span>
                                                                 <span class="c-header__profile-dropdown-account-item-amount">
-                                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-dc-current-points">۴۶</span>
+                                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-dc-current-points">46</span>
                                                                     امتیاز
                                                                 </span>
                                                             </div>
@@ -86,7 +86,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="c-header__profile-dropdown-action-container">
-                                                            <a href="/users/logout/" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;sign-out&quot;}" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--logout js-logout-button">خروج از حساب کاربری</a>
+                                                            <a href="/Account/Logout" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;sign-out&quot;}" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--logout js-logout-button">خروج از حساب کاربری</a>
                                                         </div>
                                                     </div>
                                                 </div>

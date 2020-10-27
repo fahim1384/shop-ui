@@ -12,6 +12,8 @@ using HandiCrafts.Core.Domain.Users;
 using HandiCrafts.Web.Interfaces;
 using HandiCrafts.Web.Models;
 using HandiCrafts.Web.Models.Account;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
@@ -73,50 +75,25 @@ namespace HandiCrafts.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public Task<ResponseState<string>> Login(LoginModel model)
+        public Task<ResponseState<ICollection<long>>> Login(ShortLoginModel model)
         {
             return TryCatch(async () =>
             {
-                if (!Url.IsLocalUrl(model.ReturnUrl))
-                {
-                    model.ReturnUrl = null;
-                }
 
                 HttpClient httpClient = new HttpClient();
 
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                //Client client = new Client(BaseUrl, httpClient);
+                CustomerRegisterClient client = new CustomerRegisterClient(BaseUrl, httpClient);
 
-                //client.Login(new UserLoginModel()
-                //{
-                //    Username = model.Username,
-                //    Password = model.Password
-                //});
+                var result = await client.UIAsync(long.Parse(model.MobileNo));
 
-                if (model.Username != "148272579" || model.Password != "123456")
+                return Success(data: result.ObjList, message: result.ResultMessage);
+
+                /*if (model.Username != "148272579" || model.Password != "123456")
                 {
                     return Error<string>(null, "مشخصات وارد شده صحیح نمی باشد");
                 }
-
-                var claims = new[] {
-                        new Claim("Name", "Bobby"),
-                        new Claim(JwtRegisteredClaimNames.Email, "hello@yogihosting.com"),
-                };
-
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MynameisJamesBond007"));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-                var token = new JwtSecurityToken(
-
-                    issuer: "https://www.yogihosting.com",
-                    audience: "https://www.yogihosting.com",
-                    expires: DateTime.Now.AddHours(3),
-                    signingCredentials: credentials,
-                    claims: claims
-                    );
-
-                new JwtSecurityTokenHandler().WriteToken(token);
 
 
                 if (!string.IsNullOrEmpty(model.ReturnUrl))
@@ -126,10 +103,109 @@ namespace HandiCrafts.Web.Controllers
                 else
                 {
                     return Success<string>("/user");
-                }
+                }*/
 
             });
 
+        }
+
+        public IActionResult _LoginUP()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public Task<DefaultResponseState> _LoginUP(LoginModel model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                CustomerLoginClient client = new CustomerLoginClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(new UserLoginModel()
+                {
+                    Username = model.Username,
+                    Password = model.Password
+                });
+
+                if (result.ResultCode == 200)
+                {
+                    var claims = new[] {
+                        new Claim("token", result.Obj.Token),
+                        new Claim("fullname", result.Obj.Fullname),
+                        //new Claim(JwtRegisteredClaimNames.Exp, "1"),
+                    };
+
+                    var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MyNameIsEsmaeilVahedi"));
+                    var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+                    var token = new JwtSecurityToken(
+
+                        //issuer: "https://www.tabrizcraft.ir",
+                        //audience: "https://www.tabrizcraft.ir",
+                        expires: DateTime.Now.AddHours(3),
+                        signingCredentials: credentials,
+                        claims: claims
+                        );
+
+                    new JwtSecurityTokenHandler().WriteToken(token);
+
+                    //
+                    var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
+                    identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, result.Obj.Token));
+                    identity.AddClaim(new Claim(ClaimTypes.Name, result.Obj.Fullname));
+                    identity.AddClaim(new Claim(ClaimTypes.Role, "User"));
+
+                    var principal = new ClaimsPrincipal(identity);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = true });
+                    //
+
+                    return Success(message: result.ResultMessage);
+                }
+                else
+                {
+                    return Error(message: result.ResultMessage);
+                }
+            });
+
+        }
+
+        public IActionResult FastRegister(long userid)
+        {
+            return View("FastRegister", new ShortRegisterModel()
+            {
+                UserId = userid
+            });
+        }
+
+        [HttpPost]
+        public Task<ResponseState<LongResult>> FastRegister(ShortRegisterModel model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetPasswordClient client = new GetPasswordClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(model.UserId, long.Parse(model.MobileNo), model.Password);
+
+                if (result.ResultCode != 200)
+                    return Error<LongResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("/Account/Login");
         }
 
         public IActionResult VerifyCode()

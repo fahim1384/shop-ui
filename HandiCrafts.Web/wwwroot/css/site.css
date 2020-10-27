@@ -1471,7 +1471,11 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
     .category-product h5 {
         font-size: 0.9rem;
     }
-.cat-more{margin:14px;}
+
+.cat-more {
+    margin: 14px;
+}
+
 @media (max-width: 576px) {
     .cat-more {
         margin: 11px;
@@ -1481,12 +1485,15 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
 .m-14 {
     margin: 14px;
 }
-.m-15{
-    margin:15px;
+
+.m-15 {
+    margin: 15px;
 }
+
 .font-size-1_8rem {
     font-size: 1.8rem !important;
 }
+
 .category-product-wraper:hover .category-product {
     filter: blur(3px);
     opacity: .5;
@@ -1522,12 +1529,14 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
         .sidenav a:hover, .dropdown-btn:hover {
             color: #0aa8b9;
         }
+
         .dropdown-btn:focus {
             outline: 0;
             outline: none !important;
             color: #68c1d4;
             background: #f1f1f1;
         }
+
         .dropdown-btn.active {
             color: #68c1d4;
             background: #f1f1f1;
@@ -1559,18 +1568,20 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
     float: right;
     margin: auto 3px;
 }
+
 .color-product-a {
     border: 1px solid #b5b5b5;
     border-radius: 3px;
     display: inline-block;
     padding: 3px;
     color: #7f7f7f;
-    cursor:pointer;
+    cursor: pointer;
 }
 
     .color-product-a.active, .package-type-radio-box.active {
         border: 2px solid #2fdbf7;
     }
+
 .circle-color-product {
     width: 12px;
     height: 12px;
@@ -1589,7 +1600,7 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
 
 /*********************/
 .color-black {
-    color:#212529
+    color: #212529
 }
 
 /***** Mega Menu *****/
@@ -1615,25 +1626,31 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
             padding-bottom: 1rem;
         }
 }
+
 .col-megamenu {
     margin-bottom: 15px;
 }
-.col-megamenu ul li {
-    line-height:25px
-}
-.col-megamenu ul li a {
-    color: #404040 !important;
-    font-size: 1em !important;
-    font-weight: 500 !important;
-}
-    .col-megamenu ul li a:hover {
-        color: #0b6c81 !important;
-        padding-right: 5px;
+
+    .col-megamenu ul li {
+        line-height: 25px
     }
-.col-megamenu h6.title {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #29d4d4;
-    border-bottom: 1px solid;
-    padding-bottom: 6px;
-}
+
+        .col-megamenu ul li a {
+            color: #404040 !important;
+            font-size: 1em !important;
+            font-weight: 500 !important;
+        }
+
+            .col-megamenu ul li a:hover {
+                color: #0b6c81 !important;
+                padding-right: 5px;
+            }
+
+    .col-megamenu h6.title {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #29d4d4;
+        border-bottom: 1px solid;
+        padding-bottom: 6px;
+    }
+/********************/

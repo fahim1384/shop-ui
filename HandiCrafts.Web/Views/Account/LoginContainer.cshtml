@@ -31,18 +31,18 @@
         }
 
         function onSigninSuccess(result) {
-            alert("10");
+            console.log(result);
 
-            window.location = "/Account/verifyCode";
+            //window.location = "/Account/verifyCode";
 
-
-            if (result.Success) {
-                window.location = result.Data;
+            if (result.data[0] == -1) {
+                window.location = "/Account/_LoginUP";
             }
             else {
-                alert(result.Message);
+                window.location = "/Account/FastRegister?userid=" + result.data[0];
             }
         }
+
         function onSigninFailed() {
             alert("خطا");
         }
