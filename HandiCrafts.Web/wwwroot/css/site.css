@@ -381,6 +381,10 @@ footer .card {
     width: 50px !important;
 }
 
+.width-100px {
+    width: 100px;
+}
+
 .width-200px {
     width: 200px;
 }
@@ -1654,3 +1658,7 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
         padding-bottom: 6px;
     }
 /********************/
+.bg-active-in-hover.active {
+    background: #d2f0ff;
+    color: #21948f !important;
+}

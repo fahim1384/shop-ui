@@ -318,27 +318,27 @@ namespace HandiCrafts.Web.Controllers
         }
 
         /// <summary>
-        /// جدیدترین محصولات
+        /// بازدیدهای اخیر
         /// </summary>
         /// <returns></returns>
-        //[HttpPost]
-        //public Task<ResponseState<ProductListResult>> GetProductList_latest_UI(long packingtypeId)
-        //{
-        //    return TryCatch(async () =>
-        //    {
-        //        HttpClient httpClient = new HttpClient();
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> GetProductList_LastSeen_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
 
-        //        string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-        //        ProductListResult client = new LatestClient(BaseUrl, httpClient);
+                LastSeenClient client = new LastSeenClient(BaseUrl, httpClient);
 
-        //        var result = await client.UIAsync();
+                var result = await client.UIAsync();
 
-        //        if (result.ResultCode != 200)
-        //            return Error<ProductListResult>(null, message: result.ResultMessage);
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
 
-        //        return Success(data: result, message: result.ResultMessage);
-        //    });
-        //}
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
     }
 }

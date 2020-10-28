@@ -102,11 +102,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center custome-muted-header">
                                     <form class="form-inline mt-2" dir="rtl">
-                                        @*<div class="spinner border-radius-5">
-                            <a name="beforeAddtocartPlus"><span class="fa fa-plus"></span></a>
-                            <input type="text" name="quantity" value="1" class="form-control width-40px border-0" readonly>
-                            <a name="beforeAddtocartMinus"><span class="fa fa-minus"></span></a>
-                        </div>*@
+
                                         <button data-name="مینا کاری 1" data-price="100" class="add-to-cart btn btn-info mx-1 my-sm-0" type="button">افزودن به سبد خرید</button>
 
                                         <div class="shared-box">
@@ -264,18 +260,6 @@
 
 @section Scripts{
     <script>
-        /*$("a[name=beforeAddtocartPlus]").on("click", function () {
-            var cval = $("input[name='quantity']").val();
-            $("input[name='quantity']").val(parseInt(cval) + 1);
-        });
-        $("a[name=beforeAddtocartMinus]").on("click", function () {
-            var cval = $("input[name='quantity']").val();
-            if (parseInt(cval) - 1 == 0)
-                return;
-            else
-                $("input[name='quantity']").val(parseInt(cval) - 1);
-        });*/
-
         $(".color-product-a").on("click", function () {
             $(".color-product-a").removeClass("active");
             $(this).addClass("active");
@@ -285,5 +269,20 @@
             $(".package-type-radio-box").removeClass("active");
             $(this).parent("div.package-type-radio-box").addClass("active");
         });
+
+
+
+
+        /*$("a[name=beforeAddtocartPlus]").on("click", function () {
+var cval = $("input[name='quantity']").val();
+$("input[name='quantity']").val(parseInt(cval) + 1);
+});
+$("a[name=beforeAddtocartMinus]").on("click", function () {
+var cval = $("input[name='quantity']").val();
+if (parseInt(cval) - 1 == 0)
+        return;
+else
+        $("input[name='quantity']").val(parseInt(cval) - 1);
+});*/
     </script>
 }

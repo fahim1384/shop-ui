@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using AutoMapper;
+using HandiCrafts.Web.Interfaces;
+using HandiCrafts.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SmartBreadcrumbs.Attributes;
@@ -10,8 +16,16 @@ using SmartBreadcrumbs.Nodes;
 
 namespace HandiCrafts.Web.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BasePublicController
     {
+        IHttpClientFactory _httpClientFactory;
+
+        public ProductController(ILogger<ProductController> logger, IStringLocalizer<SharedResource> localizer, IMapper mapper, IHttpClientFactory httpClientFactory) :
+            base(logger, localizer, mapper)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+
         //[DefaultBreadcrumb("خانه")]
         [Breadcrumb("ViewData.BreadcrumbNode")]
         public IActionResult Index()
@@ -41,52 +55,221 @@ namespace HandiCrafts.Web.Controllers
         }
 
         /// <summary>
-        /// لیست رنگ بندی محصول براس کد محصول
+        /// لیست محصولات باصفحه بنذی و فیلتر
         /// </summary>
-        /// <returns> /api/Product/GetProductColorList_UI </returns>
-        //public async Task<JsonResult> GetProductColorList_UI(int productId)
-        //{
-        //    var client = new RestClient("https://service.tabrizhandicrafts.com/api/Product/GetProductColorList_UI?productId=" + productId);
-        //    var request = new RestRequest(Method.GET);
-        //    var response = new RestResponse();
-        //    Task.Run(async () =>
-        //    {
-        //        response = await GetResponseContentAsync(client, request) as RestResponse;
-        //    }).Wait();
-        //    var jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> GetProductList_Paging_Filtering_UI(long? catProductId = null, string productName = null, long? minPrice = null,
+            long? maxPrice = null, int? sortMethod = null, int? pageSize = 12, int? pageNumber = 1)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
 
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-        //    return Json(jsonResponse);
-        //}
+                FilteringClient client = new FilteringClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(catProductId, productName, minPrice, maxPrice, sortMethod, pageSize, pageNumber);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
 
         /// <summary>
-        /// لیست محصولات
+        /// دریافت اطلاعات یک محصول
         /// </summary>
-        /// <returns> /api/Product/GetProductList </returns>
-        //public async Task<JsonResult> GetProductList()
-        //{
-        //    var client = new RestClient("https://service.tabrizhandicrafts.com/api/Product/GetProductList");
-        //    var request = new RestRequest(Method.GET);
-        //    var response = new RestResponse();
-        //    Task.Run(async () =>
-        //    {
-        //        response = await GetResponseContentAsync(client, request) as RestResponse;
-        //    }).Wait();
-        //    var jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoSingleResult>> GetProductById_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
 
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-        //    return Json(jsonResponse);
-        //}
+                GetProductByIdClient client = new GetProductByIdClient(BaseUrl, httpClient);
 
-        // =========== Private =============
-        //public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
-        //{
-        //    var tcs = new TaskCompletionSource<IRestResponse>();
-        //    theClient.ExecuteAsync(theRequest, response =>
-        //    {
-        //        tcs.SetResult(response);
-        //    });
-        //    return tcs.Task;
-        //}
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoSingleResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// دریافت رنگ های یک محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductColorListResult>> GetProductColorList_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductColorListClient client = new GetProductColorListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductColorListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// دریافت انواع بسته بندی های یک محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductPackingTypeListResult>> GetProductPackingTypeList_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductPackingTypeListClient client = new GetProductPackingTypeListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductPackingTypeListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// لیست محصولات مرتبط با یک محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductListResult>> GetRelatedProductList_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetRelatedProductListClient client = new GetRelatedProductListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// لیست پارامترهای یک محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductParamDtoListResult>> GetProductParamList_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductParamListClient client = new GetProductParamListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductParamDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// لیست محصولات یک دسته
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> GetProductListByCatId_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductListByCatIdClient client = new GetProductListByCatIdClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// لیست نظرات درباره یک محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductCustomerRateDtoListResult>> GetProductCommentList_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductCommentListClient client = new GetProductCommentListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductCustomerRateDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// لیست فایل ها/تصاویر/ویدیوهای یک محصول
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductImageDtoListResult>> GetImageListByProductId_UI(long? productId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetImageListByProductIdClient client = new GetImageListByProductIdClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(productId);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductImageDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
     }
 }

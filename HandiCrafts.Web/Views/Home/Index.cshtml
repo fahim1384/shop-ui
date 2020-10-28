@@ -144,8 +144,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-4 text-center">
-            <div class="col-md-4 mb-4">
+        <div class="card-deck mb-4 text-center" id="bartarGroups">
+            @*<div class="col-md-4 mb-4">
 
                 <div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
                     <div class="banner-img">
@@ -186,7 +186,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </section>
@@ -337,7 +337,7 @@
 </section>
 
 <!-- پکیج -->
-<section class="card-margin-0">
+<section class="card-margin-0 main-packages-box">
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
@@ -722,13 +722,13 @@
 </section>
 
 <!-- محصولات اخیر -->
-<section class="index-products card-margin-0">
+<section class="index-products card-margin-0 lastSeenBox d-none">
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
                 <h4 class="display-9 after-before-bordered">محصولات</h4>
                 <a href="#" class="btn btn-link">بازدیدهای اخیر</a>
-                <a href="#" class="btn btn-link">بازدیدهای اخیر من</a>
+                <a href="#" class="btn btn-link d-none">بازدیدهای اخیر من</a>
 
                 <p class="see-more-p">
                     <a href="#" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
@@ -738,8 +738,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center">
-            <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card-deck mb-3 text-center" id="lastSeenContent">
+            @*<div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="shopping-thumbnail card mb-4 shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
                     <div class="caption">
@@ -846,13 +846,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </section>
 
 <!-- نظرات صنعتگران -->
-<section class="sanatgaran bg-gray custome-muted-text card-margin-0">
+<section class="sanatgaran bg-gray custome-muted-text card-margin-0 d-none">
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
@@ -863,16 +863,16 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center sanatgarBox">
-            <div class="col col-2">
-                <div class="card mb-4">
-                    <img src="~/image/user-sanatgar.jpg" class="rounded-circle" />
+            @*<div class="col col-2">
+                    <div class="card mb-4">
+                        <img src="~/image/user-sanatgar.jpg" class="rounded-circle" />
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <div class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</div>
-                </div>
-            </div>
+                <div class="col">
+                    <div class="card mb-4">
+                        <div class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</div>
+                    </div>
+                </div>*@
         </div>
     </div>
 </section>
@@ -953,255 +953,408 @@
 
         // 5 دسته بندی برتر
         let GetTopCatProductList_UI = () => {
-            $.ajax({
-                type: 'POST',
-                url: "/Home/GetTopCatProductList_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetTopCatProductList_UI",
 
-                success: function (result) {
-                    console.log("GetTopCatProductList_UI", result.data);
-                    $.each(result.data, function (e, v) {
+                    success: function (result) {
+                        console.log("GetTopCatProductList_UI", result.data);
+                        $("#bartarGroups").html('');
+                        var bartarGroupsHtml = "";
+                        var bartarBox1 = "";
+                        var bartarBox2 = "";
+                        var bartarBox3 = "";
 
-                    });
-                }
-            });
+                        $.each(result.data, function (e, v) {
+                            if (e == 0 || e == 1) {
+                                bartarBox1 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
+                                                <div class="banner-img">
+                                                    <a href="#">
+                                                        <image src="https://service.tabrizhandicrafts.com${v.url}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                    </a>
+                                                </div>
+                                            </div>`;
+                            }
+                            else if (e == 2) {
+                                bartarBox2 += `<div class="col-md-4">
+                                <div class="card mb-4 shadow-sm mb-30">
+                                    <div class="">
+                                        <a href="#">
+                                            <image src="https://service.tabrizhandicrafts.com${v.url}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>`;
+                            }
+                            else if (e == 3 || e == 4) {
+                                bartarBox3 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
+                                                <div class="banner-img">
+                                                    <a href="#">
+                                                        <image src="https://service.tabrizhandicrafts.com${v.url}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                    </a>
+                                                </div>
+                                            </div>`;
+
+                            }
+                        });
+
+                        bartarGroupsHtml += `<div class="col-md-4 mb-4">${bartarBox1}</div>${bartarBox2}<div class="col-md-4 mb-4">${bartarBox3}</div>`;
+                        $("#bartarGroups").html(bartarGroupsHtml);
+                    }
+                });
+            } catch (e) {
+            }
+            
         }
 
         //  دسته بندی ها با زیر مجموعه
         let GetCatProductList_UI = () => {
-            $.ajax({
-                type: 'POST',
-                url: "/Home/GetCatProductList_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetCatProductList_UI",
 
-                success: function (result) {
-                    $(".catBox").html('');
-                    var catBox = $(".catBox");
-                    $.each(result.data.objList, function (e, v) {
-                        catBox.append(`<div class="col">
-                                           <div class="card mb-4">
-                                                   <img class="max-width-100px m-auto" src="/image/hakaki.jpg" />
-                                                   <div class="card-body custome-muted-text">
-                                                       <p class="card-text">${v.name}</p>
-                                                       <a class="cyan">100 کالا</a>
-                                                   </div>
-                                               </div>
-                                           </div>`);
-                    });
-                }
-            });
+                    success: function (result) {
+                        $(".catBox").html('');
+                        var catBox = $(".catBox");
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                catBox.append(`<div class="col">
+                                                   <div class="card mb-4">
+                                                           <img class="max-width-100px m-auto" src="/image/hakaki.jpg" />
+                                                           <div class="card-body custome-muted-text">
+                                                               <p class="card-text">${v.name}</p>
+                                                               <a class="cyan">100 کالا</a>
+                                                           </div>
+                                                       </div>
+                                                   </div>`);
+                            });
+                        }
+                    }
+                });
+            } catch (e) {
+            }
         }
 
         //  نظرات صنعتگر
         let GetFamousCommentsList_UI = () => {
-            $.ajax({
-                type: 'POST',
-                url: "/Home/GetFamousCommentsList_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetFamousCommentsList_UI",
 
-                success: function (result) {
-                    $(".sanatgarBox").html('');
-                    var sanatgarBox = $(".sanatgarBox");
-                    $.each(result.data.objList, function (e, v) {
-                        var imgSanatgar = "/image/icons/profile.png";
-                        if (v.profilePic != null) imgSanatgar = v.profilePic;
+                    success: function (result) {
+                        $(".sanatgarBox").html('');
+                        var sanatgarBox = $(".sanatgarBox");
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                var imgSanatgar = "/image/icons/profile.png";
+                                if (v.profilePic != null) imgSanatgar = v.profilePic;
 
-                        sanatgarBox.append(`<div class="col col-2">
-                                                    <div class="card mb-4">
-                                                        <img src="https://service.tabrizhandicrafts.com${imgSanatgar}" class="rounded-circle" />
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="card mb-4">
-                                                        <div class="card-text">${v.comment}</div>
-                                                    </div>
-                                                </div>`);
-                    });
+                                if (e == 0) // فقط 1 نظر نمایش بده
+                                    sanatgarBox.append(`<div class="col col-2">
+                                                            <div class="card mb-4">
+                                                                <img src="https://service.tabrizhandicrafts.com${imgSanatgar}" class="rounded-circle" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="card mb-4">
+                                                                <div class="card-text">${v.comment}</div>
+                                                            </div>
+                                                        </div>`);
+                            });
 
-                    // اگر لیست خالی باشه کل باکس رو مخفی کن
-                    if (result.data.objList.length == 0) $(".sanatgaran").addClass("d-none");
-                }
-            });
+                            $(".sanatgaran").removeClass("d-none");
+                        }
+
+                        // اگر لیست خالی باشه کل باکس رو مخفی کن
+                        if (result.data == null || result.data.objList.length == 0) $(".sanatgaran").addClass("d-none");
+                    }
+                });
+            } catch (e) {
+            }
         }
 
         //  لیست بسته بندی های محصول
         let GetPackingTypeList_UI = () => {
-            $.ajax({
-                type: 'POST',
-                url: "/Home/GetPackingTypeList_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetPackingTypeList_UI",
 
-                success: function (result) {
-                    $("#packagesBox").html('');
-                    var packagesBox = $("#packagesBox");
-                    $.each(result.data.objList, function (e, v) {
-                        packagesBox.append(`<div class="col-md-4 blog-hm-wrapper">
-                                                        <div class="card mb-4 shadow-sm blog-img">
-                                                            <a>
-                                                                <img src="https://service.tabrizhandicrafts.com${v.packingTypeImage[0].imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
-                                                            </a>
-                                                        </div>
-                                                    </div>`);
-                    });
+                    success: function (result) {
+                        $("#packagesBox").html('');
+                        var packagesBox = $("#packagesBox");
+                        
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                if (e < 3) // نمایش 3 عدد
+                                    packagesBox.append(`<div class="col-md-4 blog-hm-wrapper">
+                                                                <div class="card mb-4 shadow-sm blog-img">
+                                                                    <a>
+                                                                        <img src="https://service.tabrizhandicrafts.com${v.packingTypeImage[0].imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
+                                                                    </a>
+                                                                </div>
+                                                            </div>`);
+                            });
+                        }
 
-                    // اگر لیست خالی باشه کل باکس رو مخفی کن
-                    if (result.data.objList.length == 0) $("#packagesBox").addClass("d-none");
-                }
-            });
+                        // اگر لیست خالی باشه کل باکس رو مخفی کن
+                        if (result.data == null) $(".main-packages-box").addClass("d-none");
+                    }
+                });
+            } catch (e) {
+            }
         }
 
         // دریافت اسلایدرها
         let GetSliderByPlaceCode_UI = (sliderPlaceCode) => {
-            $.ajax({
-                type: 'POST',
-                data: { sliderPlaceCode: sliderPlaceCode },
-                url: "/Home/GetSliderByPlaceCode_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    data: { sliderPlaceCode: sliderPlaceCode },
+                    url: "/Home/GetSliderByPlaceCode_UI",
 
-                success: function (result) {
-                    if (result.data != null) {
-                        switch (sliderPlaceCode) {
-                            // اسلایدر بالایی
-                            case 1:
-                                $.each(result.data.objList, function (e, v) {
-                                    var active = "";
-                                    if (e == 0) active = "active";
+                    success: function (result) {
+                        if (result.success == true) {
+                            if (result.data != null) {
+                                switch (sliderPlaceCode) {
+                                    // اسلایدر بالایی
+                                    case 1:
+                                        $.each(result.data.objList, function (e, v) {
+                                            var active = "";
+                                            if (e == 0) active = "active";
 
-                                    $("#carouselExampleIndicators").find("ol").append(`<li data-target="#carouselExampleIndicators" data-slide-to="${e}" class="${active}"></li>`);
+                                            $("#carouselExampleIndicators").find("ol").append(`<li data-target="#carouselExampleIndicators" data-slide-to="${e}" class="${active}"></li>`);
 
-                                    $("#carouselExampleIndicators")
-                                        .find("div.carousel-inner")
-                                        .append(`<div class="carousel-item ${active}">
-                                                               <img class="d-block w-100" src="https://service.tabrizhandicrafts.com${v.imageUrl}" style="max-height:300px;" alt="${v.title}">
-                                                             </div>`
+                                            $("#carouselExampleIndicators")
+                                                .find("div.carousel-inner")
+                                                .append(`<div class="carousel-item ${active}">
+                                                                       <img class="d-block w-100" src="https://service.tabrizhandicrafts.com${v.imageUrl}" style="max-height:300px;" alt="${v.title}">
+                                                                     </div>`
+                                                );
+
+                                        });
+                                        break;
+
+                                    // تبلیغ اول
+                                    case 2:
+
+                                        $("#slider2").append(`<a href="${result.data.objList[0].linkUrl}">
+                                                                             <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                          </a>`
                                         );
+                                        break;
 
-                                });
-                                break;
+                                    // تبلیغ 2 تصویره
+                                    case 3:
+                                        $.each(result.data.objList, function (e, v) {
+                                            $("#ads2img")
+                                                .append(`<div class="col col-lg-6">
+                                                                     <a href="${v.linkUrl}"><img src="https://service.tabrizhandicrafts.com${v.imageUrl}" class="w-100" /></a>
+                                                                 </div>`
+                                                );
+                                        });
+                                        break;
 
-                            // تبلیغ اول
-                            case 2:
-                                $("#slider2").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                     <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                  </a>`
-                                );
-                                break;
-
-                            // تبلیغ 2 تصویره
-                            case 3:
-                                $.each(result.data.objList, function (e, v) {
-                                    $("#ads2img")
-                                        .append(`<div class="col col-lg-6">
-                                                             <a href="${v.linkUrl}"><img src="https://service.tabrizhandicrafts.com${v.imageUrl}" class="w-100" /></a>
-                                                         </div>`
+                                    // تیلیغ 3
+                                    case 4:
+                                        $("#ads3img").append(`<a href="${result.data.objList[0].linkUrl}">
+                                                                             <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                          </a>`
                                         );
-                                });
-                                break;
+                                        break;
 
-                            // تیلیغ 3
-                            case 4:
-                                $("#ads3img").append(`<a href="${result.data.objList[0].linkUrl}">
+                                    // تبلیغ 4
+                                    case 5:
+                                        $("#ads4img").append(`<a href="${result.data.objList[0].linkUrl}">
+                                                                             <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                          </a>`
+                                        );
+                                        break;
+
+                                    // تبلیغ 5
+                                    case 6:
+                                        $("#ads5img").append(`<a href="${result.data.objList[0].linkUrl}">
                                                                      <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
                                                                   </a>`
-                                );
-                                break;
+                                        );
+                                        break;
 
-                            // تبلیغ 4
-                            case 5:
-                                $("#ads4img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                     <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                  </a>`
-                                );
-                                break;
-
-                            // تبلیغ 5
-                            case 6:
-                                $("#ads5img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                             <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
-                                                          </a>`
-                                );
-                                break;
-
-                            default:
+                                    default:
+                                }
+                            }
                         }
                     }
-                }
-            });
+                });
+            } catch (e) {
+            }
         };
 
         // جدیدترین ها
         let GetProductList_latest_UI = () => {
-            $.ajax({
-                type: 'POST',
-                url: "/Home/GetProductList_latest_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetProductList_latest_UI",
 
-                success: function (result) {
-                    $("#latestProductBox").html('');
-                    var latestProductBox = $("#latestProductBox");
-                    console.log(result)
-                    $.each(result.data.objList, function (e, v) {
-                        var rat = "";
-                        if (v.rating != undefined) {
-                            var r = v.rating.toFixed();
+                    success: function (result) {
+                        $("#latestProductBox").html('');
+                        var latestProductBox = $("#latestProductBox");
 
-                            for (var i = 5; i > 0; i--) {
-                                if (r - i < 0) {
-                                    rat += `<i class="fa fa-star custom-fa"></i>`;
-                                } else {
-                                    rat += `<i class="fa fa-star cyan"></i>`;
-                                }
-                            }
-                        } else {
-                            for (var i = 0; i < 5; i++) {
-                                rat += `<i class="fa fa-star custom-fa"></i>`;
-                            }
-                        }
-                        latestProductBox.append(`
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                                        <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                        <div class="caption">
-                                            <p>
-                                                <b>
-                                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                </b>
-                                            </p>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                            <p class="card-text ratingbox">
-                                                ${rat}
-                                            </p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                if (e < 4) { // نمایش 4 عدد
+                                    var rat = "";
+                                    if (v.rating != undefined) {
+                                        var r = v.rating.toFixed();
+
+                                        for (var i = 5; i > 0; i--) {
+                                            if (r - i < 0) {
+                                                rat += `<i class="fa fa-star custom-fa"></i>`;
+                                            } else {
+                                                rat += `<i class="fa fa-star cyan"></i>`;
+                                            }
+                                        }
+                                    } else {
+                                        for (var i = 0; i < 5; i++) {
+                                            rat += `<i class="fa fa-star custom-fa"></i>`;
+                                        }
+                                    }
+                                    latestProductBox.append(`
+                                        <div class="col-lg-3 col-md-4 col-sm-6">
+                                            <div class="shopping-thumbnail card mb-4 shadow-sm">
+                                                <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                <div class="caption">
+                                                    <p>
+                                                        <b>
+                                                            <a data-product-id="${v.id}" data-product-image="https://service.tabrizhandicrafts.com${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                        </b>
+                                                    </p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                    <p class="card-text ratingbox">
+                                                        ${rat}
+                                                    </p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            `);
-                    });
-                }
-            });
+                                    `);
+                                }
+                            });
+
+                            cartEvents.init();
+                        }
+                    }
+                });
+            } catch (e) {
+            }
         }
 
         // مهر اصالت
         let GetProductList_HaveMelliCode_UI = () => {
-            $.ajax({
-                type: 'POST',
-                url: "/Home/GetProductList_HaveMelliCode_UI",
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetProductList_HaveMelliCode_UI",
 
-                success: function (result) {
-                    $(".unisco-content").html('');
-                    var unisco = $(".unisco-content");
+                    success: function (result) {
+                        $(".unisco-content").html('');
+                        var unisco = $(".unisco-content");
 
-                    $.each(result.data.objList, function (e, v) {
-                        if (e < 4) {
-                            unisco.append(`
-                                 <div class="col-3 height-150">
-                                    <img src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="height-100-width-100" />
-                                 </div>
-                            `);
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                if (e < 4) {
+                                    unisco.append(`
+                                         <div class="col-3 height-150">
+                                            <img src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="height-100-width-100" />
+                                         </div>
+                                    `);
+                                }
+                            });
                         }
-                    });
-                }
-            });
+                    }
+                });
+            } catch (e) {
+
+            }
+        }
+
+        // بازدیدهای اخیر
+        var GetProductList_LastSeen_UI = () => {
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetProductList_LastSeen_UI",
+
+                    success: function (result) {
+                        $("#lastSeenContent").html('');
+                        var lastSeenContent = $("#lastSeenContent");
+
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                if (e < 4) { // نمایش 4 عدد
+                                    var rat = "";
+                                    if (v.rating != undefined) {
+                                        var r = v.rating.toFixed();
+
+                                        for (var i = 5; i > 0; i--) {
+                                            if (r - i < 0) {
+                                                rat += `<i class="fa fa-star custom-fa"></i>`;
+                                            } else {
+                                                rat += `<i class="fa fa-star cyan"></i>`;
+                                            }
+                                        }
+                                    } else {
+                                        for (var i = 0; i < 5; i++) {
+                                            rat += `<i class="fa fa-star custom-fa"></i>`;
+                                        }
+                                    }
+                                    lastSeenContent.append(`
+                                        <div class="col-lg-3 col-md-4 col-sm-6">
+                                            <div class="shopping-thumbnail card mb-4 shadow-sm">
+                                                <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                <div class="caption">
+                                                    <p>
+                                                        <b>
+                                                            <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                        </b>
+                                                    </p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                    <p class="card-text ratingbox">
+                                                        ${rat}
+                                                    </p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `);
+                                }
+                            });
+                        }
+
+                        
+                        if (result.data == null || result.data.objList.length == 0)
+                            $(".lastSeenBox").addClass("d-none");
+                        else
+                            $(".lastSeenBox").removeClass("d-none");
+                    }
+                });
+            } catch (e) {
+            }
         }
 
         //============ Load ============
@@ -1238,6 +1391,9 @@
 
             // مهر اصالت
             GetProductList_HaveMelliCode_UI();
+
+            // بازدیدهای اخیر
+            GetProductList_LastSeen_UI();
         });
     </script>
 }
