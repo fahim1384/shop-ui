@@ -13,15 +13,17 @@
                     </div>
                     <div>
                         <p class="mb-3">
-                            حساب کاربری با شماره موبایل 09140000000 وجو ندارد.
+                            برای این مشخصات حساب کاربری وجو ندارد.
                             <br />
-                            برای ساخت حساب جدید، کد تاییدبرای این شماره موبایل ارسال گردید.
+                            برای ساخت حساب جدید، کد تایید برای شما ارسال گردید.
                         </p>
                     </div>
 
                     <form id="form_login" class="kt-form" asp-action="Login" asp-controller="Account" data-ajax-method="POST"
-                          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
-                          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
+                          data-ajax="true" data-ajax-begin="onSigninBegin1" data-ajax-complete="onSigninComplete1"
+                          data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1">
+                        <div class="alert alert-danger d-none" id="errorbox"></div>
+                        <input type="hidden" asp-for="UserId" />
                         <div class="form-group">
                             <label>کد تایید</label>
                             <input asp-for="AcceptCode" class="form-control" />
@@ -29,15 +31,18 @@
                         </div>
 
                         <div class="kt-login__actions mt-3">
-                           <p class="text-center">
-                               <span class="color-firouzi font-size-17px">دریافت مجدد کد تایید</span>
-                               <br />
-                               ارسال مجدد کد تا <span>02:35</span> دیگر
-                           </p>
+                            <p class="text-center">
+                                <span class="color-firouzi font-size-17px">دریافت مجدد کد تایید</span>
+                                <input name="minute" id="minute" type="hidden" value="2" />
+                                <input name="second" id="second" type="hidden" value="0" />
+                                <br />
+                                ارسال مجدد کد تا <span id="timerminute">02</span>:<span id="timersecond">00</span> دیگر
+                            </p>
                         </div>
 
                         <div class="kt-login__actions mt-3">
-                            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main">ادامه</button>
+                            <button id="kt_login_signin_submit1" type="submit" class="btn btn-block btn-info btn-main">تایید کد</button>
+                            <button id="kt_send_code_submit1" type="button" class="btn btn-block btn-primary btn-main" style="display: none;">ارسال مجدد کد فعال سازی</button>
                         </div>
                     </form>
                 </div>

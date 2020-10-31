@@ -32,14 +32,21 @@
 
         function onSigninSuccess(result) {
             console.log(result);
+            $('#kt_login_signin_submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
+            $("#errorbox").html('').addClass("d-none");
 
             //window.location = "/Account/verifyCode";
 
-            if (result.data[0] == -1) {
-                window.location = "/Account/_LoginUP";
+            if (result.success == true) {
+                if (result.data.isExist == true) {
+                    window.location = "/Account/FastRegister?userid=" + result.data.userId;
+                }
+                else {
+                    window.location = "/Account/VerifyCode?userid=" + result.data.userId;
+                }
             }
             else {
-                window.location = "/Account/FastRegister?userid=" + result.data[0];
+                $("#errorbox").html(result.message).removeClass("d-none");
             }
         }
 
@@ -56,5 +63,63 @@
         };
 
 
+    </script>
+    
+    <script>
+        // ========== VerifyCode Js ===========
+        var interval;
+        var minute = $("#minute").val() && $("#minute").val() != 0 ? $("#minute").val() : 2;
+        var second = $("#second").val() && $("#second").val() != 0 ? $("#second").val() : 0;
+
+        $(document).ready(function () {
+            timer();
+        });
+
+        function timer() {
+            interval = window.setInterval(function (e) {
+
+                $("#timerminute").html(minute < 10 ? "0" + minute : minute); $("#minute").val(minute);
+                $("#timersecond").html(second < 10 ? "0" + second : second); $("#second").val(second);
+
+                if (second === 0 && minute > 0) {
+                    second = 60;
+                    minute--;
+                } else if (minute === 0 && second === 0) {
+                    clearInterval(interval);
+                    $("#kt_login_signin_submit1").css("display", "none");
+                    $("#kt_send_code_submit1").css("display", "block");
+                }
+                if (second > 0) second--;
+            }, 1000);//600000
+        }
+
+        // =======================================
+        function onSigninBegin1(e, form) {
+            $('#kt_login_signin_submit1').attr('disabled', true);
+        }
+
+        function onSigninSuccess1(result) {
+            $('#kt_login_signin_submit1').attr('disabled', false);
+            console.log(result);
+
+            if (result.success == true) {
+                window.location = "/Home/Index";
+            }
+            else {
+                $("#errorbox").html(result.message).removeClass("d-none");
+            }
+        }
+
+        function onSigninFailed1() {
+            console.log("خطا");
+        }
+
+        function onSigninComplete1(re) {
+            console.log(re);
+        }
+
+        failed1 = function (xhr) {
+            alert(`Status: ${xhr.status}, Status Text: ${xhr.statusText}`);
+        };
     </script>
 }

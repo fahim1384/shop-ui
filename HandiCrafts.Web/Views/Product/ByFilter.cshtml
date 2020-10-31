@@ -12,7 +12,7 @@
 <main>
 
     <div class="container">
-        <div class="row category-product-wraper">
+        <div class="row category-product-wraper d-none">
             <!-- Section: Packages -->
             <div class="col-6">
                 <div class="row">
@@ -237,6 +237,7 @@
                             <a href="javascript:filterOrderby(3)" data-orderby-number="3" class="text-reset bg-active-in-hover"><small>محبوب ترین</small></a>
                             <a href="javascript:filterOrderby(4)" data-orderby-number="4" class="text-reset bg-active-in-hover"><small>خاص ترین</small></a>
                             <a href="javascript:filterOrderby(5)" data-orderby-number="5" class="text-reset bg-active-in-hover"><small>فروش ویژه</small></a>
+                            <a href="javascript:removeFilterOrderBy()" class="bg-active-in-hover text-danger"><small>حذف فیلتر</small></a>
                         </div>
                     </div>
 
@@ -309,6 +310,7 @@
 @section Scripts{
     <script>
 
+
         let bndDropDownSideBar = () => {
             var dropdown = document.getElementsByClassName("dropdown-btn");
             var i;
@@ -346,9 +348,9 @@
                             child += "</div>";
 
                             $(".sidenav").append(`<button class="dropdown-btn">
-                                                <i class="fa fa-chevron-left"></i>
-                                                ${v.name}
-                                            </button>${child}`);
+                                                        <i class="fa fa-chevron-left"></i>
+                                                        ${v.name}
+                                                    </button>${child}`);
 
                         }
                         else {
@@ -399,84 +401,100 @@
                             }
 
                             productsbox.append(`
-                                                 <div class="col-md-6 col-lg-4 mb-3 text-center">
-                                                    <div class="shopping-thumbnail card mb-3 ">
-                                                        <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                         <div class="caption">
-                                                            <p>
-                                                                <b>
-                                                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                </b>
-                                                            </p>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                            <p class="card-text ratingbox">
-                                                                ${rat}
-                                                            </p>
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                                <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                          <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
+                                                           <a href="/product/Index?id=${v.id}">
+                                                            <div class="shopping-thumbnail card mb-3 ">
+                                                                <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+
+                                                                <div class="card-body">
+                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                    <p class="card-text ratingbox">
+                                                                        ${rat}
+                                                                    </p>
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            `);
+                                                           </a>
+                                                            <div class="caption">
+                                                                    <p>
+                                                                        <b>
+                                                                            <a data-product-id="${v.id}" data-product-image="https://service.tabrizhandicrafts.com${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                        </b>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                    `);
                         });
 
-                        var totalcount = result.data.totalcount;
-                        var pagingBox = "";
+                        if (result.data != null && result.data?.objList.length != 0) {
+                            var totalcount = result.data.totalcount;
+                            var pagingBox = "";
 
-                        console.log("mod", totalcount % 12);
-                        var pages = totalcount / 12;
-                        if (totalcount % 12 > 0)
-                            pages += 1;
+                            console.log("mod", totalcount % 12);
+                            var pages = totalcount / 12;
+                            if (totalcount % 12 > 0)
+                                pages += 1;
 
-                        var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
+                            var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 
-                        pagingBox += `<div class="col-md-12 col-lg-12 text-center">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination justify-content-center productpagination">`;
+                            pagingBox += `<div class="col-md-12 col-lg-12 text-center">
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination justify-content-center productpagination">`;
 
-                        if (filters.pageNumber > 1) {
-                            pagingBox += `<li class="page-item">
-                                            <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
-                                        </li>`;
-                        }
-                        else {
-                            pagingBox += `<li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1">«</a>
-                                        </li>`;
-                        }
-
-                        for (var i = indexStart; i < indexStart + 4; i++) {
-                            var addActiveCls = "";
-                            if (i == filters.pageNumber) addActiveCls = "active";
-                            if (i <= pages) {
-                                pagingBox += `<li class="page-item ${addActiveCls}"><a class="page-link border-radius-5" onclick="filterByGotoPage(${i})" data-paging-number='${i}'>${i}</a></li>`;
+                            if (filters.pageNumber > 1) {
+                                pagingBox += `<li class="page-item">
+                                                    <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
+                                                </li>`;
                             }
+                            else {
+                                pagingBox += `<li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1">«</a>
+                                                </li>`;
+                            }
+
+                            for (var i = indexStart; i < indexStart + 4; i++) {
+                                var addActiveCls = "";
+                                if (i == filters.pageNumber) addActiveCls = "active";
+                                if (i <= pages) {
+                                    pagingBox += `<li class="page-item ${addActiveCls}"><a class="page-link border-radius-5" onclick="filterByGotoPage(${i})" data-paging-number='${i}'>${i}</a></li>`;
+                                }
+                            }
+
+                            if (pageNumber < pages) {
+                                pagingBox += `<li class="page-item">
+                                                    <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
+                                                </li>`;
+                            }
+                            else {
+                                pagingBox += `<li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1">»</a>
+                                                </li>`;
+                            }
+
+                            pagingBox += `</ul></nav></div>`;
+
+                            productsbox.append(pagingBox);
+                        } else {
+                            $("#productsbox").append(`<div class="alert alert-danger col-md-12 col-lg-12 text-center">داده ای برای نمایش وجود ندارد</div>`);
                         }
-
-                        if (pageNumber < pages) {
-                            pagingBox += `<li class="page-item">
-                                            <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
-                                        </li>`;
-                        }
-                        else {
-                            pagingBox += `<li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1">»</a>
-                                        </li>`;
-                        }
-
-                        pagingBox += `</ul></nav></div>`;
-
-                        productsbox.append(pagingBox);
-
                     }
+
+                    cartEvents.init();
                 }
             });
         }
+
+        var removeFilterOrderBy = () => {
+            filters.sortMethod = null;
+            filters.catProductId = null;
+            $("div.orderbyTags a").removeClass("active");
+
+            GetProductList_Paging_Filtering_UI();
+        };
 
         var filterOrderby = (filterOrderbyNum) => {
             filters.sortMethod = filterOrderbyNum;
@@ -491,7 +509,7 @@
             filters.catProductId = catId;
 
             $("div.sidenav a").removeClass("active");
-            $("div.sidenav a[data-cat-number=" + catId + "]").addClass("active");
+            $("div.sidenav").find("a[data-cat-number=" + catId + "]").addClass("active");
 
             GetProductList_Paging_Filtering_UI();
         };
@@ -504,14 +522,40 @@
 
             GetProductList_Paging_Filtering_UI();
         }
+
+        function getQueryStringValue(key) {
+            return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+        }
+
         //============ Load ============
         jQuery(document).ready(function () {
             LoadCategories();
+
+            var catId = getQueryStringValue("catId");
+            var OrderBy = getQueryStringValue("OrderBy");
+
+            if (OrderBy != null && OrderBy != "") {
+                filters.sortMethod = OrderBy;
+
+                $("div.orderbyTags a").removeClass("active");
+                $("a[data-orderby-number=" + OrderBy + "]").addClass("active");
+            }
+
+            if (catId != null && catId != "") {
+                filters.catProductId = catId;
+
+                $("div.sidenav a").removeClass("active");
+                $("div.sidenav").find("a[data-cat-number=" + catId + "]").addClass("active");
+            }
+
             //catProductId, productName, minPrice, maxPrice, sortMethod, pageNumber, pageSize
             GetProductList_Paging_Filtering_UI();
+
         });
 
-        var filters = { pageNumber: 1 };
+        var filters = {
+            pageNumber: 1
+        };
     </script>
 
 }

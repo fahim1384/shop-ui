@@ -1,4 +1,4 @@
-﻿@model List<HandiCrafts.Web.Models.ShoppingCart.AddressModel>
+﻿@model ICollection<CustomerAddressDto>
 
 <section>
     <div class="">
@@ -15,24 +15,29 @@
                             @{
                                 foreach (var item in Model)
                                 {
+                                    var CheckDefaultAddress = "";
+                                    if(item.DefualtAddress != null)
+                                    {
+                                        if (item.DefualtAddress == true) CheckDefaultAddress = "checked";
+                                    }
 
-                                    <div class="col-3 border-firouzi border-2 border-radius-10 text-muted line-height-30 p-2 m-2">
+                                    <div class="col-3 border-firouzi border-2 border-radius-10 text-muted line-height-30 p-2 m-2 addressbx">
                                         <div class="col-12 text-left">
-                                            <label>
-                                                <input type="radio" name="optionsSendAddress">
+                                            <label class="cyan">
+                                                <input type="radio" name="optionsSendAddress" @CheckDefaultAddress value="@item.Id">
                                                 <b>به این آدرس ارسال شود</b>
                                             </label>
                                         </div>
                                         <hr />
-                                        <div class="col-12">@item.SatatStr، @item.CityStr، @item.DistrictStr، @item.PostalAddress، پلاک @item.Pelak</div>
+                                        <div class="col-12 addressStr">@item.ProvinceName، @item.CityName، @item.Address</div>
                                         <div class="col-12"><span class="fa fa-envelope solid-fa ml-10"></span><small>@item.PostalCode</small></div>
-                                        <div class="col-12"><span class="fa fa-phone-alt solid-fa ml-10"></span><small>@item.MobileNo</small></div>
-                                        <div class="col-12"><span class="fa fa-user-alt solid-fa ml-10"></span><small>@item.FirstName @item.LastName</small></div>
+                                        <div class="col-12"><span class="fa fa-phone-alt solid-fa ml-10"></span><small>@item.IssureMobile</small></div>
+                                        <div class="col-12"><span class="fa fa-user-alt solid-fa ml-10"></span><small class="fullname">@item.IssureName @item.IssureFamily</small></div>
                                         <div class="col-12 text-right"><span><a href="" class="btn btn-link">حذف</a>|<a href="" class="btn btn-link">ویرایش</a></span></div>
                                     </div>
                                 }
 
-                                <button type="button" class="col-3 border-1 border-dashed border-radius-10 text-muted line-height-30 p-2 m-2 background-none">
+                                <button type="button" id="btnAddAddress" class="col-3 border-1 border-dashed border-radius-10 text-muted line-height-30 p-2 m-2 background-none min-height-200px">
                                     <span class="">
                                         <i class="fa fa-plus solid-fa fa-2x"></i>
                                         <br />

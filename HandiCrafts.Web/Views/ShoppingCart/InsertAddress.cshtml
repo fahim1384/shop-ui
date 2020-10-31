@@ -1,0 +1,172 @@
+﻿@model HandiCrafts.Web.Models.ShoppingCart.AddressModel
+@{
+    ViewData["Title"] = "افزودن آدرس جدید";
+}
+@section Styles{
+<style>
+    .validation-summary-valid {
+        display: none
+    }
+    .validation-summary-errors {
+        display: block;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        padding: .75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+    }
+</style>
+}
+<section>
+    <div class="">
+        <div class="card-deck mb-3 text-center m-0">
+            <div class="col col-sm-12 col-md-12">
+                <div class="card mb-4 m-0 border-0">
+                    <div class="mb-3 text-left">
+                        <div class="row m-0">
+                            <h5>
+                                آدرس جدید را وارد نمایید:
+                            </h5>
+                        </div>
+                        <div class="row mt-3 justify-content-center">
+                            <div class="col-md-6">
+                                <form id="form_AddAddress" class="kt-form" asp-action="InsertCustomerAddress_UI" asp-controller="ShoppingCart" data-ajax-method="POST"
+                                      data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+                                      data-ajax-failure="onFailed" data-ajax-success="onSuccess">
+
+                                    <div asp-validation-summary="All"></div>
+
+                                    <div class="alert alert-danger d-none" id="errorbox"></div>
+
+                                    <input type="hidden" asp-for="DefualtAddress" value="true" />
+                                    <div class="form-group">
+                                        <label>عنوان مکان</label>
+                                        <input asp-for="Titel" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>استان</label>
+                                        <select asp-for="SatatId" class="form-control" id="ProvinceCmb" asp-items="ViewBag.Provinces">
+                                            <option value="">انتخاب کنید</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>شهر</label>
+                                        <select asp-for="CityId" class="form-control" id="cityCmb">
+                                            <option value="">انتخاب کنید</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>آدرس</label>
+                                        <input asp-for="PostalAddress" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>کدپستی</label>
+                                        <input asp-for="PostalCode" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>تلفن</label>
+                                        <input asp-for="Tel" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>موبایل تحویل گیرنده</label>
+                                        <input asp-for="MobileNo" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>کدملی تحویل گیرنده</label>
+                                        <input asp-for="NationalCode" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>نام تحویل گیرنده</label>
+                                        <input asp-for="FirstName" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>نام خانوادگی تحویل گیرنده</label>
+                                        <input asp-for="LastName" class="form-control" />
+                                    </div>
+
+                                    @*<div class="form-group">
+                                            <label></label>
+                                            <input asp-for="Xgps" class="form-control" />
+                                            <span asp-validation-for="Xgps" class="kt-font-danger">این فیلد اجباری است</span>
+                                        </div>*@
+
+                                    <div class="kt-login__actions mt-3">
+                                        <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ثبت اطلاعات</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        // =======================================
+        function onBegin(e, form) {
+            $('#form_AddAddress').attr('disabled', true);
+        }
+
+        function onSuccess(result) {
+            $('#form_AddAddress').attr('disabled', false);
+            console.log(result);
+
+            if (result.success == true) {
+                localStorage.setItem("address", $("input[name=PostalAddress]").val());
+
+                window.location = "/shoppingcart/Address";// "/shoppingcart/cart";
+            }
+            else {
+                $("#errorbox").html(result.message).removeClass("d-none");
+            }
+        }
+
+        function onFailed() {
+            console.log("خطا");
+        }
+
+        function onComplete(re) {
+            console.log(re);
+        }
+
+        $("#ProvinceCmb").on("change", function () {
+            LoadCity();
+        });
+
+        function LoadCity() {
+            if ($("#ProvinceCmb").val() == null || $("#ProvinceCmb").val() == "")
+                return false;
+
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetCityList_UI",
+                data: { provinceId: $("#ProvinceCmb").val()},
+                success: function (result) {
+                    if (result.success == true) {
+                        $("#cityCmb").empty();
+                        $("#cityCmb").append(`<option value="">انتخاب کنید</option>`);
+                        $.each(result.data.objList, function (e, v) {
+                            $("#cityCmb").append(`<option value="${v?.id}">${v?.name??'نامشخص'}</option>`);
+                        });
+                    }
+                }
+            });
+        }
+
+    </script>
+}

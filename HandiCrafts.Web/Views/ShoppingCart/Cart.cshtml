@@ -24,6 +24,7 @@
                     <th>قیمت</th>
                     <th>تعداد</th>
                     <th>جمع کل</th>
+                    <th>نوع بسته بندی</th>
                     <th>حذف/ذخیره در لیست خریدبعدی</th>
                 </tr>
             </thead>
@@ -77,7 +78,7 @@
             <div class="col-12 bg-gray border-radius-20 pt-20px pl-25px pr-25px pb-20px">
                 <h4>نحوه پرداخت</h4>
 
-                <div class="row mt-4">
+                <div class="row mt-4" id="paymentTypesBox">
                     <div class="col">
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="checked">
@@ -100,10 +101,10 @@
                 <div class="row">
                     <div class="col mr-3">
                         <div class="input-group input-group-sm pt-5px pb-5px pr-10px pl-10px mr-10 ml-10 border-default border-radius-20">
-                            <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="ثبت کد تخفیف">
+                            <input type="text" id="inputOfferCode" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="ثبت کد تخفیف">
                             <div class="input-group-prepend">
                                 <span class="input-group-text background-none border-0">
-                                    <button class="btn color-firouzi border-0">ثبت</button>
+                                    <button type="button" id="btnSetOffer" class="btn color-firouzi border-0">ثبت</button>
                                 </span>
                             </div>
                         </div>
@@ -128,11 +129,12 @@
                 <div class="row">
                     <div class="col mr-3">
                         <p>
-                            آذربایجان شرقی، تبریز، رشدیه، بلوار بهارستان،برج رشدیه، بلوک ب، طبقه ١١ ،واحد ١١٣ ،
-                            پلاک ١
+                            @*آذربایجان شرقی، تبریز، رشدیه، بلوار بهارستان،برج رشدیه، بلوک ب، طبقه ١١ ،واحد ١١٣ ،
+                                پلاک ١*@
+                            <span id="addressBox"></span>
                             <br />
                             <br />
-                            <span class="text-muted"><i class="fa fa-user solid-fa"></i> زهره جمشیدی</span>
+                            <span class="text-muted"><i class="fa fa-user solid-fa"></i> <span id="fullname"></span>@*زهره جمشیدی*@</span>
                             <br />
                             <a href="/Shoppingcart/Address" class="color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
                         </p>
@@ -217,11 +219,11 @@
                     <tbody>
                         <tr>
                             <td class="line-height-60">قیمت کالا(<span class="total-count"></span>)</td>
-                            <td class="line-height-60 text-right"><span class="total-cart"></span> تومان</td>
+                            <td class="line-height-60 text-right"><span class="total-cart">0</span> تومان</td>
                         </tr>
                         <tr>
                             <td class="line-height-60">تخفیف کالاها</td>
-                            <td class="line-height-60 text-right color-firouzi">(17%) تخفیف کالاها</td>
+                            <td class="line-height-60 text-right color-firouzi">(<span id="offerPrecent">0</span>%) تخفیف کالاها</td>
                         </tr>
                     </tbody>
                 </table>
@@ -230,7 +232,7 @@
                     <tbody>
                         <tr>
                             <td class="line-height-60 font-weight-bold">جمع</td>
-                            <td class="line-height-60 text-right font-weight-bold">1000000 تومان</td>
+                            <td class="line-height-60 text-right font-weight-bold"><span id="totalBeforeOffer">0</span> تومان</td>
                         </tr>
                         <tr>
                             <td class="line-height-60">هزینه ارسال</td>
@@ -247,7 +249,7 @@
                     <tbody>
                         <tr>
                             <td class="line-height-60 font-weight-bolder">مبلغ قابل پرداخت</td>
-                            <td class="line-height-60 text-right font-weight-bolder">1000000 تومان</td>
+                            <td class="line-height-60 text-right font-weight-bolder"><span class="totalPayment">0</span> تومان</td>
                         </tr>
                     </tbody>
                 </table>
@@ -274,18 +276,43 @@
     <div class="row">
         <div class="col-12">
             <div class="container bg-white border-radius-10 p-5 text-center mt-25 mb-25 card">
-                <img src="~/image/empty-basket.png" width="200" class="m-auto" />
+                <img src="~/image/cart-empty.png" width="200" class="m-auto" />
 
-                <h3>سبد خرید شما خالی است!</h3>
-                <p>جهت مشاهده و افزودن به سبد خرید، به صفحه کالا ها وارد شوید</p>
+                <h3 class="mt-3">سبد خرید شما خالی است!</h3>
+                <p>می توانید برای مشاهده محصولات بیشتر به صفحات زیر بروید</p>
+                <div class="text-center">
+                    <a href="/Product/ByFilter?OrderBy=6" class="ml-3 mr-3">جدیدترین</a>
+                    <a href="/Product/ByFilter?OrderBy=2" class=" ml-3 mr-3" ">پرفروش ترین</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="modal" tabindex="-1" role="dialog" id="messagesModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">پیغام سیستم</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="messageTag"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts{
     <script>
+
+        $("#addressBox").html(localStorage.getItem("address"));
+        $("#fullname").html(localStorage.getItem("fullname"));
 
         if (shoppingCart.totalCount() == 0) {
             $(".cart-box").addClass("d-none");
@@ -294,5 +321,175 @@
             $(".cart-box-empty").addClass("d-none");
             $(".cart-box").removeClass("d-none");
         }
+
+        $("#btnSetOffer").on("click", function () {
+            if (isSetOffer == false)
+                GetOfferValueByCode_UI();
+            else {
+                $("#messageTag").html("شما قبلا از کد تخفیف استفاده کرده اید");
+                $("#messagesModal").modal("show");
+            }
+        });
+
+        // شیوه ی پرداخت
+        function GetPaymentTypeList() {
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetPaymentTypeList_UI",
+                data: {},
+                success: function (result) {
+                    if (result.success == true) {
+                        $("#paymentTypesBox").empty();
+
+                        $.each(result.data?.objList, function (e, v) {
+                            var check = "";
+                            if (e == 0) check = "checked";
+                            $("#paymentTypesBox").append(`<div class="col">
+                                                <label>
+                                                    <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
+                                                    <b>${v.title}</b>
+                                                    <br />
+                                                    <small class="text-muted">${v.description}</small>
+                                                </label>
+                                            </div>`);
+                        });
+                    }
+                }
+            });
+        }
+
+        // اعمال کد تخفیف
+        function GetOfferValueByCode_UI() {
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetOfferValueByCode_UI",
+                data: { offerCode: $("#inputOfferCode").val() },
+                success: function (result) {
+                    debugger
+                    if (result.success == true) {
+
+                        if (result.data?.objList.length == 0) return false;
+
+                        objOffers = result.data?.objList[0];
+                        var total = $("span.total-cart").text();
+
+                        if (objOffers?.value) {
+                            $("#offerPrecent").html(objOffers?.value);
+
+                            if (objOffers?.maximumPrice != null) {
+                                if (objOffers?.maximumPrice < parseInt(total) * parseInt(objOffers?.value)) {
+                                    $("#totalBeforeOffer").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
+                                    $("#totalPayment").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
+                                    allData.totalbeforeOffer = parseInt(total) - parseInt(objOffers?.maximumPrice);
+                                    allData.offerEmalshode = parseInt(objOffers?.maximumPrice);
+                                } else {
+                                    $("#totalBeforeOffer").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
+                                    $("#totalPayment").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
+                                    allData.totalbeforeOffer = parseInt(total) - parseInt(total) * parseInt(objOffers?.value);
+                                    allData.offerEmalshode = parseInt(total) * parseInt(objOffers?.value);
+                                }
+                            }
+                        }
+
+                    } else {
+                        $("#messageTag").html("کد تخفیف شما فاقد اعتبار می باشد");
+                        $("#messagesModal").modal("show");
+                    }
+                }
+            });
+        }
+
+        // جزییات محصولات
+        function GetProductByIdList_UI() {
+            var productIdList = [];
+            var productsInCart = shoppingCart.listCart();
+            $.each(productsInCart, function (e, v) {
+                productIdList.push(this.prodid);
+            });
+
+            if (productIdList.length == 0) {
+                $(".cart-box").addClass("d-none");
+                $(".cart-box-empty").removeClass("d-none");
+
+                return false;
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetProductByIdList_UI",
+                data: { model: productIdList },
+                success: function (result) {
+                    debugger
+                    if (result.success == true) {
+                        if (result.data?.objList.length == 0) return false;
+
+                        console.log(result.data);
+                    }
+                    else {
+                        $("#messageTag").html(result.message);
+                        $("#messagesModal").modal("show");
+                    }
+                }
+            });
+        }
+
+        // نوع بسته بندی محصول
+        let LoadPackages = () => {
+
+            var productsInCart = shoppingCart.listCart();
+            console.log(productsInCart)
+            $.each(productsInCart, function (e, vx) {
+                console.log("vx:",vx);
+                _prodIdLst.push(vx?.prodid);
+            });
+            
+            if (prodIdLst.length == 0) {
+                $(".cart-box").addClass("d-none");
+                $(".cart-box-empty").removeClass("d-none");
+
+                return false;
+            }
+
+            for (var i = 0; i < _prodIdLst.length; i++) {
+                var prd = _prodIdLst[i];
+                $.ajax({
+                    type: 'POST',
+                    url: "/Product/GetProductPackingTypeList_UI",
+                    data: {
+                        productId: _prodIdLst[i]
+                    },
+                    success: function (result) {
+                        debugger
+                        if (result.success == true && result.data != null) {
+                            $("select.packageComboInCart[data-pkCmbId='" + _prodIdLst[i] + "']").empty().append('<option value="">انتخاب ..</option>');
+                            $.each(result.data.objList, function (e2, v2) {
+                                $("select.packageComboInCart[data-pkCmbId=" + prd + "]").append("<option value='" + v2.packinggTypeId + "'>" + v2.packingTypeName ? v2.packingTypeName : 'نامشخص' + "</option>");
+
+                            });
+
+                        }
+                    }
+                });
+            }
+
+        };
+        //============ Load ============
+
+        GetProductByIdList_UI();
+        GetPaymentTypeList();
+
+        LoadPackages();
+
+
+        var isSetOffer = false;
+        var objOffers = {};
+
+        var allData = {
+            total: 0,
+            totalbeforeOffer: 0,
+            offerEmalshode: 0
+        }
+
+        var _prodIdLst = new Array();
     </script>
 }

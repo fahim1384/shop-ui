@@ -63,6 +63,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>C:\Users\Vahedi\Downloads\System.Net.Http.Formatting\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 

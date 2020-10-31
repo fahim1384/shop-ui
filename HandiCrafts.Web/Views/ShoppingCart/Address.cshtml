@@ -5,3 +5,19 @@
 
 @await Html.PartialAsync("_Address.cshtml", Model.AddressList)
 
+@section Scripts{ 
+<script>
+    $("#btnAddAddress").on("click", function () {
+        window.location = "/shoppingcart/InsertAddress"
+    });
+
+    $("input[name=optionsSendAddress]").on("click", function () {
+        localStorage.setItem("addressId", $(this).val());
+        localStorage.setItem("address", $(this).parents("div.addressbx").find("div.addressStr").html());
+        localStorage.setItem("fullname", $(this).parents("div.addressbx").find("small.fullname").html());
+
+        window.location = "/shoppingcart/cart";
+        //$(this).val();
+    })
+</script>
+}

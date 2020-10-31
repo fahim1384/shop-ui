@@ -3,9 +3,9 @@
 
 // Write your JavaScript code.
 
-//$(".select2").select2({ width: 'resolve' });
+$(".select2").select2({ width: 'resolve' });
 
-localStorage.setItem("token", `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIYW5kQ3JhZnRTZXJ2ZXJBY2Nlc3NUb2tlbiIsImp0aSI6ImI1NDVmMzA0LTIxZjUtNGZmNi1iOWM1LWM0YjMxNTZmMjE1MSIsImlhdCI6IjEwLzE2LzIwMjAgNTozNzowNiBQTSIsIklkIjoiMyIsIkZ1bGxOYW1lIjoi2KfYs9mF2KfYuduM2YQg2YjYp9it2K_bjCIsIlVzZXJOYW1lIjoiMTQ4MjcyNTc5IiwiRW1haWwiOiJ2YWhlZGkuZXNtYWVpbEBnbWFpbC5jb20iLCJyb2xlIjoiMiIsImV4cCI6MTYwMjk1NjIyNiwiaXNzIjoiSGFuZENyYWZ0QXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJIYW5kQ3JhZnRDbGllbnQifQ.7wkPFeZUS8syXPyWuhioU5G83oaeLOhHMvrkVuArnlg`)
+//localStorage.setItem("token", `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIYW5kQ3JhZnRTZXJ2ZXJBY2Nlc3NUb2tlbiIsImp0aSI6ImI1NDVmMzA0LTIxZjUtNGZmNi1iOWM1LWM0YjMxNTZmMjE1MSIsImlhdCI6IjEwLzE2LzIwMjAgNTozNzowNiBQTSIsIklkIjoiMyIsIkZ1bGxOYW1lIjoi2KfYs9mF2KfYuduM2YQg2YjYp9it2K_bjCIsIlVzZXJOYW1lIjoiMTQ4MjcyNTc5IiwiRW1haWwiOiJ2YWhlZGkuZXNtYWVpbEBnbWFpbC5jb20iLCJyb2xlIjoiMiIsImV4cCI6MTYwMjk1NjIyNiwiaXNzIjoiSGFuZENyYWZ0QXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJIYW5kQ3JhZnRDbGllbnQifQ.7wkPFeZUS8syXPyWuhioU5G83oaeLOhHMvrkVuArnlg`)
 
 
 var shoppingCart = (function () {
@@ -15,12 +15,15 @@ var shoppingCart = (function () {
     cart = [];
 
     // Constructor
-    function Item(name, price, count, prodid, prodimage) {
+    function Item(name, price, count, prodid, prodimage, packageId/*,colorId,offerId*/) {
         this.name = name;
         this.price = price;
         this.count = count;
         this.prodid = prodid;
         this.prodimage = prodimage;
+        //this.colorId = colorId;
+        this.packageId = packageId;
+        //this.offerId = offerId;
     }
 
     // Save cart
@@ -51,7 +54,7 @@ var shoppingCart = (function () {
     var obj = {};
 
     // Add to cart
-    obj.addItemToCart = function (name, price, count, prodid, prodimage) {
+    obj.addItemToCart = function (name, price, count, prodid, prodimage, packageId/*, colorId, offerId*/) {
         for (var item in cart) {
             if (cart[item].prodid === prodid) {
                 cart[item].count++;
@@ -59,7 +62,7 @@ var shoppingCart = (function () {
                 return;
             }
         }
-        var item = new Item(name, price, count, prodid, prodimage);
+        var item = new Item(name, price, count, prodid, prodimage, packageId/*, colorId, offerId*/);
         cart.push(item);
         saveCart();
     }
@@ -162,20 +165,27 @@ var cartEvents = (function () {
         init() {
 
             // Add item
+            $('.add-to-cart').off("click");
             $('.add-to-cart').click(function (event) {
-                
+
                 event.preventDefault();
                 var prodid = $(this).data('product-id');
                 var prodimage = $(this).data('product-image');
                 var name = $(this).data('product-name');
                 var price = Number($(this).data('product-price'));
-                shoppingCart.addItemToCart(name, price, 1, prodid, prodimage);
+
+                //var colorId = $(this).data('product-colorId');
+                var packageId = $(this).data('product-packageId');
+                //var offerId = $(this).data('product-offerId');
+
+                shoppingCart.addItemToCart(name, price, 1, prodid, prodimage, packageId/*, colorId, offerId*/);
                 displayCart();
 
                 $("#shoppingCartModal").modal();
             });
 
             // Clear items
+            $('.clear-cart').off("click");
             $('.clear-cart').click(function () {
                 shoppingCart.clearCart();
                 displayCart();
@@ -207,8 +217,8 @@ var cartEvents = (function () {
                 var output = "";
                 for (var i in cartArray) {
                     output += `<tr>
-            <td><img src='${cartArray[i].prodimage}' class='img-fluid width-100px' /></td>
-            <td> ${cartArray[i].name} </td>
+            <td><a href="/Product/index?id=${cartArray[i].prodid}"><img src='${cartArray[i].prodimage}' class='img-fluid width-100px border-default border-radius-5 p-2px' /></a></td>
+            <td><a href="/Product/index?id=${cartArray[i].prodid}">${cartArray[i].name}</a></td>
             <td> ${cartArray[i].price}</td>
             <td><form class="form-inline mt-2" dir="rtl">
                         <div class="spinner border-radius-5">
@@ -219,9 +229,10 @@ var cartEvents = (function () {
                     </form>
               </td>
             <td>${cartArray[i].total}</td>
+            <td class="packageIdCartTd">${cartArray[i].packageId ? artArray[i].packageId : '<select class="form-control packageComboInCart" data-pkCmbId=' + cartArray[i].prodid + '><option value="">انتخاب ..</option></select>'}</td>
             <td>
                     <span class="fa fa-check text-success fa-bold"></span><span>/</span>
-                    <span class="fa fa-times delete-item" data-product-name="${cartArray[i].name}"></span>
+                    <span class="fa fa-times delete-item" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}"></span>
              </td>
          </tr>`;
                 }

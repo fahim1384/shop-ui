@@ -92,11 +92,20 @@ namespace HandiCrafts.Web
             {
                 options.BaseAddress = new Uri(Configuration.GetValue<string>("BaseUrl"));
 
-                //var token = httpContextAccessor.HttpContext.Session.GetString("token");
-                //if (!string.IsNullOrEmpty(token))
-                //{
-                //    options.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", httpContextAccessor.HttpContext.Session.GetString("token"));
-                //}
+                var identity = httpContextAccessor.HttpContext.User.Identity as ClaimsIdentity;
+                if (identity != null)
+                {
+                    IEnumerable<Claim> claims = identity.Claims;
+                    // or
+                    var token = identity.Claims.First(o=>o.Type.Contains("nameidentifier")).Value;
+                    options.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                }
+
+                /*var token = httpContextAccessor.HttpContext.Session.GetString("token");
+                if (!string.IsNullOrEmpty(token))
+                {
+                    options.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", httpContextAccessor.HttpContext.Session.GetString("token"));
+                }*/
 
                 //...
             });

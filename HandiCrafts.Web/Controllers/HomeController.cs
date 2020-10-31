@@ -14,6 +14,7 @@ using System.Threading;
 using SmartBreadcrumbs.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Net.Http.Headers;
 
 namespace HandiCrafts.Web.Controllers
 {
@@ -148,7 +149,7 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<LocationListResult>> GetCountryList_UI()
+        public Task<ResponseState<LocationDtoListResult>> GetCountryList_UI()
         {
             return TryCatch(async () =>
             {
@@ -162,7 +163,7 @@ namespace HandiCrafts.Web.Controllers
                 var result = await client.UIAsync();
 
                 if (result.ResultCode != 200)
-                    return Error<LocationListResult>(null, message: result.ResultMessage);
+                    return Error<LocationDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -175,7 +176,7 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<LocationListResult>> GetProvinceList_UI(int countryId)
+        public Task<ResponseState<LocationDtoListResult>> GetProvinceList_UI(int countryId)
         {
             return TryCatch(async () =>
             {
@@ -189,7 +190,7 @@ namespace HandiCrafts.Web.Controllers
                 var result = await client.UIAsync(countryId);
 
                 if (result.ResultCode != 200)
-                    return Error<LocationListResult>(null, message: result.ResultMessage);
+                    return Error<LocationDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -201,7 +202,7 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<LocationListResult>> GetCityList_UI(int provinceId)
+        public Task<ResponseState<LocationDtoListResult>> GetCityList_UI(int provinceId)
         {
             return TryCatch(async () =>
             {
@@ -215,7 +216,7 @@ namespace HandiCrafts.Web.Controllers
                 var result = await client.UIAsync(provinceId);
 
                 if (result.ResultCode != 200)
-                    return Error<LocationListResult>(null, message: result.ResultMessage);
+                    return Error<LocationDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -288,7 +289,46 @@ namespace HandiCrafts.Web.Controllers
                     return Error<ProductDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data:result, message: result.ResultMessage);
+
+                /*string URL = "https://service.tabrizhandicrafts.com/api/Product/GetProductList_HaveMelliCode_UI";
+                string urlParameters = "";// "?api_key=123";
+
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(URL);
+
+                // Add an Accept header for JSON format.
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // List data response.
+                HttpResponseMessage response = client.GetAsync(urlParameters).Result;  // Blocking call! Program will wait here until a response is received or a timeout occurs.
+                if (response.IsSuccessStatusCode)
+                {
+                    // Parse the response body.
+                    var dataObjects = response.Content.ReadAsAsync<ProductDtoListResult>().Result;  //Make sure to add a reference to System.Net.Http.Formatting.dll
+                    //foreach (var d in dataObjects.ObjList)
+                    //{
+                    //    Console.WriteLine("{0}", d.Name);
+                    //}
+
+                    return Success(data: dataObjects, message: dataObjects.ResultMessage);
+                }
+                else
+                {
+                    //Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                    return Error<ProductDtoListResult>(null, message: response.ReasonPhrase);
+                }
+
+                //Make any other calls using HttpClient here.
+
+                //Dispose once all HttpClient calls are complete. This is not necessary if the containing object will be disposed of; for example in this case the HttpClient instance will be disposed automatically when the application terminates so the following call is superfluous.
+                //client.Dispose();*/
+
             });
+        }
+
+        public class DataObject
+        {
+            public string Name { get; set; }
         }
 
         /// <summary>
@@ -331,6 +371,30 @@ namespace HandiCrafts.Web.Controllers
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
                 LastSeenClient client = new LastSeenClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// مهر یونسکو
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> GetProductList_HaveUnescoCode_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                HaveUnescoCodeClient client = new HaveUnescoCodeClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 

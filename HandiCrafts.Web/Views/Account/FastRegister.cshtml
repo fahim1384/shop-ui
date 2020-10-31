@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "تکمیل ثبت نام";
+    ViewData["Title"] = "ورود به سرای";
 }
 
 @model HandiCrafts.Web.Models.Account.ShortRegisterModel
@@ -24,11 +24,11 @@
                         <div class="alert alert-danger d-none" id="errorbox"></div>
 
                         <input type="hidden" asp-for="UserId" value="@Model.UserId" />
-                        <div class="form-group">
+                        @*<div class="form-group">
                             <label>شماره موبایل خود را وارد نمایید</label>
                             <input asp-for="MobileNo" class="form-control" />
                             <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
-                        </div>
+                        </div>*@
 
                         <div class="form-group">
                             <label asp-for="Password"></label>
@@ -58,7 +58,7 @@
         $("#errorbox").html('').addClass("d-none");
 
         if (result.success == true) {
-            window.location = "/Account/_LoginUP";
+            window.location = "/Home/Index";
         } else {
             $("#errorbox").html(result.message).removeClass("d-none");
         }

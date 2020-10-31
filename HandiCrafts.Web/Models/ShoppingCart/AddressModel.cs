@@ -8,7 +8,8 @@ namespace HandiCrafts.Web.Models.ShoppingCart
 {
     public class AddressContainerModel
     {
-        public List<AddressModel> AddressList { get; set; }
+        public AddressModel AddAddress { get; set; }
+        public ICollection<CustomerAddressDto> AddressList { get; set; }
     }
     public class AddressModel
     {
@@ -16,7 +17,7 @@ namespace HandiCrafts.Web.Models.ShoppingCart
         [Display(Name = "Lng")]
         public decimal Lng { get; set; }
 
-        [Display(Name ="Lat")]
+        [Display(Name = "Lat")]
         public decimal Lat { get; set; }
 
         [Display(Name = "استان")]
@@ -43,11 +44,11 @@ namespace HandiCrafts.Web.Models.ShoppingCart
         public string PostalAddress { get; set; }
 
         [Display(Name = "پلاک")]
-        [Required(ErrorMessage = "فیلد {0} اجباری است")]
+        //[Required(ErrorMessage = "فیلد {0} اجباری است")]
         public string Pelak { get; set; }
 
         [Display(Name = "واحد")]
-        [Required(ErrorMessage = "فیلد {0} اجباری است")]
+        //[Required(ErrorMessage = "فیلد {0} اجباری است")]
         public string AptId { get; set; }
 
         [Display(Name = "کد پستی")]
@@ -75,6 +76,20 @@ namespace HandiCrafts.Web.Models.ShoppingCart
         [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         [RegularExpression("09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "شماره موبایل معتبر نمی باشد")]
         public string MobileNo { get; set; }
+
+        ///////////////////////
+
+        public long Id { get; set; }
+
+        [Display(Name = "عنوان مکان")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public string Titel { get; set; }
+
+        [Display(Name = "شماره تلفن")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public long? Tel { get; set; }
+
+        public bool? DefualtAddress { get; set; }
 
     }
 }

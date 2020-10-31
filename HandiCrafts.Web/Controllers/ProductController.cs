@@ -28,9 +28,28 @@ namespace HandiCrafts.Web.Controllers
 
         //[DefaultBreadcrumb("خانه")]
         [Breadcrumb("ViewData.BreadcrumbNode")]
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
-            var childNode1 = new MvcBreadcrumbNode("Index", "Product", "دسته بندی 1");
+            if (id == null)
+                return Redirect("/Product/ByFilter");
+
+            HttpClient httpClient = new HttpClient();
+
+            string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+            GetProductByIdClient client = new GetProductByIdClient(BaseUrl, httpClient);
+
+            var result = client.UIAsync(id).Result;
+
+            if(result.ResultCode == 200)
+            {
+                var childNode1 = new MvcBreadcrumbNode("Index", "Product", result.Obj.CatProductName);
+                ViewData["BreadcrumbNode"] = childNode1;
+
+                return View(result.Obj);
+            }
+
+            /*var childNode1 = new MvcBreadcrumbNode("Index", "Product", "دسته بندی 1");
 
             var childNode2 = new MvcControllerBreadcrumbNode("Product", "زیر دسته")
             {
@@ -44,7 +63,7 @@ namespace HandiCrafts.Web.Controllers
                 Parent = childNode2
             };
 
-            ViewData["BreadcrumbNode"] = childNode3;
+            ViewData["BreadcrumbNode"] = childNode3;*/
 
             return View();
         }
@@ -108,7 +127,7 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<ProductColorListResult>> GetProductColorList_UI(long? productId)
+        public Task<ResponseState<ProductColorDtoListResult>> GetProductColorList_UI(long? productId)
         {
             return TryCatch(async () =>
             {
@@ -121,7 +140,7 @@ namespace HandiCrafts.Web.Controllers
                 var result = await client.UIAsync(productId);
 
                 if (result.ResultCode != 200)
-                    return Error<ProductColorListResult>(null, message: result.ResultMessage);
+                    return Error<ProductColorDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
             });
@@ -132,7 +151,7 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<ProductPackingTypeListResult>> GetProductPackingTypeList_UI(long? productId)
+        public Task<ResponseState<ProductPackingTypeDtoListResult>> GetProductPackingTypeList_UI(long? productId)
         {
             return TryCatch(async () =>
             {
@@ -145,7 +164,7 @@ namespace HandiCrafts.Web.Controllers
                 var result = await client.UIAsync(productId);
 
                 if (result.ResultCode != 200)
-                    return Error<ProductPackingTypeListResult>(null, message: result.ResultMessage);
+                    return Error<ProductPackingTypeDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
             });

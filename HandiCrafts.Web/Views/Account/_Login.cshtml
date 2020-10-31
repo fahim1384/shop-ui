@@ -17,9 +17,10 @@
                           data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess">
                         <div class="form-group">
                             <label>شماره موبایل یا پست الکترونیک خود را وارد نمایید</label>
-                            <input asp-for="MobileNo" class="form-control" />
-                            <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
+                            <input asp-for="EmailorMobileNo" class="form-control" />
+                            <span asp-validation-for="EmailorMobileNo" class="kt-font-danger"></span>
                         </div>
+                        <div class="alert alert-danger d-none" id="errorbox"></div>
 
                         <div class="kt-login__actions mt-3">
                             <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ورود به سرای</button>
