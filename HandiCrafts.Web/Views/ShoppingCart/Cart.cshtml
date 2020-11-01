@@ -560,7 +560,7 @@
 
                 model.ProductList.push(productObj);
             });
-
+           
             $.ajax({
                 type: 'POST',
                 url: "/Shoppingcart/InsertCustomerOrder_UI",
@@ -570,8 +570,8 @@
                     if (result.success == true) {
                         console.log(result.data);
                         orderResltObj = result.data.obj;
-                        //BankUrl//CustomerOrderId//PostPrice
-
+                        //BankUrl//CustomerOrderId/OrderNo/PostPrice/RedirectToBank/
+                        window.location = orderResltObj.redirectToBank;
                     }
                     else {
                         $("#messageTag").html(result.message);

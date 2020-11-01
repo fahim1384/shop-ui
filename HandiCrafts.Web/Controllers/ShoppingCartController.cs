@@ -10,6 +10,7 @@ using HandiCrafts.Web.Interfaces;
 using HandiCrafts.Web.Models;
 using HandiCrafts.Web.Models.ShoppingCart;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
@@ -23,6 +24,11 @@ namespace HandiCrafts.Web.Controllers
         #region Fields
 
         IHttpClientFactory _httpClientFactory;
+        const string BankUrl = "BankUrl";
+        const string CustomerOrderId = "CustomerOrderId";
+        const string OrderNo = "OrderNo";
+        const string PostPrice = "PostPrice";
+        const string RedirectToBank = "RedirectToBank";
 
         #endregion
 
@@ -312,6 +318,12 @@ namespace HandiCrafts.Web.Controllers
 
                 if (result.ResultCode != 200)
                     return Error<InsertOrderResultDtoSingleResult>(null, message: result.ResultMessage);
+
+                HttpContext.Session.SetString(BankUrl, result.Obj.BankUrl);
+                HttpContext.Session.SetString(CustomerOrderId, result.Obj.CustomerOrderId != null ? result.Obj.CustomerOrderId.ToString():null);
+                HttpContext.Session.SetString(OrderNo, result.Obj.OrderNo != null ? result.Obj.OrderNo.ToString() : null);
+                HttpContext.Session.SetString(PostPrice, result.Obj.PostPrice != null ? result.Obj.PostPrice.ToString() : null);
+                HttpContext.Session.SetString(RedirectToBank, result.Obj.RedirectToBank.ToString());
 
                 return Success(data: result, message: result.ResultMessage);
 

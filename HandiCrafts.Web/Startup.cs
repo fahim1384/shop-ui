@@ -70,6 +70,8 @@ namespace HandiCrafts.Web
 
             services.AddRazorPages().AddNewtonsoftJson();
 
+            services.AddSession();
+
             //AddAuthentication(services);
 
             new DependencyRegistrar().Register(services);
@@ -158,6 +160,8 @@ namespace HandiCrafts.Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 

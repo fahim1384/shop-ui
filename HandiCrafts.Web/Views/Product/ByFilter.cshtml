@@ -381,6 +381,10 @@
                     $("#productsbox").html('');
                     var productsbox = $("#productsbox");
 
+                    if (result.success == false) {
+                        $("#productsbox").append(`<div class="alert alert-danger col-md-12 col-lg-12 text-center">${result.message}</div>`);
+                    }
+
                     if (result.data.objList != null) {
                         $.each(result.data.objList, function (e, v) {
                             var rat = "";
