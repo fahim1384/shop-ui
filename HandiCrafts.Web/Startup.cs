@@ -97,8 +97,11 @@ namespace HandiCrafts.Web
                 {
                     IEnumerable<Claim> claims = identity.Claims;
                     // or
-                    var token = identity.Claims.First(o=>o.Type.Contains("nameidentifier")).Value;
-                    options.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    if (claims.ToList().Count() > 0)
+                    {
+                        var token = identity.Claims.First(o => o.Type.Contains("nameidentifier")).Value;
+                        options.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    }
                 }
 
                 /*var token = httpContextAccessor.HttpContext.Session.GetString("token");
@@ -114,6 +117,7 @@ namespace HandiCrafts.Web
                 .AddCookie(options => {
                     options.LoginPath = "/Account/Login/";
                     options.AccessDeniedPath = "/Account/Login/";
+                    options.ExpireTimeSpan = TimeSpan.FromDays(1);
                 })
                 .AddJwtBearer(options =>
                 {

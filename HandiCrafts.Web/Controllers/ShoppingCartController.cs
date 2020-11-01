@@ -42,13 +42,13 @@ namespace HandiCrafts.Web.Controllers
 
         #region Actions
 
+        [Authorize(Roles = UserRoleNames.User)]
         public IActionResult Cart()
         {
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public Task<ResponseState<CustomerAddressDtoSingleResult>> GetCustomerDefultAddress_UI()
         {
             return TryCatch(async () =>
@@ -72,6 +72,7 @@ namespace HandiCrafts.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = UserRoleNames.User)]
         public Task<ResponseState<CustomerAddressDtoListResult>> GetCustomerAddressList_UI()
         {
             return TryCatch(async () =>
@@ -95,7 +96,8 @@ namespace HandiCrafts.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public Task<ResponseState<VoidResult>> InsertCustomerAddress_UI(AddressModel model)
+        [Authorize(Roles = UserRoleNames.User)]
+        public Task<ResponseState<Int64SingleResult>> InsertCustomerAddress_UI(AddressModel model)
         {
             return TryCatch(async () =>
             {
@@ -126,7 +128,7 @@ namespace HandiCrafts.Web.Controllers
                 var result = await client.UIAsync(customerAddress);
 
                 if (result.ResultCode != 200)
-                    return Error<VoidResult>(null, message: result.ResultMessage);
+                    return Error<Int64SingleResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -134,6 +136,7 @@ namespace HandiCrafts.Web.Controllers
 
         }
 
+        [Authorize(Roles = UserRoleNames.User)]
         public IActionResult Address()
         {
             HttpClient httpClient = new HttpClient();
@@ -152,6 +155,7 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoleNames.User)]
         public IActionResult InsertAddress()
         {
             HttpClient httpClient = new HttpClient();
@@ -164,7 +168,7 @@ namespace HandiCrafts.Web.Controllers
 
             List<SelectListItem> Provinces = new List<SelectListItem>();
 
-            var result = client.UIAsync(1).Result;
+            var result = client.UIAsync(null).Result;
 
             foreach (var item in result.ObjList)
             {
@@ -248,10 +252,10 @@ namespace HandiCrafts.Web.Controllers
 
                 var result = await client.UIAsync(offerCode);
 
-                result.ObjList = new List<OfferDto>() { new OfferDto { Value = 17, MaximumPrice = 1000 } };
+                //result.ObjList = new List<OfferDto>() { new OfferDto { Value = 17, MaximumPrice = 1000 } };
 
-               // if (result.ResultCode != 200)
-               //     return Error<OfferDtoListResult>(null, message: result.ResultMessage);
+                if (result.ResultCode != 200)
+                    return Error<OfferDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -286,27 +290,33 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        /// <summary>
+        /// ثبت سفارش
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = UserRoleNames.User)]
+        public Task<ResponseState<InsertOrderResultDtoSingleResult>> InsertCustomerOrder_UI(OrderModel model)
+        {
+            return TryCatch(async () =>
+            {
 
-        //[HttpPost]
-        //public Task<ResponseState<>> InsertAddress(CustomerAddress model)
-        //{
-        //    return TryCatch(async () =>
-        //    {
+                HttpClient httpClient = new HttpClient();
 
-        //        HttpClient httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
 
-        //        httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-        //        string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                InsertCustomerOrderClient client = new InsertCustomerOrderClient(BaseUrl, httpClient);
 
-        //        InsertCustomerAddressClient client = new InsertCustomerAddressClient(BaseUrl, httpClient);
+                var result = await client.UIAsync(model);
 
-        //        var result = await client.UIAsync(model);
+                if (result.ResultCode != 200)
+                    return Error<InsertOrderResultDtoSingleResult>(null, message: result.ResultMessage);
 
-        //        return Success(data: result, message: result.ResultMessage);
+                return Success(data: result, message: result.ResultMessage);
 
-        //    });
-        //}
+            });
+        }
 
         #endregion
 

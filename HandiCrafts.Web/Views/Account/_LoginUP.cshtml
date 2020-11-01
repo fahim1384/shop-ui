@@ -53,7 +53,10 @@
         $("#errorbox").html('').addClass("d-none");
 
         if (result.success == true)
+        {
+            
             window.location = "/Home/Index";
+        }
 
         else if (result.success == false) {
             $("#errorbox").html(result.message).removeClass("d-none");

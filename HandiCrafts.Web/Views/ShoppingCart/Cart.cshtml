@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-4">
+                @*<div class="row mt-4">
                     <div class="col mr-3">
                         <div class="input-group input-group-sm pt-5px pb-5px pr-10px pl-10px mr-10 ml-10 border-default border-radius-20">
                             <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="افزودن کارت هدیه جدید">
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
                 <h4 class="mt-5 mb-5">آدرس تحویل سفارش</h4>
 
@@ -142,72 +142,56 @@
 
                 </div>
 
-                <h4 class="mt-5 mb-5">زمان ارسال</h4>
+                @*<h4 class="mt-5 mb-5">زمان ارسال</h4>
 
                 <div class="row">
                     <div class="col mr-3 cart-send-date-tabs">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                    پنج شنبه
-                                    <small class="form-text text-muted-in-dark ">
-                                        25 مهر
-                                    </small>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                                    جمعه
-                                    <small class="form-text text-muted-in-dark ">
-                                        26 مهر
-                                    </small>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                                    شنبه
-                                    <small class="form-text text-muted-in-dark ">
-                                        27 مهر
-                                    </small>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">
-                                    یکشنبه
-                                    <small class="form-text text-muted-in-dark ">
-                                        28 مهر
-                                    </small>
-                                </a>
-                            </li>
+                            @{
+                                PersianDateTime persianDateTime = new PersianDateTime(DateTime.Now);
+
+                                for (int i = 0; i < 6; i++)
+                                {
+
+                                    var tabname = "#sendDay" + i;
+                                    var selected = i == 0 ? "true" : "false";
+                                    var active = i == 0 ? "active" : "";
+
+                                    <li class="nav-item">
+                                        <a class="nav-link @active" id="@tabname-tab" data-toggle="tab" href="@tabname" role="tab" aria-controls="@tabname" aria-selected="@selected">
+                                            @persianDateTime.AddDays(i + 2).DayName
+                                            <small class="form-text text-muted-in-dark ">
+                                                @persianDateTime.AddDays(i + 2).Day @persianDateTime.AddDays(i + 2).MonthName
+                                            </small>
+                                        </a>
+                                    </li>
+                                }
+                            }
+
                         </ul>
                         <div class="tab-content bg-white mb-4" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="col-12 pt-3 pb-3 pr-2">
-                                    <label>
-                                        <input type="radio" value="1" checked="checked">
-                                        <small class="text-muted">ساعت 9 تا 22</small>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <br />
-                                <br />
-                                <br />
-                            </div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <br />
-                                <br />
-                                <br />
-                            </div>
-                            <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
-                                <br />
-                                <br />
-                                <br />
-                            </div>
+                            @{
+                                for (int i = 0; i < 6; i++)
+                                {
+
+                                    var tabname = "#sendDay" + i;
+                                    var selected = i == 0 ? "active" : "";
+                                    var checkedRadoi = i == 0 ? "checked" : "";
+
+                                    <div class="tab-pane fade show @selected" id="@tabname" role="tabpanel" aria-labelledby="@tabname-tab">
+                                        <div class="col-12 pt-3 pb-3 pr-2">
+                                            <label>
+                                                <input type="radio" value="@i" @checkedRadoi>
+                                                <small class="text-muted">ساعت 9 تا 22</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                }
+                            }
                         </div>
                     </div>
 
-                </div>
+                </div>*@
 
             </div>
         </div>
@@ -240,7 +224,7 @@
                         </tr>
                         <tr>
                             <td class="line-height-60">هزینه بسته بندی</td>
-                            <td class="line-height-60 text-right color-firouzi">9500 ت</td>
+                            <td class="line-height-60 text-right color-firouzi"><span id="packingprice">0</span> ت</td>
                         </tr>
                     </tbody>
                 </table>
@@ -254,15 +238,15 @@
                     </tbody>
                 </table>
                 <div class="mt-4 mr-4 ml-4">
-                    <button type="button" class="btn btn-info btn-block p-2 font-size-20px font-weight-bold border-radius-10">تایید سفارشات</button>
+                    <button type="button" id="btnInsertOrder" class="btn btn-info btn-block p-2 font-size-20px font-weight-bold border-radius-10">تایید سفارشات</button>
                 </div>
 
                 <div class="col-10 offset-md-1">
                     <table class="w-100">
                         <tbody>
                             <tr>
-                                <td class="line-height-60">امتیاز باشگاه</td>
-                                <td class="line-height-60 text-right">10</td>
+                                @*<td class="line-height-60">امتیاز باشگاه</td>
+                                    <td class="line-height-60 text-right">10</td>*@
                             </tr>
                         </tbody>
                     </table>
@@ -282,7 +266,7 @@
                 <p>می توانید برای مشاهده محصولات بیشتر به صفحات زیر بروید</p>
                 <div class="text-center">
                     <a href="/Product/ByFilter?OrderBy=6" class="ml-3 mr-3">جدیدترین</a>
-                    <a href="/Product/ByFilter?OrderBy=2" class=" ml-3 mr-3" ">پرفروش ترین</a>
+                    <a href="/Product/ByFilter?OrderBy=2" class=" ml-3 mr-3">پرفروش ترین</a>
                 </div>
             </div>
         </div>
@@ -345,13 +329,13 @@
                             var check = "";
                             if (e == 0) check = "checked";
                             $("#paymentTypesBox").append(`<div class="col">
-                                                <label>
-                                                    <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
-                                                    <b>${v.title}</b>
-                                                    <br />
-                                                    <small class="text-muted">${v.description}</small>
-                                                </label>
-                                            </div>`);
+                                                                        <label>
+                                                                            <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
+                                                                            <b>${v.title}</b>
+                                                                            <br />
+                                                                            <small class="text-muted">${v.description}</small>
+                                                                        </label>
+                                                                    </div>`);
                         });
                     }
                 }
@@ -424,6 +408,8 @@
                         if (result.data?.objList.length == 0) return false;
 
                         console.log(result.data);
+
+                        productsdetaillist = result.data.objList;
                     }
                     else {
                         $("#messageTag").html(result.message);
@@ -433,63 +419,187 @@
             });
         }
 
-        // نوع بسته بندی محصول
-        let LoadPackages = () => {
-
-            var productsInCart = shoppingCart.listCart();
-            console.log(productsInCart)
-            $.each(productsInCart, function (e, vx) {
-                console.log("vx:",vx);
-                _prodIdLst.push(vx?.prodid);
+        // دریافت آدرس پیشفرض و نام فرد
+        function GetCustomerDefultAddress_UI() {
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetCustomerDefultAddress_UI",
+                success: function (result) {
+                    if (result.success == true) {
+   
+                        var dataInfo = result.data.obj;
+                        $("#addressBox").html(`${dataInfo?.provinceName??''} ${dataInfo?.cityName??''} ${dataInfo?.address??''}، ${dataInfo?.issureMobile??''}`);
+                        $("#fullname").html(`${dataInfo?.issureName} ${dataInfo?.issureFamily}`);
+                        localStorage.setItem("addressId", dataInfo.id);
+                    }
+                }
             });
-            
-            if (prodIdLst.length == 0) {
-                $(".cart-box").addClass("d-none");
-                $(".cart-box-empty").removeClass("d-none");
+        }
 
+        // نوع بسته بندی محصول
+        let LoadPackages = (prd, pkselected) => {
+            $.ajax({
+                type: 'POST',
+                url: "/Product/GetProductPackingTypeList_UI",
+                data: {
+                    productId: prd
+                },
+                success: function (result) {
+                    if (result.success == true && result.data != null) {
+                        var options = "";
+                        $("select.packageComboInCart[data-pkCmbId='" + prd + "']").empty();//.append('<option value="">انتخاب ..</option>');
+                        $.each(result.data.objList, function (e2, v2) {
+                            console.log("prd:", prd);
+                            console.log("this.packinggTypeId:", this.packinggTypeId);
+                            var selected = "";
+                            var pkhazineh = 0;
+                            if (result.data.objList.length == 1) {
+                                selected = "selected='selected'";
+
+                                shoppingCart.changeSelectedPackage(prd, this.packinggTypeId);
+
+                                $("input[data-pkinputhide='" + prd + "']").val(this.packinggTypeId);
+                                $("input[data-pkinputhide='" + prd + "']").attr("data-hazineh", this?.price ?? 0);
+
+                                $("#packingprice").html(this?.price ?? 0);
+                                allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt(this?.price ?? 0);
+
+                                $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+                            }
+
+                            if (pkselected != undefined && pkselected != null) {
+                                selected = "selected='selected'";
+
+                                shoppingCart.changeSelectedPackage(prd, this.packinggTypeId);
+
+                                $("input[data-pkinputhide='" + prd + "']").val(this.packinggTypeId);
+                                $("input[data-pkinputhide='" + prd + "']").attr("data-hazineh", this?.price ?? 0);
+
+                                $("#packingprice").html(this?.price ?? 0);
+                                allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt(this?.price ?? 0);
+
+                                $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+                            }
+
+                            var opTitle = this.packingTypeName != undefined ? this.packingTypeName : "عادی";
+                            pkhazineh = this?.price ?? 0;
+
+                            options += `<option value='${this.packinggTypeId}' ${selected} hazineh='${pkhazineh}'>${opTitle}</option>`;
+                        });
+
+                        $("select.packageComboInCart[data-pkCmbId=" + prd + "]").append(options);
+                    }
+                }
+            });
+        };
+
+        function productsPackageListLoad() {
+            var productsInCart = shoppingCart.listCart();
+
+            $.each(productsInCart, function (e, vx) {
+                LoadPackages(vx.prodid, $("input[data-pkinputhide='" + vx.prodid + "']").val());
+            });
+        }
+
+        $("select.packageComboInCart").off("click");
+        $("select.packageComboInCart").on("change", function () {
+
+            if ($(this).val() != "") {
+                shoppingCart.changeSelectedPackage($(this).attr("data-pkCmbId"), $(this).val());
+
+                $("input[data-pkinputhide='" + $(this).attr("data-pkCmbId") + "']").val($(this).val());
+                $("input[data-pkinputhide='" + $(this).attr("data-pkCmbId") + "']").attr("data-hazineh", $(this).find('option:selected').attr("hazineh"));
+
+                $("#packingprice").html($(this).find('option:selected').attr("hazineh"));
+                allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt($(this).find('option:selected').attr("hazineh"));
+
+                $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+            }
+        });
+
+        function findofferid(productid) {
+            var _offerid = null;
+
+            for (var i = 0; i < productsdetaillist.length; i++) {
+                if (productsdetaillist[i] == productid) {
+                    _offerid = productsdetaillist[i]?.offerId ?? null;
+                }
+            }
+
+            return _offerid;
+        }
+
+        $("#btnInsertOrder").on("click", function () {
+            InsertCustomerOrder_UI();
+        });
+
+        // ثبت سفارش
+        function InsertCustomerOrder_UI() {
+            if (localStorage.getItem("addressId") == null || localStorage.getItem("addressId") == undefined) {
+                $("#messageTag").html("شما آدرسی جهت ارسال انتخاب نکرده اید لطفا آنرا انتخاب نمایید");
+                $("#messagesModal").modal("show");
                 return false;
             }
 
-            for (var i = 0; i < _prodIdLst.length; i++) {
-                var prd = _prodIdLst[i];
-                $.ajax({
-                    type: 'POST',
-                    url: "/Product/GetProductPackingTypeList_UI",
-                    data: {
-                        productId: _prodIdLst[i]
-                    },
-                    success: function (result) {
-                        debugger
-                        if (result.success == true && result.data != null) {
-                            $("select.packageComboInCart[data-pkCmbId='" + _prodIdLst[i] + "']").empty().append('<option value="">انتخاب ..</option>');
-                            $.each(result.data.objList, function (e2, v2) {
-                                $("select.packageComboInCart[data-pkCmbId=" + prd + "]").append("<option value='" + v2.packinggTypeId + "'>" + v2.packingTypeName ? v2.packingTypeName : 'نامشخص' + "</option>");
+            var model = {
+                PaymentTypeId: $("input[name=optionsPaymentTypeRadios]:checked").val(),
+                OfferId: objOffers?.offerId ?? null,
+                CustomerAddressId: localStorage.getItem("addressId"),
+                CustomerDescription: null,
+                ProductList: []
+            };
 
-                            });
+            $.each(shoppingCart.listCart(), function (e, v) {
+                var productObj = {
+                    ProductId: v.prodid,
+                    Count: v.count,
+                    ColorId: null,
+                    PackingTypeId: $("input[data-pkinputhide='" + v.prodid + "']").val(),//v.packageId,
+                    OfferId: findofferid(v.prodid)
+                };
 
-                        }
+                model.ProductList.push(productObj);
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/InsertCustomerOrder_UI",
+                data: { model: model },
+                success: function (result) {
+                    debugger
+                    if (result.success == true) {
+                        console.log(result.data);
+                        orderResltObj = result.data.obj;
+                        //BankUrl//CustomerOrderId//PostPrice
+
                     }
-                });
-            }
+                    else {
+                        $("#messageTag").html(result.message);
+                        $("#messagesModal").modal("show");
+                    }
+                }
+            });
+        }
 
-        };
         //============ Load ============
 
         GetProductByIdList_UI();
         GetPaymentTypeList();
+        GetCustomerDefultAddress_UI();
 
-        LoadPackages();
-
-
+        var orderResltObj = {};
         var isSetOffer = false;
         var objOffers = {};
-
+        var productsdetaillist = [];
         var allData = {
-            total: 0,
+            total: shoppingCart.totalCart(),
             totalbeforeOffer: 0,
-            offerEmalshode: 0
+            offerEmalshode: 0,
+            hazinehBastehbandi: 0,
+            totalbeforeHazinehBastehbandi: 0
         }
 
-        var _prodIdLst = new Array();
+        productsPackageListLoad();
+
     </script>
 }

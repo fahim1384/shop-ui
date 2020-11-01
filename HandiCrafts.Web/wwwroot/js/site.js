@@ -100,6 +100,16 @@ var shoppingCart = (function () {
         saveCart();
     }
 
+    // Set count from item
+    obj.changeSelectedPackage = function (prodid, packageId) {
+        for (var i in cart) {
+            if (cart[i].prodid === prodid) {
+                cart[i].packageId = packageId;
+                break;
+            }
+        }
+    };
+
     // Clear cart
     obj.clearCart = function () {
         cart = [];
@@ -229,7 +239,7 @@ var cartEvents = (function () {
                     </form>
               </td>
             <td>${cartArray[i].total}</td>
-            <td class="packageIdCartTd">${cartArray[i].packageId ? artArray[i].packageId : '<select class="form-control packageComboInCart" data-pkCmbId=' + cartArray[i].prodid + '><option value="">انتخاب ..</option></select>'}</td>
+            <td class="packageIdCartTd"><input type='hidden' name='packageIdselected' value='${cartArray[i].packageId}' data-pkInputHide='${cartArray[i].prodid}' data-hazineh="0" /><select class="form-control packageComboInCart" data-pkCmbId='${cartArray[i].prodid}'><option value="">انتخاب ..</option></select></td>
             <td>
                     <span class="fa fa-check text-success fa-bold"></span><span>/</span>
                     <span class="fa fa-times delete-item" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}"></span>

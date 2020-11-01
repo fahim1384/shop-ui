@@ -868,17 +868,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/VoidResult"
+                  "$ref": "#/components/schemas/Int64SingleResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VoidResult"
+                  "$ref": "#/components/schemas/Int64SingleResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VoidResult"
+                  "$ref": "#/components/schemas/Int64SingleResult"
                 }
               }
             }
@@ -1108,7 +1108,7 @@
         "tags": [
           "Offer"
         ],
-        "summary": "لیست پیکج های فعال به همراه عکس ها",
+        "summary": "بررسی کد تخفیف",
         "operationId": "GetOfferValueByCode_UI",
         "parameters": [
           {
@@ -1137,6 +1137,128 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OfferDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/InsertCustomerOrder_UI": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "ثبت سفارش",
+        "operationId": "InsertCustomerOrder_UI",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsertOrderResultDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsertOrderResultDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsertOrderResultDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetCustomerOrder_byId_UI": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "اطلاعات سفارش مشتری براساس آیدی سفارش",
+        "operationId": "GetCustomerOrder_byId_UI",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrderFullDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrderFullDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrderFullDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetCustomerOrderList_UI": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "لیست سفارشات مشتری",
+        "operationId": "GetCustomerOrderList_UI",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrderDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrderDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrderDtoListResult"
                 }
               }
             }
@@ -3336,314 +3458,6 @@
           }
         }
       },
-      "PackingTypeImage": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "packingTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "decription": {
-            "type": "string",
-            "nullable": true
-          },
-          "imageFileUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packingType": {
-            "$ref": "#/components/schemas/PackingType"
-          }
-        }
-      },
-      "ProductPackingTypeImage": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "productPackingTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "decription": {
-            "type": "string",
-            "nullable": true
-          },
-          "imageFileUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "productPackingType": {
-            "$ref": "#/components/schemas/ProductPackingType"
-          }
-        }
-      },
-      "ProductPackingType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "productId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packinggTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "price": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "weight": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "packinggType": {
-            "$ref": "#/components/schemas/PackingType"
-          },
-          "product": {
-            "$ref": "#/components/schemas/Product"
-          },
-          "productPackingTypeImage": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/ProductPackingTypeImage"
-            }
-          }
-        }
-      },
-      "PackingType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "weight": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daDate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "customerOrder": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/CustomerOrder"
-            }
-          },
-          "packingTypeImage": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/PackingTypeImage"
-            }
-          },
-          "productPackingType": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/ProductPackingType"
-            }
-          }
-        }
-      },
       "PaymentTypeLocation": {
         "type": "object",
         "additionalProperties": false,
@@ -3955,7 +3769,8 @@
             "nullable": true
           },
           "cuserId": {
-            "type": "string",
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           },
           "cdate": {
@@ -3964,7 +3779,8 @@
             "nullable": true
           },
           "duserId": {
-            "type": "string",
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           },
           "ddate": {
@@ -3973,7 +3789,8 @@
             "nullable": true
           },
           "muserId": {
-            "type": "string",
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           },
           "mdate": {
@@ -3982,7 +3799,8 @@
             "nullable": true
           },
           "daUserId": {
-            "type": "string",
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           },
           "daDate": {
@@ -3995,6 +3813,314 @@
           },
           "finalStatus": {
             "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "PackingTypeImage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "packingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "decription": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingType": {
+            "$ref": "#/components/schemas/PackingType"
+          }
+        }
+      },
+      "ProductPackingTypeImage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productPackingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "decription": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productPackingType": {
+            "$ref": "#/components/schemas/ProductPackingType"
+          }
+        }
+      },
+      "ProductPackingType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packinggTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packinggType": {
+            "$ref": "#/components/schemas/PackingType"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          },
+          "productPackingTypeImage": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProductPackingTypeImage"
+            }
+          }
+        }
+      },
+      "PackingType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrderProduct": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            }
+          },
+          "packingTypeImage": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/PackingTypeImage"
+            }
+          },
+          "productPackingType": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProductPackingType"
+            }
           }
         }
       },
@@ -4487,6 +4613,11 @@
             "type": "integer",
             "format": "int64"
           },
+          "packingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "customerOrderId": {
             "type": "integer",
             "format": "int64",
@@ -4555,7 +4686,22 @@
             "format": "int64",
             "nullable": true
           },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "productCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalWeight": {
             "type": "integer",
             "format": "int64",
             "nullable": true
@@ -4621,6 +4767,9 @@
           },
           "finalStatus": {
             "$ref": "#/components/schemas/Status"
+          },
+          "packingType": {
+            "$ref": "#/components/schemas/PackingType"
           },
           "product": {
             "$ref": "#/components/schemas/Product"
@@ -4810,11 +4959,6 @@
             "format": "int64",
             "nullable": true
           },
-          "packingTypeId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
           "packingPrice": {
             "type": "integer",
             "format": "int64",
@@ -4905,9 +5049,6 @@
           },
           "finalStatus": {
             "$ref": "#/components/schemas/Status"
-          },
-          "packingType": {
-            "$ref": "#/components/schemas/PackingType"
           },
           "paymentType": {
             "$ref": "#/components/schemas/PaymentType"
@@ -5089,6 +5230,11 @@
             "nullable": true
           },
           "locationCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postCode": {
             "type": "integer",
             "format": "int64",
             "nullable": true
@@ -9491,7 +9637,7 @@
           }
         }
       },
-      "VoidResult": {
+      "Int64SingleResult": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -9502,6 +9648,10 @@
           "resultMessage": {
             "type": "string",
             "nullable": true
+          },
+          "obj": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -9684,6 +9834,606 @@
           }
         }
       },
+      "OrderProductModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "colorId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "OrderModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "paymentTypeId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "postTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerAddressId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "productList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/OrderProductModel"
+            }
+          }
+        }
+      },
+      "InsertOrderResultDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "customerOrderId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "redirectToBank": {
+            "type": "boolean"
+          },
+          "bankUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "InsertOrderResultDtoSingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/InsertOrderResultDto"
+          }
+        }
+      },
+      "CustomerOrderProductDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "packingTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerOrderId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sellerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sellerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productIncreasePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "statusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productOfferId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productOfferValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "productOfferCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "productOfferPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "sellerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminDescription": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CustomerOrderFullDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerAddressId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderProduceTime": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "postTypePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTrackingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "postServicePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "taxValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "taxPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerValue": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "offerPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "sellerDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "sendDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerOrderProductsList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProductDto"
+            }
+          }
+        }
+      },
+      "CustomerOrderFullDtoSingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/CustomerOrderFullDto"
+          }
+        }
+      },
+      "CustomerOrderDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerAddressId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderProduceTime": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "postTypePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postTrackingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "postServicePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "taxValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "taxPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerValue": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "offerPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sendDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryDate": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CustomerOrderDtoListResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalcount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderDto"
+            }
+          }
+        }
+      },
       "PackageDto": {
         "type": "object",
         "additionalProperties": false,
@@ -9796,6 +10546,11 @@
             "nullable": true
           },
           "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerId": {
             "type": "integer",
             "format": "int64",
             "nullable": true
