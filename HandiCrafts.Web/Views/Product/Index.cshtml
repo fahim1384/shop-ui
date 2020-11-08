@@ -22,7 +22,7 @@
                     <div class="mb-3 text-center">
                         <div class="row m-0 easyzoom easyzoom--overlay easyzoom--with-thumbnails">
                             @{
-                                var mainImageUrl = "https://service.tabrizhandicrafts.com" + Model.CoverImageUrl;
+                                var mainImageUrl = "" + Model.CoverImageUrl;
                             }
                             <a href="@mainImageUrl" class="mainMediaImage w-100 border-radius-10 max-width-450px height-300px m-auto">
                                 <img class="mainMediaImage w-100 border-radius-10 max-width-450px height-300px m-auto" width="640" height="400" src="@mainImageUrl" />
@@ -443,8 +443,8 @@
 
                             $("#productMediaLists").append(`<div class="col-3 product-media-item">
                             <div class="thumb-wrapper">
-                                <a href="https://service.tabrizhandicrafts.com${v.imageUrl}" data-standard="https://service.tabrizhandicrafts.com${v.imageUrl}">
-                                    <img class="w-100 height-175px border-radius-10" src="https://service.tabrizhandicrafts.com${v.imageUrl}" />
+                                <a href="${v.imageUrl}" data-standard="${v.imageUrl}">
+                                    <img class="w-100 height-175px border-radius-10" src="${v.imageUrl}" />
                                 </a>
                             </div></div>`);
                         });
@@ -529,7 +529,7 @@
                                                                                     <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
                                                                                        <a href="/product/Index?id=${v.id}">
                                                                                         <div class="shopping-thumbnail card mb-3">
-                                                                                            <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
                                                                                             <div class="card-body">
                                                                                                 <h6 class="card-title pricing-card-title">${v.name}</h6>
                                                                                                 <p class="card-text ratingbox">
@@ -544,7 +544,7 @@
                                                                                         <div class="caption">
                                                                                                 <p>
                                                                                                     <b>
-                                                                                                        <a data-product-id="${v.id}" data-product-image="https://service.tabrizhandicrafts.com${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                                                                         <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                                                                         <a><i class="fa fa-plus solid-fa"></i> </a>
                                                                                                     </b>

@@ -44,6 +44,38 @@
         }
       }
     },
+    "/api/Account/SellerLogin": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "SellerLogin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Account/CustomerLoginRegister_UI": {
       "post": {
         "tags": [
@@ -190,20 +222,29 @@
         }
       }
     },
-    "/api/Account/CustomerRegister_UI": {
+    "/api/Account/SellerLoginRegister_UI": {
       "post": {
         "tags": [
           "Account"
         ],
-        "summary": "دریافت شماره موبایل برای بررسی موجود بودن در سامانه",
-        "operationId": "CustomerRegister_UI",
+        "summary": "ورود / ثبت نام صنعتگر به سیستم",
+        "operationId": "SellerLoginRegister_UI",
         "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
           {
             "name": "mobileNo",
             "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int64"
+              "format": "int64",
+              "nullable": true
             }
           }
         ],
@@ -213,17 +254,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/LongResult"
+                  "$ref": "#/components/schemas/LoginRegisterDtoSingleResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LongResult"
+                  "$ref": "#/components/schemas/LoginRegisterDtoSingleResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LongResult"
+                  "$ref": "#/components/schemas/LoginRegisterDtoSingleResult"
                 }
               }
             }
@@ -231,13 +272,12 @@
         }
       }
     },
-    "/api/Account/CustomerRegister_GetPassword_UI": {
+    "/api/Account/SellerLogin_ByActivationCode_UI": {
       "post": {
         "tags": [
           "Account"
         ],
-        "summary": "دریافت پسورد جهت آپدیت و تکمیال ثبت نام",
-        "operationId": "CustomerRegister_GetPassword_UI",
+        "operationId": "SellerLogin_ByActivationCode_UI",
         "parameters": [
           {
             "name": "userId",
@@ -248,7 +288,47 @@
             }
           },
           {
-            "name": "mobileNo",
+            "name": "activationCode",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Account/SellerLogin_ByPass_UI": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "SellerLogin_ByPass_UI",
+        "parameters": [
+          {
+            "name": "userId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -256,7 +336,7 @@
             }
           },
           {
-            "name": "password",
+            "name": "pass",
             "in": "query",
             "schema": {
               "type": "string",
@@ -270,17 +350,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/LongResult"
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LongResult"
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LongResult"
+                  "$ref": "#/components/schemas/LoginResultDtoSingleResult"
                 }
               }
             }
@@ -1187,6 +1267,55 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/InsertOrderResultDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerOrderPayment/VerifyPayment_UI": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "استعلام پرداخت از بانک",
+        "operationId": "VerifyPayment_UI",
+        "parameters": [
+          {
+            "name": "authority",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringSingleResult"
                 }
               }
             }
@@ -2720,6 +2849,51 @@
         }
       }
     },
+    "/api/Product/GetSellerProductList": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "GetSellerProductList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/UpdateProductBySeller": {
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "UpdateProductBySeller",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerProductUpdateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerProductUpdateModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerProductUpdateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ProductImage/GetImageListByProductId": {
       "get": {
         "tags": [
@@ -3268,32 +3442,6 @@
           },
           "obj": {
             "$ref": "#/components/schemas/LoginResultDto"
-          }
-        }
-      },
-      "LongResult": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "resultCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "resultMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "totalCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "objList": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
           }
         }
       },
@@ -8855,6 +9003,18 @@
             "format": "double",
             "nullable": true
           },
+          "authorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "compareDescription": {
+            "type": "string",
+            "nullable": true
+          },
           "cuserId": {
             "type": "integer",
             "format": "int64",
@@ -9940,6 +10100,24 @@
           },
           "obj": {
             "$ref": "#/components/schemas/InsertOrderResultDto"
+          }
+        }
+      },
+      "StringSingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -11251,6 +11429,31 @@
           }
         }
       },
+      "SellerProductUpdateModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "producePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "produceDuration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        }
+      },
       "ProductImageDto": {
         "type": "object",
         "additionalProperties": false,
@@ -11323,6 +11526,32 @@
           "mobile": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "LongResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
           }
         }
       },

@@ -1,41 +1,72 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "صفحه نخست";
+}
+@section Styles{
+    @*<link href="~/css/_topMenuHeader.css" rel="stylesheet" />*@
+<style>
+    main.mt-150 {
+        margin-top:0;
+    }
+</style>
+}
+
+@section mainBanner{ 
+    <partial name="~/Views/Shared/Header/_mainBanner.cshtml" />
 }
 
 <!-- Slider -->
-<section class="bg-gray">
-    <div class="col-12">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                @*<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>*@
-            </ol>
-            <div class="carousel-inner">
-                @*<div class="carousel-item active">
-                        <img class="d-block w-100" src="~/image/sliders/slid2.jpg" style="max-height:300px;" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="~/image/sliders/slid3.jpg" style="max-height:300px;" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="~/image/slider.jpg" style="max-height:300px;" alt="Third slide">
-                    </div>*@
+@*<section class="bg-gray">
+        <div class="col-12">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                </ol>
+                <div class="carousel-inner">
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">قبلی</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">بعدی</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">قبلی</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">بعدی</span>
-            </a>
+        </div>
+    </section>*@
+
+
+
+
+
+
+<!-- START SECTION CATEGORIES -->
+<div class="section pt-0 small_pb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cat_overlap radius_all_5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-4">
+                            <div class="text-center text-md-left">
+                                <h4 class="mb-2">مهر اصالت یونسکو</h4>
+                                <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <div class="cat_slider mt-4 mt-md-0 carousel_slider owl-carousel owl-theme nav_style5 unisco-content" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "4"}}'>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
-
+</div>
+<!-- END SECTION CATEGORIES -->
 <!-- Slider -->
-<section class="bg-white card-margin-0">
+@*<section class="bg-white card-margin-0">
     <div class="row bg-gray" style="height:60px;"></div>
     <div class="container bg-white" style="margin-top:-60px;padding-top:40px;padding-bottom:60px;">
         <div class="row justify-content-md-center">
@@ -48,29 +79,17 @@
             </div>
             <div class="col col-lg-10">
                 <div class="row unisco-content">
-                    @*<div class="col-3 height-150">
-                            <img src="~/image/unesco-bg.jpg" class="height-100-width-100" />
-                        </div>
-                        <div class="col-3 height-150">
-                            <img src="~/image/unesco-bg.jpg" class="height-100-width-100" />
-                        </div>
-                        <div class="col-3 height-150">
-                            <img src="~/image/unesco-bg.jpg" class="height-100-width-100" />
-                        </div>
-                        <div class="col-3 height-150">
-                            <img src="~/image/unesco-bg.jpg" class="height-100-width-100" />
-                        </div>*@
                 </div>
 
             </div>
         </div>
     </div>
-</section>
+</section>*@
 
 <!-- تبلیغ -->
-<section>
-    <div class="row">
-        <div class="col col-lg-12" id="slider2">
+<section class="mt-5">
+    <div class="row ml-0 mr-0">
+        <div class="col col-lg-12 p-0" id="slider2">
             @*<a>
                     <img src="~/image/moarefi.jpg" class="w-100" />
                 </a>*@
@@ -94,32 +113,32 @@
     <div class="container">
         <div class="card-deck mb-3 text-center margubiatBoxContent">
             @*<div class="col-md-3">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                    <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                </div>
-            </div>*@
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
+                    </div>
+                </div>*@
         </div>
     </div>
 </section>
 
 <!--تبلیغ 2-->
 <section>
-    <div class="row pt-3" id="ads2img">
+    <div class="row ml-0 mr-0 pt-3" id="ads2img">
         @*<div class="col col-lg-6">
                 <img src="~/image/tabligh-col-6.jpg" class="w-100" />
             </div>
@@ -193,8 +212,8 @@
 
 <!-- 3 تبلیغ -->
 <section>
-    <div class="row">
-        <div class="col col-lg-12" id="ads3img">
+    <div class="row ml-0 mr-0">
+        <div class="col col-lg-12 p-0" id="ads3img">
             @*<img src="~/image/moarefi.jpg" class="w-100" />*@
         </div>
     </div>
@@ -329,8 +348,8 @@
 
 <!-- 4 تبلیغ -->
 <section>
-    <div class="row">
-        <div class="col col-lg-12" id="ads4img">
+    <div class="row ml-0 mr-0">
+        <div class="col col-lg-12 p-0" id="ads4img">
             @*<img src="~/image/moarefi.jpg" class="w-100" />*@
         </div>
     </div>
@@ -505,8 +524,8 @@
 
 <!-- 5 تبلیغ -->
 <section>
-    <div class="row">
-        <div class="col col-lg-12" id="ads5img">
+    <div class="row ml-0 mr-0">
+        <div class="col col-lg-12 p-0" id="ads5img">
             @*<img src="~/image/tabligh-shoma.jpg" class="w-100" />*@
         </div>
     </div>
@@ -949,6 +968,87 @@
 
 
 @section Scripts{
+    <script src="~/plugins/carousel/owl.carousel.min.js"></script>
+    <script>
+        /*===================================*/
+        //$('.owl-carousel').owlCarousel({
+        //    rtl: true,
+        //    loop: true,
+        //    margin: 10,
+        //    nav: true,
+        //    responsive: {
+        //        0: {
+        //            items: 1
+        //        },
+        //        600: {
+        //            items: 3
+        //        },
+        //        1000: {
+        //            items: 5
+        //        }
+        //    }
+        //});
+
+        function carousel_slider() {
+            $('.carousel_slider').each(function () {
+                var $carousel = $(this);
+                $carousel.owlCarousel({
+                    rtl: true,
+                    dots: $carousel.data("dots"),
+                    loop: $carousel.data("loop"),
+                    items: $carousel.data("items"),
+                    margin: $carousel.data("margin"),
+                    mouseDrag: $carousel.data("mouse-drag"),
+                    touchDrag: $carousel.data("touch-drag"),
+                    autoHeight: $carousel.data("autoheight"),
+                    center: $carousel.data("center"),
+                    nav: $carousel.data("nav"),
+                    rewind: $carousel.data("rewind"),
+                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                    autoplay: $carousel.data("autoplay"),
+                    animateIn: $carousel.data("animate-in"),
+                    animateOut: $carousel.data("animate-out"),
+                    autoplayTimeout: $carousel.data("autoplay-timeout"),
+                    smartSpeed: $carousel.data("smart-speed"),
+                    responsive: $carousel.data("responsive")
+                });
+            });
+        }
+
+        function slick_slider() {
+            $('.slick_slider').each(function () {
+                var $slick_carousel = $(this);
+                $slick_carousel.slick({
+                    rtl: true,
+                    arrows: $slick_carousel.data("arrows"),
+                    dots: $slick_carousel.data("dots"),
+                    infinite: $slick_carousel.data("infinite"),
+                    centerMode: $slick_carousel.data("center-mode"),
+                    vertical: $slick_carousel.data("vertical"),
+                    fade: $slick_carousel.data("fade"),
+                    cssEase: $slick_carousel.data("css-ease"),
+                    autoplay: $slick_carousel.data("autoplay"),
+                    verticalSwiping: $slick_carousel.data("vertical-swiping"),
+                    autoplaySpeed: $slick_carousel.data("autoplay-speed"),
+                    speed: $slick_carousel.data("speed"),
+                    pauseOnHover: $slick_carousel.data("pause-on-hover"),
+                    draggable: $slick_carousel.data("draggable"),
+                    slidesToShow: $slick_carousel.data("slides-to-show"),
+                    slidesToScroll: $slick_carousel.data("slides-to-scroll"),
+                    asNavFor: $slick_carousel.data("as-nav-for"),
+                    focusOnSelect: $slick_carousel.data("focus-on-select"),
+                    responsive: $slick_carousel.data("responsive")
+                });
+            });
+        }
+
+
+        $(document).ready(function () {
+            //carousel_slider();
+            slick_slider();
+        });
+        /*===================================*/
+    </script>
     <script>
 
         // 5 دسته بندی برتر
@@ -969,32 +1069,32 @@
                         $.each(result.data, function (e, v) {
                             if (e == 0 || e == 1) {
                                 bartarBox1 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                                                    <div class="banner-img">
-                                                        <a href="/product/ByFilter?catId=${v.id}">
-                                                            <image src="https://service.tabrizhandicrafts.com${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
-                                                        </a>
-                                                    </div>
-                                                </div>`;
+                                                                                <div class="banner-img">
+                                                                                    <a href="/product/ByFilter?catId=${v.id}">
+                                                                                        <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>`;
                             }
                             else if (e == 2) {
                                 bartarBox2 += `<div class="col-md-4">
-                                    <div class="card mb-4 shadow-sm mb-30">
-                                        <div class="">
-                                            <a href="/product/ByFilter?catId=${v.id}">
-                                                <image src="https://service.tabrizhandicrafts.com${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>`;
+                                                                <div class="card mb-4 shadow-sm mb-30">
+                                                                    <div class="">
+                                                                        <a href="/product/ByFilter?catId=${v.id}">
+                                                                            <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>`;
                             }
                             else if (e == 3 || e == 4) {
                                 bartarBox3 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                                                    <div class="banner-img">
-                                                        <a href="/product/ByFilter?catId=${v.id}">
-                                                            <image src="https://service.tabrizhandicrafts.com${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
-                                                        </a>
-                                                    </div>
-                                                </div>`;
+                                                                                <div class="banner-img">
+                                                                                    <a href="/product/ByFilter?catId=${v.id}">
+                                                                                        <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>`;
 
                             }
                         });
@@ -1025,16 +1125,16 @@
 
                                 if (e < 8)
                                     catBox.append(`<div class="col">
-                                                       <div class="card mb-4">
-                                                            <a href="/product/ByFilter?catId=${v.id}">
-                                                               <img class="max-width-100px m-auto" src="${imgUrl}" />
-                                                               <div class="card-body custome-muted-text">
-                                                                   <p class="card-text">${v.name}</p>
-                                                                   <a class="cyan">100 کالا</a>
-                                                               </div>
-                                                             </a>
-                                                           </div>
-                                                       </div>`);
+                                                                                   <div class="card mb-4">
+                                                                                        <a href="/product/ByFilter?catId=${v.id}">
+                                                                                           <img class="max-width-100px m-auto" src="${imgUrl}" />
+                                                                                           <div class="card-body custome-muted-text">
+                                                                                               <p class="card-text">${v.name}</p>
+                                                                                               <a class="cyan">100 کالا</a>
+                                                                                           </div>
+                                                                                         </a>
+                                                                                       </div>
+                                                                                   </div>`);
                             });
                         }
                     }
@@ -1060,15 +1160,15 @@
 
                                 if (e == 0) // فقط 1 نظر نمایش بده
                                     sanatgarBox.append(`<div class="col col-2">
-                                                                <div class="card mb-4">
-                                                                    <img src="https://service.tabrizhandicrafts.com${imgSanatgar}" class="rounded-circle max-width-100px" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col">
-                                                                <div class="card mb-4">
-                                                                    <div class="card-text">${v.comment}</div>
-                                                                </div>
-                                                            </div>`);
+                                                                                            <div class="card mb-4">
+                                                                                                <img src="${imgSanatgar}" class="rounded-circle max-width-100px" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col">
+                                                                                            <div class="card mb-4">
+                                                                                                <div class="card-text">${v.comment}</div>
+                                                                                            </div>
+                                                                                        </div>`);
                             });
 
                             $(".sanatgaran").removeClass("d-none");
@@ -1097,12 +1197,12 @@
                             $.each(result.data.objList, function (e, v) {
                                 if (e < 3) // نمایش 3 عدد
                                     packagesBox.append(`<div class="col-md-4 blog-hm-wrapper">
-                                                                    <div class="card mb-4 shadow-sm blog-img">
-                                                                        <a>
-                                                                            <img src="https://service.tabrizhandicrafts.com${v.packingTypeImage[0]?.imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
-                                                                        </a>
-                                                                    </div>
-                                                                </div>`);
+                                                                                                <div class="card mb-4 shadow-sm blog-img">
+                                                                                                    <a>
+                                                                                                        <img src="${v.packingTypeImage[0]?.imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>`);
                             });
                         }
 
@@ -1132,13 +1232,11 @@
                                             var active = "";
                                             if (e == 0) active = "active";
 
-                                            $("#carouselExampleIndicators").find("ol").append(`<li data-target="#carouselExampleIndicators" data-slide-to="${e}" class="${active}"></li>`);
+                                            //$("#carouselExampleIndicators").find("ol").append(`<li data-target="#carouselExampleIndicators" data-slide-to="${e}" class="${active}"></li>`);
 
-                                            $("#carouselExampleIndicators")
+                                            $("#carouselExampleControls")
                                                 .find("div.carousel-inner")
-                                                .append(`<div class="carousel-item ${active}">
-                                                                           <img class="d-block w-100" src="https://service.tabrizhandicrafts.com${v.imageUrl}" style="max-height:300px;" alt="${v.title}">
-                                                                         </div>`
+                                                .append(`<div class="carousel-item background_bg overlay_bg_50 ${active}" data-img-src="${v.imageUrl}" style="background-image: url(${v.imageUrl});background-size: cover;" alt="${v.title}"></div>`
                                                 );
 
                                         });
@@ -1148,8 +1246,8 @@
                                     case 2:
 
                                         $("#slider2").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                 <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100 max-height-300px" />
-                                                                              </a>`
+                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100 max-height-300px" />
+                                                                                                          </a>`
                                         );
                                         break;
 
@@ -1159,8 +1257,8 @@
                                             if (e < 2) {
                                                 $("#ads2img")
                                                     .append(`<div class="col col-lg-6">
-                                                                         <a href="${v.linkUrl}"><img src="https://service.tabrizhandicrafts.com${v.imageUrl}" class="w-100" /></a>
-                                                                     </div>`
+                                                                                                     <a href="${v.linkUrl}"><img src="${v.imageUrl}" class="w-100" /></a>
+                                                                                                 </div>`
                                                     );
                                             }
                                         });
@@ -1169,24 +1267,24 @@
                                     // تیلیغ 3
                                     case 4:
                                         $("#ads3img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                 <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                              </a>`
+                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                          </a>`
                                         );
                                         break;
 
                                     // تبلیغ 4
                                     case 5:
                                         $("#ads4img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                 <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                              </a>`
+                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                          </a>`
                                         );
                                         break;
 
                                     // تبلیغ 5
                                     case 6:
                                         $("#ads5img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                         <img src="https://service.tabrizhandicrafts.com${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                      </a>`
+                                                                                                     <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                  </a>`
                                         );
                                         break;
 
@@ -1231,32 +1329,32 @@
                                         }
                                     }
                                     latestProductBox.append(`
-                                            <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                               <a href="/product/Index?id=${v.id}">
-                                                <div class="shopping-thumbnail card mb-3">
-                                                    <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                    <div class="card-body">
-                                                        <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                        <p class="card-text ratingbox">
-                                                            ${rat}
-                                                        </p>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                              </a>
-                                                <div class="caption">
-                                                        <p>
-                                                            <b>
-                                                                <a data-product-id="${v.id}" data-product-image="https://service.tabrizhandicrafts.com${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                            </b>
-                                                        </p>
-                                                    </div>
-                                            </div>
-                                        `);
+                                                                        <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
+                                                                           <a href="/product/Index?id=${v.id}">
+                                                                            <div class="shopping-thumbnail card mb-3">
+                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                <div class="card-body">
+                                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                    <p class="card-text ratingbox">
+                                                                                        ${rat}
+                                                                                    </p>
+                                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                          </a>
+                                                                            <div class="caption">
+                                                                                    <p>
+                                                                                        <b>
+                                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                        </b>
+                                                                                    </p>
+                                                                                </div>
+                                                                        </div>
+                                                                    `);
                                 }
                             });
 
@@ -1284,10 +1382,10 @@
                                 $.each(result.data.objList, function (e, v) {
                                     if (e < 4) {
                                         margubiatBoxContent.append(`
-                                             <div class="col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
-                                                <img src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                             </a></div></div>
-                                        `);
+                                                                         <div class="col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
+                                                                            <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                         </a></div></div>
+                                                                    `);
                                     }
                                 });
                             } else {
@@ -1317,15 +1415,26 @@
 
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
-                                if (e < 4) {
+                                /*if (e < 4) {
                                     unisco.append(`
-                                             <div class="col-3 height-150">
-                                             <a href="/product/Index?id=${v.id}">
-                                                <img src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="height-100-width-100" /></a>
-                                             </div>
-                                        `);
-                                }
+                                         <div class="col-3 height-150">
+                                         <a href="/product/Index?id=${v.id}">
+                                            <img src="${v.coverImageUrl}" class="height-100-width-100" /></a>
+                                         </div>
+                                    `);
+                                }*/
+                                unisco.append(`
+                                          <div class="item banner-wrapper banner-border-2 mr-10 mb-4 mr-12px">
+                                        <div class="categories_box banner-img">
+                                            <a href="/product/Index?id=${v.id}">
+                                                <img src="${v.coverImageUrl}" class="height-100-width-100" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                     `);
                             });
+
+                            carousel_slider();
                         }
                     }
                 });
@@ -1365,33 +1474,33 @@
                                         }
                                     }
                                     lastSeenContent.append(`
-                                            <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                              <a href="/product/Index?id=${v.id}">
-                                                <div class="shopping-thumbnail card mb-3">
-                                                    <image src="https://service.tabrizhandicrafts.com${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                        <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
+                                                                          <a href="/product/Index?id=${v.id}">
+                                                                            <div class="shopping-thumbnail card mb-3">
+                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
 
-                                                    <div class="card-body">
-                                                        <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                        <p class="card-text ratingbox">
-                                                            ${rat}
-                                                        </p>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                              </a>
-                                                <div class="caption">
-                                                        <p>
-                                                            <b>
-                                                                <a data-product-id="${v.id}" data-product-image="https://service.tabrizhandicrafts.com${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                            </b>
-                                                        </p>
-                                                    </div>
-                                            </div>
-                                        `);
+                                                                                <div class="card-body">
+                                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                    <p class="card-text ratingbox">
+                                                                                        ${rat}
+                                                                                    </p>
+                                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                          </a>
+                                                                            <div class="caption">
+                                                                                    <p>
+                                                                                        <b>
+                                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                        </b>
+                                                                                    </p>
+                                                                                </div>
+                                                                        </div>
+                                                                    `);
                                 }
                             });
 
@@ -1451,5 +1560,209 @@
             // بازدیدهای اخیر
             GetProductList_LastSeen_UI();
         });
+
+        //////////////////////////////
+        /*===================================*
+04. MENU JS
+*===================================*/
+        //Main navigation scroll spy for shadow
+        $(window).on('scroll', function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 150) {
+                $('header.fixed-top').addClass('nav-fixed');
+            } else {
+                $('header.fixed-top').removeClass('nav-fixed');
+            }
+
+        });
+
+        //Show Hide dropdown-menu Main navigation
+        $(document).on('ready', function () {
+            $('.dropdown-menu a.dropdown-toggler').on('click', function () {
+                //var $el = $( this );
+                //var $parent = $( this ).offsetParent( ".dropdown-menu" );
+                if (!$(this).next().hasClass('show')) {
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+                }
+                var $subMenu = $(this).next(".dropdown-menu");
+                $subMenu.toggleClass('show');
+
+                $(this).parent("li").toggleClass('show');
+
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function () {
+                    $('.dropdown-menu .show').removeClass("show");
+                });
+
+                return false;
+            });
+        });
+
+        //Hide Navbar Dropdown After Click On Links
+        var navBar = $(".header_wrap");
+        var navbarLinks = navBar.find(".navbar-collapse ul li a.page-scroll");
+
+        $.each(navbarLinks, function () {
+
+            var navbarLink = $(this);
+
+            navbarLink.on('click', function () {
+                navBar.find(".navbar-collapse").collapse('hide');
+                $("header").removeClass("active");
+            });
+
+        });
+
+        //Main navigation Active Class Add Remove
+        $('.navbar-toggler').on('click', function () {
+            $("header").toggleClass("active");
+            if ($('.search-overlay').hasClass('open')) {
+                $(".search-overlay").removeClass('open');
+                $(".search_trigger").removeClass('open');
+            }
+        });
+
+        $(document).on('ready', function () {
+            if ($('.header_wrap').hasClass("fixed-top") && !$('.header_wrap').hasClass("transparent_header") && !$('.header_wrap').hasClass("no-sticky")) {
+                $(".header_wrap").before('<div class="header_sticky_bar d-none"></div>');
+            }
+        });
+
+        $(window).on('scroll', function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 150) {
+                $('.header_sticky_bar').removeClass('d-none');
+                $('header.no-sticky').removeClass('nav-fixed');
+
+            } else {
+                $('.header_sticky_bar').addClass('d-none');
+            }
+
+        });
+
+        var setHeight = function () {
+            var height_header = $(".header_wrap").height();
+            $('.header_sticky_bar').css({ 'height': height_header });
+        };
+
+        $(window).on('load', function () {
+            setHeight();
+        });
+
+        $(window).on('resize', function () {
+            setHeight();
+        });
+
+        $('.sidetoggle').on('click', function () {
+            $(this).addClass('open');
+            $('body').addClass('sidetoggle_active');
+            $('.sidebar_menu').addClass('active');
+            $("body").append('<div id="header-overlay" class="header-overlay"></div>');
+        });
+
+        $(document).on('click', '#header-overlay, .sidemenu_close', function () {
+            $('.sidetoggle').removeClass('open');
+            $('body').removeClass('sidetoggle_active');
+            $('.sidebar_menu').removeClass('active');
+            $('#header-overlay').fadeOut('3000', function () {
+                $('#header-overlay').remove();
+            });
+            return false;
+        });
+
+        $(".categories_btn").on('click', function () {
+            $('.side_navbar_toggler').attr('aria-expanded', 'false');
+            $('#navbarSidetoggle').removeClass('show');
+        });
+
+        $(".side_navbar_toggler").on('click', function () {
+            $('.categories_btn').attr('aria-expanded', 'false');
+            $('#navCatContent').removeClass('show');
+        });
+
+        $(".pr_search_trigger").on('click', function () {
+            $(this).toggleClass('show');
+            $('.product_search_form').toggleClass('show');
+        });
+
+        var rclass = true;
+
+        $("html").on('click', function () {
+            if (rclass) {
+                $('.categories_btn').addClass('collapsed');
+                $('.categories_btn,.side_navbar_toggler').attr('aria-expanded', 'false');
+                $('#navCatContent,#navbarSidetoggle').removeClass('show');
+            }
+            rclass = true;
+        });
+
+        $(".categories_btn,#navCatContent,#navbarSidetoggle .navbar-nav,.side_navbar_toggler").on('click', function () {
+            rclass = false;
+        });
+
+        /*===================================*
+        05. SMOOTH SCROLLING JS
+        *===================================*/
+        // Select all links with hashes
+
+        var topheaderHeight = $(".top-header").innerHeight();
+        var mainheaderHeight = $(".header_wrap").innerHeight();
+        var headerHeight = mainheaderHeight - topheaderHeight - 20;
+        $('a.page-scroll[href*="#"]:not([href="#"])').on('click', function () {
+            $('a.page-scroll.active').removeClass('active');
+            $(this).closest('.page-scroll').addClass('active');
+            // On-page links
+            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+                // Figure out element to scroll to
+                var target = $(this.hash),
+                    speed = $(this).data("speed") || 800;
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - headerHeight
+                    }, speed);
+                }
+            }
+        });
+        $(window).on('scroll', function () {
+            var lastId,
+                // All list items
+                menuItems = $(".header_wrap").find("a.page-scroll"),
+                topMenuHeight = $(".header_wrap").innerHeight() + 20,
+                // Anchors corresponding to menu items
+                scrollItems = menuItems.map(function () {
+                    var items = $($(this).attr("href"));
+                    if (items.length) { return items; }
+                });
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+                lastId = id;
+                // Set/remove active class
+                menuItems.closest('.page-scroll').removeClass("active").end().filter("[href='#" + id + "']").closest('.page-scroll').addClass("active");
+            }
+
+        });
+
+        $('.more_slide_open').slideUp();
+        $('.more_categories').on('click', function () {
+            $(this).toggleClass('show');
+            $('.more_slide_open').slideToggle();
+        });
+
     </script>
 }

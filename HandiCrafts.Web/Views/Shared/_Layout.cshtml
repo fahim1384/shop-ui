@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - فروشگاه اینترنتی سرای</title>
+    <link href="~/css/_Loading.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
     @*<link href="~/fonts/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />*@
     <link href="~/fonts/fontawesome-pro-5.15.1-web-ulabs/css/all.css" rel="stylesheet" />
     <link href="/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/css/_banner.css" rel="stylesheet" />
+    <link href="~/plugins/carousel/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/plugins/carousel/owl.theme.css" rel="stylesheet" />
+    <link href="~/plugins/carousel/owl.theme.default.min.css" rel="stylesheet" />
+
     <link href="~/css/Header._header.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="~/css/site.css" />
@@ -15,13 +21,30 @@
     @RenderSection("Styles", required: false)
 </head>
 <body>
+    <!-- LOADER -->
+    <div class="preloader">
+        <div class="lds-ellipsis-logo">
+            <img src="~/image/Logo.png" class="width-100px mb-20" />
+        </div>
+        <div class="lds-ellipsis">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- END LOADER -->
+
     <partial name="~/Views/Shared/Header/_header.cshtml" />
 
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
+    @RenderSection("mainBanner", false)
+
+
+    <div class="container-fluid pl-0 pr-0">
+        <main role="main" class="pb-3 mt-150">
             @RenderBody()
         </main>
     </div>
+
 
     <partial name="~/Views/Shared/_footer.cshtml" />
 
@@ -54,6 +77,17 @@
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
+        /*===================================*
+        01. LOADING JS
+        /*===================================*/
+        $(window).on('load', function () {
+            setTimeout(function () {
+                $(".preloader").delay(700).fadeOut(700).addClass('loaded');
+            }, 800);
+        });
+
+    </script>
+    <script>
         //  دسته بندی ها با زیر مجموعه
         let megaMenuData = () => {
             $.ajax({
@@ -80,20 +114,20 @@
                                 child += "</ul>";
 
                                 megacontent.append(`<div class="col-md-3">
-                                    <div class="col-megamenu">
-                                        <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
-                                    </div>
-                                </div`);
+                                                                                    <div class="col-megamenu">
+                                                                                        <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
+                                                                                    </div>
+                                                                                </div`);
 
                             }
                             else {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
 
                                 megacontent.append(`<div class="col-md-3">
-                                    <div class="col-megamenu">
-                                        <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
-                                    </div>
-                                </div`);
+                                                                                    <div class="col-megamenu">
+                                                                                        <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
+                                                                                    </div>
+                                                                                </div`);
                             }
                         });
                     }

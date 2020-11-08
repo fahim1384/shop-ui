@@ -54,9 +54,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetCatProductListClient client = new GetCatProductListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetCatProductListClient client = new GetCatProductListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -80,9 +80,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetSliderByPlaceCodeClient client = new GetSliderByPlaceCodeClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetSliderByPlaceCodeClient client = new GetSliderByPlaceCodeClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync(sliderPlaceCode);
 
@@ -105,9 +105,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetTopCatProductListClient client = new GetTopCatProductListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetTopCatProductListClient client = new GetTopCatProductListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -131,9 +131,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetFamousCommentsListClient client = new GetFamousCommentsListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetFamousCommentsListClient client = new GetFamousCommentsListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -156,9 +156,9 @@ namespace HandiCrafts.Web.Controllers
 
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetCountryListClient client = new GetCountryListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetCountryListClient client = new GetCountryListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -183,9 +183,9 @@ namespace HandiCrafts.Web.Controllers
 
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetProvinceListClient client = new GetProvinceListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetProvinceListClient client = new GetProvinceListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync(countryId);
 
@@ -209,9 +209,9 @@ namespace HandiCrafts.Web.Controllers
 
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetCityListClient client = new GetCityListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetCityListClient client = new GetCityListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync(provinceId);
 
@@ -234,9 +234,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetPackingTypeByIdClient client = new GetPackingTypeByIdClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetPackingTypeByIdClient client = new GetPackingTypeByIdClient(BaseUrl, httpClient);
 
                 await client.UIAsync(packingtypeId);
 
@@ -255,9 +255,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetPackingTypeListClient client = new GetPackingTypeListClient("https://service.tabrizhandicrafts.com/", httpClient);
+                GetPackingTypeListClient client = new GetPackingTypeListClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -279,9 +279,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                HaveMelliCodeClient client = new HaveMelliCodeClient("https://service.tabrizhandicrafts.com/", httpClient);
+                HaveMelliCodeClient client = new HaveMelliCodeClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -290,7 +290,7 @@ namespace HandiCrafts.Web.Controllers
 
                 return Success(data:result, message: result.ResultMessage);
 
-                /*string URL = "https://service.tabrizhandicrafts.com/api/Product/GetProductList_HaveMelliCode_UI";
+                /*string URL = "/api/Product/GetProductList_HaveMelliCode_UI";
                 string urlParameters = "";// "?api_key=123";
 
                 HttpClient client = new HttpClient();
@@ -342,9 +342,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                LatestClient client = new LatestClient("https://service.tabrizhandicrafts.com/", httpClient);
+                LatestClient client = new LatestClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -368,9 +368,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                LastSeenClient client = new LastSeenClient("https://service.tabrizhandicrafts.com/", httpClient);
+                LastSeenClient client = new LastSeenClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 
@@ -392,9 +392,9 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                HaveUnescoCodeClient client = new HaveUnescoCodeClient("https://service.tabrizhandicrafts.com/", httpClient);
+                HaveUnescoCodeClient client = new HaveUnescoCodeClient(BaseUrl, httpClient);
 
                 var result = await client.UIAsync();
 

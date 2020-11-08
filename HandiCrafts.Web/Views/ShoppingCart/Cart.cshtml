@@ -571,7 +571,7 @@
                         console.log(result.data);
                         orderResltObj = result.data.obj;
                         //BankUrl//CustomerOrderId/OrderNo/PostPrice/RedirectToBank/
-                        window.location = orderResltObj.redirectToBank;
+                        window.location = orderResltObj.bankUrl;
                     }
                     else {
                         $("#messageTag").html(result.message);
