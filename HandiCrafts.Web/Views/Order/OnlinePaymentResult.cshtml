@@ -1,0 +1,59 @@
+﻿@model HandiCrafts.Web.Models.Order.CsBankResult
+@{
+    ViewData["Title"] = "نتیجه درگاه بانکی";
+}
+
+<div class="row">
+    <div class="col-12 m-5">
+        <div class="container">
+            <h4>@ViewData["Title"]</h4>
+
+            <div>
+                @{
+                    if (Model.Status.ToLower().Equals("ok"))
+                    {
+                        <div class="alert alert-success">
+                            <strong>پرداخت موفق</strong>
+                            @if (string.IsNullOrEmpty(Model.Message))
+                            {
+                                <p>
+                                    پرداخت فاکتور شما با صورت موفق انجام شده است شما می توانید لیست سفارشات خود را مشاهده نمایید
+                                </p>
+                            }
+                            else
+                            {
+                                <p>
+                                    @Model.Message
+                                </p>
+                            }
+                        </div>
+                    }
+                    else if (Model.Status.ToLower().Equals("nok"))
+                    {
+                        <div class="alert alert-danger">
+                            <strong>پرداخت ناموفق</strong>
+                            @if (string.IsNullOrEmpty(Model.Message))
+                            {
+                                <p>
+                                    پرداخت فاکتور شما با صورت موفق انجام نشده است لطفا نسبت به سفارش و پرداخت دوباره اقدام نمایید
+                                </p>
+                            }
+                            else
+                            {
+                                <p>
+                                    @Model.Message
+                                </p>
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <script>window.location = "/Home/Index"</script>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HandiCrafts.Web.CustomerOrderDto>
+
+@{
+    ViewData["Title"] = "لیست خریدهای قبلی من";
+}
+
+<div class="row">
+    <div class="col-12 m-5">
+        <div class="container">
+            <h4>@ViewData["Title"]</h4>
+
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th>
+                            شماره ثبت سفارش
+                        </th>
+                        <th>
+                            تاریخ خرید
+                        </th>
+                        <th>
+                            وضعیت
+                        </th>
+                        <th>
+                            وضعیت پرداخت
+                        </th>
+                        <th>
+                            کد پیگیری
+                        </th>
+                        <th>
+                            مبلغ کل
+                        </th>
+                        <th>
+                            نوع پرداخت
+                        </th>
+                        <th>
+                            تاریخ ارسال
+                        </th>
+                        <th>
+                            تاریخ تحویل
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FinalStatus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PaymentStatus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PostTrackingCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FinalPrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PaymentTypeName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SendDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DeliveryDate)
+                            </td>
+                            <td>
+                                @Html.ActionLink("جزییات سفارش", "OrderById", new { orderId = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

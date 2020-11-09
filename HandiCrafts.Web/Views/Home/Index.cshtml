@@ -3,14 +3,14 @@
 }
 @section Styles{
     @*<link href="~/css/_topMenuHeader.css" rel="stylesheet" />*@
-<style>
-    main.mt-150 {
-        margin-top:0;
-    }
-</style>
+    <style>
+        main.mt-150 {
+            margin-top: 0;
+        }
+    </style>
 }
 
-@section mainBanner{ 
+@section mainBanner{
     <partial name="~/Views/Shared/Header/_mainBanner.cshtml" />
 }
 
@@ -67,24 +67,24 @@
 <!-- END SECTION CATEGORIES -->
 <!-- Slider -->
 @*<section class="bg-white card-margin-0">
-    <div class="row bg-gray" style="height:60px;"></div>
-    <div class="container bg-white" style="margin-top:-60px;padding-top:40px;padding-bottom:60px;">
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-2">
-                <div class="pt-4">
-                    <h5>مهر اصالت یونسکو</h5>
-                    <br />
-                    <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+        <div class="row bg-gray" style="height:60px;"></div>
+        <div class="container bg-white" style="margin-top:-60px;padding-top:40px;padding-bottom:60px;">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-2">
+                    <div class="pt-4">
+                        <h5>مهر اصالت یونسکو</h5>
+                        <br />
+                        <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col col-lg-10">
-                <div class="row unisco-content">
-                </div>
+                <div class="col col-lg-10">
+                    <div class="row unisco-content">
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div>
-</section>*@
+    </section>*@
 
 <!-- تبلیغ -->
 <section class="mt-5">
@@ -103,7 +103,7 @@
         <section class="text-center pt-5 pb-4">
             <div class="container">
                 <h4 class="display-9 after-before-bordered">نشان ملی مرغوبیت کالا</h4>
-                <p class="see-more-p">
+                <p class="see-more-p pr-3">
                     <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
                 </p>
             </div>
@@ -111,27 +111,7 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center margubiatBoxContent">
-            @*<div class="col-md-3">
-                    <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                    </div>
-                </div>*@
+        <div class="card-deck mb-3 text-center margubiatBoxContent owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}'>
         </div>
     </div>
 </section>
@@ -139,13 +119,6 @@
 <!--تبلیغ 2-->
 <section>
     <div class="row ml-0 mr-0 pt-3" id="ads2img">
-        @*<div class="col col-lg-6">
-                <img src="~/image/tabligh-col-6.jpg" class="w-100" />
-            </div>
-
-            <div class="col col-lg-6">
-                <img src="~/image/tabligh-col-6-2.jpg" class="w-100" />
-            </div>*@
     </div>
 </section>
 
@@ -164,51 +137,43 @@
 
     <div class="container">
         <div class="card-deck mb-4 text-center" id="bartarGroups">
-            @*<div class="col-md-4 mb-4">
-
-                    <div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                        <div class="banner-img">
-                            <a href="#">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                        <div class="banner-img">
-                            <a href="#">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm mb-30">
-                        <div class="">
-                            <a href="#">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-5 shadow-sm banner-wrapper banner-border ml-10 mb-30">
-                        <div class="banner-img">
-                            <a href="#">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card mb-5 shadow-sm banner-wrapper banner-border ml-10 mb-30">
-                        <div class="banner-img">
-                            <a href="#">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>*@
+            
         </div>
     </div>
 </section>
+
+
+<div class="row robin-index-content-box col-lg-12 mar-t-10 pad-0-10 d-none">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
+            <a href="https://www.robinava.com/product-category/handmade-texture/termeh/">
+                <img class="robin-index-widget-boxes" src="https://www.robinava.com/wp-content/uploads/2018/11/Terme4.jpg" alt="رومیزی ترمه">
+            </a>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 mar-pad-0">
+            <a href="https://www.robinava.com/product-category/decoration/decoration-decoration/statue/">
+                <img class="robin-index-widget-boxes" src="https://www.robinava.com/wp-content/uploads/2018/11/Hajm4.jpg" alt="مجسمه و تندیس">
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+        <a href="https://www.robinava.com/product-category/lighting-products/">
+            <img class="robin-index-widget-boxes min-h-200" src="https://www.robinava.com/wp-content/uploads/2019/07/Shishe-2.jpg" alt="چراغ رومیزی مینیاتور">
+        </a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0">
+        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 col-12 mar-pad-0">
+            <a href="https://www.robinava.com/product-category/metalworks/copper/">
+                <img class="robin-index-widget-boxes" src="https://www.robinava.com/wp-content/uploads/2019/05/Mes2.jpg" alt="محصولات مس سنونی">
+            </a>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 col-12 mar-pad-0">
+            <a href="https://www.robinava.com/product-category/organizational-gifts/very-important-person/silver-wall-mount/">
+                <img class="robin-index-widget-boxes" src="https://www.robinava.com/wp-content/uploads/2018/11/Noghre4.jpg" alt="تابلو نقره">
+            </a>
+        </div>
+    </div>
+</div>
 
 <!-- 3 تبلیغ -->
 <section>
@@ -361,7 +326,7 @@
         <section class="text-center pt-5 pb-4">
             <div class="container">
                 <h4 class="display-9 after-before-bordered">پکیج</h4>
-                <p class="see-more-p">
+                <p class="see-more-p pr-3">
                     <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
                 </p>
             </div>
@@ -369,28 +334,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-4 text-center" id="packagesBox">
-            @*<div class="col-md-4 blog-hm-wrapper">
-                    <div class="card mb-4 shadow-sm blog-img">
-                        <a>
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-hm-wrapper">
-                    <div class="card mb-4 shadow-sm blog-img">
-                        <a>
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-hm-wrapper">
-                    <div class="card mb-4 shadow-sm blog-img">
-                        <a>
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        </a>
-                    </div>
-                </div>*@
+        <div class="card-deck mb-4 text-center packagesBox owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "3"}}' id="packagesBox">
+            
         </div>
     </div>
 </section>
@@ -540,7 +485,7 @@
                 <a href="#" class="btn btn-link">جدیدترین</a>
                 <a href="#" class="btn btn-link d-none">پرفروش ترین</a>
 
-                <p class="see-more-p">
+                <p class="see-more-p pr-3">
                     <a href="#" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
                 </p>
             </div>
@@ -548,115 +493,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center" id="latestProductBox">
-            @*<div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
+        <div class="card-deck mb-3 text-center latest-product-box owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}' id="latestProductBox">
+
         </div>
     </div>
 </section>
@@ -672,70 +510,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center catBox">
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="w-100" src="~/image/hakaki.jpg" />
-                    <div class="card-body custome-muted-text">
-                        <p class="card-text">حکاکی روی فلز</p>
-                        <a class="cyan">100 کالا</a>
-                    </div>
-                </div>
-            </div>
+        <div class="card-deck mb-3 text-center catBox owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "3"}, "991":{"items": "5"}, "1199":{"items": "7"}}'>
+            
         </div>
     </div>
 </section>
@@ -749,7 +525,7 @@
                 <a href="#" class="btn btn-link">بازدیدهای اخیر</a>
                 <a href="#" class="btn btn-link d-none">بازدیدهای اخیر من</a>
 
-                <p class="see-more-p">
+                <p class="see-more-p pr-3">
                     <a href="#" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
                 </p>
             </div>
@@ -757,115 +533,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center" id="lastSeenContent">
-            @*<div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="shopping-thumbnail card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect fill="#f6f6f8" width="100%" height="100%" /><text fill="#b7b7b7" dy=".3em" x="60%" y="50%">تصویر</text></svg>
-                        <div class="caption">
-                            <p>
-                                <b>
-                                    <a><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                    <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                    <a><i class="fa fa-plus solid-fa"></i> </a>
-                                </b>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title pricing-card-title">مینا کاری</h6>
-                            <p class="card-text">
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star custom-fa"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                                <i class="fa fa-star cyan"></i>
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title pricing-card-title m-auto">4000000 ت <small class="text-muted amount ml-2">4500000 ت</small></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
+        <div class="card-deck mb-3 text-center last-seen-content owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}' id="lastSeenContent">
+
         </div>
     </div>
 </section>
@@ -881,17 +550,7 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center sanatgarBox">
-            @*<div class="col col-2">
-                    <div class="card mb-4">
-                        <img src="~/image/user-sanatgar.jpg" class="rounded-circle" />
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4">
-                        <div class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</div>
-                    </div>
-                </div>*@
+        <div class="card-deck mb-3 text-justify sanatgarBox  owl-carousel owl-theme" data-loop="true" data-dots="true" data-nav="false" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "991":{"items": "1"}, "1199":{"items": "1"}}'>
         </div>
     </div>
 </section>
@@ -971,24 +630,6 @@
     <script src="~/plugins/carousel/owl.carousel.min.js"></script>
     <script>
         /*===================================*/
-        //$('.owl-carousel').owlCarousel({
-        //    rtl: true,
-        //    loop: true,
-        //    margin: 10,
-        //    nav: true,
-        //    responsive: {
-        //        0: {
-        //            items: 1
-        //        },
-        //        600: {
-        //            items: 3
-        //        },
-        //        1000: {
-        //            items: 5
-        //        }
-        //    }
-        //});
-
         function carousel_slider() {
             $('.carousel_slider').each(function () {
                 var $carousel = $(this);
@@ -1060,7 +701,7 @@
 
                     success: function (result) {
                         console.log("GetTopCatProductList_UI", result.data);
-                        $("#bartarGroups").html('');
+                        /*$("#bartarGroups").html('');
                         var bartarGroupsHtml = "";
                         var bartarBox1 = "";
                         var bartarBox2 = "";
@@ -1069,37 +710,73 @@
                         $.each(result.data, function (e, v) {
                             if (e == 0 || e == 1) {
                                 bartarBox1 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                                                                                <div class="banner-img">
-                                                                                    <a href="/product/ByFilter?catId=${v.id}">
-                                                                                        <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>`;
+                                                                                    <div class="banner-img">
+                                                                                        <a href="/product/ByFilter?catId=${v.id}">
+                                                                                            <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>`;
                             }
                             else if (e == 2) {
                                 bartarBox2 += `<div class="col-md-4">
-                                                                <div class="card mb-4 shadow-sm mb-30">
-                                                                    <div class="">
-                                                                        <a href="/product/ByFilter?catId=${v.id}">
-                                                                            <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
-                                                                        </a>
+                                                                    <div class="card mb-4 shadow-sm mb-30">
+                                                                        <div class="">
+                                                                            <a href="/product/ByFilter?catId=${v.id}">
+                                                                                <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>`;
+                                                                </div>`;
                             }
                             else if (e == 3 || e == 4) {
                                 bartarBox3 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                                                                                <div class="banner-img">
-                                                                                    <a href="/product/ByFilter?catId=${v.id}">
-                                                                                        <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>`;
+                                                                                    <div class="banner-img">
+                                                                                        <a href="/product/ByFilter?catId=${v.id}">
+                                                                                            <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>`;
 
                             }
                         });
 
                         bartarGroupsHtml += `<div class="col-md-4 mb-4">${bartarBox1}</div>${bartarBox2}<div class="col-md-4 mb-4">${bartarBox3}</div>`;
+                        $("#bartarGroups").html(bartarGroupsHtml);*/
+
+                        $("#bartarGroups").html('');
+                        var bartarGroupsHtml = "";
+                        var bartarBox1 = "";
+                        var bartarBox2 = "";
+                        var bartarBox3 = "";
+
+                        $.each(result.data, function (e, v) {
+                            if (e == 0 || e == 1) {
+                                bartarBox1 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
+                    <a href="/product/ByFilter?catId=${v.id}">
+                        <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
+                    </a>
+                </div>`;
+                            }
+                            else if (e == 2) {
+                                bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+<a href="/product/ByFilter?catId=${v.id}">
+                    <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
+                </a></div>`;
+                            }
+                            else if (e == 3 || e == 4) {
+                                bartarBox3 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
+                    <a href="/product/ByFilter?catId=${v.id}">
+                        <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
+                    </a>
+                </div>`;
+
+                            }
+                        });
+
+                        bartarGroupsHtml += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+${bartarBox1}
+</div>
+${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0">${bartarBox3}</div>`;
                         $("#bartarGroups").html(bartarGroupsHtml);
                     }
                 });
@@ -1123,18 +800,42 @@
                                 var imgUrl = "/image/hakaki.jpg";
                                 //if (v.url != null) imgUrl = v.url;
 
-                                if (e < 8)
-                                    catBox.append(`<div class="col">
-                                                                                   <div class="card mb-4">
-                                                                                        <a href="/product/ByFilter?catId=${v.id}">
-                                                                                           <img class="max-width-100px m-auto" src="${imgUrl}" />
-                                                                                           <div class="card-body custome-muted-text">
-                                                                                               <p class="card-text">${v.name}</p>
-                                                                                               <a class="cyan">100 کالا</a>
-                                                                                           </div>
-                                                                                         </a>
-                                                                                       </div>
-                                                                                   </div>`);
+                                //if (e < 8)
+                                catBox.append(`<div class="col items">
+                                        <div class="card mb-4">
+                                             <a href="/product/ByFilter?catId=${v.id}">
+                                                <img class="max-width-100px m-auto" src="${imgUrl}" />
+                                                <div class="card-body custome-muted-text">
+                                                    <p class="card-text">${v.name}</p>
+                                                    <a class="cyan">100 کالا</a>
+                                                </div>
+                                              </a>
+                                            </div>
+                                        </div>`);
+                            });
+
+                            $(".catBox").each(function () {
+                                var $carousel = $(this);
+                                $carousel.owlCarousel({
+                                    rtl: true,
+                                    dots: $carousel.data("dots"),
+                                    loop: $carousel.data("loop"),
+                                    items: $carousel.data("items"),
+                                    margin: $carousel.data("margin"),
+                                    mouseDrag: $carousel.data("mouse-drag"),
+                                    touchDrag: $carousel.data("touch-drag"),
+                                    autoHeight: $carousel.data("autoheight"),
+                                    center: $carousel.data("center"),
+                                    nav: $carousel.data("nav"),
+                                    rewind: $carousel.data("rewind"),
+                                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                    autoplay: $carousel.data("autoplay"),
+                                    animateIn: $carousel.data("animate-in"),
+                                    animateOut: $carousel.data("animate-out"),
+                                    autoplayTimeout: $carousel.data("autoplay-timeout"),
+                                    smartSpeed: $carousel.data("smart-speed"),
+                                    responsive: $carousel.data("responsive")
+                                });
                             });
                         }
                     }
@@ -1158,17 +859,41 @@
                                 var imgSanatgar = "/image/icons/profile.png";
                                 if (v.profilePic != null) imgSanatgar = v.profilePic;
 
-                                if (e == 0) // فقط 1 نظر نمایش بده
-                                    sanatgarBox.append(`<div class="col col-2">
-                                                                                            <div class="card mb-4">
-                                                                                                <img src="${imgSanatgar}" class="rounded-circle max-width-100px" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="col">
-                                                                                            <div class="card mb-4">
-                                                                                                <div class="card-text">${v.comment}</div>
-                                                                                            </div>
-                                                                                        </div>`);
+                                if (e < 5) // فقط 1 نظر نمایش بده
+                                    sanatgarBox.append(`<div class="row ml-0 mr-0"><div class="col col-6 col-sm-3 m-auto">
+                                                                                                        <div class="card mb-4">
+                                                                                                            <img src="${imgSanatgar}" class="p-2px border-default rounded-circle max-width-120px height-120-px m-auto" />
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="col col-12 col-sm-9">
+                                                                                                        <div class="card mb-4 mt-5">
+                                                                                                            <div class="card-text">${v.comment}</div>
+                                                                                                        </div>
+                                                                                                    </div></div>`);
+                            });
+
+                            $(".sanatgarBox").each(function () {
+                                var $carousel = $(this);
+                                $carousel.owlCarousel({
+                                    rtl: true,
+                                    dots: $carousel.data("dots"),
+                                    loop: $carousel.data("loop"),
+                                    items: $carousel.data("items"),
+                                    margin: $carousel.data("margin"),
+                                    mouseDrag: $carousel.data("mouse-drag"),
+                                    touchDrag: $carousel.data("touch-drag"),
+                                    autoHeight: $carousel.data("autoheight"),
+                                    center: $carousel.data("center"),
+                                    nav: $carousel.data("nav"),
+                                    rewind: $carousel.data("rewind"),
+                                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                    autoplay: $carousel.data("autoplay"),
+                                    animateIn: $carousel.data("animate-in"),
+                                    animateOut: $carousel.data("animate-out"),
+                                    autoplayTimeout: $carousel.data("autoplay-timeout"),
+                                    smartSpeed: $carousel.data("smart-speed"),
+                                    responsive: $carousel.data("responsive")
+                                });
                             });
 
                             $(".sanatgaran").removeClass("d-none");
@@ -1176,6 +901,7 @@
 
                         // اگر لیست خالی باشه کل باکس رو مخفی کن
                         if (result.data == null || result.data.objList.length == 0) $(".sanatgaran").addClass("d-none");
+
                     }
                 });
             } catch (e) {
@@ -1195,14 +921,35 @@
 
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
-                                if (e < 3) // نمایش 3 عدد
-                                    packagesBox.append(`<div class="col-md-4 blog-hm-wrapper">
-                                                                                                <div class="card mb-4 shadow-sm blog-img">
-                                                                                                    <a>
-                                                                                                        <img src="${v.packingTypeImage[0]?.imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                            </div>`);
+                                //if (e < 3) // نمایش 3 عدد
+                                    packagesBox.append(`<div class="items __col-md-4 blog-hm-wrapper">
+                                        <div class="card mb-4 shadow-sm blog-img">
+                                            <a>
+                                                <img src="${v.packingTypeImage[0]?.imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
+                                            </a>
+                                        </div>
+                                    </div>`);
+                            });
+
+                            $("#packagesBox").owlCarousel({
+                                rtl: true,
+                                dots: $("#packagesBox").data("dots"),
+                                loop: $("#packagesBox").data("loop"),
+                                items: $("#packagesBox").data("items"),
+                                margin: $("#packagesBox").data("margin"),
+                                mouseDrag: $("#packagesBox").data("mouse-drag"),
+                                touchDrag: $("#packagesBox").data("touch-drag"),
+                                autoHeight: $("#packagesBox").data("autoheight"),
+                                center: $("#packagesBox").data("center"),
+                                nav: true,//$carousel.data("nav"),
+                                rewind: $("#packagesBox").data("rewind"),
+                                navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                autoplay: $("#packagesBox").data("autoplay"),
+                                animateIn: $("#packagesBox").data("animate-in"),
+                                animateOut: $("#packagesBox").data("animate-out"),
+                                autoplayTimeout: $("#packagesBox").data("autoplay-timeout"),
+                                smartSpeed: $("#packagesBox").data("smart-speed"),
+                                responsive: $("#packagesBox").data("responsive")
                             });
                         }
 
@@ -1246,8 +993,8 @@
                                     case 2:
 
                                         $("#slider2").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100 max-height-300px" />
-                                                                                                          </a>`
+                                                                                                                         <img src="${result.data.objList[0].imageUrl}" class="w-100 max-height-300px" />
+                                                                                                                      </a>`
                                         );
                                         break;
 
@@ -1257,8 +1004,8 @@
                                             if (e < 2) {
                                                 $("#ads2img")
                                                     .append(`<div class="col col-lg-6">
-                                                                                                     <a href="${v.linkUrl}"><img src="${v.imageUrl}" class="w-100" /></a>
-                                                                                                 </div>`
+                                                                                                                 <a href="${v.linkUrl}"><img src="${v.imageUrl}" class="w-100" /></a>
+                                                                                                             </div>`
                                                     );
                                             }
                                         });
@@ -1267,24 +1014,24 @@
                                     // تیلیغ 3
                                     case 4:
                                         $("#ads3img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                                                          </a>`
+                                                                                                                         <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                                      </a>`
                                         );
                                         break;
 
                                     // تبلیغ 4
                                     case 5:
                                         $("#ads4img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                                                          </a>`
+                                                                                                                         <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                                      </a>`
                                         );
                                         break;
 
                                     // تبلیغ 5
                                     case 6:
                                         $("#ads5img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                     <img src="${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                                                  </a>`
+                                                                                                                 <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                              </a>`
                                         );
                                         break;
 
@@ -1311,54 +1058,79 @@
 
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
-                                if (e < 4) { // نمایش 4 عدد
-                                    var rat = "";
-                                    if (v.rating != undefined) {
-                                        var r = v.rating.toFixed();
+                                //if (e < 4) { // نمایش 4 عدد
+                                var rat = "";
+                                if (v.rating != undefined) {
+                                    var r = v.rating.toFixed();
 
-                                        for (var i = 5; i > 0; i--) {
-                                            if (r - i < 0) {
-                                                rat += `<i class="fa fa-star custom-fa"></i>`;
-                                            } else {
-                                                rat += `<i class="fa fa-star cyan"></i>`;
-                                            }
-                                        }
-                                    } else {
-                                        for (var i = 0; i < 5; i++) {
+                                    for (var i = 5; i > 0; i--) {
+                                        if (r - i < 0) {
                                             rat += `<i class="fa fa-star custom-fa"></i>`;
+                                        } else {
+                                            rat += `<i class="fa fa-star cyan"></i>`;
                                         }
                                     }
-                                    latestProductBox.append(`
-                                                                        <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                                                           <a href="/product/Index?id=${v.id}">
-                                                                            <div class="shopping-thumbnail card mb-3">
-                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                                                <div class="card-body">
-                                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                    <p class="card-text ratingbox">
-                                                                                        ${rat}
-                                                                                    </p>
-                                                                                    <div class="d-flex justify-content-between align-items-center">
-                                                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                          </a>
-                                                                            <div class="caption">
-                                                                                    <p>
-                                                                                        <b>
-                                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                        </b>
-                                                                                    </p>
-                                                                                </div>
-                                                                        </div>
-                                                                    `);
+                                } else {
+                                    for (var i = 0; i < 5; i++) {
+                                        rat += `<i class="fa fa-star custom-fa"></i>`;
+                                    }
                                 }
+                                latestProductBox.append(`
+                                                                                    <div class="items _col-lg-3 _col-md-4 _col-sm-6 shopping-card-box">
+                                                                                       <a href="/product/Index?id=${v.id}">
+                                                                                        <div class="shopping-thumbnail card mb-3">
+                                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                            <div class="card-body">
+                                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                                <p class="card-text ratingbox">
+                                                                                                    ${rat}
+                                                                                                </p>
+                                                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                                                    <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                      </a>
+                                                                                        <div class="caption">
+                                                                                                <p>
+                                                                                                    <b>
+                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                                    </b>
+                                                                                                </p>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                `);
+                                //}
                             });
 
                             cartEvents.init();
+
+                            $(".latest-product-box").each(function () {
+                                var $carousel = $(this);
+                                $carousel.owlCarousel({
+                                    rtl: true,
+                                    dots: $carousel.data("dots"),
+                                    loop: $carousel.data("loop"),
+                                    items: $carousel.data("items"),
+                                    margin: $carousel.data("margin"),
+                                    mouseDrag: $carousel.data("mouse-drag"),
+                                    touchDrag: $carousel.data("touch-drag"),
+                                    autoHeight: $carousel.data("autoheight"),
+                                    center: $carousel.data("center"),
+                                    nav: $carousel.data("nav"),
+                                    rewind: $carousel.data("rewind"),
+                                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                    autoplay: $carousel.data("autoplay"),
+                                    animateIn: $carousel.data("animate-in"),
+                                    animateOut: $carousel.data("animate-out"),
+                                    autoplayTimeout: $carousel.data("autoplay-timeout"),
+                                    smartSpeed: $carousel.data("smart-speed"),
+                                    responsive: $carousel.data("responsive")
+                                });
+                            });
+
                         }
                     }
                 });
@@ -1380,13 +1152,37 @@
                         if (result.success == true) {
                             if (result.data?.objList.length > 0) {
                                 $.each(result.data.objList, function (e, v) {
-                                    if (e < 4) {
-                                        margubiatBoxContent.append(`
-                                                                         <div class="col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
-                                                                            <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                                         </a></div></div>
-                                                                    `);
-                                    }
+                                    //if (e < 4) {
+                                    margubiatBoxContent.append(`
+                                                                                     <div class="items __col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
+                                                                                        <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                     </a></div></div>
+                                                                                `);
+                                    //}
+                                });
+
+                                $(".margubiatBoxContent").each(function () {
+                                    var $carousel = $(this);
+                                    $carousel.owlCarousel({
+                                        rtl: true,
+                                        dots: $carousel.data("dots"),
+                                        loop: $carousel.data("loop"),
+                                        items: $carousel.data("items"),
+                                        margin: $carousel.data("margin"),
+                                        mouseDrag: $carousel.data("mouse-drag"),
+                                        touchDrag: $carousel.data("touch-drag"),
+                                        autoHeight: $carousel.data("autoheight"),
+                                        center: $carousel.data("center"),
+                                        nav: $carousel.data("nav"),
+                                        rewind: $carousel.data("rewind"),
+                                        navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                        autoplay: $carousel.data("autoplay"),
+                                        animateIn: $carousel.data("animate-in"),
+                                        animateOut: $carousel.data("animate-out"),
+                                        autoplayTimeout: $carousel.data("autoplay-timeout"),
+                                        smartSpeed: $carousel.data("smart-speed"),
+                                        responsive: $carousel.data("responsive")
+                                    });
                                 });
                             } else {
                                 $(".margubiatBox").addClass("d-none");
@@ -1424,14 +1220,14 @@
                                     `);
                                 }*/
                                 unisco.append(`
-                                          <div class="item banner-wrapper banner-border-2 mr-10 mb-4 mr-12px">
-                                        <div class="categories_box banner-img">
-                                            <a href="/product/Index?id=${v.id}">
-                                                <img src="${v.coverImageUrl}" class="height-100-width-100" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                     `);
+                                                      <div class="item banner-wrapper banner-border-2 mr-10 mb-4 mr-12px">
+                                                    <div class="categories_box banner-img">
+                                                        <a href="/product/Index?id=${v.id}">
+                                                            <img src="${v.coverImageUrl}" class="height-100-width-100" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                 `);
                             });
 
                             carousel_slider();
@@ -1456,7 +1252,7 @@
 
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
-                                if (e < 4) { // نمایش 4 عدد
+                                //if (e < 4) { // نمایش 4 عدد
                                     var rat = "";
                                     if (v.rating != undefined) {
                                         var r = v.rating.toFixed();
@@ -1474,37 +1270,59 @@
                                         }
                                     }
                                     lastSeenContent.append(`
-                                                                        <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                                                          <a href="/product/Index?id=${v.id}">
-                                                                            <div class="shopping-thumbnail card mb-3">
-                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                    <div class="items __col-lg-3 __col-md-4 __col-sm-6 shopping-card-box">
+                                                                                      <a href="/product/Index?id=${v.id}">
+                                                                                        <div class="shopping-thumbnail card mb-3">
+                                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
 
-                                                                                <div class="card-body">
-                                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                    <p class="card-text ratingbox">
-                                                                                        ${rat}
-                                                                                    </p>
-                                                                                    <div class="d-flex justify-content-between align-items-center">
-                                                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                            <div class="card-body">
+                                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                                <p class="card-text ratingbox">
+                                                                                                    ${rat}
+                                                                                                </p>
+                                                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                                                    <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                      </a>
+                                                                                        <div class="caption">
+                                                                                                <p>
+                                                                                                    <b>
+                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                                    </b>
+                                                                                                </p>
+                                                                                            </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            </div>
-                                                                          </a>
-                                                                            <div class="caption">
-                                                                                    <p>
-                                                                                        <b>
-                                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                        </b>
-                                                                                    </p>
-                                                                                </div>
-                                                                        </div>
-                                                                    `);
-                                }
+                                                                                `);
+                                //}
                             });
 
                             cartEvents.init();
+
+                            var $carousel = $("#lastSeenContent");
+                            $("#lastSeenContent").owlCarousel({
+                                rtl: true,
+                                dots: $carousel.data("dots"),
+                                loop: $carousel.data("loop"),
+                                items: $carousel.data("items"),
+                                margin: $carousel.data("margin"),
+                                mouseDrag: $carousel.data("mouse-drag"),
+                                touchDrag: $carousel.data("touch-drag"),
+                                autoHeight: $carousel.data("autoheight"),
+                                center: $carousel.data("center"),
+                                nav: true,//$carousel.data("nav"),
+                                rewind: $carousel.data("rewind"),
+                                navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                autoplay: $carousel.data("autoplay"),
+                                animateIn: $carousel.data("animate-in"),
+                                animateOut: $carousel.data("animate-out"),
+                                autoplayTimeout: $carousel.data("autoplay-timeout"),
+                                smartSpeed: $carousel.data("smart-speed"),
+                                responsive: $carousel.data("responsive")
+                            });
                         }
 
 

@@ -38,6 +38,9 @@
             //window.location = "/Account/verifyCode";
 
             if (result.success == true) {
+                localStorage.removeItem("address");
+                localStorage.removeItem("fullname");
+
                 if (result.data.isExist == true) {
                     window.location = "/Account/FastRegister?userid=" + result.data.userId;
                 }

@@ -10,6 +10,7 @@
     <link href="~/fonts/fontawesome-pro-5.15.1-web-ulabs/css/all.css" rel="stylesheet" />
     <link href="/plugins/select2/select2.min.css" rel="stylesheet" />
     <link href="~/css/_banner.css" rel="stylesheet" />
+    <link href="~/plugins/megamenu/megMenu.css" rel="stylesheet" />
     <link href="~/plugins/carousel/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/plugins/carousel/owl.theme.css" rel="stylesheet" />
     <link href="~/plugins/carousel/owl.theme.default.min.css" rel="stylesheet" />
@@ -39,7 +40,7 @@
     @RenderSection("mainBanner", false)
 
 
-    <div class="container-fluid pl-0 pr-0">
+    <div class="___container-fluid ___pl-0 __pr-0">
         <main role="main" class="pb-3 mt-150">
             @RenderBody()
         </main>
@@ -74,6 +75,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.rtl.min.js"></script>
     <script src="/plugins/select2/select2.min.js"></script>
+    <script src="~/plugins/megamenu/megaMenu.js"></script>
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
@@ -85,6 +87,32 @@
                 $(".preloader").delay(700).fadeOut(700).addClass('loaded');
             }, 800);
         });
+
+
+        //jQuery(function ($) {
+        //    var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+        //    $('ul.nav li a').each(function () {
+        //        if (this.href === path) {
+        //            $(this).addClass('active');
+        //        }
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $('a').each(function () {
+        //        if ($(this).prop('href') == window.location.href) {
+        //            $(this).addClass('currentpage');
+        //        }
+        //    });
+        //});
+        //$(function () {
+        //    $(".wsmenu a").each(function () {
+        //        if ($(this).attr("href") == window.location.pathname) {
+        //            $(this).parent().addClass("currentpage");
+        //        }
+        //    });
+        //});
+
 
     </script>
     <script>
@@ -114,20 +142,20 @@
                                 child += "</ul>";
 
                                 megacontent.append(`<div class="col-md-3">
-                                                                                    <div class="col-megamenu">
-                                                                                        <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
-                                                                                    </div>
-                                                                                </div`);
+                                                                                        <div class="col-megamenu">
+                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
+                                                                                        </div>
+                                                                                    </div`);
 
                             }
                             else {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
 
                                 megacontent.append(`<div class="col-md-3">
-                                                                                    <div class="col-megamenu">
-                                                                                        <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
-                                                                                    </div>
-                                                                                </div`);
+                                                                                        <div class="col-megamenu">
+                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
+                                                                                        </div>
+                                                                                    </div`);
                             }
                         });
                     }

@@ -31,7 +31,7 @@ namespace HandiCrafts.Web.Controllers
         #region Fields
 
         IHttpClientFactory _httpClientFactory;
-
+        const string _fullname = "fullname";
         #endregion
 
         #region Constructors
@@ -104,6 +104,8 @@ namespace HandiCrafts.Web.Controllers
                 }
 
                 var result = await client.UIAsync(email, mobile);
+
+                HttpContext.Session.SetString(_fullname, mobile.ToString());
 
                 return Success(data: result.Obj, message: result.ResultMessage);
 
@@ -213,10 +215,14 @@ namespace HandiCrafts.Web.Controllers
 
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
+                
+                string fullnameFromResult = result.Obj.Fullname == null ?  HttpContext.Session.GetString(_fullname).ToString(): result.Obj.Fullname;
+
+                result.Obj.Fullname = fullnameFromResult;
 
                 var claims = new[] {
                         new Claim("token", result.Obj.Token),
-                        new Claim("fullname", result.Obj.Fullname),
+                        new Claim("fullname", fullnameFromResult),
                         //new Claim(JwtRegisteredClaimNames.Exp, "1"),
                     };
 
@@ -237,7 +243,7 @@ namespace HandiCrafts.Web.Controllers
                 //
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, result.Obj.Token));
-                identity.AddClaim(new Claim(ClaimTypes.Name, result.Obj.Fullname));
+                identity.AddClaim(new Claim(ClaimTypes.Name, fullnameFromResult));
                 identity.AddClaim(new Claim(ClaimTypes.Role, "User"));
 
                 var principal = new ClaimsPrincipal(identity);

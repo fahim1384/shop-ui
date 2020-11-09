@@ -365,6 +365,7 @@
         }
 
         let GetProductList_Paging_Filtering_UI = (catProductId, productName, minPrice, maxPrice, sortMethod, pageNumber, pageSize) => {
+
             $.ajax({
                 type: 'POST',
                 url: "/Product/GetProductList_Paging_Filtering_UI",
@@ -439,9 +440,9 @@
                             var pagingBox = "";
 
                             console.log("mod", totalcount % 12);
-                            var pages = totalcount / 12;
+                            var pages = (totalcount / 12).toFixed();
                             if (totalcount % 12 > 0)
-                                pages += 1;
+                                pages = parseInt(pages)+ 1;
 
                             var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 
@@ -460,15 +461,15 @@
                                                 </li>`;
                             }
 
-                            for (var i = indexStart; i < indexStart + 4; i++) {
+                            for (var i = indexStart-4; i < indexStart + 4; i++) {
                                 var addActiveCls = "";
                                 if (i == filters.pageNumber) addActiveCls = "active";
-                                if (i <= pages) {
+                                if (i <= pages & i >=1) {
                                     pagingBox += `<li class="page-item ${addActiveCls}"><a class="page-link border-radius-5" onclick="filterByGotoPage(${i})" data-paging-number='${i}'>${i}</a></li>`;
                                 }
                             }
 
-                            if (pageNumber < pages) {
+                            if (filters.pageNumber < pages) {
                                 pagingBox += `<li class="page-item">
                                                     <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
                                                 </li>`;
@@ -482,6 +483,12 @@
                             pagingBox += `</ul></nav></div>`;
 
                             productsbox.append(pagingBox);
+
+                            // scroll to up
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 600);
+
                         } else {
                             $("#productsbox").append(`<div class="alert alert-danger col-md-12 col-lg-12 text-center">داده ای برای نمایش وجود ندارد</div>`);
                         }

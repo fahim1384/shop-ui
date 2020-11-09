@@ -1480,6 +1480,11 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
     max-width: 100px;
 }
 
+.max-width-120px{max-width:120px;}
+.height-120-px {
+    height:120px;
+}
+
 .max-width-150px {
     max-width: 150px;
 }
@@ -2135,4 +2140,256 @@ header.absolate-top {
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: .25rem;
+}
+
+/**************************************/
+
+.sanatgarBox .owl-nav {
+    text-align: center;
+    direction: ltr;
+}
+
+/******************************
+    گروههای برتر
+******************************/
+.pad-0-10 {
+    padding: 0 10px !important;
+}
+
+.mar-t-10 {
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .robin-index-content-box div:nth-of-type(1), .robin-index-content-box div:nth-of-type(3), .robin-index-content-box div:nth-of-type(6), .robin-index-content-box div:nth-of-type(9) {
+        padding-right: 0 !important;
+    }
+}
+
+.mar-pad-0 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.robin-index-widget-boxes {
+    width: 100%;
+    padding: 0 10px !important;
+    margin-bottom: 20px;
+}
+
+/***************************
+    دسته بندی ها پایین صفحه
+
+*****************************/
+.catBox .owl-nav {
+    direction: ltr;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+
+.catBox .owl-nav button.owl-prev {
+    float: left;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.catBox .owl-nav button.owl-next {
+    float: right;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+    .catBox .owl-nav button.owl-prev i, .catBox .owl-nav button.owl-next i{
+        margin:6px 0
+    }
+    
+/***************************
+    محصولات جدید صفحه اول
+
+*****************************/
+.latest-product-box .owl-nav {
+    direction: ltr;
+    position: absolute;
+    top: 36%;
+    width: 100%;
+}
+
+    .latest-product-box .owl-nav button.owl-prev {
+
+        right: auto;
+        left: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+    .latest-product-box .owl-nav button.owl-next {
+
+        left: auto;
+        right: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+.latest-product-box:hover .owl-nav .owl-prev {
+    right: auto;
+    left: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+.latest-product-box:hover .owl-nav .owl-next {
+    left: auto;
+    right: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+
+        .latest-product-box .owl-nav button.owl-prev i, .latest-product-box .owl-nav button.owl-next i {
+            margin: 6px 0
+        }
+        
+/***************************
+    نشان مرغوبیت کالا صفحه اول
+
+*****************************/
+.margubiatBoxContent .owl-nav {
+    direction: ltr;
+    position: absolute;
+    top: 36%;
+    width: 100%;
+}
+
+    .margubiatBoxContent .owl-nav button.owl-prev {
+        right: auto;
+        left: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+    .margubiatBoxContent .owl-nav button.owl-next {
+        left: auto;
+        right: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+.margubiatBoxContent:hover .owl-nav .owl-prev {
+    right: auto;
+    left: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+.margubiatBoxContent:hover .owl-nav .owl-next {
+    left: auto;
+    right: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+
+.margubiatBoxContent .owl-nav button.owl-prev i, .margubiatBoxContent .owl-nav button.owl-next i {
+    margin: 6px 0
+}
+
+/***************************
+    محصولات  بازدید شده ی اخیر صفحه اول
+
+*****************************/
+.last-seen-content .owl-nav {
+    direction: ltr;
+    position: absolute;
+    top: 36%;
+    width: 100%;
+}
+
+    .last-seen-content .owl-nav button.owl-prev {
+        right: auto;
+        left: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+    .last-seen-content .owl-nav button.owl-next {
+        left: auto;
+        right: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+.last-seen-content:hover .owl-nav .owl-prev {
+    right: auto;
+    left: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+
+.last-seen-content:hover .owl-nav .owl-next {
+    left: auto;
+    right: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+
+.last-seen-content .owl-nav button.owl-prev i, .last-seen-content .owl-nav button.owl-next i {
+    margin: 6px 0
+}
+
+/***************************
+    انواع بسته بندی صفحه اول
+
+*****************************/
+.packagesBox .owl-nav {
+    direction: ltr;
+    position: absolute;
+    top: 36%;
+    width: 100%;
+}
+
+    .packagesBox .owl-nav button.owl-prev {
+        right: auto;
+        left: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+    .packagesBox .owl-nav button.owl-next {
+        left: auto;
+        right: -50px;
+        position: absolute;
+        top: 35%;
+        opacity: 0;
+    }
+
+.packagesBox:hover .owl-nav .owl-prev {
+    right: auto;
+    left: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+
+.packagesBox:hover .owl-nav .owl-next {
+    left: auto;
+    right: 10px;
+    position: absolute;
+    top: 35%;
+    opacity: 1;
+}
+
+.packagesBox .owl-nav button.owl-prev i, .packagesBox .owl-nav button.owl-next i {
+    margin: 6px 0
 }

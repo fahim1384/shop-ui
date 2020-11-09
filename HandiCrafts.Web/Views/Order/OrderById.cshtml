@@ -1,0 +1,178 @@
+﻿@model HandiCrafts.Web.CustomerOrderFullDto
+
+@{
+    ViewData["Title"] = "جزییات کامل ثبت سفارش";
+}
+@section Styles{ 
+<style>
+    dt {
+        padding: 10px;
+        background: #f3f3f3;
+        margin-bottom: .5rem;
+    }
+    dd {
+        padding: 10px;
+        margin-bottom: .5rem;
+        margin-right: 0;
+        background: #f9f9f9;
+    }
+</style>
+}
+<div class="row">
+    <div class="col-12 m-5">
+        <div class="container">
+            <h4>@ViewData["Title"]</h4>
+
+            <hr />
+            <div class="row">
+                <div class="col-6">
+                    <div class="">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                کد ثبت سفارش
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.OrderNo)
+                            </dd>
+                            <dt class="col-sm-4">
+                                تاریخ ثبت
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.OrderDate)
+                            </dd>
+                            <dt class="col-sm-4">
+                                وضعیت کلی
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.FinalStatus)
+                            </dd>
+                            <dt class="col-sm-4">
+                                وضعیت پرداخت
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PaymentStatus)
+                            </dd>
+                            <dt class="col-sm-4">
+                                نوع سفارش
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.OrderType)
+                            </dd>
+                            <dt class="col-sm-4">
+                                نوع ارسال
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PostTypeName)
+                            </dd>
+                            <dt class="col-sm-4">
+                                کد پیگیری
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PostTrackingCode)
+                            </dd>
+                            <dt class="col-sm-4">
+                                هزینه ارسال
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PostServicePrice)
+                            </dd>
+                            <dt class="col-sm-4">
+                                مبلغ مالیات
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.TaxPrice)
+                            </dd>
+                            <dt class="col-sm-4">
+                                مبلغ تخفیف
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.OfferPrice)
+                            </dd>
+                            <dt class="col-sm-4">
+                                مبلغ ثبت سفارش
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.OrderPrice)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                مبلغ کل
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.FinalPrice)
+                            </dd>
+                            <dt class="col-sm-4">
+                                نوع پرداخت
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PaymentTypeName)
+                            </dd>
+                            <dt class="col-sm-4">
+                                قیمت بسته بندی
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PackingPrice)
+                            </dd>
+                            <dt class="col-sm-4">
+                                وزن بسته بندی
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.PackingWeight)
+                            </dd>
+                            <dt class="col-sm-4">
+                                وزن سفارش
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.OrderWeight)
+                            </dd>
+                            <dt class="col-sm-4">
+                                وزن کل
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.FinalWeight)
+                            </dd>
+                            <dt class="col-sm-4">
+                                توضیحات مشتری
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.CustomerDescription)
+                            </dd>
+                            <dt class="col-sm-4">
+                                توضیحات مدیر
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.AdminDescription)
+                            </dd>
+                            <dt class="col-sm-4">
+                                توضیحات فروشنده
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.SellerDescription)
+                            </dd>
+                            <dt class="col-sm-4">
+                                تاریخ ارسال
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.SendDate)
+                            </dd>
+                            <dt class="col-sm-4">
+                                تاریخ تحویل
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.DeliveryDate)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div>
+                    <a asp-action="OrdersHistory">بازگشت</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

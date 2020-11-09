@@ -222,6 +222,55 @@
         }
       }
     },
+    "/api/Account/CustomerLogin_ForgetPass": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "CustomerLogin_ForgetPass",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Account/SellerLoginRegister_UI": {
       "post": {
         "tags": [
@@ -368,6 +417,55 @@
         }
       }
     },
+    "/api/Account/SellerLogin_ForgetPass": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "SellerLogin_ForgetPass",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/CatProduct/InsertCatProduct": {
       "post": {
         "tags": [
@@ -505,6 +603,19 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductListForCmb": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetCatProductListForCmb",
         "responses": {
           "200": {
             "description": "Success"
@@ -966,6 +1077,86 @@
         }
       }
     },
+    "/api/Document/GetDocumentListbyRkey": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "operationId": "GetDocumentListbyRkey",
+        "parameters": [
+          {
+            "name": "rkey",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Document/UploadSellerDocument": {
+      "post": {
+        "tags": [
+          "Document"
+        ],
+        "operationId": "UploadSellerDocument",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/FamousComments/InsertFamousComments": {
       "post": {
         "tags": [
@@ -1323,7 +1514,7 @@
         }
       }
     },
-    "/api/Product/GetCustomerOrder_byId_UI": {
+    "/api/CustomerOrder/GetCustomerOrder_byId_UI": {
       "get": {
         "tags": [
           "Order"
@@ -1364,7 +1555,7 @@
         }
       }
     },
-    "/api/Product/GetCustomerOrderList_UI": {
+    "/api/CustomerOrder/GetCustomerOrderList_UI": {
       "get": {
         "tags": [
           "Order"
@@ -1391,6 +1582,19 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/CustomerOrder/GetOrderListForSeller": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "GetOrderListForSeller",
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -2894,6 +3098,116 @@
         }
       }
     },
+    "/api/ProductColor/GetColorListByProductId": {
+      "get": {
+        "tags": [
+          "ProductColor"
+        ],
+        "operationId": "GetColorListByProductId",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductColor/InsertProductColor": {
+      "post": {
+        "tags": [
+          "ProductColor"
+        ],
+        "operationId": "InsertProductColor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductColor"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductColor"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductColor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductColor/GetProductColorById": {
+      "get": {
+        "tags": [
+          "ProductColor"
+        ],
+        "operationId": "GetProductColorById",
+        "parameters": [
+          {
+            "name": "productColorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductColor/UpdateProductColor": {
+      "put": {
+        "tags": [
+          "ProductColor"
+        ],
+        "operationId": "UpdateProductColor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductColor"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductColor"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductColor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ProductImage/GetImageListByProductId": {
       "get": {
         "tags": [
@@ -3016,6 +3330,175 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/GetPackingTypeByProductId": {
+      "get": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "GetPackingTypeByProductId",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/InsertProductPackingType": {
+      "post": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "InsertProductPackingType",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPackingType"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPackingType"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPackingType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/GetProductPackingById": {
+      "get": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "GetProductPackingById",
+        "parameters": [
+          {
+            "name": "productPackingTypeId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/UpdateProductPacking": {
+      "put": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "UpdateProductPacking",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPackingType"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPackingType"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductPackingType"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/GetProductPackingImageList": {
+      "get": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "GetProductPackingImageList",
+        "parameters": [
+          {
+            "name": "productPackingTypeId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/UploadPackingImage": {
+      "post": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "UploadPackingImage",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductPacking/DeleteProductPackingImage": {
+      "delete": {
+        "tags": [
+          "ProductPacking"
+        ],
+        "operationId": "DeleteProductPackingImage",
+        "parameters": [
+          {
+            "name": "productPackingImageId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -3442,6 +3925,20 @@
           },
           "obj": {
             "$ref": "#/components/schemas/LoginResultDto"
+          }
+        }
+      },
+      "VoidResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -4448,6 +4945,224 @@
           }
         }
       },
+      "CatDocument": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "document": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            }
+          }
+        }
+      },
+      "Document": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "catDocumentId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "isRequired": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "catDocument": {
+            "$ref": "#/components/schemas/CatDocument"
+          },
+          "sellerDocument": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerDocument"
+            }
+          }
+        }
+      },
+      "SellerDocument": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sellerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "documentId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "fianlStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "adminDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "document": {
+            "$ref": "#/components/schemas/Document"
+          },
+          "seller": {
+            "$ref": "#/components/schemas/Seller"
+          }
+        }
+      },
       "SellerStatusLog": {
         "type": "object",
         "additionalProperties": false,
@@ -4555,9 +5270,23 @@
             "format": "int64",
             "nullable": true
           },
+          "tel": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
           "mobile": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "secondMobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "shabaNo": {
+            "type": "string",
             "nullable": true
           },
           "bdate": {
@@ -4671,6 +5400,13 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/SellerAddress"
+            }
+          },
+          "sellerDocument": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerDocument"
             }
           },
           "sellerStatusLog": {
@@ -9011,8 +9747,25 @@
             "type": "string",
             "nullable": true
           },
+          "metaTitle": {
+            "type": "string",
+            "nullable": true
+          },
           "compareDescription": {
             "type": "string",
+            "nullable": true
+          },
+          "oredrDuration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "downloadLink": {
+            "type": "string",
+            "nullable": true
+          },
+          "virtualProduct": {
+            "type": "boolean",
             "nullable": true
           },
           "cuserId": {
@@ -9528,6 +10281,22 @@
             "type": "string",
             "nullable": true
           },
+          "miniPicUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyWords": {
+            "type": "string",
+            "nullable": true
+          },
           "cuserId": {
             "type": "integer",
             "format": "int64",
@@ -9812,6 +10581,85 @@
           "obj": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "DocumentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "catDocumentId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "catDocumentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "isRequired": {
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
+      "DocumentDtoListResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalcount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/DocumentDto"
+            }
+          }
+        }
+      },
+      "LongResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
           }
         }
       },
@@ -11526,32 +12374,6 @@
           "mobile": {
             "type": "integer",
             "format": "int64"
-          }
-        }
-      },
-      "LongResult": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "resultCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "resultMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "totalCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "objList": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
           }
         }
       },
