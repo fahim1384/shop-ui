@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - فروشگاه اینترنتی سرای</title>
+    <link href="~/css/_Loading.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    <link href="~/fonts/fontawesome-pro-5.15.1-web-ulabs/css/all.css" rel="stylesheet" />
+    <link href="/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/fonts/sans/SansFont.css" rel="stylesheet" />
+    <link href="~/css/sellercss/seller.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <!-- LOADER -->
+    <div class="preloader">
+        <div class="lds-ellipsis-logo">
+            <img src="~/image/Logo.png" class="width-100px mb-20" />
+        </div>
+        <div class="lds-ellipsis">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- END LOADER -->
+
+    <div class="container-fluid">
+        <main role="main" class="">
+            <section class="section-full-page">
+                <div class="row">
+                    <aside class="seller-sidebar-full-page col-md-5">
+                        <div class="seller-sidebar-content">
+                            <header class="seller-sidebar-header">
+                                <a href="/Seller/Account/Login" class="seller-sidebar-logo">
+                                    <img class="img-fluid mx-auto d-block mb-5 seller-sidebar-logo" src="/image/logo-title990805.png" alt="saray">
+                                </a>
+                                <h1 class="seller-sidebar-header-h1 active-text">ثبت نام صنعتگران</h1>
+                            </header>
+                            <div>
+                                <ul class="seller-sidebar-ul-right">
+                                    <li class="li_after step1">
+                                        <a>
+                                            <span class="menu-img-span"><img src="~/image/icons/Sanatgar/personal-info.png" /></span>
+                                            <div class="pr-10px">
+                                                <h5 class="active-text">1. اطلاعات صنعتگر</h5>
+                                                <span>اطلاعات شخصی صنعتگر، اطلاعات تجاری، اطلاعات تماس</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="li_before li_after step2">
+                                        <a>
+                                            <span class="menu-img-span"><img src="~/image/icons/Sanatgar/document-import.png" /></span>
+                                            <div class="pr-10px">
+                                                <h5>2. بارگذاری مدارک</h5>
+                                                <span>اطلاعات شخصی صنعتگر، اطلاعات تجاری، اطلاعات تماس</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="li_before step3">
+                                        <a>
+                                            <span class="menu-img-span"><img src="~/image/icons/Sanatgar/register.png" /></span>
+                                            <div class="pr-10px">
+                                                <h5>3. اتمام ثبت نام</h5>
+                                                <span>اطلاعات شخصی صنعتگر، اطلاعات تجاری، اطلاعات تماس</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </aside>
+                    <main class="col-md-7 seller-main-form">
+                        @RenderBody()
+                    </main>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.rtl.min.js"></script>
+    <script src="/plugins/select2/select2.min.js"></script>
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(window).on('load', function () {
+            setTimeout(function () {
+                $(".preloader").delay(700).fadeOut(700).addClass('loaded');
+            }, 800);
+        });
+
+        // =========== Actions =============
+
+        let megaMenuData = () => {
+            $.ajax({
+                type: 'POST',
+                url: "/Home/GetCatProductList_UI",
+
+                success: function (result) {
+                    if (result.success == true) {
+                    }
+                }
+            });
+        };
+
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

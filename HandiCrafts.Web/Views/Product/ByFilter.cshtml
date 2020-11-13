@@ -425,7 +425,7 @@
                                                             <div class="caption">
                                                                     <p>
                                                                         <b>
-                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                                             <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                                             <a><i class="fa fa-plus solid-fa"></i> </a>
                                                                         </b>
@@ -438,11 +438,11 @@
                         if (result.data != null && result.data?.objList.length != 0) {
                             var totalcount = result.data.totalcount;
                             var pagingBox = "";
-
+                            
                             console.log("mod", totalcount % 12);
-                            var pages = (totalcount / 12).toFixed();
-                            if (totalcount % 12 > 0)
-                                pages = parseInt(pages)+ 1;
+                            var pages = Math.ceil(totalcount / 12);//.toFixed();
+                            //if (totalcount % 12 > 0)
+                            //    pages = parseInt(pages)+ 1;
 
                             var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 

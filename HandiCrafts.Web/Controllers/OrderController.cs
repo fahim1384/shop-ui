@@ -69,7 +69,7 @@ namespace HandiCrafts.Web.Controllers
 
             GetCustomerOrderListClient client = new GetCustomerOrderListClient(BaseUrl, httpClient);
 
-            var result = await client.UIAsync();
+            var result = await client.UIAsync(null);
 
             if (result.ResultCode != 200)
                 return View(null);

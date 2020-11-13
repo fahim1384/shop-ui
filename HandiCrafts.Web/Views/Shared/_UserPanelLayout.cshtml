@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - فروشگاه اینترنتی سرای</title>
+    <link href="~/css/_Loading.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    @*<link href="~/fonts/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />*@
+    <link href="~/fonts/fontawesome-pro-5.15.1-web-ulabs/css/all.css" rel="stylesheet" />
+    <link href="/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/css/_banner.css" rel="stylesheet" />
+    <link href="~/plugins/megamenu/megMenu.css" rel="stylesheet" />
+    <link href="~/plugins/carousel/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/plugins/carousel/owl.theme.css" rel="stylesheet" />
+    <link href="~/plugins/carousel/owl.theme.default.min.css" rel="stylesheet" />
+
+    <link href="~/css/Header._header.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/fonts/sans/SansFont.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <!-- LOADER -->
+    <div class="preloader">
+        <div class="lds-ellipsis-logo">
+            <img src="~/image/Logo.png" class="width-100px mb-20" />
+        </div>
+        <div class="lds-ellipsis">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- END LOADER -->
+
+    <partial name="~/Views/Shared/Header/_header.cshtml" />
+
+    @RenderSection("mainBanner", false)
+
+
+    <div class="container-fluid ___pl-0 __pr-0">
+        <div class="row flex-xl-nowrap">
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar pb-3 mt-100">
+                <form class="bd-search d-flex align-items-center">
+                    <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false"><title>منوی کاربری</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22" /></svg>
+                    </button>
+                </form>
+
+                <nav class="navbar-collapse collapse bd-links" id="bd-docs-nav">
+                    <div class="bd-toc-item active">
+                        <a class="bd-toc-link freand-a" href="/">
+                            <span class="m-auto cyan"> دعوت دوستان</span>
+                        </a>
+
+                        <ul class="nav bd-sidenav">
+                            <li class="active bd-sidenav-active">
+                                <div class="c-header__profile-dropdown js-dropdown-menu">
+                                    <div class="c-header__profile-dropdown-account-container">
+                                        <div class="c-header__profile-dropdown-user">
+                                            <div class="c-header__profile-dropdown-user-img">
+                                                <img src="/image/user-image.svg">
+                                            </div>
+                                            <div class="c-header__profile-dropdown-user-info">
+                                                <p class="c-header__profile-dropdown-user-name m-0">حساب کاربری</p>
+                                                <span class="c-header__profile-dropdown-user-profile-link">مشاهده حساب کاربری</span>
+                                            </div>
+                                        </div>
+                                        <div class="c-header__profile-dropdown-account">
+                                            <div class="c-header__profile-dropdown-account-item u-hidden js-user-dropdown-wallet-has-amount">
+                                                <span class="c-header__profile-dropdown-account-item-title">کیف پول</span>
+                                                <div class="c-header__profile-dropdown-account-item-amount">
+                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-user-drop-down-wallet-amount"></span>
+                                                    تومان
+                                                </div>
+                                            </div>
+                                            <div class="c-header__profile-dropdown-account-item js-user-dropdown-wallet-has-url">
+                                                <a class="c-header__profile-dropdown-account-item-title c-header__profile-dropdown-account-item-title--link  js-wallet-activation-url" href="#">فعال سازی کیف پول</a>
+                                            </div>
+
+                                            <div class="c-header__profile-dropdown-account-item">
+                                                <span class="c-header__profile-dropdown-account-item-title">‌کلاب</span>
+                                                <span class="c-header__profile-dropdown-account-item-amount">
+                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-dc-current-points">46</span>
+                                                    امتیاز
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <a href="/profile/" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;profile&quot;}" data-event="profile_click" data-event-category="header_section" data-event-label="logged_in: True - digiclub_score: 87000" class="c-header__profile-dropdown-user-profile-full-link"></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-file-alt solid-fa"></i> سفارش های من
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-heart solid-fa"></i> لیست ها
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-comment-alt solid-fa"></i> نظرات
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-map-marker-alt solid-fa"></i> نشانی ها
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-credit-card solid-fa"></i> کارت های هدیه
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-envelope solid-fa"></i> پیغام ها
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-book-reader solid-fa"></i> بازدیدهای اخیر
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="">
+                                    <i class="fa fa-user-circle solid-fa"></i> اطلاعات حساب
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="/Account/Logout">
+                                    <i class="fa fa-sign-out-alt solid-fa"></i> خروج
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+            <main role="main" class="col-12 col-md-9 col-xl-10 p-0 py-md-300 pl-md-500 bd-content pb-3 mt-100">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <partial name="~/Views/Shared/_footer.cshtml" />
+
+    <!---- سبد خرید ---->
+    <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="سبد خرید" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">سبد خرید</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="font-weight-bold text-muted">
+                        سبد خرید شما بروز شد جهت مشاهده سبد یا تسویه اقدام نمایید
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/shoppingcart/cart" class="btn btn-primary">ادامه فرایند خرید</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">انتخاب کالای دیگر</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.rtl.min.js"></script>
+    <script src="/plugins/select2/select2.min.js"></script>
+    <script src="~/plugins/megamenu/megaMenu.js"></script>
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        /*===================================*
+        01. LOADING JS
+        /*===================================*/
+        $(window).on('load', function () {
+            setTimeout(function () {
+                $(".preloader").delay(700).fadeOut(700).addClass('loaded');
+            }, 800);
+        });
+
+
+        //jQuery(function ($) {
+        //    var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+        //    $('ul.nav li a').each(function () {
+        //        if (this.href === path) {
+        //            $(this).addClass('active');
+        //        }
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $('a').each(function () {
+        //        if ($(this).prop('href') == window.location.href) {
+        //            $(this).addClass('currentpage');
+        //        }
+        //    });
+        //});
+        //$(function () {
+        //    $(".wsmenu a").each(function () {
+        //        if ($(this).attr("href") == window.location.pathname) {
+        //            $(this).parent().addClass("currentpage");
+        //        }
+        //    });
+        //});
+
+
+    </script>
+    <script>
+        //  دسته بندی ها با زیر مجموعه
+        let megaMenuData = () => {
+            $.ajax({
+                type: 'POST',
+                url: "/Home/GetCatProductList_UI",
+
+                success: function (result) {
+                    if (result.success == true) {
+                        $(".megacontent").html('');
+                        var megacontent = $(".megacontent");
+                        var select2Combo = $("#searchCategoryCmb");
+                        $.each(result.data.objList, function (e, v) {
+
+                            var child = "";
+                            if (v.inverseP.length > 0) {
+
+                                select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
+                                setChilds(v.inverseP);
+
+                                child = `<ul class="list-unstyled">`;
+                                $.each(v.inverseP, function (e2, v2) {
+                                    child += `<li><a href="/Product/ByFilter?catId=${v2.id}">${v2.name}</a></li>`;
+                                });
+                                child += "</ul>";
+
+                                megacontent.append(`<div class="col-md-3">
+                                                                                                        <div class="col-megamenu">
+                                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
+                                                                                                        </div>
+                                                                                                    </div`);
+
+                            }
+                            else {
+                                select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
+
+                                megacontent.append(`<div class="col-md-3">
+                                                                                                        <div class="col-megamenu">
+                                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
+                                                                                                        </div>
+                                                                                                    </div`);
+                            }
+                        });
+                    }
+                }
+            });
+        };
+
+        var setChilds = (chlist) => {
+            $.each(chlist, function (e, v) {
+                if (v.inverseP.length > 0) {
+                    select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
+                    setChilds(v.inverseP);
+                } else {
+                    $("#searchCategoryCmb").append(`<option value='${v.id}'>${v.name}</option>`);
+                }
+            });
+
+        }
+
+        //============
+        megaMenuData();
+
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

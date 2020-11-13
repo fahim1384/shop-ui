@@ -381,7 +381,7 @@
 
                             $("#productPackageListbox").append(`
                                  <div class="form-check form-check-inline package-type-radio-box ${active}">
-                                     <input class="form-check-input" type="radio" name="packageType" value="${v.packinggTypeId}" ${e == 0 ? 'checked' : ''}>
+                                     <input class="form-check-input" type="radio" name="packageType" value="${v.id/*packinggTypeId*/}" ${e == 0 ? 'checked' : ''}>
                                      <label class="form-check-label" for="inlineRadio1"> ${v.packingTypeName ? v.packingTypeName : 'نامشخص'}</label>
                                  </div>
                              `);
@@ -544,7 +544,7 @@
                                                                                         <div class="caption">
                                                                                                 <p>
                                                                                                     <b>
-                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                                                                         <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                                                                         <a><i class="fa fa-plus solid-fa"></i> </a>
                                                                                                     </b>

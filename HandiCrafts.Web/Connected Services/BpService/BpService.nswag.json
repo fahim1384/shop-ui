@@ -131,6 +131,7 @@
         "tags": [
           "Account"
         ],
+        "summary": "ورود مشتری به سیستم با کد",
         "operationId": "CustomerLogin_ByActivationCode_UI",
         "parameters": [
           {
@@ -179,6 +180,7 @@
         "tags": [
           "Account"
         ],
+        "summary": "ورود مشتری به سیستم با کلمه عبور",
         "operationId": "CustomerLogin_ByPass_UI",
         "parameters": [
           {
@@ -222,12 +224,13 @@
         }
       }
     },
-    "/api/Account/CustomerLogin_ForgetPass": {
+    "/api/Account/Customer_GetCodeForForgetPass": {
       "get": {
         "tags": [
           "Account"
         ],
-        "operationId": "CustomerLogin_ForgetPass",
+        "summary": "درخواست کد فعالسازی جهت تغییر کلمه عبور",
+        "operationId": "Customer_GetCodeForForgetPass",
         "parameters": [
           {
             "name": "email",
@@ -271,13 +274,138 @@
         }
       }
     },
-    "/api/Account/SellerLoginRegister_UI": {
+    "/api/Account/Customer_ChangePassByActivationCode": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "تغییر کلمه عبور با کد تایید دریافتی با استفاده از موبایل یا ایمیل",
+        "operationId": "Customer_ChangePassByActivationCode",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pass",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Account/Customer_GetActivationCodeForLogin": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "درخواست کد فعالسازی یرای ورود به سیستم",
+        "operationId": "Customer_GetActivationCodeForLogin",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Account/SellerLoginRegister": {
       "post": {
         "tags": [
           "Account"
         ],
         "summary": "ورود / ثبت نام صنعتگر به سیستم",
-        "operationId": "SellerLoginRegister_UI",
+        "operationId": "SellerLoginRegister",
         "parameters": [
           {
             "name": "email",
@@ -321,12 +449,12 @@
         }
       }
     },
-    "/api/Account/SellerLogin_ByActivationCode_UI": {
+    "/api/Account/SellerLogin_ByActivationCode": {
       "post": {
         "tags": [
           "Account"
         ],
-        "operationId": "SellerLogin_ByActivationCode_UI",
+        "operationId": "SellerLogin_ByActivationCode",
         "parameters": [
           {
             "name": "userId",
@@ -369,12 +497,12 @@
         }
       }
     },
-    "/api/Account/SellerLogin_ByPass_UI": {
+    "/api/Account/SellerLogin_ByPass": {
       "post": {
         "tags": [
           "Account"
         ],
-        "operationId": "SellerLogin_ByPass_UI",
+        "operationId": "SellerLogin_ByPass",
         "parameters": [
           {
             "name": "userId",
@@ -1415,6 +1543,112 @@
         }
       }
     },
+    "/api/Order/GetOrderStatusList": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "GetOrderStatusList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Order/GetOrderList": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "GetOrderList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Order/GetOrderFullInfoById": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "GetOrderFullInfoById",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Order/UpdateOrderStatus": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "UpdateOrderStatus",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "statusId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "sentDate",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "trackingCode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "deliverDate",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Product/InsertCustomerOrder_UI": {
       "post": {
         "tags": [
@@ -1562,6 +1796,17 @@
         ],
         "summary": "لیست سفارشات مشتری",
         "operationId": "GetCustomerOrderList_UI",
+        "parameters": [
+          {
+            "name": "finalStatusId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -1586,12 +1831,65 @@
         }
       }
     },
+    "/api/CustomerOrder/GetCustomerOrderCountGroupByStatus": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "GetCustomerOrderCountGroupByStatus",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderCountGroupByStatusDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderCountGroupByStatusDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderCountGroupByStatusDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/CustomerOrder/GetOrderListForSeller": {
       "get": {
         "tags": [
           "Order"
         ],
         "operationId": "GetOrderListForSeller",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomerOrder/ChangeOrderPruductStatusBySeller": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "operationId": "ChangeOrderPruductStatusBySeller",
+        "parameters": [
+          {
+            "name": "customerOrderProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -3876,6 +4174,9 @@
             "format": "int64"
           },
           "isExist": {
+            "type": "boolean"
+          },
+          "loginByCode": {
             "type": "boolean"
           }
         }
@@ -7162,6 +7463,11 @@
           "endDateTime": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "loginType": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "cuserId": {
@@ -11019,6 +11325,10 @@
             "format": "int64",
             "nullable": true
           },
+          "productImage": {
+            "type": "string",
+            "nullable": true
+          },
           "finalStatusId": {
             "type": "integer",
             "format": "int64",
@@ -11104,6 +11414,64 @@
           }
         }
       },
+      "CustomerOrderPaymentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "paymentPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "trackingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "systemTraceNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "resNum": {
+            "type": "string",
+            "nullable": true
+          },
+          "terminalNo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "refNum": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardPan": {
+            "type": "string",
+            "nullable": true
+          },
+          "traceNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "finalStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
       "CustomerOrderFullDto": {
         "type": "object",
         "additionalProperties": false,
@@ -11120,6 +11488,19 @@
           "customerAddressId": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "customerAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerMobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customerName": {
+            "type": "string",
             "nullable": true
           },
           "orderDate": {
@@ -11267,6 +11648,13 @@
             "items": {
               "$ref": "#/components/schemas/CustomerOrderProductDto"
             }
+          },
+          "customerOrderPaymentList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderPaymentDto"
+            }
           }
         }
       },
@@ -11284,6 +11672,52 @@
           },
           "obj": {
             "$ref": "#/components/schemas/CustomerOrderFullDto"
+          }
+        }
+      },
+      "CustomerOrderProductSampleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sellerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productOfferPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "packingTypeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "coverImage": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -11431,6 +11865,13 @@
           "deliveryDate": {
             "type": "string",
             "nullable": true
+          },
+          "productList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProductSampleDto"
+            }
           }
         }
       },
@@ -11456,6 +11897,46 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CustomerOrderDto"
+            }
+          }
+        }
+      },
+      "OrderCountGroupByStatusDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "OrderCountGroupByStatusDtoListResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalcount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/OrderCountGroupByStatusDto"
             }
           }
         }

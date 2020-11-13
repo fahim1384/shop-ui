@@ -15,12 +15,14 @@ var shoppingCart = (function () {
     cart = [];
 
     // Constructor
-    function Item(name, price, count, prodid, prodimage, packageId/*,colorId,offerId*/) {
+    function Item(name, price, count, prodid, prodimage, packageId, mellicode/*,colorId,offerId*/) {
         this.name = name;
         this.price = price;
         this.count = count;
         this.prodid = prodid;
         this.prodimage = prodimage;
+        this.mellicode = mellicode;
+
         //this.colorId = colorId;
         this.packageId = packageId;
         //this.offerId = offerId;
@@ -54,7 +56,7 @@ var shoppingCart = (function () {
     var obj = {};
 
     // Add to cart
-    obj.addItemToCart = function (name, price, count, prodid, prodimage, packageId/*, colorId, offerId*/) {
+    obj.addItemToCart = function (name, price, count, prodid, prodimage, packageId, mellicode/*, colorId, offerId*/) {
         for (var item in cart) {
             if (cart[item].prodid === prodid) {
                 cart[item].count++;
@@ -62,7 +64,7 @@ var shoppingCart = (function () {
                 return;
             }
         }
-        var item = new Item(name, price, count, prodid, prodimage, packageId/*, colorId, offerId*/);
+        var item = new Item(name, price, count, prodid, prodimage, packageId, mellicode/*, colorId, offerId*/);
         cart.push(item);
         saveCart();
     }
@@ -183,12 +185,13 @@ var cartEvents = (function () {
                 var prodimage = $(this).data('product-image');
                 var name = $(this).data('product-name');
                 var price = Number($(this).data('product-price'));
+                var mellicode = $(this).data('product-mellicode');
 
                 //var colorId = $(this).data('product-colorId');
                 var packageId = $(this).data('product-packageId');
                 //var offerId = $(this).data('product-offerId');
 
-                shoppingCart.addItemToCart(name, price, 1, prodid, prodimage, packageId/*, colorId, offerId*/);
+                shoppingCart.addItemToCart(name, price, 1, prodid, prodimage, packageId, mellicode/*, colorId, offerId*/);
                 displayCart();
 
                 $("#shoppingCartModal").modal();
@@ -228,21 +231,21 @@ var cartEvents = (function () {
                 for (var i in cartArray) {
                     output += `<tr>
             <td><a href="/Product/index?id=${cartArray[i].prodid}"><img src='${cartArray[i].prodimage}' class='img-fluid width-100px border-default border-radius-5 p-2px' /></a></td>
-            <td><a href="/Product/index?id=${cartArray[i].prodid}">${cartArray[i].name}</a></td>
-            <td> ${cartArray[i].price}</td>
+            <td class="text-left"><a href="/Product/index?id=${cartArray[i].prodid}"><h5 class="prod-name-cart">${cartArray[i].name}</h5><span class="mellicode">شناسنامه یکتا: ${cartArray[i].mellicode ? cartArray[i].mellicode:'0000'}</span></a></td>
+            <td> <h5 class="prod-name-cart">${cartArray[i].price}</h5></td>
             <td><form class="form-inline mt-2" dir="rtl">
-                        <div class="spinner border-radius-5">
+                        <div class="spinner border-radius-5 m-auto">
                             <span class="fa fa-plus plus-item" data-product-name="${ cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
                             <input type="text" name="quantity" readonly data-product-id='${ cartArray[i].prodid}' data-product-name='${cartArray[i].name}' value='${cartArray[i].count}' class="form-control width-50px border-0 item-count">
                             <span class="fa fa-minus minus-item" data-product-name="${ cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
                         </div>
                     </form>
               </td>
-            <td>${cartArray[i].total}</td>
+            <td><h5 class="prod-name-cart">${cartArray[i].total}</h5></td>
             <td class="packageIdCartTd"><input type='hidden' name='packageIdselected' value='${cartArray[i].packageId}' data-pkInputHide='${cartArray[i].prodid}' data-hazineh="0" /><select class="form-control packageComboInCart" data-pkCmbId='${cartArray[i].prodid}'><option value="">انتخاب ..</option></select></td>
-            <td>
-                    <span class="fa fa-check text-success fa-bold"></span><span>/</span>
-                    <span class="fa fa-times delete-item" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}"></span>
+            <td dir="ltr">
+                    <span class="fa fa-check cyan fa-2x fa-bold basket-action-span"></span><span class="fa-2x">/</span>
+                    <span class="fa fa-times fa-2x delete-item basket-action-span" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}"></span>
              </td>
          </tr>`;
                 }

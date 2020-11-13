@@ -40,15 +40,10 @@
     @RenderSection("mainBanner", false)
 
 
-    <div class="container-fluid ___pl-0 __pr-0">
-        <div class="row flex-xl-nowrap">
-            <!--pb-3 mt-150-->
-            <main role="main" class="col-12 col-md-12 col-xl-12 p-0 bd-content pb-3 mt-100">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
-                    @RenderBody()
-                </div>
-            </main>
-        </div>
+    <div class="___container-fluid ___pl-0 __pr-0">
+        <main role="main" class="pb-3 mt-150">
+            @RenderBody()
+        </main>
     </div>
 
 
@@ -147,20 +142,20 @@
                                 child += "</ul>";
 
                                 megacontent.append(`<div class="col-md-3">
-                                                                                            <div class="col-megamenu">
-                                                                                                <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
-                                                                                            </div>
-                                                                                        </div`);
+                                                                                        <div class="col-megamenu">
+                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
+                                                                                        </div>
+                                                                                    </div`);
 
                             }
                             else {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
 
                                 megacontent.append(`<div class="col-md-3">
-                                                                                            <div class="col-megamenu">
-                                                                                                <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
-                                                                                            </div>
-                                                                                        </div`);
+                                                                                        <div class="col-megamenu">
+                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
+                                                                                        </div>
+                                                                                    </div`);
                             }
                         });
                     }

@@ -1,0 +1,122 @@
+﻿@model HandiCrafts.Web.Areas.Seller.Models.Account.AcceptCodeModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Areas/Seller/Views/Shared/_AccountLayout.cshtml";
+}
+@section Styles{ }
+
+<div class="reg_login_content_mainform reg_login_content mr-40">
+
+    <form id="form_login" class="kt-form" asp-area="Seller" asp-action="VerifyCode" asp-controller="Account" data-ajax-method="POST"
+          data-ajax="true" data-ajax-begin="onSigninBegin1" data-ajax-complete="onSigninComplete1"
+          data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1">
+        <div class="alert alert-danger d-none" id="errorbox"></div>
+
+        <input type="hidden" asp-for="UserId" value="1" />
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-group mb-4">
+            <div class="input-group mb-2 heght-65px reg-element">
+                <input type="text" class="form-control heght-100per emailmobile" placeholder="ایمیل خود را وارد نمایید" aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="~/image/icons/Sanatgar/email.png" />
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            کد تاييد به آدرس پستی شما ارسال گردید. کد ارسال شده را وراد نموده
+            و ثبت نماييد.
+        </p>
+
+        <div class="form-group mb-4">
+            <div class="input-group mb-2 heght-65px reg-element">
+                <input class="form-control without-icon heght-100per text-center" dir="auto" asp-for="AcceptCode" placeholder="_ _ _ _ _">
+            </div>
+            <span asp-validation-for="AcceptCode" class="kt-font-danger"></span>
+        </div>
+
+        <div class="form-group text-center mt-3">
+            <button id="kt_login_signin_submit1" type="submit" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ثبت کد تایید</button>
+            <button id="kt_send_code_submit1" type="button" class="btn btn-primary btn-lg mb-2 mt-4 pl-5 pr-5 m-auto border-radius-10" style="display: none;">ارسال مجدد کد فعال سازی</button>
+
+        </div>
+
+        <div class="kt-login__actions mt-3">
+            <p class="text-center">
+                <span class="color-firouzi font-size-17px">دریافت مجدد کد تایید</span>
+                <input name="minute" id="minute" type="hidden" value="2" />
+                <input name="second" id="second" type="hidden" value="0" />
+                <br />
+                ارسال مجدد کد تا <span id="timerminute">02</span>:<span id="timersecond">00</span> دیگر
+            </p>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+       
+        $("input.emailmobile").val(localStorage.getItem("sellerEmailMobile"));
+
+        // ========== VerifyCode Js ===========
+        var interval;
+        var minute = $("#minute").val() && $("#minute").val() != 0 ? $("#minute").val() : 2;
+        var second = $("#second").val() && $("#second").val() != 0 ? $("#second").val() : 0;
+
+        $(document).ready(function () {
+            timer();
+        });
+
+        function timer() {
+            interval = window.setInterval(function (e) {
+
+                $("#timerminute").html(minute < 10 ? "0" + minute : minute); $("#minute").val(minute);
+                $("#timersecond").html(second < 10 ? "0" + second : second); $("#second").val(second);
+
+                if (second === 0 && minute > 0) {
+                    second = 60;
+                    minute--;
+                } else if (minute === 0 && second === 0) {
+                    clearInterval(interval);
+                    $("#kt_login_signin_submit1").css("display", "none");
+                    $("#kt_send_code_submit1").css("display", "block");
+                }
+                if (second > 0) second--;
+            }, 1000);//600000
+        }
+
+        // =======================================
+        function onSigninBegin1(e, form) {
+            $('#kt_login_signin_submit1').attr('disabled', true);
+        }
+
+        function onSigninSuccess1(result) {
+            $('#kt_login_signin_submit1').attr('disabled', false);
+            console.log(result);
+
+            if (result.success == true) {
+                alert("ثبت انجامید")
+                window.location = "/Home/Index";
+            }
+            else {
+                $("#errorbox").html(result.message).removeClass("d-none");
+            }
+        }
+
+        function onSigninFailed1() {
+            console.log("خطا");
+        }
+
+        function onSigninComplete1(re) {
+            console.log(re);
+        }
+
+        failed1 = function (xhr) {
+            alert(`Status: ${xhr.status}, Status Text: ${xhr.statusText}`);
+        };
+    </script>
+}

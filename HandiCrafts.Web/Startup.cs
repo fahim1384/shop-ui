@@ -116,7 +116,8 @@ namespace HandiCrafts.Web
             });
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options => {
+                .AddCookie(options =>
+                {
                     options.LoginPath = "/Account/Login/";
                     options.AccessDeniedPath = "/Account/Login/";
                     options.ExpireTimeSpan = TimeSpan.FromDays(1);
@@ -175,11 +176,35 @@ namespace HandiCrafts.Web
 
             app.UseAuthorization();
 
+            app.Use(async (context, next) =>
+            {
+                try
+                {
+                    await next();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("401"))
+                    {
+                        context.Response.Redirect("/Account/Logout");
+                    }
+                }
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "area",
+                    pattern: "{area:exists}/{controller}/{action}/{id?}",
+                    defaults: new { controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                /*endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area}/{controller}/{did?}/{action=Index}/{id?}");*/
             });
         }
 

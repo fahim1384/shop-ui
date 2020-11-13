@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: #0aa8b9;
     text-decoration: none !important;
 }
 
@@ -82,6 +82,10 @@ body {
 
 .color-firouzi {
     color: #0aa8b9;
+}
+
+.bg-firouzi {
+    background-color: #0aa8b9;
 }
 
 .border-firouzi {
@@ -402,12 +406,16 @@ footer .card {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     padding: 0 4px;
+    font-size:1.2rem;
+    cursor:pointer;
 }
 
 .shared-box {
     position: absolute;
     left: 0;
 }
+
+.basket-action-span{cursor:pointer;}
 /********************************/
 .product-detail-tabs ul.nav-tabs {
     background-color: #676767 !important;
@@ -622,7 +630,9 @@ footer .card {
 .mt-35 {
     margin-top: 35px;
 }
-
+.mt-100 {
+    margin-top: 100px;
+}
 .mt-150 {
     margin-top: 150px;
 }
@@ -665,6 +675,10 @@ footer .card {
 
 .mr-35 {
     margin-right: 35px;
+}
+
+.mr-40 {
+    margin-right: 40px;
 }
 
 .ml-10 {
@@ -1450,6 +1464,7 @@ p {
 
 input[name=quantity].form-control:disabled, input[name=quantity].form-control[readonly] {
     background-color: #ffffff;
+    font-size:1.3rem;
 }
 
 a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
@@ -2392,4 +2407,14 @@ header.absolate-top {
 
 .packagesBox .owl-nav button.owl-prev i, .packagesBox .owl-nav button.owl-next i {
     margin: 6px 0
+}
+
+/***************************/
+
+.prod-name-cart{
+    color:#666666;
+}
+
+.mellicode {
+    color:#8e8e8e;
 }

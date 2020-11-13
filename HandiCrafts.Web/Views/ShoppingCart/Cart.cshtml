@@ -14,16 +14,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h3 class="color-firouzi">سبد خرید</h3>
+            <hr />
+            <h3 class="color-firouzi">سبد خرید <span class="badge badge-pill bg-firouzi total-count">0</span></h3>
 
             <div class="cart-box">
                 <div class="table-responsive">
 
-                    <table class="table">
+                    <table class="table text-center">
                         <thead>
                             <tr>
                                 <th>محصولات</th>
-                                <th>نام محصول</th>
+                                <th class="text-left">نام محصول</th>
                                 <th>قیمت</th>
                                 <th>تعداد</th>
                                 <th>جمع کل</th>
@@ -265,6 +266,7 @@
 
         $("#addressBox").html(localStorage.getItem("address"));
         $("#fullname").html(localStorage.getItem("fullname"));
+        $(".totalPayment").html(shoppingCart.totalCart());
 
         if (shoppingCart.totalCount() == 0) {
             $(".cart-box").addClass("d-none");
@@ -331,12 +333,12 @@
                             if (objOffers?.maximumPrice != null) {
                                 if (objOffers?.maximumPrice < parseInt(total) * parseInt(objOffers?.value)) {
                                     $("#totalBeforeOffer").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
-                                    $("#totalPayment").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
+                                    $(".totalPayment").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
                                     allData.totalbeforeOffer = parseInt(total) - parseInt(objOffers?.maximumPrice);
                                     allData.offerEmalshode = parseInt(objOffers?.maximumPrice);
                                 } else {
                                     $("#totalBeforeOffer").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
-                                    $("#totalPayment").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
+                                    $(".totalPayment").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
                                     allData.totalbeforeOffer = parseInt(total) - parseInt(total) * parseInt(objOffers?.value);
                                     allData.offerEmalshode = parseInt(total) * parseInt(objOffers?.value);
                                 }
@@ -420,15 +422,15 @@
 
                         $.each(result.data.objList, function (e2, v2) {
                             console.log("prd:", prd);
-                            console.log("this.packinggTypeId:", this.packinggTypeId);
+                            console.log("this.packinggTypeId:", this.id/*packinggTypeId*/);
                             var selected = "";
                             var pkhazineh = 0;
                             if (result.data.objList.length == 1) {
                                 selected = "selected='selected'";
 
-                                shoppingCart.changeSelectedPackage(prd, this.packinggTypeId);
+                                shoppingCart.changeSelectedPackage(prd, this.id/*packinggTypeId*/);
 
-                                $("input[data-pkinputhide='" + prd + "']").val(this.packinggTypeId);
+                                $("input[data-pkinputhide='" + prd + "']").val(this.id/*packinggTypeId*/);
                                 $("input[data-pkinputhide='" + prd + "']").attr("data-hazineh", this?.price ?? 0);
 
                                 $("#packingprice").html(this?.price ?? 0);
@@ -440,9 +442,9 @@
                             if (pkselected != undefined && pkselected != null) {
                                 selected = "selected='selected'";
 
-                                shoppingCart.changeSelectedPackage(prd, this.packinggTypeId);
+                                shoppingCart.changeSelectedPackage(prd, this.id/*packinggTypeId*/);
 
-                                $("input[data-pkinputhide='" + prd + "']").val(this.packinggTypeId);
+                                $("input[data-pkinputhide='" + prd + "']").val(this.id/*packinggTypeId*/);
                                 $("input[data-pkinputhide='" + prd + "']").attr("data-hazineh", this?.price ?? 0);
 
                                 $("#packingprice").html(this?.price ?? 0);
@@ -454,7 +456,7 @@
                             var opTitle = this.packingTypeName != undefined ? this.packingTypeName : "عادی";
                             pkhazineh = this?.price ?? 0;
 
-                            options += `<option value='${this.packinggTypeId}' ${selected} hazineh='${pkhazineh}'>${opTitle}</option>`;
+                            options += `<option value='${this.id/*packinggTypeId*/}' ${selected} hazineh='${pkhazineh}'>${opTitle}</option>`;
                         });
 
                         $("select.packageComboInCart[data-pkCmbId=" + prd + "]").append(options);
