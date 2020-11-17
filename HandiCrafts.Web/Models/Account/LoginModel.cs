@@ -69,8 +69,35 @@ namespace HandiCrafts.Web.Models.Account
         [Display(Name = "کد تایید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         //[MaxLength(6, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        [RegularExpression("[0-9]", ErrorMessage = "کد تایید معتبر نمی باشد")]
-        public int AcceptCode { get; set; }
+        [RegularExpression("[0-9]{4}", ErrorMessage = "کد تایید معتبر نمی باشد")]
+        public string AcceptCode { get; set; }
+    }
+
+    public class SetNewPassword
+    {
+        [Display(Name = "شماره موبایل یا ایمیل")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [emailmobilevalidation(ErrorMessage = "شماره موبایل یا ایمیل معتبر نمی باشد")]
+        public string EmailorMobileNo { get; set; }
+
+        [Display(Name = "کد تایید")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [RegularExpression("[0-9]{4}", ErrorMessage = "کد تایید معتبر نمی باشد")]
+        public string AcceptCode { get; set; }
+
+        [Display(Name = "رمز عبور")]
+        [Required(ErrorMessage = "رمز عبور اجباری است")]
+        [RegularExpression("^[\a-zA-Z\\s\\p{N}]+$", ErrorMessage = "فقط حروف لاتین و اعداد مورد قبول می باشد")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "حداقل طول رمزعبور{0} و حداکثر {1} کارکتر می باشد")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Display(Name = "تکرار رمز عبور")]
+        [Required(ErrorMessage = "تکرار رمز عبور اجباری است")]
+        [RegularExpression("^[\a-zA-Z\\s\\p{N}]+$", ErrorMessage = "فقط حروف لاتین و اعداد مورد قبول می باشد")]
+        [Compare("Password", ErrorMessage = "رمزها باهم مطابقت ندارند")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }
     }
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]

@@ -19,14 +19,14 @@
                         </p>
                     </div>
 
-                    <form id="form_login" class="kt-form" asp-action="Login" asp-controller="Account" data-ajax-method="POST"
+                    <form id="form_login" class="kt-form" asp-action="VerifyCode" asp-controller="Account" data-ajax-method="POST"
                           data-ajax="true" data-ajax-begin="onSigninBegin1" data-ajax-complete="onSigninComplete1"
                           data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1">
                         <div class="alert alert-danger d-none" id="errorbox"></div>
                         <input type="hidden" asp-for="UserId" />
                         <div class="form-group">
                             <label>کد تایید</label>
-                            <input asp-for="AcceptCode" class="form-control" />
+                            <input type="text" asp-for="AcceptCode" class="form-control" />
                             <span asp-validation-for="AcceptCode" class="kt-font-danger"></span>
                         </div>
 

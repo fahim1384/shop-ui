@@ -5,17 +5,21 @@
 }
 
 @{
-    if (Model.DefaultTab == "login")
+    if (Model.DefaultTab.ToLower().Contains("login"))
     {
         @await Html.PartialAsync("_Login.cshtml", Model.ShortLoginModel);
     }
-    else if (Model.DefaultTab == "verifyCode")
+    else if (Model.DefaultTab.ToLower().Contains("verifycode"))
     {
         @await Html.PartialAsync("_VerifyCode.cshtml", Model.AcceptCodeModel);
     }
-    else if (Model.DefaultTab == "register")
+    else if (Model.DefaultTab.ToLower().Contains("register"))
     {
         @await Html.PartialAsync("_Register.cshtml", Model.RegisterModel);
+    }
+    else
+    {
+        @await Html.PartialAsync("_Login.cshtml", Model.ShortLoginModel);
     }
 }
 
@@ -67,7 +71,7 @@
 
 
     </script>
-    
+
     <script>
         // ========== VerifyCode Js ===========
         var interval;
@@ -125,5 +129,34 @@
         failed1 = function (xhr) {
             alert(`Status: ${xhr.status}, Status Text: ${xhr.statusText}`);
         };
+
+        $("#kt_send_code_submit1").on("click", function () {
+            GetActivationCodeForLogin();
+        });
+
+        let GetActivationCodeForLogin = () => {
+            $.ajax({
+                type: 'POST',
+                data: { userId: $("input[name=UserId]").val() },
+                url: "/Account/GetActivationCodeForLogin",
+
+                success: function (result) {
+                    $("#errorbox").addClass("d-none");
+
+                    if (result.success == true) {
+                        $("#kt_login_signin_submit1").css("display", "block");
+                        $("#kt_send_code_submit1").css("display", "none");
+
+                        $("#minute").val("2"); minute = 2;
+                        $("#second").val("0"); second = 0;
+
+                        timer();
+                    } else {
+                        $("#errorbox").html(result.message).removeClass("d-none");
+                    }
+                }
+            });
+        };
+
     </script>
 }

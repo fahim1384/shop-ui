@@ -297,6 +297,50 @@ namespace HandiCrafts.Web.Controllers
         }
 
         /// <summary>
+        /// دریافت قیمت و اطلاعات سبد خرید
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = UserRoleNames.User)]
+        public Task<ResponseState<OrderPreViewResultDtoSingleResult>> CustomerOrderPreview(OrderModel model)
+        {
+            return TryCatch(async () =>
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                CustomerOrderPreviewClient client = new CustomerOrderPreviewClient(BaseUrl, httpClient);
+
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(model, Newtonsoft.Json.Formatting.Indented, new Newtonsoft.Json.JsonSerializerSettings
+                {
+                    DefaultValueHandling = Newtonsoft.Json.DefaultValueHandling.Populate
+                });
+
+                //***************************************************
+                httpClient.BaseAddress = _httpClientFactory.CreateClient("myHttpClient").BaseAddress;
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
+                // Method  
+                HttpResponseMessage response = await httpClient.PostAsJsonAsync("api/Product/CustomerOrderPreview_UI", model);
+
+                var result = await response.Content.ReadAsAsync<OrderPreViewResultDtoSingleResult>();
+
+                //*********************************************************
+
+                //var result2 = await client.UIAsync(model);
+
+                if (result.ResultCode != 200)
+                    return Error<OrderPreViewResultDtoSingleResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        /// <summary>
         /// ثبت سفارش
         /// </summary>
         /// <returns></returns>
@@ -320,7 +364,7 @@ namespace HandiCrafts.Web.Controllers
                     return Error<InsertOrderResultDtoSingleResult>(null, message: result.ResultMessage);
 
                 HttpContext.Session.SetString(BankUrl, result.Obj.BankUrl);
-                HttpContext.Session.SetString(CustomerOrderId, result.Obj.CustomerOrderId != null ? result.Obj.CustomerOrderId.ToString():null);
+                HttpContext.Session.SetString(CustomerOrderId, result.Obj.CustomerOrderId != null ? result.Obj.CustomerOrderId.ToString() : null);
                 HttpContext.Session.SetString(OrderNo, result.Obj.OrderNo != null ? result.Obj.OrderNo.ToString() : null);
                 HttpContext.Session.SetString(PostPrice, result.Obj.PostPrice != null ? result.Obj.PostPrice.ToString() : null);
                 HttpContext.Session.SetString(RedirectToBank, result.Obj.RedirectToBank.ToString());
@@ -329,7 +373,6 @@ namespace HandiCrafts.Web.Controllers
 
             });
         }
-
         #endregion
 
     }

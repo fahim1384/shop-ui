@@ -215,8 +215,8 @@ namespace HandiCrafts.Web.Controllers
 
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
-                
-                string fullnameFromResult = result.Obj.Fullname == null ?  HttpContext.Session.GetString(_fullname).ToString(): result.Obj.Fullname;
+
+                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
 
                 result.Obj.Fullname = fullnameFromResult;
 
@@ -263,7 +263,7 @@ namespace HandiCrafts.Web.Controllers
 
         public IActionResult VerifyCode(long? userid)
         {
-            if(userid == null)
+            if (userid == null)
             {
                 return View("LoginContainer", new LoginContainerModel
                 {
@@ -294,10 +294,14 @@ namespace HandiCrafts.Web.Controllers
 
                 ByActivationCodeClient client = new ByActivationCodeClient(BaseUrl, httpClient);
 
-                var result = await client.UIAsync(model.UserId, model.AcceptCode);
+                var result = await client.UIAsync(model.UserId, int.Parse(model.AcceptCode));
 
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
+
+                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
+
+                result.Obj.Fullname = fullnameFromResult;
 
                 var claims = new[] {
                         new Claim("token", result.Obj.Token),
@@ -328,6 +332,114 @@ namespace HandiCrafts.Web.Controllers
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = true });
                 //
+
+                return Success(data: result, message: result.ResultMessage);
+
+
+            });
+        }
+
+        /// <summary>
+        /// ارسال مجدد کد فعالسازی
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> GetActivationCodeForLogin(long userId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                CustomerClient client = new CustomerClient(BaseUrl, httpClient);
+
+                var result = await client.GetActivationCodeForLoginAsync(null, null, userId);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> ForgetPassword(ShortLoginModel model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                CustomerClient client = new CustomerClient(BaseUrl, httpClient);
+
+                string email = null;
+                long? mobile = null;
+
+                string EmailorMobile = model.EmailorMobileNo.ToString();
+                if (Regex.IsMatch(EmailorMobile, @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", RegexOptions.IgnoreCase))
+                {
+                    email = EmailorMobile;
+                }
+                else if (Regex.IsMatch(EmailorMobile, @"09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", RegexOptions.IgnoreCase))
+                {
+                    mobile = long.Parse(EmailorMobile);
+                }
+
+                var result = await client.GetCodeForForgetPassAsync(email, mobile);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult ChangePassword(string emailmobile)
+        {
+            return View("ChangePassword", new SetNewPassword()
+            {
+                EmailorMobileNo = emailmobile
+            });
+        }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> ChangePassword(SetNewPassword model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                CustomerClient client = new CustomerClient(BaseUrl, httpClient);
+
+                string email = null;
+                long? mobile = null;
+
+                string EmailorMobile = model.EmailorMobileNo.ToString();
+                if (Regex.IsMatch(EmailorMobile, @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", RegexOptions.IgnoreCase))
+                {
+                    email = EmailorMobile;
+                }
+                else if (Regex.IsMatch(EmailorMobile, @"09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", RegexOptions.IgnoreCase))
+                {
+                    mobile = long.Parse(EmailorMobile);
+                }
+
+                var result = await client.ChangePassByActivationCodeAsync(email, mobile, int.Parse(model.AcceptCode), model.Password);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 

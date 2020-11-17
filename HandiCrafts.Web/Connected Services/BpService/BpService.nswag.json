@@ -1,4 +1,4 @@
-{
+﻿{
   "openapi": "3.0.1",
   "info": {
     "title": "Hand Carft",
@@ -1649,6 +1649,56 @@
         }
       }
     },
+    "/api/Product/CustomerOrderPreview_UI": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "پیشنمایش سفارش",
+        "operationId": "CustomerOrderPreview_UI",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderPreViewResultDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderPreViewResultDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderPreViewResultDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Product/InsertCustomerOrder_UI": {
       "post": {
         "tags": [
@@ -1692,6 +1742,47 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/InsertOrderResultDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CustomerOrderPayment/MakePaymentByOrderId": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "پرداخت مبلغ سفارش با آیدی سفارش",
+        "operationId": "MakePaymentByOrderId",
+        "parameters": [
+          {
+            "name": "customerOrderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringSingleResult"
                 }
               }
             }
@@ -3807,6 +3898,19 @@
           "Seller"
         ],
         "operationId": "GetSellerList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seller/GetSellerListForGrid": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "GetSellerListForGrid",
         "responses": {
           "200": {
             "description": "Success"
@@ -11209,6 +11313,93 @@
             "items": {
               "$ref": "#/components/schemas/OrderProductModel"
             }
+          }
+        }
+      },
+      "OrderPreViewResultDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "productsList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            }
+          },
+          "postServicePrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "offerValue": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "offerPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "paymentTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "packingWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "orderWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalWeight": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerOrderProduct"
+            }
+          }
+        }
+      },
+      "OrderPreViewResultDtoSingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/OrderPreViewResultDto"
           }
         }
       },

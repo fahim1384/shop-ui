@@ -418,7 +418,7 @@
                                                                         </div>
                                                                         <div class="c-params__list-value">
                                                                             <span class="block">
-                                                                                ${v.value}
+                                                                                ${v?.value ?? v.value ? v.value:'نامشخص'}
                                                                             </span>
                                                                         </div>
                                                                     </li>`);

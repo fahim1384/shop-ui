@@ -39,6 +39,12 @@ var shoppingCart = (function () {
             $(".cart-box-empty").addClass("d-none");
             $(".cart-box").removeClass("d-none");
         }
+
+        try {
+            CustomerOrderPreview();
+        } catch (e) {
+            ;
+        }
     }
 
     // Load cart

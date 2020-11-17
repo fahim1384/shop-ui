@@ -186,7 +186,7 @@
                                     </tr>
                                     <tr>
                                         <td class="line-height-60">هزینه ارسال</td>
-                                        <td class="line-height-60 text-right">رایگان</td>
+                                        <td class="line-height-60 text-right"><span class="hazine-ersal">رایگان</span></td>
                                     </tr>
                                     <tr>
                                         <td class="line-height-60">هزینه بسته بندی</td>
@@ -345,6 +345,8 @@
                             }
                         }
 
+                        CustomerOrderPreview();
+
                     } else {
                         $("#messageTag").html("کد تخفیف شما فاقد اعتبار می باشد");
                         $("#messagesModal").modal("show");
@@ -380,6 +382,8 @@
                         console.log(result.data);
 
                         productsdetaillist = result.data.objList;
+
+                        CustomerOrderPreview();
                     }
                     else {
                         $("#messageTag").html(result.message);
@@ -399,7 +403,7 @@
    
                         var dataInfo = result.data.obj;
                         $("#addressBox").html(`${dataInfo?.provinceName??''} ${dataInfo?.cityName??''} ${dataInfo?.address??''}، ${dataInfo?.issureMobile??''}`);
-                        $("#fullname").html(`${dataInfo?.issureName} ${dataInfo?.issureFamily}`);
+                        $("#fullname").html(`${dataInfo?.issureName??''} ${dataInfo?.issureFamily??''}`);
                         localStorage.setItem("addressId", dataInfo.id);
                     }
                 }
@@ -486,12 +490,14 @@
                 allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt($(this).find('option:selected').attr("hazineh"));
 
                 $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+
+                CustomerOrderPreview();
             }
         });
 
         function findofferid(productid) {
             var _offerid = null;
-
+            debugger
             for (var i = 0; i < productsdetaillist.length; i++) {
                 if (productsdetaillist[i] == productid) {
                     _offerid = productsdetaillist[i]?.offerId ?? null;
@@ -558,11 +564,64 @@
             });
         }
 
+        // اطلاعات سبد خرید و بروزرسانی قیمت ها
+        function CustomerOrderPreview() {
+            
+            var model = {
+                PaymentTypeId: $("input[name=optionsPaymentTypeRadios]:checked").val(),
+                OfferId: objOffers?.offerId ?? null,
+                CustomerAddressId: localStorage.getItem("addressId"),
+                CustomerDescription: null,
+                ProductList: []
+            };
+
+            $.each(shoppingCart.listCart(), function (e, v) {
+                var pkg = null;
+                if ($("input[data-pkinputhide='" + v.prodid + "']").val() == "" || $("input[data-pkinputhide='" + v.prodid + "']").val() == "undefined") { } else {
+                    pkg = $("input[data-pkinputhide='" + v.prodid + "']").val();
+                }
+
+                var productObj = {
+                    ProductId: v.prodid,
+                    Count: v.count,
+                    ColorId: null,
+                    PackingTypeId: pkg,//v.packageId,
+                    OfferId: findofferid(v.prodid)
+                };
+
+                model.ProductList.push(productObj);
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/CustomerOrderPreview",
+                data: { model: model },
+                success: function (result) {
+                    debugger
+                    if (result.success == true) {
+                        console.log(result.data);
+                        var obj = result.data.obj;
+
+                        //$("#offerPrecent").html(result.data.?.value);
+                        $("#totalBeforeOffer").html(obj.orderPrice);
+                        //$("#packingprice").html(this?.price ?? 0);
+                        $("span.totalPayment").html(obj.finalPrice);
+                        $("span.hazine-ersal").html(obj.postServicePrice);
+                    }
+                    else {
+                        $("#messageTag").html(result.message);
+                        $("#messagesModal").modal("show");
+                    }
+                }
+            });
+        }
+
         //============ Load ============
 
         GetProductByIdList_UI();
         GetPaymentTypeList();
         GetCustomerDefultAddress_UI();
+        
 
         var orderResltObj = {};
         var isSetOffer = false;
