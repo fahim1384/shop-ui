@@ -607,6 +607,7 @@
                         //$("#packingprice").html(this?.price ?? 0);
                         $("span.totalPayment").html(obj.finalPrice);
                         $("span.hazine-ersal").html(obj.postServicePrice);
+                        $("#offerPrecent").val(obj.offerValue);
                     }
                     else {
                         $("#messageTag").html(result.message);

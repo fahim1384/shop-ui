@@ -321,7 +321,7 @@
 </section>
 
 <!-- پکیج -->
-<section class="card-margin-0 main-packages-box">
+<section class="card-margin-0 main-packages-box d-none">
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
@@ -800,18 +800,24 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                 var imgUrl = "/image/hakaki.jpg";
                                 //if (v.url != null) imgUrl = v.url;
 
-                                //if (e < 8)
-                                catBox.append(`<div class="col items">
+                                //var countInCat = 0;
+                                //$.each(v.inverseP, function (e2, v2) {
+                                //    countInCat++;
+                                //});
+
+                                if (v.pid == null) {
+                                    catBox.append(`<div class="col items">
                                         <div class="card mb-4">
                                              <a href="/product/ByFilter?catId=${v.id}">
                                                 <img class="max-width-100px m-auto" src="${imgUrl}" />
                                                 <div class="card-body custome-muted-text">
-                                                    <p class="card-text">${v.name}</p>
+                                                    <p class="card-text text-nowrap">${v.name}</p>
                                                     <a class="cyan">100 کالا</a>
                                                 </div>
                                               </a>
                                             </div>
                                         </div>`);
+                                }
                             });
 
                             $(".catBox").each(function () {
@@ -1367,7 +1373,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
             GetSliderByPlaceCode_UI(5);
 
             // پکیج ها
-            GetPackingTypeList_UI();
+            //GetPackingTypeList_UI();
 
             // جدیدترین ها
             GetProductList_latest_UI();
@@ -1381,8 +1387,8 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
 
         //////////////////////////////
         /*===================================*
-04. MENU JS
-*===================================*/
+        04. MENU JS
+        *===================================*/
         //Main navigation scroll spy for shadow
         $(window).on('scroll', function () {
             var scroll = $(window).scrollTop();

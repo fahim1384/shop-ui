@@ -10,27 +10,35 @@
 
             <div>
                 @{
-                    if (Model.Status.ToLower().Equals("ok"))
+                    @*if (Model.Status.ToLower().Equals("ok"))
                     {
-                        <div class="alert alert-success">
+                        <div id="banksuccessmsg" class="alert alert-success">
                             <strong>پرداخت موفق</strong>
                             @if (string.IsNullOrEmpty(Model.Message))
                             {
                                 <p>
                                     پرداخت فاکتور شما با صورت موفق انجام شده است شما می توانید لیست سفارشات خود را مشاهده نمایید
+                                    <a href="/Order/OrdersHistory" class="cyan d-block">مشاهده لیست سفارشات</a>
                                 </p>
+                                <script>
+                                    shoppingCart.clearCart();
+                                </script>
                             }
                             else
                             {
                                 <p>
                                     @Model.Message
+                                    <a href="/Order/OrdersHistory" class="cyan">مشاهده لیست سفارشات</a>
                                 </p>
+                                <script>
+                                    shoppingCart.clearCart();
+                                </script>
                             }
                         </div>
                     }
                     else if (Model.Status.ToLower().Equals("nok"))
                     {
-                        <div class="alert alert-danger">
+                        <div id="bankerrormsg" class="alert alert-danger">
                             <strong>پرداخت ناموفق</strong>
                             @if (string.IsNullOrEmpty(Model.Message))
                             {
@@ -50,10 +58,60 @@
                     else
                     {
                         <script>window.location = "/Home/Index"</script>
-                    }
+                    }*@
                 }
+
+                <div id="banksuccessmsg" class="alert alert-success d-none">
+                    <strong>پرداخت موفق</strong>
+                    <p>
+                        <div id="succmsg">پرداخت فاکتور شما با صورت موفق انجام شده است شما می توانید لیست سفارشات خود را مشاهده نمایید</div>
+                        <a href="/Order/OrdersHistory" class="cyan d-block">مشاهده لیست سفارشات</a>
+                    </p>
+                </div>
+
+                <div id="bankerrormsg" class="alert alert-danger d-none">
+                    <strong>پرداخت ناموفق</strong>
+                    <p>
+                        <div id="errmsg">پرداخت فاکتور شما با صورت موفق انجام نشده است لطفا نسبت به سفارش و پرداخت دوباره اقدام نمایید</div>
+                        <a href="/Order/OrdersHistory" class="cyan d-block">مشاهده لیست سفارشات</a>
+                    </p>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
+@section Scripts{
+    <script>
+
+        function GetPaymentTypeList() {
+
+            if (getParameterByName('authority') == null || getParameterByName('status') == null)
+                window.location = "/Home/Index";
+
+            $.ajax({
+                type: 'POST',
+                url: "/Order/OnlinePaymentResult",
+                data: {
+                    Authority: getParameterByName('Authority'),
+                    Status: getParameterByName('Status')
+                },
+                success: function (result) {
+                    if (result.success == true) {
+                        $("#banksuccessmsg").removeClass("d-none");
+                        shoppingCart.clearCart();
+                    } else {
+                        $("#bankerrormsg").removeClass("d-none");
+                    }
+                }
+            });
+        }
+
+        /************************
+         * In Load 
+         * **********************/
+
+        GetPaymentTypeList();
+    </script>
+}

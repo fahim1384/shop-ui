@@ -7,6 +7,7 @@ using AutoMapper;
 using HandiCrafts.Core.Enums;
 using HandiCrafts.Web.Infrastructure.Framework;
 using HandiCrafts.Web.Interfaces;
+using HandiCrafts.Web.Models;
 using HandiCrafts.Web.Models.Order;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,37 +26,39 @@ namespace HandiCrafts.Web.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-        public IActionResult Index()
+        public IActionResult OnlinePaymentResult()
         {
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> OnlinePaymentResult(string Authority, string Status)
+        [HttpPost]
+        public Task<ResponseState<CsBankResult>> OnlinePaymentResult(string Authority, string Status)
         {
-            CsBankResult bankResult = new CsBankResult()
+            return TryCatch(async () =>
             {
-                Authority = Authority,
-                Status = Status
-            };
 
-            HttpClient httpClient = new HttpClient();
+                HttpClient httpClient = new HttpClient();
 
-            httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+                httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
 
-            string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-            VerifyPaymentClient client = new VerifyPaymentClient(BaseUrl, httpClient);
+                VerifyPaymentClient client = new VerifyPaymentClient(BaseUrl, httpClient);
 
-            var result = await client.UIAsync(Authority, Status);
+                var result = await client.UIAsync(Authority, Status);
 
-            if (result.ResultCode != 200)
-                return View(new CsBankResult() { Status="NOK", Message= result.Obj });
+                CsBankResult bankResult = new CsBankResult()
+                {
+                    Authority = Authority,
+                    Status = Status,
+                    Message = result.Obj
+                };
 
-            bankResult.Message = result.Obj;
+                if (result.ResultCode != 200)
+                    return Error<CsBankResult>(data:null, message: result.ResultMessage);
 
-            return View(bankResult);
-
+                return Success(data: bankResult, message: result.Obj);
+            });
         }
 
         [HttpGet]

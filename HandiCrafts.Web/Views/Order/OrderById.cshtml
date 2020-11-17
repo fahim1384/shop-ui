@@ -68,6 +68,7 @@
             color: white;
             border: 1px solid #c3c3c3;
         }
+
         .span-dot {
             width: 5px;
             height: 5px;
@@ -92,16 +93,21 @@
                 <h5 class="color-black mb-5"><a href="/Order/OrdersHistory"><i class="fa fa-long-arrow-alt-right fa-2x vertical-align-middle"></i></a>  جزئیات سفارش</h5>
                 <p class="color-black">@persiandt.Day @persiandt.MonthName @persiandt.Year <span class="span-dot"></span> شماره سفارش @Model.OrderNo</p>
             </div>
-            <div class="col-12 col-sm-6 text-right">
-                <div class="col-12">
-                    <div dir="ltr">
-                        <div class="progress" style="width:50%">
-                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            @{
+                if (Model.FinalStatusId == 21)
+                {
+                    <div class="col-12 col-sm-6 text-right">
+                        <div class="col-12">
+                            <div dir="ltr">
+                                <div class="progress" style="width:50%">
+                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-12"><span class="text-success" style="font-size: 1rem;">تحویل مرسوله به مشتری</span></div>
                     </div>
-                </div>
-                <div class="col-12"><span class="text-success" style="font-size: 1rem;">تحویل مرسوله به مشتری</span></div>
-            </div>
+                }
+            }
         </div>
         <hr />
         <div class="row">
