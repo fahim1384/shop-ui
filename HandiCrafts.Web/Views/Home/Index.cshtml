@@ -790,7 +790,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
             try {
                 $.ajax({
                     type: 'POST',
-                    url: "/Home/GetCatProductList_UI",
+                    url: "/Home/GetMainCatProductList_UI",
 
                     success: function (result) {
                         $(".catBox").html('');
@@ -800,24 +800,19 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                 var imgUrl = "/image/hakaki.jpg";
                                 //if (v.url != null) imgUrl = v.url;
 
-                                //var countInCat = 0;
-                                //$.each(v.inverseP, function (e2, v2) {
-                                //    countInCat++;
-                                //});
-
-                                if (v.pid == null) {
+                                //if (v.pid == null) {
                                     catBox.append(`<div class="col items">
                                         <div class="card mb-4">
                                              <a href="/product/ByFilter?catId=${v.id}">
                                                 <img class="max-width-100px m-auto" src="${imgUrl}" />
                                                 <div class="card-body custome-muted-text">
                                                     <p class="card-text text-nowrap">${v.name}</p>
-                                                    <a class="cyan">100 کالا</a>
+                                                    <a class="cyan">${v.productCount} کالا</a>
                                                 </div>
                                               </a>
                                             </div>
                                         </div>`);
-                                }
+                                //}
                             });
 
                             $(".catBox").each(function () {

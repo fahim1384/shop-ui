@@ -137,19 +137,19 @@
                         <hr />
                         <div class="sidenav">
                             <!--<a href="#">دسته بندی</a>
-            <a href="#">دسته بندی</a>
-            <a href="#">دسته بندی</a>
-            <a href="#">دسته بندی</a>
-            <button class="dropdown-btn">
-                <i class="fa fa-chevron-left"></i>
-                دسته بندی
-            </button>
-            <div class="dropdown-container">
-                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
-                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
-                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
-                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
-            </div>-->
+                            <a href="#">دسته بندی</a>
+                            <a href="#">دسته بندی</a>
+                            <a href="#">دسته بندی</a>
+                            <button class="dropdown-btn">
+                                <i class="fa fa-chevron-left"></i>
+                                دسته بندی
+                            </button>
+                            <div class="dropdown-container">
+                                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
+                                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
+                                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
+                                <a href="#"><i class="fa fa-chevron-down"></i> دسته بندی</a>
+                            </div>-->
 
                         </div>
                         <div class="sidenavUI"></div>
@@ -211,10 +211,10 @@
                                 <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-min="3000000">
                                 <label class="form-check-label text-uppercase card-link-secondary">بالاتر از 3,000,000</label>
                             </div>
-                            
-                                <div class="d-flex align-items-center mt-4 pb-1">
-                                    <button id="btnfilterPrices" type="button" class="btn btn-info btn-block">اعمال فیلتر</button>
-                                </div>
+
+                            <div class="d-flex align-items-center mt-4 pb-1">
+                                <button id="btnfilterPrices" type="button" class="btn btn-info btn-block">اعمال فیلتر</button>
+                            </div>
 
                         </section>
                         <!-- Section: Price -->
@@ -347,9 +347,9 @@
                             child += "</div>";
 
                             $(".sidenav").append(`<button class="dropdown-btn">
-                                                        <i class="fa fa-chevron-left"></i>
-                                                        ${v.name}
-                                                    </button>${child}`);
+                                                            <i class="fa fa-chevron-left"></i>
+                                                            ${v.name}
+                                                        </button>${child}`);
 
                         }
                         else {
@@ -405,39 +405,39 @@
                             }
 
                             productsbox.append(`
-                                                          <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
-                                                           <a href="/product/Index?id=${v.id}">
-                                                            <div class="shopping-thumbnail card mb-3 ">
-                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                              <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
+                                                               <a href="/product/Index?id=${v.id}">
+                                                                <div class="shopping-thumbnail card mb-3 ">
+                                                                    <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
 
-                                                                <div class="card-body">
-                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                    <p class="card-text ratingbox">
-                                                                        ${rat}
-                                                                    </p>
-                                                                    <div class="d-flex justify-content-between align-items-center">
-                                                                        <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                    <div class="card-body">
+                                                                        <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                        <p class="card-text ratingbox">
+                                                                            ${rat}
+                                                                        </p>
+                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                            <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                           </a>
-                                                            <div class="caption">
-                                                                    <p>
-                                                                        <b>
-                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                        </b>
-                                                                    </p>
+                                                               </a>
+                                                                <div class="caption">
+                                                                        <p>
+                                                                            <b>
+                                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                            </b>
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                    `);
+                                                        `);
                         });
 
                         if (result.data != null && result.data?.objList.length != 0) {
                             var totalcount = result.data.totalcount;
                             var pagingBox = "";
-                            
+
                             console.log("mod", totalcount % 12);
                             var pages = Math.ceil(totalcount / 12);//.toFixed();
                             //if (totalcount % 12 > 0)
@@ -446,37 +446,37 @@
                             var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 
                             pagingBox += `<div class="col-md-12 col-lg-12 text-center">
-                                                    <nav aria-label="Page navigation example">
-                                                        <ul class="pagination justify-content-center productpagination">`;
+                                                        <nav aria-label="Page navigation example">
+                                                            <ul class="pagination justify-content-center productpagination">`;
 
                             if (filters.pageNumber > 1) {
                                 pagingBox += `<li class="page-item">
-                                                    <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
-                                                </li>`;
+                                                        <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
+                                                    </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1">«</a>
-                                                </li>`;
+                                                        <a class="page-link" href="#" tabindex="-1">«</a>
+                                                    </li>`;
                             }
 
-                            for (var i = indexStart-4; i < indexStart + 4; i++) {
+                            for (var i = indexStart - 4; i < indexStart + 4; i++) {
                                 var addActiveCls = "";
                                 if (i == filters.pageNumber) addActiveCls = "active";
-                                if (i <= pages & i >=1) {
+                                if (i <= pages & i >= 1) {
                                     pagingBox += `<li class="page-item ${addActiveCls}"><a class="page-link border-radius-5" onclick="filterByGotoPage(${i})" data-paging-number='${i}'>${i}</a></li>`;
                                 }
                             }
 
                             if (filters.pageNumber < pages) {
                                 pagingBox += `<li class="page-item">
-                                                    <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
-                                                </li>`;
+                                                        <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
+                                                    </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1">»</a>
-                                                </li>`;
+                                                        <a class="page-link" href="#" tabindex="-1">»</a>
+                                                    </li>`;
                             }
 
                             pagingBox += `</ul></nav></div>`;
@@ -507,6 +507,8 @@
 
             $("#filtersFrm")[0].reset();
             GetProductList_Paging_Filtering_UI();
+
+            GetCatProductListByParentId_UI();
         };
 
         var filterOrderby = (filterOrderbyNum) => {
@@ -525,6 +527,8 @@
             $("div.sidenav").find("a[data-cat-number=" + catId + "]").addClass("active");
 
             GetProductList_Paging_Filtering_UI();
+
+            GetCatProductListByParentId_UI();
         };
 
         var filterByGotoPage = (pageNumber) => {
@@ -551,6 +555,76 @@
             GetProductList_Paging_Filtering_UI(productName = pname);
         });
 
+        //  دسته بندی های فرزند
+        let GetCatProductListByParentId_UI = () => {
+            $(".category-product-wraper").addClass("d-none");
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Home/GetCatProductListByParentId_UI",
+                    data: { catId: filters.catProductId },
+                    success: function (result) {
+                        $(".category-product-wraper").html('');
+                        var catBox1 = "";
+                        var catBox2 = "";
+                        if (result.data != null) {
+                            $.each(result.data.objList, function (e, v) {
+                                if (e == 0 || e == 1 || e == 2 || e == 3) {
+                                    catBox1+=(`<div class="col mt-2">
+                            <div class="category-product">
+                                <a href="/Product/ByFilter?catId=${v.id}">
+                                    <img src="/image/icons/vase.png" class="width-30px" />
+
+                                    <div class="text-center mt-10">
+                                        <h5>${v.name}</h5>
+                                        <span>${v.productCount} کالا</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>`);
+                                }
+
+                                if (e == 4 || e == 5 || e == 6) {
+                                    catBox2+=(`<div class="col mt-2">
+                            <div class="category-product">
+                                <a href="/Product/ByFilter?catId=${v.id}">
+                                    <img src="/image/icons/vase.png" class="width-30px" />
+
+                                    <div class="text-center mt-10">
+                                        <h5>${v.name}</h5>
+                                        <span>${v.productCount} کالا</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>`);
+                                }
+
+                                $(".category-product-wraper").removeClass("d-none");
+                            });
+
+                            var otherCat = "";
+                            if (result.data.objList.length > 7) {
+                                otherCat = `<div class="col mt-2">
+                        <div class="category-product">
+                            <a href="">
+                                <div class="text-center mt-10 cat-more">
+                                    <h5 class="font-size-1_8rem">13 +</h5>
+                                    <span>دسته دیگر</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>`;
+                            }
+
+                            $(".category-product-wraper").html(`<div class="col-6"><div class="row">${catBox1}</div></div>
+                                <div class="col-6"><div class="row">${catBox2}${otherCat}</div></div>`);
+                        }
+                    }
+                });
+            } catch (e) {
+            }
+        }
+
         //============ Load ============
         jQuery(document).ready(function () {
             LoadCategories();
@@ -570,6 +644,8 @@
 
                 $("div.sidenav a").removeClass("active");
                 $("div.sidenav").find("a[data-cat-number=" + catId + "]").addClass("active");
+
+                GetCatProductListByParentId_UI();
             }
 
             //catProductId, productName, minPrice, maxPrice, sortMethod, pageNumber, pageSize

@@ -38,12 +38,12 @@ var shoppingCart = (function () {
         } else {
             $(".cart-box-empty").addClass("d-none");
             $(".cart-box").removeClass("d-none");
-        }
 
-        try {
-            CustomerOrderPreview();
-        } catch (e) {
-            ;
+            try {
+                CustomerOrderPreview();
+            } catch (e) {
+                ;
+            }
         }
     }
 
@@ -237,7 +237,7 @@ var cartEvents = (function () {
                 for (var i in cartArray) {
                     output += `<tr>
             <td><a href="/Product/index?id=${cartArray[i].prodid}"><img src='${cartArray[i].prodimage}' class='img-fluid width-100px border-default border-radius-5 p-2px' /></a></td>
-            <td class="text-left"><a href="/Product/index?id=${cartArray[i].prodid}"><h5 class="prod-name-cart">${cartArray[i].name}</h5><span class="mellicode">شناسنامه یکتا: ${cartArray[i].mellicode ? cartArray[i].mellicode:'0000'}</span></a></td>
+            <td class="text-left"><a href="/Product/index?id=${cartArray[i].prodid}"><h5 class="prod-name-cart">${cartArray[i].name}</h5><span class="mellicode">شناسنامه یکتا: ${cartArray[i].mellicode ? cartArray[i].mellicode : '0000'}</span></a></td>
             <td> <h5 class="prod-name-cart">${cartArray[i].price}</h5></td>
             <td><form class="form-inline mt-2" dir="rtl">
                         <div class="spinner border-radius-5 m-auto">

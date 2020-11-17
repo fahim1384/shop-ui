@@ -1,4 +1,4 @@
-﻿{
+{
   "openapi": "3.0.1",
   "info": {
     "title": "Hand Carft",
@@ -715,29 +715,6 @@
         }
       }
     },
-    "/api/CatProduct/GetCatProductListByParentId": {
-      "get": {
-        "tags": [
-          "CatProduct"
-        ],
-        "operationId": "GetCatProductListByParentId",
-        "parameters": [
-          {
-            "name": "catId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/CatProduct/GetCatProductListForCmb": {
       "get": {
         "tags": [
@@ -782,12 +759,83 @@
         }
       }
     },
+    "/api/CatProduct/GetMainCatProductList_UI": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetMainCatProductList_UI",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductListByParentId_UI": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "summary": "لیست دسته بندی های براساس آیدی پدر",
+        "operationId": "GetCatProductListByParentId_UI",
+        "parameters": [
+          {
+            "name": "catId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/CatProduct/GetTopCatProductList_UI": {
       "get": {
         "tags": [
           "CatProduct"
         ],
-        "summary": "لیست 5 دسته بندی برتر که بیشترین محصول را دارند",
+        "summary": "لیست دسته بندی های اصلی",
         "operationId": "GetTopCatProductList_UI",
         "responses": {
           "200": {
@@ -10799,6 +10847,89 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CatProduct"
+            }
+          }
+        }
+      },
+      "CatProductWithCountDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pid": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "coding": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "miniPicUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyWords": {
+            "type": "string",
+            "nullable": true
+          },
+          "productCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CatProductWithCountDtoListResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalcount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CatProductWithCountDto"
             }
           }
         }

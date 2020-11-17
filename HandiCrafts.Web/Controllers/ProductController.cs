@@ -39,11 +39,36 @@ namespace HandiCrafts.Web.Controllers
 
             GetProductByIdClient client = new GetProductByIdClient(BaseUrl, httpClient);
 
-            var result = client.UIAsync(id).Result;
-
-            if(result.ResultCode == 200)
+            ProductDtoSingleResult result;
+            try
             {
-                var childNode1 = new MvcBreadcrumbNode("Index", "Product", result.Obj.CatProductName);
+                result = client.UIAsync(id).Result;
+            }
+            catch (Exception ex)
+            {
+                return View();
+                //throw;
+            }
+
+            if (result.ResultCode == 200)
+            {
+                //    ============== category ===============
+                /*GetCatProductListByParentIdClient client2 = new GetCatProductListByParentIdClient(BaseUrl, httpClient);
+
+                var result2 = client2.UIAsync(result.Obj.CatProductId);
+
+                var childNode1 = new MvcBreadcrumbNode("Index", "/Product", result.Obj.CatProductName);
+
+                foreach (var item in result2.Result.ObjList)
+                {
+                    var childNode2 = new MvcControllerBreadcrumbNode("/Product", item.Name)
+                    {
+                        OverwriteTitleOnExactMatch = true,
+                        Parent = childNode1
+                    };
+                }*/
+
+                var childNode1 = new MvcBreadcrumbNode("Index", "/Product", result.Obj.CatProductName);
                 ViewData["BreadcrumbNode"] = childNode1;
 
                 return View(result.Obj);

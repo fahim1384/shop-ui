@@ -404,5 +404,53 @@ namespace HandiCrafts.Web.Controllers
                 return Success(data: result, message: result.ResultMessage);
             });
         }
+
+        /// <summary>
+        /// دسته بندی های پــــــدر
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<CatProductWithCountDtoListResult>> GetMainCatProductList_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetMainCatProductListClient client = new GetMainCatProductListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<CatProductWithCountDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// دسته بندی های فرزند
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<CatProductWithCountDtoListResult>> GetCatProductListByParentId_UI(long catId)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetCatProductListByParentIdClient client = new GetCatProductListByParentIdClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(catId);
+
+                if (result.ResultCode != 200)
+                    return Error<CatProductWithCountDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
     }
 }
