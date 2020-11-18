@@ -7,6 +7,52 @@
         .page-link {
             border: 0;
         }
+
+
+        ul, #myUL {
+            list-style-type: none;
+        }
+
+        #myUL {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menucaret {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+            font-weight: 400;
+        }
+
+            .menucaret::before {
+                content: "\f053";
+                color: #0aa8b9;
+                display: inline-block;
+                margin-right: 6px;
+            }
+
+        .menucaret-down::before {
+            -ms-transform: rotate(-90deg); /* IE 9 */
+            -webkit-transform: rotate(-90deg); /* Safari */
+            transform: rotate(-90deg);
+        }
+
+        .nested {
+            display: none;
+        }
+
+        .nested.active {
+            display: block;
+        }
+        .font-family-WYekan {
+            font-family: 'WYekan'
+        }
+        .sing{
+            padding-right:18px;
+        }
     </style>
 }
 <main>
@@ -153,6 +199,10 @@
 
                         </div>
                         <div class="sidenavUI"></div>
+
+                        <ul id="myUL">
+                            
+                        </ul>
 
                     </section>
                     <!-- Section: Categories -->
@@ -308,24 +358,20 @@
 
 
 @section Scripts{
+    
     <script>
 
-        let bndDropDownSideBar = () => {
-            var dropdown = document.getElementsByClassName("dropdown-btn");
+        let bindMenuLinks = () => {
+            var toggler = document.getElementsByClassName("menucaret");
             var i;
 
-            for (i = 0; i < dropdown.length; i++) {
-                dropdown[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var dropdownContent = this.nextElementSibling;
-                    if (dropdownContent.style.display === "block") {
-                        dropdownContent.style.display = "none";
-                    } else {
-                        dropdownContent.style.display = "block";
-                    }
+            for (i = 0; i < toggler.length; i++) {
+                toggler[i].addEventListener("click", function () {
+                    this.parentElement.querySelector(".nested").classList.toggle("active");
+                    this.classList.toggle("menucaret-down");
                 });
             }
-        }
+        };
 
         //======================
 
@@ -335,8 +381,30 @@
                 url: "/Home/GetCatProductList_UI",
 
                 success: function (result) {
-                    $(".sidenav").html('');
-                    //$(".sidenavUI").append("<ul>");
+                    $("#myUL").html('');
+
+                    $.each(result.data.objList, function (e, v) {
+                        var child = "";
+                        if (v.inverseP.length > 0) {
+                            child = `<ul class="nested">`;
+                            $.each(v.inverseP, function (e2, v2) {
+                                child += `<li><a href="javascript:filterbyCategory(${v2.id})" data-cat-number="${v2.id}">${v2.name}</a></li>`;
+                            });
+                            child += "</ul>";
+
+                            $("#myUL").append(`<li><span class="fa menucaret">
+                                                                    <span class="font-family-WYekan cyan">${v.name}</span>
+                                                                </span>${child}</li>`);
+
+                        }
+                        else {
+                            $("#myUL").append(`<li><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></li>`);
+                        }
+                    });
+
+                    bindMenuLinks();
+
+                    /*$(".sidenav").html('');
                     $.each(result.data.objList, function (e, v) {
                         var child = "";
                         if (v.inverseP.length > 0) {
@@ -347,9 +415,9 @@
                             child += "</div>";
 
                             $(".sidenav").append(`<button class="dropdown-btn">
-                                                            <i class="fa fa-chevron-left"></i>
-                                                            ${v.name}
-                                                        </button>${child}`);
+                                                                    <i class="fa fa-chevron-left"></i>
+                                                                    ${v.name}
+                                                                </button>${child}`);
 
                         }
                         else {
@@ -357,8 +425,24 @@
                         }
 
                         bndDropDownSideBar();
-                    });
 
+
+                    });*/
+
+                }
+            });
+        }
+
+        var menucontent = "";
+
+        let GetMenuChilds=(plist)=>{
+            $.each(plist, function (e, v) {
+                var child = "";
+                if (v.inverseP.length > 0) {
+                    GetMenuChilds(plist);
+                }
+                else {
+                    menucontent +=`<li><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}">${v.name}</a></li>`;
                 }
             });
         }
@@ -405,33 +489,33 @@
                             }
 
                             productsbox.append(`
-                                                              <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
-                                                               <a href="/product/Index?id=${v.id}">
-                                                                <div class="shopping-thumbnail card mb-3 ">
-                                                                    <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                      <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
+                                                                       <a href="/product/Index?id=${v.id}">
+                                                                        <div class="shopping-thumbnail card mb-3 ">
+                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
 
-                                                                    <div class="card-body">
-                                                                        <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                        <p class="card-text ratingbox">
-                                                                            ${rat}
-                                                                        </p>
-                                                                        <div class="d-flex justify-content-between align-items-center">
-                                                                            <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                            <div class="card-body">
+                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                <p class="card-text ratingbox">
+                                                                                    ${rat}
+                                                                                </p>
+                                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                                    <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                               </a>
-                                                                <div class="caption">
-                                                                        <p>
-                                                                            <b>
-                                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                            </b>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                        `);
+                                                                       </a>
+                                                                        <div class="caption">
+                                                                                <p>
+                                                                                    <b>
+                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                    </b>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                `);
                         });
 
                         if (result.data != null && result.data?.objList.length != 0) {
@@ -446,18 +530,18 @@
                             var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 
                             pagingBox += `<div class="col-md-12 col-lg-12 text-center">
-                                                        <nav aria-label="Page navigation example">
-                                                            <ul class="pagination justify-content-center productpagination">`;
+                                                                <nav aria-label="Page navigation example">
+                                                                    <ul class="pagination justify-content-center productpagination">`;
 
                             if (filters.pageNumber > 1) {
                                 pagingBox += `<li class="page-item">
-                                                        <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
-                                                    </li>`;
+                                                                <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
+                                                            </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">«</a>
-                                                    </li>`;
+                                                                <a class="page-link" href="#" tabindex="-1">«</a>
+                                                            </li>`;
                             }
 
                             for (var i = indexStart - 4; i < indexStart + 4; i++) {
@@ -470,13 +554,13 @@
 
                             if (filters.pageNumber < pages) {
                                 pagingBox += `<li class="page-item">
-                                                        <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
-                                                    </li>`;
+                                                                <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
+                                                            </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">»</a>
-                                                    </li>`;
+                                                                <a class="page-link" href="#" tabindex="-1">»</a>
+                                                            </li>`;
                             }
 
                             pagingBox += `</ul></nav></div>`;
@@ -570,33 +654,33 @@
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
                                 if (e == 0 || e == 1 || e == 2 || e == 3) {
-                                    catBox1+=(`<div class="col mt-2">
-                            <div class="category-product">
-                                <a href="/Product/ByFilter?catId=${v.id}">
-                                    <img src="/image/icons/vase.png" class="width-30px" />
+                                    catBox1 += (`<div class="col mt-2">
+                                    <div class="category-product">
+                                        <a href="/Product/ByFilter?catId=${v.id}">
+                                            <img src="/image/icons/vase.png" class="width-30px" />
 
-                                    <div class="text-center mt-10">
-                                        <h5>${v.name}</h5>
-                                        <span>${v.productCount} کالا</span>
+                                            <div class="text-center mt-10">
+                                                <h5>${v.name}</h5>
+                                                <span>${v.productCount} کالا</span>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                        </div>`);
+                                </div>`);
                                 }
 
                                 if (e == 4 || e == 5 || e == 6) {
-                                    catBox2+=(`<div class="col mt-2">
-                            <div class="category-product">
-                                <a href="/Product/ByFilter?catId=${v.id}">
-                                    <img src="/image/icons/vase.png" class="width-30px" />
+                                    catBox2 += (`<div class="col mt-2">
+                                    <div class="category-product">
+                                        <a href="/Product/ByFilter?catId=${v.id}">
+                                            <img src="/image/icons/vase.png" class="width-30px" />
 
-                                    <div class="text-center mt-10">
-                                        <h5>${v.name}</h5>
-                                        <span>${v.productCount} کالا</span>
+                                            <div class="text-center mt-10">
+                                                <h5>${v.name}</h5>
+                                                <span>${v.productCount} کالا</span>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                        </div>`);
+                                </div>`);
                                 }
 
                                 $(".category-product-wraper").removeClass("d-none");
@@ -605,19 +689,19 @@
                             var otherCat = "";
                             if (result.data.objList.length > 7) {
                                 otherCat = `<div class="col mt-2">
-                        <div class="category-product">
-                            <a href="">
-                                <div class="text-center mt-10 cat-more">
-                                    <h5 class="font-size-1_8rem">13 +</h5>
-                                    <span>دسته دیگر</span>
+                                <div class="category-product">
+                                    <a href="">
+                                        <div class="text-center mt-10 cat-more">
+                                            <h5 class="font-size-1_8rem">13 +</h5>
+                                            <span>دسته دیگر</span>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                    </div>`;
+                            </div>`;
                             }
 
                             $(".category-product-wraper").html(`<div class="col-6"><div class="row">${catBox1}</div></div>
-                                <div class="col-6"><div class="row">${catBox2}${otherCat}</div></div>`);
+                                        <div class="col-6"><div class="row">${catBox2}${otherCat}</div></div>`);
                         }
                     }
                 });

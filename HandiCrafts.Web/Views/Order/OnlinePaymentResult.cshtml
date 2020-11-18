@@ -86,16 +86,21 @@
     <script>
 
         function GetPaymentTypeList() {
-
-            if (getParameterByName('authority') == null || getParameterByName('status') == null)
+            if (getQueryStringValue('authority') == null ||
+                getQueryStringValue('authority') == "" ||
+                getQueryStringValue('status') == null ||
+                getQueryStringValue('status') == "") {
+               
                 window.location = "/Home/Index";
+                return false;
+            }
 
             $.ajax({
                 type: 'POST',
                 url: "/Order/OnlinePaymentResult",
                 data: {
-                    Authority: getParameterByName('Authority'),
-                    Status: getParameterByName('Status')
+                    Authority: getQueryStringValue('Authority'),
+                    Status: getQueryStringValue('Status')
                 },
                 success: function (result) {
                     if (result.success == true) {

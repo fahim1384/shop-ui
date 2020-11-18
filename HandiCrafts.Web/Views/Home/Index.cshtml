@@ -541,13 +541,13 @@
 
 <!-- نظرات صنعتگران -->
 <section class="sanatgaran bg-gray custome-muted-text card-margin-0 d-none">
-    <div>
+    <!--<div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
                 <h4 class="display-9">نظرات صنعتگران</h4>
             </div>
         </section>
-    </div>
+    </div>-->
 
     <div class="container">
         <div class="card-deck mb-3 text-justify sanatgarBox  owl-carousel owl-theme" data-loop="true" data-dots="true" data-nav="false" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "991":{"items": "1"}, "1199":{"items": "1"}}'>
@@ -860,17 +860,25 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                 var imgSanatgar = "/image/icons/profile.png";
                                 if (v.profilePic != null) imgSanatgar = v.profilePic;
 
-                                if (e < 5) // فقط 1 نظر نمایش بده
-                                    sanatgarBox.append(`<div class="row ml-0 mr-0"><div class="col col-6 col-sm-3 m-auto">
-                                                                                                        <div class="card mb-4">
-                                                                                                            <img src="${imgSanatgar}" class="p-2px border-default rounded-circle max-width-120px height-120-px m-auto" />
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="col col-12 col-sm-9">
-                                                                                                        <div class="card mb-4 mt-5">
-                                                                                                            <div class="card-text">${v.comment}</div>
-                                                                                                        </div>
-                                                                                                    </div></div>`);
+                                if (e < 5)
+                                    sanatgarBox.append(`<div>
+                                    <section class="text-center pt-4 pb-2">
+                                        <div class="container">
+                                            <h4 class="display-9">${v.name}</h4>
+                            <p class="cyan">${v.post}</p>
+                                        </div>
+                                    </section>
+                                
+                            <div class="row ml-0 mr-0"><div class="col col-6 col-sm-3 m-auto">
+                            <div class="card mb-4">
+                                    <img src="${imgSanatgar}" class="p-2px border-default rounded-circle max-width-120px height-120-px m-auto" />
+                                </div>
+                            </div>
+                            <div class="col col-12 col-sm-9">
+                                <div class="card mb-4 mt-5">
+                                    <div class="card-text">${v.comment}</div>
+                                </div>
+                            </div></div></div>`);
                             });
 
                             $(".sanatgarBox").each(function () {
@@ -1095,7 +1103,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                         <div class="caption">
                                                 <p>
                                                     <b>
-                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                         <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                         <a><i class="fa fa-plus solid-fa"></i> </a>
                                                     </b>
@@ -1290,7 +1298,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                                                                         <div class="caption">
                                                                                                 <p>
                                                                                                     <b>
-                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.melliCode}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                                                                         <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                                                                         <a><i class="fa fa-plus solid-fa"></i> </a>
                                                                                                     </b>
