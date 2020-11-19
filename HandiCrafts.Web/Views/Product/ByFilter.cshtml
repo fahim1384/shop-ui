@@ -3,9 +3,46 @@
     ViewData["Title"] = "ByFilter";
 }
 @section Styles{
+    <link href="/plugins/slideBar/bootstrap-slider.css" rel="stylesheet">
     <style>
         .page-link {
             border: 0;
+        }
+
+        .slider-example {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: auto;
+        }
+
+        .scrollbar {
+            height: 100px;
+            background: #F5F5F5;
+            overflow-y: scroll;
+        }
+
+        .force-overflow {
+            min-height: 150px;
+        }
+
+        #sanatgarsfilter {
+            max-height: 200px;
+        }
+        .scrollablebox::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .scrollablebox::-webkit-scrollbar {
+            width: 8px;
+            background-color: #F5F5F5;
+        }
+
+        .scrollablebox::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
         }
 
 
@@ -44,14 +81,16 @@
             display: none;
         }
 
-        .nested.active {
-            display: block;
-        }
+            .nested.active {
+                display: block;
+            }
+
         .font-family-WYekan {
             font-family: 'WYekan'
         }
-        .sing{
-            padding-right:18px;
+
+        .sing {
+            padding-right: 18px;
         }
     </style>
 }
@@ -201,7 +240,6 @@
                         <div class="sidenavUI"></div>
 
                         <ul id="myUL">
-                            
                         </ul>
 
                     </section>
@@ -222,9 +260,11 @@
                         </section>
 
                         <!-- Section: Average -->
-                        <section class="mb-4">
+                        <section class="mb-4 scrollbar scrollablebox">
+                            <div class="force-overflow"  id="sanatgarsfilter">
 
-                            <div class="form-check mb-2">
+                            </div>
+                            <!--<div class="form-check mb-2">
                                 <input type="checkbox" class="form-check-input">
                                 <label class="form-check-label text-uppercase card-link-secondary">فیلتر ش 1</label>
                             </div>
@@ -235,7 +275,7 @@
                             <div class="form-check mb-2">
                                 <input type="checkbox" class="form-check-input">
                                 <label class="form-check-label text-uppercase card-link-secondary">فیلتر ش 3</label>
-                            </div>
+                            </div>-->
 
                         </section>
                         <!-- Section: Average -->
@@ -245,23 +285,31 @@
 
                             <h6 class="font-weight-bold mb-3">محدودیت قیمت</h6>
 
-                            <div class="form-check mb-3">
-                                <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-max="1000000">
-                                <label class="form-check-label text-uppercase card-link-secondary">زیر 1,000,000</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-max="2000000" data-filter-price-min="1000000">
-                                <label class="form-check-label text-uppercase card-link-secondary">1,000,000 الی 2,000,000</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-max="3000000" data-filter-price-min="2000000">
-                                <label class="form-check-label text-uppercase card-link-secondary">2,000,000 الی 3,000,000</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-min="3000000">
-                                <label class="form-check-label text-uppercase card-link-secondary">بالاتر از 3,000,000</label>
+
+                            <div id="example-9" class='slider-example'>
+                                <span id="slidevalue">0,0</span>
+                                <div class="card card-body mb-3" style="padding: 1.25rem 0;">
+                                    <input id="ex9" type="text" value="0,0" />
+                                </div>
                             </div>
 
+                            <!--<div class="form-check mb-3">
+                                    <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-max="1000000">
+                                    <label class="form-check-label text-uppercase card-link-secondary">زیر 1,000,000</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-max="2000000" data-filter-price-min="1000000">
+                                    <label class="form-check-label text-uppercase card-link-secondary">1,000,000 الی 2,000,000</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-max="3000000" data-filter-price-min="2000000">
+                                    <label class="form-check-label text-uppercase card-link-secondary">2,000,000 الی 3,000,000</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input type="radio" class="form-check-input" name="pricelimitfilter" data-filter-price-min="3000000">
+                                    <label class="form-check-label text-uppercase card-link-secondary">بالاتر از 3,000,000</label>
+                                </div>
+    -->
                             <div class="d-flex align-items-center mt-4 pb-1">
                                 <button id="btnfilterPrices" type="button" class="btn btn-info btn-block">اعمال فیلتر</button>
                             </div>
@@ -358,8 +406,28 @@
 
 
 @section Scripts{
-    
+    <script src="/plugins/slideBar/bootstrap-slider.js"></script>
     <script>
+        // --------  SlideBar Price  ---------
+        $("#ex9").on("change", function () {
+            $("#slidevalue").html($("#ex9").val().split(",")[0] + " تا " + $("#ex9").val().split(",")[1]);
+
+            filters.minPrice = $("#ex9").val().split(",")[0];
+            filters.maxPrice = $("#ex9").val().split(",")[1];
+        });
+
+        var priceSlide = $("#ex9").slider({
+            step: 20000,
+            min: 0,
+            max: 100000000,
+            precision: 2,
+            range: true,
+            value: [0, 100000000],
+            tooltip: 'hide',
+            //tooltip_position: 'left'
+        });
+
+        //--------------------------------------
 
         let bindMenuLinks = () => {
             var toggler = document.getElementsByClassName("menucaret");
@@ -404,50 +472,55 @@
 
                     bindMenuLinks();
 
-                    /*$(".sidenav").html('');
-                    $.each(result.data.objList, function (e, v) {
-                        var child = "";
-                        if (v.inverseP.length > 0) {
-                            child = `<div class="dropdown-container">`;
-                            $.each(v.inverseP, function (e2, v2) {
-                                child += `<a href="javascript:filterbyCategory(${v2.id})" data-cat-number="${v2.id}">${v2.name}</a>`;
-                            });
-                            child += "</div>";
+                    menucontent = "";
+                    //GetMenuChilds(result.data.objList);
+                    //$("#myUL").html(menucontent);
 
-                            $(".sidenav").append(`<button class="dropdown-btn">
-                                                                    <i class="fa fa-chevron-left"></i>
-                                                                    ${v.name}
-                                                                </button>${child}`);
-
-                        }
-                        else {
-                            $(".sidenav").append(`<a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}">${v.name}</a>`);
-                        }
-
-                        bndDropDownSideBar();
-
-
-                    });*/
-
+                    //$("#myUL").html(result.message);
+                    //bindMenuLinks();
                 }
             });
         }
 
         var menucontent = "";
 
-        let GetMenuChilds=(plist)=>{
+        let GetMenuChilds = (plist) => {
+            debugger;
+
             $.each(plist, function (e, v) {
+
+
+
                 var child = "";
                 if (v.inverseP.length > 0) {
-                    GetMenuChilds(plist);
+
+                    menucontent += `<li><span class="fa menucaret">
+                                                        <span class="font-family-WYekan cyan">${v.name}</span>
+                                                    </span>`;
+
+                    child += `<ul class="nested">`;
+
+                    GetMenuChilds(v.inverseP);
+
+                    child += "</ul>";
+
+                    menucontent += child + "</li>";
                 }
                 else {
-                    menucontent +=`<li><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}">${v.name}</a></li>`;
+                    menucontent += `<li><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}">${v.name}</a></li>`;
                 }
             });
+
         }
 
         let GetProductList_Paging_Filtering_UI = (catProductId, productName, minPrice, maxPrice, sortMethod, pageNumber, pageSize) => {
+
+            // Set Sanatgar Value To Filters
+            var sellerIdList = [];
+            $.each($("input[name='sanatgarcode']:checked"), function (c, d) {
+                sellerIdList.push(parseInt($(d).val()));
+            })
+            console.log(sellerIdList);
 
             $.ajax({
                 type: 'POST',
@@ -459,18 +532,21 @@
                     maxPrice: filters.maxPrice,
                     sortMethod: filters.sortMethod,
                     pageNumber: filters.pageNumber,
-                    pageSize: pageSize
+                    pageSize: pageSize,
+                    sellerIdList: sellerIdList.length > 0 ? sellerIdList : []
                 },
                 success: function (result) {
                     $("#productsbox").html('');
+                    $("#sanatgarsfilter").html('');
                     var productsbox = $("#productsbox");
+                    var sanatgarsfilter = $("#sanatgarsfilter");
 
                     if (result.success == false) {
                         $("#productsbox").append(`<div class="alert alert-danger col-md-12 col-lg-12 text-center">${result.message}</div>`);
                     }
 
-                    if (result.data.objList != null) {
-                        $.each(result.data.objList, function (e, v) {
+                    if (result.data?.obj != null) {
+                        $.each(result.data.obj.productList, function (e, v) {
                             var rat = "";
                             if (v.rating != undefined) {
                                 var r = v.rating.toFixed();
@@ -489,37 +565,43 @@
                             }
 
                             productsbox.append(`
-                                                                      <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
-                                                                       <a href="/product/Index?id=${v.id}">
-                                                                        <div class="shopping-thumbnail card mb-3 ">
-                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                           <div class="col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
+                                            <a href="/product/Index?id=${v.id}">
+                                             <div class="shopping-thumbnail card mb-3 ">
+                                                 <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
 
-                                                                            <div class="card-body">
-                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                <p class="card-text ratingbox">
-                                                                                    ${rat}
-                                                                                </p>
-                                                                                <div class="d-flex justify-content-between align-items-center">
-                                                                                    <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                       </a>
-                                                                        <div class="caption">
-                                                                                <p>
-                                                                                    <b>
-                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                    </b>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                `);
+                                                 <div class="card-body">
+                                                     <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                     <p class="card-text ratingbox">
+                                                         ${rat}
+                                                     </p>
+                                                     <div class="d-flex justify-content-between align-items-center">
+                                                         <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                            </a>
+                                             <div class="caption">
+                                                     <p>
+                                                         <b>
+                                                             <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                             <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                             <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                         </b>
+                                                     </p>
+                                                 </div>
+                                             </div>
+                                     `);
+
+                            if ($("input[name='sanatgarcode'][value='" + v.sellerId + "']").length == 0)
+                                sanatgarsfilter.append(`<div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" name="sanatgarcode" value="${v.sellerId}">
+                                        <label class="form-check-label text-uppercase card-link-secondary">${v.sellerName}</label>
+                                    </div>`);
                         });
 
-                        if (result.data != null && result.data?.objList.length != 0) {
-                            var totalcount = result.data.totalcount;
+                        if (result.data != null && result.data?.obj.productList.length != 0) {
+                            var totalcount = result.data.obj.totalCount;
                             var pagingBox = "";
 
                             console.log("mod", totalcount % 12);
@@ -530,18 +612,18 @@
                             var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 
                             pagingBox += `<div class="col-md-12 col-lg-12 text-center">
-                                                                <nav aria-label="Page navigation example">
-                                                                    <ul class="pagination justify-content-center productpagination">`;
+                                                                                            <nav aria-label="Page navigation example">
+                                                                                                <ul class="pagination justify-content-center productpagination">`;
 
                             if (filters.pageNumber > 1) {
                                 pagingBox += `<li class="page-item">
-                                                                <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
-                                                            </li>`;
+                                                                                            <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
+                                                                                        </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                                <a class="page-link" href="#" tabindex="-1">«</a>
-                                                            </li>`;
+                                                                                            <a class="page-link" href="#" tabindex="-1">«</a>
+                                                                                        </li>`;
                             }
 
                             for (var i = indexStart - 4; i < indexStart + 4; i++) {
@@ -554,18 +636,35 @@
 
                             if (filters.pageNumber < pages) {
                                 pagingBox += `<li class="page-item">
-                                                                <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
-                                                            </li>`;
+                                                                                            <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
+                                                                                        </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                                <a class="page-link" href="#" tabindex="-1">»</a>
-                                                            </li>`;
+                                                                                            <a class="page-link" href="#" tabindex="-1">»</a>
+                                                                                        </li>`;
                             }
 
                             pagingBox += `</ul></nav></div>`;
 
                             productsbox.append(pagingBox);
+
+                            //======= Set Limit Of Price Min Max
+
+                            $("#ex9").slider("enable");
+
+                            priceSlide = $("#ex9").slider({
+                                step: 20000,
+                                min: result.data.obj.minPrice,
+                                max: result.data.obj.maxPrice,
+                                precision: 2,
+                                range: true,
+                                value: [result.data.obj.minPrice, result.data.obj.maxPrice],
+                                tooltip: 'hide',
+                                //tooltip_position: 'left'
+                            });
+
+                            $("#ex9").val(result.data.obj.minPrice + "," + result.data.obj.maxPrice).trigger("change");
 
                             // scroll to up
                             $('html, body').animate({
@@ -573,6 +672,18 @@
                             }, 600);
 
                         } else {
+                            priceSlide = $("#ex9").slider({
+                                step: 20000,
+                                min: 0,
+                                max: 200000000,
+                                precision: 2,
+                                range: true,
+                                value: [0, 200000000],
+                                tooltip: 'hide',
+                            });
+                            $("#ex9").slider("disable");
+                            $("#ex9").val("0,200000000").trigger("change");
+
                             $("#productsbox").append(`<div class="alert alert-danger col-md-12 col-lg-12 text-center">داده ای برای نمایش وجود ندارد</div>`);
                         }
                     }
@@ -630,11 +741,11 @@
 
         $("#btnSearchInFiler,#btnfilterPrices").on("click", function () {
             var pname = $("#search12").val();
-            var minp = $("input[name='pricelimitfilter']:checked").data("filter-price-min");
-            var maxp = $("input[name='pricelimitfilter']:checked").data("filter-price-max");
+            //var minp = $("input[name='pricelimitfilter']:checked").data("filter-price-min");
+            //var maxp = $("input[name='pricelimitfilter']:checked").data("filter-price-max");
 
-            filters.minPrice = minp;
-            filters.maxPrice = maxp;
+            //filters.minPrice = minp;
+            //filters.maxPrice = maxp;
 
             GetProductList_Paging_Filtering_UI(productName = pname);
         });
@@ -655,32 +766,32 @@
                             $.each(result.data.objList, function (e, v) {
                                 if (e == 0 || e == 1 || e == 2 || e == 3) {
                                     catBox1 += (`<div class="col mt-2">
-                                    <div class="category-product">
-                                        <a href="/Product/ByFilter?catId=${v.id}">
-                                            <img src="/image/icons/vase.png" class="width-30px" />
+                                                                <div class="category-product">
+                                                                    <a href="/Product/ByFilter?catId=${v.id}">
+                                                                        <img src="/image/icons/vase.png" class="width-30px" />
 
-                                            <div class="text-center mt-10">
-                                                <h5>${v.name}</h5>
-                                                <span>${v.productCount} کالا</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>`);
+                                                                        <div class="text-center mt-10">
+                                                                            <h5>${v.name}</h5>
+                                                                            <span>${v.productCount} کالا</span>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>`);
                                 }
 
                                 if (e == 4 || e == 5 || e == 6) {
                                     catBox2 += (`<div class="col mt-2">
-                                    <div class="category-product">
-                                        <a href="/Product/ByFilter?catId=${v.id}">
-                                            <img src="/image/icons/vase.png" class="width-30px" />
+                                                                <div class="category-product">
+                                                                    <a href="/Product/ByFilter?catId=${v.id}">
+                                                                        <img src="/image/icons/vase.png" class="width-30px" />
 
-                                            <div class="text-center mt-10">
-                                                <h5>${v.name}</h5>
-                                                <span>${v.productCount} کالا</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>`);
+                                                                        <div class="text-center mt-10">
+                                                                            <h5>${v.name}</h5>
+                                                                            <span>${v.productCount} کالا</span>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>`);
                                 }
 
                                 $(".category-product-wraper").removeClass("d-none");
@@ -689,19 +800,19 @@
                             var otherCat = "";
                             if (result.data.objList.length > 7) {
                                 otherCat = `<div class="col mt-2">
-                                <div class="category-product">
-                                    <a href="">
-                                        <div class="text-center mt-10 cat-more">
-                                            <h5 class="font-size-1_8rem">13 +</h5>
-                                            <span>دسته دیگر</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>`;
+                                                            <div class="category-product">
+                                                                <a href="">
+                                                                    <div class="text-center mt-10 cat-more">
+                                                                        <h5 class="font-size-1_8rem">13 +</h5>
+                                                                        <span>دسته دیگر</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>`;
                             }
 
                             $(".category-product-wraper").html(`<div class="col-6"><div class="row">${catBox1}</div></div>
-                                        <div class="col-6"><div class="row">${catBox2}${otherCat}</div></div>`);
+                                                                    <div class="col-6"><div class="row">${catBox2}${otherCat}</div></div>`);
                         }
                     }
                 });

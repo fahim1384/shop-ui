@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using HandiCrafts.Web.Interfaces;
@@ -103,8 +104,8 @@ namespace HandiCrafts.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<ProductDtoListResult>> GetProductList_Paging_Filtering_UI(long? catProductId = null, string productName = null, long? minPrice = null,
-            long? maxPrice = null, int? sortMethod = null, int? pageSize = 12, int? pageNumber = 1)
+        public Task<ResponseState<ProductListDtoSingleResult>> GetProductList_Paging_Filtering_UI(long? catProductId = null, string productName = null, long? minPrice = null,
+            long? maxPrice = null, int? sortMethod = null, int? pageSize = 12, int? pageNumber = 1, List<long> sellerIdList = null)
         {
             return TryCatch(async () =>
             {
@@ -114,10 +115,20 @@ namespace HandiCrafts.Web.Controllers
 
                 FilteringClient client = new FilteringClient(BaseUrl, httpClient);
 
-                var result = await client.UIAsync(catProductId, productName, minPrice, maxPrice, sortMethod, pageSize, pageNumber);
+                var result = await client.UIAsync(new ProductListParam()
+                {
+                    CatProductId = catProductId,
+                    ProductName = productName,
+                    MaxPrice = maxPrice,
+                    MinPrice = minPrice,
+                    SellerIdList = sellerIdList,
+                    SortMethod = sortMethod.Value,
+                    PageNumber = pageNumber.Value,
+                    PageSize = pageSize.Value
+                });
 
                 if (result.ResultCode != 200)
-                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+                    return Error<ProductListDtoSingleResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
             });

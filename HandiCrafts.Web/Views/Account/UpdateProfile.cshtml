@@ -1,0 +1,126 @@
+﻿@model HandiCrafts.Web.Models.Account.ProfileInfo
+
+@{
+    ViewData["Title"] = "تکمیل حساب کاربری";
+}
+
+<h1>UpdateProfile</h1>
+
+<h4>ProfileInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateProfile" data-ajax-method="POST"
+                          data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+                          data-ajax-failure="onFailed" data-ajax-success="onSuccess">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNo" class="control-label"></label>
+                <input asp-for="MobileNo" class="form-control" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MelliCode" class="control-label"></label>
+                <input asp-for="MelliCode" class="form-control" />
+                <span asp-validation-for="MelliCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bdate" class="control-label"></label>
+                <input asp-for="Bdate" class="form-control" />
+                <span asp-validation-for="Bdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shoghl" class="control-label"></label>
+                <select asp-for="Shoghl" class="form-control" id="shoghl">
+                    <option>انتخاب کنید</option>
+                </select>
+                <span asp-validation-for="Shoghl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="btnUpdate" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{ 
+<script>
+    let GetWorkList = () => {
+        try {
+            $.ajax({
+                type: 'POST',
+                url: "/Account/GetWorkList",
+                data: {},
+                success: function (result) {
+                    if (result.data != null) {
+                        $("#shoghl").empty().append(`<option value="">انتخاب کنید</option>`);
+                        $.each(result.data.objList, function (e, v) {
+                            $("#shoghl").append(`<option value="${v.id}">${v.name}</option>`);
+                        });
+                    }
+                }
+            });
+        } catch (e) {
+        }
+    }
+
+    function onBegin(e, form) {
+        $('#btnUpdate').addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', true);
+    }
+
+    function onSuccess(result) {
+        $('#btnUpdate').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
+        $("#errorbox").html('').addClass("d-none");
+
+        if (result.success == true) {
+                window.location = "/Home/Index";
+        }
+        else {
+            $("#errorbox").html(result.message).removeClass("d-none");
+        }
+    }
+
+    function onFailed() {
+        alert("خطا");
+    }
+
+    function onComplete(re) {
+        console.log(re);
+    }
+
+    failed = function (xhr) {
+        alert(`Status: ${xhr.status}, Status Text: ${xhr.statusText}`);
+    };
+
+    /****************************
+     *    In Page Load
+     ****************************/
+
+    GetWorkList();
+
+</script>
+}

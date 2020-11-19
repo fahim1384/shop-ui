@@ -457,6 +457,65 @@ namespace HandiCrafts.Web.Controllers
                 DefaultTab = "register"
             });
         }
+
+        [HttpPost]
+        public Task<ResponseState<WorkDtoListResult>> GetWorkList()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                Client client = new Client(BaseUrl, httpClient);
+
+                var result = await client.GetWorkListAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<WorkDtoListResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult UpdateProfile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> UpdateProfile(ProfileInfo model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                CustomerClient client = new CustomerClient(BaseUrl, httpClient);
+
+                CustomerProfileDto customerProfileDto = new CustomerProfileDto()
+                {
+                    Bdate = null,//model.Bdate,
+                    Email =model.Email,
+                    Name = model.FullName,
+                    MelliCode= model.MelliCode,
+                    Password= model.Password,
+                    Mobile = long.Parse(model.MobileNo),
+                    WorkId = long.Parse( model.Shoghl)
+                };
+
+                var result = await client.UpdateProfileInfoAsync(customerProfileDto);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
         #endregion
 
         #region Utilities

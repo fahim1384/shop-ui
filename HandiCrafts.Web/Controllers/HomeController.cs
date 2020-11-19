@@ -15,6 +15,7 @@ using SmartBreadcrumbs.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace HandiCrafts.Web.Controllers
 {
@@ -288,7 +289,7 @@ namespace HandiCrafts.Web.Controllers
                 if (result.ResultCode != 200)
                     return Error<ProductDtoListResult>(null, message: result.ResultMessage);
 
-                return Success(data:result, message: result.ResultMessage);
+                return Success(data: result, message: result.ResultMessage);
 
                 /*string URL = "/api/Product/GetProductList_HaveMelliCode_UI";
                 string urlParameters = "";// "?api_key=123";
@@ -452,5 +453,86 @@ namespace HandiCrafts.Web.Controllers
                 return Success(data: result, message: result.ResultMessage);
             });
         }
+
+
+
+        //============================================
+        [HttpPost]
+        public Task<DefaultResponseState> GetCatProductList_UI2()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetCatProductListClient client = new GetCatProductListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error(message: result.ResultMessage);
+
+                CreateLI(result.ObjList.ToList(), null);
+
+                return Success(message: stringBuilder.ToString());
+
+            });
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        public StringBuilder CreateLI(List<CatProduct> data, int? status)
+        {
+
+            foreach (var i in data)
+            {
+
+                stringBuilder.Append("<li>");
+
+                if (i.InverseP.Count > 0)
+                {
+                    stringBuilder.Append("<span class='fa menucaret'><span class='font-family-WYekan cyan'>" + i.Name + "</span></span><ul class='nested'>");
+                    CreateLI(i.InverseP.ToList(), 2);
+                    stringBuilder.Append("</ul>");
+                }
+
+                if (status == 2)
+                {
+                    //stringBuilder.Append(i.Name + "</li>");
+                    //stringBuilder.Append("</ul>");
+                }
+
+                stringBuilder.Append("<a href='javascript:filterbyCategory(" + i.Id + ")' data-cat-number=" + i.Id + ">" + i.Name + "</a></li>");
+            }
+
+            return stringBuilder;
+        }
+
+        private void BuildList(CatProduct node, StringBuilder sb, int? code)
+        {
+            if (node.InverseP.Count > 0)
+            {
+                if (code != null) sb.Append("<ul>");
+                foreach (var n in node.InverseP)
+                {
+                    var icon = "";
+
+                    sb.Append("<li>" + icon + " " +
+                     "<a> " + n.Name + "</a>");
+                    BuildList(n, sb, 0);
+                    sb.Append("</li>");
+                }
+                if (code != null) sb.Append("</ul>");
+            }
+        }
+
+        public string BiuldList(CatProduct root)
+        {
+            var sb = new StringBuilder();
+            BuildList(root, sb, null);
+            return sb.ToString();
+        }
+
     }
 }
