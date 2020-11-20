@@ -142,7 +142,8 @@
 
         </div>
         <!-- Links -->
-    </nav>*@
+    </nav></header>
+*@
 <!-- Navbar -->
 
 <div class="container-overflow-wrap">
@@ -200,13 +201,13 @@
                             <li class="nav-item">
                                 <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
                                 <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                <a href="/ShoppingCart/Cart" class="navtext">
+                                <a class="navtext">
                                     <span class="navtext bolderspan">دسته بندی ها</span>
                                 </a>
                                 <div class="wsshoptabing wtsdepartmentmenu clearfix">
                                     <div class="wsshopwp clearfix" style="height:400px">
-                                        <ul class="wstabitem clearfix">
-                                            <li class="wsshoplink-active">
+                                        <ul class="wstabitem clearfix" id="mgmenu">
+                                            @*<li class="wsshoplink-active">
                                                 <span class="wsmenu-click02">
                                                     <i class="wsmenu-arrow fa fa-angle-down"></i>
                                                 </span>
@@ -259,59 +260,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <span class="wsmenu-click02">
-                                                    <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                </span>
-                                                <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                <span class="robin-submenu-nav">
-                                                    <span class="robin-menu-icon-kitchen"></span>
-                                                    <span style="vertical-align:middle">
-                                                        <a href="/">دسته شماره دو</a>
-                                                    </span>
-                                                </span>
-                                                <div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                    <div class="container-fluid">
-                                                        <div class="row">
-                                                            <div class="col-lg-12 col-md-12 clearfix">
-                                                                <div class="container-fluid">
-                                                                    <div class="row posrdb">
-                                                                        <div class="col-lg-4 col-md-12 posrdb right">
-                                                                            <ul class="wstliststy02 clearfix">
-                                                                                <li class="wstheading clearfix"> <a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div class="col-lg-4 col-md-12 posrdb right">
-                                                                            <ul class="wstliststy02 clearfix">
-                                                                                <li class="wstheading clearfix"><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                                <li><a href="/Product/">تست زیر دسته 2</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            *@
                                             <!---->
                                         </ul>
                                     </div>
@@ -345,7 +294,7 @@
                                                                             </div>
                                                                             <div class="c-header__profile-dropdown-user-info">
                                                                                 <p class="c-header__profile-dropdown-user-name m-0">حساب کاربری</p>
-                                                                                <span class="c-header__profile-dropdown-user-profile-link">مشاهده حساب کاربری</span>
+                                                                                <span class="c-header__profile-dropdown-user-profile-link"><a class="cyan" href="/Account/UpdateProfile">مشاهده حساب کاربری</a></span>
                                                                             </div>
                                                                         </div>
                                                                         <div class="c-header__profile-dropdown-account">
@@ -414,12 +363,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#!" class="nav-link waves-effect">
+                                <a href="/Home/Aboutus" class="nav-link waves-effect">
                                     <span class="bolderspan">درباره ما</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#!" class="nav-link waves-effect">
+                                <a href="/Home/Contactus" class="nav-link waves-effect">
                                     <span class="bolderspan">ارتباط ما</span>
                                 </a>
                             </li>
@@ -432,4 +381,3 @@
         </div>
     </div>
 </div>
-</header>

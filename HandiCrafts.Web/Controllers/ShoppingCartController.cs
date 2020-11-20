@@ -354,20 +354,67 @@ namespace HandiCrafts.Web.Controllers
 
                 httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
 
-                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                InsertCustomerOrderClient client = new InsertCustomerOrderClient(BaseUrl, httpClient);
+                //InsertCustomerOrderClient client = new InsertCustomerOrderClient(BaseUrl, httpClient);
 
-                var result = await client.UIAsync(model);
+                //var result = await client.UIAsync(model);
 
-                if (result.ResultCode != 200)
-                    return Error<InsertOrderResultDtoSingleResult>(null, message: result.ResultMessage);
+                //***************************************************
+                httpClient.BaseAddress = _httpClientFactory.CreateClient("myHttpClient").BaseAddress;
+                //httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
+                 
+                HttpResponseMessage response = await httpClient.PostAsJsonAsync("api/Product/InsertCustomerOrder_UI", model);
+
+                var result = await response.Content.ReadAsAsync<InsertOrderResultDtoSingleResult>();
+
+                //*********************************************************
+
+                if (result != null)
+                {
+                    if (result.ResultCode != 200)
+                        return Error<InsertOrderResultDtoSingleResult>(null, message: result.ResultMessage);
+                }
+                else
+                {
+                    throw new UnauthorizedAccessException();
+                }
 
                 HttpContext.Session.SetString(BankUrl, result.Obj.BankUrl);
                 HttpContext.Session.SetString(CustomerOrderId, result.Obj.CustomerOrderId != null ? result.Obj.CustomerOrderId.ToString() : null);
                 HttpContext.Session.SetString(OrderNo, result.Obj.OrderNo != null ? result.Obj.OrderNo.ToString() : null);
                 HttpContext.Session.SetString(PostPrice, result.Obj.PostPrice != null ? result.Obj.PostPrice.ToString() : null);
                 HttpContext.Session.SetString(RedirectToBank, result.Obj.RedirectToBank.ToString());
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        /// <summary>
+        /// دریافت انواع ارسال مثلا پست یا رایگان
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [Authorize(Roles = UserRoleNames.User)]
+        public Task<ResponseState<PostTypeDtoListResult>> GetPostTypeList_UI()
+        {
+            return TryCatch(async () =>
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetPostTypeListClient client = new GetPostTypeListClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<PostTypeDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 

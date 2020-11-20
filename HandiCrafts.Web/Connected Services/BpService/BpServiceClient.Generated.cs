@@ -22737,8 +22737,8 @@ namespace HandiCrafts.Web
         [Newtonsoft.Json.JsonProperty("maxPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaxPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sortMethod", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int SortMethod { get; set; }
+        [Newtonsoft.Json.JsonProperty("sortMethod", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? SortMethod { get; set; }
     
         [Newtonsoft.Json.JsonProperty("pageSize", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int PageSize { get; set; }

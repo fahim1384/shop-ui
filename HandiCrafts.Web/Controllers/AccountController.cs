@@ -10,11 +10,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AutoMapper;
 using HandiCrafts.Core.Domain.Users;
+using HandiCrafts.Core.Enums;
 using HandiCrafts.Web.Interfaces;
 using HandiCrafts.Web.Models;
 using HandiCrafts.Web.Models.Account;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
@@ -479,6 +481,7 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoleNames.User)]
         public IActionResult UpdateProfile()
         {
             return View();
@@ -491,16 +494,21 @@ namespace HandiCrafts.Web.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
+                httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
                 CustomerClient client = new CustomerClient(BaseUrl, httpClient);
 
+                PersianDateTime persianDate = PersianDateTime.Parse(model.Bdate);
+                DateTime miladiDate = persianDate.ToDateTime();
+
                 CustomerProfileDto customerProfileDto = new CustomerProfileDto()
                 {
-                    Bdate = null,//model.Bdate,
+                    Bdate = miladiDate,
                     Email =model.Email,
                     Name = model.FullName,
-                    MelliCode= model.MelliCode,
+                    MelliCode= long.Parse(model.MelliCode),
                     Password= model.Password,
                     Mobile = long.Parse(model.MobileNo),
                     WorkId = long.Parse( model.Shoghl)
@@ -510,6 +518,20 @@ namespace HandiCrafts.Web.Controllers
 
                 if (result.ResultCode != 200)
                     return Error<VoidResult>(null, result.ResultMessage);
+
+                //
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+
+                // check for existing claim and remove it
+                var existingClaim = identity.Claims.First(o => o.Type.ToLower().EndsWith("name"));
+                if (existingClaim != null)
+                    identity.RemoveClaim(existingClaim);
+
+                identity.AddClaim(new Claim(ClaimTypes.Name, model.FullName));
+
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = true });
+                //
 
                 return Success(data: result, message: result.ResultMessage);
 

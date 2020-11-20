@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewData["Title"] = "تماس باما";
+}
+
+@section Styles{
+    <style>
+        main.mt-150 {
+            margin-top: 0;
+        }
+
+        .content-main-box {
+            margin: 25px;
+            background: #f2f1f3;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .contactus .form-control {
+            background-color: #f2f1f3;
+        }
+
+        #map {
+            height: 800px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
+}
+
+<div class="section pt-0 small_pb contactus">
+    <div class="">
+        <div class="row">
+            <div class="col-12 col-sm-12">
+                <div id="map"></div>
+            </div>
+
+            <div class="col-12 col-sm-7" style="position:absolute;">
+                <div class="content-main-box">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 text-center">
+                                <div class="col-12"><img src="~/image/icons/contact-us-icon/location.png" class="width-50px mb-4" /></div>
+                                <div class="col-12"><p>خیابان آبرسانی<br />خ امام روبروی امبی</p></div>
+                            </div>
+                            <div class="col-12 col-sm-4 text-center">
+                                <div class="col-12"><img src="~/image/icons/contact-us-icon/phone.png" class="width-50px mb-4" /></div>
+                                <div class="col-12"><p>0413333333<br />0413580000</p></div>
+                            </div>
+                            <div class="col-12 col-sm-4 text-center">
+                                <div class="col-12"><img src="~/image/icons/contact-us-icon/website.png" class="width-50px mb-4" /></div>
+                                <div class="col-12"><p>TabrizHandiCrafts.com</p></div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-12 col-sm-12 text-center">
+                                <p>لطفا پیش از ارسال ایمیل یا تماس تلفنی، ابتدا پرسش های متداول را مشاهده کنید. <a class="btn btn-outline-info">سوالات متداول</a></p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-12 col-sm-12 text-center">
+                                <p>برای پیگیری یا سوال درباره سفارش و ارسال پیام بهتر است از فرم زیر استفاده کنید.</p>
+                            </div>
+                            <div class="form-group col-12 col-sm-6">
+                                <label class="control-label">موضوع</label>
+                                <input class="form-control" />
+                            </div>
+                            <div class="form-group col-12 col-sm-6">
+                                <label class="control-label">نام و نام خانوادگی</label>
+                                <input class="form-control" />
+                            </div>
+                            <div class="form-group col-12 col-sm-6">
+                                <label class="control-label">ایمیل</label>
+                                <input class="form-control" />
+                            </div>
+                            <div class="form-group col-12 col-sm-6">
+                                <label class="control-label">تلفن تماس</label>
+                                <input class="form-control" />
+                            </div>
+                            <div class="form-group col-12 col-sm-12">
+                                <label class="control-label">متن پیام</label>
+                                <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-12 col-sm-12 text-center" style="border:2px dashed #d2d2d2;border-radius:15px;padding:10px">
+                                <p>
+                                    عکس یا ویدیوی خود را بارگذاری کنید
+                                    <br />
+                                    <small class="text-muted">( حداکثر ٥ تصویر jpeg یا PNG حداکثر یک مگابایت، یک ویدیو MP٤ حداکثر ٥٠ مگابایت )</small>
+                                </p>
+
+                                <a class="btn btn-outline-dark">انتخاب عکس یا ویدیو</a>
+                            </div>
+                        </div>
+                        <div class="row m-0">
+                            <div class="form-group text-right mt-4" style="margin:auto auto auto 0">
+                                <button type="button" class="btn btn-info btn-lg">ثبت و ارسال</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://www.parsimap.com/js/v3.1.0/parsimap.js?key=public"></script>
+
+    <script>
+        /*var container = document.getElementById("map");
+        var mapOptions = {
+            center: [46.32930, 38.06358],
+            zoom: 16,
+            style: "parsimap://street"
+        };
+        var map = new parsimap.Map(container, mapOptions);*/
+
+
+        var container = document.getElementById('map');
+        var map = new parsimap.Map(container, {
+            zoom: 16,
+            center: [46.32930, 38.06358],
+        });
+
+        map.on('load', onMapLoad);
+
+        function onMapLoad() {
+            var pointGeoJSON = {
+                type: 'FeatureCollection',
+                features: [
+                    {
+                        type: 'Feature',
+                        properties: { image: 'home' },
+                        geometry: { type: 'Point', coordinates: [46.32606, 38.06308] },
+                    },
+                ],
+            };
+
+            var imageHostUrl =
+                '/image/icons/';
+            var imageCollection = [
+                { name: 'home', url: imageHostUrl + 'marker.png' },
+            ];
+
+            map.addSource('point-source', pointGeoJSON);
+            map.loadImageCollection(imageCollection, function () {
+                map.addSymbolLayer('marker-symbol', 'point-source', {
+                    layout: { 'icon-image': '{image}' },
+                });
+            });
+        }
+
+    </script>
+}

@@ -95,8 +95,9 @@ namespace HandiCrafts.Web.Models.Account
         public string Email { get; set; }
 
         [Display(Name = "کد ملی")]
-        [CodeMelli("کد ملی وارد شده نامعتبر می باشد")]
-        public long? MelliCode { get; set; }
+        [Required(ErrorMessage = "فیلد {0} اجباری است")]
+        [CodeMelli(ErrorMessage ="کد ملی وارد شده نامعتبر می باشد")]
+        public string MelliCode { get; set; }
 
         [Display(Name = "تاریخ تولد")]
         [Required(ErrorMessage = "فیلد {0} اجباری است")]
@@ -107,16 +108,16 @@ namespace HandiCrafts.Web.Models.Account
         public string Shoghl { get; set; }
     }
 
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
     public class CodeMelliAttribute : ValidationAttribute
     {
         #region IsValidNationalCode بررسی صحت کدملی
 
-        public CodeMelliAttribute(string ErrorMessage)
+        /*public CodeMelliAttribute(string ErrorMessage)
             : base()
         {
             this.ErrorMessage = ErrorMessage;
-        }
+        }*/
 
         //public override bool IsValid(object value)
         //{
@@ -124,11 +125,11 @@ namespace HandiCrafts.Web.Models.Account
         //    if (!Utility.IsValidNationalCode(value.ToString())) return new ValidationResult(ErrorMessage);
         //    return ValidationResult.Success;
         //}
-        public override bool IsValid(object value)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value == null) return false;
-            if (IsValidNationalCode(value.ToString()) == false) return false;
-            return true;
+            if (value == null) return new ValidationResult("فیلد کد ملی را وارد نمایید");
+            if (IsValidNationalCode(value.ToString()) == false) return new ValidationResult("فیلد کد ملی معتبر نمی باشد");
+            return ValidationResult.Success;
         }
         public bool IsValidNationalCode(string nationalcode)
         {

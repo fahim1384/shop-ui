@@ -122,7 +122,7 @@ namespace HandiCrafts.Web.Controllers
                     MaxPrice = maxPrice,
                     MinPrice = minPrice,
                     SellerIdList = sellerIdList,
-                    SortMethod = sortMethod.Value,
+                    SortMethod = sortMethod,
                     PageNumber = pageNumber.Value,
                     PageSize = pageSize.Value
                 });

@@ -110,4 +110,5 @@ namespace HandiCrafts.Web.Infrastructure.Security
             return identity?.GetUserClaimValue(ClaimTypes.Name);
         }
     }
+
 }

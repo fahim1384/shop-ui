@@ -454,7 +454,15 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        public IActionResult Aboutus()
+        {
+            return View();
+        }
 
+        public IActionResult Contactus()
+        {
+            return View();
+        }
 
         //============================================
         [HttpPost]

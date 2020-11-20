@@ -98,7 +98,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="text-muted" href="">
+                                <a class="text-muted" href="/Order/OrdersHistory">
                                     <i class="fa fa-heart solid-fa"></i> لیست ها
                                 </a>
                             </li>
@@ -128,7 +128,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="text-muted" href="">
+                                <a class="text-muted" href="/Account/UpdateProfile">
                                     <i class="fa fa-user-circle solid-fa"></i> اطلاعات حساب
                                 </a>
                             </li>
@@ -179,7 +179,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.rtl.min.js"></script>
     <script src="/plugins/select2/select2.min.js"></script>
-    <script src="~/plugins/megamenu/megaMenu.js"></script>
+
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
@@ -191,94 +191,67 @@
                 $(".preloader").delay(700).fadeOut(700).addClass('loaded');
             }, 800);
         });
-
-
-        //jQuery(function ($) {
-        //    var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
-        //    $('ul.nav li a').each(function () {
-        //        if (this.href === path) {
-        //            $(this).addClass('active');
-        //        }
-        //    });
-        //});
-
-        //$(document).ready(function () {
-        //    $('a').each(function () {
-        //        if ($(this).prop('href') == window.location.href) {
-        //            $(this).addClass('currentpage');
-        //        }
-        //    });
-        //});
-        //$(function () {
-        //    $(".wsmenu a").each(function () {
-        //        if ($(this).attr("href") == window.location.pathname) {
-        //            $(this).parent().addClass("currentpage");
-        //        }
-        //    });
-        //});
-
-
     </script>
     <script>
         //  دسته بندی ها با زیر مجموعه
+
         let megaMenuData = () => {
             $.ajax({
                 type: 'POST',
                 url: "/Home/GetCatProductList_UI",
 
                 success: function (result) {
-                    if (result.success == true) {
-                        $(".megacontent").html('');
-                        var megacontent = $(".megacontent");
-                        var select2Combo = $("#searchCategoryCmb");
-                        $.each(result.data.objList, function (e, v) {
+                    $("#mgmenu").html('');
 
-                            var child = "";
-                            if (v.inverseP.length > 0) {
+                    $.each(result.data.objList, function (e, v) {
+                        var child = "";
+                        var ac = "";
+                        if (e == 0) ac = `class="wsshoplink-active"`;
 
-                                select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
-                                setChilds(v.inverseP);
+                        if (v.inverseP.length > 0) {
+                            child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-md-12 clearfix">
+                                                                        <div class="container-fluid">
+                                                                            <div class="row posrdb">
+                                                                                <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                    <ul class="wstliststy02 clearfix">`;
+                            $.each(v.inverseP, function (e2, v2) {
+                                child += `<li><a href="javascript:filterbyCategory(${v2.id})" data-cat-number="${v2.id}">${v2.name}</a></li>`;
+                            });
+                            child += `</ul></div>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>`;
 
-                                child = `<ul class="list-unstyled">`;
-                                $.each(v.inverseP, function (e2, v2) {
-                                    child += `<li><a href="/Product/ByFilter?catId=${v2.id}">${v2.name}</a></li>`;
-                                });
-                                child += "</ul>";
+                            $("#mgmenu").append(`<li ${ac}>
+                                                        <span class="wsmenu-click02">
+                                                            <i class="wsmenu-arrow fa fa-angle-down"></i>
+                                                        </span>
+                                                        <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                        <span class="robin-submenu-nav">
+                                                            <span class="robin-menu-icon-kitchen"></span>
+                                                            <span style="vertical-align:middle">
+                                                                <a href="/">${v.name}</a>
+                                                            </span>
+                                                        </span>${child}</li>`);
 
-                                megacontent.append(`<div class="col-md-3">
-                                                                                                        <div class="col-megamenu">
-                                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>${child}
-                                                                                                        </div>
-                                                                                                    </div`);
+                        }
+                        else {
+                            $("#mgmenu").append(`<li><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></li>`);
+                        }
+                    });
 
-                            }
-                            else {
-                                select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
+                    $.get("/plugins/megamenu/megaMenu.js", function (result) {
+                    });
 
-                                megacontent.append(`<div class="col-md-3">
-                                                                                                        <div class="col-megamenu">
-                                                                                                            <h6 class="title"><a href="/Product/ByFilter?catId=${v.id}">${v.name}</a></h6>
-                                                                                                        </div>
-                                                                                                    </div`);
-                            }
-                        });
-                    }
                 }
             });
-        };
-
-        var setChilds = (chlist) => {
-            $.each(chlist, function (e, v) {
-                if (v.inverseP.length > 0) {
-                    select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
-                    setChilds(v.inverseP);
-                } else {
-                    $("#searchCategoryCmb").append(`<option value='${v.id}'>${v.name}</option>`);
-                }
-            });
-
         }
-
         //============
         megaMenuData();
 

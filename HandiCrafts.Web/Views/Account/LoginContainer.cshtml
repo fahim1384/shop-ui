@@ -111,7 +111,7 @@
 
             if (result.success == true) {
                 localStorage.setItem("fullname", result.data.obj.fullname);
-                window.location = "/Home/Index";
+                window.location = "/Account/UpdateProfile";
             }
             else {
                 $("#errorbox").html(result.message).removeClass("d-none");

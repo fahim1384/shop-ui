@@ -62,7 +62,12 @@
                                     </label>
                                 </div>
                             </div>
+                            <hr />
+                            <h4>نحوه ارسال</h4>
 
+                            <div class="row mt-4" id="posttypesBox">
+                            </div>
+                            <hr />
                             <h4 class="mt-4">کارت هدیه و کدتخفیف</h4>
                             <div class="row">
                                 <div class="col mr-3">
@@ -78,17 +83,17 @@
                             </div>
 
                             @*<div class="row mt-4">
-                            <div class="col mr-3">
-                                <div class="input-group input-group-sm pt-5px pb-5px pr-10px pl-10px mr-10 ml-10 border-default border-radius-20">
-                                    <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="افزودن کارت هدیه جدید">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text background-none border-0">
-                                            <button class="btn color-firouzi border-0">ثبت</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
+            <div class="col mr-3">
+                <div class="input-group input-group-sm pt-5px pb-5px pr-10px pl-10px mr-10 ml-10 border-default border-radius-20">
+                    <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="افزودن کارت هدیه جدید">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text background-none border-0">
+                            <button class="btn color-firouzi border-0">ثبت</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>*@
 
                             <h4 class="mt-5 mb-5">آدرس تحویل سفارش</h4>
 
@@ -96,11 +101,11 @@
                                 <div class="col mr-3">
                                     <p>
                                         @*آذربایجان شرقی، تبریز، رشدیه، بلوار بهارستان،برج رشدیه، بلوک ب، طبقه ١١ ،واحد ١١٣ ،
-                                    پلاک ١*@
+                    پلاک ١*@
                                         <span id="addressBox"></span>
                                         <br />
                                         <br />
-                                        <span class="text-muted"><i class="fa fa-user solid-fa"></i> <span id="fullname"></span>@*زهره جمشیدی*@</span>
+                                        <span class="text-muted"><i class="fa fa-user solid-fa"></i> <span id="fullname"></span></span>
                                         <br />
                                         <a href="/Shoppingcart/Address" class="color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
                                     </p>
@@ -110,54 +115,54 @@
 
                             @*<h4 class="mt-5 mb-5">زمان ارسال</h4>
 
-                        <div class="row">
-                            <div class="col mr-3 cart-send-date-tabs">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    @{
-                                        PersianDateTime persianDateTime = new PersianDateTime(DateTime.Now);
+        <div class="row">
+            <div class="col mr-3 cart-send-date-tabs">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    @{
+                        PersianDateTime persianDateTime = new PersianDateTime(DateTime.Now);
 
-                                        for (int i = 0; i < 6; i++)
-                                        {
+                        for (int i = 0; i < 6; i++)
+                        {
 
-                                            var tabname = "#sendDay" + i;
-                                            var selected = i == 0 ? "true" : "false";
-                                            var active = i == 0 ? "active" : "";
+                            var tabname = "#sendDay" + i;
+                            var selected = i == 0 ? "true" : "false";
+                            var active = i == 0 ? "active" : "";
 
-                                            <li class="nav-item">
-                                                <a class="nav-link @active" id="@tabname-tab" data-toggle="tab" href="@tabname" role="tab" aria-controls="@tabname" aria-selected="@selected">
-                                                    @persianDateTime.AddDays(i + 2).DayName
-                                                    <small class="form-text text-muted-in-dark ">
-                                                        @persianDateTime.AddDays(i + 2).Day @persianDateTime.AddDays(i + 2).MonthName
-                                                    </small>
-                                                </a>
-                                            </li>
-                                        }
-                                    }
+                            <li class="nav-item">
+                                <a class="nav-link @active" id="@tabname-tab" data-toggle="tab" href="@tabname" role="tab" aria-controls="@tabname" aria-selected="@selected">
+                                    @persianDateTime.AddDays(i + 2).DayName
+                                    <small class="form-text text-muted-in-dark ">
+                                        @persianDateTime.AddDays(i + 2).Day @persianDateTime.AddDays(i + 2).MonthName
+                                    </small>
+                                </a>
+                            </li>
+                        }
+                    }
 
-                                </ul>
-                                <div class="tab-content bg-white mb-4" id="myTabContent">
-                                    @{
-                                        for (int i = 0; i < 6; i++)
-                                        {
+                </ul>
+                <div class="tab-content bg-white mb-4" id="myTabContent">
+                    @{
+                        for (int i = 0; i < 6; i++)
+                        {
 
-                                            var tabname = "#sendDay" + i;
-                                            var selected = i == 0 ? "active" : "";
-                                            var checkedRadoi = i == 0 ? "checked" : "";
+                            var tabname = "#sendDay" + i;
+                            var selected = i == 0 ? "active" : "";
+                            var checkedRadoi = i == 0 ? "checked" : "";
 
-                                            <div class="tab-pane fade show @selected" id="@tabname" role="tabpanel" aria-labelledby="@tabname-tab">
-                                                <div class="col-12 pt-3 pb-3 pr-2">
-                                                    <label>
-                                                        <input type="radio" value="@i" @checkedRadoi>
-                                                        <small class="text-muted">ساعت 9 تا 22</small>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        }
-                                    }
+                            <div class="tab-pane fade show @selected" id="@tabname" role="tabpanel" aria-labelledby="@tabname-tab">
+                                <div class="col-12 pt-3 pb-3 pr-2">
+                                    <label>
+                                        <input type="radio" value="@i" @checkedRadoi>
+                                        <small class="text-muted">ساعت 9 تا 22</small>
+                                    </label>
                                 </div>
                             </div>
+                        }
+                    }
+                </div>
+            </div>
 
-                        </div>*@
+        </div>*@
 
                         </div>
                     </div>
@@ -410,6 +415,43 @@
             });
         }
 
+        // انواع ارسال پست یا رایگان یا...
+        function GetPostTypeList_UI() {
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetPostTypeList_UI",
+                success: function (result) {
+                    $("#posttypesBox").html('');
+
+                    if (result.success == true) {
+                        var options = "";
+                        var posttypes = result.data.objList;
+                        if (result.data.objList.length > 0) {
+                            $.each(posttypes, function (e, v) {
+                                var checked = "";
+                                if (e == 0) checked = "checked='checked'";
+                                $("#posttypesBox").append(`<div class="col">
+                                    <label>
+                                        <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
+                                        <b>${this.title}</b>
+                                    </label>
+                                </div>`);
+                            });
+
+                            bindPostTypes();
+                            $("input[name=optionsPostTypes]").trigger("change");
+                        }
+                    }
+                }
+            });
+        }
+
+        var bindPostTypes = () => {
+            $("input[name=optionsPostTypes]").on("change", function () {
+                CustomerOrderPreview();
+            });
+        }
+
         // نوع بسته بندی محصول
         let LoadPackages = (prd, pkselected) => {
             $.ajax({
@@ -519,12 +561,15 @@
                 return false;
             }
 
+            var posttype = $("input[name=optionsPostTypes]:checked").val();
+
             var model = {
                 PaymentTypeId: $("input[name=optionsPaymentTypeRadios]:checked").val(),
                 OfferId: objOffers?.offerId ?? null,
                 CustomerAddressId: localStorage.getItem("addressId"),
                 CustomerDescription: null,
-                ProductList: []
+                ProductList: [],
+                PostTypeId: posttype != undefined ? posttype : 1
             };
 
             $.each(shoppingCart.listCart(), function (e, v) {
@@ -566,13 +611,17 @@
 
         // اطلاعات سبد خرید و بروزرسانی قیمت ها
         function CustomerOrderPreview() {
-            
+            var posttype = $("input[name=optionsPostTypes]:checked").val();
+
+            if (posttype == undefined) return false;
+
             var model = {
                 PaymentTypeId: $("input[name=optionsPaymentTypeRadios]:checked").val(),
                 OfferId: objOffers?.offerId ?? null,
                 CustomerAddressId: localStorage.getItem("addressId"),
                 CustomerDescription: null,
-                ProductList: []
+                ProductList: [],
+                PostTypeId: posttype != undefined ? posttype : null
             };
 
             $.each(shoppingCart.listCart(), function (e, v) {
@@ -620,6 +669,7 @@
         //============ Load ============
 
         GetProductByIdList_UI();
+        GetPostTypeList_UI();
         GetPaymentTypeList();
         GetCustomerDefultAddress_UI();
         
