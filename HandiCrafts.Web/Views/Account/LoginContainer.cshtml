@@ -45,7 +45,7 @@
                 localStorage.removeItem("address");
                 localStorage.removeItem("fullname");
 
-                if (result.data.isExist == true) {
+                if (result.data.isExist == true && result.data.loginByCode == false) {
                     window.location = "/Account/FastRegister?userid=" + result.data.userId;
                 }
                 else {

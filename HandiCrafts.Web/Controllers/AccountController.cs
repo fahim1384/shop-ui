@@ -235,7 +235,7 @@ namespace HandiCrafts.Web.Controllers
 
                     //issuer: "https://www.tabrizcraft.ir",
                     //audience: "https://www.tabrizcraft.ir",
-                    expires: DateTime.Now.AddHours(3),
+                    expires: DateTime.Now.AddDays(1),
                     signingCredentials: credentials,
                     claims: claims
                     );
@@ -318,7 +318,7 @@ namespace HandiCrafts.Web.Controllers
 
                     //issuer: "https://www.tabrizcraft.ir",
                     //audience: "https://www.tabrizcraft.ir",
-                    expires: DateTime.Now.AddHours(3),
+                    expires: DateTime.Now.AddDays(1),
                     signingCredentials: credentials,
                     claims: claims
                     );

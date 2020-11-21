@@ -143,6 +143,7 @@ namespace HandiCrafts.Web
                 options.AccessDeniedPath = new PathString("/account/login");
                 options.LogoutPath = new PathString("/account/logout");
                 options.Cookie.Name = "HandiCrafts.WebCookie";
+                options.ExpireTimeSpan = TimeSpan.FromDays(1);
             });
         }
 
@@ -223,7 +224,7 @@ namespace HandiCrafts.Web
         //                ValidateIssuerSigningKey = true,
         //                IssuerSigningKey = GetSigningKey(),
         //                ValidateIssuer = true,
-        //                ValidIssuer = "http://nikan.com",
+        //                ValidIssuer = "http://.com",
         //                ValidateAudience = true,
         //                ValidAudience = "api-users",
         //                ValidateLifetime = false,
