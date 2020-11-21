@@ -197,3 +197,4 @@ namespace HandiCrafts.Web.Models.Account
         #endregion
     }
 }
+
