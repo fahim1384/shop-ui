@@ -484,7 +484,43 @@ namespace HandiCrafts.Web.Controllers
         [Authorize(Roles = UserRoleNames.User)]
         public IActionResult UpdateProfile()
         {
-            return View();
+            HttpClient httpClient = new HttpClient();
+
+            httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+
+            string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+            CustomerClient client = new CustomerClient(BaseUrl, httpClient);
+
+            var result = client.GetProfileInfoAsync().Result;
+
+            PersianDateTime persianDate = new PersianDateTime(DateTime.Now);
+            if(result.Obj.Bdate != null) persianDate= new PersianDateTime(result.Obj.Bdate.Value.DateTime);
+            
+            string mobile="";
+            string shoghl = "";
+
+            if (result.Obj.Mobile != null)
+            {
+                mobile = "0" + result.Obj.Mobile.Value;
+            }
+
+            if (result.Obj.WorkId != null)
+            {
+                shoghl = result.Obj.WorkId.Value.ToString();
+            }
+
+            ProfileInfo profile = new ProfileInfo()
+            {
+                Bdate = persianDate.Year.ToString()+"/"+ persianDate.Month.ToString() + "/"+persianDate.Day.ToString(),
+                Email = result.Obj.Email,
+                FullName = result.Obj.Name,
+                MelliCode = result.Obj.MelliCode.ToString(),
+                MobileNo = mobile,
+                Shoghl = shoghl
+            };
+
+            return View(profile);
         }
 
         [HttpPost]

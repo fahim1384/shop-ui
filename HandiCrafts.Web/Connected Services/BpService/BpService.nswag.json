@@ -448,6 +448,36 @@
         }
       }
     },
+    "/api/Account/Customer_GetProfileInfo": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "Customer_GetProfileInfo",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerProfileDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerProfileDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerProfileDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Account/SellerLoginRegister": {
       "post": {
         "tags": [
@@ -4513,6 +4543,23 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "CustomerProfileDtoSingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/CustomerProfileDto"
           }
         }
       },
