@@ -236,8 +236,8 @@
                             <h3 class="mt-3">سبد خرید شما خالی است!</h3>
                             <p>می توانید برای مشاهده محصولات بیشتر به صفحات زیر بروید</p>
                             <div class="text-center">
-                                <a href="/Product/ByFilter?OrderBy=6" class="ml-3 mr-3">جدیدترین</a>
-                                <a href="/Product/ByFilter?OrderBy=2" class=" ml-3 mr-3">پرفروش ترین</a>
+                                <a href="/Product/ByFilter?OrderBy=1" class="ml-3 mr-3">جدیدترین</a>
+                                <a href="/Product/ByFilter?OrderBy=3" class=" ml-3 mr-3">پرفروش ترین</a>
                             </div>
                         </div>
                     </div>
@@ -668,12 +668,6 @@
 
         //============ Load ============
 
-        GetProductByIdList_UI();
-        GetPostTypeList_UI();
-        GetPaymentTypeList();
-        GetCustomerDefultAddress_UI();
-        
-
         var orderResltObj = {};
         var isSetOffer = false;
         var objOffers = {};
@@ -686,7 +680,14 @@
             totalbeforeHazinehBastehbandi: 0
         }
 
-        productsPackageListLoad();
+        if (shoppingCart.totalCount() != 0) {
+            GetProductByIdList_UI();
+            GetPostTypeList_UI();
+            GetPaymentTypeList();
+            GetCustomerDefultAddress_UI();
+
+            productsPackageListLoad();
+        }
 
     </script>
 }
