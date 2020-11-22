@@ -153,6 +153,7 @@
 
         $(document).ready(function () {
             $(".pdate").persianDatepicker({
+                initialValueType: 'persian',
                 calendarType: 'persian',
                 calendar: {
                     persian: {
@@ -168,7 +169,7 @@
                         enabled: false
                     }
                 },
-                initialValue: false,
+                //initialValue: false,
                 autoClose: true,
                 onSelect: function () {
                     $(this).trigger("keydown");
