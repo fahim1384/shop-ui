@@ -97,6 +97,8 @@
     <script src="~/plugins/persianDatePicker/persian-date.js"></script>
     <script src="~/plugins/persianDatePicker/persian-datepicker.js"></script>
     <script>
+        var mywork = '@Model.Shoghl';
+
         let GetWorkList = () => {
             try {
                 $.ajax({
@@ -107,7 +109,11 @@
                         if (result.data != null) {
                             $("#shoghl").empty().append(`<option value="">انتخاب کنید</option>`);
                             $.each(result.data.objList, function (e, v) {
-                                $("#shoghl").append(`<option value="${v.id}">${v.name}</option>`);
+                                var select = "";
+                                if (mywork != null) {
+                                    if (v.id == mywork) select = "selected='selected'";
+                                }
+                                $("#shoghl").append(`<option value="${v.id}" ${select}>${v.name}</option>`);
                             });
                         }
                     }

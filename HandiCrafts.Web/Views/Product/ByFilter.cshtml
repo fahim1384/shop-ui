@@ -462,7 +462,7 @@
                             child += "</ul>";
 
                             $("#myUL").append(`<li><span class="fa menucaret">
-                                                                    <span class="font-family-WYekan cyan">${v.name}</span>
+                                                                    <span class="font-family-WYekan cyan"><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></span>
                                                                 </span>${child}</li>`);
 
                         }

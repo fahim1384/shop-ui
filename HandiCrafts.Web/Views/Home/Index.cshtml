@@ -749,21 +749,33 @@
                         var bartarBox2 = "";
                         var bartarBox3 = "";
 
+                        var indxBox1 = 0;
+                        var indxBox2 = 0;
+
                         $.each(result.data, function (e, v) {
-                            if (e == 0 || e == 1) {
+                            if (v.id == 44) {
+                                bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+<a href="/product/ByFilter?catId=${v.id}">
+                    <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
+                </a></div>`;
+                            }
+
+                            else if (indxBox1 <= 1 /*e == 0 || e == 1*/) {
+                                indxBox1++;
                                 bartarBox1 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
                     <a href="/product/ByFilter?catId=${v.id}">
                         <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
                     </a>
                 </div>`;
                             }
-                            else if (e == 2) {
+                            /*else if (e == 2) {
                                 bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
 <a href="/product/ByFilter?catId=${v.id}">
                     <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
                 </a></div>`;
-                            }
-                            else if (e == 3 || e == 4) {
+                            }*/
+                            else if (indxBox2 <= 1/*e == 3 || e == 4*/) {
+                                indxBox2++;
                                 bartarBox3 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
                     <a href="/product/ByFilter?catId=${v.id}">
                         <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
