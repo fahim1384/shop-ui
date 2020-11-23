@@ -40,8 +40,9 @@
             switch (item.FinalStatusId)
             {
                 case 12: sabadHa++; break;
-                case 18: successHa++; break;
-                case 19: processHa++; break;
+                case 27: successHa++; break;
+                case 18: processHa++; break;
+                case 19: sendHa++; break;
                 case 20: sendHa++; break;
                 case 21: tahvilHa++; break;
                 default:
@@ -157,7 +158,7 @@
                                     @{
                                         foreach (var item in Model)
                                         {
-                                            if (item.FinalStatusId == 18)
+                                            if (item.FinalStatusId == 27)
                                             {
                                                 var dt = !string.IsNullOrEmpty(item.OrderDate) ? item.OrderDate : PersianDateTime.Now.ToString();
                                                 PersianDateTime persiandt = PersianDateTime.Parse(dt); //new PersianDateTime(DateTime.Parse(dt));
@@ -199,7 +200,7 @@
                                     @{
                                         foreach (var item in Model)
                                         {
-                                            if (item.FinalStatusId == 19)
+                                            if (item.FinalStatusId == 18)
                                             {
                                                 var dt = !string.IsNullOrEmpty(item.OrderDate) ? item.OrderDate : PersianDateTime.Now.ToString();
                                                 PersianDateTime persiandt = PersianDateTime.Parse(dt); //new PersianDateTime(DateTime.Parse(dt));
@@ -241,7 +242,7 @@
                                     @{
                                         foreach (var item in Model)
                                         {
-                                            if (item.FinalStatusId == 20)
+                                            if (item.FinalStatusId == 19 || item.FinalStatusId == 20)
                                             {
                                                 var dt = !string.IsNullOrEmpty(item.OrderDate) ? item.OrderDate : PersianDateTime.Now.ToString();
                                                 PersianDateTime persiandt = PersianDateTime.Parse(dt); //new PersianDateTime(DateTime.Parse(dt));

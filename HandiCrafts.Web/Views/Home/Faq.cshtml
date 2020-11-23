@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "سوالات متداول";
+}
+
+@section Styles{
+    <style>
+        main.mt-100 {
+            margin-top: 80px;
+        }
+
+        .content-main-box {
+            margin: 25px;
+            /*background: #f2f1f3;*/
+            padding: 25px;
+            border-radius: 15px;
+        }
+        #accordion .card {
+            border-radius: 1.25rem;
+            margin-bottom:15px;
+        }
+        .card-header:first-child {
+            border-radius: calc(1.3rem);
+        }
+        .card-header {
+            box-shadow: 0px 0px 6px 3px #b6b6b6;
+        }
+        .btn-link {
+            padding: .975rem .75rem;
+            font-size: 1.2rem;
+        }
+            .btn-link:hover, .btn-link:focus {
+                text-decoration-line: none;
+                font-weight: bold;
+                color: #50a4c0;
+            }
+    </style>
+}
+
+<div class="section pt-0 small_pb">
+    <div class="row m-0">
+        <div class="col-12 p-0">
+            <img src="/image/faq.png" class="w-100 m-auto" />
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-main-box">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link w-100 text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        سوال تکراری شماره 1
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        سوال تکراری شماره 2
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        سوال تکراری شماره 3
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام سلام بچه ها سلام
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+<script>
+    /*$('#myCollapsible').collapse({
+        toggle: false
+    });*/
+</script>
+}

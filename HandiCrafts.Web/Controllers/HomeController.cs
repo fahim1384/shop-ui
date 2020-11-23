@@ -464,6 +464,11 @@ namespace HandiCrafts.Web.Controllers
             return View();
         }
 
+        public IActionResult Faq()
+        {
+            return View();
+        }
+
         //============================================
         [HttpPost]
         public Task<DefaultResponseState> GetCatProductList_UI2()

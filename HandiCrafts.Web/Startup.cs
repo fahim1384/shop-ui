@@ -25,6 +25,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using AutoMapper;
 using SmartBreadcrumbs.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Newtonsoft.Json;
 //using HandiCrafts.Web.BpService;
 
 namespace HandiCrafts.Web
@@ -67,6 +68,13 @@ namespace HandiCrafts.Web
                 .AddViewLocalization()
                 .AddDataAnnotationsLocalization()
                 .AddJsonOptions(option => option.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+            var settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                MissingMemberHandling = MissingMemberHandling.Ignore
+            };
+            //settings.DefaultValueHandling = DefaultValueHandling.Include;
 
             services.AddRazorPages().AddNewtonsoftJson();
 

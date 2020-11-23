@@ -6882,6 +6882,9 @@ namespace HandiCrafts.Web
         private Newtonsoft.Json.JsonSerializerSettings CreateSerializerSettings()
         {
             var settings = new Newtonsoft.Json.JsonSerializerSettings();
+            settings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Include;
+            settings.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Error;
+
             UpdateJsonSerializerSettings(settings);
             return settings;
         }
