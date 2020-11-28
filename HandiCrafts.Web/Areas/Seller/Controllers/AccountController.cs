@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -9,7 +11,9 @@ using HandiCrafts.Web.Areas.Seller.Models.Account;
 using HandiCrafts.Web.Controllers;
 using HandiCrafts.Web.Interfaces;
 using HandiCrafts.Web.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 
@@ -22,6 +26,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
         IHttpClientFactory _httpClientFactory;
         const string _fullname = "fullname";
+        const string _seller_userid = "selleruserid";
         #endregion
 
         #region Constructors
@@ -73,6 +78,11 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 var result = await client.SellerLoginRegisterAsync(email, mobile);
 
+                if (result.ResultCode != 200)
+                    return Error<LoginRegisterDto>(data: null, message: result.ResultMessage);
+
+                HttpContext.Session.SetString(_seller_userid, result.Obj.UserId.ToString());
+
                 return Success(data: result.Obj, message: result.ResultMessage);
 
             });
@@ -86,7 +96,10 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 return View("Login");
             }
 
-            return View();
+            return View(new AcceptCodeModel()
+            {
+                UserId = userid.Value
+            });
         }
 
         [HttpPost]
@@ -100,7 +113,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 SellerLoginClient client = new SellerLoginClient(BaseUrl, httpClient);
 
-                var result = await client.ByActivationCodeAsync(model.UserId, model.AcceptCode);
+                var result = await client.ByActivationCodeAsync(model.UserId, int.Parse(model.AcceptCode));
 
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
@@ -110,14 +123,215 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             });
         }
 
-        public IActionResult CompleteInformation()
+        public IActionResult CompleteInformation(long? userid)
         {
-            return View();
+            if (userid == null)
+            {
+                return View("Login");
+            }
+
+            try
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProvinceListClient client = new GetProvinceListClient(BaseUrl, httpClient);
+
+                List<SelectListItem> Provinces = new List<SelectListItem>();
+
+                var result = client.UIAsync(null).Result;
+
+                foreach (var item in result.ObjList)
+                {
+                    Provinces.Add(new SelectListItem { Value = item.Id.ToString(), Text = item.Name });
+                }
+
+                ViewBag.Provinces = Provinces;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return View(new PersonalInformationVModel()
+            {
+                UserId = userid.Value
+            });
         }
 
-        public IActionResult Documents()
+        [HttpPost]
+        public Task<ResponseState<LongResult>> CompleteInformation(PersonalInformationVModel model)
         {
-            return View();
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                Client client = new Client(BaseUrl, httpClient);
+
+                PersianDateTime persianDate = PersianDateTime.Parse(model.BirthDate);
+                DateTime miladiDate = persianDate.ToDateTime();
+
+                SellerRegisterDto sellerRegisterDto = new SellerRegisterDto()
+                {
+                    Address = new SellerAddressDto()
+                    {
+                        Address = model.Address,
+                        CityId = long.Parse(model.City),
+                        PostalCode = !string.IsNullOrEmpty(model.PostalCode) ? long.Parse(model.PostalCode) : (long?)null,
+                        ProvinceId = long.Parse(model.Province),
+                        Tel = long.Parse(model.Phone),
+                        Xgps = model.Lat,
+                        Ygps = model.Lng
+                    },
+                    Bdate = miladiDate,
+                    MelliCode = long.Parse(model.NationalCode),
+                    PassWord = model.Password,
+                    Mobile = long.Parse(model.MobileNo),
+                    Fname = model.FirstName + " " + model.LastName,
+                    Name = model.FirstName + " " + model.LastName,
+                    Gender = model.Gender,
+                    IdentityNo = model.UserId.ToString(),
+                    SecondMobile = !string.IsNullOrEmpty(model.MobileNo2) ? long.Parse(model.MobileNo2) : (long?)null,
+                    Tel = long.Parse(model.Phone),
+                    ShabaNo = model.ShabaCode
+                };
+
+                var result = await client.SellerRegisterAsync(sellerRegisterDto);
+
+                if (result.ResultCode != 200)
+                    return Error<LongResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult Documents(long? userid)
+        {
+            if (userid == null)
+            {
+                return View("Login");
+            }
+
+            return View(new PersonalInformationVModel()
+            {
+                UserId = userid.Value
+            });
+        }
+
+        [HttpPost]
+        public Task<ResponseState<DocumentDtoListResult>> GetDocumentListbyRkey(long? rkey)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                Client client = new Client(BaseUrl, httpClient);
+
+                var result = await client.GetDocumentListbyRkeyAsync(rkey);
+
+                if (result.ResultCode != 200)
+                    return Error<DocumentDtoListResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        [HttpPost]
+        public Task<DefaultResponseState> UploadSellerDocument(IFormFile file, string documentId)
+        {
+            return TryCatch(async () =>
+            {
+                //HttpClient httpClient = new HttpClient();
+
+                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                //Client client = new Client(BaseUrl, httpClient);
+
+                HttpClient client = new HttpClient();
+
+                client.BaseAddress = _httpClientFactory.CreateClient("myHttpClient").BaseAddress;
+                client.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
+
+                if (file != null && file.Length > 0)
+                {
+                    try
+                    {
+                        #region comment
+                        /*byte[] data;
+                        using (var br = new BinaryReader(file.OpenReadStream()))
+                            data = br.ReadBytes((int)file.OpenReadStream().Length);
+
+                        ByteArrayContent bytes = new ByteArrayContent(data);
+
+                        MultipartFormDataContent multiContent = new MultipartFormDataContent();
+
+                        multiContent.Add(bytes, "file", file.FileName);
+
+                        client.PostAsync("UpdateSlider", multiContent).Result;
+
+
+                        return StatusCode((int)result.StatusCode); //201 Created the request has been fulfilled, resulting in the creation of a new resource.
+                        */
+                        #endregion
+
+                        var formData = new MultipartFormDataContent();
+                        formData.Add(new StreamContent(file.OpenReadStream()), "file", "file");
+                        var request = new HttpRequestMessage(HttpMethod.Post, _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri + "/api/Document/UploadSellerDocument?documentId=" + documentId)
+                        {
+                            Content = formData
+                        };
+
+                        request.Headers.Add("accept", "application/json");
+
+                        var response = await client.SendAsync(request);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var res = await response.Content.ReadAsStringAsync();
+
+                            return Success(message: "آپلود شد");
+                        }
+                        else
+                        {
+                            return Error(message: response.ReasonPhrase);
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        return Error(message: "خطایی رخ داد");
+                    }
+                }
+
+                /*
+                    HttpClient client = new HttpClient();
+                    client.BaseAddress = new Uri("http://your.url.com/");
+                    MultipartFormDataContent form = new MultipartFormDataContent();
+                    HttpContent content = new StringContent("fileToUpload");
+                    form.Add(content, "fileToUpload");
+                    var stream = await file.OpenStreamForReadAsync();
+                    content = new StreamContent(stream);
+                    content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+                    {
+                        Name = "fileToUpload",
+                        FileName = file.Name
+                    };
+                    form.Add(content);
+                    var response = await client.PostAsync("upload.php", form);
+                    return response.Content.ReadAsStringAsync().Result;
+                 */
+
+                //await client.UpdateSliderAsync();
+
+                return Error(message: "فایلی انتخاب نشده است");
+            });
         }
 
         #endregion

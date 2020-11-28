@@ -3,15 +3,19 @@
     ViewData["Title"] = "تکمیل اطلاعات صنعتگر";
     Layout = "~/Areas/Seller/Views/Shared/_AccountLayout.cshtml";
 }
-@section Styles{ }
+@section Styles{
+    <link href="~/plugins/persianDatePicker/persian-datepicker.min.css" rel="stylesheet" />
+    <style>
+    </style>
+}
 
-<div class="reg_login_content_mainform reg_login_content0000 mr-auto comp-info">
+<div class="reg_login_content_mainform reg_login_content0000 ml-auto comp-info force-overflow">
 
     <form id="form_login" class="kt-form" asp-area="Seller" asp-action="CompleteInformation" asp-controller="Account" data-ajax-method="POST"
-          data-ajax="true" data-ajax-begin="onSigninBegin1" data-ajax-complete="onSigninComplete1"
-          data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1">
+          data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+          data-ajax-failure="onFailed" data-ajax-success="onSuccess">
 
-        <input type="hidden" asp-for="UserId" value="1" />
+        <input type="hidden" asp-for="UserId" />
         <div asp-validation-summary="All"></div>
         <div class="alert alert-danger d-none" id="errorbox"></div>
 
@@ -53,7 +57,7 @@
             <div class="col-sm-6 form-group mb-4">
                 <label asp-for="BirthDate"></label>
                 <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="BirthDate" class="form-control">
+                    <input type="text" asp-for="BirthDate" class="form-control pdate">
                 </div>
                 <span asp-validation-for="BirthDate" class="kt-font-danger"></span>
             </div>
@@ -100,7 +104,9 @@
             <div class="col-sm-6 form-group mb-4">
                 <label asp-for="Province"></label>
                 <div class="input-group mb-2 height-40px reg-element">
-                    <select asp-for="Province" class="form-control"></select>
+                    <select asp-for="Province" class="form-control" id="ProvinceCmb" asp-items="ViewBag.Provinces">
+                        <option value="">انتخاب کنید</option>
+                    </select>
                 </div>
                 <span asp-validation-for="Province" class="kt-font-danger"></span>
             </div>
@@ -108,7 +114,9 @@
             <div class="col-sm-6 form-group mb-4">
                 <label asp-for="City"></label>
                 <div class="input-group mb-2 height-40px reg-element">
-                    <select asp-for="City" class="form-control"></select>
+                    <select asp-for="City" class="form-control" id="cityCmb">
+                        <option value="">انتخاب کنید</option>
+                    </select>
                 </div>
                 <span asp-validation-for="City" class="kt-font-danger"></span>
             </div>
@@ -135,8 +143,8 @@
             <div class="col-sm-6 form-group mb-4">
                 <label>موقعیت مکانی</label>
                 <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" class="form-control with-icon" aria-describedby="basic-latlan" placeholder="موقعیت را ثبت کنید">
-                    <div class="input-group-prepend">
+                    <input type="text" class="form-control with-icon latlanstatus" readonly aria-describedby="basic-latlan" placeholder="موقعیت را ثبت کنید">
+                    <div class="input-group-prepend" id="mapbtn">
                         <span class="input-group-text" id="basic-latlan">
                             <i class="fa fa-map-marker-alt solid-fa fa-2x"></i>
                         </span>
@@ -192,12 +200,157 @@
         </div>
 
         <div class="form-group text-center mt-3">
-            <button id="kt_login_signin_submit1" type="submit" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ادامه</button>
+            <button id="submit" type="submit" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ادامه</button>
         </div>
 
     </form>
 </div>
 
-@section Scripts{
+<div id="map" style="width:470px;height:450px;" class="d-none">
+</div>
 
+<div class="modal" tabindex="-1" role="dialog" id="mapModal">
+    <div class="modal-dialog modal-lg0000" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">موقعیت جغرافیایی</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="width:498px;height:450px;">
+                <div id="mapbox"></div>
+                <div id="lng_lat_box"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://www.parsimap.com/js/v3.1.0/parsimap.js?key=public"></script>
+    <script src="https://www.parsimap.ir/js/v3.1.0/plugins/parsimap-pointer.js"></script>
+    <script src="~/plugins/persianDatePicker/persian-date.js"></script>
+    <script src="~/plugins/persianDatePicker/persian-datepicker.js"></script>
+    <script>
+
+        var container = document.getElementById('map');
+        var mapOptions = { center: [51.41, 35.7575], zoom: 6, height: '100%', };
+        var map = new parsimap.Map(container, mapOptions);
+
+        map.on('load', function () {
+
+            var symbolLayerOptions = map.getDefaultSymbol();
+
+            var pointer = new parsimap.Pointer(map, {
+                type: 'click',
+                layerOptions: symbolLayerOptions,
+            });
+            pointer.enable();
+
+            pointer.on('select', function (event) {
+                var stringLngLat =
+                    'lng: ' + event.lngLat.lng + ' - lat: ' + event.lngLat.lat;
+                document.getElementById('lng_lat_box').innerText = stringLngLat;
+
+                $("input[name=Lng]").val(event.lngLat.lng);
+                $("input[name=Lat]").val(event.lngLat.lat);
+                $(".latlanstatus").val("ثبت شده");
+            });
+        });
+
+        $("#mapbtn").on("click", function () {
+            if ($("#mapbox").find("#map").length == 0) {
+                $("#map").removeClass("d-none");
+                $("#mapbox").append($("#map"));
+            }
+
+            $('#mapModal').modal('show');
+        });
+
+        function onBegin(e, form) {
+            $('#submit').addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', true);
+            $("#errorbox").html('').addClass("d-none");
+        }
+
+        function onSuccess(result) {
+            console.log(result);
+            $('#submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
+
+            if (result.success == true) {
+                window.location = "/Seller/Account/Documents?userid=" + result.data.objList[0];
+            }
+            else {
+                $("#errorbox").html(result.message).removeClass("d-none");
+            }
+        }
+
+        function onFailed() {
+            alert("خطا");
+        }
+
+        function onComplete(re) {
+            console.log(re);
+        }
+
+        failed = function (xhr) {
+            alert(`Status: ${xhr.status}, Status Text: ${xhr.statusText}`);
+        };
+
+        $(document).ready(function () {
+            $(".pdate").persianDatepicker({
+                initialValueType: 'persian',
+                calendarType: 'persian',
+                calendar: {
+                    persian: {
+                        locale: 'en',
+                        persianDigit: false
+                    }
+                },
+                persianDigit: false,
+                format: 'YYYY/MM/DD',
+                maxDate: new persianDate(),
+                toolbox: {
+                    calendarSwitch: {
+                        enabled: false
+                    }
+                },
+                //initialValue: false,
+                autoClose: true,
+                onSelect: function () {
+                    $(this).trigger("keydown");
+                }
+            });
+        });
+
+        $(".pdate").on('change keyup paste keydown', function (e) {
+            e.preventDefault();
+        });
+
+        $("#ProvinceCmb").on("change", function () {
+            LoadCity();
+        });
+
+        function LoadCity() {
+            if ($("#ProvinceCmb").val() == null || $("#ProvinceCmb").val() == "")
+                return false;
+
+            $.ajax({
+                type: 'POST',
+                url: "/Shoppingcart/GetCityList_UI",
+                data: { provinceId: $("#ProvinceCmb").val() },
+                success: function (result) {
+                    if (result.success == true) {
+                        $("#cityCmb").empty();
+                        $("#cityCmb").append(`<option value="">انتخاب کنید</option>`);
+                        $.each(result.data.objList, function (e, v) {
+                            $("#cityCmb").append(`<option value="${v?.id}">${v?.name ?? 'نامشخص'}</option>`);
+                        });
+                    }
+                }
+            });
+        }
+    </script>
 }

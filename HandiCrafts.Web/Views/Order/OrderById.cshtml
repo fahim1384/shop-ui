@@ -83,7 +83,7 @@
     var dt = !string.IsNullOrEmpty(Model.OrderDate) ? Model.OrderDate : PersianDateTime.Now.ToString();
     PersianDateTime persiandt = PersianDateTime.Parse(dt);
     var hazinehErsal = "رایگان";
-    if (Model.PostServicePrice != null) hazinehErsal = Model.PostServicePrice.ToString();
+    if (Model.PostServicePrice != null) hazinehErsal = string.Format("{0:n0}", Model.PostServicePrice);
 
 }
 <div class="container mt-4">
@@ -94,19 +94,23 @@
                 <p class="color-black">@persiandt.Day @persiandt.MonthName @persiandt.Year <span class="span-dot"></span> شماره سفارش @Model.OrderNo</p>
             </div>
             @{
-                if (Model.FinalStatusId == 21)
-                {
+                var percent = 0;
+                if (Model.FinalStatusId == 18) { percent = 65; }
+                else if (Model.FinalStatusId == 19 || Model.FinalStatusId == 20) { percent = 80; }
+                else if (Model.FinalStatusId == 12) { percent = 50; }
+                else if (Model.FinalStatusId == 27) { percent = 100; }
+                else if (Model.FinalStatusId == 21) { percent = 100; }
+
                     <div class="col-12 col-sm-6 text-right">
                         <div class="col-12">
                             <div dir="ltr">
                                 <div class="progress" style="width:50%">
-                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: @percent%" aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="@percent"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12"><span class="text-success" style="font-size: 1rem;">تحویل مرسوله به مشتری</span></div>
                     </div>
-                }
             }
         </div>
         <hr />
@@ -127,7 +131,7 @@
                     <span>ارسال:</span><span class="color-black pl-1 pr-3">@Model.PostTypeName</span>
                     <span> <span class="span-dot"></span> هزینه ارسال:</span><span class="color-black pl-1 pr-3">@hazinehErsal</span>
                 </p>
-                <p>مبلغ کل: <span class="color-black pl-1 pr-3">@Model.FinalPrice تومان</span></p>
+                <p>مبلغ کل: <span class="color-black pl-1 pr-3">@string.Format("{0:n0}", Model.FinalPrice) تومان</span></p>
             </div>
             <div class="col-12 col-sm-6 text-right">
                 <p>
@@ -149,7 +153,7 @@
                             <div class="col-3 col-sm-3">@item.TransactionDate</div>
                             <div class="col-3 col-sm-3"> @item.FinalStatus</div>
                             <div class="col-3 col-sm-3"><i class="fa fa-check-circle fa-checked-full fa-2x"></i><!--<i class="fa fa-check-circle fa-checked-blank fa-2x"></i>--></div>
-                            <div class="col-3 col-sm-3">@item.PaymentPrice تومان</div>
+                            <div class="col-3 col-sm-3">@string.Format("{0:n0}", item.PaymentPrice) تومان</div>
                         </div>
                         <hr />
                     }
@@ -172,8 +176,8 @@
                                     </a>
                                     <ul class="list-unstyled ml-3 orderdetail-list-desc">
                                         <li><span class="color-black pl-1 pr-2"><span class="pl-2 pr-2">@item.ProductName</span> <span class="pl-2 pr-2">کد @item.ProductCode</span></span></li>
-                                        <li><span class="pl-1 pr-2">قیمت واحد: <span class="color-black">@item.ProductPrice تومان</span></span></li>
-                                        <li><span class="pl-1 pr-2">بسته بندی: <span class="color-black">@item.PackingPrice تومان</span></span></li>
+                                        <li><span class="pl-1 pr-2">قیمت واحد: <span class="color-black">@string.Format("{0:n0}", item.ProductPrice) تومان</span></span></li>
+                                        <li><span class="pl-1 pr-2">بسته بندی: <span class="color-black">@string.Format("{0:n0}", item.PackingPrice) تومان</span></span></li>
                                         <li>
                                             <span class="pl-1 pr-2">
                                                 شناسه یکتای محصول: <span>

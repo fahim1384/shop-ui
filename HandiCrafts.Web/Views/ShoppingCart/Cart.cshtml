@@ -333,17 +333,17 @@
                         var total = $("span.total-cart").text();
 
                         if (objOffers?.value) {
-                            $("#offerPrecent").html(objOffers?.value);
+                            $("#offerPrecent").html(comma(objOffers?.value));
 
                             if (objOffers?.maximumPrice != null) {
                                 if (objOffers?.maximumPrice < parseInt(total) * parseInt(objOffers?.value)) {
-                                    $("#totalBeforeOffer").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
-                                    $(".totalPayment").html(parseInt(total) - parseInt(objOffers?.maximumPrice));
+                                    $("#totalBeforeOffer").html(comma(parseInt(total) - parseInt(objOffers?.maximumPrice)));
+                                    $(".totalPayment").html(comma(parseInt(total) - parseInt(objOffers?.maximumPrice)));
                                     allData.totalbeforeOffer = parseInt(total) - parseInt(objOffers?.maximumPrice);
                                     allData.offerEmalshode = parseInt(objOffers?.maximumPrice);
                                 } else {
-                                    $("#totalBeforeOffer").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
-                                    $(".totalPayment").html(parseInt(total) - parseInt(total) * parseInt(objOffers?.value));
+                                    $("#totalBeforeOffer").html(comma(parseInt(total) - parseInt(total) * parseInt(objOffers?.value)));
+                                    $(".totalPayment").html(comma(parseInt(total) - parseInt(total) * parseInt(objOffers?.value)));
                                     allData.totalbeforeOffer = parseInt(total) - parseInt(total) * parseInt(objOffers?.value);
                                     allData.offerEmalshode = parseInt(total) * parseInt(objOffers?.value);
                                 }
@@ -479,10 +479,10 @@
                                 $("input[data-pkinputhide='" + prd + "']").val(this.id/*packinggTypeId*/);
                                 $("input[data-pkinputhide='" + prd + "']").attr("data-hazineh", this?.price ?? 0);
 
-                                $("#packingprice").html(this?.price ?? 0);
+                                $("#packingprice").html(comma(this?.price ?? 0));
                                 allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt(this?.price ?? 0);
 
-                                $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+                                $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
                             }
 
                             if (pkselected != undefined && pkselected != null) {
@@ -493,10 +493,10 @@
                                 $("input[data-pkinputhide='" + prd + "']").val(this.id/*packinggTypeId*/);
                                 $("input[data-pkinputhide='" + prd + "']").attr("data-hazineh", this?.price ?? 0);
 
-                                $("#packingprice").html(this?.price ?? 0);
+                                $("#packingprice").html(comma(this?.price ?? 0));
                                 allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt(this?.price ?? 0);
 
-                                $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+                                $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
                             }
 
                             var opTitle = this.packingTypeName != undefined ? this.packingTypeName : "عادی";
@@ -528,10 +528,10 @@
                 $("input[data-pkinputhide='" + $(this).attr("data-pkCmbId") + "']").val($(this).val());
                 $("input[data-pkinputhide='" + $(this).attr("data-pkCmbId") + "']").attr("data-hazineh", $(this).find('option:selected').attr("hazineh"));
 
-                $("#packingprice").html($(this).find('option:selected').attr("hazineh"));
+                $("#packingprice").html(comma($(this).find('option:selected').attr("hazineh")));
                 allData.totalbeforeHazinehBastehbandi = parseInt(allData.totalbeforeOffer) + parseInt($(this).find('option:selected').attr("hazineh"));
 
-                $("span.totalPayment").html(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi);
+                $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
 
                 CustomerOrderPreview();
             }
@@ -652,10 +652,10 @@
                         var obj = result.data.obj;
 
                         //$("#offerPrecent").html(result.data.?.value);
-                        $("#totalBeforeOffer").html(obj.orderPrice);
+                        $("#totalBeforeOffer").html(comma(obj.orderPrice));
                         //$("#packingprice").html(this?.price ?? 0);
-                        $("span.totalPayment").html(obj.finalPrice);
-                        $("span.hazine-ersal").html(obj.postServicePrice);
+                        $("span.totalPayment").html(comma(obj.finalPrice));
+                        $("span.hazine-ersal").html(comma(obj.postServicePrice));
                         $("#offerPrecent").val(obj.offerValue);
                     }
                     else {

@@ -21,6 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Order\OnlinePaymentResult.cshtml" />
+    <None Include="Views\Order\OrderById.cshtml" />
+    <None Include="Views\Order\OrdersHistory.cshtml" />
+    <None Include="Views\Product\ByFilter.cshtml" />
+    <None Include="Views\Product\Index.cshtml" />
+    <None Include="Views\ShoppingCart\Address.cshtml" />
+    <None Include="Views\ShoppingCart\Cart.cshtml" />
+    <None Include="Views\ShoppingCart\InsertAddress.cshtml" />
+    <None Include="Views\ShoppingCart\_Address.cshtml" />
     <None Include="wwwroot\lib\jquery-ajax-unobtrusive\jquery.unobtrusive-ajax.js" />
     <None Include="wwwroot\lib\jquery-ajax-unobtrusive\jquery.unobtrusive-ajax.min.js" />
   </ItemGroup>

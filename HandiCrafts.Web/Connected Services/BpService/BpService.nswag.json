@@ -673,6 +673,56 @@
         }
       }
     },
+    "/api/Account/SellerRegister": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "ثبت نام صنعتگر به سیستم",
+        "operationId": "SellerRegister",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LongResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/CatProduct/InsertCatProduct": {
       "post": {
         "tags": [
@@ -1380,6 +1430,14 @@
         ],
         "operationId": "UploadSellerDocument",
         "parameters": [
+          {
+            "name": "sellerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
           {
             "name": "documentId",
             "in": "query",
@@ -3990,55 +4048,6 @@
         }
       }
     },
-    "/api/Account/SellerRegister_UI": {
-      "post": {
-        "tags": [
-          "Seller"
-        ],
-        "operationId": "SellerRegister_UI",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SellerRegisterDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SellerRegisterDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SellerRegisterDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/LongResult"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LongResult"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LongResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/Slider/InsertSlider": {
       "post": {
         "tags": [
@@ -4560,6 +4569,159 @@
           },
           "obj": {
             "$ref": "#/components/schemas/CustomerProfileDto"
+          }
+        }
+      },
+      "SellerAddressDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "titel": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "xgps": {
+            "type": "string",
+            "nullable": true
+          },
+          "ygps": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cityId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "tel": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fax": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "SellerRegisterDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "realOrLegal": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "fname": {
+            "type": "string",
+            "nullable": true
+          },
+          "passWord": {
+            "type": "string",
+            "nullable": true
+          },
+          "melliCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "gender": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "identityNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tel": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "secondMobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "shabaNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "bdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "haveMobileApp": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "mobileAppVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobileAppTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "address": {
+            "$ref": "#/components/schemas/SellerAddressDto"
+          }
+        }
+      },
+      "LongResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "objList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
           }
         }
       },
@@ -5889,6 +6051,15 @@
           "melliCode": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "identityNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "tel": {
@@ -11346,32 +11517,6 @@
           }
         }
       },
-      "LongResult": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "resultCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "resultMessage": {
-            "type": "string",
-            "nullable": true
-          },
-          "totalCount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "objList": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        }
-      },
       "FamousCommentsDto": {
         "type": "object",
         "additionalProperties": false,
@@ -13419,27 +13564,6 @@
             "items": {
               "$ref": "#/components/schemas/ProductImageDto"
             }
-          }
-        }
-      },
-      "SellerRegisterDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "email",
-          "hpassword",
-          "mobile"
-        ],
-        "properties": {
-          "hpassword": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "mobile": {
-            "type": "integer",
-            "format": "int64"
           }
         }
       },

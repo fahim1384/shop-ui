@@ -79,12 +79,40 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        public partial class LoginResultDtoSingleResult2
+        {
+            [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+            public int ResultCode { get; set; }
+
+            [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+            public string ResultMessage { get; set; }
+
+            [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+            public LoginResultDto Obj { get; set; }
+
+            public string ToJson()
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+            }
+
+            public static LoginResultDtoSingleResult FromJson(string data)
+            {
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<LoginResultDtoSingleResult>(data);
+            }
+
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public Task<ResponseState<LoginRegisterDto>> Login(ShortLoginModel model)
         {
             return TryCatch(async () =>
             {
+                /*LoginResultDtoSingleResult2 result2 = new LoginResultDtoSingleResult2() { ResultCode = 1, ResultMessage = "fdggfdg" };
+
+                string serilize1 = JsonConvert.SerializeObject(result2);
+                var s = JsonConvert.DeserializeObject<LoginResultDtoSingleResult2>(serilize1);*/
+
 
                 HttpClient httpClient = new HttpClient();
 
@@ -106,6 +134,10 @@ namespace HandiCrafts.Web.Controllers
                 }
 
                 var result = await client.UIAsync(email, mobile);
+
+                if (result.ResultCode != 200)
+                    return Error<LoginRegisterDto>(data: null, message: result.ResultMessage);
+
 
                 HttpContext.Session.SetString(_fullname, mobile.ToString());
 
@@ -495,9 +527,9 @@ namespace HandiCrafts.Web.Controllers
             var result = client.GetProfileInfoAsync().Result;
 
             PersianDateTime persianDate = new PersianDateTime(DateTime.Now);
-            if(result.Obj.Bdate != null) persianDate= new PersianDateTime(result.Obj.Bdate.Value.DateTime);
-            
-            string mobile="";
+            if (result.Obj.Bdate != null) persianDate = new PersianDateTime(result.Obj.Bdate.Value.DateTime);
+
+            string mobile = "";
             string shoghl = "";
 
             if (result.Obj.Mobile != null)
@@ -512,7 +544,7 @@ namespace HandiCrafts.Web.Controllers
 
             ProfileInfo profile = new ProfileInfo()
             {
-                Bdate = persianDate.Year.ToString()+"/"+ persianDate.Month.ToString() + "/"+persianDate.Day.ToString(),
+                Bdate = persianDate.Year.ToString() + "/" + persianDate.Month.ToString() + "/" + persianDate.Day.ToString(),
                 Email = result.Obj.Email,
                 FullName = result.Obj.Name,
                 MelliCode = result.Obj.MelliCode.ToString(),
@@ -542,12 +574,12 @@ namespace HandiCrafts.Web.Controllers
                 CustomerProfileDto customerProfileDto = new CustomerProfileDto()
                 {
                     Bdate = miladiDate,
-                    Email =model.Email,
+                    Email = model.Email,
                     Name = model.FullName,
-                    MelliCode= long.Parse(model.MelliCode),
-                    Password= model.Password,
+                    MelliCode = long.Parse(model.MelliCode),
+                    Password = model.Password,
                     Mobile = long.Parse(model.MobileNo),
-                    WorkId = long.Parse( model.Shoghl)
+                    WorkId = long.Parse(model.Shoghl)
                 };
 
                 var result = await client.UpdateProfileInfoAsync(customerProfileDto);

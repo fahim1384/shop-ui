@@ -12,6 +12,61 @@
     <link href="~/fonts/sans/SansFont.css" rel="stylesheet" />
     <link href="~/css/sellercss/seller.css" rel="stylesheet" />
     @RenderSection("Styles", required: false)
+    <style>
+        ._scrollbar {
+            height: 800px;
+            background: #F5F5F5;
+            overflow-y: scroll;
+        }
+
+        ._force-overflow {
+            min-height: 1200px;
+        }
+
+        ._scrollablebox::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        ._scrollablebox::-webkit-scrollbar {
+            width: 6px;
+            background-color: #F5F5F5;
+        }
+
+        ._scrollablebox::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+            background-color: #838383;
+        }
+
+        .scrollbar {
+            direction: ltr;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .force-overflow {
+            direction: rtl;
+        }
+
+        #style-1::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #style-1::-webkit-scrollbar {
+            width: 6px;
+            background-color: #F5F5F5;
+        }
+
+        #style-1::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
     <!-- LOADER -->
@@ -73,7 +128,7 @@
 
                         </div>
                     </aside>
-                    <main class="col-md-7 seller-main-form">
+                    <main class="col-md-7 seller-main-form scrollbar" id="style-1">
                         @RenderBody()
                     </main>
                 </div>

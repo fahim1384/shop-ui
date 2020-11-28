@@ -27,8 +27,8 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
 
         [Display(Name = "کد تایید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [RegularExpression("[0-9]{5}", ErrorMessage = "کد تایید معتبر نمی باشد")]
-        public int AcceptCode { get; set; }
+        [RegularExpression("[0-9]{4}", ErrorMessage = "کد تایید معتبر نمی باشد")]
+        public string AcceptCode { get; set; }
     }
 
     public class PersonalInformationVModel
@@ -47,10 +47,10 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
 
         [Display(Name = "جنسیت")]
         [Required(ErrorMessage = "فیلد {0} اجباری است")]
-        public bool Gender { get; set; }
+        public int Gender { get; set; }
 
         [Display(Name = "شماره شناسنامه")]
-        [Required(ErrorMessage = "فیلد {0} اجباری است")]
+        //[Required(ErrorMessage = "فیلد {0} اجباری است")]
         public string ShenasnameNo { get; set; }
 
         [Display(Name = "کد ملی")]
@@ -72,8 +72,9 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
 
         [Display(Name = "کد پستی")]
         [Required(ErrorMessage = "فیلد {0} اجباری است")]
-        [DataType(DataType.PostalCode)]
-        [RegularExpression(pattern: @"\b(?!(\d)\1{3})[13-9]{4}[1346-9][013-9]{5}\b", ErrorMessage ="کد پستی شما نادرست می‌باشد")]
+        //[DataType(DataType.PostalCode)]
+        //[RegularExpression(pattern: @"\b(?!(\d)\1{3})[13-9]{4}[1346-9][013-9]{5}\b", ErrorMessage ="کد پستی شما نادرست می‌باشد")]
+        [RegularExpression(@"^(?!00000)[0-9]{10,10}$", ErrorMessage = "کد پستی شما نادرست می‌باشد")]
         public string PostalCode { get; set; }
 
         [Display(Name = "طول جغرافیایی")]
@@ -86,7 +87,7 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
 
         [Display(Name = "تلفن ثابت")]
         [Required(ErrorMessage = "فیلد {0} اجباری است")]
-        [RegularExpression("^0[0-9]{2,}-[0-9]{8}$", ErrorMessage = "شمارهتلفن معتبر نمی باشد")]
+        [RegularExpression("^0[0-9]{10}$", ErrorMessage = "شماره تلفن معتبر نمی باشد")]
         public string Phone { get; set; }
 
         [Display(Name = "تلفن همراه")]
@@ -96,12 +97,12 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
         public string MobileNo { get; set; }
 
         [Display(Name = "تلفن همراه(ثانویه)")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        [RegularExpression("09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "شماره موبایل معتبر نمی باشد")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[MaxLength(11, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [RegularExpression("^$|09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "شماره موبایل معتبر نمی باشد")]
         public string MobileNo2 { get; set; }
 
-        [Display(Name = "شماره شب(به نام شخص)")]
+        [Display(Name = "شماره شبا(به نام شخص)")]
         [Required(ErrorMessage = "فیلد {0} اجباری است")]
         public string ShabaCode { get; set; }
 
@@ -116,10 +117,10 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
         [Display(Name = "کد کاربر")]
         public long UserId { get; set; }
 
-        [Display(Name = "کد تایید")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [RegularExpression("[0-9]{5}", ErrorMessage = "کد تایید معتبر نمی باشد")]
-        public int AcceptCode { get; set; }
+        //[Display(Name = "کد تایید")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[RegularExpression("[0-9]{5}", ErrorMessage = "کد تایید معتبر نمی باشد")]
+        //public int AcceptCode { get; set; }
     }
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]

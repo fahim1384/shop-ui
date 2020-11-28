@@ -55,7 +55,7 @@ namespace HandiCrafts.Web.Controllers
                 };
 
                 if (result.ResultCode != 200)
-                    return Error<CsBankResult>(data:null, message: result.ResultMessage);
+                    return Error<CsBankResult>(data: null, message: result.ResultMessage);
 
                 return Success(data: bankResult, message: result.Obj);
             });

@@ -131,514 +131,520 @@
                                                 <i class="fa fa-star cyan"></i>*@
                                         </p>
                                         <div class="d-flex justify-content-between custome-muted-header">
-                                            <h5 class="card-title pricing-card-title">@Model.Price ت <small class="text-muted amount ml-2">@Model.OfferAmount</small></h5>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center custome-muted-header">
-                                            <form class="form-inline mt-2" dir="rtl">
+                                            <h5 class="card-title pricing-card-title">
+                                            @string.Format("{0:n0}", Model.Price) ت
+                                            @if (Model.OfferAmount != 0)
+                                            {
+                                                <small class="text-muted amount ml-2">@string.Format("{0:n0}", Model.OfferAmount)</small>
+                                            }
+                                        </h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center custome-muted-header">
+                                        <form class="form-inline mt-2" dir="rtl">
 
-                                                <button data-product-id="@Model.Id" data-product-image="@mainImageUrl" data-product-name="@Model.Name" data-product-price="@Model.Price" class="add-to-cart btn btn-info mx-1 my-sm-0" type="button">افزودن به سبد خرید</button>
+                                            <button data-product-id="@Model.Id" data-product-image="@mainImageUrl" data-product-name="@Model.Name" data-product-price="@Model.Price" class="add-to-cart btn btn-info mx-1 my-sm-0" type="button">افزودن به سبد خرید</button>
 
-                                                <div class="shared-box">
-                                                    <div>
-                                                        <i class="fa fa-heart fa-2x solid-fa"></i>
-                                                        <i class="fa fa-bell fa-2x solid-fa"></i>
-                                                        <a data-toggle="modal" data-target="#sharedModal"><i class="fa fa-share-alt fa-2x solid-fa"></i></a>
-                                                    </div>
+                                            <div class="shared-box">
+                                                <div>
+                                                    <i class="fa fa-heart fa-2x solid-fa"></i>
+                                                    <i class="fa fa-bell fa-2x solid-fa"></i>
+                                                    <a data-toggle="modal" data-target="#sharedModal"><i class="fa fa-share-alt fa-2x solid-fa"></i></a>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-
-                                <hr />
-
-                                <div class="row m-0 text-center">
-                                    <div class="col"><img src="~/image/icons/no-color/truck.png" /></div>
-                                    <div class="col"><img src="~/image/icons/no-color/garanti.png" /></div>
-                                    <div class="col"><img src="~/image/icons/no-color/support.png" /></div>
-                                    <div class="col"><img src="~/image/icons/no-color/7day.png" /></div>
-                                    <div class="col"><img src="~/image/icons/no-color/Packet.png" /></div>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="mt-5">
-            <div class="container product-detail-tabs">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">نقد و بررسی</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">مشخصات</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">نظرات کاربران</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">پرسش و پاسخ</a>
-                    </li>
-                </ul>
-                <div class="tab-content bg-gray" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <article>
-                            <h2 class="c-params__headline">
-                                نقد و بررسی اجمالی
-                                <span>@Model.Name</span>
-                            </h2><section class="c-content-expert__summary">
-                                <div class="c-mask js-mask is-masked">
-                                    <div class="c-mask__text c-mask__text--product-summary js-mask__text is-active" style="max-height: unset; height: unset;">
-                                        @Html.Raw(Model.Description)
-                                    </div>
-                                </div>
-                            </section>
-                        </article>
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <article>
-                            <h2 class="c-params__headline">
-                                مشخصات فنی            <span></span>
-                            </h2>
-                            <section>
-                                <h3 class="c-params__title">مشخصات کلی محصول</h3>
-                                <ul class="c-params__list paramslist">
-                                    <li>
-                                        <div class="c-params__list-key">
-                                            <span class="block">مشخصه خاص</span>
-                                        </div>
-                                        <div class="c-params__list-value">
-                                            <span class="block">
-                                                ندارد
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </section>
+                            <hr />
 
-                        </article>
-                    </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <article>
-                            <h2 class="c-params__headline">
-                                امتیاز کاربران به این کالا : @Model.Rating            <span></span>
-                            </h2>
-                            <section>
-                                <h3 class="c-params__title">نطرات کاربران</h3>
-                                <ul class="c-params__list userCommentList">
-                                    <li>
-                                        <div class="c-params__list-value">
-                                            <span class="block">
-                                                نظری ثبت نشده است
-                                            </span>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </section>
-
-                        </article>
-                    </div>
-                    <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!---- کالاهای مرتبط با این کالا ---->
-        <section class="index-products card-margin-0 similarproductBox d-none">
-            <div>
-                <section class="text-center pt-5 pb-4">
-                    <div class="container">
-                        <h4 class="display-9 after-before-bordered">محصولات مرتبط</h4>
-
-                        <p class="see-more-p">
-                            <a href="#" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <div class="container">
-                <div class="card-deck mb-3 text-center" id="similarproductBoxContent">
-                </div>
-            </div>
-        </section>
-
-        <!---- اشتراک گذاری ---->
-        <div class="modal fade" id="sharedModal" tabindex="-1" role="dialog" aria-labelledby="اشتراک گذاری" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">اشتراک گذاری</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="font-weight-bold text-muted">
-                            با استفاده از روش های زیر می توانید این کالا را با دوستان خود به اشتراک بگذارید.
-                        </p>
-                        <p class="mt-5">
-                            <a href=""><img src="~/image/icons/socials/icons8-aparat-480.png" class="width-40px" /></a>
-                            <a href=""><img src="~/image/icons/socials/icons8-pinterest-1000.png" class="width-40px" /></a>
-                            <a href=""><img src="~/image/icons/socials/icons8-facebook-1000.png" class="width-40px" /></a>
-                            <a href=""><img src="~/image/icons/socials/icons8-twitter-1000.png" class="width-40px" /></a>
-                            <a href=""><img src="~/image/icons/socials/icons8-telegram-app-1000.png" class="width-40px" /></a>
-                            <a href=""><img src="~/image/icons/socials/icons8-instagram-1000.png" class="width-40px" /></a>
-                            <a class="btn btn-outline-dark"><i class="fa fa-copy"></i> کپی لینک</a>
-                        </p>
-                        <hr />
-                        <div class="row m-0">
-                            <div class="col-6">
-                                <h4>جایزه شما</h4>
-                                <p class="text-muted">با دعوت دوستانتان، پس از اولین خریدشان،کد تخفیف و امتیاز هدیه بگیرید</p>
-                                <p><a class="btn text-danger btn-outline-info">دریافت کد تخفیف</a></p>
-                            </div>
-                            <div class="col-6">
-                                <img src="~/image/share-popup.png" />
+                            <div class="row m-0 text-center">
+                                <div class="col"><img src="~/image/icons/no-color/truck.png" /></div>
+                                <div class="col"><img src="~/image/icons/no-color/garanti.png" /></div>
+                                <div class="col"><img src="~/image/icons/no-color/support.png" /></div>
+                                <div class="col"><img src="~/image/icons/no-color/7day.png" /></div>
+                                <div class="col"><img src="~/image/icons/no-color/Packet.png" /></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container product-detail-tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">نقد و بررسی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">مشخصات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">نظرات کاربران</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">پرسش و پاسخ</a>
+                </li>
+            </ul>
+            <div class="tab-content bg-gray" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <article>
+                        <h2 class="c-params__headline">
+                            نقد و بررسی اجمالی
+                            <span>@Model.Name</span>
+                        </h2><section class="c-content-expert__summary">
+                            <div class="c-mask js-mask is-masked">
+                                <div class="c-mask__text c-mask__text--product-summary js-mask__text is-active" style="max-height: unset; height: unset;">
+                                    @Html.Raw(Model.Description)
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <article>
+                        <h2 class="c-params__headline">
+                            مشخصات فنی            <span></span>
+                        </h2>
+                        <section>
+                            <h3 class="c-params__title">مشخصات کلی محصول</h3>
+                            <ul class="c-params__list paramslist">
+                                <li>
+                                    <div class="c-params__list-key">
+                                        <span class="block">مشخصه خاص</span>
+                                    </div>
+                                    <div class="c-params__list-value">
+                                        <span class="block">
+                                            ندارد
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </article>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <article>
+                        <h2 class="c-params__headline">
+                            امتیاز کاربران به این کالا : @Model.Rating            <span></span>
+                        </h2>
+                        <section>
+                            <h3 class="c-params__title">نطرات کاربران</h3>
+                            <ul class="c-params__list userCommentList">
+                                <li>
+                                    <div class="c-params__list-value">
+                                        <span class="block">
+                                            نظری ثبت نشده است
+                                        </span>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </section>
+
+                    </article>
+                </div>
+                <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab2">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---- کالاهای مرتبط با این کالا ---->
+    <section class="index-products card-margin-0 similarproductBox d-none">
+        <div>
+            <section class="text-center pt-5 pb-4">
+                <div class="container">
+                    <h4 class="display-9 after-before-bordered">محصولات مرتبط</h4>
+
+                    <p class="see-more-p">
+                        <a href="#" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <div class="container">
+            <div class="card-deck mb-3 text-center" id="similarproductBoxContent">
+            </div>
+        </div>
+    </section>
+
+    <!---- اشتراک گذاری ---->
+    <div class="modal fade" id="sharedModal" tabindex="-1" role="dialog" aria-labelledby="اشتراک گذاری" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">اشتراک گذاری</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="font-weight-bold text-muted">
+                        با استفاده از روش های زیر می توانید این کالا را با دوستان خود به اشتراک بگذارید.
+                    </p>
+                    <p class="mt-5">
+                        <a href=""><img src="~/image/icons/socials/icons8-aparat-480.png" class="width-40px" /></a>
+                        <a href=""><img src="~/image/icons/socials/icons8-pinterest-1000.png" class="width-40px" /></a>
+                        <a href=""><img src="~/image/icons/socials/icons8-facebook-1000.png" class="width-40px" /></a>
+                        <a href=""><img src="~/image/icons/socials/icons8-twitter-1000.png" class="width-40px" /></a>
+                        <a href=""><img src="~/image/icons/socials/icons8-telegram-app-1000.png" class="width-40px" /></a>
+                        <a href=""><img src="~/image/icons/socials/icons8-instagram-1000.png" class="width-40px" /></a>
+                        <a class="btn btn-outline-dark"><i class="fa fa-copy"></i> کپی لینک</a>
+                    </p>
+                    <hr />
+                    <div class="row m-0">
+                        <div class="col-6">
+                            <h4>جایزه شما</h4>
+                            <p class="text-muted">با دعوت دوستانتان، پس از اولین خریدشان،کد تخفیف و امتیاز هدیه بگیرید</p>
+                            <p><a class="btn text-danger btn-outline-info">دریافت کد تخفیف</a></p>
+                        </div>
+                        <div class="col-6">
+                            <img src="~/image/share-popup.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-        @section Scripts{
-            <script src="~/plugins/EasyZoom-master/dist/easyzoom.js"></script>
-            <script>
-                $(".color-product-a").on("click", function () {
-                    $(".color-product-a").removeClass("active");
-                    $(this).addClass("active");
+    @section Scripts{
+        <script src="~/plugins/EasyZoom-master/dist/easyzoom.js"></script>
+        <script>
+            $(".color-product-a").on("click", function () {
+                $(".color-product-a").removeClass("active");
+                $(this).addClass("active");
+            });
+
+            $("input[name=packageType]").on("click", function () {
+                $(".package-type-radio-box").removeClass("active");
+                $(this).parent("div.package-type-radio-box").addClass("active");
+            });
+
+            let LoadColors = () => {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Product/GetProductColorList_UI",
+                    data: {
+                        productId: $("input[name='productId']").val()
+                    },
+                    success: function (result) {
+                        if (result.success == true && result.data != null) {
+                            $("#productColorListbox").html('');
+                            $.each(result.data.objList, function (e, v) {
+
+                                var active = "";
+                                if (e == 0) active = "active";
+
+                                $("#productColorListbox").append(`
+                                                            <li>
+                                                                <a class="color-product-a ${active}" data-color-id="${v.colorId}">
+                                                                    <div>
+                                                                        <div class="circle-color-product" style="background:${v.colorCode}">
+                                                                    </div> ${v.colorName}</div>
+                                                                </a>
+                                                            </li>
+                                                        `);
+
+                            });
+
+                            $(".color-product-a").on("click", function () {
+                                $(".color-product-a").removeClass("active");
+                                $(this).addClass("active");
+                            });
+
+                            if (result.data.objList.length == 0) $("#productColorListbox").append(`<li class="mt-5px">فاقد رنگ بندی</li>`);
+                        } else {
+                            $("#productColorListbox").append(`<li class="mt-5px">فاقد رنگ بندی</li>`);
+                        }
+                    }
                 });
+            }
 
-                $("input[name=packageType]").on("click", function () {
-                    $(".package-type-radio-box").removeClass("active");
-                    $(this).parent("div.package-type-radio-box").addClass("active");
+            let LoadPackages = () => {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Product/GetProductPackingTypeList_UI",
+                    data: {
+                        productId: $("input[name='productId']").val()
+                    },
+                    success: function (result) {
+                        if (result.success == true && result.data != null) {
+                            $("#productPackageListbox").html('');
+                            $.each(result.data.objList, function (e, v) {
+
+                                var active = "";
+                                if (e == 0) active = "active";
+
+                                $("#productPackageListbox").append(`
+                                                         <div class="form-check form-check-inline package-type-radio-box ${active}">
+                                                             <input class="form-check-input" type="radio" name="packageType" value="${v.id/*packinggTypeId*/}" ${e == 0 ? 'checked' : ''}>
+                                                             <label class="form-check-label" for="inlineRadio1"> ${v.packingTypeName ? v.packingTypeName : 'نامشخص'}</label>
+                                                         </div>
+                                                     `);
+
+                                $("#productpackagesbox").removeClass("d-none");
+                            });
+
+                            $("input[name=packageType]").on("click", function () {
+                                $(".package-type-radio-box").removeClass("active");
+                                $(this).parent("div.package-type-radio-box").addClass("active");
+                            });
+
+                        } else {
+                            $("#productpackagesbox").addClass("d-none");
+                        }
+                    }
                 });
+            };
 
-                let LoadColors = () => {
-                    $.ajax({
-                        type: 'POST',
-                        url: "/Product/GetProductColorList_UI",
-                        data: {
-                            productId: $("input[name='productId']").val()
-                        },
-                        success: function (result) {
-                            if (result.success == true && result.data != null) {
-                                $("#productColorListbox").html('');
-                                $.each(result.data.objList, function (e, v) {
+            let LoadParamsList = () => {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Product/GetProductParamList_UI",
+                    data: {
+                        productId: $("input[name='productId']").val()
+                    },
+                    success: function (result) {
+                        if (result.success == true && result.data != null) {
+                            if (result.data.objList.length > 0) $(".paramslist").html('');
+                            $.each(result.data.objList, function (e, v) {
+                                $(".paramslist").append(`<li>
+                                                                                                <div class="c-params__list-key">
+                                                                                                    <span class="block">${v.parameterName}</span>
+                                                                                                </div>
+                                                                                                <div class="c-params__list-value">
+                                                                                                    <span class="block">
+                                                                                                        ${v?.value ?? v.value ? v.value : 'نامشخص'}
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </li>`);
+                            });
 
-                                    var active = "";
-                                    if (e == 0) active = "active";
+                        }
+                    }
+                });
+            };
 
-                                    $("#productColorListbox").append(`
-                                                    <li>
-                                                        <a class="color-product-a ${active}" data-color-id="${v.colorId}">
-                                                            <div>
-                                                                <div class="circle-color-product" style="background:${v.colorCode}">
-                                                            </div> ${v.colorName}</div>
+            let LoadImageList = () => {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Product/GetImageListByProductId_UI",
+                    data: {
+                        productId: $("input[name='productId']").val()
+                    },
+                    success: function (result) {
+                        if (result.success == true && result.data != null) {
+                            $("#productMediaLists").html('');
+                            $.each(result.data.objList, function (e, v) {
+                                if (e == 4) {
+                                    $("#productMediaLists").append(`<div class="col-3 product-media-item">
+                                                    <div class="thumb-wrapper">
+                                                        <a href="">
+                                                            <img class="w-100 height-175px border-radius-10" src="/image/icons/gallery.png" />
                                                         </a>
-                                                    </li>
-                                                `);
+                                                    </div></div>`);
+                                }
 
-                                });
+                                if (e < 3) {
+                                    $("#productMediaLists").append(`<div class="col-3 product-media-item">
+                                                    <div class="thumb-wrapper">
+                                                        <a href="${v.imageUrl}" data-standard="${v.imageUrl}">
+                                                            <img class="w-100 height-175px border-radius-10" src="${v.imageUrl}" />
+                                                        </a>
+                                                    </div></div>`);
+                                }
+                            });
 
-                                $(".color-product-a").on("click", function () {
-                                    $(".color-product-a").removeClass("active");
-                                    $(this).addClass("active");
-                                });
-
-                                if (result.data.objList.length == 0) $("#productColorListbox").append(`<li class="mt-5px">فاقد رنگ بندی</li>`);
-                            } else {
-                                $("#productColorListbox").append(`<li class="mt-5px">فاقد رنگ بندی</li>`);
-                            }
                         }
-                    });
-                }
+                    }
+                });
+            };
 
-                let LoadPackages = () => {
+            let LoadCommentList = () => {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Product/GetProductCommentList_UI",
+                    data: {
+                        productId: $("input[name='productId']").val()
+                    },
+                    success: function (result) {
+                        if (result.success == true && result.data != null) {
+                            if (result.data.objList.length > 0) $(".userCommentList").html('');
+                            $.each(result.data.objList, function (e, v) {
+                                $(".userCommentList").append(`<li>
+                                                        <div class="c-params__list-key">
+                                                            <span class="block">${v.customerName}</span>
+                                                            <span class="block">در تاریخ ${v.commentDate ? v.commentDate : 'امروز'}</span>
+                                                            <span class="block">امتیاز: ${v.rate ? v.rate : 'نامشخص'}</span>
+                                                        </div>
+                                                        <div class="c-params__list-value">
+                                                            <span class="block">
+                                                               ${v.commentDesc}
+                                                            </span>
+                                                            <div class="c-comments__likes js-comment-like-container block">
+                                                                آیا این نظر برایتان مفید بود؟
+                                                                <button class="btn-like js-comment-like " data-counter="${v.likeCount}" data-comment="23">
+                                                                    <i class="fa fa-thumbs-up"></i>
+                                                                </button>
+
+                                                                <button class="btn-like js-comment-dislike " data-counter="${v.disLikeCount}" data-comment="23">
+                                                                    <i class="fa fa-thumbs-down"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>`);
+                            });
+
+                        }
+                    }
+                });
+            };
+
+            // محصولات مرتبط با این محصول
+            let GetRelatedProductListUI = () => {
+                try {
                     $.ajax({
                         type: 'POST',
-                        url: "/Product/GetProductPackingTypeList_UI",
-                        data: {
-                            productId: $("input[name='productId']").val()
-                        },
+                        url: "/Product/GetRelatedProductList_UI",
+
                         success: function (result) {
-                            if (result.success == true && result.data != null) {
-                                $("#productPackageListbox").html('');
+                            $("#similarproductBoxContent").html('');
+                            var similarproductBoxContent = $("#similarproductBoxContent");
+
+                            if (result.data != null) {
+
                                 $.each(result.data.objList, function (e, v) {
+                                    if (e < 4) { // نمایش 4 عدد
+                                        var rat = "";
+                                        if (v.rating != undefined) {
+                                            var r = v.rating.toFixed();
 
-                                    var active = "";
-                                    if (e == 0) active = "active";
-
-                                    $("#productPackageListbox").append(`
-                                                 <div class="form-check form-check-inline package-type-radio-box ${active}">
-                                                     <input class="form-check-input" type="radio" name="packageType" value="${v.id/*packinggTypeId*/}" ${e == 0 ? 'checked' : ''}>
-                                                     <label class="form-check-label" for="inlineRadio1"> ${v.packingTypeName ? v.packingTypeName : 'نامشخص'}</label>
-                                                 </div>
-                                             `);
-
-                                    $("#productpackagesbox").removeClass("d-none");
-                                });
-
-                                $("input[name=packageType]").on("click", function () {
-                                    $(".package-type-radio-box").removeClass("active");
-                                    $(this).parent("div.package-type-radio-box").addClass("active");
-                                });
-
-                            } else {
-                                $("#productpackagesbox").addClass("d-none");
-                            }
-                        }
-                    });
-                };
-
-                let LoadParamsList = () => {
-                    $.ajax({
-                        type: 'POST',
-                        url: "/Product/GetProductParamList_UI",
-                        data: {
-                            productId: $("input[name='productId']").val()
-                        },
-                        success: function (result) {
-                            if (result.success == true && result.data != null) {
-                                if (result.data.objList.length > 0) $(".paramslist").html('');
-                                $.each(result.data.objList, function (e, v) {
-                                    $(".paramslist").append(`<li>
-                                                                                        <div class="c-params__list-key">
-                                                                                            <span class="block">${v.parameterName}</span>
-                                                                                        </div>
-                                                                                        <div class="c-params__list-value">
-                                                                                            <span class="block">
-                                                                                                ${v?.value ?? v.value ? v.value : 'نامشخص'}
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </li>`);
-                                });
-
-                            }
-                        }
-                    });
-                };
-
-                let LoadImageList = () => {
-                    $.ajax({
-                        type: 'POST',
-                        url: "/Product/GetImageListByProductId_UI",
-                        data: {
-                            productId: $("input[name='productId']").val()
-                        },
-                        success: function (result) {
-                            if (result.success == true && result.data != null) {
-                                $("#productMediaLists").html('');
-                                $.each(result.data.objList, function (e, v) {
-                                    if (e == 4) {
-                                        $("#productMediaLists").append(`<div class="col-3 product-media-item">
-                                            <div class="thumb-wrapper">
-                                                <a href="">
-                                                    <img class="w-100 height-175px border-radius-10" src="/image/icons/gallery.png" />
-                                                </a>
-                                            </div></div>`);
-                                    }
-
-                                    if (e < 3) {
-                                        $("#productMediaLists").append(`<div class="col-3 product-media-item">
-                                            <div class="thumb-wrapper">
-                                                <a href="${v.imageUrl}" data-standard="${v.imageUrl}">
-                                                    <img class="w-100 height-175px border-radius-10" src="${v.imageUrl}" />
-                                                </a>
-                                            </div></div>`);
-                                    }
-                                });
-
-                            }
-                        }
-                    });
-                };
-
-                let LoadCommentList = () => {
-                    $.ajax({
-                        type: 'POST',
-                        url: "/Product/GetProductCommentList_UI",
-                        data: {
-                            productId: $("input[name='productId']").val()
-                        },
-                        success: function (result) {
-                            if (result.success == true && result.data != null) {
-                                if (result.data.objList.length > 0) $(".userCommentList").html('');
-                                $.each(result.data.objList, function (e, v) {
-                                    $(".userCommentList").append(`<li>
-                                                <div class="c-params__list-key">
-                                                    <span class="block">${v.customerName}</span>
-                                                    <span class="block">در تاریخ ${v.commentDate ? v.commentDate : 'امروز'}</span>
-                                                    <span class="block">امتیاز: ${v.rate ? v.rate : 'نامشخص'}</span>
-                                                </div>
-                                                <div class="c-params__list-value">
-                                                    <span class="block">
-                                                       ${v.commentDesc}
-                                                    </span>
-                                                    <div class="c-comments__likes js-comment-like-container block">
-                                                        آیا این نظر برایتان مفید بود؟
-                                                        <button class="btn-like js-comment-like " data-counter="${v.likeCount}" data-comment="23">
-                                                            <i class="fa fa-thumbs-up"></i>
-                                                        </button>
-
-                                                        <button class="btn-like js-comment-dislike " data-counter="${v.disLikeCount}" data-comment="23">
-                                                            <i class="fa fa-thumbs-down"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </li>`);
-                                });
-
-                            }
-                        }
-                    });
-                };
-
-                // محصولات مرتبط با این محصول
-                let GetRelatedProductListUI = () => {
-                    try {
-                        $.ajax({
-                            type: 'POST',
-                            url: "/Product/GetRelatedProductList_UI",
-
-                            success: function (result) {
-                                $("#similarproductBoxContent").html('');
-                                var similarproductBoxContent = $("#similarproductBoxContent");
-
-                                if (result.data != null) {
-
-                                    $.each(result.data.objList, function (e, v) {
-                                        if (e < 4) { // نمایش 4 عدد
-                                            var rat = "";
-                                            if (v.rating != undefined) {
-                                                var r = v.rating.toFixed();
-
-                                                for (var i = 5; i > 0; i--) {
-                                                    if (r - i < 0) {
-                                                        rat += `<i class="fa fa-star custom-fa"></i>`;
-                                                    } else {
-                                                        rat += `<i class="fa fa-star cyan"></i>`;
-                                                    }
-                                                }
-                                            } else {
-                                                for (var i = 0; i < 5; i++) {
+                                            for (var i = 5; i > 0; i--) {
+                                                if (r - i < 0) {
                                                     rat += `<i class="fa fa-star custom-fa"></i>`;
+                                                } else {
+                                                    rat += `<i class="fa fa-star cyan"></i>`;
                                                 }
                                             }
-                                            similarproductBoxContent.append(`
-                                                                                                    <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                                                                                       <a href="/product/Index?id=${v.id}">
-                                                                                                        <div class="shopping-thumbnail card mb-3">
-                                                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                                                                            <div class="card-body">
-                                                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                                                <p class="card-text ratingbox">
-                                                                                                                    ${rat}
-                                                                                                                </p>
-                                                                                                                <div class="d-flex justify-content-between align-items-center">
-                                                                                                                    <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                      </a>
-                                                                                                        <div class="caption">
-                                                                                                                <p>
-                                                                                                                    <b>
-                                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                                                    </b>
-                                                                                                                </p>
-                                                                                                            </div>
-                                                                                                    </div>
-                                                                                                `);
+                                        } else {
+                                            for (var i = 0; i < 5; i++) {
+                                                rat += `<i class="fa fa-star custom-fa"></i>`;
+                                            }
                                         }
-                                    });
+                                        similarproductBoxContent.append(`
+                                                                                                            <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
+                                                                                                               <a href="/product/Index?id=${v.id}">
+                                                                                                                <div class="shopping-thumbnail card mb-3">
+                                                                                                                    <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                                                    <div class="card-body">
+                                                                                                                        <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                                                        <p class="card-text ratingbox">
+                                                                                                                            ${rat}
+                                                                                                                        </p>
+                                                                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                                                                            <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                              </a>
+                                                                                                                <div class="caption">
+                                                                                                                        <p>
+                                                                                                                            <b>
+                                                                                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                                                <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                                                                <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                                                            </b>
+                                                                                                                        </p>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                        `);
+                                    }
+                                });
 
-                                    cartEvents.init();
-                                }
+                                cartEvents.init();
                             }
-                        });
-                    } catch (e) {
-                    }
-                }
-
-                function gotoMainImage(mediaSrc) {
-                    $("img.mainMediaImage").attr("src", mediaSrc + "?c=" + new Date().getTime());
-                    $("a.mainMediaImage").attr("href", mediaSrc + "?c=" + new Date().getTime());
-
-                    zoominit();
-                }
-
-                function zoominit() {
-
-                    // Instantiate EasyZoom instances
-                    var $easyzoom = $('.easyzoom').easyZoom();
-
-                    // Setup thumbnails example
-                    var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
-
-                    $('#productMediaLists').on('click', 'a', function (e) {
-                        var $this = $(this);
-
-                        e.preventDefault();
-
-                        // Use EasyZoom's `swap` method
-                        api1.swap($this.data('standard'), $this.attr('href'));
-                    });
-
-                    // Setup toggles example
-                    var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
-
-                    $('.toggle').on('click', function () {
-                        var $this = $(this);
-
-                        if ($this.data("active") === true) {
-                            $this.text("Switch on").data("active", false);
-                            api2.teardown();
-                        } else {
-                            $this.text("Switch off").data("active", true);
-                            api2._init();
                         }
                     });
+                } catch (e) {
                 }
-                // ========= Load Page =============
-                LoadParamsList();
+            }
 
-                LoadColors();
-
-                LoadPackages();
-
-                LoadImageList();
-
-                LoadCommentList();
-
-                GetRelatedProductListUI();
+            function gotoMainImage(mediaSrc) {
+                $("img.mainMediaImage").attr("src", mediaSrc + "?c=" + new Date().getTime());
+                $("a.mainMediaImage").attr("href", mediaSrc + "?c=" + new Date().getTime());
 
                 zoominit();
+            }
 
-            </script>
-        }
+            function zoominit() {
 
+                // Instantiate EasyZoom instances
+                var $easyzoom = $('.easyzoom').easyZoom();
+
+                // Setup thumbnails example
+                var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+                $('#productMediaLists').on('click', 'a', function (e) {
+                    var $this = $(this);
+
+                    e.preventDefault();
+
+                    // Use EasyZoom's `swap` method
+                    api1.swap($this.data('standard'), $this.attr('href'));
+                });
+
+                // Setup toggles example
+                var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
+
+                $('.toggle').on('click', function () {
+                    var $this = $(this);
+
+                    if ($this.data("active") === true) {
+                        $this.text("Switch on").data("active", false);
+                        api2.teardown();
+                    } else {
+                        $this.text("Switch off").data("active", true);
+                        api2._init();
+                    }
+                });
+            }
+            // ========= Load Page =============
+            LoadParamsList();
+
+            LoadColors();
+
+            LoadPackages();
+
+            LoadImageList();
+
+            LoadCommentList();
+
+            GetRelatedProductListUI();
+
+            zoominit();
+
+        </script>
     }
+
+}
 }

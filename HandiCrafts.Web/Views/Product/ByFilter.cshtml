@@ -411,7 +411,7 @@
     <script>
         // --------  SlideBar Price  ---------
         $("#ex9").on("change", function () {
-            $("#slidevalue").html($("#ex9").val().split(",")[0] + " تا " + $("#ex9").val().split(",")[1]);
+            $("#slidevalue").html(comma($("#ex9").val().split(",")[0]) + " تا " + comma($("#ex9").val().split(",")[1]));
 
             filters.minPrice = $("#ex9").val().split(",")[0];
             filters.maxPrice = $("#ex9").val().split(",")[1];
@@ -577,7 +577,7 @@
                                                          ${rat}
                                                      </p>
                                                      <div class="d-flex justify-content-between align-items-center">
-                                                         <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                         <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
                                                      </div>
                                                  </div>
                                              </div>

@@ -12,7 +12,7 @@
           data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1">
         <div class="alert alert-danger d-none" id="errorbox"></div>
 
-        <input type="hidden" asp-for="UserId" value="1" />
+        <input type="hidden" asp-for="UserId"  />
         <div asp-validation-summary="All"></div>
 
         <div class="form-group mb-4">
@@ -99,8 +99,7 @@
             console.log(result);
 
             if (result.success == true) {
-                alert("ثبت انجامید")
-                window.location = "/Home/Index";
+                window.location = "/Seller/Account/CompleteInformation?userId=" + $("input[name='UserId']").val();
             }
             else {
                 $("#errorbox").html(result.message).removeClass("d-none");

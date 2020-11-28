@@ -238,7 +238,7 @@ var cartEvents = (function () {
                     output += `<tr>
             <td><a href="/Product/index?id=${cartArray[i].prodid}"><img src='${cartArray[i].prodimage}' class='img-fluid width-100px border-default border-radius-5 p-2px' /></a></td>
             <td class="text-left"><a href="/Product/index?id=${cartArray[i].prodid}"><h5 class="prod-name-cart">${cartArray[i].name}</h5><span class="mellicode">شناسنامه یکتا: ${cartArray[i].mellicode ? cartArray[i].mellicode : '0000'}</span></a></td>
-            <td> <h5 class="prod-name-cart">${cartArray[i].price}</h5></td>
+            <td> <h5 class="prod-name-cart">${comma(cartArray[i].price)}</h5></td>
             <td><form class="form-inline mt-2" dir="rtl">
                         <div class="spinner border-radius-5 m-auto">
                             <span class="fa fa-plus plus-item" data-product-name="${ cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
@@ -247,7 +247,7 @@ var cartEvents = (function () {
                         </div>
                     </form>
               </td>
-            <td><h5 class="prod-name-cart">${cartArray[i].total}</h5></td>
+            <td><h5 class="prod-name-cart">${comma(cartArray[i].total)}</h5></td>
             <td class="packageIdCartTd"><input type='hidden' name='packageIdselected' value='${cartArray[i].packageId}' data-pkInputHide='${cartArray[i].prodid}' data-hazineh="0" /><select class="form-control packageComboInCart" data-pkCmbId='${cartArray[i].prodid}'><option value="">انتخاب ..</option></select></td>
             <td dir="ltr">
                     <span class="fa fa-check cyan fa-2x fa-bold basket-action-span"></span><span class="fa-2x">/</span>
@@ -256,17 +256,95 @@ var cartEvents = (function () {
          </tr>`;
                 }
                 $('.show-cart').html(output);
-                $('.total-cart').html(shoppingCart.totalCart());
-                $('.total-count').html(shoppingCart.totalCount());
+                $('.total-cart').html(comma(shoppingCart.totalCart()));
+                $('.total-count').html(comma(shoppingCart.totalCount()));
+
+                popupCart();
+            }
+
+
+            function popupCart() {
+                var cartArray = shoppingCart.listCart();
+                var output = "";
+                if (cartArray.length == 0) {
+                    /*output += `<div class="c-header__profile-dropdown-account-container">
+                                                                <div class="c-header__profile-dropdown-user">
+                                                                    <span class="col-12 small font-weight-600">سبد کالای شما خالی می باشد</span>
+                                                                </div>
+                                                            </div>`;*/
+                    $(".empty-basket-popup").removeClass("d-none");
+                }
+                else {
+                    output = `<li> <div class=""><div class="c-header__profile-dropdown js-dropdown-menu basket-popup-header"><div class="c-header__profile-dropdown-account-container go-basket">
+            <div class="c-header__profile-dropdown-user">
+                <span class="col-4 small font-weight-600">${shoppingCart.totalCount()} کالا</span>
+                <span class="col-8 text-right"><a class="cyan" href="/Shoppingcart/cart">مشاهده سبد خرید <i class="fa fa-chevron-left smaller"></i></a></span>
+            </div>
+        </div></div></div></li>
+        <li> <div class=""><div class="c-header__profile-dropdown js-dropdown-menu basket-popup-header">
+                <div class="c-header__profile-dropdown-actions"><ul class="basket-products-popup-ul" style="list-style-type: none;padding: 0;">`;
+                    for (var i in cartArray) {
+                        output += `<li><div class="c-header__profile-dropdown-action-container">
+                <a href="/Product/index?id=${cartArray[i].prodid}" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">
+                    <div class="col-3 p-0"><img class="max-width-70px border-radius-3" src="${cartArray[i].prodimage}" /></div>
+                    <div class="col-9">
+                        <span class="font-size-1rem color-menu-sabad font-weight-600">${cartArray[i].name}</span>
+                        <span class="cyan d-block">
+                            <img src="/image/icons/avaiable.png" class="width-24px small" />
+                            در سرای موجود می باشد
+                        </span>
+                    </div>
+                </a>
+                <div class="row m-0 pt-5px pb-5px">
+                    <div class="col-8 text-center"><span class="color-menu-sabad small font-weight-bold">${cartArray[i].count} عدد</span></div>
+                    <div class="col-4 text-right">
+                        <span class="delete-item basket-action-span" data-product-id="${cartArray[i].prodid}">
+                            <img src="/image/icons/delete.png" class="width-24px" />
+                        </span>
+                    </div>
+                </div>
+            </div></li>`;
+                    }
+
+                    output += `</ul></li>
+<li><div class="c-header__profile-dropdown js-dropdown-menu basket-popup-header"><div class="p-2">
+                <div class="row m-0 pt-5px pb-5px bolderspan">
+                    <div class="col-6 text-left">
+                        <span class="color-menu-sabad">مبلغ قابل پرداخت</span>
+                        <span class="d-block color-menu-sabad"><span>${comma(shoppingCart.totalCart())}</span> تومان</span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-info mt-5px" href="/shoppingcart/cart">ثبت سفارش</a>
+                    </div>
+                </div>
+            </div></div>
+        </li>`;
+
+
+                    var indxRnd = Math.floor(Math.random() * 2000) + 1;
+                    if ($("div[data-rndbasketid=" + indxRnd + "]").length > 0) indxRnd++;
+
+                    $('.basket-popup-main').find("li.empty-basket-popup").addClass("d-none");
+                    $('.basket-popup-main').find("li:not(.empty-basket-popup)").remove();
+                    $('.basket-popup-main').append(output);
+                }
             }
 
             // Delete item button
 
-            $('.show-cart').on("click", ".delete-item", function (event) {
+            // حذف در پاپاپ سبد
+            $('.basket-popup-main').on("click", ".delete-item", function (event) {
                 var prodid = $(this).data('product-id')
                 shoppingCart.removeItemFromCartAll(prodid);
                 displayCart();
             })
+
+            // حذف در صفحه سبد خرید
+            $('.show-cart').on("click", ".delete-item", function (event) {
+                var prodid = $(this).data('product-id')
+                shoppingCart.removeItemFromCartAll(prodid);
+                displayCart();
+            });
 
 
             // -1
@@ -320,4 +398,16 @@ function getParameterByName(name, url = window.location.href) {
 
 function getQueryStringValue(key) {
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+}
+
+function comma(Number) {
+    Number += '';
+    Number = Number.replace(',', '');
+    x = Number.split('.');
+    y = x[0];
+    z = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(y))
+        y = y.replace(rgx, '$1' + ',' + '$2');
+    return y + z;
 }

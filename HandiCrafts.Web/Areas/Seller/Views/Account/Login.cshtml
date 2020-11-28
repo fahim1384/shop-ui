@@ -44,18 +44,16 @@
             $('#login_signin_submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
             $("#errorbox").html('').addClass("d-none");
 
-            //window.location = "/Account/verifyCode";
-
             if (result.success == true) {
                 localStorage.removeItem("sellerEmailMobile");
                 localStorage.setItem("sellerEmailMobile", $("input.emailmobile").val());
 
-                if (result.data.isExist == true) {
-                    window.location = "/Seller/Account/FastRegister?userid=" + result.data.userId;
-                }
-                else {
+                //if (result.data.isExist == true) {
+                //    window.location = "/Seller/Account/FastRegister?userid=" + result.data.userId;
+                //}
+                //else {
                     window.location = "/Seller/Account/VerifyCode?userid=" + result.data.userId;
-                }
+                //}
             }
             else {
                 $("#errorbox").html(result.message).removeClass("d-none");
