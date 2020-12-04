@@ -153,51 +153,51 @@
     border-top: 0;
 }
 
-.profile-tab .nav-link .o-cart-img {
+.nav-link .o-cart-img {
     background-image: url(/image/icons/Orders/cart-gray.png);
 }
 
-.profile-tab .nav-link.active .o-cart-img {
+.nav-link.active .o-cart-img {
     background-image: url(/image/icons/Orders/cart.png);
 }
 
-.profile-tab .nav-link .o-successfull-img {
+.nav-link .o-successfull-img {
     background-image: url(/image/icons/Orders/successfull-gray.png);
 }
 
-.profile-tab .nav-link.active .o-successfull-img {
+.nav-link.active .o-successfull-img {
     background-image: url(/image/icons/Orders/successfull.png);
 }
 
-.profile-tab .nav-link .o-processing-img {
+.nav-link .o-processing-img {
     background-image: url(/image/icons/Orders/processing-gray.png);
 }
 
-.profile-tab .nav-link.active .o-processing-img {
+.nav-link.active .o-processing-img {
     background-image: url(/image/icons/Orders/processing.png);
 }
 
-.profile-tab .nav-link .o-send-img {
+.nav-link .o-send-img {
     background-image: url(/image/icons/Orders/send-gray.png);
 }
 
-.profile-tab .nav-link.active .o-send-img {
+.nav-link.active .o-send-img {
     background-image: url(/image/icons/Orders/send.png);
 }
 
-.profile-tab .nav-link .o-delivery-img {
+.nav-link .o-delivery-img {
     background-image: url(/image/icons/Orders/delivery-gray.png);
 }
 
-.profile-tab .nav-link.active .o-delivery-img {
+.nav-link.active .o-delivery-img {
     background-image: url(/image/icons/Orders/delivery.png);
 }
 
-.profile-tab .nav-link .o-returned-img {
+.nav-link .o-returned-img {
     background-image: url(/image/icons/Orders/returned-gray.png);
 }
 
-.profile-tab .nav-link.active .o-returned-img {
+.nav-link.active .o-returned-img {
     background-image: url(/image/icons/Orders/returned.png);
 }
 

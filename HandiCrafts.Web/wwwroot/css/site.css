@@ -630,6 +630,27 @@ footer .card {
 .mt-35 {
     margin-top: 35px;
 }
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-45 {
+    margin-top: 45px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-55 {
+    margin-top: 55px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
 .mt-100 {
     margin-top: 100px;
 }
@@ -2435,4 +2456,60 @@ header.absolate-top {
     background-size: contain;
     width: 100%;
     height: 100%;
+}
+
+
+/***************************************/
+
+@media only screen and (max-width: 600px) {
+    .mt-100-box {
+        margin-top: 60px;
+    }
+
+    .mt-100-box-only-width {
+        margin-top: 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .mt-100-box {
+        margin-top: 60px;
+    }
+
+    .mt-100-box-only-width {
+        margin-top: 0px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .mt-100-box {
+        margin-top: 60px;
+    }
+
+    .mt-100-box-only-width {
+        margin-top: 60px;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .mt-100-box {
+        margin-top: 100px;
+    }
+
+    .mt-100-box-only-width {
+        margin-top: 100px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .mt-100-box {
+        margin-top: 100px;
+    }
+
+    .mt-100-box-only-width {
+        margin-top: 100px;
+    }
 }

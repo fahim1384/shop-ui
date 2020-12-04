@@ -273,6 +273,7 @@ var cartEvents = (function () {
                                                                 </div>
                                                             </div>`;*/
                     $(".empty-basket-popup").removeClass("d-none");
+                    $(".basket-popup-main li:not(.empty-basket-popup)").remove();
                 }
                 else {
                     output = `<li> <div class=""><div class="c-header__profile-dropdown js-dropdown-menu basket-popup-header"><div class="c-header__profile-dropdown-account-container go-basket">
@@ -411,7 +412,7 @@ function comma(Number) {
         y = y.replace(rgx, '$1' + ',' + '$2');
     return y + z;
 }
-//title, message, type = "info", element = "body", from= "top", align= "right"
+
 function notify(
     options = {
         title: null,

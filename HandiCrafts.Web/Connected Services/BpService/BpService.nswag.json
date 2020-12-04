@@ -4048,6 +4048,36 @@
         }
       }
     },
+    "/api/Seller/GetSellerFullInfo": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "GetSellerFullInfo",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerFullInfoDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerFullInfoDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerFullInfoDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Slider/InsertSlider": {
       "post": {
         "tags": [
@@ -5940,6 +5970,9 @@
           },
           "document": {
             "$ref": "#/components/schemas/Document"
+          },
+          "fianlStatus": {
+            "$ref": "#/components/schemas/Status"
           },
           "seller": {
             "$ref": "#/components/schemas/Seller"
@@ -9800,6 +9833,13 @@
               "$ref": "#/components/schemas/Seller"
             }
           },
+          "sellerDocument": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerDocument"
+            }
+          },
           "sellerStatusLog": {
             "type": "array",
             "nullable": true,
@@ -13564,6 +13604,145 @@
             "items": {
               "$ref": "#/components/schemas/ProductImageDto"
             }
+          }
+        }
+      },
+      "SellerDocumentDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "documentId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "documentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "fianlStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminDescription": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "SellerFullInfoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sellerId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "realOrLegal": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "fname": {
+            "type": "string",
+            "nullable": true
+          },
+          "melliCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "gender": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "identityNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tel": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "secondMobile": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "shabaNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "bdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "haveMobileApp": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "mobileAppVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobileAppTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "addressList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerAddressDto"
+            }
+          },
+          "documentList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerDocumentDto"
+            }
+          }
+        }
+      },
+      "SellerFullInfoDtoSingleResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "resultCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resultMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "obj": {
+            "$ref": "#/components/schemas/SellerFullInfoDto"
           }
         }
       },

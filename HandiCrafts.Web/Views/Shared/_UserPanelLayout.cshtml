@@ -39,13 +39,68 @@
 
     @RenderSection("mainBanner", false)
 
+    <style>
+        @@media only screen and (max-width: 600px) {
+            .mt-100-box {
+                margin-top: 60px;
+            }
 
+            .mt-100-box-only-width {
+                margin-top: 0px;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @@media only screen and (min-width: 600px) {
+            .mt-100-box {
+                margin-top: 60px;
+            }
+
+            .mt-100-box-only-width {
+                margin-top: 0px;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @@media only screen and (min-width: 768px) {
+            .mt-100-box {
+                margin-top: 60px;
+            }
+
+            .mt-100-box-only-width {
+                margin-top: 60px;
+            }
+        }
+        /* Large devices (laptops/desktops, 992px and up) */
+        @@media only screen and (min-width: 992px) {
+            .mt-100-box {
+                margin-top: 100px;
+            }
+
+            .mt-100-box-only-width {
+                margin-top: 100px;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @@media only screen and (min-width: 1200px) {
+            .mt-100-box {
+                margin-top: 100px;
+            }
+
+            .mt-100-box-only-width {
+                margin-top: 100px;
+            }
+        }
+
+    </style>
     <div class="container-fluid ___pl-0 __pr-0">
         <div class="row flex-xl-nowrap">
-            <div class="col-12 col-md-3 col-xl-2 bd-sidebar pb-3 mt-100">
+            <div class="col-12 col-md-3 col-xl-2 bd-sidebar pb-3 mt-100-box">
                 <form class="bd-search d-flex align-items-center">
                     <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false"><title>منوی کاربری</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22" /></svg>
+                        <img src="~/image/user-menu-icon.svg" width="40" />
+                        <span>منوی کاربری</span>
                     </button>
                 </form>
 
@@ -142,7 +197,7 @@
                 </nav>
 
             </div>
-            <main role="main" class="col-12 col-md-9 col-xl-10 p-0 py-md-300 pl-md-500 bd-content pb-3 mt-100">
+            <main role="main" class="col-12 col-md-9 col-xl-10 p-0 py-md-300 pl-md-500 bd-content pb-3 mt-100-box-only-width">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
                     @RenderBody()
                 </div>
@@ -212,36 +267,36 @@
                         if (v.inverseP.length > 0) {
                             select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
                             child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-lg-8 col-md-12 clearfix">
-                                                                    <div class="container-fluid">
-                                                                        <div class="row posrdb">
-                                                                            <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                <ul class="wstliststy02 clearfix">`;
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-8 col-md-12 clearfix">
+                                                                            <div class="container-fluid">
+                                                                                <div class="row posrdb">
+                                                                                    <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                        <ul class="wstliststy02 clearfix">`;
                             $.each(v.inverseP, function (e2, v2) {
                                 select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
                                 child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
                             });
                             child += `</ul></div>
+                                                                       </div>
+                                                                   </div>
                                                                </div>
                                                            </div>
                                                        </div>
-                                                   </div>
-                                               </div>
-                                           </div>`;
+                                                   </div>`;
 
                             $("#mgmenu").append(`<li ${ac}>
-                                                    <span class="wsmenu-click02">
-                                                        <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                    </span>
-                                                    <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                    <span class="robin-submenu-nav">
-                                                        <span class="robin-menu-icon-kitchen"></span>
-                                                        <span style="vertical-align:middle">
-                                                            <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
-                                                        </span>
-                                                    </span>${child}</li>`);
+                                                            <span class="wsmenu-click02">
+                                                                <i class="wsmenu-arrow fa fa-angle-down"></i>
+                                                            </span>
+                                                            <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                            <span class="robin-submenu-nav">
+                                                                <span class="robin-menu-icon-kitchen"></span>
+                                                                <span style="vertical-align:middle">
+                                                                    <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                </span>
+                                                            </span>${child}</li>`);
 
                         }
                         else {

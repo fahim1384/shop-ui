@@ -526,6 +526,9 @@ namespace HandiCrafts.Web.Controllers
 
             var result = client.GetProfileInfoAsync().Result;
 
+            if (result.ResultCode != 200)
+                throw new Exception(result.ResultMessage);
+            
             PersianDateTime persianDate = new PersianDateTime(DateTime.Now);
             if (result.Obj.Bdate != null) persianDate = new PersianDateTime(result.Obj.Bdate.Value.DateTime);
 
