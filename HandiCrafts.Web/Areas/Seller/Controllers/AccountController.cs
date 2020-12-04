@@ -130,9 +130,12 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 return View("Login");
             }
 
+            PersonalInformationVModel informationVModel;
+
             try
             {
 
+                #region Ostanha
                 HttpClient httpClient = new HttpClient();
 
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
@@ -149,16 +152,47 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 }
 
                 ViewBag.Provinces = Provinces;
+                #endregion
+
+                #region Sanatgar Full Info
+                Client client1 = new Client(BaseUrl, httpClient);
+
+                var fullInfo = client1.GetSellerFullInfoAsync().Result;
+
+                if (fullInfo.ResultCode != 200) throw new Exception(fullInfo.ResultMessage);
+
+                PersianDateTime persianDate = PersianDateTime.Parse(fullInfo.Obj.Bdate.DateTime.ToString());
+
+                informationVModel = new PersonalInformationVModel()
+                {
+                    Address = fullInfo.Obj.AddressList.FirstOrDefault().Address,
+                    BirthDate = persianDate.ToPersianDateString(),
+                    City = fullInfo.Obj.AddressList.FirstOrDefault().PostalCode.ToString(),
+                    FirstName = fullInfo.Obj.Fname,
+                    Gender = fullInfo.Obj.Gender != null ? fullInfo.Obj.Gender.Value : 1,
+                    Lat = fullInfo.Obj.AddressList.FirstOrDefault().Xgps,
+                    Lng = fullInfo.Obj.AddressList.FirstOrDefault().Ygps,
+                    MobileNo = fullInfo.Obj.Mobile != null ? "0"+fullInfo.Obj.Mobile.ToString():null,
+                    MobileNo2 = fullInfo.Obj.SecondMobile != null ? "0" + fullInfo.Obj.SecondMobile.ToString() : null,
+                    NationalCode = fullInfo.Obj.MelliCode != null ? fullInfo.Obj.MelliCode.Value.ToString():null,
+                    Phone = fullInfo.Obj.Tel!= null? fullInfo.Obj.Tel.Value.ToString():null,
+                    PostalCode= fullInfo.Obj.AddressList.FirstOrDefault().PostalCode != null? fullInfo.Obj.AddressList.FirstOrDefault().PostalCode.Value.ToString():null,
+                    Province= fullInfo.Obj.AddressList.FirstOrDefault().ProvinceId != null? fullInfo.Obj.AddressList.FirstOrDefault().ProvinceId.Value.ToString():null,
+                    ShabaCode = fullInfo.Obj.ShabaNo,
+                    UserId = fullInfo.Obj.SellerId
+                };
+
+                #endregion
             }
             catch (Exception ex)
             {
                 throw;
             }
 
-            return View(new PersonalInformationVModel()
+            return View(informationVModel /*new PersonalInformationVModel()
             {
                 UserId = userid.Value
-            });
+            }*/);
         }
 
         [HttpPost]

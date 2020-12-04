@@ -78,6 +78,8 @@
 
     <partial name="~/Views/Shared/_footer.cshtml" />
 
+    <a href="#" class="scrollup" style="display: none;"><i class="fa fa-chevron-up mt-2"></i></a>
+
     <!---- سبد خرید ---->
     <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="سبد خرید" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -117,6 +119,28 @@
                 $(".preloader").delay(700).fadeOut(700).addClass('loaded');
             }, 800);
         });
+
+        /*===================================*
+	        SCROLLUP JS
+	    *===================================*/
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > 150) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+
+        $(".scrollup").on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+
+        /********************************** */
+
     </script>
     <script>
 
@@ -140,36 +164,36 @@
                             if (v.inverseP.length > 0) {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
                                 child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                                    <div class="container-fluid">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-8 col-md-12 clearfix">
-                                                                                <div class="container-fluid">
-                                                                                    <div class="row posrdb">
-                                                                                        <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                            <ul class="wstliststy02 clearfix">`;
+                                                                        <div class="container-fluid">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-8 col-md-12 clearfix">
+                                                                                    <div class="container-fluid">
+                                                                                        <div class="row posrdb">
+                                                                                            <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                                <ul class="wstliststy02 clearfix">`;
                                 $.each(v.inverseP, function (e2, v2) {
                                     select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
                                     child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
                                 });
                                 child += `</ul></div>
+                                                                               </div>
                                                                            </div>
                                                                        </div>
                                                                    </div>
                                                                </div>
-                                                           </div>
-                                                       </div>`;
+                                                           </div>`;
 
                                 $("#mgmenu").append(`<li ${ac}>
-                                                                <span class="wsmenu-click02">
-                                                                    <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                                </span>
-                                                                <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                                <span class="robin-submenu-nav">
-                                                                    <span class="robin-menu-icon-kitchen"></span>
-                                                                    <span style="vertical-align:middle">
-                                                                        <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                    <span class="wsmenu-click02">
+                                                                        <i class="wsmenu-arrow fa fa-angle-down"></i>
                                                                     </span>
-                                                                </span>${child}</li>`);
+                                                                    <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                                    <span class="robin-submenu-nav">
+                                                                        <span class="robin-menu-icon-kitchen"></span>
+                                                                        <span style="vertical-align:middle">
+                                                                            <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                        </span>
+                                                                    </span>${child}</li>`);
 
                             }
                             else {
@@ -181,7 +205,7 @@
                         $.get("/plugins/megamenu/megaMenu.js", function (result) {
                         });
                     } else {
-                        notify({ title: "خطا", message: result.message }, { type: "danger",showProgressbar:true });
+                        notify({ title: "خطا", message: result.message }, { type: "danger", showProgressbar: true });
                     }
 
                 }
@@ -246,7 +270,7 @@
             });
 
         }*/
-                    //megaMenuData();
+                        //megaMenuData();
 
     </script>
     @RenderSection("Scripts", required: false)
