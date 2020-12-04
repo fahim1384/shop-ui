@@ -111,7 +111,7 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center margubiatBoxContent owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}'>
+        <div class="card-deck mb-3 text-center margubiatBoxContent owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}'>
         </div>
     </div>
 </section>
@@ -137,7 +137,7 @@
 
     <div class="container">
         <div class="card-deck mb-4 text-center" id="bartarGroups">
-            
+
         </div>
     </div>
 </section>
@@ -334,8 +334,8 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-4 text-center packagesBox owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "3"}}' id="packagesBox">
-            
+        <div class="card-deck mb-4 text-center packagesBox owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "3"}}' id="packagesBox">
+
         </div>
     </div>
 </section>
@@ -493,7 +493,7 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center latest-product-box owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}' id="latestProductBox">
+        <div class="card-deck mb-3 text-center latest-product-box owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}' id="latestProductBox">
 
         </div>
     </div>
@@ -511,7 +511,7 @@
 
     <div class="container">
         <div class="card-deck mb-3 text-center catBox owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "3"}, "991":{"items": "5"}, "1199":{"items": "7"}}'>
-            
+
         </div>
     </div>
 </section>
@@ -533,7 +533,7 @@
     </div>
 
     <div class="container">
-        <div class="card-deck mb-3 text-center last-seen-content owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "2"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}' id="lastSeenContent">
+        <div class="card-deck mb-3 text-center last-seen-content owl-carousel owl-theme" data-loop="true" data-dots="false" data-nav="true" data-margin="30" data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "4"}, "1199":{"items": "4"}}' id="lastSeenContent">
 
         </div>
     </div>
@@ -694,111 +694,113 @@
 
         // 5 دسته بندی برتر
         let GetTopCatProductList_UI = () => {
-            try {
-                $.ajax({
-                    type: 'POST',
-                    url: "/Home/GetTopCatProductList_UI",
+                try {
+                    $.ajax({
+                        type: 'POST',
+                        url: "/Home/GetTopCatProductList_UI",
 
-                    success: function (result) {
-                        console.log("GetTopCatProductList_UI", result.data);
-                        /*$("#bartarGroups").html('');
-                        var bartarGroupsHtml = "";
-                        var bartarBox1 = "";
-                        var bartarBox2 = "";
-                        var bartarBox3 = "";
-
-                        $.each(result.data, function (e, v) {
-                            if (e == 0 || e == 1) {
-                                bartarBox1 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                                                                                    <div class="banner-img">
-                                                                                        <a href="/product/ByFilter?catId=${v.id}">
-                                                                                            <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
-                                                                                        </a>
-                                                                                    </div>
-                                                                                </div>`;
-                            }
-                            else if (e == 2) {
-                                bartarBox2 += `<div class="col-md-4">
-                                                                    <div class="card mb-4 shadow-sm mb-30">
-                                                                        <div class="">
-                                                                            <a href="/product/ByFilter?catId=${v.id}">
-                                                                                <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
-                                                                            </a>
+                        success: function (result) {
+                            console.log("GetTopCatProductList_UI", result.data);
+                            /*$("#bartarGroups").html('');
+                            var bartarGroupsHtml = "";
+                            var bartarBox1 = "";
+                            var bartarBox2 = "";
+                            var bartarBox3 = "";
+    
+                            $.each(result.data, function (e, v) {
+                                if (e == 0 || e == 1) {
+                                    bartarBox1 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
+                                                                                        <div class="banner-img">
+                                                                                            <a href="/product/ByFilter?catId=${v.id}">
+                                                                                                <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>`;
+                                }
+                                else if (e == 2) {
+                                    bartarBox2 += `<div class="col-md-4">
+                                                                        <div class="card mb-4 shadow-sm mb-30">
+                                                                            <div class="">
+                                                                                <a href="/product/ByFilter?catId=${v.id}">
+                                                                                    <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="320" />
+                                                                                </a>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>`;
-                            }
-                            else if (e == 3 || e == 4) {
-                                bartarBox3 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
-                                                                                    <div class="banner-img">
-                                                                                        <a href="/product/ByFilter?catId=${v.id}">
-                                                                                            <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
-                                                                                        </a>
-                                                                                    </div>
-                                                                                </div>`;
+                                                                    </div>`;
+                                }
+                                else if (e == 3 || e == 4) {
+                                    bartarBox3 += `<div class="card mb-5 shadow-sm banner-wrapper banner-border-2 mr-10 mb-30">
+                                                                                        <div class="banner-img">
+                                                                                            <a href="/product/ByFilter?catId=${v.id}">
+                                                                                                <image src="${v.icon}" class="bd-placeholder-img card-img-top" width="100%" height="140" />
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>`;
+    
+                                }
+                            });
+    
+                            bartarGroupsHtml += `<div class="col-md-4 mb-4">${bartarBox1}</div>${bartarBox2}<div class="col-md-4 mb-4">${bartarBox3}</div>`;
+                            $("#bartarGroups").html(bartarGroupsHtml);*/
 
-                            }
-                        });
+                            $("#bartarGroups").html('');
+                            var bartarGroupsHtml = "";
+                            var bartarBox1 = "";
+                            var bartarBox2 = "";
+                            var bartarBox3 = "";
 
-                        bartarGroupsHtml += `<div class="col-md-4 mb-4">${bartarBox1}</div>${bartarBox2}<div class="col-md-4 mb-4">${bartarBox3}</div>`;
-                        $("#bartarGroups").html(bartarGroupsHtml);*/
+                            var indxBox1 = 0;
+                            var indxBox2 = 0;
 
-                        $("#bartarGroups").html('');
-                        var bartarGroupsHtml = "";
-                        var bartarBox1 = "";
-                        var bartarBox2 = "";
-                        var bartarBox3 = "";
-
-                        var indxBox1 = 0;
-                        var indxBox2 = 0;
-
-                        $.each(result.data, function (e, v) {
-                            if (v.id == 44) {
-                                bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+                            $.each(result.data, function (e, v) {
+                                if (v.id == 44) {
+                                    bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
 <a href="/product/ByFilter?catId=${v.id}">
-                    <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
-                </a></div>`;
-                            }
+                        <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
+                    </a></div>`;
+                                }
 
-                            else if (indxBox1 <= 1 /*e == 0 || e == 1*/) {
-                                indxBox1++;
-                                bartarBox1 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
-                    <a href="/product/ByFilter?catId=${v.id}">
-                        <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
-                    </a>
-                </div>`;
-                            }
-                            /*else if (e == 2) {
-                                bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
-<a href="/product/ByFilter?catId=${v.id}">
-                    <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
-                </a></div>`;
-                            }*/
-                            else if (indxBox2 <= 1/*e == 3 || e == 4*/) {
-                                indxBox2++;
-                                bartarBox3 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
-                    <a href="/product/ByFilter?catId=${v.id}">
-                        <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
-                    </a>
-                </div>`;
+                                else if (indxBox1 <= 1 /*e == 0 || e == 1*/) {
+                                    indxBox1++;
+                                    bartarBox1 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
+                        <a href="/product/ByFilter?catId=${v.id}">
+                            <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
+                        </a>
+                    </div>`;
+                                }
+                                /*else if (e == 2) {
+                                    bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+    <a href="/product/ByFilter?catId=${v.id}">
+                        <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
+                    </a></div>`;
+                                }*/
+                                else if (indxBox2 <= 1/*e == 3 || e == 4*/) {
+                                    indxBox2++;
+                                    bartarBox3 += `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-pad-0">
+                        <a href="/product/ByFilter?catId=${v.id}">
+                            <img class="robin-index-widget-boxes" src="${v.icon}" alt="رومیزی ترمه" style="max-height: 190px;">
+                        </a>
+                    </div>`;
 
-                            }
-                        });
+                                }
+                            });
 
-                        bartarGroupsHtml += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
+                            bartarGroupsHtml += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
 ${bartarBox1}
 </div>
 ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0">${bartarBox3}</div>`;
-                        $("#bartarGroups").html(bartarGroupsHtml);
-                    }
-                });
-            } catch (e) {
-            }
+                            $("#bartarGroups").html(bartarGroupsHtml);
+                        }
+                    });
+                } catch (e) {
+                    notify({ title: "خطا", message: e }, { type: "danger", showProgressbar: false });
+                }
 
-        }
+            };
 
         //  دسته بندی ها با زیر مجموعه
         let GetCatProductList_UI = () => {
+
             try {
                 $.ajax({
                     type: 'POST',
@@ -807,55 +809,59 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                     success: function (result) {
                         $(".catBox").html('');
                         var catBox = $(".catBox");
-                        if (result.data != null) {
-                            $.each(result.data.objList, function (e, v) {
-                                var imgUrl = "/image/hakaki.jpg";
-                                //if (v.url != null) imgUrl = v.url;
+                        if (result.success == true) {
+                            if (result.data != null) {
+                                $.each(result.data.objList, function (e, v) {
+                                    var imgUrl = "/image/hakaki.jpg";
+                                    //if (v.url != null) imgUrl = v.url;
 
-                                //if (v.pid == null) {
+                                    //if (v.pid == null) {
                                     catBox.append(`<div class="col items">
-                                        <div class="card mb-4">
-                                             <a href="/product/ByFilter?catId=${v.id}">
-                                                <img class="max-width-100px m-auto" src="${imgUrl}" />
-                                                <div class="card-body custome-muted-text">
-                                                    <p class="card-text text-nowrap">${v.name}</p>
-                                                    <a class="cyan">${v.productCount} کالا</a>
+                                            <div class="card mb-4">
+                                                 <a href="/product/ByFilter?catId=${v.id}">
+                                                    <img class="max-width-100px m-auto" src="${imgUrl}" />
+                                                    <div class="card-body custome-muted-text">
+                                                        <p class="card-text text-nowrap">${v.name}</p>
+                                                        <a class="cyan">${v.productCount} کالا</a>
+                                                    </div>
+                                                  </a>
                                                 </div>
-                                              </a>
-                                            </div>
-                                        </div>`);
-                                //}
-                            });
-
-                            $(".catBox").each(function () {
-                                var $carousel = $(this);
-                                $carousel.owlCarousel({
-                                    rtl: true,
-                                    dots: $carousel.data("dots"),
-                                    loop: $carousel.data("loop"),
-                                    items: $carousel.data("items"),
-                                    margin: $carousel.data("margin"),
-                                    mouseDrag: $carousel.data("mouse-drag"),
-                                    touchDrag: $carousel.data("touch-drag"),
-                                    autoHeight: $carousel.data("autoheight"),
-                                    center: $carousel.data("center"),
-                                    nav: $carousel.data("nav"),
-                                    rewind: $carousel.data("rewind"),
-                                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
-                                    autoplay: $carousel.data("autoplay"),
-                                    animateIn: $carousel.data("animate-in"),
-                                    animateOut: $carousel.data("animate-out"),
-                                    autoplayTimeout: $carousel.data("autoplay-timeout"),
-                                    smartSpeed: $carousel.data("smart-speed"),
-                                    responsive: $carousel.data("responsive")
+                                            </div>`);
+                                    //}
                                 });
-                            });
+
+                                $(".catBox").each(function () {
+                                    var $carousel = $(this);
+                                    $carousel.owlCarousel({
+                                        rtl: true,
+                                        dots: $carousel.data("dots"),
+                                        loop: $carousel.data("loop"),
+                                        items: $carousel.data("items"),
+                                        margin: $carousel.data("margin"),
+                                        mouseDrag: $carousel.data("mouse-drag"),
+                                        touchDrag: $carousel.data("touch-drag"),
+                                        autoHeight: $carousel.data("autoheight"),
+                                        center: $carousel.data("center"),
+                                        nav: $carousel.data("nav"),
+                                        rewind: $carousel.data("rewind"),
+                                        navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                                        autoplay: $carousel.data("autoplay"),
+                                        animateIn: $carousel.data("animate-in"),
+                                        animateOut: $carousel.data("animate-out"),
+                                        autoplayTimeout: $carousel.data("autoplay-timeout"),
+                                        smartSpeed: $carousel.data("smart-speed"),
+                                        responsive: $carousel.data("responsive")
+                                    });
+                                });
+                            }
+                        } else {
+
                         }
                     }
                 });
             } catch (e) {
             }
-        }
+        };
 
         //  نظرات صنعتگر
         let GetFamousCommentsList_UI = () => {
@@ -874,23 +880,23 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
 
                                 if (e < 5)
                                     sanatgarBox.append(`<div>
-                                    <section class="text-center pt-4 pb-2">
-                                        <div class="container">
-                                            <h4 class="display-9">${v.name}</h4>
-                            <p class="cyan">${v.post}</p>
-                                        </div>
-                                    </section>
-                                
-                            <div class="row ml-0 mr-0"><div class="col col-6 col-sm-3 m-auto">
-                            <div class="card mb-4">
-                                    <img src="${imgSanatgar}" class="p-2px border-default rounded-circle max-width-120px height-120-px m-auto" />
+                                        <section class="text-center pt-4 pb-2">
+                                            <div class="container">
+                                                <h4 class="display-9">${v.name}</h4>
+                                <p class="cyan">${v.post}</p>
+                                            </div>
+                                        </section>
+
+                                <div class="row ml-0 mr-0"><div class="col col-6 col-sm-3 m-auto">
+                                <div class="card mb-4">
+                                        <img src="${imgSanatgar}" class="p-2px border-default rounded-circle max-width-120px height-120-px m-auto" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col col-12 col-sm-9">
-                                <div class="card mb-4 mt-5">
-                                    <div class="card-text">${v.comment}</div>
-                                </div>
-                            </div></div></div>`);
+                                <div class="col col-12 col-sm-9">
+                                    <div class="card mb-4 mt-5">
+                                        <div class="card-text">${v.comment}</div>
+                                    </div>
+                                </div></div></div>`);
                             });
 
                             $(".sanatgarBox").each(function () {
@@ -927,7 +933,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                 });
             } catch (e) {
             }
-        }
+        };
 
         //  لیست بسته بندی های محصول
         let GetPackingTypeList_UI = () => {
@@ -943,13 +949,13 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
                                 //if (e < 3) // نمایش 3 عدد
-                                    packagesBox.append(`<div class="items __col-md-4 blog-hm-wrapper">
-                                        <div class="card mb-4 shadow-sm blog-img">
-                                            <a>
-                                                <img src="${v.packingTypeImage[0]?.imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
-                                            </a>
-                                        </div>
-                                    </div>`);
+                                packagesBox.append(`<div class="items __col-md-4 blog-hm-wrapper">
+                                            <div class="card mb-4 shadow-sm blog-img">
+                                                <a>
+                                                    <img src="${v.packingTypeImage[0]?.imageFileUrl}" class="bd-placeholder-img card-img-top" width="100%" height="300" title='${v.name}' />
+                                                </a>
+                                            </div>
+                                        </div>`);
                             });
 
                             $("#packagesBox").owlCarousel({
@@ -980,7 +986,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                 });
             } catch (e) {
             }
-        }
+        };
 
         // دریافت اسلایدرها
         let GetSliderByPlaceCode_UI = (sliderPlaceCode) => {
@@ -1004,7 +1010,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
 
                                             $("#carouselExampleControls")
                                                 .find("div.carousel-inner")
-                                                .append(`<div class="carousel-item background_bg overlay_bg_50 ${active}" data-img-src="${v.imageUrl}" style="background-image: url(${v.imageUrl});background-size: cover;" alt="${v.title}"></div>`
+                                                .append(`<div class="carousel-item background_bg overlay_bg_50 ${active}" data-img-src="${v.imageUrl}" style="background-image: url(${v.imageUrl});background-size: 100% 100%;" alt="${v.title}"></div>`
                                                 );
 
                                         });
@@ -1014,8 +1020,8 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                     case 2:
 
                                         $("#slider2").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                                         <img src="${result.data.objList[0].imageUrl}" class="w-100 max-height-300px" />
-                                                                                                                      </a>`
+                                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100 max-height-300px" />
+                                                                                                                          </a>`
                                         );
                                         break;
 
@@ -1025,8 +1031,8 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                             if (e < 2) {
                                                 $("#ads2img")
                                                     .append(`<div class="col col-lg-6">
-                                                                                                                 <a href="${v.linkUrl}"><img src="${v.imageUrl}" class="w-100" /></a>
-                                                                                                             </div>`
+                                                                                                                     <a href="${v.linkUrl}"><img src="${v.imageUrl}" class="w-100" /></a>
+                                                                                                                 </div>`
                                                     );
                                             }
                                         });
@@ -1035,24 +1041,24 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                     // تیلیغ 3
                                     case 4:
                                         $("#ads3img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                                         <img src="${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                                                                      </a>`
+                                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                                          </a>`
                                         );
                                         break;
 
                                     // تبلیغ 4
                                     case 5:
                                         $("#ads4img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                                         <img src="${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                                                                      </a>`
+                                                                                                                             <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                                          </a>`
                                         );
                                         break;
 
                                     // تبلیغ 5
                                     case 6:
                                         $("#ads5img").append(`<a href="${result.data.objList[0].linkUrl}">
-                                                                                                                 <img src="${result.data.objList[0].imageUrl}" class="w-100" />
-                                                                                                              </a>`
+                                                                                                                     <img src="${result.data.objList[0].imageUrl}" class="w-100" />
+                                                                                                                  </a>`
                                         );
                                         break;
 
@@ -1097,32 +1103,32 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                     }
                                 }
                                 latestProductBox.append(`
-                                    <div class="items _col-lg-3 _col-md-4 _col-sm-6 shopping-card-box">
-                                       <a href="/product/Index?id=${v.id}">
-                                        <div class="shopping-thumbnail card mb-3">
-                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                            <div class="card-body">
-                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                <p class="card-text ratingbox">
-                                                    ${rat}
-                                                </p>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                        <div class="items _col-lg-3 _col-md-4 _col-sm-6 shopping-card-box">
+                                           <a href="/product/Index?id=${v.id}">
+                                            <div class="shopping-thumbnail card mb-3">
+                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                <div class="card-body">
+                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                    <p class="card-text ratingbox">
+                                                        ${rat}
+                                                    </p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                    </div>
                                                 </div>
                                             </div>
+                                          </a>
+                                            <div class="caption">
+                                                    <p>
+                                                        <b>
+                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                        </b>
+                                                    </p>
+                                                </div>
                                         </div>
-                                      </a>
-                                        <div class="caption">
-                                                <p>
-                                                    <b>
-                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                    </b>
-                                                </p>
-                                            </div>
-                                    </div>
-                                `);
+                                    `);
                                 //}
                             });
 
@@ -1157,7 +1163,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                 });
             } catch (e) {
             }
-        }
+        };
 
         // نشان ملی مرغوبیت
         let GetProductListHaveMelliCodeUI = () => {
@@ -1175,10 +1181,10 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                 $.each(result.data.objList, function (e, v) {
                                     //if (e < 4) {
                                     margubiatBoxContent.append(`
-                                                                                     <div class="items __col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
-                                                                                        <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                                                     </a></div></div>
-                                                                                `);
+                                                                                         <div class="items __col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
+                                                                                            <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                         </a></div></div>
+                                                                                    `);
                                     //}
                                 });
 
@@ -1217,7 +1223,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
             } catch (e) {
 
             }
-        }
+        };
 
         // مهر اصالت یونسکو
         let GetProductList_HaveUnescoCode_UI = () => {
@@ -1241,14 +1247,14 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                     `);
                                 }*/
                                 unisco.append(`
-                                                      <div class="item banner-wrapper banner-border-2 mr-10 mb-4 mr-12px">
-                                                    <div class="categories_box banner-img">
-                                                        <a href="/product/Index?id=${v.id}">
-                                                            <img src="${v.coverImageUrl}" class="height-100-width-100" />
-                                                        </a>
+                                                          <div class="item banner-wrapper banner-border-2 mr-10 mb-4 mr-12px">
+                                                        <div class="categories_box banner-img">
+                                                            <a href="/product/Index?id=${v.id}">
+                                                                <img src="${v.coverImageUrl}" class="height-100-width-100" />
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                 `);
+                                                     `);
                             });
 
                             carousel_slider();
@@ -1258,7 +1264,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
             } catch (e) {
 
             }
-        }
+        };
 
         // بازدیدهای اخیر
         var GetProductList_LastSeen_UI = () => {
@@ -1274,50 +1280,50 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
                                 //if (e < 4) { // نمایش 4 عدد
-                                    var rat = "";
-                                    if (v.rating != undefined) {
-                                        var r = v.rating.toFixed();
+                                var rat = "";
+                                if (v.rating != undefined) {
+                                    var r = v.rating.toFixed();
 
-                                        for (var i = 5; i > 0; i--) {
-                                            if (r - i < 0) {
-                                                rat += `<i class="fa fa-star custom-fa"></i>`;
-                                            } else {
-                                                rat += `<i class="fa fa-star cyan"></i>`;
-                                            }
-                                        }
-                                    } else {
-                                        for (var i = 0; i < 5; i++) {
+                                    for (var i = 5; i > 0; i--) {
+                                        if (r - i < 0) {
                                             rat += `<i class="fa fa-star custom-fa"></i>`;
+                                        } else {
+                                            rat += `<i class="fa fa-star cyan"></i>`;
                                         }
                                     }
-                                    lastSeenContent.append(`
-                                                                                    <div class="items __col-lg-3 __col-md-4 __col-sm-6 shopping-card-box">
-                                                                                      <a href="/product/Index?id=${v.id}">
-                                                                                        <div class="shopping-thumbnail card mb-3">
-                                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                } else {
+                                    for (var i = 0; i < 5; i++) {
+                                        rat += `<i class="fa fa-star custom-fa"></i>`;
+                                    }
+                                }
+                                lastSeenContent.append(`
+                                                                                        <div class="items __col-lg-3 __col-md-4 __col-sm-6 shopping-card-box">
+                                                                                          <a href="/product/Index?id=${v.id}">
+                                                                                            <div class="shopping-thumbnail card mb-3">
+                                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
 
-                                                                                            <div class="card-body">
-                                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                                <p class="card-text ratingbox">
-                                                                                                    ${rat}
-                                                                                                </p>
-                                                                                                <div class="d-flex justify-content-between align-items-center">
-                                                                                                    <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                                                                <div class="card-body">
+                                                                                                    <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                                    <p class="card-text ratingbox">
+                                                                                                        ${rat}
+                                                                                                    </p>
+                                                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                                                        <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
+                                                                                          </a>
+                                                                                            <div class="caption">
+                                                                                                    <p>
+                                                                                                        <b>
+                                                                                                            <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                            <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                                            <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                                        </b>
+                                                                                                    </p>
+                                                                                                </div>
                                                                                         </div>
-                                                                                      </a>
-                                                                                        <div class="caption">
-                                                                                                <p>
-                                                                                                    <b>
-                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                                    </b>
-                                                                                                </p>
-                                                                                            </div>
-                                                                                    </div>
-                                                                                `);
+                                                                                    `);
                                 //}
                             });
 

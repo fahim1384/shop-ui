@@ -236,10 +236,10 @@ var cartEvents = (function () {
                 var output = "";
                 for (var i in cartArray) {
                     output += `<tr>
-            <td><a href="/Product/index?id=${cartArray[i].prodid}"><img src='${cartArray[i].prodimage}' class='img-fluid width-100px border-default border-radius-5 p-2px' /></a></td>
-            <td class="text-left"><a href="/Product/index?id=${cartArray[i].prodid}"><h5 class="prod-name-cart">${cartArray[i].name}</h5><span class="mellicode">شناسنامه یکتا: ${cartArray[i].mellicode ? cartArray[i].mellicode : '0000'}</span></a></td>
-            <td> <h5 class="prod-name-cart">${comma(cartArray[i].price)}</h5></td>
-            <td><form class="form-inline mt-2" dir="rtl">
+            <td class="text-center"><a href="/Product/index?id=${cartArray[i].prodid}"><img src='${cartArray[i].prodimage}' class='img-fluid width-100px border-default border-radius-5 p-2px' /></a></td>
+            <td data-title="نام محصول:" class="text-left"><a href="/Product/index?id=${cartArray[i].prodid}"><h5 class="prod-name-cart">${cartArray[i].name}</h5><span class="mellicode">شناسنامه یکتا: ${cartArray[i].mellicode ? cartArray[i].mellicode : '0000'}</span></a></td>
+            <td data-title="قیمت:"> <h5 class="prod-name-cart">${comma(cartArray[i].price)}</h5></td>
+            <td data-title="تعداد:"><form class="form-inline mt-2" dir="rtl">
                         <div class="spinner border-radius-5 m-auto">
                             <span class="fa fa-plus plus-item" data-product-name="${ cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
                             <input type="text" name="quantity" readonly data-product-id='${ cartArray[i].prodid}' data-product-name='${cartArray[i].name}' value='${cartArray[i].count}' class="form-control width-50px border-0 item-count">
@@ -247,9 +247,9 @@ var cartEvents = (function () {
                         </div>
                     </form>
               </td>
-            <td><h5 class="prod-name-cart">${comma(cartArray[i].total)}</h5></td>
-            <td class="packageIdCartTd"><input type='hidden' name='packageIdselected' value='${cartArray[i].packageId}' data-pkInputHide='${cartArray[i].prodid}' data-hazineh="0" /><select class="form-control packageComboInCart" data-pkCmbId='${cartArray[i].prodid}'><option value="">انتخاب ..</option></select></td>
-            <td dir="ltr">
+            <td data-title="جمع کل:"><h5 class="prod-name-cart">${comma(cartArray[i].total)}</h5></td>
+            <td data-title="نوع بسته بندی:" class="packageIdCartTd"><input type='hidden' name='packageIdselected' value='${cartArray[i].packageId}' data-pkInputHide='${cartArray[i].prodid}' data-hazineh="0" /><select class="form-control packageComboInCart" data-pkCmbId='${cartArray[i].prodid}'><option value="">انتخاب ..</option></select></td>
+            <td data-title="حذف/ذخیره در لیست خریدبعدی:" dir="ltr">
                     <span class="fa fa-check cyan fa-2x fa-bold basket-action-span"></span><span class="fa-2x">/</span>
                     <span class="fa fa-times fa-2x delete-item basket-action-span" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}"></span>
              </td>
@@ -410,4 +410,79 @@ function comma(Number) {
     while (rgx.test(y))
         y = y.replace(rgx, '$1' + ',' + '$2');
     return y + z;
+}
+//title, message, type = "info", element = "body", from= "top", align= "right"
+function notify(
+    options = {
+        title: null,
+        message: null
+    },
+    settings = {
+        type : "info",
+        element : "body",
+        from: "top",
+        align: "right",
+        position:null,
+        allow_dismiss:true,
+        newest_on_top: false,
+        showProgressbar: false,
+        offset: 20,
+        spacing: 10,
+        z_index: 1031,
+        delay: 5000,
+        timer: 1000,
+        url_target: '_blank',
+        mouse_over: null,
+        onShow: null,
+        onShown: null,
+        onClose: null,
+        onClosed: null,
+        icon_type: 'class'
+    }) {
+    $.notify({
+        // options
+        icon: 'glyphicon glyphicon-warning-sign',
+        title: options.title,
+        message: options.message//,
+        //url: url,
+        //target: '_blank'
+    }, {
+        // settings
+        element: settings.element,
+        position: settings.position,
+        type: settings.type,
+        allow_dismiss: settings.allow_dismiss,
+        newest_on_top: settings.newest_on_top,
+        showProgressbar: settings.showProgressbar,
+        placement: {
+            from: settings.from,
+            align: settings.align
+        },
+        offset: settings.offset,
+        spacing: settings.spacing,
+        z_index: settings.z_index,
+        delay: settings.delay,
+        timer: settings.timer,
+        url_target: settings.url_target,
+        mouse_over: settings.mouse_over,
+        animate: {
+            enter: 'animated fadeInDown',
+            exit: 'animated fadeOutUp'
+        },
+        onShow: settings.onShow,
+        onShown: settings.onShown,
+        onClose: settings.onClose,
+        onClosed: settings.onClosed,
+        icon_type: settings.icon_type,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0} mt-5" role="alert">' +
+            '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+            '<span data-notify="icon"></span> ' +
+            '<span data-notify="title">{1}</span><br/> ' +
+            '<span data-notify="message">{2}</span>' +
+            '<div class="progress height-0-2rem" data-notify="progressbar">' +
+            '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+            '</div>' +
+            '<a href="{3}" target="{4}" data-notify="url"></a>' +
+            '</div>'
+    });
 }

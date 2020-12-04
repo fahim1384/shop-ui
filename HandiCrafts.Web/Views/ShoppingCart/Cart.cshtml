@@ -8,6 +8,66 @@
         .table td, .table th {
             vertical-align: middle;
         }
+
+        .shop_cart_table .table {
+            margin: 0;
+        }
+
+        .shop_cart_table td::before, .wishlist_table td::before {
+            float: right;
+            margin-right: 0;
+            margin-left: 15px;
+        }
+
+        @@media only screen and (max-width: 767px) {
+            .shop_cart_table thead, .wishlist_table thead {
+                display: none;
+            }
+
+            .shop_cart_table td.product-thumbnail, .shop_cart_table td.product-add-to-cart, .wishlist_table td.product-thumbnail, .wishlist_table td.product-add-to-cart {
+                text-align: center;
+            }
+
+            .shop_cart_table td, .wishlist_table .table td {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+
+                .shop_cart_table td::before, .wishlist_table td::before {
+                    content: attr(data-title) " ";
+                    float: right;
+                    text-transform: capitalize;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+
+            .shop_cart_table .spinner {
+                direction: rtl;
+                display: inline-flex;
+            }
+
+                .shop_cart_table .spinner span.plus-item {
+                    line-height: 42px;
+                }
+
+                .shop_cart_table .spinner span.minus-item {
+                    line-height: 42px;
+                }
+        }
+
+        .shop_cart_table .spinner {
+            direction: rtl;
+            display: inline-flex;
+        }
+
+            .shop_cart_table .spinner span.plus-item {
+                line-height: 42px;
+            }
+
+            .shop_cart_table .spinner span.minus-item {
+                line-height: 42px;
+            }
     </style>
 }
 
@@ -18,7 +78,7 @@
             <h3 class="color-firouzi">سبد خرید <span class="badge badge-pill bg-firouzi total-count">0</span></h3>
 
             <div class="cart-box">
-                <div class="table-responsive">
+                <div class="table-responsive shop_cart_table">
 
                     <table class="table text-center">
                         <thead>
@@ -83,17 +143,17 @@
                             </div>
 
                             @*<div class="row mt-4">
-            <div class="col mr-3">
-                <div class="input-group input-group-sm pt-5px pb-5px pr-10px pl-10px mr-10 ml-10 border-default border-radius-20">
-                    <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="افزودن کارت هدیه جدید">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text background-none border-0">
-                            <button class="btn color-firouzi border-0">ثبت</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>*@
+                                    <div class="col mr-3">
+                                        <div class="input-group input-group-sm pt-5px pb-5px pr-10px pl-10px mr-10 ml-10 border-default border-radius-20">
+                                            <input type="text" class="form-control fix-rounded-right bg-gray border-0 border-radius-10" style="height:48px;" placeholder="افزودن کارت هدیه جدید">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text background-none border-0">
+                                                    <button class="btn color-firouzi border-0">ثبت</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
 
                             <h4 class="mt-5 mb-5">آدرس تحویل سفارش</h4>
 
@@ -101,13 +161,12 @@
                                 <div class="col mr-3">
                                     <p>
                                         @*آذربایجان شرقی، تبریز، رشدیه، بلوار بهارستان،برج رشدیه، بلوک ب، طبقه ١١ ،واحد ١١٣ ،
-                    پلاک ١*@
-                                        <span id="addressBox"></span>
-                                        <br />
-                                        <br />
-                                        <span class="text-muted"><i class="fa fa-user solid-fa"></i> <span id="fullname"></span></span>
-                                        <br />
-                                        <a href="/Shoppingcart/Address" class="color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
+                                            پلاک ١*@
+                                        <span id="addressBox" class="d-block"></span>
+
+                                        <span class="text-muted d-block mt-4"><i class="fa fa-user solid-fa"></i> <span id="fullname"></span></span>
+                                        
+                                        <a href="/Shoppingcart/Address" class="d-block mt-3 color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
                                     </p>
                                 </div>
 
@@ -115,54 +174,54 @@
 
                             @*<h4 class="mt-5 mb-5">زمان ارسال</h4>
 
-        <div class="row">
-            <div class="col mr-3 cart-send-date-tabs">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    @{
-                        PersianDateTime persianDateTime = new PersianDateTime(DateTime.Now);
+                                <div class="row">
+                                    <div class="col mr-3 cart-send-date-tabs">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            @{
+                                                PersianDateTime persianDateTime = new PersianDateTime(DateTime.Now);
 
-                        for (int i = 0; i < 6; i++)
-                        {
+                                                for (int i = 0; i < 6; i++)
+                                                {
 
-                            var tabname = "#sendDay" + i;
-                            var selected = i == 0 ? "true" : "false";
-                            var active = i == 0 ? "active" : "";
+                                                    var tabname = "#sendDay" + i;
+                                                    var selected = i == 0 ? "true" : "false";
+                                                    var active = i == 0 ? "active" : "";
 
-                            <li class="nav-item">
-                                <a class="nav-link @active" id="@tabname-tab" data-toggle="tab" href="@tabname" role="tab" aria-controls="@tabname" aria-selected="@selected">
-                                    @persianDateTime.AddDays(i + 2).DayName
-                                    <small class="form-text text-muted-in-dark ">
-                                        @persianDateTime.AddDays(i + 2).Day @persianDateTime.AddDays(i + 2).MonthName
-                                    </small>
-                                </a>
-                            </li>
-                        }
-                    }
+                                                    <li class="nav-item">
+                                                        <a class="nav-link @active" id="@tabname-tab" data-toggle="tab" href="@tabname" role="tab" aria-controls="@tabname" aria-selected="@selected">
+                                                            @persianDateTime.AddDays(i + 2).DayName
+                                                            <small class="form-text text-muted-in-dark ">
+                                                                @persianDateTime.AddDays(i + 2).Day @persianDateTime.AddDays(i + 2).MonthName
+                                                            </small>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            }
 
-                </ul>
-                <div class="tab-content bg-white mb-4" id="myTabContent">
-                    @{
-                        for (int i = 0; i < 6; i++)
-                        {
+                                        </ul>
+                                        <div class="tab-content bg-white mb-4" id="myTabContent">
+                                            @{
+                                                for (int i = 0; i < 6; i++)
+                                                {
 
-                            var tabname = "#sendDay" + i;
-                            var selected = i == 0 ? "active" : "";
-                            var checkedRadoi = i == 0 ? "checked" : "";
+                                                    var tabname = "#sendDay" + i;
+                                                    var selected = i == 0 ? "active" : "";
+                                                    var checkedRadoi = i == 0 ? "checked" : "";
 
-                            <div class="tab-pane fade show @selected" id="@tabname" role="tabpanel" aria-labelledby="@tabname-tab">
-                                <div class="col-12 pt-3 pb-3 pr-2">
-                                    <label>
-                                        <input type="radio" value="@i" @checkedRadoi>
-                                        <small class="text-muted">ساعت 9 تا 22</small>
-                                    </label>
-                                </div>
-                            </div>
-                        }
-                    }
-                </div>
-            </div>
+                                                    <div class="tab-pane fade show @selected" id="@tabname" role="tabpanel" aria-labelledby="@tabname-tab">
+                                                        <div class="col-12 pt-3 pb-3 pr-2">
+                                                            <label>
+                                                                <input type="radio" value="@i" @checkedRadoi>
+                                                                <small class="text-muted">ساعت 9 تا 22</small>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
 
-        </div>*@
+                                </div>*@
 
                         </div>
                     </div>
@@ -217,7 +276,7 @@
                                     <tbody>
                                         <tr>
                                             @*<td class="line-height-60">امتیاز باشگاه</td>
-                                        <td class="line-height-60 text-right">10</td>*@
+                                                <td class="line-height-60 text-right">10</td>*@
                                         </tr>
                                     </tbody>
                                 </table>
@@ -303,14 +362,14 @@
                         $.each(result.data?.objList, function (e, v) {
                             var check = "";
                             if (e == 0) check = "checked";
-                            $("#paymentTypesBox").append(`<div class="col">
-                                                                        <label>
-                                                                            <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
-                                                                            <b>${v.title}</b>
-                                                                            <br />
-                                                                            <small class="text-muted">${v.description}</small>
-                                                                        </label>
-                                                                    </div>`);
+                            $("#paymentTypesBox").append(`<div class="col-6 col-sm-4 mt-10">
+                                                                            <label>
+                                                                                <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
+                                                                                <b>${v.title}</b>
+                                                                                <br />
+                                                                                <small class="text-muted">${v.description}</small>
+                                                                            </label>
+                                                                        </div>`);
                         });
                     }
                 }
@@ -405,10 +464,10 @@
                 url: "/Shoppingcart/GetCustomerDefultAddress_UI",
                 success: function (result) {
                     if (result.success == true) {
-   
+
                         var dataInfo = result.data.obj;
-                        $("#addressBox").html(`${dataInfo?.provinceName??''} ${dataInfo?.cityName??''} ${dataInfo?.address??''}، ${dataInfo?.issureMobile??''}`);
-                        $("#fullname").html(`${dataInfo?.issureName??''} ${dataInfo?.issureFamily??''}`);
+                        $("#addressBox").html(`${dataInfo?.provinceName ?? ''} ${dataInfo?.cityName ?? ''} ${dataInfo?.address ?? ''}، ${dataInfo?.issureMobile ?? ''}`);
+                        $("#fullname").html(`${dataInfo?.issureName ?? ''} ${dataInfo?.issureFamily ?? ''}`);
                         localStorage.setItem("addressId", dataInfo.id);
                     }
                 }
@@ -430,12 +489,12 @@
                             $.each(posttypes, function (e, v) {
                                 var checked = "";
                                 if (e == 0) checked = "checked='checked'";
-                                $("#posttypesBox").append(`<div class="col">
-                                    <label>
-                                        <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
-                                        <b>${this.title}</b>
-                                    </label>
-                                </div>`);
+                                $("#posttypesBox").append(`<div class="col-6 col-sm-4 mt-10">
+                                        <label>
+                                            <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
+                                            <b>${this.title}</b>
+                                        </label>
+                                    </div>`);
                             });
 
                             bindPostTypes();
@@ -588,7 +647,7 @@
 
                 model.ProductList.push(productObj);
             });
-            
+
             $.ajax({
                 type: 'POST',
                 url: "/Shoppingcart/InsertCustomerOrder_UI",

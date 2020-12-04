@@ -36,6 +36,45 @@
     min-height: 45rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .full_screen, .full_screen .carousel-item {
+        min-height: 20rem;
+        height: 30vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .full_screen, .full_screen .carousel-item {
+        min-height: 25rem;
+        height: 40vh;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .full_screen, .full_screen .carousel-item {
+        min-height: 30rem;
+        height: 50vh;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .full_screen, .full_screen .carousel-item {
+        min-height: 35rem;
+        height: 70vh;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .full_screen, .full_screen .carousel-item {
+        min-height: 40rem;
+        height: 100vh;
+    }
+}
+
 .banner_section.slide_medium,
 .banner_section.slide_medium .carousel-item,
 .banner_section.slide_medium .banner_content_wrap,
@@ -93,11 +132,11 @@
 }
 
 .carousel-control-next {
-    left: 96%;
+    left: 94%;
 }
 
 .carousel-control-prev {
-    right: 96%;
+    right: 94%;
 }
 
 .carousel_style1 .carousel-control-next, .carousel_style1 .carousel-control-prev {

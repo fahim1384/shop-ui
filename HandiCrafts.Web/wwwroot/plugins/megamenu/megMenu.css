@@ -1585,8 +1585,8 @@ ul.info-bar-logan li a.currentpage > span {
 
     .basket-counters {
         position: absolute;
-        top: 23px;
-        right: 11px;
+        top: 13px;
+        right: 17px;
         width: 20px;
         height: 20px;
         background-color: #DA4B38;
@@ -2478,7 +2478,7 @@ ul.info-bar-logan li a.currentpage > span {
     .basket-counters {
         position: absolute;
         top: 5px;
-        right: 15px;
+        right: 10px;
         width: 20px;
         height: 20px;
         background-color: #DA4B38;
@@ -3513,7 +3513,7 @@ span.robin-submenu-nav span a {
     right: 0;
     width: 100%;
     /* background: #d252b6; */
-    z-index: 9998;
+    z-index: 1030;
 }
 
 .headtoppart {
@@ -3567,13 +3567,21 @@ span.robin-submenu-nav span a {
     }
 
     .bbb {
-        top: 30px;
+        /*top: 30px;*/
         position: absolute;
         width: 30px;
         height: 30px;
         background-image: url(/image/icons/onlineshop.png);
         background-size: cover;
     }
+
+    #sabaddropdownMenu{
+        margin:auto !important;
+    }
+}
+
+#sabaddropdownMenu {
+    margin: 10px auto;
 }
 
 span.bolderspan {

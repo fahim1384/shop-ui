@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,31 @@
 
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/fonts/sans/SansFont.css" rel="stylesheet" />
+    <style>
+        .height-0-2rem {
+            height: 0.2rem;
+        }
+        /* Extra small devices (phones, 600px and down) */
+        @@media only screen and (max-width: 600px) {
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @@media only screen and (min-width: 600px) {
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @@media only screen and (min-width: 768px) {
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @@media only screen and (min-width: 992px) {
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @@media only screen and (min-width: 1200px) {
+        }
+    </style>
+
     @RenderSection("Styles", required: false)
 </head>
 <body>
@@ -34,7 +59,6 @@
         </div>
     </div>
     <!-- END LOADER -->
-
     <partial name="~/Views/Shared/Header/_header.cshtml" />
 
     @RenderSection("mainBanner", false)
@@ -80,6 +104,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.rtl.min.js"></script>
     <script src="/plugins/select2/select2.min.js"></script>
+    <script src="~/plugins/Notify/bootstrap-notify.min.js"></script>
 
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -94,8 +119,9 @@
         });
     </script>
     <script>
+
         //  دسته بندی ها با زیر مجموعه
-       
+
         let megaMenuData = () => {
             $.ajax({
                 type: 'POST',
@@ -105,54 +131,58 @@
                     $("#mgmenu").html('');
                     var select2Combo = $("#searchCategoryCmb");
 
-                    $.each(result.data.objList, function (e, v) {
-                        var child = "";
-                        var ac = "";
-                        if (e == 0) ac = `class="wsshoplink-active"`;
+                    if (result.success == true) {
+                        $.each(result.data.objList, function (e, v) {
+                            var child = "";
+                            var ac = "";
+                            if (e == 0) ac = `class="wsshoplink-active"`;
 
-                        if (v.inverseP.length > 0) {
-                            select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
-                            child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-lg-8 col-md-12 clearfix">
+                            if (v.inverseP.length > 0) {
+                                select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
+                                child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
                                                                     <div class="container-fluid">
-                                                                        <div class="row posrdb">
-                                                                            <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                <ul class="wstliststy02 clearfix">`;
-                            $.each(v.inverseP, function (e2, v2) {
-                                select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
-                                child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
-                            });
-                            child += `</ul></div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-12 clearfix">
+                                                                                <div class="container-fluid">
+                                                                                    <div class="row posrdb">
+                                                                                        <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                            <ul class="wstliststy02 clearfix">`;
+                                $.each(v.inverseP, function (e2, v2) {
+                                    select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
+                                    child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
+                                });
+                                child += `</ul></div>
+                                                                           </div>
+                                                                       </div>
+                                                                   </div>
                                                                </div>
                                                            </div>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>`;
+                                                       </div>`;
 
-                            $("#mgmenu").append(`<li ${ac}>
-                                                    <span class="wsmenu-click02">
-                                                        <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                    </span>
-                                                    <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                    <span class="robin-submenu-nav">
-                                                        <span class="robin-menu-icon-kitchen"></span>
-                                                        <span style="vertical-align:middle">
-                                                            <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
-                                                        </span>
-                                                    </span>${child}</li>`);
+                                $("#mgmenu").append(`<li ${ac}>
+                                                                <span class="wsmenu-click02">
+                                                                    <i class="wsmenu-arrow fa fa-angle-down"></i>
+                                                                </span>
+                                                                <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                                <span class="robin-submenu-nav">
+                                                                    <span class="robin-menu-icon-kitchen"></span>
+                                                                    <span style="vertical-align:middle">
+                                                                        <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                    </span>
+                                                                </span>${child}</li>`);
 
-                        }
-                        else {
-                            select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
-                            $("#mgmenu").append(`<li><a href="/product/ByFilter?catId=${v.id}" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></li>`);
-                        }
-                    });
+                            }
+                            else {
+                                select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
+                                $("#mgmenu").append(`<li><a href="/product/ByFilter?catId=${v.id}" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></li>`);
+                            }
+                        });
 
-                    $.get("/plugins/megamenu/megaMenu.js", function (result) {
-                    });
+                        $.get("/plugins/megamenu/megaMenu.js", function (result) {
+                        });
+                    } else {
+                        notify({ title: "خطا", message: result.message }, { type: "danger",showProgressbar:true });
+                    }
 
                 }
             });
@@ -216,7 +246,7 @@
             });
 
         }*/
-        //megaMenuData();
+                    //megaMenuData();
 
     </script>
     @RenderSection("Scripts", required: false)
