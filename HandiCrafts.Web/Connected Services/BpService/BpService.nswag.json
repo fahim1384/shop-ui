@@ -4078,6 +4078,46 @@
         }
       }
     },
+    "/api/Seller/GetSellerFullInfo_Test": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "GetSellerFullInfo_Test",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerFullInfoDtoSingleResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerFullInfoDtoSingleResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerFullInfoDtoSingleResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Slider/InsertSlider": {
       "post": {
         "tags": [

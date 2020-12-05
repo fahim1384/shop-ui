@@ -123,6 +123,40 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             });
         }
 
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> ForgetPass(ShortLoginModel model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                SellerLoginClient client = new SellerLoginClient(BaseUrl, httpClient);
+
+                string email = null;
+                long? mobile = null;
+
+                string EmailorMobile = model.EmailorMobileNo.ToString();
+                if (Regex.IsMatch(EmailorMobile, @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", RegexOptions.IgnoreCase))
+                {
+                    email = EmailorMobile;
+                }
+                else if (Regex.IsMatch(EmailorMobile, @"09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", RegexOptions.IgnoreCase))
+                {
+                    mobile = long.Parse(EmailorMobile);
+                }
+
+                var result = await client.ForgetPassAsync(email, mobile);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
         public IActionResult CompleteInformation(long? userid)
         {
             if (userid == null)
@@ -155,9 +189,9 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 #endregion
 
                 #region Sanatgar Full Info
-                Client client1 = new Client(BaseUrl, httpClient);
+                GetSellerFullInfoClient client1 = new GetSellerFullInfoClient(BaseUrl, httpClient);
 
-                var fullInfo = client1.GetSellerFullInfoAsync().Result;
+                var fullInfo = client1.TestAsync(userid.Value).Result;
 
                 if (fullInfo.ResultCode != 200) throw new Exception(fullInfo.ResultMessage);
 
@@ -189,10 +223,8 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 throw;
             }
 
-            return View(informationVModel /*new PersonalInformationVModel()
-            {
-                UserId = userid.Value
-            }*/);
+            return View(informationVModel);
+            
         }
 
         [HttpPost]

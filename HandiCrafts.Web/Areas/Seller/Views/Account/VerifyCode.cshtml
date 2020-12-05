@@ -3,13 +3,21 @@
     ViewData["Title"] = "Login";
     Layout = "~/Areas/Seller/Views/Shared/_AccountLayout.cshtml";
 }
-@section Styles{ }
+@section Styles{
+<style>
+    .form-control:disabled, .form-control[readonly] {
+        background-color: #ffffff;
+        opacity: 1;
+    }
 
-<div class="reg_login_content_mainform reg_login_content mr-40">
+</style>
+}
+
+<div class="reg_login_content_mainform reg_login_content m-auto">
 
     <form id="form_login" class="kt-form" asp-area="Seller" asp-action="VerifyCode" asp-controller="Account" data-ajax-method="POST"
           data-ajax="true" data-ajax-begin="onSigninBegin1" data-ajax-complete="onSigninComplete1"
-          data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1">
+          data-ajax-failure="onSigninFailed1" data-ajax-success="onSigninSuccess1" dir="rtl">
         <div class="alert alert-danger d-none" id="errorbox"></div>
 
         <input type="hidden" asp-for="UserId"  />
@@ -17,7 +25,12 @@
 
         <div class="form-group mb-4">
             <div class="input-group mb-2 heght-65px reg-element">
-                <input type="text" class="form-control heght-100per emailmobile" placeholder="ایمیل خود را وارد نمایید" aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1" style="border-radius: 0 1.6rem 1.6rem 0;">
+                        <a href="/Seller/Account/Login"><i class="fa fa-edit fa-2x m-2"></i></a>
+                    </span>
+                </div>
+                <input type="text" id="mobEmailInput" class="form-control heght-100per emailmobile" style="border-radius: 0!important;" placeholder="ایمیل خود را وارد نمایید" aria-describedby="basic-addon1" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
                         <img src="~/image/icons/Sanatgar/email.png" />
@@ -89,6 +102,33 @@
             }, 1000);//600000
         }
 
+        $("#kt_send_code_submit1").on("click", function () {
+            ForgetPass();
+        });
+
+        let ForgetPass = () => {
+            $.ajax({
+                type: 'POST',
+                data: { EmailorMobileNo: $("#mobEmailInput").val() },
+                url: "/Seller/Account/ForgetPass",
+
+                success: function (result) {
+                    $("#errorbox").addClass("d-none");
+
+                    if (result.success == true) {
+                        $("#kt_login_signin_submit1").css("display", "block");
+                        $("#kt_send_code_submit1").css("display", "none");
+
+                        $("#minute").val("2"); minute = 2;
+                        $("#second").val("0"); second = 0;
+
+                        timer();
+                    } else {
+                        $("#errorbox").html(result.message).removeClass("d-none");
+                    }
+                }
+            });
+        };
         // =======================================
         function onSigninBegin1(e, form) {
             $('#kt_login_signin_submit1').attr('disabled', true);
