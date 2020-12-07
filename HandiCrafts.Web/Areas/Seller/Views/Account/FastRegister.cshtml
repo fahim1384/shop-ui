@@ -1,0 +1,37 @@
+﻿
+@model HandiCrafts.Web.Areas.Seller.Models.Account.ShortRegisterModel
+@{
+    ViewData["Title"] = "FastRegister";
+    Layout = "~/Areas/Seller/Views/Shared/_AccountLayout.cshtml";
+}
+
+@section Styles{ }
+
+<div class="reg_login_content_mainform reg_login_content m-auto">
+
+    <form id="form_login" class="kt-form" asp-area="Seller" asp-action="FastRegister" asp-controller="Account" data-ajax-method="POST"
+          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
+          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess" dir="rtl">
+
+        <div class="alert alert-danger d-none" id="errorbox"></div>
+
+        <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+
+        <div class="form-group mb-4">
+            <div class="input-group mb-2 heght-65px reg-element">
+                <label>رمزعبور</label>
+                <input type="text" class="form-control heght-100per emailmobile"  asp-for="Password" aria-describedby="basic-addon1">
+            </div>
+            <span asp-validation-for="Password" class="kt-font-danger"></span>
+        </div>
+
+        <div class="kt-login__actions mt-3">
+            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ادامه</button>
+            <p class="mt-4">
+                رمز خود را فراموش کرده اید؟<a class="cyan" href="/seller/Account/ForgetPassword">فراموشی رمز</a>
+            </p>
+        </div>
+
+    </form>
+    <p class="small text-center text-gray-soft">قبلا ثبت نام کرده ام <a href="/seller/account/login" class="cyan">ورود</a></p>
+</div>

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -11,11 +14,14 @@ using HandiCrafts.Web.Areas.Seller.Models.Account;
 using HandiCrafts.Web.Controllers;
 using HandiCrafts.Web.Interfaces;
 using HandiCrafts.Web.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HandiCrafts.Web.Areas.Seller.Controllers
 {
@@ -76,7 +82,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     mobile = long.Parse(EmailorMobile);
                 }
 
-                var result = await client.SellerLoginRegisterAsync(email, mobile);
+                var result = await client.SellerLoginRegisterAsync(mobile);
 
                 if (result.ResultCode != 200)
                     return Error<LoginRegisterDto>(data: null, message: result.ResultMessage);
@@ -111,12 +117,95 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                SellerLoginClient client = new SellerLoginClient(BaseUrl, httpClient);
+                ByActivationCodeClient client = new ByActivationCodeClient(BaseUrl, httpClient);
 
-                var result = await client.ByActivationCodeAsync(model.UserId, int.Parse(model.AcceptCode));
+                var result = await client.SellerLogin_ByActivationCode_UI(model.UserId, int.Parse(model.AcceptCode));
 
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> Seller_GetActivationCodeForLogin(long mobile)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                SellerClient client = new SellerClient(BaseUrl, httpClient);
+
+                var result = await client.Seller_GetActivationCodeForLogin(null, mobile, null);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult FastRegister(long userid)
+        {
+            return View("FastRegister", new ShortRegisterModel()
+            {
+                UserId = userid
+            });
+        }
+
+        [HttpPost]
+        public Task<ResponseState<LoginResultDtoSingleResult>> FastRegister(ShortRegisterModel model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                ByPassClient client = new ByPassClient(BaseUrl, httpClient);
+
+                var result = await client.SellerLogin_ByPass_UI(model.UserId, model.Password);
+
+                if (result.ResultCode != 200)
+                    return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
+
+                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
+
+                result.Obj.Fullname = fullnameFromResult;
+
+                var claims = new[] {
+                        new Claim("sellertoken", result.Obj.Token),
+                        new Claim("sellerfullname", fullnameFromResult),
+                    };
+
+                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MyNameIsEsmaeilVahedi"));
+                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken(
+
+                    //issuer: "https://www.tabrizcraft.ir",
+                    //audience: "https://www.tabrizcraft.ir",
+                    expires: DateTime.Now.AddDays(1),
+                    signingCredentials: credentials,
+                    claims: claims
+                    );
+
+                new JwtSecurityTokenHandler().WriteToken(token);
+
+                //
+                var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
+                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, result.Obj.Token));
+                identity.AddClaim(new Claim(ClaimTypes.Name, fullnameFromResult));
+                identity.AddClaim(new Claim(ClaimTypes.Role, "Seller"));
+
+                var principal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = true });
+                //
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -206,12 +295,12 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     Gender = fullInfo.Obj.Gender != null ? fullInfo.Obj.Gender.Value : 1,
                     Lat = fullInfo.Obj.AddressList.FirstOrDefault().Xgps,
                     Lng = fullInfo.Obj.AddressList.FirstOrDefault().Ygps,
-                    MobileNo = fullInfo.Obj.Mobile != null ? "0"+fullInfo.Obj.Mobile.ToString():null,
+                    MobileNo = fullInfo.Obj.Mobile != null ? "0" + fullInfo.Obj.Mobile.ToString() : null,
                     MobileNo2 = fullInfo.Obj.SecondMobile != null ? "0" + fullInfo.Obj.SecondMobile.ToString() : null,
-                    NationalCode = fullInfo.Obj.MelliCode != null ? fullInfo.Obj.MelliCode.Value.ToString():null,
-                    Phone = fullInfo.Obj.Tel!= null? fullInfo.Obj.Tel.Value.ToString():null,
-                    PostalCode= fullInfo.Obj.AddressList.FirstOrDefault().PostalCode != null? fullInfo.Obj.AddressList.FirstOrDefault().PostalCode.Value.ToString():null,
-                    Province= fullInfo.Obj.AddressList.FirstOrDefault().ProvinceId != null? fullInfo.Obj.AddressList.FirstOrDefault().ProvinceId.Value.ToString():null,
+                    NationalCode = fullInfo.Obj.MelliCode != null ? fullInfo.Obj.MelliCode.Value.ToString() : null,
+                    Phone = fullInfo.Obj.Tel != null ? fullInfo.Obj.Tel.Value.ToString() : null,
+                    PostalCode = fullInfo.Obj.AddressList.FirstOrDefault().PostalCode != null ? fullInfo.Obj.AddressList.FirstOrDefault().PostalCode.Value.ToString() : null,
+                    Province = fullInfo.Obj.AddressList.FirstOrDefault().ProvinceId != null ? fullInfo.Obj.AddressList.FirstOrDefault().ProvinceId.Value.ToString() : null,
                     ShabaCode = fullInfo.Obj.ShabaNo,
                     UserId = fullInfo.Obj.SellerId
                 };
@@ -224,7 +313,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             }
 
             return View(informationVModel);
-            
+
         }
 
         [HttpPost]

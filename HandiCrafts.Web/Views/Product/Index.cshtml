@@ -510,14 +510,14 @@
                                 if (e == 0) active = "active";
 
                                 $("#productColorListbox").append(`
-                                                                                                                                                                                                                                                    <li>
-                                                                                                                                                                                                                                                        <a class="color-product-a ${active}" data-color-id="${v.colorId}">
-                                                                                                                                                                                                                                                            <div>
-                                                                                                                                                                                                                                                                <div class="circle-color-product" style="background:${v.colorCode}">
-                                                                                                                                                                                                                                                            </div> ${v.colorName}</div>
-                                                                                                                                                                                                                                                        </a>
-                                                                                                                                                                                                                                                    </li>
-                                                                                                                                                                                                                                                `);
+                                     <li>
+                                         <a class="color-product-a ${active}" data-color-id="${v.colorId}">
+                                             <div>
+                                                 <div class="circle-color-product" style="background:${v.colorCode}">
+                                             </div> ${v.colorName}</div>
+                                         </a>
+                                     </li>
+                                 `);
 
                             });
 

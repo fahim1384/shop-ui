@@ -31,6 +31,18 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
         public string AcceptCode { get; set; }
     }
 
+    public class ShortRegisterModel
+    {
+        [Required(ErrorMessage = "فیلد اجباری")]
+        [Display(Name = "کد کاربر")]
+        public long UserId { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "رمز عبور اجباری است")]
+        [Display(Name = "رمزعبور")]
+        public string Password { get; set; }
+    }
+
     public class PersonalInformationVModel
     {
         [Display(Name = "نام")]

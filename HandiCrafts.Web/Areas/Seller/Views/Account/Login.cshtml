@@ -1,6 +1,6 @@
 ﻿@model ShortLoginModel
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "ثبت نام صنعتگر";
     Layout = "~/Areas/Seller/Views/Shared/_AccountLayout.cshtml";
 }
 @section Styles{ }
@@ -48,12 +48,31 @@
                 localStorage.removeItem("sellerEmailMobile");
                 localStorage.setItem("sellerEmailMobile", $("input.emailmobile").val());
 
-                //if (result.data.isExist == true) {
-                //    window.location = "/Seller/Account/FastRegister?userid=" + result.data.userId;
-                //}
-                //else {
+                if (result.data.isExist == true && result.data.loginByCode == false) {
+
+                    $.ajax({
+                        type: 'POST',
+                        data: { mobile: $("input[name=EmailorMobileNo]").val() },
+                        url: "/Seller/Account/Seller_GetActivationCodeForLogin",
+
+                        success: function (result2) {
+                            $("#errorbox").addClass("d-none");
+
+                            if (result2.success == true) {
+                                window.location = "/Seller/Account/VerifyCode?userid=" + result.data.userId;
+                            } else {
+                                $("#errorbox").html(result2.message).removeClass("d-none");
+                            }
+                        }
+                    });
+                    
+                }
+                else if (result.data.isExist == true && result.data.loginByCode == true) {
+                    window.location = "/Seller/Account/FastRegister?userid=" + result.data.userId;
+                }
+                else {
                     window.location = "/Seller/Account/VerifyCode?userid=" + result.data.userId;
-                //}
+                }
             }
             else {
                 $("#errorbox").html(result.message).removeClass("d-none");

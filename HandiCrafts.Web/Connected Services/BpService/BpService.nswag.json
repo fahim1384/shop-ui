@@ -487,20 +487,11 @@
         "operationId": "SellerLoginRegister",
         "parameters": [
           {
-            "name": "email",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            }
-          },
-          {
             "name": "mobileNo",
             "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int64",
-              "nullable": true
+              "format": "int64"
             }
           }
         ],
@@ -528,12 +519,13 @@
         }
       }
     },
-    "/api/Account/SellerLogin_ByActivationCode": {
+    "/api/Account/SellerLogin_ByActivationCode_UI": {
       "post": {
         "tags": [
           "Account"
         ],
-        "operationId": "SellerLogin_ByActivationCode",
+        "summary": "ورود صنعتگر به سیستم با کد",
+        "operationId": "SellerLogin_ByActivationCode_UI",
         "parameters": [
           {
             "name": "userId",
@@ -576,12 +568,13 @@
         }
       }
     },
-    "/api/Account/SellerLogin_ByPass": {
+    "/api/Account/SellerLogin_ByPass_UI": {
       "post": {
         "tags": [
           "Account"
         ],
-        "operationId": "SellerLogin_ByPass",
+        "summary": "ورود صنعتگر به سیستم با کلمه عبور",
+        "operationId": "SellerLogin_ByPass_UI",
         "parameters": [
           {
             "name": "userId",
@@ -629,6 +622,7 @@
         "tags": [
           "Account"
         ],
+        "summary": "درخواست کد فعالسازی جهت تغییر کلمه عبور صنعتگر",
         "operationId": "SellerLogin_ForgetPass",
         "parameters": [
           {
@@ -641,6 +635,131 @@
           },
           {
             "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Account/Seller_ChangePassByActivationCode": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "تغییر کلمه عبور با کد تایید دریافتی با استفاده از موبایل یا ایمیل صنعتگر",
+        "operationId": "Seller_ChangePassByActivationCode",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pass",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Account/Seller_GetActivationCodeForLogin": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "درخواست کد فعالسازی یرای ورود به سیستم صنعتگر",
+        "operationId": "Seller_GetActivationCodeForLogin",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobileNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "userId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -4078,12 +4197,12 @@
         }
       }
     },
-    "/api/Seller/GetSellerFullInfo_Test": {
+    "/api/Seller/GetSellerFullInfo_test": {
       "get": {
         "tags": [
           "Seller"
         ],
-        "operationId": "GetSellerFullInfo_Test",
+        "operationId": "GetSellerFullInfo_test",
         "parameters": [
           {
             "name": "userId",
