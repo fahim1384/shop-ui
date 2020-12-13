@@ -1,5 +1,9 @@
-﻿@using HandiCrafts.Web
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using HandiCrafts.Web
 @using HandiCrafts.Web.Models
 @using HandiCrafts.Web.Models.Account
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, SmartBreadcrumbs
+
+@inject IHtmlLocalizer<SharedResource> T
+@inject HandiCrafts.Web.Interfaces.ILocalizeService TT

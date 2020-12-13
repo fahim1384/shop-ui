@@ -706,32 +706,32 @@
                                             }
                                         }
                                         similarproductBoxContent.append(`
-                                                                                                                                                                                                                                                                                                    <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                                                                                                                                                                                                                                                                                       <a href="/product/Index?id=${v.id}">
-                                                                                                                                                                                                                                                                                                        <div class="shopping-thumbnail card mb-3">
-                                                                                                                                                                                                                                                                                                            <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                                                                                                                                                                                                                                                                                                            <div class="card-body">
-                                                                                                                                                                                                                                                                                                                <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                                                                                                                                                                                                                                                <p class="card-text ratingbox">
-                                                                                                                                                                                                                                                                                                                    ${rat}
-                                                                                                                                                                                                                                                                                                                </p>
-                                                                                                                                                                                                                                                                                                                <div class="d-flex justify-content-between align-items-center">
-                                                                                                                                                                                                                                                                                                                    <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                      </a>
-                                                                                                                                                                                                                                                                                                        <div class="caption">
-                                                                                                                                                                                                                                                                                                                <p>
-                                                                                                                                                                                                                                                                                                                    <b>
-                                                                                                                                                                                                                                                                                                                        <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                                                                                                                                                                                                                                                        <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                                                                                                                                                                                                                                                        <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                                                                                                                                                                                                                                                    </b>
-                                                                                                                                                                                                                                                                                                                </p>
-                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                `);
+                                              <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
+                                                 <a href="/product/Index?id=${v.id}">
+                                                  <div class="shopping-thumbnail card mb-3">
+                                                      <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
+                                                      <div class="card-body">
+                                                          <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                          <p class="card-text ratingbox">
+                                                              ${rat}
+                                                          </p>
+                                                          <div class="d-flex justify-content-between align-items-center">
+                                                              <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                </a>
+                                                  <div class="caption">
+                                                          <p>
+                                                              <b>
+                                                                  <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                  <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                  <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                              </b>
+                                                          </p>
+                                                      </div>
+                                              </div>
+                                          `);
                                     }
                                 });
 

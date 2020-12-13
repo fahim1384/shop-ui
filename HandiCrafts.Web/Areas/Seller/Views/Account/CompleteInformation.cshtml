@@ -6,228 +6,239 @@
 @section Styles{
     <link href="~/plugins/persianDatePicker/persian-datepicker.min.css" rel="stylesheet" />
     <style>
+        .mapboxgl-canvas{position:relative!important}
     </style>
 }
 
-<div class="reg_login_content_mainform reg_login_content0000 ml-auto comp-info force-overflow">
+@if (Model == null)
+{
+    <div class="alert alert-danger">
+        <p>مشکلی در سیستم بوجود آمده است</p>
+    </div>
+}
+else
+{
+    <div class="reg_login_content_mainform reg_login_content0000 ml-auto comp-info force-overflow">
 
-    <form id="form_login" class="kt-form" asp-area="Seller" asp-action="CompleteInformation" asp-controller="Account" data-ajax-method="POST"
-          data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
-          data-ajax-failure="onFailed" data-ajax-success="onSuccess">
+        <form id="form_login" class="kt-form" asp-area="Seller" asp-action="CompleteInformation" asp-controller="Account" data-ajax-method="POST"
+              data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+              data-ajax-failure="onFailed" data-ajax-success="onSuccess">
 
-        <input type="hidden" asp-for="UserId" />
-        <div asp-validation-summary="All"></div>
-        <div class="alert alert-danger d-none" id="errorbox"></div>
+            <input type="hidden" asp-for="UserId" />
+            <div asp-validation-summary="All"></div>
+            <div class="alert alert-danger d-none" id="errorbox"></div>
 
-        <p>
-            <strong class="text-danger">توجه:</strong> پر کردن تمامی موارد الزامیست.
-        </p>
+            <p>
+                <strong class="text-danger">توجه:</strong> پر کردن تمامی موارد الزامیست.
+            </p>
 
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="Password"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input asp-for="Password" class="form-control">
-                </div>
-                <span asp-validation-for="Password" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <h5 class="active-text mb-4">اطلاعات شخصی</h5>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="FirstName"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="FirstName" class="form-control">
-                </div>
-                <span asp-validation-for="FirstName" class="kt-font-danger"></span>
-            </div>
-
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="LastName"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="LastName" class="form-control">
-                </div>
-                <span asp-validation-for="LastName" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="BirthDate"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="BirthDate" class="form-control pdate">
-                </div>
-                <span asp-validation-for="BirthDate" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="Gender"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" asp-for="Gender" name="genderRadioOptions" value="1" checked>
-                        <label class="form-check-label mr-5 ml-0" for="inlineRadio1">مرد</label>
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="Password"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input asp-for="Password" class="form-control">
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" asp-for="Gender" name="genderRadioOptions" value="2">
-                        <label class="form-check-label mr-5 ml-0" for="inlineRadio2">زن</label>
+                    <span asp-validation-for="Password" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <h5 class="active-text mb-4">اطلاعات شخصی</h5>
+
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="FirstName"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="FirstName" class="form-control">
                     </div>
+                    <span asp-validation-for="FirstName" class="kt-font-danger"></span>
                 </div>
-                <span asp-validation-for="Gender" class="kt-font-danger"></span>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="ShenasnameNo"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="ShenasnameNo" class="form-control direction-ltr">
-                </div>
-                <span asp-validation-for="ShenasnameNo" class="kt-font-danger"></span>
-            </div>
-
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="NationalCode"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="NationalCode" class="form-control direction-ltr">
-                </div>
-                <span asp-validation-for="NationalCode" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <h5 class="active-text mb-4">اطلاعات تماس</h5>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="Province"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <select asp-for="Province" class="form-control" id="ProvinceCmb" asp-items="ViewBag.Provinces">
-                        <option value="">انتخاب کنید</option>
-                    </select>
-                </div>
-                <span asp-validation-for="Province" class="kt-font-danger"></span>
-            </div>
-
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="City"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <select asp-for="City" class="form-control" id="cityCmb">
-                        <option value="">انتخاب کنید</option>
-                    </select>
-                </div>
-                <span asp-validation-for="City" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 form-group mb-4">
-                <label asp-for="Address"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="Address" class="form-control" placeholder="آدرس خود را بصورت کامل وارد نمایید">
-                </div>
-                <span asp-validation-for="Address" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="PostalCode"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="PostalCode" class="form-control direction-ltr">
-                </div>
-                <span asp-validation-for="PostalCode" class="kt-font-danger"></span>
-            </div>
-            <div class="col-sm-6 form-group mb-4">
-                <label>موقعیت مکانی</label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" class="form-control with-icon latlanstatus" readonly aria-describedby="basic-latlan" placeholder="موقعیت را ثبت کنید">
-                    <div class="input-group-prepend" id="mapbtn">
-                        <span class="input-group-text" id="basic-latlan">
-                            <i class="fa fa-map-marker-alt solid-fa fa-2x"></i>
-                        </span>
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="LastName"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="LastName" class="form-control">
                     </div>
+                    <span asp-validation-for="LastName" class="kt-font-danger"></span>
                 </div>
-                <input type="hidden" asp-for="Lat" />
-                <input type="hidden" asp-for="Lng" />
-                <span asp-validation-for="Lat" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="Phone"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="Phone" class="form-control direction-ltr" placeholder="04123456789">
-                </div>
-                <span asp-validation-for="Phone" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="MobileNo"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="MobileNo" class="form-control direction-ltr" placeholder="09">
-                </div>
-                <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
             </div>
 
-            <div class="col-sm-6 form-group mb-4">
-                <label asp-for="MobileNo2"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="MobileNo2" class="form-control direction-ltr" placeholder="09">
-                </div>
-                <span asp-validation-for="MobileNo2" class="kt-font-danger"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 form-group mb-4">
-                <label asp-for="ShabaCode"></label>
-                <div class="input-group mb-2 height-40px reg-element">
-                    <input type="text" asp-for="ShabaCode" class="form-control with-icon shaba text-right direction-ltr border-right-0" placeholder=" _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text border-left-0" id="basic-latlan">
-                            IR
-                        </span>
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="BirthDate"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="BirthDate" class="form-control pdate">
                     </div>
+                    <span asp-validation-for="BirthDate" class="kt-font-danger"></span>
                 </div>
-                <span asp-validation-for="ShabaCode" class="kt-font-danger"></span>
             </div>
-        </div>
 
-        <div class="form-group text-center mt-3">
-            <button id="submit" type="submit" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ادامه</button>
-        </div>
-
-    </form>
-</div>
-
-<div id="map" style="width:470px;height:450px;" class="d-none">
-</div>
-
-<div class="modal" tabindex="-1" role="dialog" id="mapModal">
-    <div class="modal-dialog modal-lg0000" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">موقعیت جغرافیایی</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="Gender"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="Gender" name="genderRadioOptions" value="1" checked>
+                            <label class="form-check-label mr-5 ml-0" for="inlineRadio1">مرد</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="Gender" name="genderRadioOptions" value="2">
+                            <label class="form-check-label mr-5 ml-0" for="inlineRadio2">زن</label>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Gender" class="kt-font-danger"></span>
+                </div>
             </div>
-            <div class="modal-body" style="width:498px;height:450px;">
-                <div id="mapbox"></div>
-                <div id="lng_lat_box"></div>
+
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="ShenasnameNo"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="ShenasnameNo" class="form-control direction-ltr">
+                    </div>
+                    <span asp-validation-for="ShenasnameNo" class="kt-font-danger"></span>
+                </div>
+
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="NationalCode"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="NationalCode" class="form-control direction-ltr">
+                    </div>
+                    <span asp-validation-for="NationalCode" class="kt-font-danger"></span>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+
+            <h5 class="active-text mb-4">اطلاعات تماس</h5>
+
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="Province"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <select asp-for="Province" class="form-control" id="ProvinceCmb" asp-items="ViewBag.Provinces">
+                            <option value="">انتخاب کنید</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Province" class="kt-font-danger"></span>
+                </div>
+
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="City"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <select asp-for="City" class="form-control" id="cityCmb">
+                            <option value="">انتخاب کنید</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="City" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group mb-4">
+                    <label asp-for="Address"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="Address" class="form-control" placeholder="آدرس خود را بصورت کامل وارد نمایید">
+                    </div>
+                    <span asp-validation-for="Address" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="PostalCode"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="PostalCode" class="form-control direction-ltr">
+                    </div>
+                    <span asp-validation-for="PostalCode" class="kt-font-danger"></span>
+                </div>
+                <div class="col-sm-6 form-group mb-4">
+                    <label>موقعیت مکانی</label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" class="form-control with-icon latlanstatus" readonly aria-describedby="basic-latlan" placeholder="موقعیت را ثبت کنید">
+                        <div class="input-group-prepend" id="mapbtn">
+                            <span class="input-group-text" id="basic-latlan">
+                                <i class="fa fa-map-marker-alt solid-fa fa-2x"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <input type="hidden" asp-for="Lat" />
+                    <input type="hidden" asp-for="Lng" />
+                    <span asp-validation-for="Lat" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="Phone"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="Phone" class="form-control direction-ltr" placeholder="04123456789">
+                    </div>
+                    <span asp-validation-for="Phone" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="MobileNo"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="MobileNo" class="form-control direction-ltr" placeholder="09">
+                    </div>
+                    <span asp-validation-for="MobileNo" class="kt-font-danger"></span>
+                </div>
+
+                <div class="col-sm-6 form-group mb-4">
+                    <label asp-for="MobileNo2"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="MobileNo2" class="form-control direction-ltr" placeholder="09">
+                    </div>
+                    <span asp-validation-for="MobileNo2" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group mb-4">
+                    <label asp-for="ShabaCode"></label>
+                    <div class="input-group mb-2 height-40px reg-element">
+                        <input type="text" asp-for="ShabaCode" class="form-control with-icon shaba text-right direction-ltr border-right-0" placeholder=" _ _ _ _ _ _ _ _ _ _ _ _ _ _ _">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-left-0" id="basic-latlan">
+                                IR
+                            </span>
+                        </div>
+                    </div>
+                    <span asp-validation-for="ShabaCode" class="kt-font-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group text-center mt-3">
+                <button id="submit" type="submit" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ادامه</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="map" style="width:470px;height:450px;" class="d-none">
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="mapModal">
+        <div class="modal-dialog modal-lg0000" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">موقعیت جغرافیایی</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="width:498px;height:450px;">
+                    <div id="mapbox"></div>
+                    <div id="lng_lat_box"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+}
 
 @section Scripts{
     <script src="https://www.parsimap.com/js/v3.1.0/parsimap.js?key=public"></script>
@@ -283,6 +294,9 @@
                 window.location = "/Seller/Account/Documents?userid=" + result.data.objList[0];
             }
             else {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
                 $("#errorbox").html(result.message).removeClass("d-none");
             }
         }

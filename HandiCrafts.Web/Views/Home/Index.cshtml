@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "صفحه نخست";
+    ViewData["Title"] = @T["home.index.title"];
 }
 @section Styles{
     @*<link href="~/css/_topMenuHeader.css" rel="stylesheet" />*@
@@ -7,6 +7,9 @@
         main.mt-150 {
             margin-top: 0;
         }
+        /*.owl-carousel .owl-item img {
+            max-width: 100%;
+        }*/
     </style>
 }
 
@@ -49,8 +52,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-4">
                             <div class="text-center text-md-left">
-                                <h4 class="mb-2">مهر اصالت یونسکو</h4>
-                                <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                                <h4 class="mb-2">@T["home.index.unesco.name"]</h4>
+                                <a href="/Product/ByFilter" class="btn btn-link border-firouzi">@T["home.index.unesco.more-view-button"]</a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-8">
@@ -102,9 +105,9 @@
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
-                <h4 class="display-9 after-before-bordered">نشان ملی مرغوبیت کالا</h4>
+                <h4 class="display-9 after-before-bordered">@T["home.index.marghubiyat.title"]</h4>
                 <p class="see-more-p pr-3">
-                    <a href="/Product/ByFilter?OrderBy=6" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                    <a href="/Product/ByFilter?OrderBy=6" class="btn btn-link border-firouzi">@T["home.index.marghubiyat.more-view-button"]</a>
                 </p>
             </div>
         </section>
@@ -127,9 +130,9 @@
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
-                <h4 class="display-9 after-before-bordered">گروه های برتر</h4>
+                <h4 class="display-9 after-before-bordered">@T["home.index.top-group.title"]</h4>
                 <p class="see-more-p">
-                    <a href="/Product/ByFilter" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                <a href="/Product/ByFilter" class="btn btn-link border-firouzi">@T["home.index.top-group.more-view-button"]</a>
                 </p>
             </div>
         </section>
@@ -481,12 +484,12 @@
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
-                <h4 class="display-9 after-before-bordered">محصولات</h4>
-                <a href="#" class="btn btn-link">جدیدترین</a>
-                <a href="#" class="btn btn-link d-none">پرفروش ترین</a>
+                <h4 class="display-9 after-before-bordered">@T["main-page.product.title"]</h4>
+                <a href="#" class="btn btn-link">@T["main-page.product.newsest.title"]</a>
+                <a href="#" class="btn btn-link d-none">@T["main-page.product.bestselling.title"]</a>
 
                 <p class="see-more-p pr-3">
-                    <a href="/Product/ByFilter?OrderBy=1" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                    <a href="/Product/ByFilter?OrderBy=1" class="btn btn-link border-firouzi">@T["main-page.product.more-view-button"]</a>
                 </p>
             </div>
         </section>
@@ -504,7 +507,7 @@
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
-                <h4 class="display-9 after-before-bordered">بیش از صد کالا در دسته بندی های مختلف</h4>
+                <h4 class="display-9 after-before-bordered">@T["main-page.categories.slider.title"]</h4>
             </div>
         </section>
     </div>
@@ -521,12 +524,12 @@
     <div>
         <section class="text-center pt-5 pb-4">
             <div class="container">
-                <h4 class="display-9 after-before-bordered">محصولات</h4>
-                <a href="#" class="btn btn-link">بازدیدهای اخیر</a>
-                <a href="#" class="btn btn-link d-none">بازدیدهای اخیر من</a>
+                <h4 class="display-9 after-before-bordered">@T["main-page.latest.title"]</h4>
+                <a href="#" class="btn btn-link">@T["main-page.latest.recent-visits.title"]</a>
+                <a href="#" class="btn btn-link d-none">@T["main-page.latest.my-recent-visits.title"]</a>
 
                 <p class="see-more-p pr-3">
-                    <a href="#" class="btn btn-link border-firouzi">مشاهده بیشتر</a>
+                    <a href="#" class="btn btn-link border-firouzi">@T["main-page.product.more-view-button"]</a>
                 </p>
             </div>
         </section>
@@ -756,7 +759,7 @@
                                 if (v.id == 44) {
                                     bartarBox2 += `<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-12 mar-pad-0">
 <a href="/product/ByFilter?catId=${v.id}">
-                        <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: 400px;max-height: 400px;">
+                        <img class="robin-index-widget-boxes min-h-200" src="${v.icon}" alt="چراغ رومیزی مینیاتور" style="height: calc(100%-40px);max-height: 400px;">
                     </a></div>`;
                                 }
 
@@ -1106,7 +1109,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                         <div class="items _col-lg-3 _col-md-4 _col-sm-6 shopping-card-box">
                                            <a href="/product/Index?id=${v.id}">
                                             <div class="shopping-thumbnail card mb-3">
-                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
                                                 <div class="card-body">
                                                     <h6 class="card-title pricing-card-title">${v.name}</h6>
                                                     <p class="card-text ratingbox">
@@ -1182,7 +1185,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                     //if (e < 4) {
                                     margubiatBoxContent.append(`
                                                                                          <div class="items __col-md-3"><div class="card mb-4 shadow-sm"> <a href="/product/Index?id=${v.id}">
-                                                                                            <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                            <img src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
                                                                                          </a></div></div>
                                                                                     `);
                                     //}
@@ -1300,7 +1303,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                                                                         <div class="items __col-lg-3 __col-md-4 __col-sm-6 shopping-card-box">
                                                                                           <a href="/product/Index?id=${v.id}">
                                                                                             <div class="shopping-thumbnail card mb-3">
-                                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                                                                                                <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
 
                                                                                                 <div class="card-body">
                                                                                                     <h6 class="card-title pricing-card-title">${v.name}</h6>

@@ -406,8 +406,8 @@ footer .card {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     padding: 0 4px;
-    font-size:1.2rem;
-    cursor:pointer;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .shared-box {
@@ -415,7 +415,9 @@ footer .card {
     left: 0;
 }
 
-.basket-action-span{cursor:pointer;}
+.basket-action-span {
+    cursor: pointer;
+}
 /********************************/
 .product-detail-tabs ul.nav-tabs {
     background-color: #676767 !important;
@@ -654,6 +656,7 @@ footer .card {
 .mt-100 {
     margin-top: 100px;
 }
+
 .mt-150 {
     margin-top: 150px;
 }
@@ -1485,7 +1488,7 @@ p {
 
 input[name=quantity].form-control:disabled, input[name=quantity].form-control[readonly] {
     background-color: #ffffff;
-    font-size:1.3rem;
+    font-size: 1.3rem;
 }
 
 a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
@@ -1516,9 +1519,12 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
     max-width: 100px;
 }
 
-.max-width-120px{max-width:120px;}
+.max-width-120px {
+    max-width: 120px;
+}
+
 .height-120-px {
-    height:120px;
+    height: 120px;
 }
 
 .max-width-150px {
@@ -2019,21 +2025,25 @@ header.absolate-top {
         float: right;
     }
 }
+
 @media only screen and (max-width: 991px) {
     .navbar .navbar-nav.attr-nav li {
         float: right;
     }
 }
+
 .navbar .navbar-nav li {
     position: relative;
     list-style: none;
     transition: all 0.3s ease 0s;
 }
+
 @media only screen and (max-width: 991px) {
     .navbar .navbar-nav.attr-nav li .nav-link.search_trigger, .navbar .navbar-nav.attr-nav li .nav-link.cart_trigger {
         padding: 16px 8px;
     }
 }
+
 @media only screen and (max-width: 991px) {
     .search_wrap {
         max-width: 100%;
@@ -2072,10 +2082,12 @@ header.absolate-top {
     right: 0;
     top: 25%;
 }
+
 .search_wrap form {
     position: relative;
     width: 100%;
 }
+
 .search_wrap .form-control {
     background-color: transparent;
     border-bottom: 2px solid #fff;
@@ -2092,6 +2104,7 @@ header.absolate-top {
         height: 44px;
     }
 }
+
 [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
 }
@@ -2112,6 +2125,7 @@ header.absolate-top {
     padding: 0;
     color: #fff;
 }
+
 @media only screen and (max-width: 991px) {
     .navbar .navbar-nav.attr-nav li .nav-link.search_trigger, .navbar .navbar-nav.attr-nav li .nav-link.cart_trigger {
         padding: 16px 8px;
@@ -2133,12 +2147,14 @@ header.absolate-top {
 .main_menu_uppercase .navbar-nav > li > .nav-link {
     text-transform: uppercase;
 }
+
 @media only screen and (max-width: 991px) {
     .navbar .navbar-nav.attr-nav li .nav-link.search_trigger [class*="linearicons-"], .navbar .navbar-nav.attr-nav li .nav-link.cart_trigger [class*="linearicons-"] {
         margin-top: 5px;
         display: inline-block;
     }
 }
+
 .navbar-toggler:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
@@ -2155,6 +2171,7 @@ header.absolate-top {
     float: left;
     margin: 13px 3px 0 0px;
 }
+
 .navbar-toggler {
     float: right;
     margin: 13px 0 0 3px;
@@ -2183,6 +2200,8 @@ header.absolate-top {
 .sanatgarBox .owl-nav {
     text-align: center;
     direction: ltr;
+    right: 0;
+    left: 0;
 }
 
 /******************************
@@ -2224,24 +2243,24 @@ header.absolate-top {
     width: 100%;
 }
 
-.catBox .owl-nav button.owl-prev {
-    float: left;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-
-.catBox .owl-nav button.owl-next {
-    float: right;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-
-    .catBox .owl-nav button.owl-prev i, .catBox .owl-nav button.owl-next i{
-        margin:6px 0
+    .catBox .owl-nav button.owl-prev {
+        float: left;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
     }
-    
+
+    .catBox .owl-nav button.owl-next {
+        float: right;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+
+        .catBox .owl-nav button.owl-prev i, .catBox .owl-nav button.owl-next i {
+            margin: 6px 0
+        }
+
 /***************************
     محصولات جدید صفحه اول
 
@@ -2251,21 +2270,21 @@ header.absolate-top {
     position: absolute;
     top: 36%;
     width: 100%;
+    right: 0;
+    left: 0;
 }
 
     .latest-product-box .owl-nav button.owl-prev {
-
         right: auto;
-        left: -50px;
+        left: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
     }
 
     .latest-product-box .owl-nav button.owl-next {
-
         left: auto;
-        right: -50px;
+        right: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2278,6 +2297,7 @@ header.absolate-top {
     top: 35%;
     opacity: 1;
 }
+
 .latest-product-box:hover .owl-nav .owl-next {
     left: auto;
     right: 10px;
@@ -2286,10 +2306,10 @@ header.absolate-top {
     opacity: 1;
 }
 
-        .latest-product-box .owl-nav button.owl-prev i, .latest-product-box .owl-nav button.owl-next i {
-            margin: 6px 0
-        }
-        
+.latest-product-box .owl-nav button.owl-prev i, .latest-product-box .owl-nav button.owl-next i {
+    margin: 6px 0
+}
+
 /***************************
     نشان مرغوبیت کالا صفحه اول
 
@@ -2299,11 +2319,13 @@ header.absolate-top {
     position: absolute;
     top: 36%;
     width: 100%;
+    right: 0;
+    left: 0;
 }
 
     .margubiatBoxContent .owl-nav button.owl-prev {
         right: auto;
-        left: -50px;
+        left: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2311,7 +2333,7 @@ header.absolate-top {
 
     .margubiatBoxContent .owl-nav button.owl-next {
         left: auto;
-        right: -50px;
+        right: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2324,6 +2346,7 @@ header.absolate-top {
     top: 35%;
     opacity: 1;
 }
+
 .margubiatBoxContent:hover .owl-nav .owl-next {
     left: auto;
     right: 10px;
@@ -2345,11 +2368,14 @@ header.absolate-top {
     position: absolute;
     top: 36%;
     width: 100%;
+    
+    right: 0;
+    left: 0;
 }
 
     .last-seen-content .owl-nav button.owl-prev {
         right: auto;
-        left: -50px;
+        left: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2357,7 +2383,7 @@ header.absolate-top {
 
     .last-seen-content .owl-nav button.owl-next {
         left: auto;
-        right: -50px;
+        right: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2392,11 +2418,13 @@ header.absolate-top {
     position: absolute;
     top: 36%;
     width: 100%;
+    right: 0;
+    left: 0;
 }
 
     .packagesBox .owl-nav button.owl-prev {
         right: auto;
-        left: -50px;
+        left: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2404,7 +2432,7 @@ header.absolate-top {
 
     .packagesBox .owl-nav button.owl-next {
         left: auto;
-        right: -50px;
+        right: 0px;
         position: absolute;
         top: 35%;
         opacity: 0;
@@ -2432,12 +2460,12 @@ header.absolate-top {
 
 /***************************/
 
-.prod-name-cart{
-    color:#666666;
+.prod-name-cart {
+    color: #666666;
 }
 
 .mellicode {
-    color:#8e8e8e;
+    color: #8e8e8e;
 }
 
 /*****************************/
@@ -2527,27 +2555,48 @@ header.absolate-top {
     text-align: center;
     width: 40px;
     z-index: 99;
-    border-radius:2px;
+    border-radius: 2px;
 }
 
-
-::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
     background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 6px;
     background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
 
-    ::-webkit-scrollbar-thumb:hover {
+    *::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+html::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar {
+    width: 10px !important;
+    background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+    html::-webkit-scrollbar-thumb:hover {
         background: #555;
     }

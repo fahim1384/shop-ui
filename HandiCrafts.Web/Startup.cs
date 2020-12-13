@@ -26,6 +26,10 @@ using AutoMapper;
 using SmartBreadcrumbs.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Newtonsoft.Json;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.Razor;
 //using HandiCrafts.Web.BpService;
 
 namespace HandiCrafts.Web
@@ -61,12 +65,57 @@ namespace HandiCrafts.Web
             })
                 .AddDefaultTokenProviders();*/
 
+            services.AddLocalization(options =>
+            {
+                options.ResourcesPath = "Resources";
+            });
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                T Conf<T>(T cult) where T : CultureInfo
+                {
+                    cult.NumberFormat.NumberDecimalSeparator = ".";
+                    cult.NumberFormat.NumberGroupSeparator = " ";
+                    cult.NumberFormat.CurrencyDecimalSeparator = ".";
+                    cult.DateTimeFormat.AMDesignator = "AM";
+                    cult.DateTimeFormat.PMDesignator = "PM";
+                    cult.DateTimeFormat.FullDateTimePattern = "yyyy/MM/dd HH:mm:ss.fff";
+
+                    return cult;
+                }
+
+                var supportedCultures = new List<CultureInfo>
+                {
+                    Conf(new CultureInfo("fa-IR")),
+                    //Conf(new CultureInfo("fa")),
+                    //Conf(new CultureInfo("az-Latn-AZ")),
+                    //Conf(new CultureInfo("az"))
+                    Conf(new CultureInfo("tr-TR")),
+                    //Conf(new CultureInfo("tr")),
+                    //Conf(new CultureInfo("en-US")),
+                    //Conf(new CultureInfo("en-GB")),
+                    //Conf(new CultureInfo("en")),
+                };
+
+                options.DefaultRequestCulture = new RequestCulture("fa-IR", "fa-IR");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+                options.RequestCultureProviders = new List<IRequestCultureProvider>()
+                {
+                    new QueryStringRequestCultureProvider(),
+                    new CookieRequestCultureProvider()
+                };
+            });
+
             services.AddMemoryCache();
 
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation()
-                .AddViewLocalization()
-                .AddDataAnnotationsLocalization()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization(options => {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(SharedResource));
+                })
                 .AddJsonOptions(option => option.JsonSerializerOptions.PropertyNamingPolicy = null);
 
             var settings = new JsonSerializerSettings
@@ -156,7 +205,7 @@ namespace HandiCrafts.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<RequestLocalizationOptions> localizationOptions)
         {
             if (env.IsDevelopment())
             {
@@ -169,11 +218,36 @@ namespace HandiCrafts.Web
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseSession();
 
             app.UseRouting();
+
+            #region Localization
+
+            app.UseRequestLocalization(localizationOptions.Value);
+            /*IList<CultureInfo> supportedCultures = new List<CultureInfo>
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("fa-IR"),
+            };
+
+            var options = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("fa-IR", "fa-IR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures,
+                RequestCultureProviders = new List<IRequestCultureProvider>()
+                {
+                    new QueryStringRequestCultureProvider(),
+                    new CookieRequestCultureProvider()
+                }
+            };
+            app.UseRequestLocalization(options);*/
+
+            #endregion
 
             /*UseAthentication(app);*/
             app.UseAuthentication();
@@ -217,106 +291,6 @@ namespace HandiCrafts.Web
             });
         }
 
-        #region Authentication
-
-        //private SymmetricSecurityKey signingKey;
-
-        //private void AddAuthentication(IServiceCollection services)
-        //{
-        //    services.AddAuthentication()
-        //        .AddCookie()
-        //        .AddJwtBearer(options =>
-        //        {
-        //            options.TokenValidationParameters = new TokenValidationParameters
-        //            {
-        //                ValidateIssuerSigningKey = true,
-        //                IssuerSigningKey = GetSigningKey(),
-        //                ValidateIssuer = true,
-        //                ValidIssuer = "http://.com",
-        //                ValidateAudience = true,
-        //                ValidAudience = "api-users",
-        //                ValidateLifetime = false,
-        //                ClockSkew = TimeSpan.Zero
-        //            };
-        //        });
-
-        //    services.ConfigureApplicationCookie(options =>
-        //    {
-        //        options.LoginPath = new PathString("/account/login");
-        //        options.AccessDeniedPath = new PathString("/account/login");
-        //        options.LogoutPath = new PathString("/account/logout");
-        //        options.Cookie.Name = "HandiCrafts.WebCookie"; //change this name for every project
-        //});
-        //}
-
-        //private void UseAthentication(IApplicationBuilder app)
-        //{
-        //    #region Token Provider
-
-        //    /*async Task<ClaimsIdentity> GetIdentity(string username, string password)
-        //    {
-        //        //if we try to login after changing password,"CheckPasswordAsync" method returns false ,because EFCore caches data.(if we reastart iis it will work!!!)
-        //        //so we need new instance of Dbcontext and create new instance of Usermanager on the new created context
-        //        using (var serviceScope =
-        //            app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-        //        {
-        //            var um = serviceScope.ServiceProvider.GetService<UserManager>();
-        //            var rm = serviceScope.ServiceProvider.GetService<RoleManager<Role>>();
-        //            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
-        //            {
-        //                var user = await um.FindByNameAsync(username);
-        //                if (user != null)
-        //                {
-        //                    var valid = await um.CheckPasswordAsync(user, password);
-        //                    if (valid)
-        //                    {
-        //                        if (!user.IsActive)
-        //                            throw new Exception("Your account has been deactivated.");
-
-        //                        var jwtGenerator = new JwtTokenService(um, rm);
-        //                        var claimIdentity = await jwtGenerator.GetUserClaims(user);
-        //                        return claimIdentity;
-        //                    }
-        //                }
-        //            }
-        //        }
-
-        //        // Credentials are invalid, or account doesn't exist
-        //        return null;
-        //    }
-
-        //    app.UseSimpleTokenProvider(new TokenProviderOptions
-        //    {
-        //        Path = "/api/token",
-        //        Audience = "api-users",
-        //        Issuer = "http://fhfghfh.gdfg",
-        //        Expiration = TimeSpan.FromDays(365),
-        //        SigningCredentials = new SigningCredentials(GetSigningKey(), SecurityAlgorithms.HmacSha256),
-        //        IdentityResolver = GetIdentity,
-        //    });*/
-
-        //    #endregion
-
-        //    app.UseAuthentication();
-        //}
-
-        //private SymmetricSecurityKey GetSigningKey()
-        //{
-        //    if (signingKey != null)
-        //    {
-        //        return signingKey;
-        //    }
-
-        //    var secretKey = Configuration.AsEnumerable().FirstOrDefault(x => x.Key == "AppConfig:JwtSecretKey").Value;
-        //    if (!string.IsNullOrEmpty(secretKey))
-        //    {
-        //        signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
-        //        return signingKey;
-        //    }
-
-        //    throw new Exception("SecretKey is not available");
-        //}
-
-        #endregion
+        
     }
 }

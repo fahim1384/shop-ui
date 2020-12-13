@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="footer.aboutus" xml:space="preserve">
+    <value>درباره سرای</value>
+  </data>
+  <data name="footer.ba-saray" xml:space="preserve">
+    <value>با سرای</value>
+  </data>
+  <data name="footer.contactus" xml:space="preserve">
+    <value>ارتباط ما</value>
+  </data>
+  <data name="footer.faq" xml:space="preserve">
+    <value>پاسخ به پرسش های متداول</value>
+  </data>
+  <data name="footer.helper-buy" xml:space="preserve">
+    <value>راهنمای خرید از سرای</value>
+  </data>
+  <data name="footer.jobs" xml:space="preserve">
+    <value>فرصت های شغلی</value>
+  </data>
+  <data name="footer.khadamat-moshtariyan" xml:space="preserve">
+    <value>خدمات مشتریان</value>
+  </data>
+  <data name="footer.nahveh-sabt-sefaresh" xml:space="preserve">
+    <value>نحوه ثبت سفارش</value>
+  </data>
+  <data name="footer.raviyeh-marjuee" xml:space="preserve">
+    <value>رویه های بازگردانی کالا</value>
+  </data>
+  <data name="footer.raviyeh-sabt-sefaresh" xml:space="preserve">
+    <value>رویه ارسال سفارش</value>
+  </data>
+  <data name="footer.shiveh-pardakht" xml:space="preserve">
+    <value>شیوه های پرداخت</value>
+  </data>
+  <data name="footer.site-description-message" xml:space="preserve">
+    <value>بازار اینترنتی صنایع‌دستی سرای توسط تیم باریش‌مدیا با همکاری اداره کل میراث فرهنگی‌، گردشگری و صنایع‌دستی استان آذربایجان‌شرقی برای معرفی و فروش محصولات ارزنده صنایع دستی که اکثرا دارای نشان ملی مرغوبیت کالا و یا نشان یونیسکو می‌باشند راه‌اندازی شده است‌. تمام محصولات ارائه شده در این بازار اینترنتی دارای شناسنامه اصالت کالا از وزارت میراث فرهنگی‌، گردشگری و صنایع‌دستی می‌باشند‌.</value>
+  </data>
+  <data name="footer.site-description-title" xml:space="preserve">
+    <value>بازار اینترنتی صنایع دستی سرای</value>
+  </data>
+  <data name="footer.social-net-title" xml:space="preserve">
+    <value>سرای را در شبکه های اجتماعی دنبال کنید</value>
+  </data>
+  <data name="footer.ssr-email-placeholder" xml:space="preserve">
+    <value>آدرس ایمیل خود را وارد نمایید</value>
+  </data>
+  <data name="footer.ssr-send" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="footer.ssr-title" xml:space="preserve">
+    <value>از تخفیف ها و جدیدترین های سرای باخبر شوید:</value>
+  </data>
+  <data name="home.index.marghubiyat.more-view-button" xml:space="preserve">
+    <value>مشاهده بیشتر</value>
+  </data>
+  <data name="home.index.marghubiyat.title" xml:space="preserve">
+    <value>نشان ملی مرغوبیت کالا</value>
+  </data>
+  <data name="home.index.title" xml:space="preserve">
+    <value>صفحه نخست</value>
+  </data>
+  <data name="home.index.top-group.more-view-button" xml:space="preserve">
+    <value>مشاهده بیشتر</value>
+  </data>
+  <data name="home.index.top-group.title" xml:space="preserve">
+    <value>گروه های برتر</value>
+  </data>
+  <data name="home.index.unesco.more-view-button" xml:space="preserve">
+    <value>مشاهده بیشتر</value>
+  </data>
+  <data name="home.index.unesco.name" xml:space="preserve">
+    <value>مهر اصالت یونسکو</value>
+  </data>
+  <data name="main-page.categories.slider.kala" xml:space="preserve">
+    <value>کالا</value>
+  </data>
+  <data name="main-page.categories.slider.title" xml:space="preserve">
+    <value>بیش از صد کالا در دسته بندی های مختلف</value>
+  </data>
+  <data name="main-page.feature.7days-mony-back" xml:space="preserve">
+    <value>7 روز ضمانت بازگشت</value>
+  </data>
+  <data name="main-page.feature.express-delivery" xml:space="preserve">
+    <value>تحویل اکسپرس</value>
+  </data>
+  <data name="main-page.feature.guarantee" xml:space="preserve">
+    <value>ضمانت اصل بودن کالا</value>
+  </data>
+  <data name="main-page.feature.support-24" xml:space="preserve">
+    <value>پشتیبانی 24 ساعته</value>
+  </data>
+  <data name="main-page.latest.my-recent-visits.title" xml:space="preserve">
+    <value>بازدیدهای اخیر من</value>
+  </data>
+  <data name="main-page.latest.recent-visits.title" xml:space="preserve">
+    <value>بازدیدهای اخیر</value>
+  </data>
+  <data name="main-page.latest.title" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
+  <data name="main-page.product.bestselling.title" xml:space="preserve">
+    <value>پرفروش ترین</value>
+  </data>
+  <data name="main-page.product.more-view-button" xml:space="preserve">
+    <value>مشاهده بیشتر</value>
+  </data>
+  <data name="main-page.product.newsest.title" xml:space="preserve">
+    <value>جدیدترین</value>
+  </data>
+  <data name="main-page.product.title" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
+  <data name="site" xml:space="preserve">
+    <value>فروشگاه اینترنتی سرای</value>
+  </data>
+  <data name="top.about" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
+  <data name="top.basket.count" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="top.basket.empty" xml:space="preserve">
+    <value>سبد کالای شما خالی می باشد</value>
+  </data>
+  <data name="top.basket.name" xml:space="preserve">
+    <value>سبد خرید</value>
+  </data>
+  <data name="top.basket.sabt-sefaresh" xml:space="preserve">
+    <value>ثبت سفارش</value>
+  </data>
+  <data name="top.basket.total-mony" xml:space="preserve">
+    <value>مبلغ قابل پرداخت</value>
+  </data>
+  <data name="top.basket.view" xml:space="preserve">
+    <value>مشاهده سبد خرید</value>
+  </data>
+  <data name="top.category" xml:space="preserve">
+    <value>دسته بندی ها</value>
+  </data>
+  <data name="top.contact" xml:space="preserve">
+    <value>ارتباط ما</value>
+  </data>
+  <data name="top.login" xml:space="preserve">
+    <value>ورود به حساب کاربری</value>
+  </data>
+  <data name="top.logout" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="top.mag" xml:space="preserve">
+    <value>مجله</value>
+  </data>
+  <data name="top.saray" xml:space="preserve">
+    <value>سرای</value>
+  </data>
+  <data name="top.search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+</root>

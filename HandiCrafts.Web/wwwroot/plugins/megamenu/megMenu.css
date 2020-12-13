@@ -390,9 +390,9 @@ span.robin-submenu-nav {
     min-width: 5% !important;
 }
 
-.user-link-menu {
+/*.user-link-menu {
     padding: 0 25px !important;
-}
+}*/
 
 .wsmenu-list > .wsshopmyaccount > a .fa.fa-angle-down {
     display: inline-block;

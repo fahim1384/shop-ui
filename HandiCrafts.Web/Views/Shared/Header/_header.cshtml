@@ -146,6 +146,17 @@
 *@
 <!-- Navbar -->
 
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@inject IOptions<RequestLocalizationOptions> LocOptions
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.Parent.NativeName })
+        .ToList();
+}
+
 <div class="container-overflow-wrap">
     <div class="wsmenucontainer clearfix" style="">
         <div id="overlapblackbg"></div>
@@ -188,8 +199,8 @@
                                                        placeholder="جستجو" aria-label="جستجو">
 
                                                 @*id="searchInput" <select id="searchCategoryCmb" class="form-control bg-gray-active rgba-black-light border-radius-10 border-0 z-depth-0 custome-muted-text select2 w-100" aria-label="دسته بندی">
-                                                    <option>دسته بندی</option>
-                                                </select>*@
+                                                        <option>دسته بندی</option>
+                                                    </select>*@
                                             </div>
                                         </div>
                                     </form>
@@ -268,19 +279,19 @@
                             </li>
                             <!---->
                             @*<li class="wscarticon robin-side-cart clearfix" onclick="javascript: window.location='/ShoppingCart/Cart'">
-                                <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                <span class="basket">
-                                    <span class="bbb" style=" top: 30px; position: absolute; width: 30px; height: 30px; background-image: url(/image/icons/onlineshop.png); background-size: cover;"></span>
-                                    <span class="basket-counters total-count">0</span>
-                                    <span class="mobiletext">سبد خرید</span>
-                                </span>
-                            </li>*@
-                        <li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
+                                    <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <span class="basket">
+                                        <span class="bbb" style=" top: 30px; position: absolute; width: 30px; height: 30px; background-image: url(/image/icons/onlineshop.png); background-size: cover;"></span>
+                                        <span class="basket-counters total-count">0</span>
+                                        <span class="mobiletext">سبد خرید</span>
+                                    </span>
+                                </li>*@
+                            <li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
 
-                            <button type="button" id="sabaddropdownMenu" data-toggle="dropdown" class="btn1 btn-outline-secondary1 dropdown-toggle1" style="border: none; background: none;">
-                                <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                <span class="basket" style=" display: block;position:relative;width:100%">
-                                    <span class="bbb" style="position: relative;
+                                <button type="button" id="sabaddropdownMenu" data-toggle="dropdown" class="btn1 btn-outline-secondary1 dropdown-toggle1" style="border: none; background: none;">
+                                    <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                    <span class="basket" style=" display: block;position:relative;width:100%">
+                                        <span class="bbb" style="position: relative;
         width: 30px;
         height: 30px;
         background-image: url(/image/icons/onlineshop.png);
@@ -289,64 +300,108 @@
         float: right;
         margin:12px;
 "></span>
-                                    <span class="basket-counters total-count">0</span>
-                                    <span class="mobiletext" style="float: right; margin-top: 12px;
+                                        <span class="basket-counters total-count">0</span>
+                                        <span class="mobiletext" style="float: right; margin-top: 12px;
 ">سبد خرید</span>
-                                </span>
-                            </button>
-
-                            <ul class="dropdown-menu dropdown-menu-right mt-2 sabad-popup basket-popup-main">
-                                <li class="empty-basket-popup d-none">
-                                    <div class="c-header__profile-dropdown-account-container">
-                                        <div class="c-header__profile-dropdown-user">
-                                            <span class="col-12 small font-weight-600">سبد کالای شما خالی می باشد</span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                @*<li>
-                <div class="">
-                    <div class="c-header__profile-dropdown-actions">
-                        <div class="c-header__profile-dropdown-action-container">
-                            <a href="/order/ordersHistory" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">
-                                <div class="col-3 p-0"><img class="max-width-70px border-radius-3" src="/image/product/product-01.jpg" /></div>
-                                <div class="col-9">
-                                    <span class="font-size-1rem color-menu-sabad font-weight-600">sadasd sad sd asd asd ads asd sd</span>
-                                    <span class="cyan d-block">
-                                        <img src="~/image/icons/avaiable.png" class="width-24px small" />
-                                        در سرای موجود می باشد
                                     </span>
-                                </div>
-                            </a>
-                            <div class="row m-0 pt-5px pb-5px">
-                                <div class="col-8 text-center"><span class="color-menu-sabad small font-weight-bold">1 عدد</span></div>
-                                <div class="col-4 text-right">
-                                    <a><img src="/image/icons/delete.png" class="width-24px" /></a>
-                                </div>
-                            </div>
-                        </div>
+                                </button>
 
-                        <div class="p-2">
-                            <div class="row m-0 pt-5px pb-5px bolderspan">
-                                <div class="col-6 text-left">
-                                    <span class="color-menu-sabad">مبلغ قابل پرداخت</span>
-                                    <span class="d-block color-menu-sabad"><span>200,000,000</span> تومان</span>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <a class="btn btn-info mt-5px" href="/shoppingcart/cart">ثبت سفارش</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <ul class="dropdown-menu dropdown-menu-right mt-2 sabad-popup basket-popup-main">
+                                    <li class="empty-basket-popup d-none">
+                                        <div class="c-header__profile-dropdown-account-container">
+                                            <div class="c-header__profile-dropdown-user">
+                                                <span class="col-12 small font-weight-600">سبد کالای شما خالی می باشد</span>
+                                            </div>
+                                        </div>
+                                    </li>
 
-            </li>*@
-                            </ul>
+                                    @*<li>
+                                            <div class="">
+                                                <div class="c-header__profile-dropdown-actions">
+                                                    <div class="c-header__profile-dropdown-action-container">
+                                                        <a href="/order/ordersHistory" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">
+                                                            <div class="col-3 p-0"><img class="max-width-70px border-radius-3" src="/image/product/product-01.jpg" /></div>
+                                                            <div class="col-9">
+                                                                <span class="font-size-1rem color-menu-sabad font-weight-600">sadasd sad sd asd asd ads asd sd</span>
+                                                                <span class="cyan d-block">
+                                                                    <img src="~/image/icons/avaiable.png" class="width-24px small" />
+                                                                    در سرای موجود می باشد
+                                                                </span>
+                                                            </div>
+                                                        </a>
+                                                        <div class="row m-0 pt-5px pb-5px">
+                                                            <div class="col-8 text-center"><span class="color-menu-sabad small font-weight-bold">1 عدد</span></div>
+                                                            <div class="col-4 text-right">
+                                                                <a><img src="/image/icons/delete.png" class="width-24px" /></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="p-2">
+                                                        <div class="row m-0 pt-5px pb-5px bolderspan">
+                                                            <div class="col-6 text-left">
+                                                                <span class="color-menu-sabad">مبلغ قابل پرداخت</span>
+                                                                <span class="d-block color-menu-sabad"><span>200,000,000</span> تومان</span>
+                                                            </div>
+                                                            <div class="col-6 text-right">
+                                                                <a class="btn btn-info mt-5px" href="/shoppingcart/cart">ثبت سفارش</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </li>*@
+                                </ul>
+                            </li>
+
+                            @*<li>
+                                    <form asp-controller="Home" asp-action="Cookie" method="post">
+                                        <label>زبان:</label>
+                                        <select name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
+                                        </select>
+                                    </form>
+                                </li>*@
+                            <li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
+
+                                <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn1 btn-outline-secondary1 dropdown-toggle1" style="border: none; background: none;margin-top:8px">
+                                    <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+
+                                    <span class="bbb" style="position: relative;width: 30px;height: 30px;background-image: url(/image/icons/language.png);
+        background-size: cover;
+        display: inline-block;
+        float: right;
+        margin:12px;
+"></span>
+
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-right mt-2">
+                                    @{
+                                        foreach (var item in cultureItems)
+                                        {
+                                            <li class="">
+                                                <div class="c-header__profile-dropdown-actions">
+                                                    <div class="c-header__profile-dropdown-action-container">
+                                                        <form id="myform" asp-controller="Home" asp-action="Cookie" method="post">
+                                                            <input type="hidden" name="culture" value="@item.Value" />
+                                                            <a onclick="$('input[name=culture]').val('@item.Value'); document.getElementById('myform').submit(); return false;"
+                                                               class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders">
+                                                            @item.Text</a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+
+                            </li>
 
                             @{
                                 if (User.Identity.IsAuthenticated)
                                 {
-<li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
+                                    <li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
                                         <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle" style="line-height: 40px;padding: 5px; margin-top: 20px !important;">@User.Identity.Name <span class="caret"></span></button>
                                         <ul class="dropdown-menu dropdown-menu-right mt-2">
                                             <li class="">
@@ -366,24 +421,6 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="c-header__profile-dropdown-account">
-                                                                            <!--<div class="c-header__profile-dropdown-account-item u-hidden js-user-dropdown-wallet-has-amount">
-                                                                                <span class="c-header__profile-dropdown-account-item-title">کیف پول</span>
-                                                                                <div class="c-header__profile-dropdown-account-item-amount">
-                                                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-user-drop-down-wallet-amount"></span>
-                                                                                    تومان
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="c-header__profile-dropdown-account-item js-user-dropdown-wallet-has-url">
-                                                                                <a class="c-header__profile-dropdown-account-item-title c-header__profile-dropdown-account-item-title--link  js-wallet-activation-url" href="#">فعال سازی کیف پول</a>
-                                                                            </div>
-
-                                                                            <div class="c-header__profile-dropdown-account-item">
-                                                                                <span class="c-header__profile-dropdown-account-item-title">‌کلاب</span>
-                                                                                <span class="c-header__profile-dropdown-account-item-amount">
-                                                                                    <span class="c-header__profile-dropdown-account-item-amount-number js-dc-current-points">46</span>
-                                                                                    امتیاز
-                                                                                </span>
-                                                                            </div>-->
                                                                         </div>
                                                                         <a href="/profile/" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;profile&quot;}" data-event="profile_click" data-event-category="header_section" data-event-label="logged_in: True - digiclub_score: 87000" class="c-header__profile-dropdown-user-profile-full-link"></a>
                                                                     </div>
@@ -391,13 +428,6 @@
                                                                         <div class="c-header__profile-dropdown-action-container">
                                                                             <a href="/order/ordersHistory" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">سفارش‌های من</a>
                                                                         </div>
-                                                                        <!--
-                                                                        <div class="c-header__profile-dropdown-action-container">
-                                                                            <a href="/digiclub/rewards/" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--digiclub-gifts">
-                                                                                جوایز دیجی‌کلاب
-                                                                            </a>
-                                                                        </div>
-                                                                        -->
                                                                         <div class="c-header__profile-dropdown-action-container">
                                                                             <a href="/Account/Logout" data-snt-event="dkHeaderClick" data-snt-params="{&quot;item&quot;:&quot;account&quot;,&quot;item_option&quot;:&quot;sign-out&quot;}" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--logout js-logout-button">خروج از حساب کاربری</a>
                                                                         </div>
@@ -423,29 +453,36 @@
                                     </li>
 
                                 }
-                                }
+                            }
 
-                                <li class="nav-item ">
-                                    <a href="https://ui.tabrizhandicrafts.com/" class="nav-link waves-effect">
-                                        <span class="bolderspan">مجله</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Home/Aboutus" class="nav-link waves-effect">
-                                        <span class="bolderspan">درباره ما</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Home/Contactus" class="nav-link waves-effect">
-                                        <span class="bolderspan">ارتباط ما</span>
-                                    </a>
-                                </li>
+                            <li class="nav-item ">
+                                <a href="https://ui.tabrizhandicrafts.com/" class="nav-link waves-effect">
+                                    <span class="bolderspan">مجله</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Home/Aboutus" class="nav-link waves-effect">
+                                    <span class="bolderspan">درباره ما</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Home/Contactus" class="nav-link waves-effect">
+                                    <span class="bolderspan">ارتباط ما</span>
+                                </a>
+                            </li>
 
-                            </ul>
-                        </div>
-                        <!-- Breadcrumbs -->
-                    </nav>
-                </div>
+                        </ul>
+                    </div>
+                    <!-- Breadcrumbs -->
+                </nav>
             </div>
         </div>
     </div>
+</div>
+@section Scripts{
+    <script>
+        function onSigninSuccess(value) {
+            window.location.href;
+        }
+    </script>
+}

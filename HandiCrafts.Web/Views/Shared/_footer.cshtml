@@ -5,25 +5,25 @@
             <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                 <div class="card mb-4">
                     <img src="~/image/icons/truck.png" class="max-width-50px" />
-                    <div class="card-text font-weight-600">تحویل اکسپرس</div>
+                    <div class="card-text font-weight-600">@T["main-page.feature.express-delivery"]</div>
                 </div>
             </div>
             <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                 <div class="card mb-4">
                     <img src="~/image/icons/garanti.png" class="max-width-50px" />
-                    <div class="card-text font-weight-600">ضمانت اصل بودن کالا</div>
+                    <div class="card-text font-weight-600">@T["main-page.feature.guarantee"]</div>
                 </div>
             </div>
             <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                 <div class="card mb-4">
                     <img src="~/image/icons/support.png" class="max-width-50px" />
-                    <div class="card-text font-weight-600">پشتیبانی 24 ساعته</div>
+                    <div class="card-text font-weight-600">@T["main-page.feature.support-24"]</div>
                 </div>
             </div>
             <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                 <div class="card mb-4">
                     <img src="~/image/icons/monybag.png" class="max-width-50px" />
-                    <div class="card-text font-weight-600">7 روز ضمانت بازگشت</div>
+                    <div class="card-text font-weight-600">@T["main-page.feature.7days-mony-back"]</div>
                 </div>
             </div>
         </div>
@@ -32,37 +32,37 @@
         <div class="row">
             <div class="col">
                 <div class="card mb-4">
-                    <h6 class="card-title pricing-card-title">راهنمای خرید از سرای</h6>
+                    <h6 class="card-title pricing-card-title">@(T["footer.helper-buy"].Value)</h6>
                     <ul class="list-unstyled mt-3 mb-4 custome-muted-text">
-                        <li>نحوه ثبت سفارش</li>
-                        <li>رویه ارسال سفارش</li>
-                        <li>شیوه های پرداخت</li>
+                        <li>@(T["footer.nahveh-sabt-sefaresh"].Value)</li>
+                        <li>@(T["footer.raviyeh-sabt-sefaresh"].Value)</li>
+                        <li>@(T["footer.shiveh-pardakht"].Value)</li>
                     </ul>
                 </div>
             </div>
             <div class="col">
                 <div class="card mb-4">
-                    <h6 class="card-title pricing-card-title">خدمات مشتریان</h6>
+                    <h6 class="card-title pricing-card-title">@T["footer.khadamat-moshtariyan"]</h6>
                     <ul class="list-unstyled mt-3 mb-4 custome-muted-text">
-                        <li>پاسخ به پرسش های متداول</li>
-                        <li>رویه های بازگردانی کالا</li>
-                       
+                        <li>@T["footer.faq"]</li>
+                        <li>@T["footer.raviyeh-marjuee"]</li>
+
                     </ul>
                 </div>
             </div>
             <div class="col">
                 <div class="card mb-4">
-                    <h6 class="card-title pricing-card-title">با سرای</h6>
+                    <h6 class="card-title pricing-card-title">@T["footer.ba-saray"]</h6>
                     <ul class="list-unstyled mt-3 mb-4 custome-muted-text">
-                        <li>فرصت های شغلی</li>
+                        <li>@T["footer.jobs"]</li>
                         <li>
-                            <a href="/Home/Contactus" style="color: #8c8c8c;" >
-                                 ارتباط ما 
+                            <a href="/Home/Contactus" style="color: #8c8c8c;">
+                                @T["footer.contactus"]
                             </a>
                         </li>
                         <li>
                             <a href="/Home/Aboutus" style="color: #8c8c8c;">
-                                درباره سرای 
+                                @T["footer.aboutus"]
                             </a>
                         </li>
                     </ul>
@@ -70,12 +70,12 @@
             </div>
             <div class="col col-lg-4 col-md-6 col-sm-12">
                 <div class="card mb-4 text-left">
-                    <h6 class="card-title pricing-card-title">از تخفیف ها و جدیدترین های سرای باخبر شوید:</h6>
+                    <h6 class="card-title pricing-card-title">@T["footer.ssr-title"]</h6>
                     <form class="frmRss form-inline mt-2" dir="rtl">
-                        <input class="form-control text-left email" type="text" placeholder="آدرس ایمیل خود را وارد نمایید" aria-label="ارسال">
-                        <button class="btn btn-info my-2 my-sm-0 send-email-btn" type="submit">ارسال</button>
+                        <input class="form-control text-left email" type="text" placeholder="@T["footer.ssr-email-placeholder"]" aria-label="@T["footer.ssr-send"]">
+                        <button class="btn btn-info my-2 my-sm-0 send-email-btn" type="submit">@T["footer.ssr-send"]</button>
                     </form>
-                    <h6 class="card-title pricing-card-title mt-2">سرای را در شبکه های اجتماعی دنبال کنید</h6>
+                    <h6 class="card-title pricing-card-title mt-2">@T["footer.social-net-title"]</h6>
                 </div>
             </div>
         </div>
@@ -85,12 +85,10 @@
         <div class="row">
             <div class="col-12 col-sm-7 col-lg-9 col-md-8">
                 <div class="card mb-4 text-left">
-                    <h6 class="card-title pricing-card-title">بازار اینترنتی صنایع دستی سرای</h6>
+                    <h6 class="card-title pricing-card-title">@T["footer.site-description-title"]</h6>
                     <div class="mt-3 mb-4 custome-muted-text">
                         <p class="text-wrap line-height-30 text-justify">
-                            بازار اینترنتی صنایع‌دستی سرای توسط تیم باریش‌مدیا  با همکاری اداره کل میراث فرهنگی‌، گردشگری و صنایع‌دستی استان آذربایجان‌شرقی 
-                            برای معرفی و فروش محصولات ارزنده صنایع دستی که اکثرا دارای نشان ملی مرغوبیت کالا و یا نشان یونیسکو می‌باشند راه‌اندازی شده است‌. 
-                            تمام محصولات ارائه شده در این بازار اینترنتی دارای شناسنامه اصالت کالا از وزارت میراث فرهنگی‌، گردشگری و صنایع‌دستی می‌باشند‌.
+                            @T["footer.site-description-message"]
                         </p>
                     </div>
                 </div>

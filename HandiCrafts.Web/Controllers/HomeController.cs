@@ -16,6 +16,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 using System.Text;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 
 namespace HandiCrafts.Web.Controllers
 {
@@ -545,6 +547,20 @@ namespace HandiCrafts.Web.Controllers
             var sb = new StringBuilder();
             BuildList(root, sb, null);
             return sb.ToString();
+        }
+
+        //*********************************************
+
+        [HttpPost]
+        public IActionResult Cookie(string culture)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddMonths(1) }
+            );
+
+            return RedirectToAction("Index");
         }
 
     }

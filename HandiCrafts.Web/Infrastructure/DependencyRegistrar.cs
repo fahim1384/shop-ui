@@ -4,7 +4,7 @@ using HandiCrafts.Web.Infrastructure.Framework;
 using HandiCrafts.Web.Infrastructure.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-
+using HandiCrafts.Web.Interfaces;
 
 namespace HandiCrafts.Web.Infrastructure
 {
@@ -22,7 +22,8 @@ namespace HandiCrafts.Web.Infrastructure
             services.AddScoped<SignInManager>();
             services.AddScoped<JwtTokenService>();
             services.AddSingleton<PartialViewResultExecutor>();
-            
+            services.AddSingleton<ILocalizeService, LocalizeService>();
+
         }
     }
 }
