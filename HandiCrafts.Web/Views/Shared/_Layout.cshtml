@@ -1,16 +1,33 @@
-﻿<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+﻿@using Microsoft.AspNetCore.Localization
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var dir = requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+}
+
+<!DOCTYPE html>
+<html lang="@requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName" dir="@dir">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - @T["site"]</title>
     <link href="~/css/_Loading.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    @{
+        if (dir == "rtl")
+        {
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+            <link href="~/plugins/megamenu/megMenu.css" rel="stylesheet" />
+        }
+        else
+        {
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+            <link href="~/plugins/megamenu/ltr_megMenu.css" rel="stylesheet" />
+        }
+    }
     @*<link href="~/fonts/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />*@
     <link href="~/fonts/fontawesome-pro-5.15.1-web-ulabs/css/all.css" rel="stylesheet" />
     <link href="/plugins/select2/select2.min.css" rel="stylesheet" />
     <link href="~/css/_banner.css" rel="stylesheet" />
-    <link href="~/plugins/megamenu/megMenu.css" rel="stylesheet" />
+    @*<link href="~/plugins/megamenu/megMenu.css" rel="stylesheet" />*@
     <link href="~/plugins/carousel/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/plugins/carousel/owl.theme.css" rel="stylesheet" />
     <link href="~/plugins/carousel/owl.theme.default.min.css" rel="stylesheet" />
@@ -121,8 +138,8 @@
         });
 
         /*===================================*
-	        SCROLLUP JS
-	    *===================================*/
+            SCROLLUP JS
+        *===================================*/
         $(window).on('scroll', function () {
             if ($(this).scrollTop() > 150) {
                 $('.scrollup').fadeIn();
@@ -164,36 +181,36 @@
                             if (v.inverseP.length > 0) {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
                                 child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                                        <div class="container-fluid">
-                                                                            <div class="row">
-                                                                                <div class="col-lg-8 col-md-12 clearfix">
-                                                                                    <div class="container-fluid">
-                                                                                        <div class="row posrdb">
-                                                                                            <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                                <ul class="wstliststy02 clearfix">`;
+                                                                            <div class="container-fluid">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-8 col-md-12 clearfix">
+                                                                                        <div class="container-fluid">
+                                                                                            <div class="row posrdb">
+                                                                                                <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                                    <ul class="wstliststy02 clearfix">`;
                                 $.each(v.inverseP, function (e2, v2) {
                                     select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
                                     child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
                                 });
                                 child += `</ul></div>
+                                                                                   </div>
                                                                                </div>
                                                                            </div>
                                                                        </div>
                                                                    </div>
-                                                               </div>
-                                                           </div>`;
+                                                               </div>`;
 
                                 $("#mgmenu").append(`<li ${ac}>
-                                                                    <span class="wsmenu-click02">
-                                                                        <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                                    </span>
-                                                                    <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                                    <span class="robin-submenu-nav">
-                                                                        <span class="robin-menu-icon-kitchen"></span>
-                                                                        <span style="vertical-align:middle">
-                                                                            <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                        <span class="wsmenu-click02">
+                                                                            <i class="wsmenu-arrow fa fa-angle-down"></i>
                                                                         </span>
-                                                                    </span>${child}</li>`);
+                                                                        <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                                        <span class="robin-submenu-nav">
+                                                                            <span class="robin-menu-icon-kitchen"></span>
+                                                                            <span style="vertical-align:middle">
+                                                                                <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                            </span>
+                                                                        </span>${child}</li>`);
 
                             }
                             else {
@@ -270,7 +287,7 @@
             });
 
         }*/
-                        //megaMenuData();
+                            //megaMenuData();
 
     </script>
     @RenderSection("Scripts", required: false)

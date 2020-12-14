@@ -326,7 +326,16 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 if (fullInfo.ResultCode == 200 && fullInfo.Obj == null) throw new Exception("دیتایی برای این کاربر وجود ندارد");
 
-                PersianDateTime persianDate = new PersianDateTime(fullInfo.Obj.Bdate.Date);
+                DateTime date;
+                if (DateTime.TryParse(fullInfo.Obj.Bdate, out date)) {
+                    date = DateTime.Parse(fullInfo.Obj.Bdate);
+                }
+                else
+                {
+                    date = DateTime.Now;
+                }
+
+                PersianDateTime persianDate = new PersianDateTime(date);
                 var Address = fullInfo.Obj.AddressList.Count > 0 ? fullInfo.Obj.AddressList.FirstOrDefault() : null;
 
                 informationVModel = new PersonalInformationVModel()
