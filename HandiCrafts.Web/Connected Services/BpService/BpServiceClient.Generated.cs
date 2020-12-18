@@ -1529,22 +1529,18 @@ namespace HandiCrafts.Web
     
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<LongResult> UploadSellerDocumentAsync(long? sellerId, long? documentId)
+        public System.Threading.Tasks.Task<LongResult> UploadSellerDocumentAsync(long? documentId)
         {
-            return UploadSellerDocumentAsync(sellerId, documentId, System.Threading.CancellationToken.None);
+            return UploadSellerDocumentAsync(documentId, System.Threading.CancellationToken.None);
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<LongResult> UploadSellerDocumentAsync(long? sellerId, long? documentId, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LongResult> UploadSellerDocumentAsync(long? documentId, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Document/UploadSellerDocument?");
-            if (sellerId != null) 
-            {
-                urlBuilder_.Append(System.Uri.EscapeDataString("sellerId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(sellerId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
-            }
             if (documentId != null) 
             {
                 urlBuilder_.Append(System.Uri.EscapeDataString("documentId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(documentId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
@@ -5415,6 +5411,7 @@ namespace HandiCrafts.Web
             }
         }
     
+        /// <summary>دریافت مشخصات صنعتگر</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
         public System.Threading.Tasks.Task<SellerFullInfoDtoSingleResult> GetSellerFullInfoAsync()
@@ -5423,6 +5420,7 @@ namespace HandiCrafts.Web
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>دریافت مشخصات صنعتگر</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
         public async System.Threading.Tasks.Task<SellerFullInfoDtoSingleResult> GetSellerFullInfoAsync(System.Threading.CancellationToken cancellationToken)
@@ -5469,6 +5467,148 @@ namespace HandiCrafts.Web
                         }
             
                         return default(SellerFullInfoDtoSingleResult);
+                    }
+                    finally
+                    {
+                        if (response_ != null)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+            }
+        }
+    
+        /// <summary>ثبت مشخصات صنعتگر</summary>
+        /// <returns>Success</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        public System.Threading.Tasks.Task<LongResult> UpdateSellerFullInfoAsync(SellerRegisterDto body)
+        {
+            return UpdateSellerFullInfoAsync(body, System.Threading.CancellationToken.None);
+        }
+    
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>ثبت مشخصات صنعتگر</summary>
+        /// <returns>Success</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        public async System.Threading.Tasks.Task<LongResult> UpdateSellerFullInfoAsync(SellerRegisterDto body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Seller/UpdateSellerFullInfo");
+    
+            var client_ = _httpClient;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var content_ = new System.Net.Http.StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value));
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("POST");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+    
+                    PrepareRequest(client_, request_, urlBuilder_);
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+                    PrepareRequest(client_, request_, url_);
+    
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+    
+                        ProcessResponse(client_, response_);
+    
+                        var status_ = ((int)response_.StatusCode).ToString();
+                        if (status_ == "200") 
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<LongResult>(response_, headers_).ConfigureAwait(false);
+                            return objectResponse_.Object;
+                        }
+                        else
+                        if (status_ != "200" && status_ != "204")
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false); 
+                            throw new SwaggerException("The HTTP status code of the response was not expected (" + (int)response_.StatusCode + ").", (int)response_.StatusCode, responseData_, headers_, null);
+                        }
+            
+                        return default(LongResult);
+                    }
+                    finally
+                    {
+                        if (response_ != null)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+            }
+        }
+    
+        /// <summary>ثبت مشخصات صنعتگر</summary>
+        /// <returns>Success</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        public System.Threading.Tasks.Task<SellerDocumentDtoListResult> GetSellerDocumentListAsync()
+        {
+            return GetSellerDocumentListAsync(System.Threading.CancellationToken.None);
+        }
+    
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>ثبت مشخصات صنعتگر</summary>
+        /// <returns>Success</returns>
+        /// <exception cref="SwaggerException">A server side error occurred.</exception>
+        public async System.Threading.Tasks.Task<SellerDocumentDtoListResult> GetSellerDocumentListAsync(System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Seller/GetSellerDocumentList");
+    
+            var client_ = _httpClient;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    request_.Content = new System.Net.Http.StringContent(string.Empty, System.Text.Encoding.UTF8, "text/plain");
+                    request_.Method = new System.Net.Http.HttpMethod("POST");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+    
+                    PrepareRequest(client_, request_, urlBuilder_);
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+                    PrepareRequest(client_, request_, url_);
+    
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+    
+                        ProcessResponse(client_, response_);
+    
+                        var status_ = ((int)response_.StatusCode).ToString();
+                        if (status_ == "200") 
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<SellerDocumentDtoListResult>(response_, headers_).ConfigureAwait(false);
+                            return objectResponse_.Object;
+                        }
+                        else
+                        if (status_ != "200" && status_ != "204")
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false); 
+                            throw new SwaggerException("The HTTP status code of the response was not expected (" + (int)response_.StatusCode + ").", (int)response_.StatusCode, responseData_, headers_, null);
+                        }
+            
+                        return default(SellerDocumentDtoListResult);
                     }
                     finally
                     {
@@ -8006,16 +8146,16 @@ namespace HandiCrafts.Web
         /// <summary>درخواست کد فعالسازی یرای ورود به سیستم صنعتگر</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<VoidResult> Seller_GetActivationCodeForLogin(string email, long? mobileNo, long? userId)
+        public System.Threading.Tasks.Task<VoidResult> GetActivationCodeForLoginAsync(string email, long? mobileNo, long? userId)
         {
-            return Seller_GetActivationCodeForLogin(email, mobileNo, userId, System.Threading.CancellationToken.None);
+            return GetActivationCodeForLoginAsync(email, mobileNo, userId, System.Threading.CancellationToken.None);
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <summary>درخواست کد فعالسازی یرای ورود به سیستم صنعتگر</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<VoidResult> Seller_GetActivationCodeForLogin(string email, long? mobileNo, long? userId, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VoidResult> GetActivationCodeForLoginAsync(string email, long? mobileNo, long? userId, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Account/Seller_GetActivationCodeForLogin?");
@@ -15846,13 +15986,13 @@ namespace HandiCrafts.Web
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.6.2.0 (NJsonSchema v10.1.23.0 (Newtonsoft.Json v11.0.0.0))")]
-    public partial class GetImageListByProductIdClient 
+    public partial class ProducatGeneralSearchClient 
     {
         private string _baseUrl = "";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public GetImageListByProductIdClient(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public ProducatGeneralSearchClient(string baseUrl, System.Net.Http.HttpClient httpClient)
         {
             BaseUrl = baseUrl; 
             _httpClient = httpClient; 
@@ -15879,25 +16019,25 @@ namespace HandiCrafts.Web
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
     
-        /// <summary>لیست فایل های محصول براساس آیدی محصول</summary>
+        /// <summary>جستجو کلی محصولات</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<ProductImageDtoListResult> UIAsync(long? productId)
+        public System.Threading.Tasks.Task<ProductGeneralSearchResultDtoListResult> UIAsync(string name)
         {
-            return UIAsync(productId, System.Threading.CancellationToken.None);
+            return UIAsync(name, System.Threading.CancellationToken.None);
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <summary>لیست فایل های محصول براساس آیدی محصول</summary>
+        /// <summary>جستجو کلی محصولات</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<ProductImageDtoListResult> UIAsync(long? productId, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ProductGeneralSearchResultDtoListResult> UIAsync(string name, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/ProductImage/GetImageListByProductId_UI?");
-            if (productId != null) 
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Product/ProducatGeneralSearch_UI?");
+            if (name != null) 
             {
-                urlBuilder_.Append(System.Uri.EscapeDataString("productId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(productId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+                urlBuilder_.Append(System.Uri.EscapeDataString("name") + "=").Append(System.Uri.EscapeDataString(ConvertToString(name, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             }
             urlBuilder_.Length--;
     
@@ -15929,7 +16069,7 @@ namespace HandiCrafts.Web
                         var status_ = ((int)response_.StatusCode).ToString();
                         if (status_ == "200") 
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProductImageDtoListResult>(response_, headers_).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ProductGeneralSearchResultDtoListResult>(response_, headers_).ConfigureAwait(false);
                             return objectResponse_.Object;
                         }
                         else
@@ -15939,7 +16079,7 @@ namespace HandiCrafts.Web
                             throw new SwaggerException("The HTTP status code of the response was not expected (" + (int)response_.StatusCode + ").", (int)response_.StatusCode, responseData_, headers_, null);
                         }
             
-                        return default(ProductImageDtoListResult);
+                        return default(ProductGeneralSearchResultDtoListResult);
                     }
                     finally
                     {
@@ -16050,13 +16190,13 @@ namespace HandiCrafts.Web
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.6.2.0 (NJsonSchema v10.1.23.0 (Newtonsoft.Json v11.0.0.0))")]
-    public partial class GetSellerFullInfoClient 
+    public partial class GetImageListByProductIdClient 
     {
         private string _baseUrl = "";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public GetSellerFullInfoClient(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public GetImageListByProductIdClient(string baseUrl, System.Net.Http.HttpClient httpClient)
         {
             BaseUrl = baseUrl; 
             _httpClient = httpClient; 
@@ -16083,23 +16223,25 @@ namespace HandiCrafts.Web
         partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
     
+        /// <summary>لیست فایل های محصول براساس آیدی محصول</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<SellerFullInfoDtoSingleResult> TestAsync(long? userId)
+        public System.Threading.Tasks.Task<ProductImageDtoListResult> UIAsync(long? productId)
         {
-            return TestAsync(userId, System.Threading.CancellationToken.None);
+            return UIAsync(productId, System.Threading.CancellationToken.None);
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>لیست فایل های محصول براساس آیدی محصول</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<SellerFullInfoDtoSingleResult> TestAsync(long? userId, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ProductImageDtoListResult> UIAsync(long? productId, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Seller/GetSellerFullInfo_test?");
-            if (userId != null) 
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/ProductImage/GetImageListByProductId_UI?");
+            if (productId != null) 
             {
-                urlBuilder_.Append(System.Uri.EscapeDataString("userId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(userId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
+                urlBuilder_.Append(System.Uri.EscapeDataString("productId") + "=").Append(System.Uri.EscapeDataString(ConvertToString(productId, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             }
             urlBuilder_.Length--;
     
@@ -16131,7 +16273,7 @@ namespace HandiCrafts.Web
                         var status_ = ((int)response_.StatusCode).ToString();
                         if (status_ == "200") 
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<SellerFullInfoDtoSingleResult>(response_, headers_).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ProductImageDtoListResult>(response_, headers_).ConfigureAwait(false);
                             return objectResponse_.Object;
                         }
                         else
@@ -16141,7 +16283,7 @@ namespace HandiCrafts.Web
                             throw new SwaggerException("The HTTP status code of the response was not expected (" + (int)response_.StatusCode + ").", (int)response_.StatusCode, responseData_, headers_, null);
                         }
             
-                        return default(SellerFullInfoDtoSingleResult);
+                        return default(ProductImageDtoListResult);
                     }
                     finally
                     {
@@ -16694,6 +16836,9 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerAddressDto 
     {
+        [Newtonsoft.Json.JsonProperty("id",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long Id { get; set; }
+    
         [Newtonsoft.Json.JsonProperty("titel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Titel { get; set; }
     
@@ -23766,6 +23911,63 @@ namespace HandiCrafts.Web
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
+    public partial class ProductGeneralSearchResultDto 
+    {
+        [Newtonsoft.Json.JsonProperty("productId",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long ProductId { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ProductName { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("catProductId",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long CatProductId { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("catProductCode",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long CatProductCode { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("catProductName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string CatProductName { get; set; }
+    
+        public string ToJson() 
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+        }
+    
+        public static ProductGeneralSearchResultDto FromJson(string data)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ProductGeneralSearchResultDto>(data);
+        }
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
+    public partial class ProductGeneralSearchResultDtoListResult 
+    {
+        [Newtonsoft.Json.JsonProperty("resultCode",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int ResultCode { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ResultMessage { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Totalcount { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<ProductGeneralSearchResultDto> ObjList { get; set; }
+    
+        public string ToJson() 
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+        }
+    
+        public static ProductGeneralSearchResultDtoListResult FromJson(string data)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ProductGeneralSearchResultDtoListResult>(data);
+        }
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerProductUpdateModel 
     {
         [Newtonsoft.Json.JsonProperty("productId",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
@@ -23891,56 +24093,55 @@ namespace HandiCrafts.Web
         [Newtonsoft.Json.JsonProperty("sellerId",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("realOrLegal", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("realOrLegal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? RealOrLegal { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fname { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("gender", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("gender", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Gender { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("identityNo", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("identityNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IdentityNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("secondMobile", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("secondMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SecondMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("shabaNo", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("shabaNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ShabaNo { get; set; }
     
         [Newtonsoft.Json.JsonProperty("bdate",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Bdate { get; set; }
-        //public System.DateTimeOffset Bdate { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.DateTimeOffset Bdate { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveMobileApp { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MobileAppVersion { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MobileAppTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("addressList", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("addressList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerAddressDto> AddressList { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("documentList", Required = Newtonsoft.Json.Required.AllowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("documentList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerDocumentDto> DocumentList { get; set; }
     
         public string ToJson() 
@@ -23975,6 +24176,33 @@ namespace HandiCrafts.Web
         public static SellerFullInfoDtoSingleResult FromJson(string data)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<SellerFullInfoDtoSingleResult>(data);
+        }
+    
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
+    public partial class SellerDocumentDtoListResult 
+    {
+        [Newtonsoft.Json.JsonProperty("resultCode",  NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int ResultCode { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ResultMessage { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int? Totalcount { get; set; }
+    
+        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<SellerDocumentDto> ObjList { get; set; }
+    
+        public string ToJson() 
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+        }
+    
+        public static SellerDocumentDtoListResult FromJson(string data)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<SellerDocumentDtoListResult>(data);
         }
     
     }

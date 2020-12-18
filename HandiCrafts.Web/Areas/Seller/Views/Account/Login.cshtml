@@ -14,10 +14,10 @@
 
         <div class="form-group mb-4">
             <div class="input-group mb-2 heght-65px reg-element">
-                <input type="text" class="form-control heght-100per emailmobile" placeholder="ایمیل خود را وارد نمایید" asp-for="EmailorMobileNo" aria-describedby="basic-addon1">
+                <input type="text" class="form-control heght-100per emailmobile" placeholder="شماره موبایل خود را وارد نمایید" asp-for="EmailorMobileNo" aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
-                        <img src="~/image/icons/Sanatgar/email.png" />
+                        <img src="~/image/icons/Sanatgar/mobile.png" />
                     </span>
                 </div>
             </div>
@@ -29,7 +29,7 @@
         </div>
 
     </form>
-    <p class="small text-center text-gray-soft">قبلا ثبت نام کرده ام <a href="/seller/account/login" class="cyan">ورود</a></p>
+    <p class="small text-center text-gray-soft">قبلا ثبت نام کرده ام <a href="https://adminui.tabrizhandicrafts.com/seller" class="cyan">ورود</a></p>
 </div>
 
 @section Scripts{
@@ -50,7 +50,7 @@
 
                 if (result.data.isExist == true && result.data.loginByCode == false) {
 
-                    $.ajax({
+                    /*$.ajax({
                         type: 'POST',
                         data: { mobile: $("input[name=EmailorMobileNo]").val() },
                         url: "/Seller/Account/Seller_GetActivationCodeForLogin",
@@ -64,7 +64,9 @@
                                 $("#errorbox").html(result2.message).removeClass("d-none");
                             }
                         }
-                    });
+                    });*/
+
+                    window.location = "/Seller/Account/FastRegister?userid=" + result.data.userId;
                     
                 }
                 else if (result.data.isExist == true && result.data.loginByCode == true) {

@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
 
 namespace HandiCrafts.Web.Areas.Seller.Controllers
 {
@@ -33,17 +34,20 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
         IHttpClientFactory _httpClientFactory;
         const string _fullname = "fullname";
         const string _seller_userid = "selleruserid";
+        public IConfiguration _configuration;
         #endregion
 
         #region Constructors
 
         public AccountController(
             IHttpClientFactory httpClientFactory,
+            IConfiguration configuration,
             ILogger<AccountController> logger,
             IStringLocalizer<SharedResource> localizer,
             IMapper mapper) : base(logger, localizer, mapper)
         {
             _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
         }
 
 
@@ -115,7 +119,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                string BaseUrl = "https://service.tabrizhandicrafts.com/";// _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _configuration["BaseUrl"];
 
                 ByActivationCodeClient client = new ByActivationCodeClient(BaseUrl, httpClient);
 
@@ -124,38 +128,27 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
 
-                /*string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
+                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
 
                 result.Obj.Fullname = fullnameFromResult;
 
-                var claims = new[] {
-                        new Claim("sellertoken", result.Obj.Token),
-                        new Claim("sellerfullname", fullnameFromResult),
-                    };
+                Response.Cookies.Append(
+                    "sellertoken",
+                    result.Obj.Token,
+                    new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddDays(1),
+                        IsEssential = true
+                    });
 
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MyNameIsEsmaeilVahedi"));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-                var token = new JwtSecurityToken(
-
-                    //issuer: "https://www.tabrizcraft.ir",
-                    //audience: "https://www.tabrizcraft.ir",
-                    expires: DateTime.Now.AddDays(1),
-                    signingCredentials: credentials,
-                    claims: claims
-                    );
-
-                new JwtSecurityTokenHandler().WriteToken(token);
-
-                //
-                var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
-                identity.AddClaim(new Claim(ClaimTypes.Surname, result.Obj.Token));
-                identity.AddClaim(new Claim(ClaimTypes.Name, fullnameFromResult));
-                identity.AddClaim(new Claim(ClaimTypes.Role, "Seller"));
-
-                var principal = new ClaimsPrincipal(identity);
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = true });*/
-                //
+                Response.Cookies.Append(
+                    "sellerusername",
+                    fullnameFromResult,
+                    new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddMinutes(30),
+                        IsEssential = true
+                    });
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -169,12 +162,11 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
-                string BaseUrl = "https://service.tabrizhandicrafts.com/";
+                string BaseUrl = _configuration["BaseUrl"];
 
                 SellerClient client = new SellerClient(BaseUrl, httpClient);
 
-                var result = await client.Seller_GetActivationCodeForLogin(null, mobile, null);
+                var result = await client.GetActivationCodeForLoginAsync(null, mobile, null);
 
                 if (result.ResultCode != 200)
                     return Error<VoidResult>(null, result.ResultMessage);
@@ -199,8 +191,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
-                string BaseUrl = "https://service.tabrizhandicrafts.com/";
+                string BaseUrl = _configuration["BaseUrl"];
 
                 ByPassClient client = new ByPassClient(BaseUrl, httpClient);
 
@@ -209,38 +200,27 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
 
-                //string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
+                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
 
-                //result.Obj.Fullname = fullnameFromResult;
+                result.Obj.Fullname = fullnameFromResult;
 
-                /*var claims = new[] {
-                        new Claim("sellertoken", result.Obj.Token),
-                        new Claim("sellerfullname", fullnameFromResult),
-                    };
+                Response.Cookies.Append(
+                    "sellertoken",
+                    result.Obj.Token,
+                    new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddDays(1),
+                        IsEssential = true
+                    });
 
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MyNameIsEsmaeilVahedi"));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-                var token = new JwtSecurityToken(
-
-                    //issuer: "https://www.tabrizcraft.ir",
-                    //audience: "https://www.tabrizcraft.ir",
-                    expires: DateTime.Now.AddDays(1),
-                    signingCredentials: credentials,
-                    claims: claims
-                    );
-
-                new JwtSecurityTokenHandler().WriteToken(token);
-
-                //
-                var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
-                identity.AddClaim(new Claim(ClaimTypes.Surname, result.Obj.Token));
-                identity.AddClaim(new Claim(ClaimTypes.Name, fullnameFromResult));
-                identity.AddClaim(new Claim(ClaimTypes.Role, "Seller"));
-
-                var principal = new ClaimsPrincipal(identity);
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = true });*/
-                //
+                Response.Cookies.Append(
+                    "sellerusername",
+                    fullnameFromResult,
+                    new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddMinutes(30),
+                        IsEssential = true
+                    });
 
                 return Success(data: result, message: result.ResultMessage);
 
@@ -254,8 +234,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             {
                 HttpClient httpClient = new HttpClient();
 
-                //string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
-                string BaseUrl = "https://service.tabrizhandicrafts.com/";
+                string BaseUrl = _configuration["BaseUrl"];
 
                 SellerLoginClient client = new SellerLoginClient(BaseUrl, httpClient);
 
@@ -282,9 +261,9 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             });
         }
 
-        public IActionResult CompleteInformation(long? userid)
+        public async Task<IActionResult> CompleteInformation()
         {
-            if (userid == null)
+            if (string.IsNullOrEmpty(Request.Cookies["sellertoken"]))
             {
                 return View("Login");
             }
@@ -297,7 +276,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 #region Ostanha
                 HttpClient httpClient = new HttpClient();
 
-                string BaseUrl = "https://service.tabrizhandicrafts.com/"; //_httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _configuration["BaseUrl"];
 
                 GetProvinceListClient client = new GetProvinceListClient(BaseUrl, httpClient);
 
@@ -314,28 +293,25 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 #endregion
 
                 #region Sanatgar Full Info
-                GetSellerFullInfoClient client1 = new GetSellerFullInfoClient(BaseUrl, httpClient);
 
-                var fullInfo = client1.TestAsync(userid.Value).Result;
-
-                //httpClient.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient2").DefaultRequestHeaders.Authorization;
-                //Client client1 = new Client(BaseUrl, httpClient);
-                //var fullInfo = client1.GetSellerFullInfo().Result;
-
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
+                Client client2 = new Client(BaseUrl, httpClient);
+                var fullInfo = await client2.GetSellerFullInfoAsync();
+  
                 if (fullInfo.ResultCode != 200) throw new Exception(fullInfo.ResultMessage);
 
                 if (fullInfo.ResultCode == 200 && fullInfo.Obj == null) throw new Exception("دیتایی برای این کاربر وجود ندارد");
 
-                DateTime date;
+                /*DateTime date;
                 if (DateTime.TryParse(fullInfo.Obj.Bdate, out date)) {
                     date = DateTime.Parse(fullInfo.Obj.Bdate);
                 }
                 else
                 {
                     date = DateTime.Now;
-                }
+                }*/
 
-                PersianDateTime persianDate = new PersianDateTime(date);
+                PersianDateTime persianDate = new PersianDateTime(fullInfo.Obj.Bdate.Date);
                 var Address = fullInfo.Obj.AddressList.Count > 0 ? fullInfo.Obj.AddressList.FirstOrDefault() : null;
 
                 informationVModel = new PersonalInformationVModel()
@@ -351,14 +327,20 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     MobileNo = fullInfo.Obj.Mobile != null ? "0" + fullInfo.Obj.Mobile.ToString() : null,
                     MobileNo2 = fullInfo.Obj.SecondMobile != null ? "0" + fullInfo.Obj.SecondMobile.ToString() : null,
                     NationalCode = fullInfo.Obj.MelliCode != null ? fullInfo.Obj.MelliCode.Value.ToString() : null,
-                    Phone = fullInfo.Obj.Tel != null ? fullInfo.Obj.Tel.Value.ToString() : null,
+                    Phone = fullInfo.Obj.Tel != null ? "0" + fullInfo.Obj.Tel.Value.ToString() : null,
                     PostalCode = Address != null ? Address.PostalCode.ToString() : null,
                     Province = Address != null ? Address.ProvinceId.ToString() : null,
                     ShabaCode = fullInfo.Obj.ShabaNo,
-                    UserId = fullInfo.Obj.SellerId
+                    UserId = fullInfo.Obj.SellerId,
+                    AddOrEditModel = 2
                 };
 
                 #endregion
+            }
+            catch (UnauthorizedAccessException)
+            {
+                ModelState.AddModelError("401", "زمان توکن شما به اتمام رسیده است.لطفا از اول عملیات را انجام دهید");
+                return View();
             }
             catch (Exception ex)
             {
@@ -374,11 +356,15 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
         {
             return TryCatch(async () =>
             {
+                if (string.IsNullOrEmpty(Request.Cookies["sellertoken"]))
+                    return Error<LongResult>(null, message: "مهلت زمانی شما برای ادامه عملیات به پایان رسیده است لطفا مراحل ورود را از اول شروع کنید");
+                
                 HttpClient httpClient = new HttpClient();
 
-                string BaseUrl = "https://service.tabrizhandicrafts.com/";// _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _configuration["BaseUrl"];
 
                 Client client = new Client(BaseUrl, httpClient);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
 
                 PersianDateTime persianDate = PersianDateTime.Parse(model.BirthDate);
                 DateTime miladiDate = persianDate.ToDateTime();
@@ -408,7 +394,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     ShabaNo = model.ShabaCode
                 };
 
-                var result = await client.SellerRegisterAsync(sellerRegisterDto);
+                var result = await client.UpdateSellerFullInfoAsync(sellerRegisterDto);
 
                 if (result.ResultCode != 200)
                     return Error<LongResult>(null, result.ResultMessage);
@@ -436,11 +422,16 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
         {
             return TryCatch(async () =>
             {
+                if (string.IsNullOrEmpty(Request.Cookies["sellertoken"]))
+                    return Error<DocumentDtoListResult>(null, message: "مهلت زمانی شما برای ادامه عملیات به پایان رسیده است لطفا مراحل ورود را از اول شروع کنید");
+
                 HttpClient httpClient = new HttpClient();
 
-                string BaseUrl = "https://service.tabrizhandicrafts.com/";// _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+                string BaseUrl = _configuration["BaseUrl"];
 
                 Client client = new Client(BaseUrl, httpClient);
+
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
 
                 var result = await client.GetDocumentListbyRkeyAsync(rkey);
 
@@ -453,22 +444,17 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
         }
 
         [HttpPost]
-        public Task<DefaultResponseState> UploadSellerDocument(IFormFile file, string documentId)
+        public Task<DefaultResponseState> UploadSellerDocument(IFormFile upload, string documentId)
         {
             return TryCatch(async () =>
             {
-                //HttpClient httpClient = new HttpClient();
 
-                string BaseUrl = "https://service.tabrizhandicrafts.com";// _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
-
-                //Client client = new Client(BaseUrl, httpClient);
+                string BaseUrl = _configuration["BaseUrl"];
 
                 HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
 
-                //client.BaseAddress = _httpClientFactory.CreateClient("myHttpClient").BaseAddress;
-                //client.DefaultRequestHeaders.Authorization = _httpClientFactory.CreateClient("myHttpClient").DefaultRequestHeaders.Authorization;
-
-                if (file != null && file.Length > 0)
+                if (upload != null && upload.Length > 0)
                 {
                     try
                     {
@@ -491,13 +477,14 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                         #endregion
 
                         var formData = new MultipartFormDataContent();
-                        formData.Add(new StreamContent(file.OpenReadStream()), "file", "file");
-                        var request = new HttpRequestMessage(HttpMethod.Post, BaseUrl + "/api/Document/UploadSellerDocument?documentId=" + documentId)
+                        formData.Add(new StreamContent(upload.OpenReadStream()), "file", upload.FileName);
+                        var request = new HttpRequestMessage(HttpMethod.Post, BaseUrl + "api/Document/UploadSellerDocument?documentId=" + documentId)
                         {
                             Content = formData
                         };
 
                         request.Headers.Add("accept", "application/json");
+                        request.Headers.Add("Authorization", "Bearer "+ Request.Cookies["sellertoken"]);
 
                         var response = await client.SendAsync(request);
                         if (response.IsSuccessStatusCode)
@@ -518,30 +505,95 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     }
                 }
 
-                /*
-                    HttpClient client = new HttpClient();
-                    client.BaseAddress = new Uri("http://your.url.com/");
-                    MultipartFormDataContent form = new MultipartFormDataContent();
-                    HttpContent content = new StringContent("fileToUpload");
-                    form.Add(content, "fileToUpload");
-                    var stream = await file.OpenStreamForReadAsync();
-                    content = new StreamContent(stream);
-                    content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
-                    {
-                        Name = "fileToUpload",
-                        FileName = file.Name
-                    };
-                    form.Add(content);
-                    var response = await client.PostAsync("upload.php", form);
-                    return response.Content.ReadAsStringAsync().Result;
-                 */
-
-                //await client.UpdateSliderAsync();
-
                 return Error(message: "فایلی انتخاب نشده است");
             });
         }
 
+        public IActionResult welcome()
+        {
+            return View();
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> ForgetPassword(ShortLoginModel model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _configuration["BaseUrl"];
+
+                SellerLoginClient client = new SellerLoginClient(BaseUrl, httpClient);
+
+                string email = null;
+                long? mobile = null;
+
+                string EmailorMobile = model.EmailorMobileNo.ToString();
+                if (Regex.IsMatch(EmailorMobile, @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", RegexOptions.IgnoreCase))
+                {
+                    email = EmailorMobile;
+                }
+                else if (Regex.IsMatch(EmailorMobile, @"09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", RegexOptions.IgnoreCase))
+                {
+                    mobile = long.Parse(EmailorMobile);
+                }
+
+                var result = await client.ForgetPassAsync(email, mobile);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
+
+        public IActionResult ChangePassword(string emailmobile)
+        {
+            return View("ChangePassword", new SetNewPassword()
+            {
+                EmailorMobileNo = emailmobile
+            });
+        }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> ChangePassword(SetNewPassword model)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _configuration["BaseUrl"];
+
+                SellerClient client = new SellerClient(BaseUrl, httpClient);
+
+                string email = null;
+                long? mobile = null;
+
+                string EmailorMobile = model.EmailorMobileNo.ToString();
+                if (Regex.IsMatch(EmailorMobile, @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", RegexOptions.IgnoreCase))
+                {
+                    email = EmailorMobile;
+                }
+                else if (Regex.IsMatch(EmailorMobile, @"09(0[1-9]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}", RegexOptions.IgnoreCase))
+                {
+                    mobile = long.Parse(EmailorMobile);
+                }
+
+                var result = await client.ChangePassByActivationCodeAsync(email, mobile, int.Parse(model.AcceptCode), model.Password);
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(null, result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+
+            });
+        }
         #endregion
     }
 }

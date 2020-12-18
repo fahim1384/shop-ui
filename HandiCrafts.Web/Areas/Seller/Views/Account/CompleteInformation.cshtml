@@ -6,14 +6,24 @@
 @section Styles{
     <link href="~/plugins/persianDatePicker/persian-datepicker.min.css" rel="stylesheet" />
     <style>
-        .mapboxgl-canvas{position:relative!important}
+        .mapboxgl-canvas {
+            position: relative !important;
+            width:470px!important;
+        }
+
+        #map {
+            /*position: absolute;*/
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 }
 
 @if (Model == null)
 {
     <div class="alert alert-danger">
-        <p>مشکلی در سیستم بوجود آمده است</p>
+        <p>مشکلی در سیستم بوجود آمده است لطفا عملیات را از اول شروع کنید</p>
     </div>
 }
 else
@@ -32,6 +42,9 @@ else
                 <strong class="text-danger">توجه:</strong> پر کردن تمامی موارد الزامیست.
             </p>
 
+            @{
+
+            }
             <div class="row">
                 <div class="col-sm-6 form-group mb-4">
                     <label asp-for="Password"></label>
@@ -215,9 +228,6 @@ else
         </form>
     </div>
 
-    <div id="map" style="width:470px;height:450px;" class="d-none">
-    </div>
-
     <div class="modal" tabindex="-1" role="dialog" id="mapModal">
         <div class="modal-dialog modal-lg0000" role="document">
             <div class="modal-content">
@@ -228,7 +238,10 @@ else
                     </button>
                 </div>
                 <div class="modal-body" style="width:498px;height:450px;">
-                    <div id="mapbox"></div>
+                    <div id="mapbox" style="width:498px;height:100%;">
+                        <div id="map" style="width:470px;height:100%;" class="d-block">
+                        </div>
+                    </div>
                     <div id="lng_lat_box"></div>
                 </div>
                 <div class="modal-footer">
@@ -238,20 +251,45 @@ else
         </div>
     </div>
 
-}
 
-@section Scripts{
-    <script src="https://www.parsimap.com/js/v3.1.0/parsimap.js?key=public"></script>
-    <script src="https://www.parsimap.ir/js/v3.1.0/plugins/parsimap-pointer.js"></script>
-    <script src="~/plugins/persianDatePicker/persian-date.js"></script>
-    <script src="~/plugins/persianDatePicker/persian-datepicker.js"></script>
-    <script>
+
+    @section Scripts{
+        <script src="https://www.parsimap.com/js/v3.1.0/parsimap.js?key=public"></script>
+        <script src="https://www.parsimap.ir/js/v3.1.0/plugins/parsimap-pointer.js"></script>
+
+
+        @*<script src="https://pm2.parsimap.ir/api/v2/parsimap.js?key=public"></script>*@
+
+        <script src="~/plugins/persianDatePicker/persian-date.js"></script>
+        <script src="~/plugins/persianDatePicker/persian-datepicker.js"></script>
+        <script>
 
         var container = document.getElementById('map');
+
+        console.log('@Model.Lat')
+        var lt = '@Model.Lat' != "" ? '@Model.Lat' : 51.41;
+        var lg = '@Model.Lng' != "" ? '@Model.Lng' : 35.7575;
+        if ('@Model.Lng' != "") {
+            $(".latlanstatus").val("ثبت شده");
+        }
+
+        /*var map = new parsimap.Map({
+                id: 'map',
+                zoom: 14,
+                height: '100%',
+                center: { lat: 35.6997, lng: 51.33638 },
+            });*/
+
+            // Create a layer includes a simple point via latlng. The icon and another
+            // attributes use default values.
+            //map.createLayer('pointOptions', [
+            //    { latlng: { lat: 36, lng: 52 }, options: { draggable: true } }
+            //]);
+
         var mapOptions = { center: [51.41, 35.7575], zoom: 6, height: '100%', };
         var map = new parsimap.Map(container, mapOptions);
 
-        map.on('load', function () {
+         map.on('load', function () {
 
             var symbolLayerOptions = map.getDefaultSymbol();
 
@@ -262,6 +300,11 @@ else
             pointer.enable();
 
             pointer.on('select', function (event) {
+
+                if (map.hasLayer('simplePoint') == true) {
+                    map.removeLayer('simplePoint');
+                }
+
                 var stringLngLat =
                     'lng: ' + event.lngLat.lng + ' - lat: ' + event.lngLat.lat;
                 document.getElementById('lng_lat_box').innerText = stringLngLat;
@@ -272,11 +315,13 @@ else
             });
         });
 
+
+
         $("#mapbtn").on("click", function () {
-            if ($("#mapbox").find("#map").length == 0) {
-                $("#map").removeClass("d-none");
-                $("#mapbox").append($("#map"));
-            }
+            //if ($("#mapbox").find("#map").length == 0) {
+            //    $("#map").removeClass("d-none");
+            //    $("#mapbox").append($("#map"));
+            //}
 
             $('#mapModal').modal('show');
         });
@@ -291,7 +336,7 @@ else
             $('#submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
 
             if (result.success == true) {
-                window.location = "/Seller/Account/Documents?userid=" + result.data.objList[0];
+                window.location = "/Seller/Account/Documents?userid=" +$("input[name=UserId]").val();
             }
             else {
                 $('html, body').animate({
@@ -360,11 +405,17 @@ else
                         $("#cityCmb").empty();
                         $("#cityCmb").append(`<option value="">انتخاب کنید</option>`);
                         $.each(result.data.objList, function (e, v) {
-                            $("#cityCmb").append(`<option value="${v?.id}">${v?.name ?? 'نامشخص'}</option>`);
+                            var selected = "";
+                            if (v?.id == '@Model.City') selected = "selected='selected'";
+
+                            $("#cityCmb").append(`<option value="${v?.id}" ${selected}>${v?.name ?? 'نامشخص'}</option>`);
                         });
                     }
                 }
             });
         }
-    </script>
+
+        LoadCity();
+        </script>
+    }
 }

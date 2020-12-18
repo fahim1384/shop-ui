@@ -9,7 +9,7 @@
             position: relative;
             width: 220px;
             text-align: center;
-            background: #75cad5;
+            background: #63c4d0;
         }
 
             .button-wrapper span.label {
@@ -44,19 +44,18 @@
 
 <div class="reg_login_content_mainform reg_login_content0000 ml-auto comp-info force-overflow">
 
+        <div asp-validation-summary="All"></div>
+        <div class="alert alert-danger d-none" id="errorbox"></div>
+        <input type="hidden" asp-for="UserId" />
 
-    <form id="form_login" class="kt-form"
+    <form id="form_login" class="kt-form" asp-action="UploadSellerDocument" asp-area="Seller" asp-controller="Account" method="post"
           enctype="multipart/form-data"
-          data-ajax-url="https://service.tabrizhandicrafts.com/api/Document/UploadSellerDocument?sellerId=@Model.UserId&documentId=1"
           data-ajax-method="POST"
           data-ajax="true"
           data-ajax-begin="onBegin1"
           data-ajax-complete="onComplete1"
           data-ajax-failure="onFailed1"
           data-ajax-success="onSuccess1">
-        <input type="hidden" asp-for="UserId" />
-        <div asp-validation-summary="All"></div>
-        <div class="alert alert-danger d-none" id="errorbox"></div>
 
         <div id="docMaliyat" class="d-none">
             <h5 class="active-text mb-4 mt-5">مالیات بر ارزش افزوده</h5>
@@ -86,6 +85,7 @@
                         </span>
                         <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل">
                     </div>
+                    <input type="hidden" name="documentId" value="1" />
                     <input type="hidden" name="uploadfileid" />
                     <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری برگه مالیات بر ارزش افزوده</button>
                 </div>
@@ -96,12 +96,11 @@
     <h5 class="active-text mb-4 mt-5">بارگذاری مدارک</h5>
 
     <div class="row">
-        <form id="form_login" class="kt-form" 
-              enctype="multipart/form-data" 
-              data-ajax-url="https://service.tabrizhandicrafts.com/api/Document/UploadSellerDocument?sellerId=@Model.UserId&documentId=2" 
+        <form id="form_login" data-docid="2" class="kt-form d-none" asp-action="UploadSellerDocument" asp-area="Seller" asp-controller="Account" method="post"
+              enctype="multipart/form-data"
               data-ajax-method="POST"
-              data-ajax="true" 
-              data-ajax-begin="onBegin2" 
+              data-ajax="true"
+              data-ajax-begin="onBegin2"
               data-ajax-complete="onComplete2"
               data-ajax-failure="onFailed2"
               data-ajax-success="onSuccess2">
@@ -110,17 +109,17 @@
                     <span class="label">
                         انتخاب فایل تصویر روی کارت ملی
                     </span>
-                    <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل" required>
+                    <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل">
                 </div>
+                <input type="hidden" name="documentId" value="2" />
                 <input type="hidden" name="uploadfileid" />
                 <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری تصویر روی کارت ملی</button>
                 <a class="btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
             </div>
         </form>
 
-        <form id="form_login" class="kt-form"
+        <form id="form_login" data-docid="3" class="kt-form d-none" asp-action="UploadSellerDocument" asp-area="Seller" asp-controller="Account" method="post"
               enctype="multipart/form-data"
-              data-ajax-url="https://service.tabrizhandicrafts.com/api/Document/UploadSellerDocument?sellerId=@Model.UserId&documentId=3"
               data-ajax-method="POST"
               data-ajax="true"
               data-ajax-begin="onBegin3"
@@ -132,17 +131,17 @@
                     <span class="label">
                         انتخاب فایل تصویر پشت کارت ملی
                     </span>
-                    <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل" required>
+                    <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل">
                 </div>
+                <input type="hidden" name="documentId" value="3" />
                 <input type="hidden" name="uploadfileid" />
                 <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری تصویر پشت کارت ملی</button>
                 <a class="btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
             </div>
         </form>
 
-        <form id="form_login" class="kt-form"
+        <form id="form_login" data-docid="4" class="kt-form d-none" asp-action="UploadSellerDocument" asp-area="Seller" asp-controller="Account" method="post"
               enctype="multipart/form-data"
-              data-ajax-url="https://service.tabrizhandicrafts.com/api/Document/UploadSellerDocument?sellerId=@Model.UserId&documentId=4"
               data-ajax-method="POST"
               data-ajax="true"
               data-ajax-begin="onBegin4"
@@ -154,8 +153,9 @@
                     <span class="label">
                         انتخاب فایل تصویر کارت صنایع دستی
                     </span>
-                    <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل" required>
+                    <input type="file" name="upload" class="upload-box" placeholder="انتخاب فایل">
                 </div>
+                <input type="hidden" name="documentId" value="4" />
                 <input type="hidden" name="uploadfileid" />
                 <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری تصویر کارت صنایع دستی</button>
                 <a class="btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
@@ -165,7 +165,7 @@
     </div>
 
     <div class="form-group text-center mt-3">
-        <button id="kt_login__submit1" type="submit" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ثبت نهایی</button>
+        <button type="button" id="gotowelcome" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ثبت نهایی</button>
     </div>
 
 
@@ -173,20 +173,50 @@
 
 @section Scripts{
     <script>
-
+        var uploadjson = {
+            doc1: null,
+            doc2: null,
+            doc3: null,
+            doc4: null
+        };
         // rkey
         var GetDocumentListbyRkey = () => {
             try {
                 $.ajax({
                     type: 'POST',
                     url: "/Seller/Account/GetDocumentListbyRkey",
-
+                    data: { rkey: 1 },
                     success: function (result) {
 
                         if (result.data != null) {
                             $.each(result.data.objList, function (e, v) {
                                 if (v.id == 1) {
                                     $("#docMaliyat").removeClass("d-none");
+                                    uploadjson.doc1 = false;
+                                }
+                                else if (v.id == 2) {
+                                    if (v?.isRequired == "true") {
+                                        $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
+                                        uploadjson.doc2 = false;
+                                    }
+
+                                    $("form[data-docid=" + v.id + "]").removeClass("d-none");
+                                }
+                                else if (v.id == 3) {
+                                    if (v?.isRequired == "true") {
+                                        $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
+                                        uploadjson.doc3 = false;
+                                    }
+
+                                    $("form[data-docid=" + v.id + "]").removeClass("d-none");
+                                }
+                                else if (v.id == 4) {
+                                    if (v?.isRequired == "true") {
+                                        $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
+                                        uploadjson.doc4 = false;
+                                    }
+
+                                    $("form[data-docid=" + v.id + "]").removeClass("d-none");
                                 }
                             });
                         }
@@ -208,19 +238,20 @@
         }
 
         function onSuccess1(result) {
-            console.log("succes:",result);
+            console.log("succes:", result);
             $('#submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
 
-            if (result.resultCode == 200) {
-                $(".uprow1").css("background-color", "#dafff2");
-                $("input[name=uploadfileid]").val(result.objList[0]);
+            if (result.success == true) {
+                $(".uprow1").css("background-color", "#b1fbe1");
+                //$("input[name=uploadfileid]").val(result.objList[0]);
+                uploadjson.doc1 = true;
             }
             else {
-                $("#errorbox").html(result.resultMessage).removeClass("d-none");
+                $("#errorbox").html(result.message).removeClass("d-none");
             }
         }
 
-        function onFailed1() {}
+        function onFailed1() { }
 
         function onComplete1(re) {
             console.log(re);
@@ -239,12 +270,13 @@
             console.log("succes:", result);
             $('#submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
 
-            if (result.resultCode == 200) {
-                $(".uprow2").css("background-color", "#dafff2");
-                $("input[name=uploadfileid]").val(result.objList[0]);
+            if (result.success == true) {
+                $(".uprow2").css("background-color", "#b1fbe1");
+                //$("input[name=uploadfileid]").val(result.objList[0]);
+                uploadjson.doc2 = true;
             }
             else {
-                $("#errorbox").html(result.resultMessage).removeClass("d-none");
+                $("#errorbox").html(result.message).removeClass("d-none");
             }
         }
 
@@ -263,12 +295,13 @@
             console.log("succes:", result);
             $('#submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
 
-            if (result.resultCode == 200) {
-                $(".uprow3").css("background-color", "#dafff2");
-                $("input[name=uploadfileid]").val(result.objList[0]);
+            if (result.success == true) {
+                $(".uprow3").css("background-color", "#b1fbe1");
+                //$("input[name=uploadfileid]").val(result.objList[0]);
+                uploadjson.doc3 = true;
             }
             else {
-                $("#errorbox").html(result.resultMessage).removeClass("d-none");
+                $("#errorbox").html(result.message).removeClass("d-none");
             }
         }
 
@@ -287,12 +320,13 @@
             console.log("succes:", result);
             $('#submit').removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
 
-            if (result.resultCode == 200) {
-                $(".uprow4").css("background-color", "#dafff2");
-                $("input[name=uploadfileid]").val(result.objList[0]);
+            if (result.success == true) {
+                $(".uprow4").css("background-color", "#b1fbe1");
+                //$("input[name=uploadfileid]").val(result.objList[0]);
+                uploadjson.doc4 = true;
             }
             else {
-                $("#errorbox").html(result.resultMessage).removeClass("d-none");
+                $("#errorbox").html(result.message).removeClass("d-none");
             }
         }
 
@@ -301,5 +335,29 @@
         function onComplete4(re) {
             console.log(re);
         }
+
+        GetDocumentListbyRkey();
+
+        $("#gotowelcome").on("click", function () {
+            var isOk = true;
+            if (uploadjson.doc1 != null) {
+                if (uploadjson.doc1 == false) { isOk = false; notify({ title: "خطا", message: "لطفا تمامی مدارک لازم را بارگذاری کنید" },{type:'danger'}); }
+            }
+
+            if (uploadjson.doc2 != null) {
+                if (uploadjson.doc2 == false) { isOk = false; notify({ title: "خطا", message: "لطفا تمامی مدارک لازم را بارگذاری کنید" }, { type: 'danger' }); }
+            }
+
+            if (uploadjson.doc3 != null) {
+                if (uploadjson.doc3 == false) { isOk = false; notify({ title: "خطا", message: "لطفا تمامی مدارک لازم را بارگذاری کنید" }, { type: 'danger' }); }
+            }
+
+            if (uploadjson.doc4 != null) {
+                if (uploadjson.doc4 == false) { isOk = false; notify({ title: "خطا", message: "لطفا تمامی مدارک لازم را بارگذاری کنید" }, { type: 'danger' }); }
+            }
+
+            if (isOk == true)
+                window.location = "/seller/account/welcome";
+        });
     </script>
 }

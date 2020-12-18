@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "صنعتگر عزیز آمدید";
+    Layout = "~/Areas/Seller/Views/Shared/_AccountLayout.cshtml";
+}
+
+@section Styles{
+    <style>
+        .button-wrapper {
+            position: relative;
+            width: 220px;
+            text-align: center;
+            background: #63c4d0;
+        }
+
+            .button-wrapper span.label {
+                position: relative;
+                z-index: 0;
+                display: inline-block;
+                width: 100%;
+                cursor: pointer;
+                color: #fff;
+                padding: 2px 0;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+
+        input[name=upload] {
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 50px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .reg_login_content_mainform {
+            width: 100%;
+        }
+        .welcome-seller {
+            text-align: center;
+            direction: rtl;
+        }
+    </style>
+}
+
+<div class="reg_login_content_mainform reg_login_content ml-auto comp-info welcome-seller">
+
+    <div class="row">
+        <div class="col-12">
+            <img src="~/image/icons/Sanatgar/welcome.png" class="max-height-300px" />
+        </div>
+        <div class="col-12">
+            <h4 class="mt-4">تبریک!</h4>
+            <p class="mt-4">
+                اکنون شما به جمع صنعتگران سرای پیوستید.
+                <br />
+                می توانید با ورود به پنل کاربریتان نسخه آنلاین قراردادتان را مشاهده نمایید.
+            </p>
+        </div>
+    </div>
+
+    <div class="form-group text-center mt-3">
+        <a id="kt_login__submit1" href="http://adminui.tabrizhandicrafts.com/Seller" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ورود به پنل صنعتگران</a>
+    </div>
+
+
+</div>
+
+@section Scripts{
+    <script>
+    </script>
+}

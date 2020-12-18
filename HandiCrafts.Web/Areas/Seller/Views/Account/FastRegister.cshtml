@@ -10,28 +10,50 @@
 <div class="reg_login_content_mainform reg_login_content m-auto">
 
     <form id="form_login" class="kt-form" asp-area="Seller" asp-action="FastRegister" asp-controller="Account" data-ajax-method="POST"
-          data-ajax="true" data-ajax-begin="onSigninBegin" data-ajax-complete="onSigninComplete"
-          data-ajax-failure="onSigninFailed" data-ajax-success="onSigninSuccess" dir="rtl">
+          data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+          data-ajax-failure="onFailed" data-ajax-success="onSuccess" dir="rtl">
 
         <div class="alert alert-danger d-none" id="errorbox"></div>
 
         <input type="hidden" asp-for="UserId" value="@Model.UserId" />
 
         <div class="form-group mb-4">
+                <label class="d-block pl-3">لطفا رمز عبور خود را وارد نمایید</label>
             <div class="input-group mb-2 heght-65px reg-element">
-                <label>رمزعبور</label>
-                <input type="text" class="form-control heght-100per emailmobile"  asp-for="Password" aria-describedby="basic-addon1">
+                <input type="password" class="form-control heght-100per emailmobile font-size-20px" asp-for="Password" aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        <img src="~/image/icons/Sanatgar/password-1.png" />
+                    </span>
+                </div>
             </div>
             <span asp-validation-for="Password" class="kt-font-danger"></span>
         </div>
 
-        <div class="kt-login__actions mt-3">
-            <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ادامه</button>
+        <div class="kt-login__actions mt-3 text-center">
+            <button id="kt_login_signin_submit" type="submit" class="btn pl-5 pr-5 btn-info btn-main mt-5">ادامه</button>
             <p class="mt-4">
                 رمز خود را فراموش کرده اید؟<a class="cyan" href="/seller/Account/ForgetPassword">فراموشی رمز</a>
             </p>
         </div>
 
     </form>
-    <p class="small text-center text-gray-soft">قبلا ثبت نام کرده ام <a href="/seller/account/login" class="cyan">ورود</a></p>
+    <p class="small text-center text-gray-soft">قبلا ثبت نام کرده ام <a href="https://adminui.tabrizhandicrafts.com/seller" class="cyan">ورود</a></p>
 </div>
+@section Scripts{
+    <script>
+    var onComplete = () => { };
+    var onSuccess = (result) => {
+        $("#errorbox").html('').addClass("d-none");
+
+        if (result.success == true) {
+
+            window.location = "/seller/account/completeinformation";
+        } else {
+            $("#errorbox").html(result.message).removeClass("d-none");
+        }
+    };
+    var onFailed = () => { };
+    var onBegin = () => { };
+    </script>
+}
