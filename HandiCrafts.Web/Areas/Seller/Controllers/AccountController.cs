@@ -500,7 +500,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                             var fileUploadResult = Newtonsoft.Json.JsonConvert.DeserializeObject<FileUpload>(res);
 
-                            if(fileUploadResult.resultCode != 200)
+                            if (fileUploadResult.resultCode != 200)
                                 return Error(message: fileUploadResult.resultMessage);
 
                             return Success(message: "آپلود شد");
