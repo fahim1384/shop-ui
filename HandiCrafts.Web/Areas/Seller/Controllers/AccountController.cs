@@ -438,6 +438,9 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 if (result.ResultCode != 200)
                     return Error<DocumentDtoListResult>(null, result.ResultMessage);
 
+                #region Get Uploded Files
+
+                #endregion
                 return Success(data: result, message: result.ResultMessage);
 
             });
@@ -453,6 +456,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
+                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"/*upload.ContentType*/));//ACCEPT header
 
                 if (upload != null && upload.Length > 0)
                 {
@@ -483,7 +487,10 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                             Content = formData
                         };
 
-                        request.Headers.Add("accept", "application/json");
+                        //request.Content.Headers.ContentType = new MediaTypeHeaderValue("multipart/form-data");
+
+                        //request.Headers.Add("accept", "application/json");
+                        //request.Headers.Add("Content-Type", upload.ContentType);
                         request.Headers.Add("Authorization", "Bearer " + Request.Cookies["sellertoken"]);
 
                         var response = await client.SendAsync(request);
@@ -504,7 +511,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                         }
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         return Error(message: "خطایی رخ داد");
                     }
