@@ -77,7 +77,7 @@
             </div>
 
 
-            <div class="row">
+            <div id="maliyatdoc" class="row">
                 <div class="col-sm-12 form-group mb-4 p-10 uprow1">
                     <div class="button-wrapper btn border-radius-10">
                         <span class="label">
@@ -173,6 +173,15 @@
 
 @section Scripts{
     <script>
+
+        $("input[name=maliatRadioOptions]").on("click", function () {
+            if ($("input[name=maliatRadioOptions]:checked").val() == "1") {
+                $("#maliyatdoc").removeClass("d-none");
+            } else {
+                $("#maliyatdoc").addClass("d-none");
+            }
+        });
+
         var uploadjson = {
             doc1: null,
             doc2: null,

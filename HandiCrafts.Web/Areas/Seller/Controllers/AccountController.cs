@@ -297,7 +297,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
                 Client client2 = new Client(BaseUrl, httpClient);
                 var fullInfo = await client2.GetSellerFullInfoAsync();
-  
+
                 if (fullInfo.ResultCode != 200) throw new Exception(fullInfo.ResultMessage);
 
                 if (fullInfo.ResultCode == 200 && fullInfo.Obj == null) throw new Exception("دیتایی برای این کاربر وجود ندارد");
@@ -316,7 +316,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 informationVModel = new PersonalInformationVModel()
                 {
-                    Address = Address != null? Address.Address:null,
+                    Address = Address != null ? Address.Address : null,
                     BirthDate = persianDate.ToPersianDateString(),
                     City = Address != null ? Address.CityId.ToString() : null,
                     FirstName = fullInfo.Obj.Name,
@@ -358,7 +358,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
             {
                 if (string.IsNullOrEmpty(Request.Cookies["sellertoken"]))
                     return Error<LongResult>(null, message: "مهلت زمانی شما برای ادامه عملیات به پایان رسیده است لطفا مراحل ورود را از اول شروع کنید");
-                
+
                 HttpClient httpClient = new HttpClient();
 
                 string BaseUrl = _configuration["BaseUrl"];
@@ -477,19 +477,24 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                         #endregion
 
                         var formData = new MultipartFormDataContent();
-                        formData.Add(new StreamContent(upload.OpenReadStream()), "file", upload.FileName);
+                        formData.Add(new StreamContent(upload.OpenReadStream()), "Document", upload.FileName);
                         var request = new HttpRequestMessage(HttpMethod.Post, BaseUrl + "api/Document/UploadSellerDocument?documentId=" + documentId)
                         {
                             Content = formData
                         };
 
                         request.Headers.Add("accept", "application/json");
-                        request.Headers.Add("Authorization", "Bearer "+ Request.Cookies["sellertoken"]);
+                        request.Headers.Add("Authorization", "Bearer " + Request.Cookies["sellertoken"]);
 
                         var response = await client.SendAsync(request);
                         if (response.IsSuccessStatusCode)
                         {
-                            var res = await response.Content.ReadAsStringAsync();
+                            var res = await (response.Content.ReadAsStringAsync());
+
+                            var fileUploadResult = Newtonsoft.Json.JsonConvert.DeserializeObject<FileUpload>(res);
+
+                            if(fileUploadResult.resultCode != 200)
+                                return Error(message: fileUploadResult.resultMessage);
 
                             return Success(message: "آپلود شد");
                         }
@@ -507,6 +512,12 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 return Error(message: "فایلی انتخاب نشده است");
             });
+        }
+
+        public class FileUpload
+        {
+            public int? resultCode { get; set; }
+            public string resultMessage { get; set; }
         }
 
         public IActionResult welcome()
