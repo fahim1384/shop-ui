@@ -46,7 +46,7 @@
 
             if (result.success == true) {
                 localStorage.removeItem("sellerEmailMobile");
-                localStorage.setItem("sellerEmailMobile", $("input.emailmobile").val());
+                localStorage.setItem("sellerEmailMobile", $("input.emailmobile ").val());
 
                 if (result.data.isExist == true && result.data.loginByCode == false) {
 
@@ -70,7 +70,7 @@
                     
                 }
                 else if (result.data.isExist == true && result.data.loginByCode == true) {
-                    window.location = "/Seller/Account/FastRegister?userid=" + result.data.userId;
+                    window.location = "/Seller/Account/VerifyCode?userid=" + result.data.userId;
                 }
                 else {
                     window.location = "/Seller/Account/VerifyCode?userid=" + result.data.userId;
