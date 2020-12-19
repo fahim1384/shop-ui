@@ -526,6 +526,17 @@ namespace HandiCrafts.Web.Controllers
 
             var result = client.GetProfileInfoAsync().Result;
 
+            if (result.ResultCode == 201)
+            {
+                PersianDateTime pd = new PersianDateTime(DateTime.Now);
+                ProfileInfo p = new ProfileInfo()
+                {
+                    Bdate = pd.Year.ToString() + "/" + pd.Month.ToString() + "/" + pd.Day.ToString(),
+                };
+
+                return View(p);
+            }
+
             if (result.ResultCode != 200)
                 throw new Exception(result.ResultMessage);
             

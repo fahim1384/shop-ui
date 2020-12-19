@@ -5552,7 +5552,7 @@ namespace HandiCrafts.Web
             }
         }
     
-        /// <summary>ثبت مشخصات صنعتگر</summary>
+        /// <summary>لیست مدارک صنعتگر</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
         public System.Threading.Tasks.Task<SellerDocumentDtoListResult> GetSellerDocumentListAsync()
@@ -5561,7 +5561,7 @@ namespace HandiCrafts.Web
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <summary>ثبت مشخصات صنعتگر</summary>
+        /// <summary>لیست مدارک صنعتگر</summary>
         /// <returns>Success</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
         public async System.Threading.Tasks.Task<SellerDocumentDtoListResult> GetSellerDocumentListAsync(System.Threading.CancellationToken cancellationToken)

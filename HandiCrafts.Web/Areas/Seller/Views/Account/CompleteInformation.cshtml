@@ -28,7 +28,7 @@
 }
 else
 {
-    <div class="reg_login_content_mainform reg_login_content0000 ml-auto comp-info force-overflow">
+    <div class="reg_login_content_mainform reg_login_content0000 m-auto comp-info force-overflow">
 
         <form id="form_login" class="kt-form" asp-area="Seller" asp-action="CompleteInformation" asp-controller="Account" data-ajax-method="POST"
               data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
@@ -299,11 +299,12 @@ else
             });
             pointer.enable();
 
-            pointer.on('select', function (event) {
-
-                if (map.hasLayer('simplePoint') == true) {
-                    map.removeLayer('simplePoint');
-                }
+             pointer.on('select', function (event) {
+                 try {
+                     if (map.hasLayer('simplePoint') == true) {
+                         map.removeLayer('simplePoint');
+                     }
+                 } catch (ex) { }
 
                 var stringLngLat =
                     'lng: ' + event.lngLat.lng + ' - lat: ' + event.lngLat.lat;

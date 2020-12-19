@@ -128,25 +128,12 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
 
-                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
-
-                result.Obj.Fullname = fullnameFromResult;
-
                 Response.Cookies.Append(
                     "sellertoken",
                     result.Obj.Token,
                     new CookieOptions()
                     {
-                        Expires = DateTime.Now.AddDays(1),
-                        IsEssential = true
-                    });
-
-                Response.Cookies.Append(
-                    "sellerusername",
-                    fullnameFromResult,
-                    new CookieOptions()
-                    {
-                        Expires = DateTime.Now.AddMinutes(30),
+                        Expires = DateTime.Now.AddHours(1),
                         IsEssential = true
                     });
 
@@ -200,25 +187,12 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 if (result.ResultCode != 200)
                     return Error<LoginResultDtoSingleResult>(null, result.ResultMessage);
 
-                string fullnameFromResult = result.Obj.Fullname == null ? HttpContext.Session.GetString(_fullname).ToString() : result.Obj.Fullname;
-
-                result.Obj.Fullname = fullnameFromResult;
-
                 Response.Cookies.Append(
                     "sellertoken",
                     result.Obj.Token,
                     new CookieOptions()
                     {
-                        Expires = DateTime.Now.AddDays(1),
-                        IsEssential = true
-                    });
-
-                Response.Cookies.Append(
-                    "sellerusername",
-                    fullnameFromResult,
-                    new CookieOptions()
-                    {
-                        Expires = DateTime.Now.AddMinutes(30),
+                        Expires = DateTime.Now.AddHours(1),
                         IsEssential = true
                     });
 
@@ -612,6 +586,33 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
             });
         }
-        #endregion
+
+        [HttpPost]
+        public Task<ResponseState<List<SellerDocumentDto>>> GetUploadedDocuments()
+        {
+            return TryCatch(async () =>
+            {
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _configuration["BaseUrl"];
+
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
+                Client client2 = new Client(BaseUrl, httpClient);
+                var fullInfo = await client2.GetSellerFullInfoAsync();
+
+                if (fullInfo.ResultCode != 200) return Error<List<SellerDocumentDto>>(data: null, fullInfo.ResultMessage);
+
+                if (fullInfo.ResultCode == 200 && fullInfo.Obj == null) return Error<List<SellerDocumentDto>>(data: null, "دیتایی برای این کاربر وجود ندارد");
+
+                List<SellerDocumentDto> sellerDocumentDtos = new List<SellerDocumentDto>();
+
+                sellerDocumentDtos = fullInfo.Obj.DocumentList.ToList();
+
+                return Success<List<SellerDocumentDto>>(data: sellerDocumentDtos, message: fullInfo.ResultMessage);
+            });
+        }
     }
+
+    #endregion
 }
