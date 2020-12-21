@@ -76,6 +76,25 @@
             background: #737373;
             display: inline-block;
         }
+
+        @@media only screen and (max-width: 600px) {
+            .orderno-p {
+                font-size: .9rem;
+            }
+
+            .progress {
+                width: 100% !important;
+            }
+
+            .span-dot {
+                display: block;
+                opacity: 0
+            }
+
+            .order-detail-content-main {
+                font-size: 1rem;
+            }
+        }
     </style>
 }
 
@@ -91,7 +110,7 @@
         <div class="row">
             <div class="col-12 col-sm-6">
                 <h5 class="color-black mb-5"><a href="/Order/OrdersHistory"><i class="fa fa-long-arrow-alt-right fa-2x vertical-align-middle"></i></a>  جزئیات سفارش</h5>
-                <p class="color-black">@persiandt.Day @persiandt.MonthName @persiandt.Year <span class="span-dot"></span> شماره سفارش @Model.OrderNo</p>
+                <p class="orderno-p color-black">@persiandt.Day @persiandt.MonthName @persiandt.Year <span class="span-dot"></span> شماره سفارش @Model.OrderNo</p>
             </div>
             @{
                 var percent = 0;
@@ -101,16 +120,16 @@
                 else if (Model.FinalStatusId == 27) { percent = 100; }
                 else if (Model.FinalStatusId == 21) { percent = 100; }
 
-                    <div class="col-12 col-sm-6 text-right">
-                        <div class="col-12">
-                            <div dir="ltr">
-                                <div class="progress" style="width:50%">
-                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: @percent%" aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="@percent"></div>
-                                </div>
+                <div class="col-12 col-sm-6 text-right">
+                    <div class="col-12">
+                        <div dir="ltr">
+                            <div class="progress" style="width:50%">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: @percent%" aria-valuenow="@percent" aria-valuemin="0" aria-valuemax="@percent"></div>
                             </div>
                         </div>
-                        <div class="col-12"><span class="text-success" style="font-size: 1rem;">تحویل مرسوله به مشتری</span></div>
                     </div>
+                    <div class="col-12"><span class="text-success" style="font-size: 1rem;">تحویل مرسوله به مشتری</span></div>
+                </div>
             }
         </div>
         <hr />
@@ -170,23 +189,29 @@
                         {
                             <li class="text-center mr-3 ml-3 orderdetail-list-prod">
 
-                                <div class="d-flex text-left">
-                                    <a>
-                                        <img src="@item.ProductImage" />
-                                    </a>
-                                    <ul class="list-unstyled ml-3 orderdetail-list-desc">
-                                        <li><span class="color-black pl-1 pr-2"><span class="pl-2 pr-2">@item.ProductName</span> <span class="pl-2 pr-2">کد @item.ProductCode</span></span></li>
-                                        <li><span class="pl-1 pr-2">قیمت واحد: <span class="color-black">@string.Format("{0:n0}", item.ProductPrice) تومان</span></span></li>
-                                        <li><span class="pl-1 pr-2">بسته بندی: <span class="color-black">@string.Format("{0:n0}", item.PackingPrice) تومان</span></span></li>
-                                        <li>
-                                            <span class="pl-1 pr-2">
-                                                شناسه یکتای محصول: <span>
-                                                    <span class="ml-2 mr-2 color-black"> دارد <i class="fa fa-check-circle fa-checked-full"></i></span>
-                                                    <span class="ml-2 mr-2 color-black"> ندارد <i class="fa fa-check-circle fa-checked-blank"></i></span>
+                                <div class="row d-flex text-left">
+                                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 text-center">
+                                        <a>
+                                            <img src="@item.ProductImage" />
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8 col-md-9 col-lg-10">
+                                        <ul class="list-unstyled orderdetail-list-desc">
+                                            <li><span class="color-black pl-1 pr-2"><span class="pl-2 pr-2">@item.ProductName</span> <span class="pl-2 pr-2">کد @item.ProductCode</span></span></li>
+                                            <li><span class="pl-1 pr-2">قیمت واحد: <span class="color-black">@string.Format("{0:n0}", item.ProductPrice) تومان</span></span></li>
+                                            <li><span class="pl-1 pr-2">بسته بندی: <span class="color-black">@string.Format("{0:n0}", item.PackingPrice) تومان</span></span></li>
+                                            <li>
+                                                <span class="pl-1 pr-2">
+                                                    شناسه یکتای محصول: <span>
+                                                        <span class="ml-2 mr-2 color-black"> دارد <i class="fa fa-check-circle fa-checked-full"></i></span>
+                                                        <span class="ml-2 mr-2 color-black"> ندارد <i class="fa fa-check-circle fa-checked-blank"></i></span>
+                                                    </span>
                                                 </span>
-                                            </span>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
                                 </div>
 
                             </li>

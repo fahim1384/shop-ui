@@ -1541,7 +1541,7 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
 }
 
 .caption {
-    bottom: 5%;
+    top: 0%;
     left: 0;
     opacity: 0;
     position: absolute;

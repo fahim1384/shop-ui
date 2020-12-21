@@ -3,21 +3,22 @@
     ViewData["Title"] = "افزودن آدرس جدید";
 }
 @section Styles{
-<style>
-    .validation-summary-valid {
-        display: none
-    }
-    .validation-summary-errors {
-        display: block;
-        color: #721c24;
-        background-color: #f8d7da;
-        border-color: #f5c6cb;
-        padding: .75rem 1.25rem;
-        margin-bottom: 1rem;
-        border: 1px solid transparent;
-        border-radius: .25rem;
-    }
-</style>
+    <style>
+        .validation-summary-valid {
+            display: none
+        }
+
+        .validation-summary-errors {
+            display: block;
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            padding: .75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+        }
+    </style>
 }
 <section>
     <div class="">
@@ -25,72 +26,74 @@
             <div class="col col-sm-12 col-md-12">
                 <div class="card mb-4 m-0 border-0">
                     <div class="mb-3 text-left">
-                        <div class="row m-0">
-                            <h5>
+                        <div class="row m-0 text-center">
+                            <h5 class="m-auto">
                                 آدرس جدید را وارد نمایید:
                             </h5>
                         </div>
                         <div class="row mt-3 justify-content-center">
                             <div class="col-md-6">
-                                <form id="form_AddAddress" class="kt-form" asp-action="InsertCustomerAddress_UI" asp-controller="ShoppingCart" data-ajax-method="POST"
+                                <form id="form_AddAddress" class="row kt-form" asp-action="InsertCustomerAddress_UI" asp-controller="ShoppingCart" data-ajax-method="POST"
                                       data-ajax="true" data-ajax-begin="onBegin" data-ajax-complete="onComplete"
                                       data-ajax-failure="onFailed" data-ajax-success="onSuccess">
 
-                                    <div asp-validation-summary="All"></div>
+                                    <div class="col-sm-12 justify-content-center">
+                                        <div asp-validation-summary="All"></div>
 
-                                    <div class="alert alert-danger d-none" id="errorbox"></div>
+                                        <div class="alert alert-danger d-none" id="errorbox"></div>
+                                    </div>
 
                                     <input type="hidden" asp-for="DefualtAddress" value="true" />
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-12">
                                         <label>عنوان مکان</label>
                                         <input asp-for="Titel" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>استان</label>
                                         <select asp-for="SatatId" class="form-control" id="ProvinceCmb" asp-items="ViewBag.Provinces">
                                             <option value="">انتخاب کنید</option>
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>شهر</label>
                                         <select asp-for="CityId" class="form-control" id="cityCmb">
                                             <option value="">انتخاب کنید</option>
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-12">
                                         <label>آدرس</label>
                                         <input asp-for="PostalAddress" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>کدپستی</label>
                                         <input asp-for="PostalCode" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>تلفن</label>
                                         <input asp-for="Tel" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>موبایل تحویل گیرنده</label>
                                         <input asp-for="MobileNo" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>کدملی تحویل گیرنده</label>
                                         <input asp-for="NationalCode" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>نام تحویل گیرنده</label>
                                         <input asp-for="FirstName" class="form-control" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-sm-6">
                                         <label>نام خانوادگی تحویل گیرنده</label>
                                         <input asp-for="LastName" class="form-control" />
                                     </div>
@@ -101,8 +104,8 @@
                                             <span asp-validation-for="Xgps" class="kt-font-danger">این فیلد اجباری است</span>
                                         </div>*@
 
-                                    <div class="kt-login__actions mt-3">
-                                        <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-5">ثبت اطلاعات</button>
+                                    <div class="kt-login__actions mt-3  col-sm-12">
+                                        <button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-info btn-main mt-2">ثبت اطلاعات</button>
                                     </div>
                                 </form>
                             </div>
@@ -155,13 +158,13 @@
             $.ajax({
                 type: 'POST',
                 url: "/Shoppingcart/GetCityList_UI",
-                data: { provinceId: $("#ProvinceCmb").val()},
+                data: { provinceId: $("#ProvinceCmb").val() },
                 success: function (result) {
                     if (result.success == true) {
                         $("#cityCmb").empty();
                         $("#cityCmb").append(`<option value="">انتخاب کنید</option>`);
                         $.each(result.data.objList, function (e, v) {
-                            $("#cityCmb").append(`<option value="${v?.id}">${v?.name??'نامشخص'}</option>`);
+                            $("#cityCmb").append(`<option value="${v?.id}">${v?.name ?? 'نامشخص'}</option>`);
                         });
                     }
                 }
