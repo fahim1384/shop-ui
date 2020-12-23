@@ -44,6 +44,7 @@
             if (result.success == true) {
                 localStorage.removeItem("address");
                 localStorage.removeItem("fullname");
+                localStorage.removeItem("addressId");
 
                 if (result.data.isExist == true && result.data.loginByCode == false) {
                     window.location = "/Account/FastRegister?userid=" + result.data.userId;

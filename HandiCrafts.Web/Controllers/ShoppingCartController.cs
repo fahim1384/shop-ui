@@ -376,11 +376,7 @@ namespace HandiCrafts.Web.Controllers
                     if (result.ResultCode != 200)
                         return Error<InsertOrderResultDtoSingleResult>(null, message: result.ResultMessage);
                 }
-                else
-                {
-                    throw new UnauthorizedAccessException();
-                }
-
+                
                 HttpContext.Session.SetString(BankUrl, result.Obj.BankUrl);
                 HttpContext.Session.SetString(CustomerOrderId, result.Obj.CustomerOrderId != null ? result.Obj.CustomerOrderId.ToString() : null);
                 HttpContext.Session.SetString(OrderNo, result.Obj.OrderNo != null ? result.Obj.OrderNo.ToString() : null);

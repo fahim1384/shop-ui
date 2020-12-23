@@ -165,7 +165,7 @@
                                         <span id="addressBox" class="d-block"></span>
 
                                         <span class="text-muted d-block mt-4"><i class="fa fa-user solid-fa"></i> <span id="fullname"></span></span>
-                                        
+
                                         <a href="/Shoppingcart/Address" class="d-block mt-3 color-firouzi"><i class="fa fa-angle-right"></i> تغییر یا ویرایش آدرس</a>
                                     </p>
                                 </div>
@@ -363,13 +363,13 @@
                             var check = "";
                             if (e == 0) check = "checked";
                             $("#paymentTypesBox").append(`<div class="col-6 col-sm-4 mt-10">
-                                                                            <label>
-                                                                                <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
-                                                                                <b>${v.title}</b>
-                                                                                <br />
-                                                                                <small class="text-muted">${v.description}</small>
-                                                                            </label>
-                                                                        </div>`);
+                                                                                <label>
+                                                                                    <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
+                                                                                    <b>${v.title}</b>
+                                                                                    <br />
+                                                                                    <small class="text-muted">${v.description}</small>
+                                                                                </label>
+                                                                            </div>`);
                         });
                     }
                 }
@@ -464,11 +464,16 @@
                 url: "/Shoppingcart/GetCustomerDefultAddress_UI",
                 success: function (result) {
                     if (result.success == true) {
+                        if (result.data == null || result.data.obj == null) {
+                            window.location = "/ShoppingCart/Address";
+                        }
 
                         var dataInfo = result.data.obj;
                         $("#addressBox").html(`${dataInfo?.provinceName ?? ''} ${dataInfo?.cityName ?? ''} ${dataInfo?.address ?? ''}، ${dataInfo?.issureMobile ?? ''}`);
                         $("#fullname").html(`${dataInfo?.issureName ?? ''} ${dataInfo?.issureFamily ?? ''}`);
                         localStorage.setItem("addressId", dataInfo.id);
+                    } else {
+                        window.location = "/ShoppingCart/Address";
                     }
                 }
             });
@@ -490,11 +495,11 @@
                                 var checked = "";
                                 if (e == 0) checked = "checked='checked'";
                                 $("#posttypesBox").append(`<div class="col-6 col-sm-4 mt-10">
-                                        <label>
-                                            <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
-                                            <b>${this.title}</b>
-                                        </label>
-                                    </div>`);
+                                            <label>
+                                                <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
+                                                <b>${this.title}</b>
+                                            </label>
+                                        </div>`);
                             });
 
                             bindPostTypes();
@@ -670,59 +675,61 @@
 
         // اطلاعات سبد خرید و بروزرسانی قیمت ها
         function CustomerOrderPreview() {
-            var posttype = $("input[name=optionsPostTypes]:checked").val();
+            if (localStorage.getItem("address") != null) {
+                var posttype = $("input[name=optionsPostTypes]:checked").val();
 
-            if (posttype == undefined) return false;
+                if (posttype == undefined) return false;
 
-            var model = {
-                PaymentTypeId: $("input[name=optionsPaymentTypeRadios]:checked").val(),
-                OfferId: objOffers?.offerId ?? null,
-                CustomerAddressId: localStorage.getItem("addressId"),
-                CustomerDescription: null,
-                ProductList: [],
-                PostTypeId: posttype != undefined ? posttype : null
-            };
-
-            $.each(shoppingCart.listCart(), function (e, v) {
-                var pkg = null;
-                if ($("input[data-pkinputhide='" + v.prodid + "']").val() == "" || $("input[data-pkinputhide='" + v.prodid + "']").val() == "undefined") { } else {
-                    pkg = $("input[data-pkinputhide='" + v.prodid + "']").val();
-                }
-
-                var productObj = {
-                    ProductId: v.prodid,
-                    Count: v.count,
-                    ColorId: null,
-                    PackingTypeId: pkg,//v.packageId,
-                    OfferId: findofferid(v.prodid)
+                var model = {
+                    PaymentTypeId: $("input[name=optionsPaymentTypeRadios]:checked").val(),
+                    OfferId: objOffers?.offerId ?? null,
+                    CustomerAddressId: localStorage.getItem("addressId"),
+                    CustomerDescription: null,
+                    ProductList: [],
+                    PostTypeId: posttype != undefined ? posttype : null
                 };
 
-                model.ProductList.push(productObj);
-            });
-
-            $.ajax({
-                type: 'POST',
-                url: "/Shoppingcart/CustomerOrderPreview",
-                data: { model: model },
-                success: function (result) {
-                    debugger
-                    if (result.success == true) {
-                        console.log(result.data);
-                        var obj = result.data.obj;
-
-                        //$("#offerPrecent").html(result.data.?.value);
-                        $("#totalBeforeOffer").html(comma(obj.orderPrice));
-                        //$("#packingprice").html(this?.price ?? 0);
-                        $("span.totalPayment").html(comma(obj.finalPrice));
-                        $("span.hazine-ersal").html(comma(obj.postServicePrice));
-                        $("#offerPrecent").val(obj.offerValue);
+                $.each(shoppingCart.listCart(), function (e, v) {
+                    var pkg = null;
+                    if ($("input[data-pkinputhide='" + v.prodid + "']").val() == "" || $("input[data-pkinputhide='" + v.prodid + "']").val() == "undefined") { } else {
+                        pkg = $("input[data-pkinputhide='" + v.prodid + "']").val();
                     }
-                    else {
-                        $("#messageTag").html(result.message);
-                        $("#messagesModal").modal("show");
+
+                    var productObj = {
+                        ProductId: v.prodid,
+                        Count: v.count,
+                        ColorId: null,
+                        PackingTypeId: pkg,//v.packageId,
+                        OfferId: findofferid(v.prodid)
+                    };
+
+                    model.ProductList.push(productObj);
+                });
+
+                $.ajax({
+                    type: 'POST',
+                    url: "/Shoppingcart/CustomerOrderPreview",
+                    data: { model: model },
+                    success: function (result) {
+                        debugger
+                        if (result.success == true) {
+                            console.log(result.data);
+                            var obj = result.data.obj;
+
+                            //$("#offerPrecent").html(result.data.?.value);
+                            $("#totalBeforeOffer").html(comma(obj.orderPrice));
+                            //$("#packingprice").html(this?.price ?? 0);
+                            $("span.totalPayment").html(comma(obj.finalPrice));
+                            $("span.hazine-ersal").html(comma(obj.postServicePrice));
+                            $("#offerPrecent").val(obj.offerValue);
+                        }
+                        else {
+                            $("#messageTag").html(result.message);
+                            $("#messagesModal").modal("show");
+                        }
                     }
-                }
-            });
+                });
+            }
         }
 
         //============ Load ============
@@ -740,13 +747,14 @@
         }
 
         if (shoppingCart.totalCount() != 0) {
+            GetCustomerDefultAddress_UI();
             GetProductByIdList_UI();
             GetPostTypeList_UI();
             GetPaymentTypeList();
-            GetCustomerDefultAddress_UI();
 
             productsPackageListLoad();
         }
 
+            //}
     </script>
 }

@@ -44,11 +44,11 @@
 
 <div class="reg_login_content_mainform reg_login_content0000 ml-auto comp-info force-overflow">
 
-        <div asp-validation-summary="All"></div>
-        <div class="alert alert-danger d-none" id="errorbox"></div>
-        <input type="hidden" asp-for="UserId" />
+    <div asp-validation-summary="All"></div>
+    <div class="alert alert-danger d-none" id="errorbox"></div>
+    <input type="hidden" asp-for="UserId" />
 
-    <form id="form_login" class="kt-form" asp-action="UploadSellerDocument" asp-area="Seller" asp-controller="Account" method="post"
+    <form id="form_login" data-docid="1" class="kt-form" asp-action="UploadSellerDocument" asp-area="Seller" asp-controller="Account" method="post"
           enctype="multipart/form-data"
           data-ajax-method="POST"
           data-ajax="true"
@@ -87,6 +87,7 @@
                     </div>
                     <input type="hidden" name="documentId" value="1" />
                     <input type="hidden" name="uploadfileid" />
+
                     <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری برگه مالیات بر ارزش افزوده</button>
                 </div>
             </div>
@@ -114,7 +115,11 @@
                 <input type="hidden" name="documentId" value="2" />
                 <input type="hidden" name="uploadfileid" />
                 <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری تصویر روی کارت ملی</button>
-                <a class="btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
+                <a class="samplefile btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
+                <div class="imgBox d-none">
+                    <a class="showfilebtn btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده بارگذاری شده</a>
+                    <input type="hidden" name="upfile" />
+                </div>
             </div>
         </form>
 
@@ -136,7 +141,11 @@
                 <input type="hidden" name="documentId" value="3" />
                 <input type="hidden" name="uploadfileid" />
                 <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری تصویر پشت کارت ملی</button>
-                <a class="btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
+                <a class="samplefile btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
+                <div class="imgBox d-none">
+                    <a class="showfilebtn btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده بارگذاری شده</a>
+                    <input type="hidden" name="upfile" />
+                </div>
             </div>
         </form>
 
@@ -158,7 +167,11 @@
                 <input type="hidden" name="documentId" value="4" />
                 <input type="hidden" name="uploadfileid" />
                 <button type="submit" name="submit" class="btn btn-info bg-cyan btn-md pb-2 pt-2 border-radius-10 min-width-200px">بارگذاری تصویر کارت صنایع دستی</button>
-                <a class="btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
+                <a class="samplefile btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده نمونه</a>
+                <div class="imgBox d-none">
+                    <a class="showfilebtn btn btn-link pb-2 pt-2 pl-0 pr-0 cyan ml-3" style="border-bottom:1px dashed #0094ff">مشاهده بارگذاری شده</a>
+                    <input type="hidden" name="upfile" />
+                </div>
             </div>
         </form>
 
@@ -168,7 +181,24 @@
         <button type="button" id="gotowelcome" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ثبت نهایی</button>
     </div>
 
-
+    <div class="modal fade" id="showdocmodal" tabindex="-1" role="dialog" aria-labelledby="showdocmodal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >مشاهده فایل</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="docimagemain" src="" style="max-width:100%" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts{
@@ -204,30 +234,32 @@
                                     uploadjson.doc1 = false;
                                 }
                                 else if (v.id == 2) {
-                                    if (v?.isRequired == "true") {
-                                        $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
-                                        uploadjson.doc2 = false;
-                                    }
+                                    //if (v?.isRequired == "true") {
+                                    //    $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
+                                    //    uploadjson.doc2 = false;
+                                    //}
 
                                     $("form[data-docid=" + v.id + "]").removeClass("d-none");
                                 }
                                 else if (v.id == 3) {
-                                    if (v?.isRequired == "true") {
-                                        $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
-                                        uploadjson.doc3 = false;
-                                    }
+                                    //if (v?.isRequired == "true") {
+                                    //    $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
+                                    //    uploadjson.doc3 = false;
+                                    //}
 
                                     $("form[data-docid=" + v.id + "]").removeClass("d-none");
                                 }
                                 else if (v.id == 4) {
-                                    if (v?.isRequired == "true") {
-                                        $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
-                                        uploadjson.doc4 = false;
-                                    }
+                                    //if (v?.isRequired == "true") {
+                                    //    $("form[data-docid=" + v.id + "]").find("input[name=upload]").prop("required", true);
+                                    //    uploadjson.doc4 = false;
+                                    //}
 
                                     $("form[data-docid=" + v.id + "]").removeClass("d-none");
                                 }
                             });
+
+                            GetUploadedDocuments();
                         }
 
 
@@ -348,7 +380,7 @@
         GetDocumentListbyRkey();
 
         $("#gotowelcome").on("click", function () {
-            var isOk = true;
+            /*var isOk = true;
             if (uploadjson.doc1 != null) {
                 if (uploadjson.doc1 == false) { isOk = false; notify({ title: "خطا", message: "لطفا تمامی مدارک لازم را بارگذاری کنید" },{type:'danger'}); }
             }
@@ -365,8 +397,36 @@
                 if (uploadjson.doc4 == false) { isOk = false; notify({ title: "خطا", message: "لطفا تمامی مدارک لازم را بارگذاری کنید" }, { type: 'danger' }); }
             }
 
-            if (isOk == true)
+            if (isOk == true)*/
                 window.location = "/seller/account/welcome";
         });
+
+        function GetUploadedDocuments() {
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: "/Seller/Account/GetUploadedDocuments",
+                    data: {},
+                    success: function (result) {
+                        if (result.success == true) {
+                            if (result.data != null) {
+                                $.each(result.data, function (e, v) {
+                                    $("form[data-docid=" + v.documentId + "]").find("input[name=upfile]").val(v.fileUrl);
+                                    $("form[data-docid=" + v.documentId + "]").find("a.samplefile").addClass("d-none");
+                                    $("form[data-docid=" + v.documentId + "]").find("div.imgBox").removeClass("d-none");
+                                });
+                            }
+                        }
+                    }
+                });
+            } catch (e) {
+            }
+        }
+
+        $(".showfilebtn").on("click", function () {
+            var doccode = $(this).parents("form").data("docid");
+            $("#docimagemain").attr("src", $("form[data-docid=" + doccode + "]").find("input[name=upfile]").val());
+            $("#showdocmodal").modal("show");
+        })
     </script>
 }

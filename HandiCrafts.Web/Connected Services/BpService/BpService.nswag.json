@@ -4286,7 +4286,7 @@
         "tags": [
           "Seller"
         ],
-        "summary": "ثبت مشخصات صنعتگر",
+        "summary": "لیست مدارک صنعتگر",
         "operationId": "GetSellerDocumentList",
         "responses": {
           "200": {

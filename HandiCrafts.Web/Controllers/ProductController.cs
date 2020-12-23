@@ -72,7 +72,67 @@ namespace HandiCrafts.Web.Controllers
                 var childNode1 = new MvcBreadcrumbNode("Index", "/Product", result.Obj.CatProductName);
                 ViewData["BreadcrumbNode"] = childNode1;
 
-                return View(result.Obj);
+                ProductDtoUI productDtoUI = new ProductDtoUI()
+                {
+                    AparatUrl = result.Obj.AparatUrl,
+                    CatProductId = result.Obj.CatProductId,
+                    CatProductName = result.Obj.CatProductName,
+                    Coding = result.Obj.Coding,
+                    Count = result.Obj.Count,
+                    CoverImageHurl = result.Obj.CoverImageHurl,
+                    CoverImageUrl = result.Obj.CoverImageUrl,
+                    Description = result.Obj.Description,
+                    FinalStatus = result.Obj.FinalStatus,
+                    FinalStatusId = result.Obj.FinalStatusId,
+                    Id = result.Obj.Id,
+                    KeyWords = result.Obj.KeyWords,
+                    LastSeenDate = result.Obj.LastSeenDate,
+                    MelliCode = result.Obj.MelliCode,
+                    MelliFlag = result.Obj.MelliFlag,
+                    Name = result.Obj.Name,
+                    OfferAmount = result.Obj.OfferAmount,
+                    OfferId = result.Obj.OfferId,
+                    OfferPercent = result.Obj.OfferPercent,
+                    Price = result.Obj.Price,
+                    PriceAftterOffer = result.Obj.PriceAftterOffer,
+                    Rating = result.Obj.Rating,
+                    Score = result.Obj.Score,
+                    SeenCount = result.Obj.SeenCount,
+                    SellerId = result.Obj.SellerId,
+                    SellerName = result.Obj.SellerName,
+                    UnescoCode = result.Obj.UnescoCode,
+                    UnescoFlag = result.Obj.UnescoFlag,
+                    Weight = result.Obj.Weight,
+                    images=new List<ProductImageDto>()
+                };
+
+                GetImageListByProductIdClient client2 = new GetImageListByProductIdClient(BaseUrl, httpClient);
+
+                var imgResult = client2.UIAsync(id).Result;
+
+                if (imgResult.ResultCode == 200)
+                {
+                    if (imgResult.ObjList.Count > 0)
+                    {
+                        //productDtoUI.images = new List<ProductImageDto>();
+
+                        ProductImageDto productImageDto;
+                        foreach (var item in imgResult.ObjList)
+                        {
+                            productImageDto = new ProductImageDto()
+                            {
+                                FileType = item.FileType,
+                                Id = item.Id,
+                                ImageUrl = item.ImageUrl,
+                                Title = item.Title,
+                                ProductId = item.ProductId
+                            };
+
+                            productDtoUI.images.Add(productImageDto);
+                        }
+                    }
+                }
+                return View(productDtoUI);
             }
 
             /*var childNode1 = new MvcBreadcrumbNode("Index", "Product", "دسته بندی 1");
@@ -92,6 +152,11 @@ namespace HandiCrafts.Web.Controllers
             ViewData["BreadcrumbNode"] = childNode3;*/
 
             return View();
+        }
+
+        public class ProductDtoUI : ProductDto
+        {
+            public List<ProductImageDto> images { get; set; }
         }
 
         public IActionResult ByFilter()
