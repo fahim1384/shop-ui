@@ -145,7 +145,110 @@
     </nav></header>
 *@
 <!-- Navbar -->
+<style>
+    .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+    .curtain, .curtainrl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: #000;
+        -webkit-transition: left .4s ease;
+        -moz-transition: left .4s ease;
+        -o-transition: left .4s ease;
+        transition: left .4s ease;
+        visibility: hidden;
+        z-index: 99999;
+    }
+    @@media only screen and (max-width: 991px) {
+        #mySidenav.speed-in {
+            left: 0;
+            background-color: white;
+            width: 320px;
+            position: fixed;
+            height: 100%;
+            z-index: 100001;
+            -webkit-transition: left .4s ease;
+            -moz-transition: left .4s ease;
+            -o-transition: left .4s ease;
+            transition: left .4s ease;
+        }
+    }
+    @@media only screen and (max-width: 991px) {
+        #mySidenav {
+            -webkit-transition: left .4s ease;
+            -moz-transition: left .4s ease;
+            -o-transition: left .4s ease;
+            transition: left .4s ease;
+            top: 0;
+            background-color: white;
+            left: -320px;
+            background: #fff;
+            position: fixed;
+            width: 320px;
+            height: 100%;
+            z-index: 100001;
+        }
+    }
+    .curtainrl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        opacity: 0;
+        background-color: #000;
+        -webkit-transition: left .4s ease;
+        -moz-transition: left .4s ease;
+        -o-transition: left .4s ease;
+        transition: left .4s ease;
+        visibility: hidden;
+        z-index: 99999;
+    }
+
+    .curtainrl, .robin-page-ckeckout {
+        width: 100%;
+    }
+</style>
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.Extensions.Options
@@ -167,10 +270,12 @@
             <a id="wsnavtoggle" class="animated-arrow">
                 <span></span>
             </a>
-            <span class="robin-side-cart callusicon " href="/ShoppingCart/Cart">
-                <span class="robin-shopping-basket"></span>
-                <em class="roundpoint basket-counters total-count">0</em>
-            </span>
+            <a id="toggleshoppingcart" class="wsnavtoggle">
+                <span class="robin-side-cart callusicon opencartleft">
+                    <span class="robin-shopping-basket"></span>
+                    <em class="roundpoint basket-counters total-count">0</em>
+                </span>
+            </a>
         </div>
 
         <div class="headerfull">
@@ -199,8 +304,8 @@
                                                        placeholder="جستجو" aria-label="جستجو">
 
                                                 @*id="searchInput" <select id="searchCategoryCmb" class="form-control bg-gray-active rgba-black-light border-radius-10 border-0 z-depth-0 custome-muted-text select2 w-100" aria-label="دسته بندی">
-                                                        <option>دسته بندی</option>
-                                                    </select>*@
+                                            <option>دسته بندی</option>
+                                        </select>*@
                                             </div>
                                         </div>
                                     </form>
@@ -219,58 +324,58 @@
                                     <div class="wsshopwp clearfix" style="height:400px">
                                         <ul class="wstabitem clearfix" id="mgmenu">
                                             @*<li class="wsshoplink-active">
-                                                    <span class="wsmenu-click02">
-                                                        <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                    </span>
-                                                    <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                    <span class="robin-submenu-nav">
-                                                        <span class="robin-menu-icon-kitchen"></span>
-                                                        <span style="vertical-align:middle">
-                                                            <a href="/">دسته شماره یک</a>
-                                                        </span>
-                                                    </span>
-                                                    <div class="wstitemright clearfix wstitemrightactive" style="height:auto">
+                                        <span class="wsmenu-click02">
+                                            <i class="wsmenu-arrow fa fa-angle-down"></i>
+                                        </span>
+                                        <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                        <span class="robin-submenu-nav">
+                                            <span class="robin-menu-icon-kitchen"></span>
+                                            <span style="vertical-align:middle">
+                                                <a href="/">دسته شماره یک</a>
+                                            </span>
+                                        </span>
+                                        <div class="wstitemright clearfix wstitemrightactive" style="height:auto">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 clearfix">
                                                         <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-lg-12 col-md-12 clearfix">
-                                                                    <div class="container-fluid">
-                                                                        <div class="row posrdb">
-                                                                            <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                <ul class="wstliststy02 clearfix">
-                                                                                    <li class="wstheading clearfix"> <a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                    <li><a href="/Product/">تست شماره 1</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                <ul class="wstliststy02 clearfix">
-                                                                                    <li class="wstheading clearfix"><a href="/Product/">تست شماره 2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                    <li><a href="/Product/">تست شماره2</a></li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                            <div class="row posrdb">
+                                                                <div class="col-lg-4 col-md-12 posrdb right">
+                                                                    <ul class="wstliststy02 clearfix">
+                                                                        <li class="wstheading clearfix"> <a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                        <li><a href="/Product/">تست شماره 1</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-12 posrdb right">
+                                                                    <ul class="wstliststy02 clearfix">
+                                                                        <li class="wstheading clearfix"><a href="/Product/">تست شماره 2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                        <li><a href="/Product/">تست شماره2</a></li>
+                                                                    </ul>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                             *@
                                             <!---->
                                         </ul>
@@ -278,14 +383,7 @@
                                 </div>
                             </li>
                             <!---->
-                            @*<li class="wscarticon robin-side-cart clearfix" onclick="javascript: window.location='/ShoppingCart/Cart'">
-                                    <span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                    <span class="basket">
-                                        <span class="bbb" style=" top: 30px; position: absolute; width: 30px; height: 30px; background-image: url(/image/icons/onlineshop.png); background-size: cover;"></span>
-                                        <span class="basket-counters total-count">0</span>
-                                        <span class="mobiletext">سبد خرید</span>
-                                    </span>
-                                </li>*@
+
                             <li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
 
                                 <button type="button" id="sabaddropdownMenu" data-toggle="dropdown" class="btn1 btn-outline-secondary1 dropdown-toggle1" style="border: none; background: none;">
@@ -316,52 +414,45 @@
                                     </li>
 
                                     @*<li>
-                                            <div class="">
-                                                <div class="c-header__profile-dropdown-actions">
-                                                    <div class="c-header__profile-dropdown-action-container">
-                                                        <a href="/order/ordersHistory" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">
-                                                            <div class="col-3 p-0"><img class="max-width-70px border-radius-3" src="/image/product/product-01.jpg" /></div>
-                                                            <div class="col-9">
-                                                                <span class="font-size-1rem color-menu-sabad font-weight-600">sadasd sad sd asd asd ads asd sd</span>
-                                                                <span class="cyan d-block">
-                                                                    <img src="~/image/icons/avaiable.png" class="width-24px small" />
-                                                                    در سرای موجود می باشد
-                                                                </span>
-                                                            </div>
-                                                        </a>
-                                                        <div class="row m-0 pt-5px pb-5px">
-                                                            <div class="col-8 text-center"><span class="color-menu-sabad small font-weight-bold">1 عدد</span></div>
-                                                            <div class="col-4 text-right">
-                                                                <a><img src="/image/icons/delete.png" class="width-24px" /></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="p-2">
-                                                        <div class="row m-0 pt-5px pb-5px bolderspan">
-                                                            <div class="col-6 text-left">
-                                                                <span class="color-menu-sabad">مبلغ قابل پرداخت</span>
-                                                                <span class="d-block color-menu-sabad"><span>200,000,000</span> تومان</span>
-                                                            </div>
-                                                            <div class="col-6 text-right">
-                                                                <a class="btn btn-info mt-5px" href="/shoppingcart/cart">ثبت سفارش</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                <div class="">
+                                    <div class="c-header__profile-dropdown-actions">
+                                        <div class="c-header__profile-dropdown-action-container">
+                                            <a href="/order/ordersHistory" class="c-header__profile-dropdown-action c-header__profile-dropdown-action--orders ">
+                                                <div class="col-3 p-0"><img class="max-width-70px border-radius-3" src="/image/product/product-01.jpg" /></div>
+                                                <div class="col-9">
+                                                    <span class="font-size-1rem color-menu-sabad font-weight-600">sadasd sad sd asd asd ads asd sd</span>
+                                                    <span class="cyan d-block">
+                                                        <img src="~/image/icons/avaiable.png" class="width-24px small" />
+                                                        در سرای موجود می باشد
+                                                    </span>
+                                                </div>
+                                            </a>
+                                            <div class="row m-0 pt-5px pb-5px">
+                                                <div class="col-8 text-center"><span class="color-menu-sabad small font-weight-bold">1 عدد</span></div>
+                                                <div class="col-4 text-right">
+                                                    <a><img src="/image/icons/delete.png" class="width-24px" /></a>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                        </li>*@
+                                        <div class="p-2">
+                                            <div class="row m-0 pt-5px pb-5px bolderspan">
+                                                <div class="col-6 text-left">
+                                                    <span class="color-menu-sabad">مبلغ قابل پرداخت</span>
+                                                    <span class="d-block color-menu-sabad"><span>200,000,000</span> تومان</span>
+                                                </div>
+                                                <div class="col-6 text-right">
+                                                    <a class="btn btn-info mt-5px" href="/shoppingcart/cart">ثبت سفارش</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>*@
                                 </ul>
                             </li>
 
-                            @*<li>
-                                    <form asp-controller="Home" asp-action="Cookie" method="post">
-                                        <label>زبان:</label>
-                                        <select name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
-                                        </select>
-                                    </form>
-                                </li>*@
                             <li class="wsshopmyaccount clearfix user-link-menu dropdown order-1">
 
                                 <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn1 btn-outline-secondary1 dropdown-toggle1" style="border: none; background: none;margin-top:8px">
@@ -476,6 +567,11 @@
                     </div>
                     <!-- Breadcrumbs -->
                 </nav>
+
+                
+
+                
+
             </div>
         </div>
     </div>
@@ -485,5 +581,6 @@
         function onSigninSuccess(value) {
             window.location.href;
         }
+
     </script>
 }

@@ -109,6 +109,7 @@ body {
 .index-products .card-body {
     padding: 0.7rem !important;
     color: #8c8c8c;
+    position:relative;
 }
 
 .cyan {
@@ -1536,7 +1537,7 @@ a[name=beforeAddtocartPlus]:hover, a[name=beforeAddtocartMinus]:hover {
 }
 
 .shopping-card-box:hover .caption {
-    bottom: 34%;
+    top: -45px;
     opacity: 1;
 }
 
