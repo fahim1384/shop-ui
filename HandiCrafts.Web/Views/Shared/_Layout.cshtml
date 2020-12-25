@@ -64,37 +64,6 @@
     @RenderSection("Styles", required: false)
 </head>
 <body>
-    <div id="mySidenav" class="sidenav">
-        <h2>
-            سبد خرید <button class="cart-close-btn" type="button" id="close-cart-sidebar">
-                <i class="fa fa-angle-left fa-2x"></i>
-            </button>
-        </h2>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-        <div class="cd-cart-items">
-            <div class="robin-cart-contents">
-                <div class="robin-cart-contents-body">
-                    <div class="fade-cart-after"></div>
-                </div> <span class="robin-basic w100 robin-empty-cart mar-bottom">سبد خرید شما در حال حاضر خالی است.</span>
-                <style>
-                    .cart-footer a.sidecheckout, .cart-footer span.sidecheckout {
-                        display: none !important;
-                    }
-                </style>
-            </div>
-            <footer class="cart-footer">
-                <span class="sidecheckout" id="cart-checkout-sidebar">ثبت سفارش </span>
-            </footer>
-        </div>
-
-    </div>
-
-    <div class="curtainrl" id="curtain-rl"></div>
-    <div class="curtain" id="main-curtain"></div>
 
     <!-- LOADER -->
     <div class="preloader">
@@ -156,6 +125,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.rtl.min.js"></script>
     <script src="/plugins/select2/select2.min.js"></script>
     <script src="~/plugins/Notify/bootstrap-notify.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -213,36 +183,36 @@
                             if (v.inverseP.length > 0) {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
                                 child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                                                    <div class="container-fluid">
-                                                                                        <div class="row">
-                                                                                            <div class="col-lg-8 col-md-12 clearfix">
                                                                                                 <div class="container-fluid">
-                                                                                                    <div class="row posrdb">
-                                                                                                        <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                                            <ul class="wstliststy02 clearfix">`;
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-8 col-md-12 clearfix">
+                                                                                                            <div class="container-fluid">
+                                                                                                                <div class="row posrdb">
+                                                                                                                    <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                                                        <ul class="wstliststy02 clearfix">`;
                                 $.each(v.inverseP, function (e2, v2) {
                                     select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
                                     child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
                                 });
                                 child += `</ul></div>
+                                                                                                       </div>
+                                                                                                   </div>
+                                                                                               </div>
                                                                                            </div>
                                                                                        </div>
-                                                                                   </div>
-                                                                               </div>
-                                                                           </div>
-                                                                       </div>`;
+                                                                                   </div>`;
 
                                 $("#mgmenu").append(`<li ${ac}>
-                                                                                <span class="wsmenu-click02">
-                                                                                    <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                                                </span>
-                                                                                <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                                                <span class="robin-submenu-nav">
-                                                                                    <span class="robin-menu-icon-kitchen"></span>
-                                                                                    <span style="vertical-align:middle">
-                                                                                        <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
-                                                                                    </span>
-                                                                                </span>${child}</li>`);
+                                                                                            <span class="wsmenu-click02">
+                                                                                                <i class="wsmenu-arrow fa fa-angle-down"></i>
+                                                                                            </span>
+                                                                                            <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                                                            <span class="robin-submenu-nav">
+                                                                                                <span class="robin-menu-icon-kitchen"></span>
+                                                                                                <span style="vertical-align:middle">
+                                                                                                    <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                                                </span>
+                                                                                            </span>${child}</li>`);
 
                             }
                             else {
@@ -321,24 +291,14 @@
         }*/
         //megaMenuData();
 
+        $(window).ajaxError(function (xhr, props) {
+            if (props.status == 401) {
 
-        //***************************************
-
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            $("#mySidenav").addClass("speed-in");
-            $('#main-curtain').addClass('visible');
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            $("#mySidenav").removeClass("speed-in");
-            $('#main-curtain').removeClass('visible');
-        }
-
-        $("#toggleshoppingcart").on("click", function () {
-            openNav();
+                window.location = "/Account/Login";
+            }
         });
+
+
     </script>
     @RenderSection("Scripts", required: false)
 </body>

@@ -288,6 +288,14 @@
         //============
         megaMenuData();
 
+        $(window).ajaxError(function (xhr, props) {
+
+            if (props.status == 401) {
+
+                window.location = "/Account/Login";
+            }
+
+        });
     </script>
     @RenderSection("Scripts", required: false)
 </body>

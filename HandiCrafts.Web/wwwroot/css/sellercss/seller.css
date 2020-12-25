@@ -112,6 +112,7 @@
     padding-top: 100px;
     -ms-flex-item-align: start;
     align-self: flex-start;
+    
 }
 
 @media screen and (min-width: 992px) {
@@ -131,6 +132,7 @@
 .reg-element .form-control {
     border-radius: 0 1.6rem 1.6rem 0 !important;
     direction: ltr;
+    height: 100%;
 }
 
 .reg-element .input-group-prepend .input-group-text {

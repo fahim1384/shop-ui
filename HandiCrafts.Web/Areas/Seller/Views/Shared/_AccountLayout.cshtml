@@ -164,6 +164,15 @@
             });
         };
 
+        $(window).ajaxError(function (xhr, props) {
+
+            if (props.status == 401) {
+
+                window.location = "/Seller/Account/Login";
+            }
+
+        });
+
     </script>
     @RenderSection("Scripts", required: false)
 </body>

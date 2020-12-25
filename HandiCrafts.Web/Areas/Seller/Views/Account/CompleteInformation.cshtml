@@ -7,16 +7,10 @@
     <link href="~/plugins/map/leaflet.css" rel="stylesheet" />
     <link href="~/plugins/persianDatePicker/persian-datepicker.min.css" rel="stylesheet" />
     <style>
-        /*.mapboxgl-canvas {
-            position: relative !important;
-            width: 470px !important;
-        }
 
-        #map {
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }*/
+        .leaflet-marker-icon {
+            z-index: 1 !important;
+        }
     </style>
 }
 
@@ -259,79 +253,57 @@ else
 
 
     @section Scripts{
-        @*<script src="/plugins/map/parsimap.js?key=public"></script>
-            <script src="/plugins/map/parsimap-pointer.js"></script>*@
 
         <script src="~/plugins/map/leaflet.js"></script>
 
         <script src="~/plugins/persianDatePicker/persian-date.js"></script>
         <script src="~/plugins/persianDatePicker/persian-datepicker.js"></script>
         <script>
+            var theMarker = {};
+            var lat = '@Model.Lat' != "" ? '@Model.Lat' : 35.70163;
+            var lng = '@Model.Lng' != "" ? '@Model.Lng' : 51.39211;
 
-            var map = L.map('map').setView([35.70163, 51.39211], 12);
+            if (lng != "") $(".latlanstatus").val("ثبت شده");
+
+            var map = L.map('map').setView([lat, lng], 12);
             L.tileLayer('https://developers.parsijoo.ir/web-service/v1/map/?type=tile&x={x}&y={y}&z={z}&apikey=97a1407896cb4f89843b212f7ac3bb64', {
                 maxZoom: 21,
             }).addTo(map);
 
-        //var container = document.getElementById('map');
-        //
-        //console.log('@@Model.Lat')
-        var lt = '@Model.Lat' != "" ? '@Model.Lat' : 51.41;
-        var lg = '@Model.Lng' != "" ? '@Model.Lng' : 35.7575;
-        //if ('@@Model.Lng' != "") {
-        //    $(".latlanstatus").val("ثبت شده");
-        //}
-        //
-        //var mapOptions = { center: [51.41, 35.7575], zoom: 6, height: '100%', };
-        //var map = new parsimap.Map(container, mapOptions);
-        //
-        // map.on('load', function () {
-        //
-        //    var symbolLayerOptions = map.getDefaultSymbol();
-        //
-        //    var pointer = new parsimap.Pointer(map, {
-        //        type: 'click',
-        //        layerOptions: symbolLayerOptions,
-        //    });
-        //    pointer.enable();
-        //
-        //    pointer.on('select', function (event) {
-        //
-        //        if (map.hasLayer('simplePoint') == true) {
-        //            map.removeLayer('simplePoint');
-        //        }
-        //
-        //        var stringLngLat =
-        //            'lng: ' + event.lngLat.lng + ' - lat: ' + event.lngLat.lat;
-        //        document.getElementById('lng_lat_box').innerText = stringLngLat;
-        //
-        //        $("input[name=Lng]").val(event.lngLat.lng);
-        //        $("input[name=Lat]").val(event.lngLat.lat);
-        //        $(".latlanstatus").val("ثبت شده");
-        //    });
-        //});
+            map.on('click', function (e) {
+                debugger
+                console.log("lat", e.latlng.lat);
+                lat = e.latlng.lat;
+                console.log("lng", e.latlng.lng);
+                lng = e.latlng.lng;
 
+                $("input[name='Lat']").val(lat);
+                $("input[name='Lng']").val(lng);
+
+                if (theMarker != undefined) {
+                    map.removeLayer(theMarker);
+                };
+
+                //Add a marker to show where you clicked.
+                theMarker = L.marker([lat, lng]).addTo(map);
+                $(".latlanstatus").val("ثبت شده");
+            });
 
 
         $("#mapbtn").on("click", function () {
-            //if ($("#mapbox").find("#map").length == 0) {
-            //    $("#map").removeClass("d-none");
-            //    $("#mapbox").append($("#map"));
-            //}
-
             $('#mapModal').modal('show');
 
             setTimeout(function () {
-                map.invalidateSize(true); map.setView([lt, lg], 12);
+                map.invalidateSize(true); map.setView([lat, lng], 12);
             }, 800);
 
             setTimeout(function () {
-                map.invalidateSize(true); map.setView([lt, lg], 15);
-                L.popup()
-                    .setLatLng([lt, lg])
-                    //.setContent(`: ${name}`)
-                    .openOn(map);
+                map.invalidateSize(true); map.setView([lat, lng], 15);
 
+                if (theMarker != undefined) {
+                    map.removeLayer(theMarker);
+                };
+                theMarker = L.marker([lat, lng]).addTo(map);
             }, 1000);
         });
 

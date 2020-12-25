@@ -471,6 +471,24 @@ namespace HandiCrafts.Web.Controllers
             return View();
         }
 
+        public Task<ResponseState<ProductGeneralSearchResultDtoListResult>> Search(string searchtxt)
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                ProducatGeneralSearchClient client = new ProducatGeneralSearchClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync(searchtxt);
+
+                if (result.ResultCode != 200)
+                    return Error<ProductGeneralSearchResultDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
         //============================================
         [HttpPost]
         public Task<DefaultResponseState> GetCatProductList_UI2()

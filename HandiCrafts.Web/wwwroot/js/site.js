@@ -241,9 +241,9 @@ var cartEvents = (function () {
             <td data-title="قیمت:"> <h5 class="prod-name-cart">${comma(cartArray[i].price)}</h5></td>
             <td data-title="تعداد:"><form class="form-inline mt-2" dir="rtl">
                         <div class="spinner border-radius-5 m-auto">
-                            <span class="fa fa-plus plus-item" data-product-name="${ cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
-                            <input type="text" name="quantity" readonly data-product-id='${ cartArray[i].prodid}' data-product-name='${cartArray[i].name}' value='${cartArray[i].count}' class="form-control width-50px border-0 item-count">
-                            <span class="fa fa-minus minus-item" data-product-name="${ cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
+                            <span class="fa fa-plus plus-item" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
+                            <input type="text" name="quantity" readonly data-product-id='${cartArray[i].prodid}' data-product-name='${cartArray[i].name}' value='${cartArray[i].count}' class="form-control width-50px border-0 item-count">
+                            <span class="fa fa-minus minus-item" data-product-name="${cartArray[i].name}" data-product-id="${cartArray[i].prodid}" data-product-price="${cartArray[i].price}"></span>
                         </div>
                     </form>
               </td>
@@ -266,16 +266,19 @@ var cartEvents = (function () {
             function popupCart() {
                 var cartArray = shoppingCart.listCart();
                 var output = "";
+                var outputMob = "";
                 if (cartArray.length == 0) {
-                    /*output += `<div class="c-header__profile-dropdown-account-container">
-                                                                <div class="c-header__profile-dropdown-user">
-                                                                    <span class="col-12 small font-weight-600">سبد کالای شما خالی می باشد</span>
-                                                                </div>
-                                                            </div>`;*/
                     $(".empty-basket-popup").removeClass("d-none");
                     $(".basket-popup-main li:not(.empty-basket-popup)").remove();
+
+                    // mobile view
+                    $(".empty-basket-popup-mob").removeClass("d-none");
+                    $(".cd-cart-items").addClass("d-none");
+                    $(".basket-popup-main-mob li:not(.empty-basket-popup-mob)").remove();
                 }
                 else {
+                    $(".cd-cart-items").removeClass("d-none");
+
                     output = `<li> <div class=""><div class="c-header__profile-dropdown js-dropdown-menu basket-popup-header"><div class="c-header__profile-dropdown-account-container go-basket">
             <div class="c-header__profile-dropdown-user">
                 <span class="col-4 small font-weight-600">${shoppingCart.totalCount()} کالا</span>
@@ -305,6 +308,31 @@ var cartEvents = (function () {
                     </div>
                 </div>
             </div></li>`;
+
+
+                        outputMob += `<li style="border-bottom: 1px solid #eee;">
+                <div class="row m-2">
+                    <div class="col-3 m-0 p-0">
+                        <a href="/Product/index?id=${cartArray[i].prodid}" style="padding: 0;">
+                            <img class="w-100 max-width-70px border-radius-3" src="${cartArray[i].prodimage}">
+                        </a>
+                    </div>
+                    <div class="col-9 m-0 p-1">
+                        <span class="font-size-1rem color-menu-sabad font-weight-600">${cartArray[i].name}</span>
+
+                        <div class="row m-0 pt-5px pb-5px">
+                            <div class="col-7 p-0 pl-2 text-center"><span class="color-menu-sabad small font-weight-bold">مبلغ ${comma(cartArray[i].price)} ت</span></div>
+<div class="col-3 p-0 text-center"><span class="color-menu-sabad small font-weight-bold">1 عدد</span></div>
+                            <div class="col-2 p-0 text-right">
+                                <span class="delete-item basket-action-span" data-product-id="${cartArray[i].prodid}">
+                                    <img src="/image/icons/delete.png" class="width-18px">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>`;
                     }
 
                     output += `</ul></li>
@@ -328,17 +356,31 @@ var cartEvents = (function () {
                     $('.basket-popup-main').find("li.empty-basket-popup").addClass("d-none");
                     $('.basket-popup-main').find("li:not(.empty-basket-popup)").remove();
                     $('.basket-popup-main').append(output);
+
+                    //****************** in Mobile View **********************
+                    $(".product-count-mob-view").html(`${shoppingCart.totalCount()} کالا`);
+                    $(".product-price-mob-view").html(`مبلغ ${comma(shoppingCart.totalCart())} تومان`);
+                    $('.basket-popup-main-mob').find("li.empty-basket-popup-mob").addClass("d-none");
+                    $('.basket-popup-main-mob').find("li:not(.empty-basket-popup-mob)").remove();
+                    $('.basket-popup-main-mob').append(outputMob);
                 }
             }
 
             // Delete item button
+
+            // حذف در موبایل ویو سبد
+            $('.basket-popup-main-mob').on("click", ".delete-item", function (event) {
+                var prodid = $(this).data('product-id')
+                shoppingCart.removeItemFromCartAll(prodid);
+                displayCart();
+            });
 
             // حذف در پاپاپ سبد
             $('.basket-popup-main').on("click", ".delete-item", function (event) {
                 var prodid = $(this).data('product-id')
                 shoppingCart.removeItemFromCartAll(prodid);
                 displayCart();
-            })
+            });
 
             // حذف در صفحه سبد خرید
             $('.show-cart').on("click", ".delete-item", function (event) {
@@ -419,12 +461,12 @@ function notify(
         message: null
     },
     settings = {
-        type : "info",
-        element : "body",
+        type: "info",
+        element: "body",
         from: "top",
         align: "right",
-        position:null,
-        allow_dismiss:true,
+        position: null,
+        allow_dismiss: true,
         newest_on_top: false,
         showProgressbar: false,
         offset: 20,
@@ -487,3 +529,75 @@ function notify(
             '</div>'
     });
 }
+
+//==========================================
+
+//*******************************************
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "270px";
+    $("#mySidenav").addClass("speed-in");
+    $('#main-curtain').addClass('visible');
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    $("#mySidenav").removeClass("speed-in");
+    $('#main-curtain').removeClass('visible');
+}
+
+$("#toggleshoppingcart").on("click", function () {
+    openNav();
+});
+
+//*********************************************
+
+function log(message) {
+    $("<div>").text(message).prependTo("#searchresult");
+    $("#searchresult").scrollTop(0);
+}
+
+$("#searchKey").autocomplete({
+    source: function (request, response) {
+        $.ajax({
+            url: "/Home/Search",
+            //dataType: "jsonp",
+            data: {
+                searchtxt: request.term
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    $("#searchresult").empty();
+                    $.each(data.data.objList, function (e, v) {
+                        $("#searchresult").append(`<div style="padding: 6px 10px;"><a class="text-muted" href="/Product/Index?id=${v.productId}"><i class="fa fa-search"></i> ${v.productName} <div class="b-block pl-4 small color-firouzi">در دسته ${v.catProductName}</div></a></div>`);
+                    });
+                } else {
+                    $("#searchresult").empty();
+                    $("#searchresult").append(`<div style="padding: 6px 10px;">${data.data.message}</div>`);
+                }
+
+                $("#searchresult").removeClass("d-none");
+                //response(data);
+            }
+        });
+    },
+    minLength: 3,
+    select: function (event, ui) {
+    },
+    open: function () {
+    },
+    close: function () {
+        $("#searchKey").parents("div.input-group-prepend").css("width", "");
+    }
+});
+
+
+$("#searchKey").focus(function () {
+    $(".search-input-parentbox").css('background-color', '#fff !important');
+
+});
+
+$("#searchKey").blur(function () {
+    $(".search-input-parentbox").css('background-color', '');
+    $("#searchresult").addClass("d-none");
+});
