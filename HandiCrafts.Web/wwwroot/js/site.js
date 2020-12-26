@@ -601,3 +601,5 @@ $("#searchKey").blur(function () {
     $(".search-input-parentbox").css('background-color', '');
     $("#searchresult").addClass("d-none");
 });
+
+

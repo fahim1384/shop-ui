@@ -612,6 +612,59 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 return Success<List<SellerDocumentDto>>(data: sellerDocumentDtos, message: fullInfo.ResultMessage);
             });
         }
+
+        [HttpPost]
+        public Task<ResponseState<PersonalInformationVModel>> GetSellerFullInfoForContract()
+        {
+            return TryCatch(async () =>
+            {
+                if (string.IsNullOrEmpty(Request.Cookies["sellertoken"]))
+                {
+                    return Error<PersonalInformationVModel>(data: null, message: "مهلت زمانی استفاده از توکن به پایان رسید لطفا مراحل ثبت نام را از ابتدا اامه دهید");
+                }
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _configuration["BaseUrl"];
+
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
+                Client client2 = new Client(BaseUrl, httpClient);
+                var fullInfo = await client2.GetSellerFullInfoAsync();
+
+                if (fullInfo.ResultCode != 200)
+                    return Error<PersonalInformationVModel>(data: null, message: fullInfo.ResultMessage);
+
+                if (fullInfo.ResultCode == 200 && fullInfo.Obj == null)
+                    return Error<PersonalInformationVModel>(data: null, message: "دیتایی برای این کاربر وجود ندارد");
+
+                PersianDateTime persianDate = new PersianDateTime(fullInfo.Obj.Bdate.Date);
+                var Address = fullInfo.Obj.AddressList.Count > 0 ? fullInfo.Obj.AddressList.FirstOrDefault() : null;
+
+                PersonalInformationVModel informationVModel = new PersonalInformationVModel()
+                {
+                    Address = Address != null ? Address.Address : null,
+                    BirthDate = persianDate.ToPersianDateString(),
+                    City = Address != null ? Address.CityId.ToString() : null,
+                    FirstName = fullInfo.Obj.Name,
+                    LastName = fullInfo.Obj.Fname,
+                    Gender = fullInfo.Obj.Gender != null ? fullInfo.Obj.Gender.Value : 1,
+                    Lat = Address != null ? Address.Xgps : null,
+                    Lng = Address != null ? Address.Ygps : null,
+                    MobileNo = fullInfo.Obj.Mobile != null ? "0" + fullInfo.Obj.Mobile.ToString() : null,
+                    MobileNo2 = fullInfo.Obj.SecondMobile != null ? "0" + fullInfo.Obj.SecondMobile.ToString() : null,
+                    NationalCode = fullInfo.Obj.MelliCode != null ? fullInfo.Obj.MelliCode.Value.ToString() : null,
+                    Phone = fullInfo.Obj.Tel != null ? "0" + fullInfo.Obj.Tel.Value.ToString() : null,
+                    PostalCode = Address != null ? Address.PostalCode.ToString() : null,
+                    Province = Address != null ? Address.ProvinceId.ToString() : null,
+                    ShabaCode = fullInfo.Obj.ShabaNo,
+                    UserId = fullInfo.Obj.SellerId,
+                    AddOrEditModel = 2
+                };
+
+                return Success<PersonalInformationVModel>(data: informationVModel, message: fullInfo.ResultMessage);
+
+            });
+        }
     }
 
     #endregion
