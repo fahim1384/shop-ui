@@ -183,8 +183,8 @@
 
     <div class="form-group mt-3">
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">
+            <input type="checkbox" class="form-check-input" id="contractChk">
+            <label class="form-check-label" for="contractChk">
                 من این <a id="viewContract" data-toggle="modal" data-target="#showContractModal" class="color-firouzi border-bottom font-weight-bold" style="color: #d21818">قرارداد</a> را مطالعه کرده و با آن موافق هستم.
             </label>
         </div>
@@ -742,7 +742,13 @@
             }
 
             if (isOk == true)*/
-            window.location = "/seller/account/welcome";
+
+            if (document.getElementById('contractChk').checked) {
+                window.location = "/seller/account/welcome";
+            } else {
+                notify({ title: "پیغام سیستم", message: "لطفا قرارداد را مطالعه و تایید نمایید" });
+            }
+            
         });
 
         function GetUploadedDocuments() {

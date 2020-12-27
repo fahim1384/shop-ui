@@ -306,7 +306,8 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     Province = Address != null ? Address.ProvinceId.ToString() : null,
                     ShabaCode = fullInfo.Obj.ShabaNo,
                     UserId = fullInfo.Obj.SellerId,
-                    AddOrEditModel = 2
+                    AddOrEditModel = 2,
+                    ShenasnameNo = fullInfo.Obj.IdentityNo
                 };
 
                 #endregion
@@ -362,7 +363,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     Fname = model.FirstName + " " + model.LastName,
                     Name = model.FirstName + " " + model.LastName,
                     Gender = model.Gender,
-                    IdentityNo = model.UserId.ToString(),
+                    IdentityNo = model.ShenasnameNo, //model.UserId.ToString(),
                     SecondMobile = !string.IsNullOrEmpty(model.MobileNo2) ? long.Parse(model.MobileNo2) : (long?)null,
                     Tel = long.Parse(model.Phone),
                     ShabaNo = model.ShabaCode

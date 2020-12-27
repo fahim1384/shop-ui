@@ -203,7 +203,7 @@
         -o-transition: left .4s ease;
         transition: left .4s ease;
         visibility: hidden;
-        z-index: 99999;
+        z-index: 1033;
     }
 
     @@media only screen and (max-width: 991px) {
@@ -219,8 +219,9 @@
             -o-transition: left .4s ease;
             transition: left .4s ease;
         }
+
         #searchresult {
-            background: #ebecee!important;
+            background: #ebecee !important;
         }
     }
 
@@ -252,7 +253,11 @@
         }
 
         #searchresult {
-            background: #ebecee!important;
+            background: #ebecee !important;
+        }
+
+        .searchbtnAllsite{
+            display:none!important;
         }
     }
 
@@ -268,7 +273,7 @@
         -o-transition: left .4s ease;
         transition: left .4s ease;
         visibility: hidden;
-        z-index: 99999;
+        z-index: 1033;
     }
 
     .curtainrl, .robin-page-ckeckout {
@@ -318,9 +323,11 @@
     .top-menu {
         height: 100%;
     }
+
     .searchKey:active .search-input-parentbox {
         background-color: #fff !important;
     }
+
     #searchresult {
         text-align: right;
         height: 200px;
@@ -333,6 +340,15 @@
         border-radius: 6px;
         z-index: 50;
     }
+
+    .search-item {
+        padding: 6px 10px;
+        border-bottom: 1px solid #eee;
+    }
+        .search-item:hover {
+            background-color: #f7f7f7;
+        }
+
 </style>
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
@@ -379,18 +395,22 @@
                             <li class="wssearchbar clearfix">
 
                                 <div class="dgwt-wcas-search-wrapp dgwt-wcas-has-submit woocommerce mt-3 js-dgwt-wcas-layout-classic dgwt-wcas-layout-classic js-dgwt-wcas-mobile-overlay-disabled dgwt-wcas-active">
-                                    <form class="navbar-search pl-0 mr-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3 frmSearchKala" action="">
-                                        <div class="input-group d-block d-md-flex mb-0" style="position:relative">
+                                    <form class="navbar-search pl-0 mr-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3 frmSearchKala" action="" style="position:relative">
+                                        <div class="input-group d-block d-md-flex mb-0" style="position: absolute;z-index: 99999;">
                                             <div class="search-input-parentbox w-100 input-group-prepend p-1 border-radius-5 bg-gray-active" style="box-shadow: 0 0 2px 1px #eee;">
-                                                <a href="" class="input-icon d-flex align-items-center bg-gray-active p-2 background-none" type="button">
+                                                <a href="" class="searchbtnAllsite input-icon d-flex align-items-center bg-gray-active p-2 background-none" type="button">
                                                     <i class="fal fa-search font-size-30px"></i>
                                                 </a>
                                                 <input class="form-control bg-gray-active rgba-black-light border-0 z-depth-0 custome-muted-text" type="text" style="border-radius: 5px; margin: 2px;box-shadow:none;"
                                                        placeholder="جستجو" aria-label="جستجو" id="searchKey" name="searchKey">
 
+                                                <a href="javascript:;" id="cancelsearchbtn" class="d-none input-icon align-items-center bg-gray-active p-2 background-none">
+                                                    <i class="fal fa-times font-size-30px"></i>
+                                                </a>
+
                                                 @*id="searchInput" <select id="searchCategoryCmb" class="form-control bg-gray-active rgba-black-light border-radius-10 border-0 z-depth-0 custome-muted-text select2 w-100" aria-label="دسته بندی">
-                <option>دسته بندی</option>
-            </select>*@
+            <option>دسته بندی</option>
+        </select>*@
                                             </div>
                                             <div id="searchresult" class="d-none"></div>
                                         </div>
