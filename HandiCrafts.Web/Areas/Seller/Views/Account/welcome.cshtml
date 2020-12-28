@@ -65,6 +65,8 @@
 
     <div class="form-group text-center mt-3">
         <a id="kt_login__submit1" href="http://adminui.tabrizhandicrafts.com/Seller" name="submit" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ورود به پنل صنعتگران</a>
+        <br />
+        <a href="javascript:;" id="gotoDocuments" class="btn btn-outline-danger btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">بازگشت</a>
     </div>
 
 
@@ -72,5 +74,14 @@
 
 @section Scripts{
     <script>
+        var selleruserid = localStorage.getItem("selleruserid");
+
+        if (selleruserid == null) {
+            window.location = "/Seller/Account/Login";
+        }
+
+        $("#gotoDocuments").on("click", function () {
+            window.location = "/Seller/Account/Documents?userid=" + selleruserid;
+        });
     </script>
 }

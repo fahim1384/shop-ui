@@ -69,11 +69,11 @@
                     <label>آیا مشمول مالیات بر ارزش افزوده می باشید؟</label>
                     <div class="input-group mb-2 height-40px reg-element">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="maliatRadioOptions" value="1" checked>
+                            <input class="form-check-input" type="radio" name="maliatRadioOptions" value="1">
                             <label class="form-check-label mr-5 ml-0" for="inlineRadio1">بلی</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="maliatRadioOptions" value="2">
+                            <input class="form-check-input" type="radio" name="maliatRadioOptions" value="2" checked>
                             <label class="form-check-label mr-5 ml-0" for="inlineRadio2">خیر</label>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
             </div>
 
 
-            <div id="maliyatdoc" class="row">
+            <div id="maliyatdoc" class="row d-none">
                 <div class="col-sm-12 form-group mb-4 p-10 uprow1">
                     <div class="button-wrapper btn border-radius-10">
                         <span class="label">
@@ -192,6 +192,7 @@
 
     <div class="form-group text-center mt-3">
         <button type="button" id="gotowelcome" class="btn btn-info btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">ثبت نهایی</button>
+        <a href="/Seller/Account/CompleteInformation" class="btn btn-outline-danger btn-lg mb-2 mt-4 pl-5 pr-5 border-radius-10">بازگشت</a>
     </div>
 
     <div class="modal fade" id="showdocmodal" tabindex="-1" role="dialog" aria-labelledby="showdocmodal" aria-hidden="true">
@@ -744,6 +745,7 @@
             if (isOk == true)*/
 
             if (document.getElementById('contractChk').checked) {
+                localStorage.setItem("selleruserid", $("input[name=UserId]").val());
                 window.location = "/seller/account/welcome";
             } else {
                 notify({ title: "پیغام سیستم", message: "لطفا قرارداد را مطالعه و تایید نمایید" });
