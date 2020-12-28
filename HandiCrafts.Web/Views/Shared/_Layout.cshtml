@@ -126,10 +126,11 @@
     <script src="/plugins/select2/select2.min.js"></script>
     <script src="~/plugins/Notify/bootstrap-notify.min.js"></script>
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/plugins/autocomplete/jquery-ui.js"></script>
 
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/filter.js" asp-append-version="true"></script>
     <script>
         /*===================================*
         01. LOADING JS
@@ -184,36 +185,36 @@
                             if (v.inverseP.length > 0) {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
                                 child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                                                                    <div class="container-fluid">
-                                                                                                        <div class="row">
-                                                                                                            <div class="col-lg-8 col-md-12 clearfix">
-                                                                                                                <div class="container-fluid">
-                                                                                                                    <div class="row posrdb">
-                                                                                                                        <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                                                            <ul class="wstliststy02 clearfix">`;
+                                                                                                        <div class="container-fluid">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-lg-8 col-md-12 clearfix">
+                                                                                                                    <div class="container-fluid">
+                                                                                                                        <div class="row posrdb">
+                                                                                                                            <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                                                                <ul class="wstliststy02 clearfix">`;
                                 $.each(v.inverseP, function (e2, v2) {
                                     select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
                                     child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
                                 });
                                 child += `</ul></div>
+                                                                                                               </div>
                                                                                                            </div>
                                                                                                        </div>
                                                                                                    </div>
                                                                                                </div>
-                                                                                           </div>
-                                                                                       </div>`;
+                                                                                           </div>`;
 
                                 $("#mgmenu").append(`<li ${ac}>
-                                                                                                <span class="wsmenu-click02">
-                                                                                                    <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                                                                </span>
-                                                                                                <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                                                                <span class="robin-submenu-nav">
-                                                                                                    <span class="robin-menu-icon-kitchen"></span>
-                                                                                                    <span style="vertical-align:middle">
-                                                                                                        <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                                                    <span class="wsmenu-click02">
+                                                                                                        <i class="wsmenu-arrow fa fa-angle-down"></i>
                                                                                                     </span>
-                                                                                                </span>${child}</li>`);
+                                                                                                    <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                                                                    <span class="robin-submenu-nav">
+                                                                                                        <span class="robin-menu-icon-kitchen"></span>
+                                                                                                        <span style="vertical-align:middle">
+                                                                                                            <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                                                        </span>
+                                                                                                    </span>${child}</li>`);
 
                             }
                             else {

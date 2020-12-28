@@ -659,7 +659,8 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     Province = Address != null ? Address.ProvinceId.ToString() : null,
                     ShabaCode = fullInfo.Obj.ShabaNo,
                     UserId = fullInfo.Obj.SellerId,
-                    AddOrEditModel = 2
+                    AddOrEditModel = 2,
+                    ShenasnameNo = fullInfo.Obj.IdentityNo
                 };
 
                 return Success<PersonalInformationVModel>(data: informationVModel, message: fullInfo.ResultMessage);
