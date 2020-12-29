@@ -293,8 +293,8 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     Address = Address != null ? Address.Address : null,
                     BirthDate = persianDate.ToPersianDateString(),
                     City = Address != null ? Address.CityId.ToString() : null,
-                    FirstName = fullInfo.Obj.Name,
-                    LastName = fullInfo.Obj.Fname,
+                    FirstName = fullInfo.Obj.Fname,
+                    LastName = fullInfo.Obj.Name,
                     Gender = fullInfo.Obj.Gender != null ? fullInfo.Obj.Gender.Value : 1,
                     Lat = Address != null ? Address.Xgps : null,
                     Lng = Address != null ? Address.Ygps : null,
@@ -307,7 +307,8 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     ShabaCode = fullInfo.Obj.ShabaNo,
                     UserId = fullInfo.Obj.SellerId,
                     AddOrEditModel = 2,
-                    ShenasnameNo = fullInfo.Obj.IdentityNo
+                    ShenasnameNo = fullInfo.Obj.IdentityNo,
+                    AddressId = Address != null ? Address.Id : (long?)null,
                 };
 
                 #endregion
@@ -343,11 +344,14 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 PersianDateTime persianDate = PersianDateTime.Parse(model.BirthDate);
                 DateTime miladiDate = persianDate.ToDateTime();
+                long AddressId = 0;
+                if (model.AddressId != null) AddressId = model.AddressId.Value;
 
                 SellerRegisterDto sellerRegisterDto = new SellerRegisterDto()
                 {
                     Address = new SellerAddressDto()
                     {
+                        Id= AddressId,
                         Address = model.Address,
                         CityId = long.Parse(model.City),
                         PostalCode = !string.IsNullOrEmpty(model.PostalCode) ? long.Parse(model.PostalCode) : (long?)null,
@@ -360,8 +364,8 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     MelliCode = long.Parse(model.NationalCode),
                     PassWord = model.Password,
                     Mobile = long.Parse(model.MobileNo),
-                    Fname = model.FirstName + " " + model.LastName,
-                    Name = model.FirstName + " " + model.LastName,
+                    Fname = model.FirstName,
+                    Name = model.LastName,
                     Gender = model.Gender,
                     IdentityNo = model.ShenasnameNo, //model.UserId.ToString(),
                     SecondMobile = !string.IsNullOrEmpty(model.MobileNo2) ? long.Parse(model.MobileNo2) : (long?)null,

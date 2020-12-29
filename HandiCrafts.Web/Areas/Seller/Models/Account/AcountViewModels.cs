@@ -129,7 +129,8 @@ namespace HandiCrafts.Web.Areas.Seller.Models.Account
         [Display(Name = "کد کاربر")]
         public long UserId { get; set; }
 
-        public long AddOrEditModel { get; set; }
+        public long AddOrEditModel { get; set; } 
+        public long? AddressId { get; set; }
 
         //[Display(Name = "کد تایید")]
         //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
