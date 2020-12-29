@@ -295,7 +295,7 @@ var cartEvents = (function () {
                         <span class="font-size-1rem color-menu-sabad font-weight-600">${cartArray[i].name}</span>
                         <span class="cyan d-block">
                             <img src="/image/icons/avaiable.png" class="width-24px small" />
-                            در سرای موجود می باشد
+                            در سارای موجود می باشد
                         </span>
                     </div>
                 </a>

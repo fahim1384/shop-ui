@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace HandiCrafts.Web.Controllers
 {
-    [DefaultBreadcrumb("سرای")]
+    [DefaultBreadcrumb("سارای")]
     public class HomeController : BasePublicController
     {
         private readonly IHttpClientFactory _httpClientFactory;

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="footer.aboutus" xml:space="preserve">
-    <value>درباره سرای</value>
+    <value>درباره سارای</value>
   </data>
   <data name="footer.ba-saray" xml:space="preserve">
-    <value>با سرای</value>
+    <value>با سارای</value>
   </data>
   <data name="footer.contactus" xml:space="preserve">
     <value>ارتباط ما</value>
@@ -130,7 +130,7 @@
     <value>پاسخ به پرسش های متداول</value>
   </data>
   <data name="footer.helper-buy" xml:space="preserve">
-    <value>راهنمای خرید از سرای</value>
+    <value>راهنمای خرید از سارای</value>
   </data>
   <data name="footer.jobs" xml:space="preserve">
     <value>فرصت های شغلی</value>
@@ -151,13 +151,13 @@
     <value>شیوه های پرداخت</value>
   </data>
   <data name="footer.site-description-message" xml:space="preserve">
-    <value>بازار اینترنتی صنایع‌دستی سرای توسط تیم باریش‌مدیا با همکاری اداره کل میراث فرهنگی‌، گردشگری و صنایع‌دستی استان آذربایجان‌شرقی برای معرفی و فروش محصولات ارزنده صنایع دستی که اکثرا دارای نشان ملی مرغوبیت کالا و یا نشان یونیسکو می‌باشند راه‌اندازی شده است‌. تمام محصولات ارائه شده در این بازار اینترنتی دارای شناسنامه اصالت کالا از وزارت میراث فرهنگی‌، گردشگری و صنایع‌دستی می‌باشند‌.</value>
+    <value>بازار اینترنتی صنایع‌دستی سارای توسط تیم باریش‌مدیا با همکاری اداره کل میراث فرهنگی‌، گردشگری و صنایع‌دستی استان آذربایجان‌شرقی برای معرفی و فروش محصولات ارزنده صنایع دستی که اکثرا دارای نشان ملی مرغوبیت کالا و یا نشان یونیسکو می‌باشند راه‌اندازی شده است‌. تمام محصولات ارائه شده در این بازار اینترنتی دارای شناسنامه اصالت کالا از وزارت میراث فرهنگی‌، گردشگری و صنایع‌دستی می‌باشند‌.</value>
   </data>
   <data name="footer.site-description-title" xml:space="preserve">
-    <value>بازار اینترنتی صنایع دستی سرای</value>
+    <value>بازار اینترنتی صنایع دستی سارای</value>
   </data>
   <data name="footer.social-net-title" xml:space="preserve">
-    <value>سرای را در شبکه های اجتماعی دنبال کنید</value>
+    <value>سارای را در شبکه های اجتماعی دنبال کنید</value>
   </data>
   <data name="footer.ssr-email-placeholder" xml:space="preserve">
     <value>آدرس ایمیل خود را وارد نمایید</value>
@@ -166,7 +166,7 @@
     <value>ارسال</value>
   </data>
   <data name="footer.ssr-title" xml:space="preserve">
-    <value>از تخفیف ها و جدیدترین های سرای باخبر شوید:</value>
+    <value>از تخفیف ها و جدیدترین های سارای باخبر شوید:</value>
   </data>
   <data name="home.index.marghubiyat.more-view-button" xml:space="preserve">
     <value>مشاهده بیشتر</value>
@@ -229,7 +229,7 @@
     <value>محصولات</value>
   </data>
   <data name="site" xml:space="preserve">
-    <value>فروشگاه اینترنتی سرای</value>
+    <value>فروشگاه اینترنتی سارای</value>
   </data>
   <data name="top.about" xml:space="preserve">
     <value>درباره ما</value>
@@ -268,7 +268,7 @@
     <value>مجله</value>
   </data>
   <data name="top.saray" xml:space="preserve">
-    <value>سرای</value>
+    <value>سارای</value>
   </data>
   <data name="top.search" xml:space="preserve">
     <value>جستجو</value>
