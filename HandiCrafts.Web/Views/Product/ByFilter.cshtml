@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewData["Title"] = "ByFilter";
+    ViewData["Title"] = "کالاهای سارای";
 }
 @section Styles{
-    <link href="/plugins/slideBar/bootstrap-slider.css" rel="stylesheet">
+    <link href="~/plugins/slideBar/bootstrap-slider.css" rel="stylesheet" />
     <style>
         .page-link {
             border: 0;
@@ -457,7 +457,7 @@
 
 
 @section Scripts{
-    <script src="/plugins/slideBar/bootstrap-slider.js"></script>
+    <script src="~/plugins/slideBar/bootstrap-slider.js"></script>
     <script>
         // --------  SlideBar Price  ---------
         $("#ex9").on("change", function () {
@@ -512,8 +512,8 @@
                             child += "</ul>";
 
                             $("#myUL").append(`<li><span class="fa menucaret">
-                                                                                    <span class="font-family-WYekan cyan"><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></span>
-                                                                                </span>${child}</li>`);
+                                                                                            <span class="font-family-WYekan cyan"><a href="javascript:filterbyCategory(${v.id})" data-cat-number="${v.id}"><span class="font-family-WYekan sing">${v.name}</span></a></span>
+                                                                                        </span>${child}</li>`);
 
                         }
                         else {
@@ -546,8 +546,8 @@
                 if (v.inverseP.length > 0) {
 
                     menucontent += `<li><span class="fa menucaret">
-                                                                        <span class="font-family-WYekan cyan">${v.name}</span>
-                                                                    </span>`;
+                                                                                <span class="font-family-WYekan cyan">${v.name}</span>
+                                                                            </span>`;
 
                     child += `<ul class="nested">`;
 
@@ -578,7 +578,7 @@
                 url: "/Product/GetProductList_Paging_Filtering_UI",
                 data: {
                     catProductId: filters.catProductId,
-                    productName: productName,
+                    productName: filters.productName,
                     minPrice: filters.minPrice,
                     maxPrice: filters.maxPrice,
                     sortMethod: filters.sortMethod,
@@ -616,40 +616,40 @@
                             }
 
                             productsbox.append(`
-                                                           <div class="col-6 col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
-                                                            <a href="/product/Index?id=${v.id}">
-                                                             <div class="shopping-thumbnail card mb-3 ">
-                                                                 <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
+                                                                   <div class="col-6 col-md-6 col-lg-4 mb-3 text-center shopping-card-box">
+                                                                    <a href="/product/Index?id=${v.id}">
+                                                                     <div class="shopping-thumbnail card mb-3 ">
+                                                                         <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
 
-                                                                 <div class="card-body">
-                                                              <div class="caption">
-                                                                     <p>
-                                                                         <b>
-                                                                             <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                             <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                             <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                         </b>
-                                                                     </p>
-                                                                 </div>
-                                                                     <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                     <p class="card-text ratingbox">
-                                                                         ${rat}
-                                                                     </p>
-                                                                     <div class="d-flex justify-content-between align-items-center">
-                                                                         <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                                         <div class="card-body">
+                                                                      <div class="caption">
+                                                                             <p>
+                                                                                 <b>
+                                                                                     <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                     <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                     <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                 </b>
+                                                                             </p>
+                                                                         </div>
+                                                                             <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                             <p class="card-text ratingbox">
+                                                                                 ${rat}
+                                                                             </p>
+                                                                             <div class="d-flex justify-content-between align-items-center">
+                                                                                 <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                                             </div>
+                                                                         </div>
                                                                      </div>
-                                                                 </div>
-                                                             </div>
-                                                            </a>
+                                                                    </a>
 
-                                                             </div>
-                                                     `);
+                                                                     </div>
+                                                             `);
 
                             if ($("input[name='sanatgarcode'][value='" + v.sellerId + "']").length == 0)
                                 sanatgarsfilter.append(`<div class="form-check mb-2">
-                                                        <input type="checkbox" class="form-check-input" name="sanatgarcode" value="${v.sellerId}">
-                                                        <label class="form-check-label text-uppercase card-link-secondary">${v.sellerName}</label>
-                                                    </div>`);
+                                                                <input type="checkbox" class="form-check-input" name="sanatgarcode" value="${v.sellerId}">
+                                                                <label class="form-check-label text-uppercase card-link-secondary">${v.sellerName}</label>
+                                                            </div>`);
                         });
 
                         if (result.data != null && result.data?.obj.productList.length != 0) {
@@ -664,18 +664,18 @@
                             var indexStart = (filters.pageNumber != undefined & filters.pageNumber != null) ? filters.pageNumber : 1;
 
                             pagingBox += `<div class="col-md-12 col-lg-12 text-center">
-                                                                                                            <nav aria-label="Page navigation example">
-                                                                                                                <ul class="pagination justify-content-center productpagination">`;
+                                                                                                                    <nav aria-label="Page navigation example">
+                                                                                                                        <ul class="pagination justify-content-center productpagination">`;
 
                             if (filters.pageNumber > 1) {
                                 pagingBox += `<li class="page-item">
-                                                                                                            <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
-                                                                                                        </li>`;
+                                                                                                                    <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber - 1})" data-paging-number='${filters.pageNumber - 1}'>«</a>
+                                                                                                                </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                                                                            <a class="page-link" href="#" tabindex="-1">«</a>
-                                                                                                        </li>`;
+                                                                                                                    <a class="page-link" href="#" tabindex="-1">«</a>
+                                                                                                                </li>`;
                             }
 
                             for (var i = indexStart - 4; i < indexStart + 4; i++) {
@@ -688,13 +688,13 @@
 
                             if (filters.pageNumber < pages) {
                                 pagingBox += `<li class="page-item">
-                                                                                                            <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
-                                                                                                        </li>`;
+                                                                                                                    <a class="page-link" href="#" tabindex="-1" onclick="filterByGotoPage(${filters.pageNumber + 1})" data-paging-number='${filters.pageNumber + 1}'>»</a>
+                                                                                                                </li>`;
                             }
                             else {
                                 pagingBox += `<li class="page-item disabled">
-                                                                                                            <a class="page-link" href="#" tabindex="-1">»</a>
-                                                                                                        </li>`;
+                                                                                                                    <a class="page-link" href="#" tabindex="-1">»</a>
+                                                                                                                </li>`;
                             }
 
                             pagingBox += `</ul></nav></div>`;
@@ -750,9 +750,14 @@
             filters.catProductId = null;
             filters.maxPrice = null;
             filters.minPrice = null;
+            filters.productName = null;
             $("div.orderbyTags a").removeClass("active");
 
             $("#filtersFrm")[0].reset();
+
+            $("#searchKey").val('');
+            $("#cancelsearchbtn").addClass("d-none");
+
             GetProductList_Paging_Filtering_UI();
 
             GetCatProductListByParentId_UI();
@@ -799,7 +804,8 @@
             //filters.minPrice = minp;
             //filters.maxPrice = maxp;
 
-            GetProductList_Paging_Filtering_UI(productName = pname);
+            filters.productName = pname;
+            GetProductList_Paging_Filtering_UI();
         });
 
         //  دسته بندی های فرزند
@@ -819,32 +825,32 @@
                             $.each(result.data.objList, function (e, v) {
                                 if (e == 0 || e == 1 || e == 2 || e == 3) {
                                     catBox1 += (`<div class="col-3 mt-2">
-                                                                                <div class="category-product">
-                                                                                    <a href="/Product/ByFilter?catId=${v.id}">
-                                                                                        <img src="/image/icons/vase.png" class="width-30px" />
+                                                                                        <div class="category-product">
+                                                                                            <a href="/Product/ByFilter?catId=${v.id}">
+                                                                                                <img src="/image/icons/vase.png" class="width-30px" />
 
-                                                                                        <div class="text-center mt-10">
-                                                                                            <h5>${v.name}</h5>
-                                                                                            <span>${v.productCount} کالا</span>
+                                                                                                <div class="text-center mt-10">
+                                                                                                    <h5>${v.name}</h5>
+                                                                                                    <span>${v.productCount} کالا</span>
+                                                                                                </div>
+                                                                                            </a>
                                                                                         </div>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>`);
+                                                                                    </div>`);
                                 }
 
                                 if (e == 4 || e == 5 || e == 6) {
                                     catBox2 += (`<div class="col-3 mt-2">
-                                                                                <div class="category-product">
-                                                                                    <a href="/Product/ByFilter?catId=${v.id}">
-                                                                                        <img src="/image/icons/vase.png" class="width-30px" />
+                                                                                        <div class="category-product">
+                                                                                            <a href="/Product/ByFilter?catId=${v.id}">
+                                                                                                <img src="/image/icons/vase.png" class="width-30px" />
 
-                                                                                        <div class="text-center mt-10">
-                                                                                            <h5>${v.name}</h5>
-                                                                                            <span>${v.productCount} کالا</span>
+                                                                                                <div class="text-center mt-10">
+                                                                                                    <h5>${v.name}</h5>
+                                                                                                    <span>${v.productCount} کالا</span>
+                                                                                                </div>
+                                                                                            </a>
                                                                                         </div>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>`);
+                                                                                    </div>`);
                                 }
 
                                 if (e > 6) {
@@ -857,19 +863,19 @@
                             var otherCat = "";
                             if (result.data.objList.length > 7) {
                                 otherCat = `<div class="col-3 mt-2">
-                                                                            <div class="category-product">
-                                                                                <a href="">
-                                                                                    <div class="text-center mt-10 cat-more">
-                                                                                        <h5 class="font-size-1_8rem">${otherCatCount}+</h5>
-                                                                                        <span>دسته دیگر</span>
+                                                                                    <div class="category-product">
+                                                                                        <a href="">
+                                                                                            <div class="text-center mt-10 cat-more">
+                                                                                                <h5 class="font-size-1_8rem">${otherCatCount}+</h5>
+                                                                                                <span>دسته دیگر</span>
+                                                                                            </div>
+                                                                                        </a>
                                                                                     </div>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>`;
+                                                                                </div>`;
                             }
 
                             $(".category-product-wraper").html(`<div class="col-12 col-md-6"><div class="row">${catBox1}</div></div>
-                                                                                    <div class="col-12 col-md-6"><div class="row">${catBox2}${otherCat}</div></div>`);
+                                                                                            <div class="col-12 col-md-6"><div class="row">${catBox2}${otherCat}</div></div>`);
                         }
                     }
                 });
@@ -883,6 +889,15 @@
 
             var catId = getQueryStringValue("catId");
             var OrderBy = getQueryStringValue("OrderBy");
+            var productName = getQueryStringValue("q");
+
+            if (productName != null && productName != "") {
+                filters.productName = productName;
+
+                $("div.orderbyTags a").removeClass("active");
+                $("#searchKey").val(productName);
+                $("#cancelsearchbtn").removeClass("d-none");
+            }
 
             if (OrderBy != null && OrderBy != "") {
                 filters.sortMethod = OrderBy;
@@ -908,7 +923,8 @@
         var filters = {
             pageNumber: 1,
             minPrice: null,
-            maxPrice: null
+            maxPrice: null,
+            productName: null
         };
     </script>
 

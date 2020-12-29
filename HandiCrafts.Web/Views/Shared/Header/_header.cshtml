@@ -349,6 +349,10 @@
             background-color: #f7f7f7;
         }
 
+    .basket-products-popup-ul{
+        height:300px;
+        overflow:auto;
+    }
 </style>
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
@@ -398,7 +402,7 @@
                                     <form class="navbar-search pl-0 mr-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3 frmSearchKala" action="" style="position:relative">
                                         <div class="input-group d-block d-md-flex mb-0" style="position: absolute;z-index: 99999;">
                                             <div class="search-input-parentbox w-100 input-group-prepend p-1 border-radius-5 bg-gray-active" style="box-shadow: 0 0 2px 1px #eee;">
-                                                <a href="" class="searchbtnAllsite input-icon d-flex align-items-center bg-gray-active p-2 background-none" type="button">
+                                                <a id="btnFilterMainTag" class="searchbtnAllsite input-icon d-flex align-items-center bg-gray-active p-2 background-none" type="button">
                                                     <i class="fal fa-search font-size-30px"></i>
                                                 </a>
                                                 <input class="form-control bg-gray-active rgba-black-light border-0 z-depth-0 custome-muted-text" type="text" style="border-radius: 5px; margin: 2px;box-shadow:none;"

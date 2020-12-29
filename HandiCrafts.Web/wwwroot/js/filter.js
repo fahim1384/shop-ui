@@ -80,9 +80,14 @@ $("#cancelsearchbtn").on("click", function () {
 $("#searchKey").on("keypress", function (e) {
     if ($("#searchKey").val() != "") {
         if (e.keyCode == 13) {
-            window.location = "/search/?q=l";
+            e.preventDefault();
+            window.location = "/product/ByFilter?q=" + $("#searchKey").val();
         }
 
         $("#cancelsearchbtn").addClass("d-flex").removeClass("d-none");
     }
+});
+
+$("#btnFilterMainTag").on("click", function (e) {
+    window.location = "/product/ByFilter?q=" + $("#searchKey").val();
 });
