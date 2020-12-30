@@ -671,6 +671,32 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
             });
         }
+
+        [HttpPost]
+        public Task<ResponseState<VoidResult>> SellerRegisterConfirm_UI()
+        {
+            return TryCatch(async () =>
+            {
+                if (string.IsNullOrEmpty(Request.Cookies["sellertoken"]))
+                {
+                    return Error<VoidResult>(data: null, message: "مهلت زمانی استفاده از توکن به پایان رسید لطفا مراحل ثبت نام را از ابتدا اامه دهید");
+                }
+
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _configuration["BaseUrl"];
+
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
+                Client client2 = new Client(BaseUrl, httpClient);
+                var fullInfo = await client2.GetSellerFullInfoAsync();
+
+                if (fullInfo.ResultCode != 200)
+                    return Error<VoidResult>(data: null, message: fullInfo.ResultMessage);
+
+                return Success<VoidResult>(data: null, message: fullInfo.ResultMessage);
+
+            });
+        }
     }
 
     #endregion

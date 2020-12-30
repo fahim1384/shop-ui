@@ -1,4 +1,4 @@
-{
+﻿{
   "openapi": "3.0.1",
   "info": {
     "title": "Hand Carft",
@@ -14001,6 +14001,11 @@
           "mobileAppTypeId": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "registerDate": {
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "addressList": {
