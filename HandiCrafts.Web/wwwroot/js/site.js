@@ -549,3 +549,4 @@ function closeNav() {
 $("#toggleshoppingcart").on("click", function () {
     openNav();
 });
+

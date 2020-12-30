@@ -712,7 +712,7 @@
                 uploadjson.doc4 = true;
             }
             else {
-                $("PersianDateTimeianDaDateDToDateStringateteTimeianDateTimeianDateTimeerrorbox").html(result.message).removeClass("d-none");
+                $("#errorbox").html(result.message).removeClass("d-none");
             }
         }
 
@@ -756,7 +756,7 @@
                                 localStorage.setItem("selleruserid", $("input[name=UserId]").val());
                                 window.location = "/seller/account/welcome";
                             } else {
-                                notify({ title: "پیغام سیستم", message: result.data.resultMessage }, {type:"error"});
+                                notify({ title: "پیغام سیستم", message: result.message }, {type:"danger"});
                             }
                         }
                     });
@@ -782,6 +782,7 @@
                                     $("form[data-docid=" + v.documentId + "]").find("input[name=upfile]").val(v.fileUrl);
                                     $("form[data-docid=" + v.documentId + "]").find("a.samplefile").addClass("d-none");
                                     $("form[data-docid=" + v.documentId + "]").find("div.imgBox").removeClass("d-none");
+                                    $(".uprow" + v.documentId).css("background-color", "#b1fbe1");
                                 });
                             }
                         }

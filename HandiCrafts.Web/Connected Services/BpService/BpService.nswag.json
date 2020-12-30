@@ -1,4 +1,4 @@
-﻿{
+{
   "openapi": "3.0.1",
   "info": {
     "title": "Hand Carft",
@@ -4305,6 +4305,36 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SellerDocumentDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Seller/SellerRegisterConfirm_UI": {
+      "post": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "SellerRegisterConfirm_UI",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoidResult"
                 }
               }
             }

@@ -287,6 +287,21 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 PersianDateTime persianDate = new PersianDateTime(fullInfo.Obj.Bdate.Date);
                 var Address = fullInfo.Obj.AddressList.Count > 0 ? fullInfo.Obj.AddressList.FirstOrDefault() : null;
+                
+                string melicode = null;
+                if (fullInfo.Obj.MelliCode != null)
+                {
+                    melicode = fullInfo.Obj.MelliCode.Value.ToString();
+
+                    if (fullInfo.Obj.MelliCode.Value.ToString().Length != 10)
+                    {
+                        var l = 10 - fullInfo.Obj.MelliCode.Value.ToString().Length;
+                        for (int i = 0; i < l; i++)
+                        {
+                            melicode = "0" + melicode;
+                        }
+                    }
+                }
 
                 informationVModel = new PersonalInformationVModel()
                 {
@@ -300,7 +315,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                     Lng = Address != null ? Address.Ygps : null,
                     MobileNo = fullInfo.Obj.Mobile != null ? "0" + fullInfo.Obj.Mobile.ToString() : null,
                     MobileNo2 = fullInfo.Obj.SecondMobile != null ? "0" + fullInfo.Obj.SecondMobile.ToString() : null,
-                    NationalCode = fullInfo.Obj.MelliCode != null ? fullInfo.Obj.MelliCode.Value.ToString() : null,
+                    NationalCode = melicode,
                     Phone = fullInfo.Obj.Tel != null ? "0" + fullInfo.Obj.Tel.Value.ToString() : null,
                     PostalCode = Address != null ? Address.PostalCode.ToString() : null,
                     Province = Address != null ? Address.ProvinceId.ToString() : null,
@@ -343,7 +358,9 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
 
                 PersianDateTime persianDate = PersianDateTime.Parse(model.BirthDate);
-                DateTime miladiDate = persianDate.ToDateTime();
+                DateTime miladiDate = DateTime.Parse(persianDate.ToPersianDateString());
+                var miladiDate2 = persianDate.ToPersianDateString();
+
                 long AddressId = 0;
                 if (model.AddressId != null) AddressId = model.AddressId.Value;
 
@@ -351,7 +368,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 {
                     Address = new SellerAddressDto()
                     {
-                        Id= AddressId,
+                        Id = AddressId,
                         Address = model.Address,
                         CityId = long.Parse(model.City),
                         PostalCode = !string.IsNullOrEmpty(model.PostalCode) ? long.Parse(model.PostalCode) : (long?)null,
@@ -508,6 +525,21 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
         public IActionResult welcome()
         {
+            HttpClient httpClient = new HttpClient();
+
+            string BaseUrl = _configuration["BaseUrl"];
+
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
+
+            SellerRegisterConfirmClient client = new SellerRegisterConfirmClient(BaseUrl, httpClient);
+
+            var result = client.UIAsync().Result;
+
+            if (result.ResultCode != 200)
+            {
+                return RedirectToAction("Login");
+            }
+
             return View();
         }
 
@@ -687,13 +719,15 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 string BaseUrl = _configuration["BaseUrl"];
 
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
-                Client client2 = new Client(BaseUrl, httpClient);
-                var fullInfo = await client2.GetSellerFullInfoAsync();
 
-                if (fullInfo.ResultCode != 200)
-                    return Error<VoidResult>(data: null, message: fullInfo.ResultMessage);
+                SellerRegisterConfirmClient client2 = new SellerRegisterConfirmClient(BaseUrl, httpClient);
 
-                return Success<VoidResult>(data: null, message: fullInfo.ResultMessage);
+                var result = await client2.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<VoidResult>(data: null, message: result.ResultMessage);
+
+                return Success<VoidResult>(data: null, message: result.ResultMessage);
 
             });
         }
