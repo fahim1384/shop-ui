@@ -528,10 +528,10 @@ namespace HandiCrafts.Web.Controllers
 
             if (result.ResultCode == 201)
             {
-                PersianDateTime pd = new PersianDateTime(DateTime.Now);
+                string pd = Core.Infrastructure.DateTimeExtentions.ToPersianDate(DateTime.Now);
                 ProfileInfo p = new ProfileInfo()
                 {
-                    Bdate = pd.Year.ToString() + "/" + pd.Month.ToString() + "/" + pd.Day.ToString(),
+                    Bdate = pd,
                 };
 
                 return View(p);
@@ -540,8 +540,8 @@ namespace HandiCrafts.Web.Controllers
             if (result.ResultCode != 200)
                 throw new Exception(result.ResultMessage);
             
-            PersianDateTime persianDate = new PersianDateTime(DateTime.Now);
-            if (result.Obj.Bdate != null) persianDate = new PersianDateTime(result.Obj.Bdate.Value.DateTime);
+            string persianDate = Core.Infrastructure.DateTimeExtentions.ToPersianDate(DateTime.Now);
+            if (result.Obj.Bdate != null) persianDate = Core.Infrastructure.DateTimeExtentions.ToPersianDate(result.Obj.Bdate.Value.DateTime);
 
             string mobile = "";
             string shoghl = "";
@@ -573,7 +573,7 @@ namespace HandiCrafts.Web.Controllers
 
             ProfileInfo profile = new ProfileInfo()
             {
-                Bdate = persianDate.Year.ToString() + "/" + persianDate.Month.ToString() + "/" + persianDate.Day.ToString(),
+                Bdate = persianDate,
                 Email = result.Obj.Email,
                 FullName = result.Obj.Name,
                 MelliCode = melicode,
@@ -597,12 +597,11 @@ namespace HandiCrafts.Web.Controllers
 
                 CustomerClient client = new CustomerClient(BaseUrl, httpClient);
 
-                PersianDateTime persianDate = PersianDateTime.Parse(model.Bdate);
-                DateTime miladiDate = persianDate.ToDateTime();
+                var persianDate = HandiCrafts.Core.Infrastructure.DateTimeExtentions.ToGregorianDateTime(model.Bdate);
 
                 CustomerProfileDto customerProfileDto = new CustomerProfileDto()
                 {
-                    Bdate = miladiDate,
+                    Bdate = persianDate,
                     Email = model.Email,
                     Name = model.FullName,
                     MelliCode = long.Parse(model.MelliCode),
