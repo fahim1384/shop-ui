@@ -276,16 +276,10 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
 
                 if (fullInfo.ResultCode == 200 && fullInfo.Obj == null) throw new Exception("دیتایی برای این کاربر وجود ندارد");
 
-                /*DateTime date;
-                if (DateTime.TryParse(fullInfo.Obj.Bdate, out date)) {
-                    date = DateTime.Parse(fullInfo.Obj.Bdate);
-                }
-                else
-                {
-                    date = DateTime.Now;
-                }*/
+                var d = DateTime.Parse(fullInfo.Obj.Bdate.ToString()).ToPersianDigitalDateTimeString();
 
-                PersianDateTime persianDate = new PersianDateTime(fullInfo.Obj.Bdate.Date);
+                PersianDateTime persianDate = PersianDateTime.Parse(fullInfo.Obj.Bdate.Date.ToPersianDigitalDateTimeString());
+
                 var Address = fullInfo.Obj.AddressList.Count > 0 ? fullInfo.Obj.AddressList.FirstOrDefault() : null;
                 
                 string melicode = null;
@@ -306,7 +300,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 informationVModel = new PersonalInformationVModel()
                 {
                     Address = Address != null ? Address.Address : null,
-                    BirthDate = persianDate.ToPersianDateString(),
+                    BirthDate = persianDate.ToPersianDigitalDateString(),
                     City = Address != null ? Address.CityId.ToString() : null,
                     FirstName = fullInfo.Obj.Fname,
                     LastName = fullInfo.Obj.Name,
@@ -358,8 +352,14 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Request.Cookies["sellertoken"]);
 
                 PersianDateTime persianDate = PersianDateTime.Parse(model.BirthDate);
-                DateTime miladiDate = DateTime.Parse(persianDate.ToPersianDateString());
-                var miladiDate2 = persianDate.ToPersianDateString();
+                var miladiDate = DateTime.Parse(persianDate.ToPersianDateString());
+                var y = miladiDate.Year.ToString();
+                var m = miladiDate.Month < 10 ? "0" + miladiDate.Month.ToString() : miladiDate.Month.ToString();
+                var d = miladiDate.Day < 10 ? "0" + miladiDate.Day.ToString() : miladiDate.Day.ToString();
+                DateTime miladiDate2 = DateTime.Parse(d + "/" + m + "/" + y);
+
+                PersianDateTime persianDate3 = PersianDateTime.Parse(model.BirthDate);
+                DateTime miladiDate3 = persianDate.ToDateTime();
 
                 long AddressId = 0;
                 if (model.AddressId != null) AddressId = model.AddressId.Value;
@@ -377,7 +377,7 @@ namespace HandiCrafts.Web.Areas.Seller.Controllers
                         Xgps = model.Lat,
                         Ygps = model.Lng
                     },
-                    Bdate = miladiDate,
+                    Bdate = miladiDate2,
                     MelliCode = long.Parse(model.NationalCode),
                     PassWord = model.Password,
                     Mobile = long.Parse(model.MobileNo),

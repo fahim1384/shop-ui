@@ -556,12 +556,27 @@ namespace HandiCrafts.Web.Controllers
                 shoghl = result.Obj.WorkId.Value.ToString();
             }
 
+            string melicode = null;
+            if (result.Obj.MelliCode != null)
+            {
+                melicode = result.Obj.MelliCode.Value.ToString();
+
+                if (result.Obj.MelliCode.Value.ToString().Length != 10)
+                {
+                    var l = 10 - result.Obj.MelliCode.Value.ToString().Length;
+                    for (int i = 0; i < l; i++)
+                    {
+                        melicode = "0" + melicode;
+                    }
+                }
+            }
+
             ProfileInfo profile = new ProfileInfo()
             {
                 Bdate = persianDate.Year.ToString() + "/" + persianDate.Month.ToString() + "/" + persianDate.Day.ToString(),
                 Email = result.Obj.Email,
                 FullName = result.Obj.Name,
-                MelliCode = result.Obj.MelliCode.ToString(),
+                MelliCode = melicode,
                 MobileNo = mobile,
                 Shoghl = shoghl
             };
