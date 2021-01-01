@@ -18,6 +18,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace HandiCrafts.Web.Controllers
 {
@@ -44,6 +45,7 @@ namespace HandiCrafts.Web.Controllers
             return View();
         }
 
+        [ApiExplorerSettings(IgnoreApi = true)]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -467,6 +469,12 @@ namespace HandiCrafts.Web.Controllers
         }
 
         public IActionResult Faq()
+        {
+            return View();
+        }
+
+        [Route("404")]
+        public IActionResult Page404()
         {
             return View();
         }

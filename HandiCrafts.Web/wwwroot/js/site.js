@@ -550,7 +550,7 @@ $("#toggleshoppingcart").on("click", function () {
     openNav();
 });
 
-//=======================
+//======================= Arabic Number =======================
 
 jQuery('input,textarea').on('input', function () {
     var value = toEnglishNumber(jQuery(this).val());
@@ -570,3 +570,13 @@ function toEnglishNumber(strNum) {
     }
     return cache;
 }
+
+//====================== Ajax Settings ============================
+
+$(window).ajaxStart(function (xhr, props) {
+    $(".preloader").addClass('loaded');
+});
+
+$(window).ajaxComplete(function (xhr, props) {
+    $(".preloader").removeClass('loaded');
+});

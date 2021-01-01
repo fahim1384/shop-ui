@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = T["NotFound-Page-title"];
+}
+
+@section Styles{
+    <style>
+        main.mt-150 {
+            margin-top: 0;
+        }
+
+        .content-main-box {
+            margin-top: 10px;
+            padding: 10px;
+            text-align:center
+        }
+        @@media only screen and (max-width: 991px) {
+            .h1-404-message{
+                font-size:1.2rem;
+            }
+        }
+    </style>
+}
+
+<div class="section pt-0 small_pb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-main-box">
+                    <h1 class="h1-404-message">@T["404-page-body-message"]</h1>
+                    <p class="text-center m-4">
+                        <a href="/Home/Index" class="btn btn-success btn-lg">صفحه اصلی</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <img src="/image/404-page.png" class="w-50 m-auto" />
+            </div>
+        </div>
+    </div>
+</div>
+

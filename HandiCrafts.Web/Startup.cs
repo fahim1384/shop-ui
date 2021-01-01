@@ -30,6 +30,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.Razor;
+using HandiCrafts.Web.Infrastructure.Security;
 //using HandiCrafts.Web.BpService;
 
 namespace HandiCrafts.Web
@@ -112,7 +113,8 @@ namespace HandiCrafts.Web
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization(options => {
+                .AddDataAnnotationsLocalization(options =>
+                {
                     options.DataAnnotationLocalizerProvider = (type, factory) =>
                         factory.Create(typeof(SharedResource));
                 })
@@ -264,6 +266,19 @@ namespace HandiCrafts.Web
                 try
                 {
                     await next();
+
+                    if (context.Response.StatusCode == 404)
+                    {
+                        context.Response.Redirect("/404");
+                    }
+
+                    if (context.Response.StatusCode == 401)
+                    {
+                        if (context.Request.Path.StartsWithSegments("seller"))
+                            context.Response.Redirect("/seller/Account/login");
+                        else
+                            context.Response.Redirect("/Account/login");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -273,6 +288,8 @@ namespace HandiCrafts.Web
                     }
                 }
             });
+
+            app.UseErrorHandleMiddleware();
 
             app.UseEndpoints(endpoints =>
             {
@@ -289,8 +306,14 @@ namespace HandiCrafts.Web
                     name: "areas",
                     pattern: "{area}/{controller}/{did?}/{action=Index}/{id?}");*/
             });
+
+            //app.Run(context =>
+            //{
+            //    context.Response.StatusCode = 404;
+            //    return Task.FromResult(0);
+            //});
         }
 
-        
+
     }
 }

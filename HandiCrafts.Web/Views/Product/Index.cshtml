@@ -265,10 +265,10 @@
                                         </p>
                                         <div class="d-flex justify-content-between custome-muted-header">
                                             <h5 class="card-title pricing-card-title">
-                                                @string.Format("{0:n0}", Model.Price) ت
+                                                <span id="priceTotal">@Model.Price.Value.ToString("N0")</span> ت
                                                 @if (Model.OfferAmount != 0)
                                                 {
-                                                    <small class="text-muted amount ml-2">@string.Format("{0:n0}", Model.OfferAmount)</small>
+                                                    <small class="text-muted amount ml-2 takhfif-amount">@string.Format("{0:n0}", Model.OfferAmount)</small>
                                                 }
                                             </h5>
                                         </div>
@@ -895,6 +895,8 @@
 
                 setListProductImagesToCarsol();                                                                                                                                                                                                                    //zoominit();
 
+                $("#priceTotal,.takhfif-amount").text($("#priceTotal").text().replaceAll(' ', ','));
+                $(".takhfif-amount").text($(".takhfif-amount").text().replaceAll(' ', ','));
             </script>
         }
 
