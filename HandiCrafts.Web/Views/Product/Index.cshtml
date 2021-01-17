@@ -1,4 +1,5 @@
 ﻿@model HandiCrafts.Web.Controllers.ProductController.ProductDtoUI
+
 @{
     if (Model != null)
     {
@@ -6,8 +7,71 @@
     }
 }
 @section Styles{
+    <meta name="twitter:title" content="@Html.Raw(Model.Name)" />
+    <meta name="apple-mobile-web-app-title" content="@Html.Raw(Model.Name)" />
+    <meta name="keywords" content="@Html.Raw(Model.KeyWords)" />
+    <meta name="description" content="@Html.Raw(Model.Description)" />
+
     <link href="/plugins/magiczoomplus/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
     <style>
+        .modal {
+            padding-right: 0;
+        }
+
+        .modal-gallery-ul li {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e2;
+            margin-top: 12px;
+            margin-left: 6px;
+            cursor: pointer;
+            position: relative;
+            padding: 2px;
+            float: left;
+        }
+
+            .modal-gallery-ul li a img {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+
+        .modal-gallery-main-img img {
+            width: 100%;
+            max-height: 100%;
+            -o-object-fit: contain;
+            object-fit: contain;
+            position: relative;
+            overflow: hidden;
+            /*min-height: 200px;
+                min-width: 200px;*/
+        }
+
+        .modal-gallery-main-img {
+            width: calc(90vh - 108px);
+            height: calc(90vh - 108px);
+            max-height: 792px;
+            max-width: 792px;
+            /*display: none;*/
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px;
+        }
+
+            .modal-gallery-main-img.is-zoom {
+                cursor: -webkit-zoom-out;
+                cursor: zoom-out;
+            }
+
         #product_img {
             width: 100%;
         }
@@ -70,6 +134,7 @@
             top: 26%;
             opacity: 1;
         }
+
         .product-image-listbox.owl-theme:hover .owl-nav .owl-next {
             left: auto;
             right: -18px;
@@ -85,6 +150,7 @@
             top: 26%;
             opacity: 1;
         }
+
         .product-image-listbox.owl-theme:hover .owl-nav .owl-prev {
             right: auto;
             left: -15px;
@@ -96,10 +162,15 @@
         .product-image-listbox.owl-theme .owl-nav [class*="owl-"] i {
             line-height: 25px;
         }
+
         .product-image-listbox.owl-theme .owl-nav [class*="owl-"] {
             border-radius: 50%
         }
-        .owl-stage{margin:auto;}
+
+        .owl-stage {
+            margin: auto;
+        }
+
         .product-media-item .thumb-wrapper {
             padding: 0
         }
@@ -145,7 +216,7 @@
                         <div class="app-figure" id="zoom-fig">
                             <a id="Zoom-1" class="MagicZoom Active" title="محصول با بزرگنمایی"
                                href="@mainImageUrl">
-                                <img src="@mainImageUrl?scale.height=800" alt="" class="border-radius-5"/>
+                                <img src="@mainImageUrl?scale.height=800" alt="" class="border-radius-5" />
                             </a>
 
                             <div id="productMediaLists" class="selectors mt-3 mb-0 justify-content-center owl-carousel owl-theme product-image-listbox" data-loop="false" data-dots="false" data-nav="true" data-margin="10" data-responsive='{"0":{"items": "4"}, "380":{"items": "4"}, "991":{"items": "5"}, "1199":{"items": "5"}}'>
@@ -448,66 +519,6 @@
             </div>
         </div>
 
-
-        <style>
-            .modal {
-                padding-right: 0;
-            }
-
-            .modal-gallery-ul li {
-                width: 64px;
-                height: 64px;
-                border-radius: 8px;
-                border: 1px solid #e0e0e2;
-                margin-top: 12px;
-                margin-left: 6px;
-                cursor: pointer;
-                position: relative;
-                padding: 2px;
-                float: left;
-            }
-
-                .modal-gallery-ul li a img {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 5px;
-                }
-
-            .modal-gallery-main-img img {
-                width: 100%;
-                max-height: 100%;
-                -o-object-fit: contain;
-                object-fit: contain;
-                position: relative;
-                overflow: hidden;
-                /*min-height: 200px;
-                min-width: 200px;*/
-            }
-
-            .modal-gallery-main-img {
-                width: calc(90vh - 108px);
-                height: calc(90vh - 108px);
-                max-height: 792px;
-                max-width: 792px;
-                /*display: none;*/
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-                cursor: -webkit-zoom-in;
-                cursor: zoom-in;
-                overflow: hidden;
-                position: relative;
-                border-radius: 8px;
-            }
-
-                .modal-gallery-main-img.is-zoom {
-                    cursor: -webkit-zoom-out;
-                    cursor: zoom-out;
-                }
-        </style>
         <!---- پاپاپ زوم محصولات ---->
         <div class="modal fade bd-example-modal-lg mt-5" id="originalImgModal" tabindex="-1" role="dialog" aria-labelledby="تصاویر رسمی" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -582,14 +593,14 @@
                                     if (e == 0) active = "active";
 
                                     $("#productColorListbox").append(`
-                                                                                                                                                                                                                                                     <li>
-                                                                                                                                                                                                                                                         <a class="color-product-a ${active}" data-color-id="${v.colorId}">
-                                                                                                                                                                                                                                                             <div>
-                                                                                                                                                                                                                                                                 <div class="circle-color-product" style="background:${v.colorCode}">
-                                                                                                                                                                                                                                                             </div> ${v.colorName}</div>
-                                                                                                                                                                                                                                                         </a>
-                                                                                                                                                                                                                                                     </li>
-                                                                                                                                                                                                                                                 `);
+                                                                                                                                                                                                                                                                                         <li>
+                                                                                                                                                                                                                                                                                             <a class="color-product-a ${active}" data-color-id="${v.colorId}">
+                                                                                                                                                                                                                                                                                                 <div>
+                                                                                                                                                                                                                                                                                                     <div class="circle-color-product" style="background:${v.colorCode}">
+                                                                                                                                                                                                                                                                                                 </div> ${v.colorName}</div>
+                                                                                                                                                                                                                                                                                             </a>
+                                                                                                                                                                                                                                                                                         </li>
+                                                                                                                                                                                                                                                                                     `);
 
                                 });
 
@@ -622,11 +633,11 @@
                                     if (e == 0) active = "active";
 
                                     $("#productPackageListbox").append(`
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <div class="form-check form-check-inline package-type-radio-box ${active}">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <input class="form-check-input" type="radio" name="packageType" value="${v.id/*packinggTypeId*/}" ${e == 0 ? 'checked' : ''}>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <label class="form-check-label" for="inlineRadio1"> ${v.packingTypeName ? v.packingTypeName : 'نامشخص'}</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                             `);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <div class="form-check form-check-inline package-type-radio-box ${active}">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <input class="form-check-input" type="radio" name="packageType" value="${v.id/*packinggTypeId*/}" ${e == 0 ? 'checked' : ''}>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <label class="form-check-label" for="inlineRadio1"> ${v.packingTypeName ? v.packingTypeName : 'نامشخص'}</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 `);
 
                                     $("#productpackagesbox").removeClass("d-none");
                                 });
@@ -655,15 +666,15 @@
                                 if (result.data.objList.length > 0) $(".paramslist").html('');
                                 $.each(result.data.objList, function (e, v) {
                                     $(".paramslist").append(`<li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="c-params__list-key">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span class="block">${v.parameterName}</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="c-params__list-value">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span class="block">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ${v?.value ?? v.value ? v.value : 'نامشخص'}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </li>`);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="c-params__list-key">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="block">${v.parameterName}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="c-params__list-value">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="block">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ${v?.value ?? v.value ? v.value : 'نامشخص'}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>`);
                                 });
 
                             }
@@ -720,27 +731,27 @@
                                 if (result.data.objList.length > 0) $(".userCommentList").html('');
                                 $.each(result.data.objList, function (e, v) {
                                     $(".userCommentList").append(`<li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="c-params__list-key">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="block">${v.customerName}</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="block">در تاریخ ${v.commentDate ? v.commentDate : 'امروز'}</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="block">امتیاز: ${v.rate ? v.rate : 'نامشخص'}</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="c-params__list-value">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="block">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ${v.commentDesc}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="c-comments__likes js-comment-like-container block">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        آیا این نظر برایتان مفید بود؟
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button class="btn-like js-comment-like " data-counter="${v.likeCount}" data-comment="23">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="fa fa-thumbs-up"></i>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="c-params__list-key">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="block">${v.customerName}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="block">در تاریخ ${v.commentDate ? v.commentDate : 'امروز'}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="block">امتیاز: ${v.rate ? v.rate : 'نامشخص'}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="c-params__list-value">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="block">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ${v.commentDesc}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="c-comments__likes js-comment-like-container block">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            آیا این نظر برایتان مفید بود؟
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="btn-like js-comment-like " data-counter="${v.likeCount}" data-comment="23">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="fa fa-thumbs-up"></i>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </button>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button class="btn-like js-comment-dislike " data-counter="${v.disLikeCount}" data-comment="23">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="fa fa-thumbs-down"></i>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>`);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="btn-like js-comment-dislike " data-counter="${v.disLikeCount}" data-comment="23">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="fa fa-thumbs-down"></i>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </li>`);
                                 });
 
                             }
@@ -780,32 +791,32 @@
                                                 }
                                             }
                                             similarproductBoxContent.append(`
-                                                                                                                                                                                                                                                              <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
-                                                                                                                                                                                                                                                                 <a href="/product/Index?id=${v.id}">
-                                                                                                                                                                                                                                                                  <div class="shopping-thumbnail card mb-3">
-                                                                                                                                                                                                                                                                      <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
-                                                                                                                                                                                                                                                                      <div class="card-body">
-                                                                                                                                                                                                                                                                          <h6 class="card-title pricing-card-title">${v.name}</h6>
-                                                                                                                                                                                                                                                                          <p class="card-text ratingbox">
-                                                                                                                                                                                                                                                                              ${rat}
-                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                          <div class="d-flex justify-content-between align-items-center">
-                                                                                                                                                                                                                                                                              <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
-                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                </a>
-                                                                                                                                                                                                                                                                  <div class="caption">
-                                                                                                                                                                                                                                                                          <p>
-                                                                                                                                                                                                                                                                              <b>
-                                                                                                                                                                                                                                                                                  <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
-                                                                                                                                                                                                                                                                                  <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
-                                                                                                                                                                                                                                                                                  <a><i class="fa fa-plus solid-fa"></i> </a>
-                                                                                                                                                                                                                                                                              </b>
-                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                          `);
+                                                                                                                                                                                                                                                                                                  <div class="col-lg-3 col-md-4 col-sm-6 shopping-card-box">
+                                                                                                                                                                                                                                                                                                     <a href="/product/Index?id=${v.id}">
+                                                                                                                                                                                                                                                                                                      <div class="shopping-thumbnail card mb-3">
+                                                                                                                                                                                                                                                                                                          <image src="${v.coverImageUrl}" class="bd-placeholder-img card-img-top" />
+                                                                                                                                                                                                                                                                                                          <div class="card-body">
+                                                                                                                                                                                                                                                                                                              <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                                                                                                                                                                                                                                                              <p class="card-text ratingbox">
+                                                                                                                                                                                                                                                                                                                  ${rat}
+                                                                                                                                                                                                                                                                                                              </p>
+                                                                                                                                                                                                                                                                                                              <div class="d-flex justify-content-between align-items-center">
+                                                                                                                                                                                                                                                                                                                  <h5 class="card-title pricing-card-title m-auto">${v.price} ت ${v.offerAmount != undefined ? `<small class="text-muted amount ml-2">${v.offerAmount}</small>` : ''}</h5>
+                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                    </a>
+                                                                                                                                                                                                                                                                                                      <div class="caption">
+                                                                                                                                                                                                                                                                                                              <p>
+                                                                                                                                                                                                                                                                                                                  <b>
+                                                                                                                                                                                                                                                                                                                      <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                                                                                                                                                                                                                                      <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
+                                                                                                                                                                                                                                                                                                                      <a><i class="fa fa-plus solid-fa"></i> </a>
+                                                                                                                                                                                                                                                                                                                  </b>
+                                                                                                                                                                                                                                                                                                              </p>
+                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                              `);
                                         }
                                     });
 
