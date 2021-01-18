@@ -18120,13 +18120,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LoginRegisterDto 
     {
-        [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long UserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("isExist", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("isExist", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsExist { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("loginByCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("loginByCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool LoginByCode { get; set; }
     
         public string ToJson() 
@@ -18144,13 +18144,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LoginRegisterDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public LoginRegisterDto Obj { get; set; }
     
         public string ToJson() 
@@ -18168,10 +18168,10 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LoginResultDto 
     {
-        [Newtonsoft.Json.JsonProperty("token", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("token", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Token { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fullname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fullname", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fullname { get; set; }
     
         public string ToJson() 
@@ -18189,13 +18189,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LoginResultDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public LoginResultDto Obj { get; set; }
     
         public string ToJson() 
@@ -18213,10 +18213,10 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class VoidResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
         public string ToJson() 
@@ -18234,64 +18234,64 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerProfileDto 
     {
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fname", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fname { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("bdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("bdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? Bdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profileImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profileImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfileImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profileImageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profileImageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfileImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("locationId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("locationId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LocationId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sendNews", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sendNews", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? SendNews { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveMobileApp", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveMobileApp { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppVersion", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MobileAppVersion { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MobileAppTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerClubCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerClubCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerClubCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("walletFinalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("walletFinalPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? WalletFinalPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerFinalScore", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerFinalScore", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerFinalScore { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("workId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("workId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? WorkId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("presentationCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("presentationCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PresentationCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("password", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("password", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Password { get; set; }
     
         public string ToJson() 
@@ -18309,13 +18309,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerProfileDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerProfileDto Obj { get; set; }
     
         public string ToJson() 
@@ -18333,34 +18333,34 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerAddressDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("titel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("titel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Titel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("address", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("address", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Address { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("xgps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("xgps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Xgps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ygps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ygps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Ygps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("provinceId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("provinceId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProvinceId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cityId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cityId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CityId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postalCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postalCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostalCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fax", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fax", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Fax { get; set; }
     
         public string ToJson() 
@@ -18378,55 +18378,55 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerRegisterDto 
     {
-        [Newtonsoft.Json.JsonProperty("realOrLegal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("realOrLegal", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? RealOrLegal { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fname", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fname { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("passWord", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("passWord", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PassWord { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("gender", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("gender", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Gender { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("identityNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("identityNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IdentityNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("secondMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("secondMobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SecondMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("shabaNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("shabaNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ShabaNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("bdate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("bdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset Bdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveMobileApp", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveMobileApp { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppVersion", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MobileAppVersion { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MobileAppTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("address", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("address", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public SellerAddressDto Address { get; set; }
     
         public string ToJson() 
@@ -18444,16 +18444,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LongResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long TotalCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> ObjList { get; set; }
     
         public string ToJson() 
@@ -18471,55 +18471,55 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatFrom 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rorder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rorder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rorder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systems", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Systems Systems { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("forms", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("forms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Forms> Forms { get; set; }
     
         public string ToJson() 
@@ -18537,46 +18537,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatRole 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systems", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Systems Systems { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("role", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("role", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Role> Role { get; set; }
     
         public string ToJson() 
@@ -18594,43 +18594,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PaymentTypeLocation 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("locationId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("locationId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LocationId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("location", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("location", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location Location { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PaymentType PaymentType { get; set; }
     
         public string ToJson() 
@@ -18648,49 +18648,49 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PaymentType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrder> CustomerOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeLocation", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeLocation", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PaymentTypeLocation> PaymentTypeLocation { get; set; }
     
         public string ToJson() 
@@ -18708,58 +18708,58 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PostType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Duration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("isFree", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("isFree", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? IsFree { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("apiUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("apiUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ApiUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrder> CustomerOrder { get; set; }
     
         public string ToJson() 
@@ -18777,79 +18777,79 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderPayment 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOrderId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("trackingCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("trackingCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TrackingCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("transactionDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("transactionDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TransactionDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("transactionPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("transactionPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TransactionPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemTraceNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemTraceNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemTraceNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OrderNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resNum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resNum", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResNum { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("terminalNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("terminalNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TerminalNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("refNum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("refNum", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string RefNum { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cardPan", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cardPan", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CardPan { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("traceNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("traceNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TraceNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerOrder CustomerOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
         public string ToJson() 
@@ -18867,46 +18867,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackingTypeImage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("decription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("decription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Decription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageFileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageFileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageFileUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PackingType PackingType { get; set; }
     
         public string ToJson() 
@@ -18924,46 +18924,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductPackingTypeImage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPackingTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPackingTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductPackingTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("decription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("decription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Decription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageFileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageFileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageFileUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPackingType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPackingType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public ProductPackingType ProductPackingType { get; set; }
     
         public string ToJson() 
@@ -18981,52 +18981,52 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductPackingType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packinggTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packinggTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackinggTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packinggType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packinggType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PackingType PackinggType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPackingTypeImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPackingTypeImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductPackingTypeImage> ProductPackingTypeImage { get; set; }
     
         public string ToJson() 
@@ -19044,49 +19044,49 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackingType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> CustomerOrderProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackingTypeImage> PackingTypeImage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPackingType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPackingType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductPackingType> ProductPackingType { get; set; }
     
         public string ToJson() 
@@ -19104,46 +19104,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class MobileAppType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Customer> Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Seller> Seller { get; set; }
     
         public string ToJson() 
@@ -19161,64 +19161,64 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerAddress 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("titel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("titel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Titel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("address", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("address", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Address { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("xgps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("xgps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Xgps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ygps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ygps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Ygps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("provinceId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("provinceId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProvinceId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cityId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cityId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CityId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postalCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postalCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostalCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fax", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fax", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Fax { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Seller Seller { get; set; }
     
         public string ToJson() 
@@ -19236,49 +19236,49 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerCatProduct 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProduct", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatProduct CatProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Seller Seller { get; set; }
     
         public string ToJson() 
@@ -19296,40 +19296,40 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatDocument 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("document", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("document", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Document> Document { get; set; }
     
         public string ToJson() 
@@ -19347,46 +19347,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Document 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catDocumentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catDocumentId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatDocumentId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("isRequired", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("isRequired", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? IsRequired { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catDocument", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catDocument", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatDocument CatDocument { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDocument", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDocument", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerDocument> SellerDocument { get; set; }
     
         public string ToJson() 
@@ -19404,55 +19404,55 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerDocument 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("documentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("documentId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DocumentId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FileUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fianlStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fianlStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FianlStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("adminDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("adminDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AdminDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("document", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("document", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Document Document { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fianlStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fianlStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FianlStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Seller Seller { get; set; }
     
         public string ToJson() 
@@ -19470,46 +19470,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerStatusLog 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("changeDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("changeDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ChangeDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Seller Seller { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status Status { get; set; }
     
         public string ToJson() 
@@ -19527,124 +19527,124 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Seller 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("realOrLegal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("realOrLegal", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? RealOrLegal { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fname", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fname { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("identityNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("identityNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IdentityNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("gender", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("gender", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Gender { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("secondMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("secondMobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SecondMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("shabaNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("shabaNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ShabaNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("bdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("bdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Bdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profileImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profileImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfileImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profileImageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profileImageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfileImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("locationId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("locationId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LocationId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveMobileApp", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveMobileApp { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppVersion", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MobileAppVersion { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MobileAppTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("location", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("location", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location Location { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public MobileAppType MobileAppType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("user", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("user", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Users User { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> CustomerOrderProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Product> Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerAddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerAddress> SellerAddress { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerCatProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerCatProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerCatProduct> SellerCatProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDocument", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDocument", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerDocument> SellerDocument { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerStatusLog> SellerStatusLog { get; set; }
     
         public string ToJson() 
@@ -19662,46 +19662,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderProductStatusLog 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOrderProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("date", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("date", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Date { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProduct", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerOrderProduct CustomerOrderProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status Status { get; set; }
     
         public string ToJson() 
@@ -19719,118 +19719,118 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderProduct 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOrderId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productIncreasePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productIncreasePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductIncreasePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductOfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? ProductOfferValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductOfferCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductOfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OrderCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("adminDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("adminDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AdminDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerOrder CustomerOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PackingType PackingType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Seller Seller { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProductStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProductStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProductStatusLog> CustomerOrderProductStatusLog { get; set; }
     
         public string ToJson() 
@@ -19848,46 +19848,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderStatusLog 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOrderId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("date", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("date", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Date { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerOrder CustomerOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status Status { get; set; }
     
         public string ToJson() 
@@ -19905,139 +19905,139 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrder 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddressId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddressId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerAddressId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderProduceTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderProduceTime", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderProduceTime { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTrackingCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTrackingCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PostTrackingCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postServicePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postServicePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostServicePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("taxValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("taxValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? TaxValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("taxPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("taxPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TaxPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OfferValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("adminDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("adminDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AdminDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sendDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sendDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SendDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("deliveryDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("deliveryDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DeliveryDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Customer Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddress", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerAddress CustomerAddress { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PaymentType PaymentType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PostType PostType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderPayment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderPayment", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderPayment> CustomerOrderPayment { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> CustomerOrderProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderStatusLog> CustomerOrderStatusLog { get; set; }
     
         public string ToJson() 
@@ -20055,85 +20055,85 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerAddress 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("titel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("titel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Titel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("address", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("address", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Address { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("xgps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("xgps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Xgps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ygps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ygps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Ygps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("provinceId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("provinceId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProvinceId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cityId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cityId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CityId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postalCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postalCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostalCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IssureName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureFamily", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureFamily", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IssureFamily { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureMelliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureMelliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? IssureMelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureMobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? IssureMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("defualtAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("defualtAddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? DefualtAddress { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("city", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("city", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location City { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Customer Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("province", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("province", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location Province { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrder> CustomerOrder { get; set; }
     
         public string ToJson() 
@@ -20151,85 +20151,85 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Location 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("enName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("enName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string EnName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("locationCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("locationCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LocationCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("countryId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("countryId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CountryId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("provinceId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("provinceId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProvinceId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("country", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("country", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location Country { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("p", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("p", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location P { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("province", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("province", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location Province { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Customer> Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddressCity", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddressCity", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerAddress> CustomerAddressCity { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddressProvince", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddressProvince", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerAddress> CustomerAddressProvince { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseCountry", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseCountry", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Location> InverseCountry { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseP", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseP", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Location> InverseP { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseProvince", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseProvince", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Location> InverseProvince { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeLocation", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeLocation", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PaymentTypeLocation> PaymentTypeLocation { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Seller> Seller { get; set; }
     
         public string ToJson() 
@@ -20247,43 +20247,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Work 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Customer> Customer { get; set; }
     
         public string ToJson() 
@@ -20301,49 +20301,49 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OfferType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("publicOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("publicOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? PublicOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? CustomerOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? ProductOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Offer> Offer { get; set; }
     
         public string ToJson() 
@@ -20361,52 +20361,52 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductOffer 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fromDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fromDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FromDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("toDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("toDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ToDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Value { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Offer Offer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
         public string ToJson() 
@@ -20424,79 +20424,79 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Offer 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fromDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fromDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FromDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("toDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("toDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ToDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Value { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OfferCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maximumPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maximumPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaximumPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("usageCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("usageCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? UsageCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("usageValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("usageValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? UsageValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maximumUsagePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maximumUsagePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaximumUsagePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("usedCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("usedCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? UsedCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveTimer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveTimer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveTimer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public OfferType OfferType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOffer> CustomerOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductOffer> ProductOffer { get; set; }
     
         public string ToJson() 
@@ -20514,58 +20514,58 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOffer 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fromDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fromDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FromDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("toDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("toDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ToDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OfferCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Value { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("usageCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("usageCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? UsageCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Customer Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Offer Offer { get; set; }
     
         public string ToJson() 
@@ -20583,46 +20583,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerStatusLog 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("changeDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("changeDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ChangeDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Customer Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status Status { get; set; }
     
         public string ToJson() 
@@ -20640,43 +20640,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductCustomerRateImage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRateId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRateId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductCustomerRateId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FileType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FileUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public ProductCustomerRate ProductCustomerRate { get; set; }
     
         public string ToJson() 
@@ -20694,67 +20694,67 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductCustomerRate 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("commentDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("commentDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CommentDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("commentDesc", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("commentDesc", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CommentDesc { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("likeCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("likeCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? LikeCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("disLikeCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("disLikeCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? DisLikeCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Customer Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseP", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseP", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCustomerRate> InverseP { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRateImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRateImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCustomerRateImage> ProductCustomerRateImage { get; set; }
     
         public string ToJson() 
@@ -20772,133 +20772,133 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Customer 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("presenterCustomerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("presenterCustomerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PresenterCustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fname", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fname { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("bdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("bdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Bdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profileImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profileImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfileImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profileImageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profileImageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfileImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("locationId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("locationId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LocationId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sendNews", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sendNews", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? SendNews { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveMobileApp", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveMobileApp { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppVersion", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MobileAppVersion { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MobileAppTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerClubCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerClubCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerClubCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("walletFinalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("walletFinalPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? WalletFinalPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerFinalScore", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerFinalScore", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerFinalScore { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("workId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("workId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? WorkId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("presentationCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("presentationCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PresentationCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("location", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("location", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Location Location { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public MobileAppType MobileAppType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("presenterCustomer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("presenterCustomer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Customer PresenterCustomer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("user", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("user", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Users User { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("work", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("work", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Work Work { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerAddress> CustomerAddress { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOffer> CustomerOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrder> CustomerOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerStatusLog> CustomerStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inversePresenterCustomer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inversePresenterCustomer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Customer> InversePresenterCustomer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCustomerRate> ProductCustomerRate { get; set; }
     
         public string ToJson() 
@@ -20916,13 +20916,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Employee 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("user", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("user", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Users User { get; set; }
     
         public string ToJson() 
@@ -20940,46 +20940,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class UserActivation 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sendedCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sendedCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SendedCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("endDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("endDateTime", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? EndDateTime { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("loginType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("loginType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? LoginType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("user", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("user", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Users User { get; set; }
     
         public string ToJson() 
@@ -20997,67 +20997,67 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Users 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("username", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("username", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Username { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("hpassword", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("hpassword", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Hpassword { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fullName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fullName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FullName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("expDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("expDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ExpDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Customer> Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("employee", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("employee", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Employee> Employee { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Seller> Seller { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userActivation", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userActivation", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<UserActivation> UserActivation { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userRole", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userRole", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<UserRole> UserRole { get; set; }
     
         public string ToJson() 
@@ -21075,52 +21075,52 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class UserRole 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("role", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("role", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Role { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("startDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StartDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("expDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("expDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ExpDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleNavigation", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleNavigation", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Role RoleNavigation { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("user", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("user", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Users User { get; set; }
     
         public string ToJson() 
@@ -21138,70 +21138,70 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Role 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catRoleId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catRoleId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatRoleId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maxUser", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maxUser", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? MaxUser { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("expDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("expDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ExpDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("stDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("stDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catRole", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catRole", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatRole CatRole { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("p", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("p", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Role P { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseP", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseP", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Role> InverseP { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleForms", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleForms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<RoleForms> RoleForms { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("userRole", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("userRole", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<UserRole> UserRole { get; set; }
     
         public string ToJson() 
@@ -21219,52 +21219,52 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class RoleFormsApi 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleFormsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleFormsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? RoleFormsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("formsApiid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("formsApiid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FormsApiid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("startDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StartDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("expDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("expDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ExpDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("formsApi", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("formsApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public FormsApi FormsApi { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleForms", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleForms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public RoleForms RoleForms { get; set; }
     
         public string ToJson() 
@@ -21282,52 +21282,52 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class RoleForms 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("formsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("formsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FormsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? RoleId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("startDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StartDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("expDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("expDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ExpDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("forms", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("forms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Forms Forms { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("role", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("role", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Role Role { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleFormsApi", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleFormsApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<RoleFormsApi> RoleFormsApi { get; set; }
     
         public string ToJson() 
@@ -21345,58 +21345,58 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Forms 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catFromsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catFromsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatFromsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rorder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rorder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rorder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catFroms", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catFroms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatFrom CatFroms { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("formsApi", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("formsApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<FormsApi> FormsApi { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleForms", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleForms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<RoleForms> RoleForms { get; set; }
     
         public string ToJson() 
@@ -21414,49 +21414,49 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class FormsApi 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("apiid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("apiid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Apiid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("formsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("formsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FormsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("api", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("api", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Api Api { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("forms", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("forms", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Forms Forms { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("roleFormsApi", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("roleFormsApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<RoleFormsApi> RoleFormsApi { get; set; }
     
         public string ToJson() 
@@ -21474,58 +21474,58 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Api 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catApiid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catApiid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatApiid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("type", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Type { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catApi", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatApi CatApi { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("formsApi", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("formsApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<FormsApi> FormsApi { get; set; }
     
         public string ToJson() 
@@ -21543,46 +21543,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatApi 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systems", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Systems Systems { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("api", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("api", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Api> Api { get; set; }
     
         public string ToJson() 
@@ -21600,67 +21600,67 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class TablesServiceDiscovery 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tablesId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tablesId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TablesId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("serviceType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("serviceType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ServiceType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("port", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("port", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Port { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ordering", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ordering", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Ordering { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("hashPass", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("hashPass", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string HashPass { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systems", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Systems Systems { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tables", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tables", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Tables Tables { get; set; }
     
         public string ToJson() 
@@ -21678,70 +21678,70 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Systems 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ipaddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ipaddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Ipaddress { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("port", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("port", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Port { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rorder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rorder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rorder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catApi", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catApi", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatApi> CatApi { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catFrom", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catFrom", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatFrom> CatFrom { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catRole", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catRole", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatRole> CatRole { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tables", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tables", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Tables> Tables { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tablesServiceDiscovery", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tablesServiceDiscovery", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<TablesServiceDiscovery> TablesServiceDiscovery { get; set; }
     
         public string ToJson() 
@@ -21759,52 +21759,52 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Tables 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemsId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemsId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemsId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatStatus CatStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systems", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Systems Systems { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tablesServiceDiscovery", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tablesServiceDiscovery", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<TablesServiceDiscovery> TablesServiceDiscovery { get; set; }
     
         public string ToJson() 
@@ -21822,46 +21822,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatStatus 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Status> Status { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tables", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tables", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Tables> Tables { get; set; }
     
         public string ToJson() 
@@ -21879,40 +21879,40 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class StatusType 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Status> Status { get; set; }
     
         public string ToJson() 
@@ -21930,43 +21930,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Color 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ColorCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColor", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductColor> ProductColor { get; set; }
     
         public string ToJson() 
@@ -21984,58 +21984,58 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductColorStatusLog 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColorId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColorId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductColorId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("producePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("producePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProducePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("produceDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("produceDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProduceDuration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("changeDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("changeDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ChangeDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColor", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColor", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public ProductColor ProductColor { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status Status { get; set; }
     
         public string ToJson() 
@@ -22053,67 +22053,67 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductColor 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ColorId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("producePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("producePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProducePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("produceDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("produceDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProduceDuration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("color", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("color", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Color Color { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColorStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColorStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductColorStatusLog> ProductColorStatusLog { get; set; }
     
         public string ToJson() 
@@ -22131,58 +22131,58 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductStatusLog 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("producePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("producePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProducePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("produceDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("produceDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProduceDuration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("changeDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("changeDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ChangeDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status Status { get; set; }
     
         public string ToJson() 
@@ -22200,106 +22200,106 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Status 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StatusTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("color", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("color", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Color { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("nextStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("nextStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? NextStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatStatus CatStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("nextStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("nextStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status NextStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public StatusType StatusType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Customer> Customer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrder> CustomerOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderPayment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderPayment", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderPayment> CustomerOrderPayment { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> CustomerOrderProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProductStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProductStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProductStatusLog> CustomerOrderProductStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderStatusLog> CustomerOrderStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerStatusLog> CustomerStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseNextStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseNextStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Status> InverseNextStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Product> Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColor", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductColor> ProductColor { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColorStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColorStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductColorStatusLog> ProductColorStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductStatusLog> ProductStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Seller> Seller { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDocument", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDocument", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerDocument> SellerDocument { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerStatusLog> SellerStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerCatProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerCatProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerCatProduct> SellerCatProduct { get; set; }
     
         public string ToJson() 
@@ -22317,43 +22317,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackageImage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackageId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FileType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("package", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("package", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Package Package { get; set; }
     
         public string ToJson() 
@@ -22371,61 +22371,61 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Package 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("startDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("startDateTime", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? StartDateTime { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("endDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("endDateTime", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? EndDateTime { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PackageImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProductCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productsPriceSum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productsPriceSum", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductsPriceSum { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackageImage> PackageImage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackageProduct> PackageProduct { get; set; }
     
         public string ToJson() 
@@ -22443,43 +22443,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackageProduct 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackageId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("package", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("package", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Package Package { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
         public string ToJson() 
@@ -22497,46 +22497,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Parameters 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductParameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductParameters", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProductParameters> CatProductParameters { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseP", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseP", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Parameters> InverseP { get; set; }
     
         public string ToJson() 
@@ -22554,46 +22554,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatProductParameters 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("parametersId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("parametersId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ParametersId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProduct", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatProduct CatProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("parameters", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("parameters", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Parameters Parameters { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCatProductParameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCatProductParameters", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCatProductParameters> ProductCatProductParameters { get; set; }
     
         public string ToJson() 
@@ -22611,46 +22611,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductCatProductParameters 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductParametersId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductParametersId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductParametersId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Value { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductParameters", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductParameters", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatProductParameters CatProductParameters { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
         public string ToJson() 
@@ -22668,46 +22668,46 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductImage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FileType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
         public string ToJson() 
@@ -22725,43 +22725,43 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class RelatedProduct 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("originProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("originProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OriginProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("destinProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("destinProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DestinProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("destinProduct", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("destinProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product DestinProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("originProduct", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("originProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product OriginProduct { get; set; }
     
         public string ToJson() 
@@ -22779,178 +22779,178 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Product 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productMeterId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productMeterId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductMeterId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("enName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("enName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string EnName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("producePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("producePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProducePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("firstCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("firstCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FirstCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seenCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seenCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SeenCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("lastSeenDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lastSeenDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LastSeenDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("aparatUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("aparatUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AparatUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("produceDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("produceDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProduceDuration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("unescoFlag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("unescoFlag", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? UnescoFlag { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("unescoCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("unescoCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UnescoCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliFlag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliFlag", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? MelliFlag { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("keyWords", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("keyWords", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string KeyWords { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("score", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Score { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("comission", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("comission", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Comission { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("authorName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("authorName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AuthorName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("metaDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("metaDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MetaDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("metaTitle", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("metaTitle", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MetaTitle { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("compareDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("compareDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CompareDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("canHaveOrder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("canHaveOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? CanHaveOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("oredrDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("oredrDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OredrDuration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("downloadLink", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("downloadLink", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string DownloadLink { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("virtualProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("virtualProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? VirtualProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Status FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seller", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seller", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Seller Seller { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> CustomerOrderProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackageProduct> PackageProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCatProductParameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCatProductParameters", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCatProductParameters> ProductCatProductParameters { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productColor", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productColor", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductColor> ProductColor { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCustomerRate> ProductCustomerRate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductImage> ProductImage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productLanguage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productLanguage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductLanguage> ProductLanguage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductOffer> ProductOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPackingType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPackingType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductPackingType> ProductPackingType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productStatusLog", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productStatusLog", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductStatusLog> ProductStatusLog { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("relatedProductDestinProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("relatedProductDestinProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<RelatedProduct> RelatedProductDestinProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("relatedProductOriginProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("relatedProductOriginProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<RelatedProduct> RelatedProductOriginProduct { get; set; }
     
         public string ToJson() 
@@ -22968,106 +22968,106 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductLanguage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("languageId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("languageId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LanguageId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("enName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("enName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string EnName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("producePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("producePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProducePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("firstCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("firstCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FirstCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seenCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seenCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SeenCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("lastSeenDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lastSeenDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LastSeenDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("aparatUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("aparatUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AparatUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("produceDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("produceDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProduceDuration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("unescoFlag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("unescoFlag", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? UnescoFlag { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("unescoCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("unescoCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UnescoCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliFlag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliFlag", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? MelliFlag { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("language", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("language", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Language Language { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Product Product { get; set; }
     
         public string ToJson() 
@@ -23085,55 +23085,55 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Language 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("flagIcon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("flagIcon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FlagIcon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("shortName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("shortName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ShortName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("isRtl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("isRtl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? IsRtl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductLanguage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductLanguage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProductLanguage> CatProductLanguage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productLanguage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productLanguage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductLanguage> ProductLanguage { get; set; }
     
         public string ToJson() 
@@ -23151,61 +23151,61 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatProductLanguage 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("languageId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("languageId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LanguageId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProduct", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CatProduct CatProduct { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("language", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("language", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public Language Language { get; set; }
     
         public string ToJson() 
@@ -23223,76 +23223,76 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatProduct 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("miniPicUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("miniPicUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MiniPicUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("metaTitle", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("metaTitle", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MetaTitle { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("metaDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("metaDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MetaDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("keyWords", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("keyWords", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string KeyWords { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cuserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cuserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Cdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ddate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ddate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Ddate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("muserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("muserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MuserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mdate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daUserId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daUserId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaUserId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("daDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("daDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DaDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductLanguage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductLanguage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProductLanguage> CatProductLanguage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductParameters", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductParameters", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProductParameters> CatProductParameters { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("inverseP", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("inverseP", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProduct> InverseP { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("product", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Product> Product { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerCatProduct", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerCatProduct", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerCatProduct> SellerCatProduct { get; set; }
     
         public string ToJson() 
@@ -23310,16 +23310,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatProductListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProduct> ObjList { get; set; }
     
         public string ToJson() 
@@ -23337,40 +23337,40 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatProductWithCountDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("url", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("url", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Url { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("miniPicUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("miniPicUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MiniPicUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("metaTitle", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("metaTitle", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MetaTitle { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("metaDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("metaDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MetaDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("keyWords", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("keyWords", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string KeyWords { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ProductCount { get; set; }
     
         public string ToJson() 
@@ -23388,16 +23388,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CatProductWithCountDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CatProductWithCountDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23415,16 +23415,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ColorDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ColorCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
         public string ToJson() 
@@ -23442,16 +23442,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ColorDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ColorDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23469,55 +23469,55 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerAddressDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("titel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("titel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Titel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("address", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("address", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Address { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("xgps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("xgps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Xgps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("ygps", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("ygps", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Ygps { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("provinceId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("provinceId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProvinceId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("provinceName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("provinceName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProvinceName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cityId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cityId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CityId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cityName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cityName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CityName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postalCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postalCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostalCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IssureName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureFamily", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureFamily", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IssureFamily { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureMelliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureMelliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? IssureMelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("issureMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("issureMobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? IssureMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("defualtAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("defualtAddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? DefualtAddress { get; set; }
     
         public string ToJson() 
@@ -23535,13 +23535,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerAddressDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerAddressDto Obj { get; set; }
     
         public string ToJson() 
@@ -23559,16 +23559,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerAddressDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerAddressDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23586,13 +23586,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class Int64SingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Obj { get; set; }
     
         public string ToJson() 
@@ -23610,19 +23610,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class DocumentDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catDocumentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catDocumentId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatDocumentId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catDocumentName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catDocumentName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CatDocumentName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("isRequired", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("isRequired", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? IsRequired { get; set; }
     
         public string ToJson() 
@@ -23640,16 +23640,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class DocumentDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<DocumentDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23667,22 +23667,22 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class FamousCommentsDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("profilePic", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("profilePic", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProfilePic { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("post", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("post", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Post { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("comment", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Comment { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("commentPic", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("commentPic", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CommentPic { get; set; }
     
         public string ToJson() 
@@ -23700,16 +23700,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class FamousCommentsDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<FamousCommentsDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23727,19 +23727,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LocationDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("enName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("enName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string EnName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("locationCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("locationCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? LocationCode { get; set; }
     
         public string ToJson() 
@@ -23757,16 +23757,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class LocationDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<LocationDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23784,37 +23784,37 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OfferInsertDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fromDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fromDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FromDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("toDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("toDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ToDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Value { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OfferCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maximumPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maximumPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaximumPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveTimer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveTimer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveTimer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productIdList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productIdList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> ProductIdList { get; set; }
     
         public string ToJson() 
@@ -23832,28 +23832,28 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OfferDto 
     {
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOfferId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOfferId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? Value { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OfferCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maximumPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maximumPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaximumPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maximumUsagePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maximumUsagePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaximumUsagePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("usageValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("usageValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? UsageValue { get; set; }
     
         public string ToJson() 
@@ -23871,16 +23871,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OfferDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<OfferDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -23898,19 +23898,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OrderProductModel 
     {
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ColorId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
         public string ToJson() 
@@ -23928,22 +23928,22 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OrderModel 
     {
-        [Newtonsoft.Json.JsonProperty("paymentTypeId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long PaymentTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddressId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddressId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long CustomerAddressId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<OrderProductModel> ProductList { get; set; }
     
         public string ToJson() 
@@ -23961,40 +23961,40 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OrderPreViewResultDto 
     {
-        [Newtonsoft.Json.JsonProperty("productsList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productsList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> ProductsList { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postServicePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postServicePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostServicePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OfferValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProduct> ProductList { get; set; }
     
         public string ToJson() 
@@ -24012,13 +24012,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OrderPreViewResultDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public OrderPreViewResultDto Obj { get; set; }
     
         public string ToJson() 
@@ -24036,19 +24036,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class InsertOrderResultDto 
     {
-        [Newtonsoft.Json.JsonProperty("customerOrderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOrderId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("redirectToBank", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("redirectToBank", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool RedirectToBank { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("bankUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("bankUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string BankUrl { get; set; }
     
         public string ToJson() 
@@ -24066,13 +24066,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class InsertOrderResultDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public InsertOrderResultDto Obj { get; set; }
     
         public string ToJson() 
@@ -24090,13 +24090,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class StringSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Obj { get; set; }
     
         public string ToJson() 
@@ -24114,91 +24114,91 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderProductDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerOrderId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PaymentStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productIncreasePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productIncreasePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductIncreasePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductImage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("statusName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("statusName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string StatusName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductOfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? ProductOfferValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductOfferCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductOfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OrderCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PackingTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("adminDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("adminDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AdminDescription { get; set; }
     
         public string ToJson() 
@@ -24216,40 +24216,40 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderPaymentDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("trackingCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("trackingCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TrackingCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("transactionDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("transactionDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TransactionDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("transactionPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("transactionPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TransactionPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("systemTraceNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("systemTraceNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SystemTraceNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resNum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resNum", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResNum { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("terminalNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("terminalNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TerminalNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("refNum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("refNum", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string RefNum { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("cardPan", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("cardPan", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CardPan { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("traceNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("traceNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TraceNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FinalStatus { get; set; }
     
         public string ToJson() 
@@ -24267,118 +24267,118 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderFullDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddressId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddressId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerAddressId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddress", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerAddress { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerMobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OrderDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PaymentStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderProduceTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderProduceTime", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderProduceTime { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PostTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTrackingCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTrackingCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PostTrackingCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postServicePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postServicePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostServicePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("taxValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("taxValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? TaxValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("taxPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("taxPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TaxPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OfferValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PaymentTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("adminDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("adminDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AdminDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerDescription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sendDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sendDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SendDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("deliveryDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("deliveryDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string DeliveryDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderProductsList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderProductsList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProductDto> CustomerOrderProductsList { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerOrderPaymentList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerOrderPaymentList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderPaymentDto> CustomerOrderPaymentList { get; set; }
     
         public string ToJson() 
@@ -24396,13 +24396,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderFullDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public CustomerOrderFullDto Obj { get; set; }
     
         public string ToJson() 
@@ -24420,31 +24420,31 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderProductSampleDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productOfferPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productOfferPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductOfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OrderCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PackingTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImage { get; set; }
     
         public string ToJson() 
@@ -24462,97 +24462,97 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerAddressId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerAddressId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerAddressId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string OrderDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PaymentStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderProduceTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderProduceTime", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderProduceTime { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PostTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTypePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTypePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostTypePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postTrackingCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postTrackingCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PostTrackingCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("postServicePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("postServicePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PostServicePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("taxValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("taxValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public double? TaxValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("taxPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("taxPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? TaxPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerValue", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerValue", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OfferValue { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PaymentTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("paymentTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("paymentTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PaymentTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("orderWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("orderWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OrderWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalWeight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalWeight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalWeight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sendDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sendDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SendDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("deliveryDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("deliveryDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string DeliveryDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderProductSampleDto> ProductList { get; set; }
     
         public string ToJson() 
@@ -24570,16 +24570,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class CustomerOrderDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<CustomerOrderDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -24597,10 +24597,10 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OrderCountGroupByStatusDto 
     {
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Status { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Count { get; set; }
     
         public string ToJson() 
@@ -24618,16 +24618,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class OrderCountGroupByStatusDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<OrderCountGroupByStatusDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -24645,28 +24645,28 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackageDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("startDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string StartDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("endDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("endDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string EndDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packageImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packageImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PackageImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProductCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productsPriceSum", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productsPriceSum", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductsPriceSum { get; set; }
     
         public string ToJson() 
@@ -24684,16 +24684,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackageDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackageDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -24711,91 +24711,91 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CatProductName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string SellerName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coding", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coding", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Coding { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatusId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatusId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FinalStatusId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("finalStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("finalStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FinalStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("priceAftterOffer", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("priceAftterOffer", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PriceAftterOffer { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerPercent", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerPercent", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? OfferPercent { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("offerAmount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("offerAmount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? OfferAmount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("coverImageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("coverImageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CoverImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("seenCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("seenCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SeenCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("lastSeenDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("lastSeenDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string LastSeenDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("aparatUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("aparatUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AparatUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("unescoFlag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("unescoFlag", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? UnescoFlag { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("unescoCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("unescoCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? UnescoCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliFlag", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliFlag", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? MelliFlag { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("keyWords", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("keyWords", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string KeyWords { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("score", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("score", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Score { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rating", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rating", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public float? Rating { get; set; }
     
         public string ToJson() 
@@ -24813,16 +24813,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -24840,19 +24840,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackingTypeImageDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackingTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("decription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("decription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Decription { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageFileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageFileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageFileUrl { get; set; }
     
         public string ToJson() 
@@ -24870,19 +24870,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackingTypeDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeImage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeImage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackingTypeImageDto> PackingTypeImage { get; set; }
     
         public string ToJson() 
@@ -24900,13 +24900,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackingTypeDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PackingTypeDto Obj { get; set; }
     
         public string ToJson() 
@@ -24924,16 +24924,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PackingTypeDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PackingTypeDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -24951,16 +24951,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ParametersDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
         public string ToJson() 
@@ -24978,19 +24978,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PaymentTypeDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
         public string ToJson() 
@@ -25008,16 +25008,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PaymentTypeDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PaymentTypeDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25035,31 +25035,31 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PostTypeDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("duration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("duration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Duration { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("isFree", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("isFree", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? IsFree { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("apiUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("apiUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ApiUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("icon", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("icon", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Icon { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
         public string ToJson() 
@@ -25077,16 +25077,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PostTypeDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<PostTypeDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25104,13 +25104,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class PostTypeDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public PostTypeDto Obj { get; set; }
     
         public string ToJson() 
@@ -25128,19 +25128,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductParamDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("parameterName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("parameterName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ParameterName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductParametersId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductParametersId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductParametersId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("value", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Value { get; set; }
     
         public string ToJson() 
@@ -25158,19 +25158,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class GetProductListByFilterParams 
     {
-        [Newtonsoft.Json.JsonProperty("catProductIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductIds", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> CatProductIds { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerIds", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> SellerIds { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productIds", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productIds", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> ProductIds { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fromPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fromPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FromPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("toPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("toPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ToPrice { get; set; }
     
         public string ToJson() 
@@ -25188,28 +25188,28 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductListParam 
     {
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("minPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("minPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MinPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maxPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maxPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaxPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sortMethod", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sortMethod", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? SortMethod { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pageSize", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pageSize", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int PageSize { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pageNumber", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pageNumber", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int PageNumber { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sellerIdList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerIdList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> SellerIdList { get; set; }
     
         public string ToJson() 
@@ -25227,16 +25227,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductListDto 
     {
-        [Newtonsoft.Json.JsonProperty("productList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductDto> ProductList { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int TotalCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("minPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("minPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MinPrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("maxPrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("maxPrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MaxPrice { get; set; }
     
         public string ToJson() 
@@ -25254,13 +25254,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductListDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public ProductListDto Obj { get; set; }
     
         public string ToJson() 
@@ -25278,19 +25278,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductColorDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ColorId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ColorName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("colorCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("colorCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ColorCode { get; set; }
     
         public string ToJson() 
@@ -25308,16 +25308,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductColorDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductColorDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25335,22 +25335,22 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductPackingTypeDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packinggTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packinggTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? PackinggTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("packingTypeName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("packingTypeName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string PackingTypeName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("weight", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("weight", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Weight { get; set; }
     
         public string ToJson() 
@@ -25368,16 +25368,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductPackingTypeDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductPackingTypeDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25395,16 +25395,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<Product> ObjList { get; set; }
     
         public string ToJson() 
@@ -25422,16 +25422,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductParamDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductParamDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25449,16 +25449,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductCustomerRateImageDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRateId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRateId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductCustomerRateId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FileType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FileUrl { get; set; }
     
         public string ToJson() 
@@ -25476,37 +25476,37 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductCustomerRateDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("pid", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pid", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Pid { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CustomerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("customerName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("customerName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CustomerName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("commentDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("commentDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? CommentDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("commentDesc", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("commentDesc", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CommentDesc { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("likeCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("likeCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? LikeCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("disLikeCount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("disLikeCount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? DisLikeCount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productCustomerRateImages", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productCustomerRateImages", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCustomerRateImageDto> ProductCustomerRateImages { get; set; }
     
         public string ToJson() 
@@ -25524,16 +25524,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductCustomerRateDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductCustomerRateDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25551,13 +25551,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public ProductDto Obj { get; set; }
     
         public string ToJson() 
@@ -25575,19 +25575,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductGeneralSearchResultDto 
     {
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ProductName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long CatProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long CatProductCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("catProductName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("catProductName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string CatProductName { get; set; }
     
         public string ToJson() 
@@ -25605,16 +25605,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductGeneralSearchResultDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductGeneralSearchResultDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25632,22 +25632,22 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerProductUpdateModel 
     {
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("count", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Count { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("price", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Price { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("canHaveOrder", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("canHaveOrder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool CanHaveOrder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("producePrice", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("producePrice", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProducePrice { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("produceDuration", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("produceDuration", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? ProduceDuration { get; set; }
     
         public string ToJson() 
@@ -25665,19 +25665,19 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductImageDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("productId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("productId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? ProductId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileType", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileType", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? FileType { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageUrl { get; set; }
     
         public string ToJson() 
@@ -25695,16 +25695,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class ProductImageDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductImageDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25722,22 +25722,22 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerDocumentDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("documentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("documentId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? DocumentId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("documentName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("documentName", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string DocumentName { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fileUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fileUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FileUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fianlStatus", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fianlStatus", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FianlStatus { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("adminDescription", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("adminDescription", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string AdminDescription { get; set; }
     
         public string ToJson() 
@@ -25755,61 +25755,61 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerFullInfoDto 
     {
-        [Newtonsoft.Json.JsonProperty("sellerId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sellerId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long SellerId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("realOrLegal", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("realOrLegal", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? RealOrLegal { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("fname", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("fname", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Fname { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("melliCode", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("melliCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MelliCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("gender", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("gender", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Gender { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("identityNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("identityNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string IdentityNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("tel", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("tel", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Tel { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Mobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("secondMobile", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("secondMobile", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SecondMobile { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("shabaNo", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("shabaNo", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ShabaNo { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("bdate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("bdate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset Bdate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("email", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Email { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("haveMobileApp", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("haveMobileApp", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? HaveMobileApp { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppVersion", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppVersion", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MobileAppVersion { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("mobileAppTypeId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? MobileAppTypeId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("registerDate", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("registerDate", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? RegisterDate { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("addressList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("addressList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerAddressDto> AddressList { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("documentList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("documentList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerDocumentDto> DocumentList { get; set; }
     
         public string ToJson() 
@@ -25827,13 +25827,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerFullInfoDtoSingleResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("obj", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("obj", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public SellerFullInfoDto Obj { get; set; }
     
         public string ToJson() 
@@ -25851,16 +25851,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SellerDocumentDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SellerDocumentDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25878,25 +25878,25 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SliderDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("sliderPlaceId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("sliderPlaceId", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? SliderPlaceId { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageUrl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("imageHurl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("imageHurl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ImageHurl { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rorder", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rorder", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rorder { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("linkUrl", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("linkUrl", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string LinkUrl { get; set; }
     
         public string ToJson() 
@@ -25914,16 +25914,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SliderDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<SliderDto> ObjList { get; set; }
     
         public string ToJson() 
@@ -25941,13 +25941,13 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SliderPlaceDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Rkey { get; set; }
     
         public string ToJson() 
@@ -25965,16 +25965,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class WorkDto 
     {
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("id", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("name", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("description", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("rkey", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("rkey", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Rkey { get; set; }
     
         public string ToJson() 
@@ -25992,16 +25992,16 @@ namespace HandiCrafts.Web
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.1.23.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class WorkDtoListResult 
     {
-        [Newtonsoft.Json.JsonProperty("resultCode", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultCode", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int ResultCode { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("resultMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("resultMessage", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ResultMessage { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("totalcount", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalcount", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Totalcount { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("objList", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("objList", NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<WorkDto> ObjList { get; set; }
     
         public string ToJson() 
