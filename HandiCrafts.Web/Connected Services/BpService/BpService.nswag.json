@@ -842,6 +842,19 @@
         }
       }
     },
+    "/api/CatProduct/GetCatProductList_Admin": {
+      "post": {
+        "tags": [
+          "CatProduct"
+        ],
+        "operationId": "GetCatProductList_Admin",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/CatProduct/InsertCatProduct": {
       "post": {
         "tags": [
@@ -1795,6 +1808,220 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/Offer/GetOfferList": {
+      "get": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "لیست تخفیفات",
+        "operationId": "GetOfferList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/GetProductListByOfferId": {
+      "get": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "لیست محصولات مرتبط به کد تخفیف",
+        "operationId": "GetProductListByOfferId",
+        "parameters": [
+          {
+            "name": "offerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/ActiveDeActiveOfferById": {
+      "get": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "فعال / غیرفعال کردن تخفیف",
+        "operationId": "ActiveDeActiveOfferById",
+        "parameters": [
+          {
+            "name": "offerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/GetOfferFullInfoById": {
+      "get": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "اطلاعات تخفیف و لیست محصولات براساس آیدی تخفیف",
+        "operationId": "GetOfferFullInfoById",
+        "parameters": [
+          {
+            "name": "offerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/InsertOffer": {
+      "post": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "ثبت تخفیف جدید",
+        "operationId": "InsertOffer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferInsertDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferInsertDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferInsertDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/UpdateOffer": {
+      "put": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "ویرایش تخفیف",
+        "operationId": "UpdateOffer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferInsertDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferInsertDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfferInsertDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/DeleteOffer": {
+      "delete": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "حذف تخفیف",
+        "operationId": "DeleteOffer",
+        "parameters": [
+          {
+            "name": "offerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/GetOfferTypeList": {
+      "delete": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "لیست نوع تخفیف",
+        "operationId": "GetOfferTypeList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Offer/GetProductOfferHistoryList": {
+      "delete": {
+        "tags": [
+          "Offer"
+        ],
+        "summary": "دریافت سابقه تخفیفات محصول",
+        "operationId": "GetProductOfferHistoryList",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -3157,6 +3384,72 @@
         }
       }
     },
+    "/api/Product/GetProductListFilterBySeller_Name": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست محصولات براساس کد فروشنده و نام محصول",
+        "operationId": "GetProductListFilterBySeller_Name",
+        "parameters": [
+          {
+            "name": "sellerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "productName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductListByFilter": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست محصولات براساس فیلترها",
+        "operationId": "GetProductListByFilter",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetProductListByFilterParams"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetProductListByFilterParams"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetProductListByFilterParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Product/GetProductList_Paging_Filtering_UI": {
       "post": {
         "tags": [
@@ -3769,6 +4062,29 @@
         }
       }
     },
+    "/api/Product/GetProductByIdForSeller": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "GetProductByIdForSeller",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ProductColor/GetColorListByProductId": {
       "get": {
         "tags": [
@@ -3884,6 +4200,7 @@
         "tags": [
           "ProductImage"
         ],
+        "summary": "عکس های مربوط به محصول",
         "operationId": "GetImageListByProductId",
         "parameters": [
           {
@@ -4200,6 +4517,116 @@
         }
       }
     },
+    "/api/Seller/GetSellerOrderList": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "summary": "لیست سفارشات فروشنده",
+        "operationId": "GetSellerOrderList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seller/UpdateStatusToReadyToSend": {
+      "put": {
+        "tags": [
+          "Seller"
+        ],
+        "summary": "تغییر وضعیت کالای سفارش به آماده ارسال به مرکز پردازش",
+        "operationId": "UpdateStatusToReadyToSend",
+        "parameters": [
+          {
+            "name": "customerOrderProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seller/UpdateStatusToSent": {
+      "put": {
+        "tags": [
+          "Seller"
+        ],
+        "summary": "تغییر وضعیت کالای سفارش به ارسال به مرکز پردازش",
+        "operationId": "UpdateStatusToSent",
+        "parameters": [
+          {
+            "name": "customerOrderProductId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seller/GetSellerListByCatProduct": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "summary": "لیست فروشندها براساس دسته بندی محصولات",
+        "operationId": "GetSellerListByCatProduct",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Seller/GetSellerFullInfo": {
       "get": {
         "tags": [
@@ -4317,6 +4744,7 @@
         "tags": [
           "Seller"
         ],
+        "summary": "لیست مدارک صنعتگر  ثبت نهایی",
         "operationId": "SellerRegisterConfirm_UI",
         "responses": {
           "200": {
@@ -6026,6 +6454,80 @@
           }
         }
       },
+      "SellerCatProduct": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sellerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "catProductId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "catProduct": {
+            "$ref": "#/components/schemas/CatProduct"
+          },
+          "finalStatus": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "seller": {
+            "$ref": "#/components/schemas/Seller"
+          }
+        }
+      },
       "CatDocument": {
         "type": "object",
         "additionalProperties": false,
@@ -6493,6 +6995,13 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/SellerAddress"
+            }
+          },
+          "sellerCatProduct": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerCatProduct"
             }
           },
           "sellerDocument": {
@@ -7499,6 +8008,21 @@
             "format": "int64",
             "nullable": true
           },
+          "fromDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "cuserId": {
             "type": "integer",
             "format": "int64",
@@ -7606,6 +8130,14 @@
           "usedCount": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "haveTimer": {
+            "type": "boolean",
             "nullable": true
           },
           "cuserId": {
@@ -10114,6 +10646,13 @@
             "items": {
               "$ref": "#/components/schemas/SellerStatusLog"
             }
+          },
+          "sellerCatProduct": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerCatProduct"
+            }
           }
         }
       },
@@ -10860,6 +11399,10 @@
             "type": "string",
             "nullable": true
           },
+          "canHaveOrder": {
+            "type": "boolean",
+            "nullable": true
+          },
           "oredrDuration": {
             "type": "integer",
             "format": "int32",
@@ -11469,6 +12012,13 @@
             "items": {
               "$ref": "#/components/schemas/Product"
             }
+          },
+          "sellerCatProduct": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerCatProduct"
+            }
           }
         }
       },
@@ -11931,6 +12481,65 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/LocationDto"
+            }
+          }
+        }
+      },
+      "OfferInsertDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "offerTypeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "fromDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "toDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "offerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "maximumPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "haveTimer": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "productIdList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
             }
           }
         }
@@ -13408,6 +14017,46 @@
           }
         }
       },
+      "GetProductListByFilterParams": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "catProductIds": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "sellerIds": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "productIds": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "fromPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "toPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
       "ProductListParam": {
         "type": "object",
         "additionalProperties": false,
@@ -13860,6 +14509,9 @@
             "type": "integer",
             "format": "int64",
             "nullable": true
+          },
+          "canHaveOrder": {
+            "type": "boolean"
           },
           "producePrice": {
             "type": "integer",

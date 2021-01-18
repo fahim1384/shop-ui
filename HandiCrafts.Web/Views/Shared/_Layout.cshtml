@@ -2,6 +2,7 @@
 @{
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var dir = requestCulture.RequestCulture.UICulture.TwoLetterISOLanguageName == "fa" ? "rtl" : "ltr";
+    @inject HandiCrafts.Web.Interfaces.ILocalizeService localize
 }
 
 <!DOCTYPE html>
@@ -10,14 +11,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@Html.Raw(ViewData["Title"]) - @T["site"]</title>
+    <title>@ViewData["Title"] - @T["site"]</title>
 
     <meta itemprop="name" content="فروشگاه صنایع دستی سارای - برندینگ و بسته بندی و فروش آنلاین">
     <meta itemprop="description" content="خرید آنلاین صنایع دستی، سوغاتی، کادو و هدیه در بزرگترین فروشگاه صنایع دستی ایران با ارسال سریع، بسته بندی ویژه، کیفیت بالا و قیمت مناسب ">
     <meta name="author" content="e.vahedi" />
     
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="http://tabrizhandicrafts.com">
+    <meta property="og:url" content="https://saraycrafts.ir">
     <meta property="og:type" content="website">
     <meta name="keywords" content="سارای، صنایع دستی، هدیه، هدیه فاخر،چوبی، نقره، فرش، گلیم، جاجیم، چرم، سفال، میناکارای، نوآورانه، خلاقانه، معتبر، با کیفیت، ساخت هنر دست ، کالای ایرانی، آموزش صنایع دستی، خرید صنایع دستی، فروش صنایع دستی">
 
@@ -27,10 +28,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="فروشگاه اینترنتی صنایع دستی سارای - برندینگ و بسته بندی و فروش آنلاین" />
     <meta property="og:description" content="خرید آنلاین صنایع دستی، سوغاتی و هدیه را در فروشگاه صنایع دستی سارای با ارسال سریع، بسته بندی ویژه، کیفیت بالا و قیمت مناسب تجربه .کنید؛ فروش آنلاین صنایع دستی" />
-    <meta property="og:url" content="http://tabrizhandicrafts.com/" />
+    <meta property="og:url" content="https://saraycrafts.ir/" />
     <meta property="og:site_name" content="فروشگاه صنایع دستی سارای" />
-    <meta property="og:image" content="http://tabrizhandicrafts.com/" />
-    <meta name="twitter:site" content="@@tabrizhandicrafts" />
+    <meta property="og:image" content="https://saraycrafts.ir/" />
+    <meta name="twitter:site" content="@@saraycrafts" />
 
 
     <link href="~/css/_Loading.css" rel="stylesheet" />
