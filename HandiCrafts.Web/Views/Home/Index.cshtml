@@ -1082,7 +1082,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                                     <div class="caption">
                                                         <p>
                                                             <b>
-                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.priceAftterOffer}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                                 <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                                 <a><i class="fa fa-plus solid-fa"></i> </a>
                                                             </b>
@@ -1093,7 +1093,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                                             ${rat}
                                                         </p>
                                                         <div class="d-flex justify-content-between align-items-center">
-                                                            <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                            <h5 class="card-title pricing-card-title m-auto">${comma(v.priceAftterOffer)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.price)}</small>` : ''}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1277,7 +1277,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                                                                                         <div class="caption">
                                                                                                         <p>
                                                                                                             <b>
-                                                                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.price}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
+                                                                                                                <a data-product-id="${v.id}" data-product-image="${v.coverImageUrl}" data-product-name="${v.name}" data-product-price="${v.priceAftterOffer}" data-product-mellicode="${v.coding}" class="add-to-cart"><i class="fa fa-shopping-basket solid-fa"></i></a><span class="border-1"></span>
                                                                                                                 <a><i class="fa fa-heart solid-fa"></i> </a><span class="border-1"></span>
                                                                                                                 <a><i class="fa fa-plus solid-fa"></i> </a>
                                                                                                             </b>
@@ -1288,7 +1288,7 @@ ${bartarBox2}<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 mar-pad-0"
                                                                                                             ${rat}
                                                                                                         </p>
                                                                                                         <div class="d-flex justify-content-between align-items-center">
-                                                                                                            <h5 class="card-title pricing-card-title m-auto">${comma(v.price)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.offerAmount)}</small>` : ''}</h5>
+                                                                                                            <h5 class="card-title pricing-card-title m-auto">${comma(v.priceAftterOffer)} ت ${v.offerAmount != undefined && v.offerAmount != 0 ? `<small class="text-muted amount ml-2">${comma(v.price)}</small>` : ''}</h5>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>

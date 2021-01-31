@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Cart";
+    ViewData["Title"] = "سبد خرید شما";
 }
 
 @section Styles{
@@ -328,6 +328,7 @@
 @section Scripts{
     <script>
 
+
         $("#addressBox").html(localStorage.getItem("address"));
         $("#fullname").html(localStorage.getItem("fullname"));
         $(".totalPayment").html(shoppingCart.totalCart());
@@ -385,7 +386,8 @@
                 success: function (result) {
                     debugger
                     if (result.success == true) {
-
+                        allData.total = shoppingCart.totalCart();
+                        $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
                         if (result.data?.objList.length == 0) return false;
 
                         objOffers = result.data?.objList[0];
@@ -525,6 +527,8 @@
                     productId: prd
                 },
                 success: function (result) {
+                    allData.total = shoppingCart.totalCart();
+                    $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
                     if (result.success == true && result.data != null) {
                         var options = "";
                         $("select.packageComboInCart[data-pkCmbId='" + prd + "']").empty();//.append('<option value="">انتخاب ..</option>');
@@ -587,6 +591,8 @@
         $("select.packageComboInCart").on("change", function () {
 
             if ($(this).val() != "") {
+                allData.total = shoppingCart.totalCart();
+                $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
                 shoppingCart.changeSelectedPackage($(this).attr("data-pkCmbId"), $(this).val());
 
                 $("input[data-pkinputhide='" + $(this).attr("data-pkCmbId") + "']").val($(this).val());
@@ -598,6 +604,7 @@
                 $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
 
                 CustomerOrderPreview();
+
             }
         });
 
@@ -675,6 +682,8 @@
 
         // اطلاعات سبد خرید و بروزرسانی قیمت ها
         function CustomerOrderPreview() {
+            allData.total = shoppingCart.totalCart();
+            $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
             if (localStorage.getItem("address") != null) {
                 var posttype = $("input[name=optionsPostTypes]:checked").val();
 
