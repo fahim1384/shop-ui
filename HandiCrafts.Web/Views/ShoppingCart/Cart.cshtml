@@ -364,13 +364,13 @@
                             var check = "";
                             if (e == 0) check = "checked";
                             $("#paymentTypesBox").append(`<div class="col-6 col-sm-4 mt-10">
-                                                                                <label>
-                                                                                    <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
-                                                                                    <b>${v.title}</b>
-                                                                                    <br />
-                                                                                    <small class="text-muted">${v.description}</small>
-                                                                                </label>
-                                                                            </div>`);
+                                                                                        <label>
+                                                                                            <input type="radio" name="optionsPaymentTypeRadios" value="${v.id}" ${check}>
+                                                                                            <b>${v.title}</b>
+                                                                                            <br />
+                                                                                            <small class="text-muted">${v.description}</small>
+                                                                                        </label>
+                                                                                    </div>`);
                         });
                     }
                 }
@@ -388,15 +388,25 @@
                     if (result.success == true) {
                         allData.total = shoppingCart.totalCart();
                         $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
-                        if (result.data?.objList.length == 0) return false;
+                        //if (result.data?.objList.length == 0) return false;
 
-                        objOffers = result.data?.objList[0];
-                        var total = $("span.total-cart").text();
+                        objOffers = result.data?.obj;
+                        var total = $("span.total-cart").text().replace(/,/g, '');
 
-                        if (objOffers?.value) {
+                        // اگر درصد مشخص باشد
+                        if (objOffers?.value)
                             $("#offerPrecent").html(comma(objOffers?.value));
 
-                            if (objOffers?.maximumPrice != null) {
+                        if (objOffers?.maximumPrice != null) {
+                            /*
+                             *  توجه : تخفیف ها به دوشکل هست:
+                             *  1- بدون درصد  مثلا از کل فاکتور 20000 کم شود
+                             *  2- با درصد مثلا 2 درصد برای فاکتور کم شود
+                             *  value در اینجا هماه درصد تخفیف هست
+                             */
+
+                            if (objOffers?.value) {
+                                // با درصد
                                 if (objOffers?.maximumPrice < parseInt(total) * parseInt(objOffers?.value)) {
                                     $("#totalBeforeOffer").html(comma(parseInt(total) - parseInt(objOffers?.maximumPrice)));
                                     $(".totalPayment").html(comma(parseInt(total) - parseInt(objOffers?.maximumPrice)));
@@ -408,8 +418,22 @@
                                     allData.totalbeforeOffer = parseInt(total) - parseInt(total) * parseInt(objOffers?.value);
                                     allData.offerEmalshode = parseInt(total) * parseInt(objOffers?.value);
                                 }
+                            } else {
+                                // بدون درصد
+                                if (objOffers?.maximumPrice < parseInt(total)) {
+                                    $("#totalBeforeOffer").html(comma(parseInt(total) - parseInt(objOffers?.maximumPrice)));
+                                    $(".totalPayment").html(comma(parseInt(total) - parseInt(objOffers?.maximumPrice)));
+                                    allData.totalbeforeOffer = parseInt(total) - parseInt(objOffers?.maximumPrice);
+                                    allData.offerEmalshode = parseInt(objOffers?.maximumPrice);
+                                } else {
+                                    $("#totalBeforeOffer").html(0);
+                                    $(".totalPayment").html(0);
+                                    allData.totalbeforeOffer = 0;
+                                    allData.offerEmalshode = 0;
+                                }
                             }
                         }
+                        //}
 
                         CustomerOrderPreview();
 
@@ -497,11 +521,11 @@
                                 var checked = "";
                                 if (e == 0) checked = "checked='checked'";
                                 $("#posttypesBox").append(`<div class="col-6 col-sm-4 mt-10">
-                                            <label>
-                                                <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
-                                                <b>${this.title}</b>
-                                            </label>
-                                        </div>`);
+                                                    <label>
+                                                        <input type="radio" name="optionsPostTypes" value='${this.id}' price='${this.price}' ${checked}>
+                                                        <b>${this.title}</b>
+                                                    </label>
+                                                </div>`);
                             });
 
                             bindPostTypes();
@@ -682,8 +706,8 @@
 
         // اطلاعات سبد خرید و بروزرسانی قیمت ها
         function CustomerOrderPreview() {
-            allData.total = shoppingCart.totalCart();
-            $("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
+            //allData.total = shoppingCart.totalCart();
+            //$("span.totalPayment").html(comma(allData.total - allData.totalbeforeOffer + allData.totalbeforeHazinehBastehbandi));
             if (localStorage.getItem("address") != null) {
                 var posttype = $("input[name=optionsPostTypes]:checked").val();
 
@@ -764,6 +788,6 @@
             productsPackageListLoad();
         }
 
-            //}
+                    //}
     </script>
 }
