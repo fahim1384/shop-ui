@@ -260,6 +260,13 @@ var cartEvents = (function () {
                 $('.total-count').html(comma(shoppingCart.totalCount()));
 
                 popupCart();
+
+                try {
+                    console.log("incerease decrease ...");
+                    //CustomerOrderPreview();
+                } catch (e) {
+                    console.log("err in call preview ..");
+                }
             }
 
 
