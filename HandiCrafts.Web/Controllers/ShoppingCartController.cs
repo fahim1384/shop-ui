@@ -243,7 +243,7 @@ namespace HandiCrafts.Web.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public Task<ResponseState<OfferDtoListResult>> GetOfferValueByCode_UI(string offerCode)
+        public Task<ResponseState<OfferDtoSingleResult>> GetOfferValueByCode_UI(string offerCode)
         {
             return TryCatch(async () =>
             {
@@ -261,7 +261,7 @@ namespace HandiCrafts.Web.Controllers
                 //result.ObjList = new List<OfferDto>() { new OfferDto { Value = 17, MaximumPrice = 1000 } };
 
                 if (result.ResultCode != 200)
-                    return Error<OfferDtoListResult>(null, message: result.ResultMessage);
+                    return Error<OfferDtoSingleResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
 

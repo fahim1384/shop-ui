@@ -1,4 +1,4 @@
-{
+﻿{
   "openapi": "3.0.1",
   "info": {
     "title": "Hand Carft",
@@ -842,6 +842,154 @@
         }
       }
     },
+    "/api/BuyCards/GetBuyCardsList": {
+      "post": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "دریافت لیست کارت های خرید",
+        "operationId": "GetBuyCardsList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BuyCards/ActiveDeactiveBuyCards": {
+      "post": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "فعال / غیر فعال کردن کارت های خرید",
+        "operationId": "ActiveDeactiveBuyCards",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BuyCards/BuyCardBoughtHistory": {
+      "post": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "سابقه خرید کارت های خرید",
+        "operationId": "BuyCardBoughtHistory",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BuyCards/InsertBuyCard": {
+      "post": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "ثبت کردن کارت خرید",
+        "operationId": "InsertBuyCard",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BuyCards/DeleteBuyCard": {
+      "delete": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "حذف کردن کارت خرید",
+        "operationId": "DeleteBuyCard",
+        "parameters": [
+          {
+            "name": "buyCardId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BuyCards/GetBuyCardById": {
+      "get": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "دریافت اطلاعات مربوط به کارت خرید",
+        "operationId": "GetBuyCardById",
+        "parameters": [
+          {
+            "name": "buyCardId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BuyCards/UpdateBuyCard": {
+      "put": {
+        "tags": [
+          "BuyCards"
+        ],
+        "summary": "ویرایش کردن کارت خرید",
+        "operationId": "UpdateBuyCard",
+        "parameters": [
+          {
+            "name": "buyCardId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/CatProduct/GetCatProductList_Admin": {
       "post": {
         "tags": [
@@ -1403,6 +1551,225 @@
         }
       }
     },
+    "/api/Comission/GetComissionList": {
+      "get": {
+        "tags": [
+          "Comission"
+        ],
+        "summary": "لیست کمیسسون ها",
+        "operationId": "GetComissionList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comission/GetComissionProductById": {
+      "get": {
+        "tags": [
+          "Comission"
+        ],
+        "summary": "لیست محصولات براساس کمیسیون آیدی",
+        "operationId": "GetComissionProductById",
+        "parameters": [
+          {
+            "name": "comissionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comission/InsertComission": {
+      "post": {
+        "tags": [
+          "Comission"
+        ],
+        "summary": "ثبت کمیسیون",
+        "operationId": "InsertComission",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertComissionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertComissionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertComissionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comission/DeleteComission": {
+      "delete": {
+        "tags": [
+          "Comission"
+        ],
+        "summary": "حذف کمیسیون",
+        "operationId": "DeleteComission",
+        "parameters": [
+          {
+            "name": "comissionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comission/GetProductComissionHistory": {
+      "get": {
+        "tags": [
+          "Comission"
+        ],
+        "summary": "دریافت سابقه کمیسیون محصول",
+        "operationId": "GetProductComissionHistory",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comission/UpdateComission": {
+      "put": {
+        "tags": [
+          "Comission"
+        ],
+        "summary": "ویرایش کمیسیون",
+        "operationId": "UpdateComission",
+        "parameters": [
+          {
+            "name": "comissionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertComissionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertComissionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertComissionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Customer/GetCustomerListByFilter": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "دریافت لیست مشتری با فیلتر",
+        "operationId": "GetCustomerListByFilter",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerListParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerListParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerListParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Customer/GetCustomerOrderHistory": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "دریافت تاریخچه سفارشات مشتری",
+        "operationId": "GetCustomerOrderHistory",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/CustomerAddress/GetCustomerDefultAddress_UI": {
       "get": {
         "tags": [
@@ -1515,6 +1882,44 @@
         }
       }
     },
+    "/api/CustomerFavorits/GetCustomerFavorites": {
+      "get": {
+        "tags": [
+          "CustomerFavorits"
+        ],
+        "summary": "دریافت لیست علاقه مندی ها",
+        "operationId": "GetCustomerFavorites",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CustomerFavorits/GetCustomerListByFavorite": {
+      "get": {
+        "tags": [
+          "CustomerFavorits"
+        ],
+        "summary": "دریافت لیست مشتریان علاقه مند به محصول",
+        "operationId": "GetCustomerListByFavorite",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Document/GetDocumentListbyRkey": {
       "get": {
         "tags": [
@@ -1591,6 +1996,106 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/DynamicForms/GetStaticFormsList": {
+      "get": {
+        "tags": [
+          "DynamicForms"
+        ],
+        "summary": "لیست صفحات استاتیک",
+        "operationId": "GetStaticFormsList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DynamicForms/GetStaticFormsById": {
+      "get": {
+        "tags": [
+          "DynamicForms"
+        ],
+        "summary": "دریافت صفحه استاتیک با آیدی",
+        "operationId": "GetStaticFormsById",
+        "parameters": [
+          {
+            "name": "dynamicFormsId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DynamicForms/DeleteStaticForms": {
+      "delete": {
+        "tags": [
+          "DynamicForms"
+        ],
+        "summary": "حدف صفحه استاتیک",
+        "operationId": "DeleteStaticForms",
+        "parameters": [
+          {
+            "name": "dynamicFormsId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DynamicForms/InsertDynamicForms": {
+      "post": {
+        "tags": [
+          "DynamicForms"
+        ],
+        "summary": "ثبت صفحه استاتیک",
+        "operationId": "InsertDynamicForms",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DynamicForms/UpdateDynamicForms": {
+      "put": {
+        "tags": [
+          "DynamicForms"
+        ],
+        "summary": "ویرایش صفحه استاتیک",
+        "operationId": "UpdateDynamicForms",
+        "parameters": [
+          {
+            "name": "dynamicFormsId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -1812,6 +2317,144 @@
         }
       }
     },
+    "/api/Location/GetCountryList": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "دریافت لیست کشورها",
+        "operationId": "GetCountryList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Location/InsertCountry": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "ثبت کشور",
+        "operationId": "InsertCountry",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountryInsertDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountryInsertDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountryInsertDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Location/DeleteCountry": {
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "حذف کشور",
+        "operationId": "DeleteCountry",
+        "parameters": [
+          {
+            "name": "countryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Location/UpadteCountry": {
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "ویرایش کشور",
+        "operationId": "UpadteCountry",
+        "parameters": [
+          {
+            "name": "countryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountryInsertDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountryInsertDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountryInsertDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Location/GetCountryById": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "دریافت اطلاعات کشور با کد",
+        "operationId": "GetCountryById",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Offer/GetOfferList": {
       "get": {
         "tags": [
@@ -2003,7 +2646,7 @@
       }
     },
     "/api/Offer/GetProductOfferHistoryList": {
-      "delete": {
+      "get": {
         "tags": [
           "Offer"
         ],
@@ -2049,17 +2692,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfferDtoListResult"
+                  "$ref": "#/components/schemas/OfferDtoSingleResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfferDtoListResult"
+                  "$ref": "#/components/schemas/OfferDtoSingleResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OfferDtoListResult"
+                  "$ref": "#/components/schemas/OfferDtoSingleResult"
                 }
               }
             }
@@ -3418,7 +4061,7 @@
       }
     },
     "/api/Product/GetProductListByFilter": {
-      "get": {
+      "post": {
         "tags": [
           "Product"
         ],
@@ -3443,6 +4086,30 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductListFilter_Name": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست محصولات براساس نام محصول",
+        "operationId": "GetProductListFilter_Name",
+        "parameters": [
+          {
+            "name": "productName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -4195,6 +4862,76 @@
         }
       }
     },
+    "/api/ProductCustomerRate/GetCustomerRateList": {
+      "get": {
+        "tags": [
+          "ProductCustomerRate"
+        ],
+        "summary": "لیست نظرات کاربران",
+        "operationId": "GetCustomerRateList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductCustomerRate/ConfirmCustomerRate": {
+      "put": {
+        "tags": [
+          "ProductCustomerRate"
+        ],
+        "summary": "تایید نظر کاربر",
+        "operationId": "ConfirmCustomerRate",
+        "parameters": [
+          {
+            "name": "productCustomerRateId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProductCustomerRate/ReplyToCustomerRate": {
+      "put": {
+        "tags": [
+          "ProductCustomerRate"
+        ],
+        "summary": "پاسخ به نظر کاربر",
+        "operationId": "ReplyToCustomerRate",
+        "parameters": [
+          {
+            "name": "productCustomerRateId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "answerString",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ProductImage/GetImageListByProductId": {
       "get": {
         "tags": [
@@ -4491,12 +5228,163 @@
         }
       }
     },
+    "/api/Role/GetRoleList": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "دریافت لیست گروه کاربران",
+        "operationId": "GetRoleList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Role/InsertRole": {
+      "post": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "ثبت گروه کاربری",
+        "operationId": "InsertRole",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertRoleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertRoleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertRoleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Role/DeleteRole": {
+      "delete": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "حذف گروه کاربری",
+        "operationId": "DeleteRole",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Role/UpdatetRole": {
+      "post": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "ویرایش گروه کاربری",
+        "operationId": "UpdatetRole",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertRoleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertRoleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertRoleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Role/GetRoleById": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "دریافت گروه کاربری با آیدی",
+        "operationId": "GetRoleById",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Seller/GetSellerList": {
       "get": {
         "tags": [
           "Seller"
         ],
         "operationId": "GetSellerList",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Seller/GetCurrentSellerInfo": {
+      "get": {
+        "tags": [
+          "Seller"
+        ],
+        "operationId": "GetCurrentSellerInfo",
         "responses": {
           "200": {
             "description": "Success"
@@ -4580,7 +5468,7 @@
       }
     },
     "/api/Seller/GetSellerListByCatProduct": {
-      "get": {
+      "post": {
         "tags": [
           "Seller"
         ],
@@ -7912,6 +8800,32 @@
           }
         }
       },
+      "CustomerFavoriteProducts": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          }
+        }
+      },
       "OfferType": {
         "type": "object",
         "additionalProperties": false,
@@ -8360,6 +9274,78 @@
           }
         }
       },
+      "StatusType": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productCustomerRate": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProductCustomerRate"
+            }
+          },
+          "status": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Status"
+            }
+          }
+        }
+      },
       "ProductCustomerRateImage": {
         "type": "object",
         "additionalProperties": false,
@@ -8474,6 +9460,25 @@
             "format": "int32",
             "nullable": true
           },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "checkUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "checkDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "checkAnswer": {
+            "type": "string",
+            "nullable": true
+          },
           "cuserId": {
             "type": "integer",
             "format": "int64",
@@ -8516,6 +9521,9 @@
           },
           "customer": {
             "$ref": "#/components/schemas/Customer"
+          },
+          "finalStatus": {
+            "$ref": "#/components/schemas/StatusType"
           },
           "product": {
             "$ref": "#/components/schemas/Product"
@@ -8626,6 +9634,10 @@
             "format": "int64",
             "nullable": true
           },
+          "haveWallet": {
+            "type": "boolean",
+            "nullable": true
+          },
           "walletFinalPrice": {
             "type": "integer",
             "format": "int64",
@@ -8709,6 +9721,13 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/CustomerAddress"
+            }
+          },
+          "customerFavoriteProducts": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerFavoriteProducts"
             }
           },
           "customerOffer": {
@@ -10035,71 +11054,6 @@
           }
         }
       },
-      "StatusType": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "rkey": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "cuserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "cdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "duserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "ddate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "muserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mdate": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "daUserId": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "status": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/Status"
-            }
-          }
-        }
-      },
       "Color": {
         "type": "object",
         "additionalProperties": false,
@@ -10633,6 +11587,13 @@
               "$ref": "#/components/schemas/Seller"
             }
           },
+          "sellerCatProduct": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SellerCatProduct"
+            }
+          },
           "sellerDocument": {
             "type": "array",
             "nullable": true,
@@ -10645,13 +11606,6 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/SellerStatusLog"
-            }
-          },
-          "sellerCatProduct": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/SellerCatProduct"
             }
           }
         }
@@ -11112,6 +12066,155 @@
           }
         }
       },
+      "Comission": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sendSms": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "sendEmail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "finalStatusId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productComission": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProductComission"
+            }
+          }
+        }
+      },
+      "ProductComission": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "comissionId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cuserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "duserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "ddate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "muserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mdate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daUserId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "daDate": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "comission": {
+            "$ref": "#/components/schemas/Comission"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          }
+        }
+      },
       "ProductImage": {
         "type": "object",
         "additionalProperties": false,
@@ -11462,6 +12565,13 @@
           "seller": {
             "$ref": "#/components/schemas/Seller"
           },
+          "customerFavoriteProducts": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CustomerFavoriteProducts"
+            }
+          },
           "customerOrderProduct": {
             "type": "array",
             "nullable": true,
@@ -11488,6 +12598,13 @@
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ProductColor"
+            }
+          },
+          "productComission": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProductComission"
             }
           },
           "productCustomerRate": {
@@ -12180,6 +13297,89 @@
           }
         }
       },
+      "InsertComissionDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sendSms": {
+            "type": "boolean"
+          },
+          "sendEmail": {
+            "type": "boolean"
+          },
+          "productIdList": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "CustomerListParam": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "catProductID": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "cityID": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fromPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "toPrice": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fromBirth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "toBirth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "haveCard": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "haveWallet": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "buyDateFrom": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "buyDateTo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
       "CustomerAddressDto": {
         "type": "object",
         "additionalProperties": false,
@@ -12485,6 +13685,30 @@
           }
         }
       },
+      "CountryInsertDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "enName": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "postCode": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
       "OfferInsertDto": {
         "type": "object",
         "additionalProperties": false,
@@ -12503,13 +13727,13 @@
             "nullable": true
           },
           "fromDate": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "toDate": {
-            "type": "integer",
-            "format": "int64",
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "value": {
@@ -12587,7 +13811,7 @@
           }
         }
       },
-      "OfferDtoListResult": {
+      "OfferDtoSingleResult": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -12599,17 +13823,8 @@
             "type": "string",
             "nullable": true
           },
-          "totalcount": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "objList": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/OfferDto"
-            }
+          "obj": {
+            "$ref": "#/components/schemas/OfferDto"
           }
         }
       },
@@ -14576,6 +15791,21 @@
             "items": {
               "$ref": "#/components/schemas/ProductImageDto"
             }
+          }
+        }
+      },
+      "InsertRoleDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "rkey": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         }
       },
