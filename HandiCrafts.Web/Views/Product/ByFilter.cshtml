@@ -259,9 +259,10 @@
             <div class="col-md-3 mt-3 mb-4">
                 <!-- Section: Ads -->
                 <form id="filtersFrm">
-                    <section class="bg-gray p-15 border-radius-5 min-height-200px text-center mb-3 border-default">
+                    <section class="bg-gray0 p-15 border-radius-5 min-height-200px text-center mb-3 border-default">
 
-                        <span class="line-height-200">تبلیغ</span>
+                        @*<span class="line-height-200">تبلیغ</span>*@
+                        <img src="~/image/carte_hediye.jpg" class="w-100" />
 
                     </section>
                     <!-- Section: Ads -->
@@ -631,7 +632,7 @@
                                                                                  </b>
                                                                              </p>
                                                                          </div>
-                                                                             <h6 class="card-title pricing-card-title">${v.name}</h6>
+                                                                             <h6 class="card-title pricing-card-title" title="${v.name}">${v.name}</h6>
                                                                              <p class="card-text ratingbox">
                                                                                  ${rat}
                                                                              </p>

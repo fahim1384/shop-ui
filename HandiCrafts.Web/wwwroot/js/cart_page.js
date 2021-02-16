@@ -359,12 +359,17 @@ function InsertCustomerOrder_UI() {
         url: "/Shoppingcart/InsertCustomerOrder_UI",
         data: { model: model },
         success: function (result) {
-            debugger
+            
             if (result.success == true) {
                 console.log(result.data);
                 orderResltObj = result.data.obj;
                 //BankUrl//CustomerOrderId/OrderNo/PostPrice/RedirectToBank/
-                window.location = orderResltObj.bankUrl;
+
+                if (orderResltObj.redirectToBank == false) {
+                    window.location = "/order/OnlinePaymentResultSuccess";
+                } else {
+                    window.location = orderResltObj.bankUrl;
+                }
             }
             else {
                 $("#messageTag").html(result.message);

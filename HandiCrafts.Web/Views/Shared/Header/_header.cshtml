@@ -353,6 +353,15 @@
         height:300px;
         overflow:auto;
     }
+
+        @@media only screen and (max-width: 991px){
+            .filter-li {
+                min-height: 60px;
+                display: block !important;
+                margin-right: 0;
+            }
+        }
+    
 </style>
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
@@ -396,7 +405,7 @@
                     <div class="collapse navbar-collapse justify-content-center wsmenu clearfix">
                         <ul class="mobile-sub wsmenu-list">
 
-                            <li class="wssearchbar clearfix">
+                            <li class="wssearchbar clearfix filter-li">
 
                                 <div class="dgwt-wcas-search-wrapp dgwt-wcas-has-submit woocommerce mt-3 js-dgwt-wcas-layout-classic dgwt-wcas-layout-classic js-dgwt-wcas-mobile-overlay-disabled dgwt-wcas-active">
                                     <form class="navbar-search pl-0 mr-auto mt-3 mb-2 mt-md-0 mb-md-0 mr-3 frmSearchKala" action="" style="position:relative">
@@ -676,7 +685,7 @@
                                 }
                             }
 
-                            <li class="nav-item ">
+                            <li class="nav-item d-sm-none d-md-none d-xl-block">
                                 <a href="https://ui.saraycrafts.ir/" class="nav-link waves-effect">
                                     <span class="bolderspan">مجله</span>
                                 </a>

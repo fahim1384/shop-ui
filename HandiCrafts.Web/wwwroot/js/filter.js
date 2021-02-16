@@ -17,7 +17,10 @@ $("#searchKey").autocomplete({
                 if (data.success == true) {
                     $("#searchresult").empty();
                     $.each(data.data.objList, function (e, v) {
-                        $("#searchresult").append(`<div class="search-item"><a class="text-muted" href="/Product/Index?id=${v.productId}"><i class="fa fa-search"></i> ${v.productName} <div class="b-block pl-4 small color-firouzi">در دسته ${v.catProductName}</div></a></div>`);
+                        if (v.productId != -1)
+                            $("#searchresult").append(`<div class="search-item"><a class="text-muted" href="/Product/Index?id=${v.productId}"><i class="fa fa-search"></i> ${v.productName} <div class="b-block pl-4 small color-firouzi">در دسته ${v.catProductName}</div></a></div>`);
+                        else
+                            $("#searchresult").append(`<div class="search-item"><a class="text-muted" href="/product/ByFilter?catId=${v.catProductId}"><i class="fa fa-search"></i> دسته بندی ${v.catProductName} </a></div>`);
                     });
 
                     if (data.data.objList.length == 0) {

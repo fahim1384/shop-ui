@@ -26,11 +26,18 @@ namespace HandiCrafts.Web.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
+        [AllowAnonymous]
         public IActionResult OnlinePaymentResult()
         {
             return View();
         }
 
+        public IActionResult OnlinePaymentResultSuccess()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
         [HttpPost]
         public Task<ResponseState<CsBankResult>> OnlinePaymentResult(string Authority, string Status)
         {

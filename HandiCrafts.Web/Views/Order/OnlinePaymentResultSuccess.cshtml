@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "نتیجه درگاه بانکی";
+}
+
+<div class="row">
+    <div class="col-12 m-5">
+        <div class="container">
+            <h4>@ViewData["Title"]</h4>
+            <div>
+                <div id="banksuccessmsg" class="alert alert-success">
+                    <strong>پرداخت موفق</strong>
+                    <p>
+                        <div id="succmsg">پرداخت فاکتور شما با صورت موفق انجام شده است شما می توانید لیست سفارشات خود را مشاهده نمایید</div>
+                        <a href="/Order/OrdersHistory" class="cyan d-block">مشاهده لیست سفارشات</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+    </script>
+}

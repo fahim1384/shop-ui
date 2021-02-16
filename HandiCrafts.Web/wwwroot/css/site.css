@@ -2266,7 +2266,7 @@ header.absolate-top {
     محصولات جدید صفحه اول
 
 *****************************/
-.latest-product-box .owl-nav {
+.latest-product-box .owl-nav, .specials-content .owl-nav, .portakhfifha-content .owl-nav, .pishnahadvijeh-content .owl-nav{
     direction: ltr;
     position: absolute;
     top: 36%;
@@ -2275,7 +2275,10 @@ header.absolate-top {
     left: 0;
 }
 
-    .latest-product-box .owl-nav button.owl-prev {
+    .latest-product-box .owl-nav button.owl-prev,
+    .specials-content .owl-nav button.owl-prev,
+    .portakhfifha-content .owl-nav button.owl-prev,
+    .pishnahadvijeh-content .owl-nav button.owl-prev {
         right: auto;
         left: 0px;
         position: absolute;
@@ -2283,7 +2286,10 @@ header.absolate-top {
         opacity: 0;
     }
 
-    .latest-product-box .owl-nav button.owl-next {
+    .latest-product-box .owl-nav button.owl-next,
+    .specials-content .owl-nav button.owl-next,
+    .portakhfifha-content .owl-nav button.owl-next,
+    .pishnahadvijeh-content .owl-nav button.owl-next {
         left: auto;
         right: 0px;
         position: absolute;
@@ -2291,7 +2297,10 @@ header.absolate-top {
         opacity: 0;
     }
 
-.latest-product-box:hover .owl-nav .owl-prev {
+.latest-product-box:hover .owl-nav .owl-prev,
+.specials-content:hover .owl-nav .owl-prev,
+.portakhfifha-content:hover .owl-nav .owl-prev,
+.pishnahadvijeh-content:hover .owl-nav .owl-prev {
     right: auto;
     left: 10px;
     position: absolute;
@@ -2299,7 +2308,10 @@ header.absolate-top {
     opacity: 1;
 }
 
-.latest-product-box:hover .owl-nav .owl-next {
+.latest-product-box:hover .owl-nav .owl-next,
+.specials-content:hover .owl-nav .owl-next,
+.portakhfifha-content:hover .owl-nav .owl-next,
+.pishnahadvijeh-content:hover .owl-nav .owl-next {
     left: auto;
     right: 10px;
     position: absolute;
@@ -2307,7 +2319,10 @@ header.absolate-top {
     opacity: 1;
 }
 
-.latest-product-box .owl-nav button.owl-prev i, .latest-product-box .owl-nav button.owl-next i {
+.latest-product-box .owl-nav button.owl-prev i, .latest-product-box .owl-nav button.owl-next i,
+.specials-content .owl-nav button.owl-prev i, .specials-content .owl-nav button.owl-next i,
+.portakhfifha-content .owl-nav button.owl-prev i, .portakhfifha-content .owl-nav button.owl-next i,
+.pishnahadvijeh-content .owl-nav button.owl-prev i, .pishnahadvijeh-content .owl-nav button.owl-next i {
     margin: 6px 0
 }
 
@@ -2638,3 +2653,15 @@ html::-webkit-scrollbar-thumb {
     html::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+
+
+    /****************/
+h6.pricing-card-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ratingbox{
+    text-align:center;
+}

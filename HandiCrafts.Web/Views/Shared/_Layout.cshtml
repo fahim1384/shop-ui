@@ -16,7 +16,7 @@
     <meta itemprop="name" content="فروشگاه صنایع دستی سارای - برندینگ و بسته بندی و فروش آنلاین">
     <meta itemprop="description" content="خرید آنلاین صنایع دستی، سوغاتی، کادو و هدیه در بزرگترین فروشگاه صنایع دستی ایران با ارسال سریع، بسته بندی ویژه، کیفیت بالا و قیمت مناسب ">
     <meta name="author" content="e.vahedi" />
-    
+
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://saraycrafts.ir">
     <meta property="og:type" content="website">
@@ -59,6 +59,7 @@
     <link href="~/css/Header._header.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/Social-Icons.css" rel="stylesheet" />
     <link href="~/fonts/sans/SansFont.css" rel="stylesheet" />
     <style>
         .height-0-2rem {
@@ -117,6 +118,17 @@
         </div>
     </div>
 
+    <nav class="social-nav d-sm-none d-md-none d-lg-block d-xl-block">
+        <ul class="social-ul">
+            <li><a class="social" href="https://t.me/Saraycrafts" target="_blank"><i class="fab fa-telegram"></i><span>Telegram</span></a></li>
+            <li><a class="social" href="https://instagram.com/saraycraft?igshid=g235h826201r" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+            @*<li><a class="social" href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+            <li><a class="social" href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+            <li><a class="social" href="#"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a></li>
+            <li><a class="social" href="#"><i class="fab fa-github"></i><span>Github</span></a></li>
+            <li><a class="social" href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>*@
+        </ul>
+    </nav>
 
     <partial name="~/Views/Shared/_footer.cshtml" />
 
@@ -207,36 +219,42 @@
                             if (v.inverseP.length > 0) {
                                 select2Combo.append(`<option value='${v.id}'>${v.name}</option>`);
                                 child = `<div class="wstitemright clearfix wstitemrightactive" style="height:auto">
-                                                                                                                <div class="container-fluid">
-                                                                                                                    <div class="row">
-                                                                                                                        <div class="col-lg-8 col-md-12 clearfix">
-                                                                                                                            <div class="container-fluid">
-                                                                                                                                <div class="row posrdb">
-                                                                                                                                    <div class="col-lg-4 col-md-12 posrdb right">
-                                                                                                                                        <ul class="wstliststy02 clearfix">`;
+                                                                                                                    <div class="container-fluid">
+                                                                                                                        <div class="row">
+                                                                                                                            <div class="col-lg-8 col-md-12 clearfix">
+                                                                                                                                <div class="container-fluid">
+                                                                                                                                    <div class="row posrdb">
+                                                                                                                                        <div class="col-lg-4 col-md-12 posrdb right">
+                                                                                                                                            <ul class="wstliststy02 clearfix">`;
                                 $.each(v.inverseP, function (e2, v2) {
                                     select2Combo.append(`<option value='${v2.id}'>${v2.name}</option>`);
                                     child += `<li><a href="/product/ByFilter?catId=${v2.id}" data-cat-number="${v2.id}">${v2.name}</a></li>`;
                                 });
                                 child += `</ul></div>
+                                                                                                                           </div>
                                                                                                                        </div>
                                                                                                                    </div>
+
+
+<div class="col-lg-4 col-md-12 wstmegamenucolr03 clearfix"> <img src="${v.url}" alt="سارای"> </div>
+
+
+
                                                                                                                </div>
                                                                                                            </div>
-                                                                                                       </div>
-                                                                                                   </div>`;
+                                                                                                       </div>`;
 
                                 $("#mgmenu").append(`<li ${ac}>
-                                                                                                            <span class="wsmenu-click02">
-                                                                                                                <i class="wsmenu-arrow fa fa-angle-down"></i>
-                                                                                                            </span>
-                                                                                                            <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
-                                                                                                            <span class="robin-submenu-nav">
-                                                                                                                <span class="robin-menu-icon-kitchen"></span>
-                                                                                                                <span style="vertical-align:middle">
-                                                                                                                    <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                                                                <span class="wsmenu-click02">
+                                                                                                                    <i class="wsmenu-arrow fa fa-angle-down"></i>
                                                                                                                 </span>
-                                                                                                            </span>${child}</li>`);
+                                                                                                                <span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>
+                                                                                                                <span class="robin-submenu-nav">
+                                                                                                                    <span class="robin-menu-icon-kitchen"></span>
+                                                                                                                    <span style="vertical-align:middle">
+                                                                                                                        <a href="/product/ByFilter?catId=${v.id}">${v.name}</a>
+                                                                                                                    </span>
+                                                                                                                </span>${child}</li>`);
 
                             }
                             else {

@@ -458,6 +458,78 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        /// <summary>
+        /// محصولات با بیشترین تخفیف ها
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> HaveMostOffer()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductListClient client = new GetProductListClient(BaseUrl, httpClient);
+
+                var result = await client.HaveMostOfferAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// محصولات با با دسته بندی خاص
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> Specials()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductListClient client = new GetProductListClient(BaseUrl, httpClient);
+
+                var result = await client.HaveMostOfferAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// محصولات با پیشنهاد ویژه
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<ProductDtoListResult>> PishnahadVijeh()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                GetProductListClient client = new GetProductListClient(BaseUrl, httpClient);
+
+                var result = await client.HaveMostOfferAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
         public IActionResult Aboutus()
         {
             return View();
