@@ -331,6 +331,30 @@ namespace HandiCrafts.Web.Controllers
             });
         }
 
+        /// <summary>
+        /// دسته بندی های - مهر اصالت
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<CatProductWithCountDtoListResult>> GetCatProductList_MelliFlag_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                MelliFlagClient client = new MelliFlagClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<CatProductWithCountDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
         public class DataObject
         {
             public string Name { get; set; }
@@ -405,6 +429,30 @@ namespace HandiCrafts.Web.Controllers
 
                 if (result.ResultCode != 200)
                     return Error<ProductDtoListResult>(null, message: result.ResultMessage);
+
+                return Success(data: result, message: result.ResultMessage);
+            });
+        }
+
+        /// <summary>
+        /// مهر یونسکو دسته بندی ها
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public Task<ResponseState<CatProductWithCountDtoListResult>> GetCatProductList_HaveUnesco_UI()
+        {
+            return TryCatch(async () =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+                string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
+
+                HaveUnescoClient client = new HaveUnescoClient(BaseUrl, httpClient);
+
+                var result = await client.UIAsync();
+
+                if (result.ResultCode != 200)
+                    return Error<CatProductWithCountDtoListResult>(null, message: result.ResultMessage);
 
                 return Success(data: result, message: result.ResultMessage);
             });
@@ -495,9 +543,9 @@ namespace HandiCrafts.Web.Controllers
 
                 string BaseUrl = _httpClientFactory.CreateClient("myHttpClient").BaseAddress.AbsoluteUri;
 
-                GetProductListClient client = new GetProductListClient(BaseUrl, httpClient);
+                SpecialClient client = new SpecialClient(BaseUrl, httpClient);
 
-                var result = await client.HaveMostOfferAsync();
+                var result = await client.UIAsync();
 
                 if (result.ResultCode != 200)
                     return Error<ProductDtoListResult>(null, message: result.ResultMessage);
@@ -521,7 +569,7 @@ namespace HandiCrafts.Web.Controllers
 
                 GetProductListClient client = new GetProductListClient(BaseUrl, httpClient);
 
-                var result = await client.HaveMostOfferAsync();
+                var result = await client.HaveOfferTimerAsync();
 
                 if (result.ResultCode != 200)
                     return Error<ProductDtoListResult>(null, message: result.ResultMessage);

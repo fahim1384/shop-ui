@@ -1,4 +1,4 @@
-{
+﻿{
   "openapi": "3.0.1",
   "info": {
     "title": "Hand Carft",
@@ -1264,6 +1264,68 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CatProductListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductList_HaveUnesco_UI": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "summary": "لیست 5 دسته بندی  که محصولی با نشان یونسکو دارند",
+        "operationId": "GetCatProductList_HaveUnesco_UI",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CatProduct/GetCatProductList_MelliFlag_UI": {
+      "get": {
+        "tags": [
+          "CatProduct"
+        ],
+        "summary": "لیست 5 دسته بندی  که محصولی با نشان ملی دارند",
+        "operationId": "GetCatProductList_MelliFlag_UI",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatProductWithCountDtoListResult"
                 }
               }
             }
@@ -5136,6 +5198,68 @@
         ],
         "summary": "لیست 10 محصول که بیشترین تخفیف را دارند",
         "operationId": "GetProductList_HaveMostOffer",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductList_special_UI": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست 10 محصولی دسته بندی خاص",
+        "operationId": "GetProductList_special_UI",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductDtoListResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Product/GetProductList_HaveOfferTimer": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "لیست 10 محصول که تایمر تخفیف  دارند",
+        "operationId": "GetProductList_HaveOfferTimer",
         "responses": {
           "200": {
             "description": "Success",
@@ -15899,6 +16023,11 @@
           "offerAmount": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "offerDeadLine": {
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "count": {
